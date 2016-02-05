@@ -39,7 +39,9 @@
           <!-- Your content goes here -->
           <div class="row">
             <div class="small-12 medium-12 large-8 large-centered columns">
-              {{ content }}
+              <div id="content">
+                {{ content }}
+              </div>
             </div>
           </div>
         </div>
@@ -48,6 +50,7 @@
     <!-- {% include footer.html %} -->
     <script>
       $(document).foundation();
+      materialize();
     </script>
   </body>
 </html>
