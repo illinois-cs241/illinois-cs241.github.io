@@ -1,39 +1,8 @@
 <!DOCTYPE html>
 <html>
-
   {% include head.html %}
   <body>
-    <!-- {% include header.html %} -->
-    <!-- Always shows a header, even in smaller screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <span class="mdl-layout-title">CS 241 : System Programming</span>
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-          <!-- Navigation. We hide it in small screens. -->
-          <nav class="mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="index.html">Overview</a>
-            <a class="mdl-navigation__link" href="/mps.html">MPs</a>
-            <a class="mdl-navigation__link" href="/labs.html">Lab Sections</a>
-            <a class="mdl-navigation__link" href="/help.html">Getting Help</a>
-            <a class="mdl-navigation__link" href="/schedule.html">Schedule</a>
-            <a class="mdl-navigation__link" href="/staff.html">Meet the Crew!</a>
-          </nav>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">CS 241</span>
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="index.html">Overview</a>
-          <a class="mdl-navigation__link" href="/mps.html">MPs</a>
-          <a class="mdl-navigation__link" href="/labs.html">Lab Sections</a>
-          <a class="mdl-navigation__link" href="/help.html">Getting Help</a>
-          <a class="mdl-navigation__link" href="/schedule.html">Schedule</a>
-          <a class="mdl-navigation__link" href="/staff.html">Meet the Crew!</a>
-        </nav>
-      </div>
+      {% include header.html %}
       <main class="mdl-layout__content">
         <div class="page-content">
           <!-- Your content goes here -->
@@ -48,7 +17,6 @@
         </div>
       </main>
     </div>
-    <!-- {% include footer.html %} -->
     <script>
       $(document).foundation();
       materialize();
