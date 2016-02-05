@@ -25,7 +25,7 @@
             		  <tbody>
                     {% for mp in site.data.mps %}
                       <tr>
-                        <td class="mdl-data-table__cell--non-numeric"><a href="./mps/{{mp.name}}">{{mp.name}}</a></td>
+                        <td class="mdl-data-table__cell--non-numeric"><a href="./{{mp.name}}">{{mp.name}}</a></td>
               		    	<td class="mdl-data-table__cell--non-numeric">{{mp.releaseDate}}</td>
               		    	<td class="mdl-data-table__cell--non-numeric">{{mp.dueDate}}</td>
                       </tr>
@@ -39,7 +39,7 @@
                   <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
                     <tr>
                       <td class="mdl-data-table__cell--non-numeric">MP</td>
-                      <td><a href="./mps/{{mp.name}}">{{mp.name}}</a></td>
+                      <td><a href="./{{mp.name}}">{{mp.name}}</a></td>
                     </tr>
                     <tr>
                       <td class="mdl-data-table__cell--non-numeric">Release Date</td>
