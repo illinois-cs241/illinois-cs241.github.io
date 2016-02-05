@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Brandon Chong",
+    "netid": "bschong2",
+    "class": "17",
+    "roles": "1337 Javascript HaxOr",
+    "speciality": "CS Education",
+    "semesters": "Spring 2015, , Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Eric Sauer",
+    "netid": "emsauer2",
+    "class": "17",
+    "roles": "MP Development and Autograding",
+    "speciality": "Game Engines",
+    "semesters": "Fall 2015"
+  },
+  {
+    "name": "Zhongshen Zeng",
+    "netid": "zzeng9",
+    "class": "17",
+    "roles": "Lab and Officer Hours Assistant",
+    "speciality": "VR or Data Analysis",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Varun Thangavelu",
+    "netid": "thangav2",
+    "class": "17",
+    "roles": "Lab and Officer Hours Assistant",
+    "speciality": "Big Data",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Thomas Liu",
+    "netid": "tfliu2",
+    "class": "17",
+    "roles": "Office Hour Assistants Team Lead",
+    "speciality": "Data Science",
+    "semesters": "Spring 2015, Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "David Zmick",
+    "netid": "zmick2",
+    "class": "16",
+    "roles": "MP Developer",
+    "speciality": "Compilers, Networking, and Performance",
+    "semesters": "Spring 2015, Fall 2015, and Spring 2016"
+  },
+  {
+    "name": "Yushuo Lin",
+    "netid": "ylin91",
+    "class": "17",
+    "roles": "Lab and Officer Hours Assistant",
+    "speciality": "CS and Stat",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Porter Smith",
+    "netid": "pmsmith2",
+    "class": "17",
+    "roles": "Office Hours Team Leader",
+    "speciality": "System Programming and Embedded Programming",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Brian Truong",
+    "netid": "btruong2",
+    "class": "17",
+    "roles": "Lead Autograder",
+    "speciality": "Software engineering, systems programming, OS, programming languages",
+    "semesters": "Spring 2015, Fall 2015, and Spring 2016"
+  },
+  {
+    "name": "Alek Festekjian",
+    "netid": "festekj2",
+    "class": "17",
+    "roles": "Autograder Developer",
+    "speciality": "Datascience",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "WeiChun Lee",
+    "netid": "wlee114",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "Algorithmic Game Theory and Social Network",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Maidi Lin",
+    "netid": "mlin35",
+    "class": "16",
+    "roles": "Lab and Officer Hours Assistant",
+    "speciality": "Software Engineering",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Curtis Bezault",
+    "netid": "bezault2",
+    "class": "17",
+    "roles": "Lab Assistant",
+    "speciality": "High Performance Computing/Massively Parallel Computing",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Luke Liu",
+    "netid": "jianliu4",
+    "class": "17",
+    "roles": "Autograder and MP Developer",
+    "speciality": "Linux",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Robert Andrews",
+    "netid": "rgandre2",
+    "class": "18",
+    "roles": "Honors Section Team Leader",
+    "speciality": "Theoretical Computer Science",
+    "semesters": "Fall 2015 and Spring 2016"
+  },
+  {
+    "name": "Lawrence Angrave",
+    "netid": "angrave",
+    "class": "",
+    "roles": "Captain and Lecturer",
+    "speciality": "Systems and CS Education",
+    "semesters": "Fall 2014, Spring 2015, Fall 2015, and Spring 2016"
+  },
+  {
+    "name": "Paul Vijayakumar",
+    "netid": "pvijaya2",
+    "class": "16",
+    "roles": "MP Development Team Lead",
+    "speciality": "Machine Learning and Distributed Systems",
+    "semesters": "Fall 2014, Spring 2015, Fall 2015, and Spring 2016"
+  },
+  {
+    "name": "Alec Kochevar-Cureton",
+    "netid": "kocheva2",
+    "class": "17",
+    "roles": "Lab Team Lead",
+    "speciality": "Puzzles",
+    "semesters": "Fall 2015, and Spring 2016"
+  },
+  {
+    "name": "Atul Kumar S Sandur",
+    "netid": "sandur2",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "Distributed systems and Mobile Computing",
+    "semesters": "Spring 2016"
+  },
+  {
+    "name": "Boyang Chen",
+    "netid": "bchen11",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "Data Structure",
+    "semesters": "Spring 2016"
+  },
+  {
+    "name": "Braden Ehrat",
+    "netid": "ehrat1",
+    "class": "",
+    "roles": "Teaching Assistant (Exam and future MP development)",
+    "speciality": "Networks",
+    "semesters": "Spring 2016"
+  },
+  {
+    "name": "Margarita Mouschovias",
+    "netid": "mmousch2",
+    "class": "16",
+    "roles": "Office Hours, Piazza",
+    "speciality": "VR, AI, Graphics, Systems, Security",
+    "semesters": "Spring 2016"
+  },
+  {
+    "name": "Yuxian Zhu",
+    "netid": "yzhu73",
+    "class": "18",
+    "roles": "MP Development, Office hour",
+    "speciality": "Distributed systems, Embedded systems, Parallel Programming",
+    "semesters": "Spring 2016"
+  },
+  {
+    "name": "Alexander Wu",
+    "netid": "awu14",
+    "class": "18",
+    "roles": "Lab and Officer Hours Assistant",
+    "speciality": "Cognitive Science, Human-Computer Interaction",
+    "semesters": "Spring 2016"
+  },
+  {
+    "name": "Mariana Aparicio B.",
+    "netid": "cs241admin",
+    "class": "",
+    "roles": "Graduate Assistant: Assist with course administration (e.g. exam sickness, DRES).",
+    "speciality": "CS Education",
+    "semesters": "Spring 2016"
+  },
+  {
+    "name": "Ben Kurtovic",
+    "netid": "kurtovc2",
+    "class": "18",
+    "roles": "Lab and Honors Assistant",
+    "speciality": "Algorithms, operating systems",
+    "semesters": "Spring 2016"
+  },
+  {
+    "name": "Güliz Seray Tuncay",
+    "netid": "tuncay2",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "Systems and Networking",
+    "semesters": "Spring 2016"
+  }
+]

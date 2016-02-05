@@ -1,0 +1,46 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+      {% include header.html %}
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here -->
+          <div class = "row">
+          	<div class = "small-8 medium-8 large-10 large-centered medium-centered columns">
+              {% assign sorted_team = site.data.staff | sort:'netid' %}
+              {% for member in sorted_team %}
+                <div class = "small-12 medium-12 large-3 columns" title="{{member.roles}} interested in {{member.speciality}} and has been on staff for {{member.semsters}}" >
+                  <div class = "pad" id = "{{member.netid}}" >
+                    <a href = "./images/staffPhotos/{{member.netid}}.jpg">
+                      <div class="card-staff mdl-card mdl-shadow--2dp" style = "background: url('./images/staffPhotos/{{member.netid}}.jpg') no-repeat; background-size: cover;">
+                        <div class = "spacer" style = "height: 0; padding-bottom: 85%; width:100%;">
+                          <!-- Horrible Hack! Please fix me -->
+                        </div>
+                        <div style = "width: 100%; background: rgba(0, 0, 0, 0.7);">
+                          <div class = "floater" style = "height: 0; padding-bottom: 15%; width:90%; margin: 3% auto">
+                            <span style = "color: white; float:left; font-size:1.5em;">{{member.name}} '{{member.class}}</span>
+                            <span data-tooltip aria-haspopup="true" class="has-tip" title="{{member.netid}}@illinois.edu" style = "float:right;position:relative">
+                              <span class="icon material-icons">
+                                <i class="material-icons"><a style ="color:white;" href = "mailto:{{member.netid}}@illinois.edu?Subject=CS241%20Student">mail</a></i>
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              {% endfor %}
+          	</div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
