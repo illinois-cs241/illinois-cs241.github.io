@@ -40,7 +40,7 @@ var materialize = function () {
   for (var i = 0; i < headers.length; i++) {
     var header = headers[i]
     var headerID = headerIDs[i]
-    toc.append("<a href='" + headerID + "'>" + header + "</a>")
+    toc.append("<a href='#" + headerID + "'>" + header + "</a>")
   }
   content.prepend(toc)
 
