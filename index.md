@@ -56,10 +56,10 @@ By the end of the course you should be proficient with this programming environm
 
 ## Resources
 
-A really useful, accessible introduction to system programming is Angrave's [CS 241 Crowd* Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
+A really useful, accessible introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
 
-Angrave's mini searchable video* introduction and playful _system programming* in* the* browser_ environment is at:  
-[cs* education.github.io/sys/](http://cs* education.github.io/sys/) (Firefox and Chrome recommended).
+Angrave's mini searchable video* introduction and playful _system programming-in-the-browser_ environment is at:  
+[cs-education.github.io/sys/](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
 No formal textbook is required but if you really want to buy some books we recommend the following custom book Angrave put together in 2007:
 
@@ -70,8 +70,9 @@ ISBN 0* 536* 48928* 9
 
 ## Grading
 
-The following is subject to minor changes.
+The following is subject to minor changes:
 
+{% highlight text %}
 Final Exam : 25%
 Midterm 1  : 10%
 Midterm 2  : 10%
@@ -82,7 +83,9 @@ Lab Programming Assignments: 13%
 
 Lab Attendance & other items: 4%
 
-Course grades: We publish the following thresholds: 92: A*  82: B*  72: C*   
+Course grades: We publish the following thresholds: 92: A-  82: B-  72: C-   
+{% endhighlight %}
+
 
 If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the mp programming assignments are weighted by the time we give to complete them. There are multiple choice quizzes at the DCL testing center approximately every other week. There will be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (gedit,vim,gcc,man,make,bash terminal etc) but in an exam environment. Runnable tests will be provided. The quizzes and midterms will be in the basement of DCL and you will be asked to register for a time slot that works for you. The signup link is [here](https://edu.cs.illinois.edu/testcenter/) (Chrome recommended). For grading we will drop your lowest quiz score, lowest lab score and 1 lab attendance. Sickness/ vacation / sleep *  whatever *  we don't care. Unless exceptions (which are almost never granted) have been arranged with the course admin (cs241admin@illinois.edu) or Director of Undergrad studies: Miss 3+ sections or 3+ quizzes is automaticaully a failing grade.
 
