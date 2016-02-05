@@ -25,7 +25,7 @@
             		  <tbody>
                     {% for lab in site.data.labs %}
                       <tr>
-                        <td class="mdl-data-table__cell--non-numeric"><a href="./labs/{{lab.name}}">{{lab.name}}</a></td>
+                        <td class="mdl-data-table__cell--non-numeric"><a href="./{{lab.name}}">{{lab.name}}</a></td>
               		    	<td class="mdl-data-table__cell--non-numeric">{{lab.releaseDate}}</td>
               		    	<td class="mdl-data-table__cell--non-numeric">{{lab.dueDate}}</td>
                       </tr>
@@ -39,7 +39,7 @@
                   <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
                     <tr>
                       <td class="mdl-data-table__cell--non-numeric">Lab</td>
-                      <td><a href="./mps/{{mp.name}}">{{lab.name}}</a></td>
+                      <td><a href="./{{lab.name}}">{{lab.name}}</a></td>
                     </tr>
                     <tr>
                       <td class="mdl-data-table__cell--non-numeric">Release Date</td>
