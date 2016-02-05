@@ -1,0 +1,72 @@
+[
+    {
+        "name" : "Know Your Tools",
+        "releaseDate" : "Week 1",
+        "dueDate" : "Week 2"
+    },
+    {
+        "name" : "Extreme Edge Cases",
+        "releaseDate" : "Week 2",
+        "dueDate" : "Week 3"
+    },
+    {
+        "name" : "Utilities Unleashed",
+        "releaseDate" : "Week 3",
+        "dueDate" : "Week 4"
+    },
+    {
+        "name" : "Mini Valgrind",
+        "releaseDate" : "Week 4",
+        "dueDate" : "Week 5"
+    },
+    {
+        "name" : "Terrible Tangled Twisted Threads",
+        "releaseDate" : "Week 5",
+        "dueDate" : "Week 6"
+    },
+    {
+        "name" : "Two To Tango",
+        "releaseDate" : "Week 6",
+        "dueDate" : "Week 7"
+    },
+    {
+        "name" : "Overworked Interns",
+        "releaseDate" : "Week 7",
+        "dueDate" : "Week 8"
+    },
+    {
+        "name" : "Ideal Indirection",
+        "releaseDate" : "Week 8",
+        "dueDate" : "Week 9"
+    },
+    {
+        "name" : "Mad Mad Access Pattern",
+        "releaseDate" : "Week 9",
+        "dueDate" : "Week 10"
+    },
+    {
+        "name" : "Et tu, Brute?",
+        "releaseDate" : "Week 10",
+        "dueDate" : "Week 11"
+    },
+    {
+        "name" : "Chatroom",
+        "releaseDate" : "Week 11",
+        "dueDate" : "Week 12"
+    },
+    {
+        "name" : "Scheduler",
+        "releaseDate" : "Week 12",
+        "dueDate" : "Week 13"
+    },
+    {
+        "name" : "Finding Files",
+        "releaseDate" : "Week 13",
+        "dueDate" : "Week 14"
+    },
+    {
+        "name" : "Epoll Downloader",
+        "releaseDate" : "Week 14",
+        "dueDate" : "Week 15"
+    },
+]
