@@ -84,7 +84,7 @@ a {
   overflow-x: auto;
 }
 
-.terminal {
+/*.terminal {
   background-color: black;
   color: white;
   font-family: monospace;
@@ -95,7 +95,7 @@ a {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
   border-radius: 15px;
   padding: 10px 10px 10px 10px;
-}
+}*/
 
 // SCROLLBAR CSS
 /* Let's get this party started */
@@ -137,10 +137,10 @@ a {
   padding-bottom: 100%;
 }
 
-code {
+/*code {
   background-color: rgb(241,233,225);
   opacity: 0.9;
-}
+}*/
 body {
   background-color: #FAFAFA !important;
 }
