@@ -1,15 +1,3 @@
-// Make drawer close when you click a link
-$(document).ready(function () {
-    $('.mdl-layout__drawer .mdl-navigation__link')
-        .click(
-            function () {
-                $('.mdl-layout__drawer')
-                    .toggleClass('is-visible');
-                $('.mdl-layout__obfuscator')
-                    .toggleClass('is-visible');
-            }
-        );
-});
 // Turns a basic layout page into cs241's material design layout
 var materialize = function () {
   // Global Variables
