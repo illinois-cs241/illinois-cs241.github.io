@@ -1,0 +1,74 @@
+[
+	{
+		"schedule": [
+			{
+				"title": "Martin Luther King, Jr. Day",
+				"summary": "No Classes",
+				"resources": "<a href = 'https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day'>Martin Luther King, Jr. Day</a> (wikipedia)",
+				"color": "#9E9E9E"
+			},
+			{
+				"title": "System Programming",
+				"summary": "1. Dive into System programming",
+				"resources": "Prelecture: <a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a>. The lecture will assume you've made significant progress on this homework",
+				"color": "#9C27B0"
+			},
+			{
+				"title": "How to crash in C",
+				"summary": "2. Dive into C programming",
+				"resources": "Prelecture: <a href = 'https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-1%3A-Introduction'>Intro to C Notes</a>. The lecture will assume you've already reviewed and played with this material.",
+				"color": "#9C27B0"
+			}
+		],
+		"week": "1/18 - 1/24",
+		"announcement": "<ul><li><a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a> is out<ul><li>Itis a stepping stone between CS225 and CS241</li><li>Bring your near-completed work to first Thursday lab and be ready to discuss it</li><li>Paper is preferred but a web page e.g. from your svn repository, is fine too</li></ul></li><li>Lab: <a target='blank' href='./labs.html#/lab1'>Know Your Tools</a> Released</li><li> MP: <a target='blank' href='./mps/mp0/'>Pointers Gone Wild</a> Released</li></ul>"
+	},
+	{
+		"schedule": [
+			{
+				"title": "C Crash Course 2",
+				"summary": "3. man,asprintf,free,assert",
+				"resources": "See the <a href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-3%3A-Common-Gotchas' target='_blank'>Wikibook C Gotchas</a>",
+				"color": "#9C27B0"
+			},
+			{
+				"title": "C Crash Course 3",
+				"summary": "4. getenv, scanf, getline, fork ",
+				"resources": "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-2%3A-Text-Input-And-Output'>Wikibook Input and Output</a>",
+				"color": "#9C27B0"
+			},
+			{
+				"title": "Fork and wait",
+				"summary": "5. fork and waitpid",
+				"resources": "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-1%3A-Introduction'>Wikibook forking</a>",
+				"color": "#009688"
+			}
+		],
+		"week": "1/25 - 1/31",
+		"announcement": "<ul><li>Lab: <a target='blank' href='./labs.html#/lab1'>Know Your Tools</a> Due</li><li>Lab: <a target='blank' href='./labs.html#/lab2'>Extreme Edge Cases</a> Released</li><li> MP: <a target='blank' href='./mps/mp2/'>Vector</a> Released</li></ul>"
+	},
+    {
+		"schedule": [
+			{
+				"title": "Forking Processes",
+				"summary": "6. The fork-exec-wait pattern",
+				"resources": "See the <a href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-2%3A-Fork%2C-Exec%2C-Wait' target='_blank'>Wikibook Fork, Exec, Wait</a>",
+				"color": "#009688"
+			},
+			{
+				"title": "Signals for Process Control",
+				"summary": "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT",
+				"resources": "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/Process-Control%2C-Part-1%3A-Wait-macros%2C-using-signals'>Wikibook process control</a>",
+				"color": "#009688"
+			},
+			{
+				"title": "Thanks for the heap memory",
+				"summary": "8. How to build a memory allocator. Placement algorithms. Fragmentation. Buddy allocator",
+				"resources": "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-1%3A-Heap-Memory-Introduction'>Wikibook heap memory introduction</a>",
+				"color": "#1E88E5"
+			}
+		],
+		"week": "2/1 - 2/7",
+		"announcement": "<ul><li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li><li>Lab: <a target='blank' href='./labs.html#/lab2'>Extreme Edge Cases</a> Due</li><li>Lab: <a target='blank' href='./labs.html#/lab3'>Utilities Unleashed</a> Released</li><li> MP: <a target='blank' href='./mps/mp1/'>Pointers Gone Wild</a> Due</li></ul>"
+	}
+]
