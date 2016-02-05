@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Syllabus
 ---
 ## Course Description
 System programming refers to writing code that tasks advantage of operating system support for programmers.

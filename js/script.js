@@ -21,7 +21,7 @@ var materialize = function () {
 
   // Iterate through all the children
   var last_index = 0
-  for (var i = 1; i < elements.length; i++) {
+  for (var i = 0; i < elements.length; i++) {
     var elem = $(elements[i])
     if (elem.is("h2")) {
       // If you find an h2 tag then push that section on the array
