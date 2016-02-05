@@ -1,0 +1,64 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+      {% include header.html %}
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here -->
+          <div class="row">
+          	<div class="small-12 medium-12 large-8 large-centered columns">
+              <h1>Machine Problems</h1>
+              <p>All MPs are released Sunday and they are due on Mondays 11:59pm</p>
+              <!-- Desktop Table -->
+              <div class="show-for-large-up">
+                <table width = "100%" class="mdl-data-table mdl-js-data-table">
+            		  <thead>
+            		    <tr>
+            		      <th class="mdl-data-table__cell--non-numeric">MP</th>
+            		      <th class="mdl-data-table__cell--non-numeric">Release Date</th>
+            		      <th class="mdl-data-table__cell--non-numeric">Due Date</th>
+            		    </tr>
+            		  </thead>
+            		  <tbody>
+                    {% for mp in site.data.mps %}
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric"><a ng-href="./mps/mp{{$index}}">{{mp.name}}</a></td>
+              		    	<td class="mdl-data-table__cell--non-numeric">{{mp.releaseDate}}</td>
+              		    	<td class="mdl-data-table__cell--non-numeric">{{mp.dueDate}}</td>
+                      </tr>
+                    {% endfor %}
+            		  </tbody>
+            		</table>
+              </div>
+            	<!-- Mobile Table -->
+            	<div class="hide-for-large-up">
+                {% for mp in site.data.mps %}
+                  <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">MP</td>
+                      <td><a ng-href="./mps/mp{{$index}}">{{mp.name}}</a></td>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Release Date</td>
+                      <td>{{mp.releaseDate}}</td>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Due Date</td>
+                      <td>{{mp.dueDate}}</td>
+                    </tr>
+                  </table>
+                {% endfor %}
+            	</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
