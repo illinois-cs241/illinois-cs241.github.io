@@ -7,8 +7,8 @@
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="row">
-            <div id="toc" style="position: fixed" class="small-12 medium-12 large-4 columns show-for-xlarge-up"></div>
-            <div class="small-12 medium-12 large-8 large-centered columns">
+            <nav id="toc" style="position: fixed" class="small-12 medium-12 large-4 columns show-for-xlarge-up"></nav>
+            <div class="small-12 medium-12 large-7 large-centered columns">
               <h1>{{ page.title }}</h1>
               <div id="content">
                 {{ content }}
@@ -18,9 +18,7 @@
         </div>
       </main>
     </div>
-    <script>
-      $(document).foundation();
-      materialize();
-    </script>
+    <script src="./js/toc.js"></script>
+    <script src="./js/materialize.js"></script>
   </body>
 </html>
