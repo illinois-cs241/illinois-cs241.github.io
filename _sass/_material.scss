@@ -21,6 +21,10 @@
   overflow-x: auto;
 }
 
+:target {
+   color: yellow !important;
+}
+
 // Staff Photo CSS
 .card-staff.mdl-card {
   width: 100%;
