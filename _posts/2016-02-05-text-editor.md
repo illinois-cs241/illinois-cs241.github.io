@@ -82,8 +82,16 @@ Your editor provides two print commands:
 The user will provide the "p" command along with a line number when they want to
 print out a single line from a file.
 
-For example, to print the contents of the file `things_on_my_table.txt` using
-the editor, the user would first open the file with the editor:
+Suppose I have a file called `things_on_my_table.txt` containing the following
+text:
+{% highlight text %}
+mug
+salt
+T.V. remote
+{% endhighlight %}
+
+To print the contents of the file `things_on_my_table.txt` using the editor, the
+user would first open the file with the editor:
 
 {% highlight bash %}
 $ ./editor things_on_my_table.txt
@@ -112,7 +120,7 @@ but make sure to take a look at `format.c`.
 The user will provide the "p" command (with no line number specified) when they
 wish to print the whole document.
 
-For example:
+For example (using the same file we used above):
 
 {% highlight bash %}
 $ ./editor things_on_my_table.txt
@@ -138,7 +146,7 @@ If a user asks you to print a specific line which does not exist, please call
 There are two write modes for your editor: "write" and "append".
 
 ### write command
-The "write" command should **OVERWRITE** a line completely. For example:
+The "w" command should **OVERWRITE** a line completely. For example:
 
 {% highlight bash %}
 w 3 I like cats!
@@ -147,7 +155,7 @@ w 3 I like cats!
 This will **OVERWRITE** line 3 with "I like cats!".
 
 ### append command
-"append" will APPEND it's argument to the end of a line. For example, if line
+"a" will **APPEND** it's argument to the end of a line. For example, if line
 three contained "I like cats!", then the user ran this command:
 
 {% highlight bash %}
@@ -249,6 +257,24 @@ line numbers in following format:
 You only need to surround the first occurrence of the search term in each line
 with square brackets. Use the `print_search_line()` function in `format.h` for
 this.
+
+So, for another example, suppose I had a file `kitties.txt` with the content:
+{% highlight text %}
+I like cats
+I like cats
+Dogs are alright
+I like cats
+{% endhighlight %}
+
+And I ran a search operation:
+
+{% highlight text %}
+$ ./editor kitties.txt
+/cats
+1	I like [cats]
+2	I like [cats]
+4	I like [cats]
+{% endhighlight %}
 
 ## Saving Text
 Your text editor should be able to save all of the changes you make to the
