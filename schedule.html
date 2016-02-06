@@ -17,11 +17,8 @@
           </div>
           {% for week in site.data.scheduleSP16 %}
           <div class = "row" style = "padding-bottom:1%" >
-            {% if forloop.last %}
-              <div id = "currentWeek"></div>
-            {% endif %}
             <div class = "small-12 medium-12 large-3 columns">
-              <h3>{{week.week}}</h3>
+              <h3 class = "week">{{week.week}}</h3>
               <div style = "color:#37474F">
                 {{week.announcement}}
               </div>
@@ -29,7 +26,7 @@
             {% for day in week.schedule %}
               <div class = "small-12 medium-12 large-3 columns">
                 <div class = "small-12 medium-12 columns hide-for-large-up">
-                  <h3>
+                  <h3 class = "weekday">
                     {% case forloop.index %}
                     {% when 1 %}
                     Monday
@@ -60,17 +57,6 @@
         </div>
       </main>
     </div>
-    <script>
-      $(document).foundation();
-      // Jump to the current week
-      window.location.hash = 'currentWeek';
-      // Make all the text fit
-      $(document).ready(function() {
-        $(".mdl-card__title-text").textfill(20);
-      });
-      $(window).resize(function() {
-        $(".mdl-card__title-text").textfill(20);
-      });
-    </script>
+    <script src="./js/lectures.js"></script>
   </body>
 </html>
