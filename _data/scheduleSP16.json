@@ -90,6 +90,7 @@
 				{
 					"title": "Threads",
 					"summary": "11. Introducing pthreads. stacks. Concurrency programming gotchas.",
+					"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>",
 					"color": "#6644CC"
 				}
 			],
