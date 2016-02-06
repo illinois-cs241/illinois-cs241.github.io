@@ -1,11 +1,8 @@
 // Turns a basic layout page into cs241's material design layout
-var materialize = function () {
+(function () {
   // Global Variables
-  var content = $("#content")
   var elements = $("#content").children()
   var sections = []
-  var headers = []
-  var headerIDs = []
 
   // Iterate through all the children
   var last_index = 0
@@ -14,23 +11,11 @@ var materialize = function () {
     if (elem.is("h2")) {
       // If you find an h2 tag then push that section on the array
       sections.push($(elements.slice(last_index,i)))
-      // Also update headers for the table of content
-      headers.push(elem.text())
-      headerIDs.push(elem.attr('id'))
       // And reset the window
       last_index = i
     }
   }
   sections.push($(elements.slice(last_index,elements.length)))
-
-  // Generate Table of Content
-  var toc = $("<ul class='toc'><h4>Contents</h4></ul>")
-  for (var i = 0; i < headers.length; i++) {
-    var header = headers[i]
-    var headerID = headerIDs[i]
-    toc.append("<a href='#" + headerID + "'>" + header + "</a>")
-  }
-  $("#toc").prepend(toc)
 
   // Style the sections
   for (var i = 0; i < sections.length; i++) {
@@ -47,4 +32,4 @@ var materialize = function () {
     var text = $(section.slice(1,section.length))
     text.wrapAll("<div class='content'/>")
   }
-};
+})()
