@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: doc
 title: Halp Plz!
 ---
 
@@ -15,7 +15,7 @@ Also this department is scaling at an exponential rate, which is great, since co
 
 <iframe src="https://www.google.com/calendar/embed?title=CS%20241%20Staff%20Calendar&amp;mode=WEEK&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=illinois.edu_rtpfqbnbvd071rcps8oougljis%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FChicago" style=" border-width:0 " width="100%" height="800px" frameborder="0" scrolling="no"></iframe>
 
-## Piazza (Online Discussion Board): Search First. Don't Post.
+## Piazza: Search First. Don't Post.
 
 #### Low Effort Questions
 

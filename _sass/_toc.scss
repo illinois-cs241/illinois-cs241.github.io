@@ -1,0 +1,20 @@
+.toc {
+  border-left: 4px solid #C1EEF4;
+  margin: 24px;
+  padding: 0;
+  padding-left: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+  .toc h4 {
+    font-size: 0.9rem;
+    margin-top: 0;
+  }
+  .toc a {
+    color: #4DD0E1;
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 28px;
+    display: block;
+  }
