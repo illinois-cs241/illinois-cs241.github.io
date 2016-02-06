@@ -111,14 +111,14 @@ This means a user will call your program like so:
 ./env <var-list> <command-name>
 {% endhighlight %}
 
-*   <var-list> is a comma-separated list of changes that are to be made to environment variables, and <command-name> is the name of a command that is to be run after making those changes.
-*   Any additional arguments are to passed as arguments to <command-name>.
-*   Each of the environment variable changes in <var-list> are in the form <destvar>=<value>.
-*   <destvar> is the name of the environment variable that is to be changed and <value> is the new value.
-*   <value> may contain references to environment variables in the form %<srcvar>.
-*   Each reference to <srcvar> should be replaced with the value of <srcvar>.
-*   The names of the variables <destvar> and <srcvar> will contain only letters, numbers, or underscore characters.
-*   For each environment variable change in <var-list>, your program will assign <value> to <destvar> in the current environment so when <command-name> is executed, it will inherit the new value of the <destvar> variable.
+*   `<var-list>` is a comma-separated list of changes that are to be made to environment variables, and `<command-name>` is the name of a command that is to be run after making those changes.
+*   Any additional arguments are to passed as arguments to `<command-name>`.
+*   Each of the environment variable changes in `<var-list>` are in the form `<destvar>=<value>`.
+*   `<destvar>` is the name of the environment variable that is to be changed and `<value>` is the new value.
+*   `<value>` may contain references to environment variables in the form `%<srcvar>`.
+*   Each reference to `<srcvar>` should be replaced with the value of `<srcvar>`.
+*   The names of the variables `<destvar>` and `<srcvar>` will contain only letters, numbers, or underscore characters.
+*   For each environment variable change in `<var-list>`, your program will assign `<value>` to `<destvar>` in the current environment so when `<command-name>` is executed, it will inherit the new value of the `<destvar>` variable.
 
 For example if the user enters
 
