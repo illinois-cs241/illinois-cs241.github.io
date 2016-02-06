@@ -11,13 +11,13 @@
 				"title": "System Programming",
 				"summary": "1. Dive into System programming",
 				"resources": "Prelecture: <a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a>. The lecture will assume you've made significant progress on this homework",
-				"color": "#9C27B0"
+				"color": "#A090A0"
 			},
 			{
 				"title": "How to crash in C",
 				"summary": "2. Dive into C programming",
 				"resources": "Prelecture: <a href = 'https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-1%3A-Introduction'>Intro to C Notes</a>. The lecture will assume you've already reviewed and played with this material.",
-				"color": "#9C27B0"
+				"color": "#A090A0"
 			}
 		],
 		"week": "1/18 - 1/24",
@@ -29,19 +29,19 @@
 				"title": "C Crash Course 2",
 				"summary": "3. man,asprintf,free,assert",
 				"resources": "See the <a href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-3%3A-Common-Gotchas' target='_blank'>Wikibook C Gotchas</a>",
-				"color": "#9C27B0"
+				"color": "#A090A0"
 			},
 			{
 				"title": "C Crash Course 3",
 				"summary": "4. getenv, scanf, getline, fork ",
 				"resources": "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-2%3A-Text-Input-And-Output'>Wikibook Input and Output</a>",
-				"color": "#9C27B0"
+				"color": "#A090A0"
 			},
 			{
 				"title": "Fork and wait",
 				"summary": "5. fork and waitpid",
 				"resources": "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-1%3A-Introduction'>Wikibook forking</a>",
-				"color": "#009688"
+				"color": "#90A0A0"
 			}
 		],
 		"week": "1/25 - 1/31",
@@ -53,19 +53,19 @@
 				"title": "Forking Processes",
 				"summary": "6. The fork-exec-wait pattern",
 				"resources": "See the <a href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-2%3A-Fork%2C-Exec%2C-Wait' target='_blank'>Wikibook Fork, Exec, Wait</a>",
-				"color": "#009688"
+				"color": "#90A0A0"
 			},
 			{
 				"title": "Signals for Process Control",
 				"summary": "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT",
 				"resources": "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/Process-Control%2C-Part-1%3A-Wait-macros%2C-using-signals'>Wikibook process control</a>",
-				"color": "#009688"
+				"color": "#90A0A0"
 			},
 			{
 				"title": "Thanks for the heap memory",
 				"summary": "8. How to build a memory allocator. Placement algorithms. Fragmentation.",
 				"resources": "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-1%3A-Heap-Memory-Introduction'>Wikibook heap memory introduction</a>",
-				"color": "#1E88E5"
+				"color": "#A0A090"
 			}
 		],
 		"week": "2/1 - 2/7",
@@ -82,19 +82,19 @@
 					"title": "Memory allocators I" ,
 					"summary": "9. Hone your pointer skills when writing malloc and free.",
 					"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>",
-					"color": "#6644CC"
+					"color": "#A0A090"
 				},
 				{
 					"title": "Memory allocators II ",
 					"summary": "10. Memory allocators part 2.",
 					"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>",
-					"color": "#6644CC"					
+					"color": "#A0A090"					
 				},
 				{
 					"title": "Threads",
 					"summary": "11. Introducing pthreads. stacks. Concurrency programming gotchas.",
 					"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>",
-					"color": "#9C27B0"
+					"color": "#A090A0"
 				}
 			],
 			"week": "2/8 - 2/14",
@@ -251,7 +251,7 @@
 		"schedule": [
 			{
 				"title": "Scheduling-2. epoll",
-				"summary": "28. Scott Fisher. Scheduling simulator. epoll",
+				"summary": "28. Scheduling simulator. epoll",
 				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>.",
 				"color": "#aaaaaa"
 			},
