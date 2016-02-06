@@ -30,7 +30,7 @@ var materialize = function () {
     var headerID = headerIDs[i]
     toc.append("<a href='#" + headerID + "'>" + header + "</a>")
   }
-  content.prepend(toc)
+  $("#toc").prepend(toc)
 
   // Style the sections
   for (var i = 0; i < sections.length; i++) {
