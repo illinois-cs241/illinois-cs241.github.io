@@ -69,7 +69,10 @@
 			}
 		],
 		"week": "2/1 - 2/7",
-		"announcement": "<ul><li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li><li>Lab: <a target='blank' href='./labs.html#/lab2'>Extreme Edge Cases</a> Due</li><li>Lab: <a target='blank' href='./labs.html#/lab3'>Utilities Unleashed</a> Released</li><li> MP: <a target='blank' href='./mps/mp1/'>Pointers Gone Wild</a> Due</li></ul>"
+		"announcement": "<ul><li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
+		<li>Lab: <a target='blank' href='./labs.html#/lab2'>Extreme Edge Cases</a> Due</li><li>Lab: <a target='blank' 
+		href='./labs.html#/lab3'>Utilities Unleashed</a> Released</li><li> MP: 
+		<a target='blank' href='./mps/mp1/'>Pointers Gone Wild</a> Due</li></ul>"
 	}
 	
 	,
@@ -91,11 +94,207 @@
 					"title": "Threads",
 					"summary": "11. Introducing pthreads. stacks. Concurrency programming gotchas.",
 					"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>",
-					"color": "#6644CC"
+					"color": "#9C27B0"
 				}
 			],
 			"week": "2/8 - 2/14",
-			"announcement": "
-			<ul><li>Annoucements will appear here.</li></ul>"
-		}	
+			"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+			}	,
+
+
+
+	{
+		"schedule": [
+			{
+				"title": "Threads and mutex locks",
+				"summary": "12. Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Mutexes and semaphores",
+				"summary": "13. Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-5'>wikibook week 5</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Critical Section Problem",
+				"summary": "14. Mutex and Semaphore examples. How to implement a lock (The critical section problem).",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 5</a>",
+				"color": "#aaaaaa"
+			}
+		],
+		"week": "2/15 - 2/21",
+		"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+	},	
+	{
+		"schedule": [
+			{
+				"title": "Critical Section Problem II",
+				"summary": "15. Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Condition Variables",
+				"summary": "16. Condition Variables. Implementing a semaphore using a Condition Variable.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Reader Writer Problem",
+				"summary": "17. Implementing a barrier. Implementing the R/W Problem using Condition Variables.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>",
+				"color": "#aaaaaa"
+			}
+		],
+		"week": "2/22 - 2/28",
+		"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+	},
+	{
+		"schedule": [
+			{
+				"title": "Producer Consumer. RW II",
+				"summary": "18. Implementing the Producer Consumer using semaphores. Analysis of Reader Writer solutions.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Deadlock",
+				"summary": "19. Introduction to Deadlock. Coffman conditions.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Dining Philosophers",
+				"summary": "20. The Dining Philosophers problem",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-8'>wikibook week 8</a>.",
+				"color": "#aaaaaa"
+			}
+		],
+		"week": "2/29 - 3/6",
+		"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+	},
+	{
+		"schedule": [
+			{
+				"title": "TBA / Review. ",
+				"summary": "Review + Intro to VM",
+				"resources": "",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "TBA",
+				"summary": "TBA",
+				"resources": "",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Page tables",
+				"summary": "21. Virtual memory",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>.",
+				"color": "#aaaaaa"
+			}
+		],
+		"week": "3/7 - 3/13",
+		"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+	},
+	{
+		"schedule": [
+			{
+				"title": "Pipes and Files",
+				"summary": "22. POSIX Pipes and random access files",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Errno. Networking Intro",
+				"summary": "23. Robust error handling. EINTR. Intro to TCP,UDP,IP",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "TCP",
+				"summary": "24. TCP/IP Header. IPv4 exhaustion. A web client",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>",
+				"color": "#aaaaaa"
+			}
+		],
+		"week": "3/14 - 3/18",
+		"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+	},
+	{
+		"schedule": [
+			{
+				"title": "TCP Server",
+				"summary": "25. Passive sockets. The 4 server calls and what they do. Gotchas.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "TCP Server II",
+				"summary": "26. Socket Programming Gotchas. Intro to scheduling",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 11</a>",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Scheduling. TCP Handshake",
+				"summary": "27. Scheduling examples. The SYN ACKSYN ACK Handshake of TCP",
+				"resources": "See <a href='https://gotchasithub.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>",
+				"color": "#aaaaaa"
+			}
+		],
+		"week": "3/28 - 4/3",
+		"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+	},
+	{
+		"schedule": [
+			{
+				"title": "Scheduling-2. epoll",
+				"summary": "28. Scott Fisher. Scheduling simulator. epoll",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Files-1",
+				"summary": "29. ext2/3/4 filesystem. inode",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Files-2",
+				"summary": "30. file meta data",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>.",
+				"color": "#aaaaaa"
+			}
+		],
+		"week": "4/4 - 4/10",
+		"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+	},
+	{
+		"schedule": [
+			{
+				"title": "Files-3",
+				"summary": "31. Dirs and symlinks",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Files-4",
+				"summary": "32. Virtual f/s",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>.",
+				"color": "#aaaaaa"
+			},
+			{
+				"title": "Files-5",
+				"summary": "33. Memory mapped files",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>.",
+				"color": "#aaaaaa"
+			}
+		],
+		"week": "4/11 - 4/17",
+		"announcement": "<ul><li>Announcements will appear here.</li></ul>"
+	}
+	
+				
 ]
