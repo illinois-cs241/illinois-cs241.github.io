@@ -63,7 +63,7 @@
 			},
 			{
 				"title": "Thanks for the heap memory",
-				"summary": "8. How to build a memory allocator. Placement algorithms. Fragmentation. Buddy allocator",
+				"summary": "8. How to build a memory allocator. Placement algorithms. Fragmentation.",
 				"resources": "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-1%3A-Heap-Memory-Introduction'>Wikibook heap memory introduction</a>",
 				"color": "#1E88E5"
 			}
@@ -71,4 +71,30 @@
 		"week": "2/1 - 2/7",
 		"announcement": "<ul><li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li><li>Lab: <a target='blank' href='./labs.html#/lab2'>Extreme Edge Cases</a> Due</li><li>Lab: <a target='blank' href='./labs.html#/lab3'>Utilities Unleashed</a> Released</li><li> MP: <a target='blank' href='./mps/mp1/'>Pointers Gone Wild</a> Due</li></ul>"
 	}
+	
+	,
+	    {
+			"schedule": [
+				{
+					"title": "Memory allocators I" ,
+					"summary": "9. Hone your pointer skills when writing malloc and free.",
+					"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>",
+					"color": "#6644CC"
+				},
+				{
+					"title": "Memory allocators II ",
+					"summary": "10. Memory allocators part 2.",
+					"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>",
+					"color": "#6644CC"					
+				},
+				{
+					"title": "Threads",
+					"summary": "11. Introducing pthreads. stacks. Concurrency programming gotchas.",
+					"color": "#6644CC"
+				}
+			],
+			"week": "2/8 - 2/14",
+			"announcement": "
+			<ul><li>Annoucements will appear here.</li></ul>"
+		}	
 ]
