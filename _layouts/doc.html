@@ -7,7 +7,12 @@
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="row">
-            <nav id="toc" style="position: fixed" class="small-12 medium-12 large-4 columns show-for-xlarge-up"></nav>
+            <nav id="toc" style="position: fixed" class="small-12 medium-12 large-3 columns show-for-xlarge-up">
+              {% if page.dueDates %}
+                <br/>
+                <span><strong>Due Date(s):</strong> {{ page.dueDates }}</span>
+              {% endif %}
+            </nav>
             <div class="small-12 medium-12 large-7 large-centered columns">
               <h1>{{ page.title }}</h1>
               <div id="content">

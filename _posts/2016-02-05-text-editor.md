@@ -2,6 +2,7 @@
 layout: doc
 title: "Text Editor"
 permalink: Text Editor
+dueDates: "02/15 11:59pm"
 ---
 
 ## Backstory
