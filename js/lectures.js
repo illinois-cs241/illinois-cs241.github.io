@@ -53,13 +53,18 @@
     return startKey > currentDateKey
   })
 
-  // Grey out the titles
+  // Grey out the titles and set the hide the announcements
   futureWeeks.map(function(index, week) {
     // This just getting the common ancester div
     var weekDom = getAncestorDom(week)
+    // Grey out the titles
     weekDom
       .find(".mdl-card__title")
       .css("background-color", "#9E9E9E")
+    // Hide the announcements
+    weekDom
+      .find(".announcement")
+      .text("Announcements will appear here ...")
   })
 
   // Make all the text fit
