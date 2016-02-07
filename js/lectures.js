@@ -18,7 +18,6 @@
   // Function that returns that start and end date keys
   var getRangeKeys = function (range) {
     var tokens = range.split(" - ")
-    console.log(tokens)
     var startDateKey = dateToKey(tokens[0])
     var endDateKey = dateToKey(tokens[1])
     return [startDateKey, endDateKey]
@@ -29,26 +28,39 @@
   var currentWeek
   for (var i = 0; i < weeks.length; i++) {
     var keys = getRangeKeys($(weeks[i]).text())
-    console.log(keys)
     var startKey = keys[0]
     var endKey = keys[1]
-    console.log(startKey, endKey)
     if(startKey <= currentDateKey && currentDateKey <= endKey){
       currentWeek = weeks[i]
       break
     }
   }
 
-  // Add an archor
-  $(currentWeek).append("<div id = 'currentWeek'></div")
+  // This will return the dom element that wraps the entire week
+  var getAncestorDom = function (week) {
+    return $(week).parent().parent()
+  }
+  // Add an archor to the ancestor dom
+  $(getAncestorDom(currentWeek)).prepend("<div id = 'currentWeek'></div")
 
   // Jump to the current week
   window.location.hash = 'currentWeek'
 
-  // // Get future weeks
-  // var futureWeeks = $(".week").filter(function(week){
-  //   var keys = getRangeKeys($(week[i]).text())
-  // })
+  // Get future weeks
+  var futureWeeks = $(".week").filter(function(index, week){
+    var keys = getRangeKeys($(week).text())
+    var startKey = keys[0]
+    return startKey > currentDateKey
+  })
+
+  // Grey out the titles
+  futureWeeks.map(function(index, week) {
+    // This just getting the common ancester div
+    var weekDom = getAncestorDom(week)
+    weekDom
+      .find(".mdl-card__title")
+      .css("background-color", "#9E9E9E")
+  })
 
   // Make all the text fit
   $(document).ready(function() {
