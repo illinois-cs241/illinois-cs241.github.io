@@ -81,39 +81,67 @@ Your editor provides two print commands:
 
 ### print a single line
 The user will provide the "p" command along with a line number when they want to
-print out a single line from a file.
+print out a single line from a file. It's also useful to get some context, so we
+will print out the 5 lines above and below this line for them as well. If there
+are not 5 lines above or below the requested line (say the line requested is
+line 2), then print out as many lines as you can, up to 5.
 
-Suppose I have a file called `things_on_my_table.txt` containing the following
-text:
+To print the contents of the file `editor.h` using the editor, the user would
+first open the file with the editor:
+
+{% highlight text %}
+$ ./editor editor.h
+{% endhighlight %}
+
+Then, to print out whatever is on the 30th line of this file, type:
+
+{% highlight bash %}
+p 30
+{% endhighlight %}
+
+Then hit enter.
+
+The editor will now print out line 30 of the file (including five lines above
+and below for context). (this is done by calling `handle_display_command()` in
+`editor.c` with the string "p 3" as `command`).
+
+{% highlight text %}
+$ ./editor editor.h
+p 30
+25	 * based on the command passed in.
+26	*/
+27	void handle_append_command(Document *document, const char *command);
+28
+29	/**
+30	 * Handles deleting from the document
+31	 * based on the command passed in.
+32	*/
+33	void handle_delete_command(Document *document, const char *command);
+34
+35	/**
+{% endhighlight %}
+
+Suppose we had a file `things_on_my_table.txt` which contained the following:
 {% highlight text %}
 mug
 salt
 T.V. remote
 {% endhighlight %}
 
-To print the contents of the file `things_on_my_table.txt` using the editor, the
-user would first open the file with the editor:
+(since I am very clean there are only three things on my table)
+
+If we try to print out line 3 of this file, the printout will include up to 5
+lines above and below the line specified:
 
 {% highlight bash %}
 $ ./editor things_on_my_table.txt
-{% endhighlight %}
-
-Then, to print out whatever is on the third line of this file, type:
-
-{% highlight bash %}
-p 3
-{% endhighlight %}
-
-Then hit enter.
-
-The editor will now print out line three of the file. (this is done by calling
-`handle_display_command()` in `editor.c` with the string "p 3" as `command`).
-
-{% highlight bash %}
+p 2
+1    mug
+2    salt
 3    T.V. remote
 {% endhighlight %}
 
-Notice that the "p" command includes line numbers in it's print out. Make sure
+**Important:** the "p" command includes line numbers in it's print out. Make sure
 to use `format.{c,h}` to print this line out. Remember that lines are 1 indexed,
 but make sure to take a look at `format.c`.
 
@@ -131,7 +159,6 @@ p
 3    T.V. remote
 {% endhighlight %}
 
-(since I am very clean there are only three things on my table)
 
 Again, make sure to use `format.{c,h}` to print these lines out.
 
