@@ -28,27 +28,27 @@ If you do feel that you need a refresher on linked lists or other prerequisite c
 
 There are five functions in total you must be writing.
 
-* mini_malloc
+### mini_malloc
 
 Here you are to write a wrapper function for malloc that will not only allocating the required space but also allocate and set up metadata to track each requested block allocated by the standard malloc. A call to insert_meta_data should be made to insert into the linked list of allocated blocks.  NOTE: you do not have to write your own implementation of malloc using sbrk or related system calls. You will call the standard malloc, simply allocating more space than normally due to the metadata. Return null if malloc fails, otherwise return the pointer to the allocated block of memory NOT the metadata. 
 
 Take a look at the #define statements in mini_valgrind.h to understand how this is being used. Note the two macros \_\_FILE\_\_ and \_\_LINE\_\_. 
 
-* insert_meta_data
+### insert_meta_data
 
 Here you are passed a pointer to your metadata, the size of the block without metadata, the filename, and the line number from which the allocation was made in the .c file being run. You should ensure your metadata is set up here, and insert into the linked list. You should be adding new nodes to the head of your linked list, as defined in the mini_valgrind.h file. Ensure that you update the total_usage here and deal with insertion into a linked list just as you have in 125/225. 
 
-* mini_free
+### mini_free
 
 Here you are passed a pointer to a block of previously allocated memory. To implement this function, use remove_meta_data properly, and also consider what happens when you free a NULL pointer.
 
 Take a look at the #define statements in mini_valgrind.h to understand how this is being used.
 
-* remove_meta_data
+### remove_meta_data
 
 Remove your metadata passed in as a parameter from the linked list here. Ensure that you update total_free here and deal with removal from a linked list just as you have in 125/225, keeping in mind the different cases that might come about (such as removal of the head node, etc.). You should free the metadata and requested block.
 
-* destroy
+### destroy
 
 Here you must delete all nodes of the linked list that have been created. Ensure that you DO NOT add to total_free here. This is called when the program has finished executing and so any blocks that have not been deallocated should be counted as memory leaks.
 
