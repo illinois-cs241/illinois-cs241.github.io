@@ -91,7 +91,7 @@ Nota Bene:
 *   We have provided functions in format.h that we expect you to use wherever appropriate.
 
 
-###Useful Resources
+### Useful Resources
 
 *   [Program arguments argc argv](http://cs-education.github.io/sys/#chapter/2/section/0/activity/0)
 *   [Fork/Exec/Wait](https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-2%3A-Fork%2C-Exec%2C-Wait)
