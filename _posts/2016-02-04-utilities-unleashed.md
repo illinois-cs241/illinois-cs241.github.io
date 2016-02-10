@@ -84,7 +84,7 @@ Nota Bene:
 
 *   You MAY NOT call on the existing time program.
 *   You must use fork, exec, wait (no other solutions will be accepted).
-*   You need to account for programs that do not terminate successfully.
+*   You need to account for programs that do not terminate successfully (the program's exit code is non-zero).
 *   We will only run your time with one program.
 *   The commands we will run can take any number of arguments.
 *   Do your time computations with double-precision floating pointer numbers (double) rather that single-precision (float).
