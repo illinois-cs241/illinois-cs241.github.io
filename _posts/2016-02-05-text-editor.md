@@ -233,7 +233,7 @@ p
 1   mug
 2   salt
 3   I like cats!
-a 3 I also like dogs$But I prefer cats.
+a 3  I also like dogs$But I prefer cats.
 p
 1   mug
 2   salt
