@@ -6,7 +6,7 @@ permalink: Mini Valgrind
 
 ## Demo
 
-Your section leaders will demo a implementation of a working Mini Valgrind. Please do also make an effort to read over the code that is provided for you.
+Your section leaders will attempt to demo a implementation of a working Mini Valgrind. Please do also make an effort to read over the code that is provided for you.
 
 ## Learning Objectives
 
