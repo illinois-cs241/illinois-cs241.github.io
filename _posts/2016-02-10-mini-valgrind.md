@@ -46,7 +46,7 @@ Take a look at the `#define` statements in `mini_valgrind.h` to understand how t
 
 ### remove_meta_data
 
-Remove your metadata passed in as a parameter from the linked list here. Ensure that you update total_free or bad_frees (depending on whether the block pointed to was previously allocated, not already freed, etc.) here and deal with removal from a linked list just as you have in 125/225, keeping in mind the different cases that might come about (such as removal of the head node, etc.). You should free the metadata and requested block.
+Remove your metadata passed in as a parameter from the linked list here. Ensure that you update `total_free` or `bad_frees` (depending on whether the block pointed to was previously allocated, not already freed, etc.) here and deal with removal from a linked list just as you have in 125/225, keeping in mind the different cases that might come about (such as removal of the head node, etc.). You should free the metadata and requested block.
 
 ### destroy
 
