@@ -336,8 +336,7 @@ that makes sure everyone else knows that too. Create a file containing the
 following:
 
 {% highlight bash %}
-w
-1 I LOVE 241
+w 1 I LOVE 241
 w 2 241 is my FAVORITE class at UIUC
 w 3 I$LOVE$CS$241
 s
