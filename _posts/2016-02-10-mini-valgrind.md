@@ -6,7 +6,7 @@ permalink: Mini Valgrind
 
 ## Demo
 
-Your section leaders will demo a implementation of a working Mini Valgrind.
+Your section leaders will demo a implementation of a working Mini Valgrind. Please do also make an effort to read over the code that is provided for you.
 
 ## Learning Objectives
 
@@ -36,7 +36,7 @@ Take a look at the `#define` statements in `mini_valgrind.h` to understand how t
 
 ### insert_meta_data
 
-Here you are passed a pointer to your metadata, the size of the block without metadata, the filename, and the line number from which the allocation was made in the .c file being run. You should ensure your metadata is set up here, and insert into the linked list. You should be adding new nodes to the head of your linked list, as defined in the `mini_valgrind.h` file. Ensure that you update the `total_usage` here and deal with insertion into a linked list just as you have in 125/225.
+Here you are passed a pointer to your metadata, the size of the block without metadata, the filename, and the line number from which the allocation was made in the .c file being run. You should ensure your metadata is set up here, and insert into the linked list at the head **in constant time**. You should be adding new nodes to the head of your linked list defined in the `mini_valgrind.h` file. Ensure that you update the `total_usage` here and deal with insertion into a linked list just as you have in 125/225.
 
 ### mini_free
 
