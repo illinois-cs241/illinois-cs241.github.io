@@ -54,7 +54,7 @@ Here you must delete all nodes of the linked list that have been created. Ensure
 
 ## Reference Executables
 
-You will be given a reference executable as usual for this lab. As usual, please direct as many "What should my code do in case X" questions as you can to the reference implementation first, but do feel free to ask us after checking.
+You will be given a reference executable as usual for this lab. As usual, please direct as many "What should my code do in case X" questions as you can to the reference implementation first, but do feel free to ask us after checking. NOTE: You must run make each time you would like to test with the reference when you change `test.c`.
 
 ## Testing
 If you would like to check your program, you may write tests within `test.c`. We recommend checking your program on a variety of inputs.
