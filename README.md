@@ -60,6 +60,7 @@ After you are done writing content you need to add front matter to the top of th
 layout: doc
 title: "Know Your Tools"
 permalink: Know Your Tools
+dueDates: "02/15 11:59pm"
 ---
 ```
 
@@ -68,6 +69,8 @@ permalink: Know Your Tools
 `title: "Know Your Tools"` will tell jekyll that the title is "Know Your Tools" and add that in an `h1` tag.
 
 `permalink: Know Your Tools` will tell jekyll that someone should be able to access this page with the url `http://illinois-cs.github.io/Know%20Your%20Tools`. The `%20`s are an artifact of how urls escape space characters. Don't worry about it not being typeable, since the listings in `mps.html` and `labs.html` already have links to them.
+
+`dueDates: "02/15 11:59pm"` will add due dates to the page.
 
 If you do not want students to be able to access this page (say you are beta testing), then just don't add the permalink or have it be something like `Know Your Tools Beta`. By default these pages can be accessed at `http://illinois-cs.github.io/<YEAR>/<MONTH>/<DATE>/<title>.html`
 
