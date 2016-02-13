@@ -15,6 +15,12 @@
             </nav>
             <div class="small-12 medium-12 large-7 large-centered columns">
               <h1>{{ page.title }}</h1>
+              <nav id="tocMobile" class="small-12 medium-12 large-7 columns hide-for-xlarge-up">
+                {% if page.dueDates %}
+                  <br/>
+                  <span><strong>Due Date(s):</strong> {{ page.dueDates }}</span>
+                {% endif %}
+              </nav>
               <div id="content">
                 {{ content }}
               </div>

@@ -25,7 +25,8 @@
     toc.append(link)
   }
 
-  $("#toc").append(toc)
+  toc.appendTo("#toc, #tocMobile")
+
 
   // Determines if an element is atleast partially in the viewport
   function isInView(elem) {
