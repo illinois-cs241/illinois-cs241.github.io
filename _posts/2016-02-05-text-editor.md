@@ -406,7 +406,7 @@ svn ci -m "mp2 submission"
 
 Your repository directory can be viewed from a web browser from the
 following URL:
-[https://subversion.ews.illinois.edu/svn/sp16-cs241/NETID/vector](https://subversion.ews.illinois.edu/svn/sp16-cs241/NETID/vector)
+[https://subversion.ews.illinois.edu/svn/sp16-cs241/NETID/vector](https://subversion.ews.illinois.edu/svn/sp16-cs241/NETID/text_editor)
 where NETID is your University NetID. It is important to check that the
 files you expect to be graded are present and up to date in your svn copy.
 
