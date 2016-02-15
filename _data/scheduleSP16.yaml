@@ -102,8 +102,9 @@
       <ul>
         <li>Lab: <a target='blank' href='./Utilities%20Unleashed'>Utilities Unleashed</a> Due</li>
         <li>Lab: <a target='blank' href='./Mini%20Valgrind'>Mini Valgrind</a> Released</li>
-        <li> MP: <a target='blank' href='./Vector'>Vector</a> Due</li>
+        <li>MP: <a target='blank' href='./Vector'>Vector</a> Due</li>
         <li>Lab: <a target='blank' href='./Text%20Editor'>Text Editor</a> Released</li>
+        <li>MP: <a target='blank' href='./Shell'>Shell</a> Released</li>
       </ul>
   -
     schedule:
@@ -123,7 +124,14 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 5</a>"
         color: "#2196F3"
     week: "2/15 - 2/21"
-    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    announcement: >
+      <ul>
+        <li>Quiz 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
+        <li>Lab: <a target='blank' href='./Mini%20Valgrind'>Mini Valgrind</a> Due</li>
+        <li>Lab: <a target='blank' href='./Terrible%20Tangled%20Twisted%20Threads'>Terrible Tangled Twisted Threads</a> Released</li>
+        <li>MP: <a target='blank' href='./Text%20Editor'>Text Editor</a> Due</li>
+        <li>MP: <a target='blank' href='./Malloc'>Malloc</a> Released</li>
+      </ul>
   -
     schedule:
       -
