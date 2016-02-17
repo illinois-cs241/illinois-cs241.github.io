@@ -87,7 +87,7 @@ You should be getting data to be returned from your queue. Ensure that you have 
 
 NOTE: This will only ever be called by a single thread!
 
-Here you recieve a pointer to a queue_t struct. You do not have to free the queue_t struct itself, but you must cleanup the items for which an allocation was made within the struct here. Make sure that every remaining node is freed. To reiterate, do not free the queue_t struct itself, just anything that required an allocation in queue_init.
+Here you recieve a pointer to a queue_t struct. You do not have to free the queue_t struct itself, but you must cleanup the items for which an allocation was made within the struct here. Be sure you have freed all memory you allocated. To reiterate, do not free the queue_t struct itself, just anything that required an allocation in queue_init.
 
 ## Testing
 
