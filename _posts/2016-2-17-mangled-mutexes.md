@@ -15,7 +15,7 @@ Before beginning this lab, make sure you have at least read up to [Synchronizati
 
 Given two integers, a and b, you must compute the number of primes between these two integers inclusively (in the range [a, b]). 
 
-One approach to this problem is lnown the **trial division**. You can read more about it in this [useful tutorial](https://www.khanacademy.org/computing/computer-science/cryptography/comp-number-theory/a/trial-division).
+One approach to this problem is known the **trial division**. You can read more about it in this [useful tutorial](https://www.khanacademy.org/computing/computer-science/cryptography/comp-number-theory/a/trial-division).
 
 ## count_primes.c
 
