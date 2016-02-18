@@ -1,47 +1,37 @@
-[
-    {
-        "name" : "Pointers Gone Wild",
-        "releaseDate" : "Week 2",
-        "dueDate" : "Week 3"
-    },
-    {
-        "name" : "Vector",
-        "releaseDate" : "Week 3",
-        "dueDate" : "Week 4"
-    },
-    {
-        "name" : "Text Editor",
-        "releaseDate" : "Week 4",
-        "dueDate" : "Week 5"
-    },
-    {
-        "name" : "Shell",
-        "releaseDate" : "Week 5",
-        "dueDate" : "Week 6"
-    },
-    {
-        "name" : "Malloc",
-        "releaseDate" : "Week 6",
-        "dueDate" : "Week 7 & 8"
-    },
-    {
-        "name" : "Password Cracker",
-        "releaseDate" : "Week 8",
-        "dueDate" : "Week 9 & 10"
-    },
-    {
-        "name" : "Parallel Make",
-        "releaseDate" : "Week 10",
-        "dueDate" : "Week 11 & 12"
-    },
-    {
-        "name" : "Map Reduce",
-        "releaseDate" : "Week 12",
-        "dueDate" : "Week 13 & 14"
-    },
-    {
-        "name" : "Wearables",
-        "releaseDate" : "Week 14",
-        "dueDate" : "Week 15"
-    }
-]
+---
+  -
+    name: "Pointers Gone Wild"
+    releaseDate: "Week 2"
+    dueDate: "Week 3"
+  -
+    name: "Vector"
+    releaseDate: "Week 3"
+    dueDate: "Week 4"
+  -
+    name: "Text Editor"
+    releaseDate: "Week 4"
+    dueDate: "Week 5"
+  -
+    name: "Shell"
+    releaseDate: "Week 5"
+    dueDate: "Week 6"
+  -
+    name: "Malloc"
+    releaseDate: "Week 6"
+    dueDate: "Week 7 & 8"
+  -
+    name: "Password Cracker"
+    releaseDate: "Week 8"
+    dueDate: "Week 9 & 10"
+  -
+    name: "Parallel Make"
+    releaseDate: "Week 10"
+    dueDate: "Week 11 & 12"
+  -
+    name: "Map Reduce"
+    releaseDate: "Week 12"
+    dueDate: "Week 13 & 14"
+  -
+    name: "Wearables"
+    releaseDate: "Week 14"
+    dueDate: "Week 15"
