@@ -39,12 +39,16 @@ count_primes should be used as follows:
 $ ./count_primes <start> <end> <number of threads>
 {% endhighlight %}
 
+Here the start is the first number in the interval you would like to check over, end is the last number. The number of threads is how many threads you should be creating via pthread_create.
+
 So for example, if you wanted to compute the number of primes in the range [1,541] using 4 threads, this would be the expected output.
 
 {% highlight bash %}
 $ ./count_primes 1 541 4
 There are 100 primes between 1 and 541
 {% endhighlight %}
+
+**NOTE: Using 4 threads here means that you are to create 4 threads, so there will be 5 threads in your program when you include the main thread.**
 
 There are a couple considerations you may want to make when writing your multithreaded code.
 
