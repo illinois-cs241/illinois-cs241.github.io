@@ -34,8 +34,11 @@ There are 100 primes between 1 and 541
 ```
 
 There are a couple considerations you may want to make when writing your multithreaded code.
+
 *   How might you divide up the work for your threads?
+
 *   How might you ensure all the threads get a relatively even amount of work?
+
 *   How will you prevent data races (a race condition caused by concurrent reads and writes of a shared memory location)
 
 As usual, your code should have no memory leaks.
