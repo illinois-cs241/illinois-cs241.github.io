@@ -1,7 +1,7 @@
 ---
 layout: doc
-title: "TTT Threads"
-permalink: TTT Threads
+title: "Terrible Threads"
+permalink: Terrible Threads
 ---
 
 ## Learning Objectives
