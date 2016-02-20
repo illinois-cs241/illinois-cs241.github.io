@@ -1,24 +1,24 @@
 ---
 layout: doc
 title: "Terrible Threads"
-permalink: Terrible Threads
+permalink: terrible_threads
 ---
 
 ## Learning Objectives
 
-*   Synchronization primitives 
+*   Synchronization primitives
 *   Common patterns in multithreaded programs
 *	Thread-safe datastructures and their design
 
 ## Overview
 
-There are three main componenents to this lab, two of which are graded. These are Rendezvous (not graded), Semamore, and Thread-safe Queue. Each of these represent very common synchronization problems (or slight twists on them) that will do you well to become familiar with. 
+There are three main componenents to this lab, two of which are graded. These are Rendezvous (not graded), Semamore, and Thread-safe Queue. Each of these represent very common synchronization problems (or slight twists on them) that will do you well to become familiar with.
 
 Good luck!
 
 ## Rendezvous (UNGRADED)
 
-This is a problem for you to think about. We have provided a worked solution to this problem but PLEASE try to solve this problem before looking at the solution! 
+This is a problem for you to think about. We have provided a worked solution to this problem but PLEASE try to solve this problem before looking at the solution!
 
 Problem description:
 
@@ -41,7 +41,7 @@ The value represents the exact same concept as a normal semaphore. The max_val r
 
 ### semm_wait
 
-Here you are passed a pointer to a Semamore struct. This function should behave like a normal semaphore. If the value is at 0 in the Semamore struct, you should block. If the value is currently not at 0, then we decrement it. 
+Here you are passed a pointer to a Semamore struct. This function should behave like a normal semaphore. If the value is at 0 in the Semamore struct, you should block. If the value is currently not at 0, then we decrement it.
 
 ### semm_post
 

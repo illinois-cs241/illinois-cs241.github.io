@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Pointers Gone Wild"
-permalink: Pointers Gone Wild
+permalink: pointers_gone_wild
 ---
 
 ## Introduction

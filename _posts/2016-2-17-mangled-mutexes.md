@@ -2,7 +2,7 @@
 layout: doc
 title: "Mangled Mutexes"
 dueDates: "3/02 11:59pm"
-permalink: Mangled Mutexes
+permalink: mangled_mutexes
 ---
 
 ## Learning objectives

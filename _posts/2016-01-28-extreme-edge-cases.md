@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Extreme Edge Cases"
-permalink: Extreme Edge Cases
+permalink: extreme_edge_cases
 ---
 
 ## Backstory

@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Text Editor"
-permalink: Text Editor
+permalink: text_editor
 dueDates: "02/15 11:59pm"
 ---
 

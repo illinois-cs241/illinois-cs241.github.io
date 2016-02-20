@@ -3,35 +3,44 @@
     name: "Pointers Gone Wild"
     releaseDate: "Week 2"
     dueDate: "Week 3"
+    url: "pointers_gone_wild"
   -
     name: "Vector"
     releaseDate: "Week 3"
     dueDate: "Week 4"
+    url: "vector"
   -
     name: "Text Editor"
     releaseDate: "Week 4"
     dueDate: "Week 5"
+    url: "text_editor"
   -
     name: "Shell"
     releaseDate: "Week 5"
     dueDate: "Week 6"
+    url: "shell"
   -
     name: "Malloc"
     releaseDate: "Week 6"
     dueDate: "Week 7 & 8"
+    url: "malloc"
   -
     name: "Password Cracker"
     releaseDate: "Week 8"
     dueDate: "Week 9 & 10"
+    url: "password_cracker"
   -
     name: "Parallel Make"
     releaseDate: "Week 10"
     dueDate: "Week 11 & 12"
+    url: "parallel_make"
   -
-    name: "Map Reduce"
+    name: "Mapreduce"
     releaseDate: "Week 12"
     dueDate: "Week 13 & 14"
+    url: "mapreduce"
   -
     name: "Wearables"
     releaseDate: "Week 14"
     dueDate: "Week 15"
+    url: "wearables"

@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Know Your Tools"
-permalink: Know Your Tools
+permalink: know_your_tools
 ---
 
 ## Introduction
