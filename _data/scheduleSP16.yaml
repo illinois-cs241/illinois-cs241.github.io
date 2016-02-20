@@ -27,8 +27,8 @@
             <li>Paper is preferred but a web page e.g. from your svn repository, is fine too</li>
           </ul>
         </li>
-        <li>Lab: <a target='blank' href='./Know%20Your%20Tools'>Know Your Tools</a> Released</li>
-        <li> MP: <a target='blank' href='./Pointers%20Gone%20Wild'>Pointers Gone Wild</a> Released</li>
+        <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Released</li>
+        <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Released</li>
       </ul>
   -
     schedule:
@@ -50,9 +50,9 @@
     week: "1/25 - 1/31"
     announcement: >
       <ul>
-        <li>Lab: <a target='blank' href='./Know%20Your%20Tools'>Know Your Tools</a> Due</li>
-        <li>Lab: <a target='blank' href='./Extreme%20Edge%20Cases'>Extreme Edge Cases</a> Released</li>
-        <li> MP: <a target='blank' href='./Pointers%20Gone%20Wild'>Pointers Gone Wild</a> Released</li>
+        <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Due</li>
+        <li>Lab: <a target='blank' href='./extreme_edge_cases'>Extreme Edge Cases</a> Released</li>
+        <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Released</li>
       </ul>
   -
     schedule:
@@ -75,10 +75,10 @@
     announcement: >
       <ul>
         <li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
-        <li>Lab: <a target='blank' href='./Extreme%20Edge%20Cases'>Extreme Edge Cases</a> Due</li>
-        <li>Lab: <a target='blank' href='./Utilities%20Unleashed'>Utilities Unleashed</a> Released</li>
-        <li> MP: <a target='blank' href='./Pointers%20Gone%20Wild'>Pointers Gone Wild</a> Due</li>
-        <li> MP: <a target='blank' href='./Vector'>Vector</a> Released</li>
+        <li>Lab: <a target='blank' href='./extreme_edge_cases'>Extreme Edge Cases</a> Due</li>
+        <li>Lab: <a target='blank' href='./utilities_unleashed'>Utilities Unleashed</a> Released</li>
+        <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Due</li>
+        <li> MP: <a target='blank' href='./vector'>Vector</a> Released</li>
       </ul>
   -
     schedule:
@@ -127,10 +127,10 @@
     announcement: >
       <ul>
         <li>Quiz 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
-        <li>Lab: <a target='blank' href='./Mini%20Valgrind'>Mini Valgrind</a> Due</li>
-        <li>Lab: <a target='blank' href='./Terrible%20Tangled%20Twisted%20Threads'>Terrible Tangled Twisted Threads</a> Released</li>
-        <li>MP: <a target='blank' href='./Text%20Editor'>Text Editor</a> Due</li>
-        <li>MP: <a target='blank' href='./Malloc'>Malloc</a> Released</li>
+        <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
+        <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
+        <li>MP: <a target='blank' href='./text_editor>Text Editor</a> Due</li>
+        <li>MP: <a target='blank' href='./malloc'>Malloc</a> Released</li>
       </ul>
   -
     schedule:
