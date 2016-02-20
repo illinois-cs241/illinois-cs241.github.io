@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Utilities Unleashed"
-permalink: Utilities Unleashed
+permalink: utilities_unleashed
 ---
 
 ## Demo

@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Mini Valgrind"
-permalink: Mini Valgrind
+permalink: mini_valgrind
 ---
 
 ## Demo
