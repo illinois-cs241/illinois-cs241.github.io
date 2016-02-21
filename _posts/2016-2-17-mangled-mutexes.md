@@ -45,7 +45,7 @@ So for example, if you wanted to compute the number of primes in the range [1,54
 
 {% highlight bash %}
 $ ./count_primes 1 541 4
-There are 100 primes between 1 and 541
+There are 100 primes between 1 and 541 inclusive
 {% endhighlight %}
 
 **NOTE: Using 4 threads here means that you are to create 4 threads, so there will be 5 threads in your program when you include the main thread.**
