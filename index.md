@@ -93,6 +93,11 @@ The 3 hour handwritten final exam is comprehensive and will test all CS241 topic
 
 Grading issues should be raised with your TA e.g. during section or by email. Missing scores need to be reported on or before the next section.
 
+## Absences
+If your absence is unplanned—if you have a sudden illness or have a sudden death in the family—we will deal with your situation on a case-by-case basis with the course admin (cs241admin@illinois.edu).
+
+For illness-related excuses, you will need a doctor's note of some kind verifying your illness. NO illness-related excuses will be accepted without a dated [Emergency Dean's](http://www.odos.uiuc.edu/contact/) note stating that you contacted the Emergency Dean.
+
 ## How to succeed
 
 Is this course hard!? Yes but you are bright and you're taking computer science at UIUC *  just schedule the time to do it right. The two big changes from CS225: One your code is now much smaller than the complexity of the system around it. Secondly, no we will not debug your code for you.
