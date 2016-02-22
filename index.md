@@ -93,6 +93,29 @@ The 3 hour handwritten final exam is comprehensive and will test all CS241 topic
 
 Grading issues should be raised with your TA e.g. during section or by email. Missing scores need to be reported on or before the next section.
 
+## Exams
+All exams are in the CBTF and require signing up here: https://edu.cs.illinois.edu/testcenter
+
+|  Week  | Exam             | Start | End |
+|--------|------------------|-------|-----|
+| Week 4 | Quiz 1           | 2/11  | 2/14|
+| Week 5 | Quiz 2           | 2/18  | 2/21|
+| Week 6 | Practice Midterm | 2/25  | 2/28|
+| Week 7 | Midterm 1        | 3/03  | 3/06|
+| Week 8 | Quiz 3           | 3/10  | 3/13|
+| Week 11| Quiz 4           | 3/31  | 4/03|
+| Week 13| Midterm 2        | 4/14  | 4/17|
+| Week 14| Quiz 5           | 4/21  | 4/24|
+
+### Practice Midterm Explanation
+The practice midterm is ungraded (worth 0% of your final grade).
+Unlike the real midterm there are no unit-tests provided.
+This exam will let you practice using `man` from the command line (ex. `man 2 open` will open the documentation on the system call `open`).
+Note that the C library calls are in section 3.
+This exam will also let you practice using the provided text editors: vim, nano, gedit, etc.
+The practice exam is not required, but we highly encourage you to take it.
+You will get to practice your CS 241 skills and exam logistics and therefore more likely to succeed on the real midterm. 
+
 ## Absences
 If your absence is unplanned—if you have a sudden illness or have a sudden death in the family—we will deal with your situation on a case-by-case basis with the course admin (cs241admin@illinois.edu).
 
