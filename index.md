@@ -94,7 +94,7 @@ The 3 hour handwritten final exam is comprehensive and will test all CS241 topic
 Grading issues should be raised with your TA e.g. during section or by email. Missing scores need to be reported on or before the next section.
 
 ## Exams
-All exams are in the CBTF and require signing up here: https://edu.cs.illinois.edu/testcenter
+All exams are in the CBTF and require signing up here: <https://edu.cs.illinois.edu/testcenter>
 
 |  Week  | Exam             | Start | End |
 |--------|------------------|-------|-----|
@@ -144,6 +144,6 @@ CS241 is considered a critical step in your ability to create useful programs fo
 
 <span style="color:red">EVERY ASSIGNMENT IS A SOLO ASSIGNMENT IN THIS CLASS!</span>. This means you are not allowed to split the work with a partner unlike other 2xx classes. You are however allowed to discuss the assignments at a very high level.
 
-Additionally, you may not publish your solutions or leave them in 'plain view' thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicy accesible, then you will receive a letter grade reduction for each assignment. For example, if we find your code on GitHub for one MP then you will receive a letter grade reduction. 2 letter grades for 2 assignments and so on. If you are confused on what it means to be 'publicly accessible', then do not put your code anywhere besides https://subversion.ews.illinois.edu and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
+Additionally, you may not publish your solutions or leave them in 'plain view' thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicy accesible, then you will receive a letter grade reduction for each assignment. For example, if we find your code on GitHub for one MP then you will receive a letter grade reduction. 2 letter grades for 2 assignments and so on. If you are confused on what it means to be 'publicly accessible', then do not put your code anywhere besides <https://subversion.ews.illinois.edu> and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
 
 We want you to get the most out your education and cheating not only affects your peers but also you.
