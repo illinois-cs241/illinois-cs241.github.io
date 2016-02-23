@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Mangled Mutexes"
-dueDates: "3/02 11:59pm"
+dueDates: "2/24 11:59pm"
 permalink: mangled_mutexes
 ---
 
