@@ -175,7 +175,13 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-8'>wikibook week 8</a>."
         color: "#00BCD4"
     week: "2/29 - 3/6"
-    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    announcement: >
+      <ul>
+        <li>Midterm 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
+        <li>Lab: <a target='blank' href='./terrible_threads'>Terrible Threads</a> Due</li>
+        <li>Lab: <a target='blank' href='./two_to_tango'>Two To Tango</a> Released</li>
+        <li>MP: <a target='blank' href='./malloc>Malloc Part 2</a> Due</li>
+      </ul>
   -
     schedule:
       -
