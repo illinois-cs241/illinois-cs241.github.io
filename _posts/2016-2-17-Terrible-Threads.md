@@ -1,6 +1,7 @@
 ---
 layout: doc
 title: "Terrible Threads"
+dueDates: "3/02 11:59pm"
 permalink: terrible_threads
 ---
 
@@ -22,7 +23,7 @@ This is a problem for you to think about. We have provided a worked solution to 
 
 Problem description:
 
-Given two threads, a and b, and the fact that both have to run two tasks (a1, a2, b1, b2), how do you get both a1 and b1 to run before either a2 and b2? In rendezvous.c, you need to modify the two functions using semaphores so that both quotes A and B are modified before being printed.
+Given two threads, a and b, and the fact that both have to run two tasks (a1, a2, b1, b2), how do you get both a1 and b1 to run before either a2 and b2? In rendezvous.c, you need to modify the two functions (modifyB_printA & modifyA_printB) using semaphores so that both quotes A and B are modified before being printed.
 
 
 ## semamore.c
@@ -54,7 +55,7 @@ Here you are passed a Semamore struct in which you want to clean up the data. Yo
 
 ## queue.c
 
-Your task is to build a thread safe queue, that also may or may not be bounded, by implementing the functions in queue.c. The maxSize of the queue can be set to either a positive number or a non-positive number. If positive, your queue will block if the user tries to push when the queue is full. If not positive, your queue should never block upon a push. Obviously, if your queue is empty then you should block on a pull. You should make use of the node struct to store and retrieve information. In the end, your queue implimentation should be able to handly concurrent calls from multiple threads. queue_init and queue_destroy will not be called by multiple threads.
+Your task is to build a thread safe queue, that also may or may not be bounded, by implementing the functions in queue.c. The maxSize of the queue can be set to either a positive number or a non-positive number. If positive, your queue will block if the user tries to push when the queue is full. If not positive, your queue should never block upon a push (the queue does not have a max size). Obviously, if your queue is empty then you should block on a pull. You should make use of the node struct to store and retrieve information. In the end, your queue implementation should be able to handle concurrent calls from multiple threads. queue_init and queue_destroy will not be called by multiple threads.
 
 The queue is completely independent of the data that the user feeds it. The queue should not attempt to free this data, instead leaving that to the user of the queue.
 
