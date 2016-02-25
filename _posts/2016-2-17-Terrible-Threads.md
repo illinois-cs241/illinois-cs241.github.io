@@ -55,6 +55,8 @@ Here you are passed a Semamore struct in which you want to clean up the data. Yo
 
 ## queue.c
 
+**NOTE: Do not use semaphores or your semamore here.**
+
 Your task is to build a thread safe queue, that also may or may not be bounded, by implementing the functions in queue.c. The maxSize of the queue can be set to either a positive number or a non-positive number. If positive, your queue will block if the user tries to push when the queue is full. If not positive, your queue should never block upon a push (the queue does not have a max size). Obviously, if your queue is empty then you should block on a pull. You should make use of the node struct to store and retrieve information. In the end, your queue implementation should be able to handle concurrent calls from multiple threads. queue_init and queue_destroy will not be called by multiple threads.
 
 The queue is completely independent of the data that the user feeds it. The queue should not attempt to free this data, instead leaving that to the user of the queue.
