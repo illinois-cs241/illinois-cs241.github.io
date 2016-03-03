@@ -248,7 +248,7 @@ reference to get full credit**, we will choose goals the vast majority of the cl
 
 ## Good luck!
 
-####References for those who missed them in the docs
+#### References for those who missed them in the docs
 
 - Important: [Wiki page](https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-6%3A-Implementing-a-barrier)
 - Less Important: [Poisson Equation Explanation](./images/poisson.pdf)
