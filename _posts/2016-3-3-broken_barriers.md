@@ -1,11 +1,11 @@
 ---
 layout: doc
-title: "Poisson"
-permalink: poisson
+title: "Broken Barriers"
+permalink: broken_barriers
 dueDates: "3/9 11:59pm"
 ---
 
-# Poisson Equation Solver
+# Broken Barriers
 
 ## Learning Objectives
 
@@ -20,7 +20,7 @@ Using this barrier we ask that you parallelize a provided serial implementation
 of a Poisson equation solver. Here's some interesting, but unnecessary to complete this
 assignment, background: 
 
-- [Poisson Equation Explanation](/images/poisson.pdf)
+- [Poisson Equation Explanation](./images/poisson.pdf)
 
 ## Barrier
 
@@ -253,4 +253,4 @@ reference to get full credit**, we will choose goals the vast majority of the cl
 ####References for those who missed them in the docs
 
 - Important: [Wiki page](https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-6%3A-Implementing-a-barrier)
-- Less Important: [Poisson Equation Explanation](/images/poisson.pdf)
+- Less Important: [Poisson Equation Explanation](./images/poisson.pdf)
