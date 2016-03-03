@@ -5,8 +5,6 @@ permalink: broken_barriers
 dueDates: "3/9 11:59pm"
 ---
 
-# Broken Barriers
-
 ## Learning Objectives
 
 - Deeper understanding of the barrier as a synchronization structure.
