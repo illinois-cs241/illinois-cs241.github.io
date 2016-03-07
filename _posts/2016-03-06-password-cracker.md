@@ -240,14 +240,13 @@ We've provided functions `getSubrange()` and `setStringPosition()` to help you w
 With all the threads working on the same task, you may want to restructure your thread synchronization a little.
 Rather than a queue, you may wish to use a barrier.
 
-{% highlight text %}
-                Startup     Task 0..............................   Task 1..............................
+<pre class="big-code-block" style="font-size:.7em"><code class="code-block" style="white-space: pre !important">                Startup     Task 0..............................   Task 1..............................
 
-main thread:    read task | idle      | print results, read next | idle      | print results, read next
-worker threads: idle      | computing | idle                     | computing | idle
-                          ↑
+main thread:    <font color=green>read task</font> | <font color=red>idle</font>      | <font color=green>print results, read next</font> | <font color=red>idle</font>      | <font color=green>print results, read next</font>
+worker threads: <font color=red>idle</font>      | <font color=green>computing</font> | <font color=red>idle</font>                     | <font color=green>computing</font> | <font color=red>idle</font>
+                          &uarr;
                        barrier
-{% endhighlight %}
+</code></pre>
 
 Like with version 1, you may not create new threads for each task.
 The threads you create at the beginning of the program must be the same threads that compute the last task.
