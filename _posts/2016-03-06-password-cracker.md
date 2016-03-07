@@ -294,7 +294,9 @@ ThreadSantizer is a race condition detection tool. See [this page](http://illino
 
 ### Thread status hook
 
-We've provided a simple tool to help you when debugging your program. See `thread_status.h` and `thread_status.c`. If you install `threadStatusPrint()` as a handler for `SIGINT`, it will print a brief summary of what each thread is currently doing any time you hit ctrl-c. For example:
+We've provided a simple tool to help you when debugging your program. See `thread_status.h` and `thread_status.c`. We've install `threadStatusPrint()` as a handler for `SIGINT`.
+It will print a brief summary of what each thread is currently doing any time you hit ctrl-c.
+For example:
 
 {% highlight text %}
 % ./cracker2 cracker2.in 2 100000 2
@@ -308,7 +310,7 @@ Start u0000001
 
 To use it:
 
-* #include "thread_status.h"
+* `#include "thread_status.h"`
 * Install threadStatusPrint() as the signal handler for SIGINT.
 * Call threadStatusSet() to describe what the thread is currently doing. The argument to `threadStatusSet()` should be a string constant. For example:
 
@@ -327,7 +329,10 @@ When `threadStatusPrint()` is called, it doesn't print the exact line number tha
 
 `thread_status.h` contains macros that will redefine calls to common thread synchronization functions so that when a thread is blocking on one of them, its status will represent that (like the "semaphore wait" on line 219 in the example above).
 
+**Note: Since Thread Status is hooked to Ctrl-C, you might need to use Ctrl-D (EOF) or Ctrl-\ (SIGQUIT) to shutdown a running password cracker**
+
 You're not required to use the thread status tool as part of the assignment, we just thought it might make your debugging easier.
+
 
 ### create_examples
 
