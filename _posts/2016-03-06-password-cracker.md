@@ -117,7 +117,7 @@ Every thread must join with the main thread!
 After all the worker threads have exited, the main thread will print (this is provided):
 
 * Number of successful and unsuccessful password cracks
-* Wall clock time since the program was started (via `getTime()` in `common.h`)
+* Wall clock time since the program was started (via `getTime()` in `utils.h`)
 * CPU time used (a sum of the CPU time used in all threads).
 * Proportion of CPU time to wall clock time.
 
@@ -311,7 +311,6 @@ Start u0000001
 To use it:
 
 * `#include "thread_status.h"`
-* Install threadStatusPrint() as the signal handler for SIGINT.
 * Call threadStatusSet() to describe what the thread is currently doing. The argument to `threadStatusSet()` should be a string constant. For example:
 
 {% highlight c %}
