@@ -196,7 +196,6 @@ Thread 2: Stop after 318970 iterations (cancelled)
 Password for maude is aaarocx (1293026 hashes in 1.72 seconds)
 Total CPU time: 6.41 seconds.
 CPU usage: 3.72x
-
 Start jesse
 Thread 3: Start jesse at 154457888 (zanaaaaa)
 Thread 4: Start jesse at 231686832 (zatnaaaa)
@@ -209,7 +208,6 @@ Thread 1: Stop after 911765 iterations (cancelled)
 Password for jesse is zagpbuyj (3792586 hashes in 3.24 seconds)
 Total CPU time: 12.77 seconds.
 CPU usage: 3.94x
-
 Start francie
 Thread 4: Start francie at 342732 (chamtnaa)
 Thread 3: Start francie at 228488 (chamnaaa)
@@ -222,7 +220,6 @@ Thread 1: Stop after 114244 iterations (end)
 Password for francie not found (456976 hashes in 0.40 seconds)
 Total CPU time: 1.53 seconds.
 CPU usage: 3.81x
-
 {% endhighlight %}
 
 Distribute the work by splitting the search space into equal-sized chunks, one for each worker thread.
