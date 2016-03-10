@@ -57,11 +57,11 @@ Typing
 make
 {% endhighlight %}
 
-will create the `good_companies` and `bad_companies` executable.
-For both the `good_companies` and `bad_companies` executable you can execute them with 2 required arguments and 3rd optional argument as follows:
+will create the `good_company` and `bad_company` executable.
+For both the `good_company` and `bad_company` executable you can execute them with 2 required arguments and 3rd optional argument as follows:
 
 {% highlight bash %}
-./bad_companies 5 6 100000
+./bad_company 5 6 100000
 {% endhighlight %}
 
 
