@@ -16,7 +16,7 @@ dueDates: "3/9 11:59pm"
 You will implement a reusable barrier using only condition variables, mutexes and/or semaphores.
 Using this barrier we ask that you parallelize a provided serial implementation
 of a Poisson equation solver. Here's some interesting, but unnecessary to complete this
-assignment, background: 
+assignment, background:
 
 - [Poisson Equation Explanation](./images/poisson.pdf)
 
@@ -30,7 +30,7 @@ Perhaps you haven't realized it yet but throughout the last few assignments chan
 are that you've implemented a barrier. You've probably written some code along these
 lines:
 
-```C
+{% highlight c %}
 pthread_mutex_lock(&m);
 counter--;
 while (counter != 0) {
@@ -38,7 +38,7 @@ while (counter != 0) {
 }
 pthread_cond_signal(&cv);
 pthread_mutex_unlock(&m);
-```
+{% endhighlight %}
 
 This is the essence of a barrier. The question we would like for you to ponder before
 moving on is this: What happens if we want to go through this critical section more than once?
@@ -58,7 +58,7 @@ You can find some stub functions inside of `barrier.c` to get you started.
 ##### Test your barrier
 
 We provide some silly code inside `barrier_test.c` which should give you an idea of whether
-or not your barrier is working at all. We strongly encourage you to come up with some more robust 
+or not your barrier is working at all. We strongly encourage you to come up with some more robust
 tests. In addition we provide a library with a reference implementation. Simply call
 
 {% highlight bash %}
@@ -74,7 +74,7 @@ of moving parts as this is a full implementation of a relatively complex applica
 understand what is happening at at least a high level before diving into your parallelization.
 
 If you read the pdf linked at the top you would know that the way we have chosen to solve the
-poisson equation (you don't need to know what poisson equations are) is to use a Jacobi iterative 
+poisson equation (you don't need to know what poisson equations are) is to use a Jacobi iterative
 numerical method (you don't need to know what that is either). This method gets closer to the
 real solution of the equation every time it goes through an iteration until there is an arbitrarily
 small difference between iterations (we call this arbitrary number epsilon).
@@ -82,10 +82,10 @@ small difference between iterations (we call this arbitrary number epsilon).
 Given an equation in the form provided in `basic_function`, let's say, a sine wave, this program starts
 with an empty image (all the indices of the array are initialized to 0). Each iteration of this solver
 then populates the `current` array with the next guess of the solution and calculates the error between it
-and the `previous` array. This updating takes place inside the `solve_poisson_helper` function. 
+and the `previous` array. This updating takes place inside the `solve_poisson_helper` function.
 During this process we want BMP image files of the state of the solution to be created at a fixed interval,
 we call this interval the granularity. That is, if we decide we want to see the state every 20 iterations
-(i.e. a granularity of 20) we expect to have an image of what our closest guess to the solution is at 
+(i.e. a granularity of 20) we expect to have an image of what our closest guess to the solution is at
 iteration 20, 40, 60, ... and so on. In addition we want an output of the image when we hit the desired error.
 
 The math required for each index of an iteration in our 2-D array is completely independent of any other
@@ -97,21 +97,21 @@ indices of the previous iteration have been calculated before moving on (*hint, 
 To do all this image writing we provide a little BMP library. The only function you absolutely need
 to use in it is `write_to_file`. We do provide some "lower level" functions inside of `bmp.h` in case
 you would like to increase the parallelism of your code. This should be unnecessary however and is simply
-a challenge to you if you would like to implement it. Just use function `write_to_file` in your parallel 
+a challenge to you if you would like to implement it. Just use function `write_to_file` in your parallel
 implementation at first. Remember, however, you probably don't want all your threads writing this file and you
 need to make sure all the calculations are done before writing it (*hint, hint*).
 
 ##### Struct Explanation
-	
+
 There are three pointers to external memory in `poisson_struct`, which is defined inside of
-poisson.h. The double pointers `current` and `previous` are the arrays for the calculated value of the current 
+poisson.h. The double pointers `current` and `previous` are the arrays for the calculated value of the current
 iteration and the previous iteration respectively. We need to keep both these arrays in memory as each
 new iteration depends on the previous one. At the end of the iteration you may notice that we swap the
 pointer values. This way we overwrite the solution from two iterations ago which is no longer needed.
 The double pointer `target_image` is the function that we are trying to satisfy the poisson equation for.
 The memory that these three `double **` variables point to are the same for every thread.
 
-```C
+{% highlight c %}
 typedef struct poisson_struct {
     double **current;
     double **previous;
@@ -122,7 +122,7 @@ typedef struct poisson_struct {
     int granularity;
     double epsilon;
 } poisson_struct;
-```
+{% endhighlight %}
 
 The other values are metadata that we use inside of solve_poisson to decide, amongst other things,
 what section of `current` and `previous` a thread should work on. `n` is simply the size of the grid the user
@@ -130,13 +130,13 @@ requested be solved. `num_threads` is a hint as to the number of threads to be c
 forced to create threads if you don't think it will be beneficial. `granularity` is how many
 iterations to calculate before printing an image.
 
-Once you look over the code you will notice that the metadata variables are just input from the user 
+Once you look over the code you will notice that the metadata variables are just input from the user
 and are put in the `poisson_struct` in order for all the functions inside `poisson.c` to be as opaque
 as possible. Any information from the outside that any part of the poisson equation solver may need
 in its serial form is represented inside the struct. We expect you to add more elements to this struct
 in order to accommodate the parallel implementation.
 
-The `iter` variable is only really there to get returned to the user, it's simply the number of 
+The `iter` variable is only really there to get returned to the user, it's simply the number of
 iterations that were run.
 
 ### Functions you must modify
@@ -156,7 +156,7 @@ debug nor guide any modification to `bmp.*`.
 
 ##### basic_equation::poisson_test.c
 
-This function is provided inside of `poisson_test.c` as an example of a 
+This function is provided inside of `poisson_test.c` as an example of a
 mathematical function that can be solved by our program. If you wish to input a different
 mathematical function to the solver we recommend you copy and modify `basic_equation`.
 
@@ -183,7 +183,7 @@ the compiler and the machine implement optimizations that make your code faster.
 
 Here we clean up all the memory allocated to each the `poisson_struct`. Since many resources
 are shared between threads `poisson_setup` didn't need to allocate a `u` or `uo` array
-for each struct for example. Don't be alarmed by the way we free things in here it's only 
+for each struct for example. Don't be alarmed by the way we free things in here it's only
 done this way because of the 1-D to 2-D abstraction we did in setup.
 
 ##### Notes
@@ -224,7 +224,7 @@ is the desired precision of the calculation.
 
 We recommend using a small value for size and large granularity and epsilon values until you are
 fairly certain that your code works. An epsilon between 0.05 and 0.0005 is adequate.
-**Be very careful when using a small granularity on sizes that will run for a long time. BMPs are 
+**Be very careful when using a small granularity on sizes that will run for a long time. BMPs are
 uncompressed image files and will use up your filesystem quota very quickly if you are not careful.**
 
 Some recommended inputs to use until you feel comfortable about the correctness of your code are:
@@ -240,7 +240,7 @@ This is normal. If you recall from 233 this is called a performance cliff and ha
 application when the data no longer fits in a cache level, or in the cache at all.
 
 ## Grading Policy
-   
+
 60% of this lab will be based on correctness, 50% from barrier and 50% from poisson.
 The following 40% will be based on performance compared to the reference implementation.
 The 40% will be on a sliding scale and no you **do not need to be as fast or faster than the
