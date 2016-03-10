@@ -94,7 +94,7 @@ A good solution must have the following:
 * No Livelock
 * Performant
   * Performance will be judged against the reference solution (`good_company_reference`) and measured by total billable days
-  * You must be within **90%** of the reference solution to recieve full points
+  * You must be within **90%** of the reference solution to receive full points
 * Fair (all companies should get a roughly equal number of billable days)
   * Roughly equal is if `max_billable_days <= 3 * min_billable_days`
 * Must adhere to the rules of the scenario
