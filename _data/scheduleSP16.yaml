@@ -233,7 +233,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>"
         color: "#8BC34A"
       -
-        title:"No lecture"
+        title: "No lecture"
         summary: "No lecture"
         resources: ""
         color: "#8BC34A"
