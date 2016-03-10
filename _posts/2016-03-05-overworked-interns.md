@@ -45,7 +45,7 @@ which wont be released until the first intern is given a break...
 
 * Read [Resource Allocation Graphs](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-1%3A-Resource-Allocation-Graph) and [Deadlock Conditions](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions) to have all the knowledge you will need for this assignment.
 * Fill out this [Google Form](http://goo.gl/forms/BdDaErdQjT) **BEFORE** you write any code (see the section on testing for details on gathering data).
-* Read `simulator.c`, `bad_company.c`, and `company.h` until you have a good sense of what the code is doing (Nothing will make senese until you do).
+* Read `simulator.c`, `bad_company.c`, and `company.h` until you have a good sense of what the code is doing (Nothing will make sense until you do).
 * Overwrite `good_company.c` with your correct solution.
 
 ## Testing
@@ -80,7 +80,7 @@ Company 4 used our services for 3733 billable days.
 Total Billable days : 13262
 {% endhighlight %}
 
-then the simulation terminated succesfully.
+then the simulation terminated successfully.
 This does not mean your solution is correct.
 There may still be race conditions, so it it up to you to test your code throughly with all sorts of parameters (and use [tsan](./tsan)).
 If the simulator stops without billing the companies just hit CTRL+C.
@@ -96,5 +96,5 @@ A good solution must have the following:
   * Performance will be judged against the reference solution (`good_company_reference`) and measured by total billable days
   * You must be within **90%** of the reference solution to recieve full points
 * Fair (all companies should get a roughly equal number of billable days)
-  * Roughly equal is if `max_billable_days <= 2 * min_billable_days`
+  * Roughly equal is if `max_billable_days <= 3 * min_billable_days`
 * Must adhere to the rules of the scenario
