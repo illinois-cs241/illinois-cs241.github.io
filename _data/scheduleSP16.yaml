@@ -296,3 +296,56 @@
         color: "#FFC107"
     week: "4/11 - 4/17"
     announcement: "<ul><li>Announcements will appear here.</li></ul>"
+  -
+    schedule:
+      -
+        title: "Signals"
+        summary: "35. POSIX Signals Revisited"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        color: "#FFC107"
+      -
+        title: "Protocols"
+        summary: "36. Protocols and Serialization"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        color: "#FFC107"
+      -
+        title: "RPC"
+        summary: "37. RPC"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        color: "#FFC107"
+    week: "4/18 - 4/23"
+    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+-
+    schedule:
+      -
+        title: "Course review"
+        summary: "38. Exam practice/review"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
+        color: "#FFC107"
+      -
+        title: "UDP"
+        summary: "39. UDP."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
+        color: "#FFC107"
+      -
+        title: "O/S Concepts"
+        summary: "40. Operating System Concepts"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-15'>wikibook week 15</a>."
+        color: "#FFC107"
+    week: "4/25 - 4/30"
+    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+-
+    schedule:
+      -
+        title: "O/S Concepts II"
+        summary: "41. O/S Concepts II"
+        resources: ""
+        color: "#FFC107"
+      -
+        title: "Special topics"
+        summary: "42. Special topics"
+        resources: ""
+        color: "#FFC107"
+    week: "4/25 - 4/30"
+    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    
