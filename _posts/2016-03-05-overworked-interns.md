@@ -96,5 +96,6 @@ A good solution must have the following:
   * Performance will be judged against the reference solution (`good_company_reference`) and measured by total billable days
   * You must be within **90%** of the reference solution to receive full points
 * Fair (all companies should get a roughly equal number of billable days)
-  * Roughly equal is if `max_billable_days <= 3 * min_billable_days`
+  * You must be within **90%** of than the reference to recieve full points
+  * Fairness is determined by `min_billable_days/max_billable_days` where higher is better. 
 * Must adhere to the rules of the scenario
