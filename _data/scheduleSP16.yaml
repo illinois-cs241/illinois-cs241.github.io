@@ -192,7 +192,7 @@
           Lab: <a target='blank' href='./terrible_threads'>Terrible Threads</a> Due
         </li>
         <li>
-          Lab: <a target='blank' href='./two_to_tango'>Two To Tango</a> Released
+          Lab: <a target='blank' href='./broken_barriers'>Broken Barriers</a> Released
         </li>
         <li>
           MP: <a target='blank' href='./malloc'>Malloc Part 2</a> Due
@@ -214,11 +214,22 @@
         title: "Pipes, Files, VM II"
         summary: "23. POSIX Pipes, files, memory II"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
-        color: "#4CAF50"  
+        color: "#4CAF50"
     week: "3/7 - 3/13"
     announcement: >
       <ul>
-        <li>Quiz 3: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
+        <li>
+          Quiz 3: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./broken_barriers'>Broken Barriers</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./overworked_interns'>Overworked Interns</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./password_cracker'>Password Cracker</a> Released
+        </li>
       </ul>
   -
     schedule:
@@ -238,7 +249,45 @@
         resources: ""
         color: "#8BC34A"
     week: "3/14 - 3/18"
-    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    announcement: >
+      <ul>
+        <li>
+          Lab: <a target='blank' href='./overworked_interns'>Overworked Interns</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./ideal_indirection'>Ideal Indirection</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./password_cracker'>Password Cracker Part 1</a> Due
+        </li>
+        <li>
+          MP: <a target='blank' href='./password_cracker'>Password Cracker Part 2</a> Due
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "SPRING BREAK!"
+        summary: ""
+        resources: ""
+        color: "#9E9E9E"
+      -
+        title: "SPRING BREAK!"
+        summary: ""
+        resources: ""
+        color: "#9E9E9E"
+      -
+        title: "SPRING BREAK!"
+        summary: ""
+        resources: ""
+        color: "#9E9E9E"
+    week: "3/19 - 3/27"
+    announcement: >
+      <ul>
+        <li>
+          Spring Break: There will be no office hours or staff on piazza.
+        </li>
+      </ul>
   -
     schedule:
       -
@@ -333,7 +382,8 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-15'>wikibook week 15</a>."
         color: "#FFC107"
     week: "4/25 - 4/30"
-    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    announcement:>
+      "<ul><li>Announcements will appear here.</li></ul>"
 -
     schedule:
       -
@@ -348,4 +398,3 @@
         color: "#FFC107"
     week: "4/25 - 4/30"
     announcement: "<ul><li>Announcements will appear here.</li></ul>"
-    
