@@ -21,14 +21,8 @@
       <ul>
         <li>
           <a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a> is out
-          <ul>
-            <li>Itis a stepping stone between CS225 and CS241</li>
-            <li>Bring your near-completed work to first Thursday lab and be ready to discuss it</li>
-            <li>Paper is preferred but a web page e.g. from your svn repository, is fine too</li>
-          </ul>
         </li>
         <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Released</li>
-        <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Released</li>
       </ul>
   -
     schedule:
@@ -103,7 +97,6 @@
         <li>Lab: <a target='blank' href='./Utilities%20Unleashed'>Utilities Unleashed</a> Due</li>
         <li>Lab: <a target='blank' href='./Mini%20Valgrind'>Mini Valgrind</a> Released</li>
         <li>MP: <a target='blank' href='./Vector'>Vector</a> Due</li>
-        <li>Lab: <a target='blank' href='./Text%20Editor'>Text Editor</a> Released</li>
         <li>MP: <a target='blank' href='./Shell'>Shell</a> Released</li>
       </ul>
   -
@@ -129,7 +122,7 @@
         <li>Quiz 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
         <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
         <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
-        <li>MP: <a target='blank' href='./text_editor>Text Editor</a> Due</li>
+        <li>MP: <a target='blank' href='./Shell'>Shell</a> Due</li>
         <li>MP: <a target='blank' href='./malloc'>Malloc</a> Released</li>
       </ul>
   -
