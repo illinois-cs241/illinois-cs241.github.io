@@ -2,7 +2,7 @@
 layout: doc
 title: "Password Cracker"
 permalink: password_cracker
-dueDates: "<br>Part 1 due 3/14 11:59pm <br> Part 2 due 3/21 11:59pm (<b>update: This will be extended to after Spring Break</b>)" 
+dueDates: "<br>Part 1 due 3/14 11:59pm <br>(Update:) Part 2 due <b>Wed 3/30</b> 11:59pm" 
 ---
 
 ## Introduction
