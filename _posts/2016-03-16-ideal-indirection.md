@@ -49,7 +49,7 @@ Virtual addresses use 64 bits with only 51 bits used for the actual virtual addr
    MISC (13)     VPN1 (12)    VPN2 (12)    VPN3 (12)    Offset (15)
 ```
 
-Using PageTable_get_entry() (see `pagetable.h`) will allow you to traverse through the page table using the VPNx addresses. Consider what should be done if the page table or frame we are trying to access has not yet been created. A look at 
+Using PageTable_get_entry() (see `pagetable.h`) will allow you to traverse through the page table using the VPNx addresses. Consider what should be done if the page table or frame we are trying to access has not yet been created.
 
 Be sure to read all of the functions within `mmu.h`, paying close attention to the comments to see the circumstances in which these functions should be called.
 
