@@ -59,6 +59,15 @@ Be sure to read all of the functions within `mmu.h`, paying close attention to t
 NOTE: You must use the `PageTable_get_entry` and `PageTable_set_entry` functions rather than directly accessing the `PageTable` struct. The same goes for the MMU with modifying the `num_tlb_misses` and `num_page_faults`. These should be done using the provided functions.
 
 
+## Running the simulator
+
+You can run the simulator with the following command (see `simulator.c`): 
+
+{% highlight bash %}
+./simulator <num_processes> <num_addresses> <num_iterations> <random seed>
+{% endhighlight %}
+
 ## Testing
 
-*   Make sure you throughly test your code as usual. If you are having trouble writing test cases, we have left some test cases for you to reference.
+*   Make sure you throughly test your code as usual. We have provided some tests cases, but we encourage you to write your own as well. Use the provided test cases as a reference to learn to create tests with good coverage.
+
