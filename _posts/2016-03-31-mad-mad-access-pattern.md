@@ -1,6 +1,7 @@
 ---
 layout: doc
-title: "Mapping Inventory"
+title: "Mad Mad Access Pattern"
+dueDates: "04/06 11:59pm"
 permalink: mad_mad_access_pattern
 ---
 
