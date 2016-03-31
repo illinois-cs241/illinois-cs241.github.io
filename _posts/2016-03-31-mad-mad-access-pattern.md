@@ -118,8 +118,8 @@ Put the code for this in lookup2.c.
 
 ### Sample usage
 
-    lookup1 &lt;data_file&gt; &lt;keyword&gt; [&lt;keyword&gt; ...]
-    lookup2 &lt;data_file&gt; &lt;keyword&gt; [&lt;keyword&gt; ...]
+    lookup1 <data_file> <keyword> [<keyword> ...]
+    lookup2 <data_file> <keyword> [<keyword> ...]
 
     % ./lookup1 sample.data list sample werd
     list: 12 at $0.04
