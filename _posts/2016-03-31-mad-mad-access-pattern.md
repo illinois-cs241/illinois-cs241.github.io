@@ -70,6 +70,7 @@ that child's value is greater than the node.  In other words:
       assert(strcmp(right->word, node->word) > 0);
     }
 
+![BTRE](images/241_memory_mapped_madness_diagram.png)
 
 
 
