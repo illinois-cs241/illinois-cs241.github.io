@@ -83,7 +83,6 @@ You'll be given:
 + lookup_reference - a reference implementation of lookup1
 + sample.data - a small file containing the words "sample",
      "word", "list", "for", "this", and "program"
-+ large.data - an 8MB file containing many words
 + utils.h - Printing functions for you to use
 + input_file - Sample input to create_file executable.
 + create_file - Creates binary tree structured data file corresponding to input_file. This will be used for your test cases.
@@ -104,6 +103,7 @@ Use **mmap()** to map the entire file into memory without
 reading any part of the file directly. When reading a node from the memory mapped file, use
 pointer arithmetic to jump to the correct position and read the node
 using regular pointer dereferencing.
+
 [mmap Introduction](https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-6%3A-Memory-mapped-files-and-Shared-memory)
 
 Put the code for this in lookup2.c.
