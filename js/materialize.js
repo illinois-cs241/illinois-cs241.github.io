@@ -36,4 +36,8 @@
 
   // Make all the headers inside a card the right size
   $(".mdl-card :header").addClass("mdl-card__title-text")
+
+  // Make all the tables material tables
+  $('table').addClass('mdl-data-table');
+
 })()
