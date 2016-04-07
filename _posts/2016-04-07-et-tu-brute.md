@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Et Tu Brute"
-permalink: Et Tu Brute
+permalink: et_tu_brute
 dueDates: "04/13 11:59pm"
 ---
 
