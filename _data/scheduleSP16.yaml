@@ -299,7 +299,21 @@
         resources: "See <a href='https://gotchasithub.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>"
         color: "#CDDC39"
     week: "3/28 - 4/3"
-    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    announcement: >
+      <ul>
+        <li>
+          Quiz 4: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./mad_mad_access_pattern'>Mad Mad Access Pattern</a> Released
+        </li>
+        <li>
+          Lab: <a target='blank' href='./ideal_indirection'>Ideal Indirection</a> Due
+        </li>
+        <li>
+          MP: <a target='blank' href='./parmake'>Parmake</a> Released
+        </li>
+      </ul>
   -
     schedule:
       -
@@ -318,7 +332,15 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
         color: "#FFC107"
     week: "4/4 - 4/10"
-    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    announcement: >
+      <ul>
+        <li>
+          Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Released
+        </li>
+        <li>
+          Lab: <a target='blank' href='./mad_mad_access_pattern'>Mad Mad Access Pattern</a> Due
+        </li>
+      </ul>
   -
     schedule:
       -
@@ -337,7 +359,21 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
         color: "#FFC107"
     week: "4/11 - 4/17"
-    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    announcement: >
+      <ul>
+        <li>
+          Midterm 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./chatroom'>Chatroom</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./parmake'>Parmake</a> Due
+        </li>
+      </ul>
   -
     schedule:
       -
