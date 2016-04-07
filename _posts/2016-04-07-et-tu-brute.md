@@ -6,8 +6,6 @@ dueDates: "04/13 11:59pm"
 ---
 
 
-# Et tu, Brute?
-## Contents
 [Learning Objectives](#lab11/#objectives)
 
 [Setup](#lab11/#setup)
