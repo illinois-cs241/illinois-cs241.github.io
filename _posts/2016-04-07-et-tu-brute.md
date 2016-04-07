@@ -6,25 +6,6 @@ dueDates: "04/13 11:59pm"
 ---
 
 
-[Learning Objectives](#lab11/#objectives)
-
-[Setup](#lab11/#setup)
-
-[Backstory](#lab11/#backstory)
-
-[Files](#lab11/#files)
-
-[Usage](#lab11/#usage)
-
-[Error](#lab11/#error)
-
-[Mission](#lab11/#mission)
-
-[Hints](#lab11/#hints)
-
-[Grading](#lab11/#grading)
-
-
 ## Learning Objectives
 *   File Descriptors
 *   Pipes
