@@ -55,10 +55,8 @@ Simple right? Except that some lines are longer than others, you need to wait fo
 
 ## Files
 *   cipher.h - header file for the decryption libarary.
-*   cipher.o - object file for the decryption libarary. The source is not here, since the other interns will not give it to you.
 *   Makefile - the makefile you should use to build.
 *   journal.txt - a newline separated journal that you must decrypt.
-*   brutus_reference - reference executable which you should use for comparing your solution with.
 *   brutus.c - main file which will contain your implementation for brute forcing caesar ciphers.
 
 ## Usage
@@ -74,7 +72,7 @@ For example
 
 It is quite simple to do the decryption in single process version. First we read from file. For each line we read, we call __get\_most\_likely\_printout()__ and get decrypted line. 
 
-![Single Process Workflow](./fig/et_tu_brute.001.png)
+![Single Process Workflow](images/et_tu_brute.001.png)
 
 ## Mission: Can we do it in time?
 Decryption in real life is usually slow and therefore single process version cannot complete the job in time. We can use process-level parallelism to solve this problem. We can assign each line to one child process and ask them to finish their job. In order to gather decryptions from children, we need a way to do IPC(Inter Process Communication). We can use pipes to achieve this. Following are  instructions to help you complete the mission.
@@ -96,7 +94,7 @@ This is where the magic happens. Remember that when forking with pipes, it is co
 function from cipher.o. Once your child is done decrypting a line, it should write into the write end of its pipe so that the parent can later read from it. If a child has no more work then it should close all remaining ends to its pipe and exit.
 
 The following is the workflow for the first-half of the program. 
-![Multi-process Workflow 1](./fig/et_tu_brute.002.png)
+![Multi-process Workflow 1](images/et_tu_brute.002.png)
 
 
 ### Collect the decryptions
@@ -106,7 +104,7 @@ Like any responsible parent your parent process should wait on its children. Thi
 Now that you have all your children's print outs you can write them to the output file in the same order as the lines in the original file. You should write exactly what you read from your children and not a single byte more.
 
 The following is the workflow for the second-half of the program
-![Multi-process Workflow 2](./fig/et_tu_brute.003.png)
+![Multi-process Workflow 2](images/et_tu_brute.003.png)
 
 ## Hints
 
@@ -130,7 +128,7 @@ Now, if some lines are too long, processes decrypting the lines cannot return fr
 
 The following is a picture to help you understand this problem. Notice that pipe 2 and some other pipes are full (marked as red). Therefore, process _pid2_ is blocked on write and waits for the parent process to read some bytes from its pipe _pipe2_. However, the parent process is waiting for all its children and won't move on to next step (read from pipe). 
 
-![Problem Workflow](./fig/et_tu_brute.004.png)
+![Problem Workflow](images/et_tu_brute.004.png)
 
 ##### Solution
 We can set the size of the pipe according to the length of the longest line in the file. Then there will be no blocking issue.
