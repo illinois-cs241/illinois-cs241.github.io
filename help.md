@@ -52,7 +52,7 @@ If you are truly lost, can't find an answer in the docs, or in other questions, 
 
 ## CS 241 Admin
 
-Marina is our class admin and she is in charge of all administrative items (e.g. exam sickness, DRES, 1% issues). If you feel your issue falls under those definitions, then please email her at cs241admin@illinois.edu and explain your scenario. Note: We do not provide attendance misses for labs (this is not negotiable), especially for something that is 100% in your control like "I have an interview.".
+Mariana is our class admin and she is in charge of all administrative items (e.g. exam sickness, DRES, 1% issues). If you feel your issue falls under those definitions, then please email her at cs241admin@illinois.edu and explain your scenario. Note: We do not provide attendance misses for labs (this is not negotiable), especially for something that is 100% in your control like "I have an interview.".
 
 ## Angrave
 
