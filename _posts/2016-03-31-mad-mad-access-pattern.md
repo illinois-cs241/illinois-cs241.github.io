@@ -28,21 +28,24 @@ perform efficient searches on the data file she created. This file is
 expected to grow to be very large, larger than will fit in memory, so
 you will need to access it without reading it all into memory.
 
+## Data File Structure
 The file is structured like a binary search tree, where each tree node
 is an instance of this structure:
 
-    typedef struct {
-    uint32_t left_child;  // offset of node containing left child
-    uint32_t right_child; // offset of node containing right child
+{% highlight c %}
+typedef struct {
+uint32_t left_child;  // offset of node containing left child
+uint32_t right_child; // offset of node containing right child
 
-    // Offsets are relative to the beginning of the file.
-    // An offset of zero means the child does not exist.
+// Offsets are relative to the beginning of the file.
+// An offset of zero means the child does not exist.
 
-    uint32_t count;  // number of times the word occurs in the data set
-    float price;     // price of the word
+uint32_t count;  // number of times the word occurs in the data set
+float price;     // price of the word
 
-    char word[0];    // contents of the word, null-terminated
-    } BinaryTreeNode;
+char word[0];    // contents of the word, null-terminated
+} BinaryTreeNode;
+{% endhighlight %}
 
 
 The first 4 bytes of the input file are the letters "BTRE". Any
@@ -58,23 +61,23 @@ Remember the properties of a binary search tree: if a node has a left
 child, that child's value is less than the node. If it has a right child,
 that child's value is greater than the node.  In other words:
 
-    BinaryTreeNode *node = ...a node from the file...
+{% highlight c %}
+BinaryTreeNode *node = ...a node from the file...
 
-    if (node->left_child) {
-      BinaryTreeNode *left = ...load node at node->left_child...
-      assert(strcmp(left->word, node->word) < 0);
-    }
+if (node->left_child) {
+  BinaryTreeNode *left = ...load node at node->left_child...
+  assert(strcmp(left->word, node->word) < 0);
+}
 
-    if (node->right_child) {
-      BinaryTreeNode *right = ...load node at node->right_child...
-      assert(strcmp(right->word, node->word) > 0);
-    }
+if (node->right_child) {
+  BinaryTreeNode *right = ...load node at node->right_child...
+  assert(strcmp(right->word, node->word) > 0);
+}
+{% endhighlight %}
 
 ![BTRE](images/241_memory_mapped_madness_diagram.png)
 
-
-
-### Files
+## Files
 You'll be given:
 
 + tree.h - contains the struct definition above and a detailed description
@@ -91,14 +94,14 @@ You'll be given:
 Make two versions of your program. Both should produce the
 same results, but using different file access methods.
 
-### Version 1: fseek / fread
+## Version 1: fseek / fread
 When reading a node from the file, use **fseek()** to jump to the
 correct posistion and read the node with **fread() and/or fgetc()**.
 You may not use mmap() for this part.
 
 Put the code for this in lookup1.c.
 
-### Version 2: mmap
+## Version 2: mmap
 Use **mmap()** to map the entire file into memory without
 reading any part of the file directly. When reading a node from the memory mapped file, use
 pointer arithmetic to jump to the correct position and read the node
@@ -110,31 +113,32 @@ Put the code for this in lookup2.c.
 
 **Notice that you can use only mmap() to map the WHOLE file** for this version. Do not use other functions to read files.
 
-### In both versions you should:
+## In both versions you should:
 + Time your program:
    * The timer should start before you open the file
    * The timer should end after your close(version 1)/unmap(version 2) the file.
    * Output the duration of your time with printTime()
 + Use only the printing function we give you in utils.h
 
-### Sample usage
+## Sample usage
+{% highlight text %}
+lookup1 <data_file> <keyword> [<keyword> ...]
+lookup2 <data_file> <keyword> [<keyword> ...]
 
-    lookup1 <data_file> <keyword> [<keyword> ...]
-    lookup2 <data_file> <keyword> [<keyword> ...]
+% ./lookup1 sample.data list sample werd
+list: 12 at $0.04
+sample: 25 at $10.60
+werd not found
+Execution time:0.000146 seconds
 
-    % ./lookup1 sample.data list sample werd
-    list: 12 at $0.04
-    sample: 25 at $10.60
-    werd not found
-    Execution time:0.000146 seconds
+% ./lookup2 sample.data list sample werd
+list: 12 at $0.04
+sample: 25 at $10.60
+werd not found
+Execution time:0.000026 seconds
+{% endhighlight %}
 
-    % ./lookup2 sample.data list sample werd
-    list: 12 at $0.04
-    sample: 25 at $10.60
-    werd not found
-    Execution time:0.000026 seconds
-
-Testing notes:
+## Testing notes:
 
 + Write your test cases to include comparison of performance between two versions- lookup1 and lookup2. Think about which one is faster and why?
 + In order to generate different binary tree structured data files based on input required for each test case, use create_data executable.
