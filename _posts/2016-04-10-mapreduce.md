@@ -1,8 +1,8 @@
 ---
 layout: doc
 title: "Map Reduce"
-permalink: map_reduce
-dueDates: "<b>PLEASE FILL IN</b>"
+permalink: mapreduce
+dueDates: "<b>Part 1: April 18th</b><br><b>Part 2: April 25th</b>"
 ---
 
 ## MapReduce
