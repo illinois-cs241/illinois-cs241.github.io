@@ -84,10 +84,10 @@ You will need to implement a multi-core scheduler in a simulated computer. You w
 
 The scheduling algorithms you are going to implements are:
 
-* Round Robbing(RR)
-* First Come First Server(FCFS)
+* Round Robin (RR)
+* First Come First Server (FCFS)
 * Preemptive Shortest Job First (PSJF)
-* Priority(PRI)
+* Priority (PRI)
 
 **You should use the priority queue ~~you just wrote~~ to help you complete this part of the lab.**
 
