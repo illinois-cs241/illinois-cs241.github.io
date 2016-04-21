@@ -1,5 +1,9 @@
-Example 2
-=========
+---
+layout: doc
+title: "Example 2"
+permalink: scheduler_example2
+dueDates: "04/27 11:59pm"
+---
 
 Consider the following simple schedule:
 
@@ -10,6 +14,7 @@ Consider the following simple schedule:
 | 2          | 3            | 4            | 2        |
 
 The flow of execution of functions calls is as follows:
+
 ```
  scheduler start up(cores = 2, scheme = FCFS)
      --> scheduler initialized
@@ -44,6 +49,7 @@ The flow of execution of functions calls is as follows:
  scheduler clean up()
      --> cleans up and frees all memory used by the scheduler
 ```
+
 When the simulator is executed and the flow of execution is implemented correctly, you will see the following output:
 
 ```

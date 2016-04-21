@@ -1,5 +1,9 @@
-Example 1
-=========
+---
+layout: doc
+title: "Example 1"
+permalink: scheduler_example1
+dueDates: "04/27 11:59pm"
+---
 
 Consider the following simple schedule:
 

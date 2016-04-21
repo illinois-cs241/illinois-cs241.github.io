@@ -5,7 +5,7 @@ permalink: scheduler
 dueDates: "04/27 11:59pm"
 ---
 
-# Introduction
+## Introduction
 
 This week, you won't be working at a start up. There won't be any made up CEO, any manager, any mentor.
 
@@ -55,9 +55,9 @@ Try to answer these questions...
 2. How do you sort your job so that you can find the next job according to different scheme?
 3. What kind of data structures do you need?
 
-What a scheduler does is to put all the jobs it gets in a queue and then sort them in some order(related to scheme). Scheduler give them to CPU one by one. The key in scheduler is the scheme it use, and the choice of scheduling algorithm depends on many factors. For example, First Come First Serve(FCFS) is really easy to implement but might keep a short job waiting really long for a long process at the front.
+What a scheduler does is to put all the jobs it gets in a queue and then sort them in some order(related to scheme). Scheduler give them to CPU one by one. The key in scheduler is the scheme it use, and the choice of scheduling algorithm depends on many factors. For example, First Come First Serve (FCFS) is really easy to implement but might keep a short job waiting really long for a long process at the front.
 
-So now we know that a scheduler puts jobs in a queue, sort them, and give them to CPU in some order. Then what will be the best data structure to store these jobs? Priority queue can do this job really well! A priority queue is a queue with a really feature. It puts every incoming node in correct position so that the queue is always ordered. Therefore, you don't need to call sort() every time you get a new node(job). And you can simply give them out by pulling out the first element of the queue.
+So now we know that a scheduler puts jobs in a queue, sort them, and give them to CPU in some order. Then what will be the best data structure to store these jobs? Priority queue can do this job really well! A priority queue is a queue with a really cool feature. It puts every incoming node in correct position so that the queue is always ordered. Therefore, you don't need to call `sort()` every time you get a new node(job). And you can simply give them out by pulling out the first element of the queue.
 
 An important question now is: "What do you mean by __ordered__?" Lets take FCFS scheduling for example. Ideally, scheduler should be able to:
 * Receive a job.
@@ -83,6 +83,7 @@ To build a scheduler, a fundamental data structure is a priority queue. The firs
 You will need to implement a multi-core scheduler in a simulated computer. You will be provided with a set of cores to schedule a set of tasks on, much like a real Linux scheduler.
 
 The scheduling algorithms you are going to implements are:
+
 * Round Robbing(RR)
 * First Come First Server(FCFS)
 * Preemptive Shortest Job First (PSJF)
@@ -92,11 +93,11 @@ The scheduling algorithms you are going to implements are:
 
 To complete this lab, you must implement the eight functions defined in `libscheduler/libscheduler.c`. These functions are self-descriptive, but a full function outline is provided for you for each function in the SVN files. These function will be utilized by `simulator.c`.
 
-You might want to understand how scheduler works. So we put a detail explanation in the bottom of this webpage.
+You might want to understand how scheduler works. So we put a detailed explanation in the bottom of this webpage.
 
 ## Directions
 
-To help you finish this lab efficiently, we recommend you to follow these steps:
+To help you finish this lab efficiently, we recommend you follow these steps:
 
 1. Understand when will your function be called.
 2. Try to write pseudo code for comparator first and see what kinds of informations you will need. For example, you probably need the arrival time of each job so you can implement a FCFS by setting priority according to time.
@@ -119,17 +120,19 @@ The last part of your jobs are stats and clean-up, they are pretty easy, but you
 ## Compile and Run
 
 To compile this lab, run:
-```
+{% highlight text %}
 make clean
 make
-```
+{% endhighlight %}
 To run the simulator, run:
-
-> ./simulator -c &lt;cores&gt; -s &lt;scheme&gt; &lt;input file&gt;
+{% highlight text %}
+./simulator -c <cores> -s <scheme> <input file>
+{% endhighlight %}
 
 For example:
-
-> ./simulator -c 2 -s fcfs examples/proc1.csv
+{% highlight text %}
+./simulator -c 2 -s fcfs examples/proc1.csv
+{% endhighlight %}
 
 The acceptable values for `scheme` (outlined above) are:
 
@@ -139,37 +142,33 @@ The acceptable values for `scheme` (outlined above) are:
 -   `RR#`, where \# indicates any numeric value
 
 We provide three sample schedules: `examples/proc1.csv`, `examples/proc2.csv` and `examples/proc3.csv`. We also provide the expected output of those schedules in the `examples` directory. **It's only important that lines starting with `FINAL TIMING   DIAGRAM` match.** We will not grade any output except the last few lines, as `show_queue()` is not required to be implemented in the same way as we did.
-To test your program aganist all the test cases in an automated way, we provide a simple perl script. To run all 54 tests, simply run:
-
-> ./examples.pl
+To test your program against all the test cases in an automated way, we provide a simple perl script. To run all 54 tests, simply run:
+{% highlight text %}
+./examples.pl
+{% endhighlight %}
 
 All differences will be printed. Therefore, if no data is printed, your program has passed the test cases in the `examples` directory.
 
-Logistics
-=========
+## Logistics
 
-#### DON'T EDIT THE MAKEFILE
+### DON'T EDIT THE MAKEFILE
 
 In CS 241, every program will be compiled using `make`. When autograding your lab, we add additional files for test cases and use a different Makefile. Therefore, we do not use your Makefile to compile the code. **If you edit your Makefile, your code probably won't compile for the autograder.**
 
-#### ORGANIZATION OF FILES
+### ORGANIZATION OF FILES
 
 This file is one of two instruction files associated with machine problems in CS 241. This file describes how to submit your lab grading details, and other details that are shared between all labs in CS 241. With each lab, there is a separate file that explains the specific details on the lab.
 
-#### TESTING YOUR PROGRAM
+### TESTING YOUR PROGRAM
 
 Since all testing and grading by course staff will be done on the VMs, it is **STRONGLY ADVISED** that you test your program on your CS241 VM before submission. The fact that your program "runs perfectly" on your own machine will get you zero points if your program does not run at all on the provided CS241 VMs.
 
-------------------------------------------------------------------------
 
-Examples
-========
+## Examples
 
--   [Example 1](./images/example1.md)
--   [Example 2](./images/example2.md)
--   [Example 3](./images/example3.md)
-
-------------------------------------------------------------------------
+-   [Example 1](./scheduler_example1)
+-   [Example 2](./scheduler_example2)
+-   [Example 3](./scheduler_example3)
 
 
 

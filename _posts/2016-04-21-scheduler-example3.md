@@ -1,5 +1,9 @@
-Example 3
-=========
+---
+layout: doc
+title: "Example 3"
+permalink: scheduler_example3
+dueDates: "04/27 11:59pm"
+---
 
 Consider the following simple schedule:
 
@@ -10,6 +14,7 @@ Consider the following simple schedule:
 | 2          | 3            | 4            | 2        |
 
 The flow of execution of functions calls is as follows:
+
 ```
   scheduler start up(cores = 1, scheme = RR)
       --> scheduler initialized
@@ -205,7 +210,7 @@ When the simulator is executed and the flow of execution is implemented correctl
 
   FINAL TIMING DIAGRAM:
   Core 0: 00110022110022110011
-  
+
   Average Waiting Time: 9.33
   Average Turnaround Time: 16.00
   Average Response Time: 1.33
