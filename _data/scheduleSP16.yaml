@@ -392,7 +392,21 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
         color: "#FFC107"
     week: "4/18 - 4/23"
-    announcement: "<ul><li>Announcements will appear here.</li></ul>"
+    announcement: >
+      <ul>
+        <li>
+          Quiz 5: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./chatroom'>Chatroom</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./scheduler'>Scheduler</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Released
+        </li>
+      </ul>
 -
     schedule:
       -
@@ -411,8 +425,18 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-15'>wikibook week 15</a>."
         color: "#FFC107"
     week: "4/25 - 4/30"
-    announcement:>
-      "<ul><li>Announcements will appear here.</li></ul>"
+    announcement: >
+      <ul>
+        <li>
+          Lab: <a target='blank' href='./scheduler'>Scheduler</a> Due
+        </li>
+        <li>
+          ICES Forms in Lab 
+        </li>
+        <li>
+          MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Due
+        </li>
+      </ul>
 -
     schedule:
       -
