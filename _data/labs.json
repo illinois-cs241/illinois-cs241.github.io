@@ -65,7 +65,7 @@
     dueDate: "Week 14"
     url: "scheduler"
   -
-    name: "Epoll Downloader"
+    name: "Epoll Demo"
     releaseDate: "Week 14"
     dueDate: "Week 15"
-    url: "epoll_downloader"
+    url: "epoll_demo"
