@@ -47,7 +47,7 @@ Luckily, you've kept some consultants on retainer. They've drafted out some task
 
 Your server will be provided two port numbers as command line arguments when it runs. One port is reserved for your server to receive data from wearables and the other one is used for clients to request data from your server. These ports will be called the `wearable port` and the `request port` respectively; you'll need to accept connections from both of these. 
 
-There could numerous connections running simultaneously on the wearable port, and each of which could last an arbitrary amount of time. As such, you should create a thread for each new connection. For the `request port`, however, only one client will connect at any single time.
+There could be numerous connections running simultaneously on the wearable port, and each of which could last an arbitrary amount of time. As such, you should create a thread for each new connection. For the `request port`, however, only one client will connect at any single time.
 
 ## Data
 
