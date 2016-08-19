@@ -41,7 +41,7 @@
         summary: "6. The fork-exec-wait pattern"
         resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-2%3A-Fork%2C-Exec%2C-Wait' target='_blank'>Wikibook Fork, Exec, Wait</a>"
         color: "#E91E63"
-    week: "#2 8/29 - 9/2"
+    week: "#2: 8/29 - 9/2"
     announcement: >
       <!-- <!-- <ul>
         <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Due</li>
@@ -65,7 +65,7 @@
         summary: "9. Hone your pointer skills when writing malloc and free."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
         color: "#9C27B0"
-    week: "#3 9/5 - 9/9"
+    week: "#3: 9/5 - 9/9"
     announcement: >
       <!-- <!-- <ul>
         <li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
@@ -91,7 +91,7 @@
         summary: "12. Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
         color: "#673AB7"
-    week: "#4 9/12 - 9/16"
+    week: "#4: 9/12 - 9/16"
     announcement: >
       <!-- <!-- <ul>
         <li>Lab: <a target='blank' href='./Utilities%20Unleashed'>Utilities Unleashed</a> Due</li>
@@ -116,7 +116,7 @@
         summary: "15. Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>."
         color: "#2196F3"
-    week: "#5 9/19 - 9/23"
+    week: "#5: 9/19 - 9/23"
     announcement: >
       <!-- <!-- <ul>
         <li>Quiz 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
@@ -142,7 +142,7 @@
         summary: "18. Implementing the Producer Consumer using semaphores. Analysis of Reader Writer solutions."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>."
         color: "#03A9F4"
-    week: "#6 9/26 - 9/30"
+    week: "#6: 9/26 - 9/30"
     announcement: >
       <!-- <!-- <ul>
         <li>
@@ -175,7 +175,7 @@
         summary: "21. Virtual memory"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>."
         color: "#009688"
-    week: "#7 10/3 - 10/7"
+    week: "#7: 10/3 - 10/7"
     announcement: >
       <!-- <!-- <ul>
         <li>
@@ -208,7 +208,7 @@
         summary: "24. Robust error handling. EINTR. Intro to TCP,UDP,IP"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>"
         color: "#8BC34A"
-    week: "#8 10/10 - 10/14"
+    week: "#8: 10/10 - 10/14"
     announcement: >
       <!-- <!-- <ul>
         <li>
@@ -241,7 +241,7 @@
         summary: "27. Socket Programming Gotchas. Intro to scheduling"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 11</a>"
         color: "#8BC34A"
-    week: "#9 10/17 - 10/21"
+    week: "#9: 10/17 - 10/21"
     announcement: >
       <!-- <ul>
         <li>
@@ -274,7 +274,7 @@
         summary: "30. ext2/3/4 filesystem. inode"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
         color: "#FFC107"
-    week: "#10 10/24 - 10/28"
+    week: "#10: 10/24 - 10/28"
     announcement: >
       <!-- <ul>
         <li>
@@ -307,7 +307,7 @@
         summary: "33. Virtual f/s"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
         color: "#FFC107"
-    week: "#11 10/31 - 11/4"
+    week: "#11: 10/31 - 11/4"
     announcement: >
       <!-- <ul>
         <li>
@@ -320,6 +320,11 @@
   -
     schedule:
       -
+        title: "Files-5"
+        summary: "34. Memory mapped files"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
+        color: "#FFC107"
+      -
         title: "Signals"
         summary: "35. POSIX Signals Revisited"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
@@ -329,17 +334,7 @@
         summary: "36. Protocols and Serialization"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
         color: "#FFC107"
-      -
-        title: "RPC"
-        summary: "37. RPC"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
-        color: "#FFC107"
-      -
-        title: "Files-5"
-        summary: "34. Memory mapped files"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
-        color: "#FFC107"
-    week: "#12 11/7 - 11/11"
+    week: "#12: 11/7 - 11/11"
     announcement: >
       <!-- <ul>
         <li>
@@ -355,7 +350,7 @@
           MP: <a target='blank' href='./parmake'>Parmake</a> Due
         </li>
       </ul> -->
-    week: "#13 11/14- 11/18"
+    week: "#12: 11/14- 11/18"
     announcement: >
       <!-- <ul>
         <li>
@@ -371,8 +366,32 @@
           MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Released
         </li>
       </ul> -->
--
+  -
     schedule:
+      -
+        title: "No lecture"
+        summary: "Thanksgiving Break"
+        resources: ""
+        color: "#aaaaaa"
+      -
+        title: "No lecture"
+        summary: "Thanksgiving Break"
+        resources: ""
+        color: "#aaaaaa"
+      -
+        title: "No lecture"
+        summary: "Thanksgiving Break"
+        resources: ""
+        color: "#aaaaaa"
+    week: "#13: 11/21- 11/25"
+    announcement: >
+  -
+    schedule:
+      -
+        title: "RPC"
+        summary: "37. RPC"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        color: "#FFC107"
       -
         title: "Course review"
         summary: "38. Exam practice/review"
@@ -383,12 +402,7 @@
         summary: "39. UDP."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
         color: "#FFC107"
-      -
-        title: "O/S Concepts"
-        summary: "40. Operating System Concepts"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-15'>wikibook week 15</a>."
-        color: "#FFC107"
-    week: "#15 11/28 - 12/2"
+    week: "#14: 11/28 - 12/2"
     announcement: >
       <!-- <ul>
         <li>
@@ -401,17 +415,22 @@
           MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Due
         </li>
       </ul> -->
--
+  -
     schedule:
       -
-        title: "O/S Concepts II"
-        summary: "41. O/S Concepts II"
+        title: "O/S Concepts"
+        summary: "40. Operating System Concepts"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-15'>wikibook week 15</a>."
+        color: "#FFC107"
+      -
+        title: "Last lecture"
+        summary: "41. Special topics"
         resources: ""
         color: "#FFC107"
       -
-        title: "Special topics"
-        summary: "42. Special topics"
+        title: "No lecture"
+        summary: "Exams start"
         resources: ""
-        color: "#FFC107"
-    week: "#16 12/5 - 12/9"
+        color: "#aaaaaa"
+    week: "#15: 12/5 - 12/9"
     announcement: "<!-- <ul><li>Announcements will appear here.</li></ul> -->"
