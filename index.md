@@ -2,9 +2,13 @@
 layout: doc
 title: Syllabus
 ---
-## Course Description
+## Course Description (Informal)
+This course will challenge you as a programmer and nascent computer scientist of Illinois. Rather than sand-boxed, contained and simple problems of your previous courses that used significant scaffolding and pre-built libraries, you will be interacting with a much more complex environment - the entire system and even computing networks. Further you will need to fully understand how memory is allocated, used and re-used within a process and how input and output can be buffered (or not) between processes and files. In short - it is time to remove the carefully tailored training wheels and that closed course and instead fling open the doors and welcome you to the big wide world of computing. Oh and did we mention the challenge of concurrency and solving asynchronous problems so that your program can take advantage of the multi-cpu cores inside each machine?
+
+## Course Description (Formal)
 System programming refers to writing code that tasks advantage of operating system support for programmers.
-This course is designed to introduce you to system programming.
+This course is designed to introduce you to system programming. 
+
 A computer needs an operating system to manage its resources and provide support for common functions such as accessing peripherals.
 There are two categories of "customers" that an operating system must support.
 The first category is the community of users.
@@ -87,7 +91,7 @@ Course grades: We publish the following thresholds: 92: A-  82: B-  72: C-
 {% endhighlight %}
 
 
-If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the mp programming assignments are weighted by the time we give to complete them. There are multiple choice quizzes at the DCL testing center approximately every other week. There will be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (gedit,vim,gcc,man,make,bash terminal etc) but in an exam environment. Runnable tests will be provided. The quizzes and midterms will be in the basement of DCL and you will be asked to register for a time slot that works for you. The signup link is [here](https://edu.cs.illinois.edu/testcenter/) (Chrome recommended). For grading we will drop your lowest quiz score, lowest lab score and 1 lab attendance. Sickness/ vacation / sleep *  whatever *  we don't care. Unless exceptions (which are almost never granted) have been arranged with the course admin (cs241admin@illinois.edu) or Director of Undergrad studies: Miss 3+ sections or 3+ quizzes is automaticaully a failing grade.
+If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the mp programming assignments are weighted by the time we give to complete them. There are multiple choice quizzes at the testing center approximately every other week. There will be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (gedit,vim,gcc,man,make,bash terminal etc) but in an exam environment. Runnable tests will be provided. The quizzes and midterms will be in room 57 Grainger Library (to the far left side of the basement) and you will be asked to register for a time slot that works for you. The signup link is [here](https://edu.cs.illinois.edu/testcenter/) (Chrome recommended). Rules, requirements and expectations of the testing center are [here](https://edu.cs.illinois.edu/cbtf/). For grading we will drop your lowest quiz score, lowest lab score and 1 lab attendance. Sickness/ vacation / sleep *  whatever *  we don't care. Unless exceptions (which are almost never granted) have been arranged with the course admin (cs241admin@illinois.edu) or Director of Undergrad studies: Miss 3+ sections or 3+ quizzes is automaticaully a failing grade.
 
 The 3 hour handwritten final exam is comprehensive and will test all CS241 topics including programming topics covered in the MP and Labs. Do not book your flights until the exam date is known. Early exams will not be offered. Conflict final exams will be offered if you have 3 exams in a 24 hour period or you have an exam in another, smaller enrollment course at the same time.
 
@@ -96,16 +100,17 @@ Grading issues should be raised with your TA e.g. during section or by email. Mi
 ## Exams
 All exams are in the CBTF and require signing up here: <https://edu.cs.illinois.edu/testcenter>
 
+Approximate schedule (subject to change):
 |  Week  | Exam             | Start | End |
 |--------|------------------|-------|-----|
-| Week 4 | Quiz 1           | 2/11  | 2/14|
-| Week 5 | Quiz 2           | 2/18  | 2/21|
-| Week 6 | Practice Midterm | 2/25  | 2/28|
-| Week 7 | Midterm 1        | 3/03  | 3/06|
-| Week 8 | Quiz 3           | 3/10  | 3/13|
-| Week 11| Quiz 4           | 3/31  | 4/03|
-| Week 13| Midterm 2        | 4/14  | 4/17|
-| Week 14| Quiz 5           | 4/21  | 4/24|
+| Week 4 | Quiz 1           | TBA | TBA |
+| Week 5 | Quiz 2           | TBA | TBA |
+| Week 6 | Practice Midterm | TBA | TBA |
+| Week 7 | Midterm 1        | TBA | TBA |
+| Week 8 | Quiz 3           | TBA | TBA |
+| Week 11| Quiz 4           | TBA | TBA |
+| Week 13| Midterm 2        | TBA | TBA |
+| Week 14| Quiz 5           | TBA | TBA |
 
 ### Practice Midterm Explanation
 The practice midterm is ungraded (worth 0% of your final grade).
