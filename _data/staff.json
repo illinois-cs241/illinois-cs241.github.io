@@ -5,7 +5,7 @@
     "class": "17",
     "roles": "1337 Javascript HaxOr",
     "speciality": "CS Education",
-    "semesters": "Spring 2015, , Fall 2015 and Spring 2016"
+    "semesters": "Spring 2015,Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Eric Sauer",
@@ -21,7 +21,7 @@
     "class": "17",
     "roles": "Lab and Officer Hours Assistant",
     "speciality": "VR or Data Analysis",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Varun Thangavelu",
@@ -29,7 +29,7 @@
     "class": "17",
     "roles": "Lab and Officer Hours Assistant",
     "speciality": "Big Data",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Thomas Liu",
@@ -37,7 +37,7 @@
     "class": "17",
     "roles": "Office Hour Assistants Team Lead",
     "speciality": "Data Science",
-    "semesters": "Spring 2015, Fall 2015 and Spring 2016"
+    "semesters": "Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "David Zmick",
@@ -45,7 +45,7 @@
     "class": "16",
     "roles": "MP Developer",
     "speciality": "Compilers, Networking, and Performance",
-    "semesters": "Spring 2015, Fall 2015, and Spring 2016"
+    "semesters": "Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Yushuo Lin",
@@ -53,7 +53,7 @@
     "class": "17",
     "roles": "Lab and Officer Hours Assistant",
     "speciality": "CS and Stat",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Porter Smith",
@@ -61,7 +61,7 @@
     "class": "17",
     "roles": "Office Hours Team Leader",
     "speciality": "System Programming and Embedded Programming",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Brian Truong",
@@ -69,7 +69,7 @@
     "class": "17",
     "roles": "Lead Autograder",
     "speciality": "Software engineering, systems programming, OS, programming languages",
-    "semesters": "Spring 2015, Fall 2015, and Spring 2016"
+    "semesters": "Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Alek Festekjian",
@@ -77,15 +77,7 @@
     "class": "17",
     "roles": "Autograder Developer",
     "speciality": "Datascience",
-    "semesters": "Fall 2015 and Spring 2016"
-  },
-  {
-    "name": "WeiChun Lee",
-    "netid": "wlee114",
-    "class": "",
-    "roles": "Teaching Assistant",
-    "speciality": "Algorithmic Game Theory and Social Network",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Maidi Lin",
@@ -93,7 +85,7 @@
     "class": "16",
     "roles": "Lab and Officer Hours Assistant",
     "speciality": "Software Engineering",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Curtis Bezault",
@@ -101,7 +93,7 @@
     "class": "17",
     "roles": "Lab Assistant",
     "speciality": "High Performance Computing/Massively Parallel Computing",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Luke Liu",
@@ -109,7 +101,7 @@
     "class": "17",
     "roles": "Autograder and MP Developer",
     "speciality": "Linux",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Robert Andrews",
@@ -117,7 +109,7 @@
     "class": "18",
     "roles": "Honors Section Team Leader",
     "speciality": "Theoretical Computer Science",
-    "semesters": "Fall 2015 and Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Lawrence Angrave",
@@ -125,7 +117,7 @@
     "class": "",
     "roles": "Captain and Lecturer",
     "speciality": "Systems and CS Education",
-    "semesters": "Fall 2014, Spring 2015, Fall 2015, and Spring 2016"
+    "semesters": "Fall 2014, Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Paul Vijayakumar",
@@ -133,7 +125,7 @@
     "class": "16",
     "roles": "MP Development Team Lead",
     "speciality": "Machine Learning and Distributed Systems",
-    "semesters": "Fall 2014, Spring 2015, Fall 2015, and Spring 2016"
+    "semesters": "Fall 2014, Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Alec Kochevar-Cureton",
@@ -141,31 +133,7 @@
     "class": "17",
     "roles": "Lab Team Lead",
     "speciality": "Puzzles",
-    "semesters": "Fall 2015, and Spring 2016"
-  },
-  {
-    "name": "Atul Kumar S Sandur",
-    "netid": "sandur2",
-    "class": "",
-    "roles": "Teaching Assistant",
-    "speciality": "Distributed systems and Mobile Computing",
-    "semesters": "Spring 2016"
-  },
-  {
-    "name": "Boyang Chen",
-    "netid": "bchen11",
-    "class": "",
-    "roles": "Teaching Assistant",
-    "speciality": "Data Structure",
-    "semesters": "Spring 2016"
-  },
-  {
-    "name": "Braden Ehrat",
-    "netid": "ehrat1",
-    "class": "",
-    "roles": "Teaching Assistant (Exam and future MP development)",
-    "speciality": "Networks",
-    "semesters": "Spring 2016"
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
   {
     "name": "Margarita Mouschovias",
@@ -192,7 +160,7 @@
     "semesters": "Spring 2016"
   },
   {
-    "name": "Mariana Aparicio B.",
+    "name": "CS241 Admin",
     "netid": "cs241admin",
     "class": "",
     "roles": "Graduate Assistant: Assist with course administration (e.g. exam sickness, DRES).",
@@ -208,11 +176,49 @@
     "semesters": "Spring 2016"
   },
   {
-    "name": "Güliz Seray Tuncay",
-    "netid": "tuncay2",
+    "name": "WeiChun Lee",
+    "netid": "wlee114",
     "class": "",
     "roles": "Teaching Assistant",
-    "speciality": "Systems and Networking",
-    "semesters": "Spring 2016"
+    "speciality": "Algorithmic Game Theory and Social Network",
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
+  },
+  {
+    "name": "Bhatt Mayank",
+    "netid": "mayankb2",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "",
+    "semesters": "Fall 2016"
+  },
+  {
+    "name": "Po-Tsung Chiu" ,
+    "netid": "ptchiu2",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "",
+    "semesters": "Fall 2016"
+  },
+  {
+    "name": "Surtai Han",
+    "netid": "sshan7",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "",
+    "semesters": "Fall 2014 and Fall 2016"
+  },{
+    "name": "Muhammad Hussain",
+    "netid": "msh5",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "",
+    "semesters": "Fall 2016"
+  },{
+    "name": "Peng Li",
+    "netid": "pengl3",
+    "class": "",
+    "roles": "Teaching Assistant",
+    "speciality": "",
+    "semesters": "Fall 2016"
   }
 ]
