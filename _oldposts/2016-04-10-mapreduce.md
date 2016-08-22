@@ -429,5 +429,5 @@ If you run ls you will now see a mapreduce folder, where you can find this assig
 
 {% highlight bash %} svn ci -m "mapreduce submission" {% endhighlight %}
 
-Your repository directory can be viewed from a web browser from the following URL: https://subversion.ews.illinois.edu/svn/sp16-cs241/NETID/mapreduce where NETID is your University NetID.
+Your repository directory can be viewed from a web browser from the following URL: https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/mapreduce where NETID is your University NetID.
 It is important to check that the files you expect to be graded are present and up to date in your svn copy.

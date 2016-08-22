@@ -171,4 +171,4 @@ If you run `ls` you will now see a `pointers_gone_wild` folder, where you can fi
 svn ci -m "mp0 submission"
 {% endhighlight %}
 
-Your repository directory can be viewed from a web browser from the following URL: [https://subversion.ews.illinois.edu/svn/sp16-cs241/NETID/pointers_gone_wild](https://subversion.ews.illinois.edu/svn/sp16-cs241/NETID/pointers_gone_wild) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your svn copy.
+Your repository directory can be viewed from a web browser from the following URL: [https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild](https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your svn copy.

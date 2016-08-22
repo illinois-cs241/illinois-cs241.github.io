@@ -207,7 +207,7 @@ If you run ls you will now see a wearables folder, where you can find this assig
 
 {% highlight bash %} svn ci -m "wearables submission" {% endhighlight %}
 
-Your repository directory can be viewed from a web browser from the following URL: https://subversion.ews.illinois.edu/svn/sp16-cs241/NETID/wearables where NETID is your University NetID.
+Your repository directory can be viewed from a web browser from the following URL: https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/wearables where NETID is your University NetID.
 
 You will implement the logic for your server in wearable_server.c. This file will be used for grading. 
 

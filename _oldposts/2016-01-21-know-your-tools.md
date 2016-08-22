@@ -11,10 +11,10 @@ permalink: know_your_tools
 
 ## VMs
 
-In this course we are using the VMs for all our development so it is important that you learn how to use them. Note: That this VM is part of the CS Cloud and we will not support any other machine for grading. This means that you should test on this VM and and not any other machine (this includes the CS2XX VM you received in CS 225, EWS, and your local machine). This is to your benefit, since the grading VM is identical to your VM. Please ssh or FastX into your VM. I have provided the ip in your svn repo. If you want to ssh in and your netid is 'bschong2' and your hostname is 'sp16-cs241-000.cs.illinois.edu', then all you need to do is enter
+In this course we are using the VMs for all our development so it is important that you learn how to use them. Note: That this VM is part of the CS Cloud and we will not support any other machine for grading. This means that you should test on this VM and and not any other machine (this includes the CS2XX VM you received in CS 225, EWS, and your local machine). This is to your benefit, since the grading VM is identical to your VM. Please ssh or FastX into your VM. I have provided the ip in your svn repo. If you want to ssh in and your netid is 'bschong2' and your hostname is 'fa16-cs241-000.cs.illinois.edu', then all you need to do is enter
 
 {% highlight bash %}
-ssh bschong2@sp16-cs241-000.cs.illinois.edu
+ssh bschong2@fa16-cs241-000.cs.illinois.edu
 {% endhighlight %}
 
 into your terminal. If you want a GUI, then you should use FastX and follow these [instructions](https://it.engineering.illinois.edu/user-guides/remote-access/connecting-ews-linux-fastx) or add the -Y flag. We also have this nice, [Developing in 241 guide](./#developing) to solve your problems and (hopefully) make getting started in setting up your dev environment much easier.
@@ -26,7 +26,7 @@ In this course we are using SVN to submit all our assignments
 **Once you are in your VM** please checkout your svn repo with the following command
 
 {% highlight bash %}
-svn co https://subversion.ews.illinois.edu/svn/sp16-cs241/YOUR-NETID cs241
+svn co https://subversion.ews.illinois.edu/svn/fa16-cs241/YOUR-NETID cs241
 {% endhighlight %}
 
 which will check out your entire SVN repo into a folder called 'cs241' into your current directory. Now change your directory into the 'cs241' folder

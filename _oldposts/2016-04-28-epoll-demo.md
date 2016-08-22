@@ -47,7 +47,7 @@ So an example would be:
 - ./simulator ./client localhost 1025 1000
 
 Above example assumes the server is running on the same host as the clients. If you use different machine to test this, change localhost to the address of that machine. For example, if you run server on vm 002, then clients can connect by
-- ./simulator ./client sp16-cs241-002 1025 1000.
+- ./simulator ./client fa16-cs241-002 1025 1000.
 
 You can use the time function to determine the time it takes for the simulator to complete. Compare the runtimes for the different server implementations that use: epoll, select and pthreads.
 
