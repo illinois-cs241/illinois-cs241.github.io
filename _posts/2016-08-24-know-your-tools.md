@@ -59,12 +59,14 @@ and commit it
 svn ci -m "adding the know_your_tools folder"
 {% endhighlight %}
 
+This is just the bare minimum you might need to know when using SVN. We recommend that you refer to the [SVN Bible] (http://svnbook.red-bean.com/en/1.7/) if you ever have a problem. It is always good to learn the ins and outs of a version control system, since it makes it easier to pick them up when you are working in industry.
+
 
 ## Valgrind + GDB + Clang
 
 In this course you will need to know how to use Valgrind + GDB + Clang
 
-**Once you are in your VM** please create a file called 'dumb.c' in your know_your_tools directory that you just made. Now write a valid C program in 'dumb.c' that will segfault. Now compile with clang
+**Once you are in your VM** please create a file called 'dumb.c' in your 'know_your_tools' directory that you just made. Now write a valid C program in 'dumb.c' that will segfault. Now compile with clang
 
 {% highlight bash %}
 clang dumb.c -o dumb -g
@@ -96,13 +98,113 @@ Then exit gdb
 quit
 {% endhighlight %}
 
-Now commit 'dumb.c' to your know_your_tools folder on svn (I leave this as an exercise to the reader).</div>
+Now commit 'dumb.c' to your 'know_your_tools' folder on svn (I leave this as an exercise to the reader).</div>
+
+These are just the most basic things that you can do with the tools. We highly recommend that you read tutorials on these tools to effectively use them through out this course. Here are just a couple of promising looking links:
+
+* [Valgrind] (http://valgrind.org/docs/manual/QuickStart.html)
+* [GDB] (https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
+* [Clang] (http://clang.llvm.org/get_started.html)
+
+## CS 241 Makefile
+
+All the assignments in this class will use a similar makefile. 
+
+Here is what a typical makefile will look like:
+
+{% highlight make %}
+# directory to store object files
+OBJS_DIR = .objs
+
+# define the EXES
+EXE_SHELL=shell
+EXES_STUDENT=$(EXE_SHELL)
+
+OBJS_SHELL=$(EXE_SHELL).o format.o
+
+# set up compiler
+CC = clang
+INCLUDES=-I./includes/
+WARNINGS = -Wall -Wextra -Werror -Wno-error=unused-parameter
+CFLAGS_DEBUG   = -O0 $(INCLUDES) $(WARNINGS) -g -std=c99 -c -MMD -MP -D_GNU_SOURCE -DDEBUG
+CFLAGS_RELEASE = -O2 $(INCLUDES) $(WARNINGS) -g -std=c99 -c -MMD -MP -D_GNU_SOURCE
+
+# set up linker
+LD = clang
+LDFLAGS = -Llibs/ -lprovided
+
+.PHONY: all
+all: release
+
+# build types
+# run clean before building debug so that all of the release executables
+# disappear
+.PHONY: release
+.PHONY: debug
+
+release: $(EXES_STUDENT)
+debug: clean $(EXES_STUDENT:%=%-debug)
+
+# include dependencies
+-include $(OBJS_DIR)/*.d
+
+$(OBJS_DIR):
+@mkdir -p $(OBJS_DIR)
+
+# patterns to create objects
+# keep the debug and release postfix for object files so that we can always
+# separate them correctly
+$(OBJS_DIR)/%-debug.o: %.c | $(OBJS_DIR)
+$(CC) $(CFLAGS_DEBUG) $< -o $@
+
+$(OBJS_DIR)/%-release.o: %.c | $(OBJS_DIR)
+$(CC) $(CFLAGS_RELEASE) $< -o $@
+
+# exes
+$(EXE_SHELL)-debug: $(OBJS_SHELL:%.o=$(OBJS_DIR)/%-debug.o)
+$(LD) $^ $(LDFLAGS) -o $@
+
+$(EXE_SHELL): $(OBJS_SHELL:%.o=$(OBJS_DIR)/%-release.o)
+$(LD) $^ $(LDFLAGS) -o $@
+
+.PHONY: clean
+clean:
+rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
+
+{% endhighlight %}
+
+This looks scary, but if you google some makefile basics and carefully read the comments it should mostly make sense. However these are the things you will need to know at the minimum:
+
+
+{% highlight bash %}
+make
+{% endhighlight %}
+
+Will compile the assignment
+
+{% highlight bash %}
+make clean
+{% endhighlight %}
+
+Will clean up the assignment directory
+
+{% highlight bash %}
+make debug
+{% endhighlight %}
+
+Will compile a debugable version of your code that you can use gdb on
+
+{% highlight bash %}
+make release
+{% endhighlight %}
+
+Will compile a release version of your assignment that you test with
 
 ## Lab Attendance
 
-Part of your grade in this class is to attend labs. Toward the end of every lab we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time. If you are late (like more than 10 minutes), then your lab attendant reserves the right to not swipe you for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a 0 in lab attendance for the semester). Also, you must attend the lab section you have been assigned to unless you have an exemption from our GA (cs241admin@illinois.edu). We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. Attendance grades will be uploaded to [Chara](https://chara.cs.illinois.edu/gb) every Friday 11:59pm. You have until Friday 11:59pm of the next week to refute attendance grades. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).
+Part of your grade in this class is to attend labs. Toward the end of every lab we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time. If you are late (like more than 10 minutes), then your lab attendant reserves the right to not swipe you for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a 0 in lab attendance for the semester). Also, you must attend the lab section you have been assigned to unless you have an exemption from our GA (cs241admin@illinois.edu) or follow the stated policy for the semester. We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. Attendance grades will be uploaded to [Chara](https://chara.cs.illinois.edu/gb) every Friday 11:59pm. You have until Friday 11:59pm of the next week to refute attendance grades. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).
 
 
 ## HW0
 
-You have already been assigned a [HW0](https://github.com/angrave/SystemProgramming/wiki/HW0) for this class. The lab instructors will go around to make sure that you have made progress on this assignment. For your final submission you must submit a pdf called "hw0.pdf" in your "know_your_tools" folder. This is due with the rest of this lab. If you finish the lab early we recommend sticking around and getting help from the lab assistants.
+You have already been assigned a [HW0](https://goo.gl/forms/OrbWzXAdfNRfToZD2) for this class. The lab instructors will go around to make sure that you have made progress on this assignment. HW0 is due with the rest of the lab. If you finish the lab early we recommend sticking around and getting help from the lab assistants.
