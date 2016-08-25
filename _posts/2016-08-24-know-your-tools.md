@@ -18,7 +18,7 @@ In this course we are using the VMs for all our development so it is important t
 ssh bschong2@fa16-cs241-000.cs.illinois.edu
 {% endhighlight %}
 
-into your terminal. If you want a GUI, then you should use FastX and follow these [instructions](https://it.engineering.illinois.edu/user-guides/remote-access/connecting-ews-linux-fastx) or add the -Y flag. We also have this nice, [Developing in 241 guide](./#developing) to solve your problems and (hopefully) make getting started in setting up your dev environment much easier.
+into your terminal. If you want a GUI, then you should use FastX and follow these [instructions](https://it.engineering.illinois.edu/user-guides/remote-access/connecting-ews-linux-fastx) or add the -Y flag. We also have this nice, [Developing in 241 guide](./Developing In CS241.pdf) to solve your problems and (hopefully) make getting started in setting up your dev environment much easier.
 
 ## SVN
 
