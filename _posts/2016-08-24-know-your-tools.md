@@ -24,9 +24,9 @@ into your terminal. If you want a GUI, then you should use FastX and follow thes
 
 ## SVN
 
-In this course we are using SVN to submit all our assignments
+You will be using SVN to submit all your assignments in this course.
 
-**Once you are in your VM** please checkout your svn repo with the following command
+**Once you are in your VM**, please checkout your SVN repo with the following command
 
 {% highlight bash %}
 svn co https://subversion.ews.illinois.edu/svn/fa16-cs241/YOUR-NETID cs241
@@ -50,7 +50,7 @@ Now check the status of your repo
 svn status
 {% endhighlight %}
 
-and notice that you now have a 'know_your_tools' folder that needs to be added. Add the 'know_your_tools' folder to svn
+and notice that you now have a 'know_your_tools' folder that needs to be added. Add the 'know_your_tools' folder to SVN
 
 {% highlight bash %}
 svn add know_your_tools
@@ -67,9 +67,9 @@ This is just the bare minimum you might need to know when using SVN. We recommen
 
 ## Valgrind + GDB + Clang
 
-In this course you will need to know how to use Valgrind + GDB + Clang
+In this course, you will need to know how to use Valgrind + GDB + Clang.
 
-**Once you are in your VM** please create a file called 'dumb.c' in your 'know_your_tools' directory that you just made. Now write a valid C program in 'dumb.c' that will segfault. Now compile with clang
+**Once you are in your VM**, please create a file called 'dumb.c' in your 'know_your_tools' directory that you just made. Now write a valid C program in 'dumb.c' that will segfault. Now compile with clang
 
 {% highlight bash %}
 clang dumb.c -o dumb -g
@@ -103,7 +103,7 @@ quit
 
 Now commit 'dumb.c' to your 'know_your_tools' folder on svn (I leave this as an exercise to the reader).
 
-These are just the most basic things that you can do with the tools. We highly recommend that you read tutorials on these tools to effectively use them through out this course. Here are just a couple of promising looking links:
+These are just the most basic things that you can do with the tools. We highly recommend that you read tutorials on these tools to effectively use them through out this course. Here are just a couple of promising links:
 
 * [Valgrind](http://valgrind.org/docs/manual/QuickStart.html)
 * [GDB](https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
@@ -176,46 +176,50 @@ rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
 
 {% endhighlight %}
 
-This looks scary, but if you google some makefile basics and carefully read the comments it should mostly make sense. However these are the things you will need to know at the minimum:
+This looks scary, but if you google some makefile basics and carefully read the comments it should mostly make sense. However, these are the things you will need to know at the minimum:
 
+
+* Compile the assignment:
 
 {% highlight bash %}
 make
 {% endhighlight %}
 
-Will compile the assignment
+* Clean up the assignment directory:
 
 {% highlight bash %}
 make clean
 {% endhighlight %}
 
-Will clean up the assignment directory
+* Compile a debugable version of your code that you can use gdb on:
 
 {% highlight bash %}
 make debug
 {% endhighlight %}
 
-Will compile a debugable version of your code that you can use gdb on
+* Compile a release version of your assignment that you test with:
 
 {% highlight bash %}
 make release
 {% endhighlight %}
 
-Will compile a release version of your assignment that you test with
 
 ## Lab Attendance
 
-Part of your grade in this class is to attend labs. Toward the end of every lab we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time. If you are late (like more than 10 minutes), then your lab attendant reserves the right to not swipe you for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a 0 in lab attendance for the semester). Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:
+Part of your grade in this class relies on you attending labs. Toward the end of every lab, we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time. If you are more than 10 minutes late to class, then your lab attendant reserves the right to not swipe you for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a zero in lab attendance for the semester). Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:
 
-- Go to section ADJ at 9-10:20am in 0222.  This section only has 7 registered students and thus there will be room to accommodate you on a first come first served basis
+- Go to section ADJ at 9-10:20am in 0222.  This section only has 7 registered students, and thus there will be room to accommodate you on a first come first served basis.
 - Get permission from the TA of another section to go to their section, provided
-    1) you will be working on your laptop in the room or
-    2) there is seating available where registered students get priority.
+    - you will be working on your laptop in the room, or
+    - there is seating available where registered students get priority.
 
 If choosing the latter option, you must email the TA beforehand.
-Reminder that lab attendance is required; per course policy missing 3 or more lab sections will result in a failing grade.
 
-You can still get credit for attending a different section due to special or occasional circumstances by making arangments with the GA at cs241admin@illinois.edu. However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office SC1210 to change your section without having to drop your enrollment. We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. All grades (including attendance) will be uploaded to [Chara](https://chara.cs.illinois.edu/gb) every Friday 11:59pm. You have until Friday 11:59pm of the next week to refute attendance grades. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).
+Remember that lab attendance is required; per course policy, missing 3 or more lab sections will result in a failing grade.
+
+You can still get credit for attending a different section due to special or occasional circumstances by making arangments with the GA at [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu). However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office SC1210 to change your section without having to drop your enrollment.
+
+We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. All grades (including attendance) will be uploaded to [Chara](https://chara.cs.illinois.edu/gb) every Friday by 11:59pm. You have until 11:59pm on Friday of the next week to refute attendance grades. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).
 
 
 ## HW0
