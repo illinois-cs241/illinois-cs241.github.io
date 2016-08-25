@@ -17,6 +17,7 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
   - mps.json: stores the mp info for mp.html
   - schedule[term][year].json: stores the lecture schedule for schedule.html
   - staff.json: stores the staff info for staff.html
+- _drafts: stores future posts
 - _includes: holds html that is used everywhere
   - head.html: holds code for including other files
   - header.html: top nav bar code
@@ -28,7 +29,8 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
 - images: holds images
 - js: holds javascripts
 - lib: folder for libraries
-- config.yml: global site configuration
+- static: holds other static content, like PDFs
+- _config.yml: global site configuration
 - 404.html: 404 error page
 - help.md: markdown for help page
 - index.md: syllabus page
