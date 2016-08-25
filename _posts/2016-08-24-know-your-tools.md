@@ -203,7 +203,17 @@ Will compile a release version of your assignment that you test with
 
 ## Lab Attendance
 
-Part of your grade in this class is to attend labs. Toward the end of every lab we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time. If you are late (like more than 10 minutes), then your lab attendant reserves the right to not swipe you for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a 0 in lab attendance for the semester). Also, you must attend the lab section you have been assigned to unless you have an exemption from our GA (cs241admin@illinois.edu) or follow the stated policy for the semester. We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. Attendance grades will be uploaded to [Chara](https://chara.cs.illinois.edu/gb) every Friday 11:59pm. You have until Friday 11:59pm of the next week to refute attendance grades. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).
+Part of your grade in this class is to attend labs. Toward the end of every lab we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time. If you are late (like more than 10 minutes), then your lab attendant reserves the right to not swipe you for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a 0 in lab attendance for the semester). Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:
+
+- Go to section ADJ at 9-10:20am in 0222.  This section only has 7 registered students and thus there will be room to accommodate you on a first come first served basis
+- Get permission from the TA of another section to go to their section, provided
+    1) you will be working on your laptop in the room or
+    2) there is seating available where registered students get priority.
+
+If choosing the latter option, you must email the TA beforehand.
+Reminder that lab attendance is required; per course policy missing 3 or more lab sections will result in a failing grade.
+
+You can still get credit for attending a different section due to special or occasional circumstances by making arangments with the GA at cs241admin@illinois.edu. However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office SC1210 to change your section without having to drop your enrollment. We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. All grades (including attendance) will be uploaded to [Chara](https://chara.cs.illinois.edu/gb) every Friday 11:59pm. You have until Friday 11:59pm of the next week to refute attendance grades. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).
 
 
 ## HW0
