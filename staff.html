@@ -23,7 +23,7 @@
                         </div>
                         <div style = "width: 100%; background: rgba(0, 0, 0, 0.7);">
                           <div class = "floater" style = "height: 0; padding-bottom: 15%; width:90%; margin: 3% auto">
-                            <span style = "color: white; float:left; font-size:1.5em;">{{member.name}} '{{member.class}}</span>
+                            <span style = "color: white; float:left; font-size:1.5em;">{{member.name}}{% if member.class != "" and member.class != nil %} '{{member.class}}{% endif %}</span>
                             <span data-tooltip aria-haspopup="true" class="has-tip" title="{{member.netid}}@illinois.edu" style = "float:right;position:relative">
                               <span class="icon material-icons">
                                 <i class="material-icons"><a style ="color:white;" href = "mailto:{{member.netid}}@illinois.edu?Subject=CS241%20Student">mail</a></i>
