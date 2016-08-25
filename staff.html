@@ -11,11 +11,13 @@
           <div class = "row">
           	<div class = "small-8 medium-8 large-10 large-centered medium-centered columns">
               {% assign sorted_team = site.data.staff | sort:'netid' %}
+              {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/'" %}
               {% for member in sorted_team %}
                 <div class = "small-12 medium-12 large-3 columns" title="{{member.roles}} interested in {{member.speciality}} and has been on staff for {{member.semesters}}" >
                   <div class = "pad" id = "{{member.netid}}" >
-                    <a href = "./images/staffPhotos/{{member.netid}}.jpg">
-                      <div class="card-staff mdl-card mdl-shadow--2dp" style = "background: url('./images/staffPhotos/{{member.netid}}.jpg') no-repeat; background-size: cover;">
+                    {% assign photo = photos | where_exp: "file", "file.path contains member.netid" | first | map: "path" | default: "./images/staffPhotos/default.jpg" %}
+                    <a href = "{{ photo }}">
+                      <div class="card-staff mdl-card mdl-shadow--2dp" style = "background: url('{{ photo }}') no-repeat; background-size: cover;">
                         <div class = "spacer" style = "height: 0; padding-bottom: 85%; width:100%;">
                           <!-- Horrible Hack! Please fix me -->
                         </div>
