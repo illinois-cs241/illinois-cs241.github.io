@@ -182,5 +182,13 @@
     "roles": "Teaching Assistant",
     "speciality": "",
     "semesters": "Fall 2016"
+  },
+  {
+    "name": "Bhuvan Venkatesh",
+    "netid": "bvenkat2",
+    "class": "19",
+    "roles": "Lab, Office Hours, and Honors",
+    "speciality": "Full Stack and ML Developer",
+    "semesters": "Fall 2016"
   }
 ]
