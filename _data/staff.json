@@ -190,5 +190,13 @@
     "roles": "Lab, Office Hours, and Honors Assistant",
     "speciality": "Full Stack and ML Developer",
     "semesters": "Fall 2016"
+  },
+  {
+    "name": "Aadil Bhatti",
+    "netid": "abhatti2",
+    "class": "17",
+    "roles": "Assignment Development",
+    "specialty": "",
+    "semesters": "Fall 2016"
   }
 ]
