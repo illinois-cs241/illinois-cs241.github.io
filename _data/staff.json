@@ -198,5 +198,13 @@
     "roles": "Assignment Development",
     "specialty": "",
     "semesters": "Fall 2016"
-  }
+  },
+  {
+    "name": "Yi Zhou",
+    "netid": "yizhou7",
+    "class": "17",
+    "roles": "Lab",
+    "speciality": "Computer Security",
+    "semesters": "Fall 2015, Spring 2016, and Fall 2016"
+  },
 ]
