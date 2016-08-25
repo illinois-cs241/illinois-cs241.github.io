@@ -59,7 +59,7 @@ and commit it
 svn ci -m "adding the know_your_tools folder"
 {% endhighlight %}
 
-This is just the bare minimum you might need to know when using SVN. We recommend that you refer to the [SVN Bible] (http://svnbook.red-bean.com/en/1.7/) if you ever have a problem. It is always good to learn the ins and outs of a version control system, since it makes it easier to pick them up when you are working in industry.
+This is just the bare minimum you might need to know when using SVN. We recommend that you refer to the [SVN Bible](http://svnbook.red-bean.com/en/1.7/) if you ever have a problem. It is always good to learn the ins and outs of a version control system, since it makes it easier to pick them up when you are working in industry.
 
 
 ## Valgrind + GDB + Clang
@@ -98,13 +98,13 @@ Then exit gdb
 quit
 {% endhighlight %}
 
-Now commit 'dumb.c' to your 'know_your_tools' folder on svn (I leave this as an exercise to the reader).</div>
+Now commit 'dumb.c' to your 'know_your_tools' folder on svn (I leave this as an exercise to the reader).
 
 These are just the most basic things that you can do with the tools. We highly recommend that you read tutorials on these tools to effectively use them through out this course. Here are just a couple of promising looking links:
 
-* [Valgrind] (http://valgrind.org/docs/manual/QuickStart.html)
-* [GDB] (https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
-* [Clang] (http://clang.llvm.org/get_started.html)
+* [Valgrind](http://valgrind.org/docs/manual/QuickStart.html)
+* [GDB](https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
+* [Clang](http://clang.llvm.org/get_started.html)
 
 ## CS 241 Makefile
 
