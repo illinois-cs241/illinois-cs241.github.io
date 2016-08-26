@@ -207,4 +207,12 @@
     "speciality": "Computer Security",
     "semesters": "Fall 2015, Spring 2016, and Fall 2016"
   },
+  {
+    "name": "Mengting Yan",
+    "netid": "myan9",
+    "class": "18",
+    "roles": "Honors Assistant",
+    "speciality": "Operating System, Distributed System",
+    "semesters": "Fall 2016"
+  },
 ]
