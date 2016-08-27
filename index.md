@@ -101,6 +101,7 @@ Grading issues should be raised with your TA e.g. during section or by email. Mi
 All exams are in the CBTF and require signing up here: <https://edu.cs.illinois.edu/testcenter>
 
 Approximate schedule (subject to change):
+
 |  Week  | Exam             | Start | End |
 |--------|------------------|-------|-----|
 | Week 4 | Quiz 1           | TBA | TBA |
