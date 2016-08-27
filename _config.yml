@@ -11,8 +11,9 @@ email: angrave@illinois.edu
 description: > # this means to ignore newlines until "baseurl:"
   Webpage for CS241.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://illinois-cs.github.io" # the base hostname & protocol for your site
-github_username:  illinois-cs
+url: "https://illinois-cs241.github.io" # the base hostname & protocol for your site
+repository: illinois-cs241/illinois-cs241.github.io
+github_username: illinois-cs241
 
 # Build settings
 markdown: kramdown

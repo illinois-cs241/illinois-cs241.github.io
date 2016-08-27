@@ -2,7 +2,7 @@
 layout: doc
 title: "Know Your Tools"
 permalink: know_your_tools
-dueDates: "08/31 11:59pm"
+dueDates: "8/31/2016, 11:59 PM"
 ---
 
 ## Introduction
