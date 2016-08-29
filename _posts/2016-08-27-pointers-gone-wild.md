@@ -84,7 +84,7 @@ Result: 2499
 7
 {% endhighlight %}
 
-##Part 2:
+## Part 2:
 
 We have pre-uploaded some files to your mp0 svn directory, including <tt>part2-functions.c</tt>. Inside <tt>part2-functions.c</tt>, you will see twelve different functions, including <tt>first_step()</tt> (re-printed below).
 
