@@ -5,21 +5,30 @@
       {% include header.html %}
       <main class="mdl-layout__content">
         <div class="page-content">
-          <!-- Your content goes here -->
           <div class="row">
-            <nav id="toc" style="position: fixed" class="small-12 medium-12 large-3 columns show-for-xlarge-up">
-              {% if page.dueDates %}
-                <br/>
-                <span><strong>Due Date(s):</strong> {{ page.dueDates }}</span>
+            {% capture metadata %}
+              {% if page.date %} <!-- this is a post -->
+                <ul class="metadata">
+                  {% if page.dueDates %}
+                    <li><strong>Due date(s):</strong> <span class="due-date">{{ page.dueDates }}</span></li>
+                  {% endif %}
+                  <li class="github-date" style="display: none;"><strong>Last modified:</strong> <span class="github-date-value"></span></li>
+                </ul>
               {% endif %}
+            {% endcapture %}
+            <nav id="toc" style="position: fixed" class="small-12 medium-12 large-3 columns show-for-xlarge-up">
+              <br/>
+              {{ metadata }}
             </nav>
             <div class="small-12 medium-12 large-7 large-centered columns">
-              <h1>{{ page.title }}</h1>
-              <nav id="tocMobile" class="small-12 medium-12 large-7 columns hide-for-xlarge-up">
-                {% if page.dueDates %}
-                  <br/>
-                  <span><strong>Due Date(s):</strong> {{ page.dueDates }}</span>
+              <h1>
+                {{ page.title }}
+                {% if page.date %}
+                  <a class="github-link" href="https://github.com/{{ site.repository | uri_escape }}/blob/master/{{ page.path | uri_escape }}">Edit on Github</a>
                 {% endif %}
+              </h1>
+              <nav id="tocMobile" class="small-12 medium-12 large-7 columns hide-for-xlarge-up">
+                {{ metadata }}
               </nav>
               <div id="content">
                 {{ content }}
@@ -29,8 +38,13 @@
         </div>
       </main>
     </div>
+    <script>
+      var github_repo = "{{ site.repository | escape }}";
+      var github_path = "{{ page.path | escape }}";
+    </script>
     <script src="./js/toc.js"></script>
     <script src="./js/materialize.js"></script>
     <script src="./js/smoothscroll.js"></script>
+    <script src="./js/github.js"></script>
   </body>
 </html>
