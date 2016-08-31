@@ -26,7 +26,7 @@ There are erroneous/unimplemented functions in <tt>part1-functions.c</tt>. Your 
 10^2 + 10^2 = 200
 == two() ==
 20 not passed!
-100 passed!
+100.000000 passed!
 == three() ==
 The value of p is: 4
 == four() ==
@@ -84,6 +84,8 @@ Result: 2499
 7
 {% endhighlight %}
 
+Note that you can just diff with ```part1-expected-output```.
+
 ## Part 2:
 
 We have pre-uploaded some files to your mp0 SVN directory, including <tt>part2-functions.c</tt>. Inside <tt>part2-functions.c</tt>, you will see twelve different functions, including <tt>first_step()</tt> (re-printed below).
@@ -110,6 +112,8 @@ To complete Part 2, you must complete the program <tt>part2-main.c</tt> so that 
 10: Illinois
 11: Illinois
 {% endhighlight %}
+
+Note that you can just diff with ```part2-expected-output```.
 
 <span style="color: #800">You should NOT edit the part2-functions.c file. In fact, when we grade your program, we will replace the part2-functions.c file with a new version of the file (and we'll change the "Illinois" string so printing out "Illinois" in a for-loop will get you no credit).</span>
 
