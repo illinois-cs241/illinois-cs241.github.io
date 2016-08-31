@@ -6,16 +6,16 @@ permalink: pointers_gone_wild
 
 ## Introduction
 
-In CS 125, CS 225, and other classes, you have used various languages that are considered to be "C based", but up to now you may have very limited experience in C programming. This MP will provide a short programming introduction to pointers, strings, and functions in C.
+In CS 125, CS 225, and other classes, you have used various languages that are considered to be "C-based", but up to now you may have very limited experience in C programming. This MP will provide a short programming introduction to pointers, strings, and functions in C.
 
-This machine problem will be divided up into two pieces. In the first piece, you will be modifying functions originally with errors such that the outputs match the given output. In the second piece, you will need to write some code to call some 'creatively defined' functions so that those functions produce the desired output.
+This machine problem will be divided up into two parts. In the first part, you will be modifying broken functions so that their output matches the given output. In the second part, you will need to write code to call some 'creatively defined' functions so that those functions produce the desired output.
 
-For this MP, you may modify:
+For this MP, you should modify:
 
 *   <tt>part1-functions.c</tt>
 *   <tt>part2-main.c</tt>
 
-All other files will be replaced with new/different files for grading. If you modify any other files for debugging purposes, please ensure you test your program with the original file.
+All other files will be replaced with new/different files for grading. If you modify any other files for debugging purposes, please ensure you test your program with the original files.
 
 ## Part 1:
 
@@ -86,7 +86,7 @@ Result: 2499
 
 ## Part 2:
 
-We have pre-uploaded some files to your mp0 svn directory, including <tt>part2-functions.c</tt>. Inside <tt>part2-functions.c</tt>, you will see twelve different functions, including <tt>first_step()</tt> (re-printed below).
+We have pre-uploaded some files to your mp0 SVN directory, including <tt>part2-functions.c</tt>. Inside <tt>part2-functions.c</tt>, you will see twelve different functions, including <tt>first_step()</tt> (re-printed below).
 
 {% highlight c %}
 void first_step(int value) {
@@ -123,11 +123,11 @@ make
 {% endhighlight %}
 
 
-This will compile your code with some optimizations enabled, and will not include debugging information (if you use a debugger on the 'release' build, it will not be able to show you the original source code, or line numbers). Optimizations sometimes expose some bugs in your code that would not show up when no optimizations are enabled, but since optimizations tend to reorder your code while compiling, an optimized version of your code is not optimal for debugging.
+This will compile your code with some optimizations enabled, and will not include debugging information (if you use a debugger on the 'release' build, it will not be able to show you the original source code, or line numbers). Optimizations sometimes expose bugs in your code that would not show up otherwise, but since optimizations tend to reorder your code while compiling, an optimized version of your code is not optimal for debugging.
 
 You probably don't need to worry about the different build types very much for this assignment, but the distinction will become more important on future assignments.
 
-To compile your code in debug mode, run `make debug` instead of `make`
+To compile your code in debug mode, run `make debug` instead of `make`.
 
 To run Part 1:
 
@@ -171,4 +171,4 @@ If you run `ls` you will now see a `pointers_gone_wild` folder, where you can fi
 svn ci -m "mp0 submission"
 {% endhighlight %}
 
-Your repository directory can be viewed from a web browser from the following URL: [https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild](https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your svn copy.
+Your repository directory can be viewed from a web browser from the following URL: [https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild](https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your SVN copy.
