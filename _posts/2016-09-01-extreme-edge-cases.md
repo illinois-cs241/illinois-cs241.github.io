@@ -58,7 +58,7 @@ The brackets denote that the above is an array of those strings. (More details i
 
 *   A NULL pointer is undefined for camelCaser, so you should just return a NULL pointer.
 *   A input sentence, `input_s`, is defined as any MAXIMAL substring of the input string that ends with a punctuation mark and does not contain a punctuation mark.
-    *   This means that “Hello.World.” gets split into 2 sentences “Hello.” and “World.” and NOT “Hello.World.”.
+    *   This means that “Hello.World.” gets split into 2 sentences “Hello” and “World” and NOT “Hello.World”.
 *   Let the camelCasing of `input_s` be called `output_s`
 *   `output_s` is the the concatenation of all words `w` in `input_s` after `w` has been camelcased
     *   The puncation from `input_s` is not added to `output_s`
