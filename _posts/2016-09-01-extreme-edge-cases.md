@@ -126,7 +126,6 @@ Also it is not in the spirit of unit testing to diff your implementation with th
 ## Files
 
 *   camelCaser_main.c - Calls your unit tester
-*   reference - Contains the reference implementation of camelCaser
-
+*   camelCaser-reference - the reference implementation of camelCaser
 *   camelCaser.c - Contains your implementation of camelCaser
 *   camelCaser_tests.c - Contains your unit tester for a camelCaser implementation
