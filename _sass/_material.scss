@@ -36,3 +36,14 @@
   height: 0;
   padding-bottom: 100%;
 }
+
+// Fix material's blockquote styling
+blockquote p:last-child::after {
+  position: absolute;
+  font-size: 24px;
+  content: '”';
+}
+
+blockquote::after {
+  display: none;
+}
