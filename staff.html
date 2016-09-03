@@ -20,7 +20,7 @@
                   <div class = "pad" id = "{{member.netid}}" >
                     {% assign photo = photos | where_exp: "file", "file.path contains member.netid" | first | map: "path" | default: "./images/staffPhotos/default.jpg" %}
                     <a href = "{{ photo }}">
-                      <div class="card-staff mdl-card mdl-shadow--2dp" style = "background: url('{{ photo }}') no-repeat; background-size: cover;">
+                      <div class="card-staff mdl-card mdl-shadow--2dp" style = "background-image: url('{{ photo }}');">
                         <div class = "spacer" style = "height: 0; padding-bottom: 85%; width:100%;">
                           <!-- Horrible Hack! Please fix me -->
                         </div>
