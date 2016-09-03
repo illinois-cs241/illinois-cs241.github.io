@@ -10,7 +10,10 @@
           <!-- Your content goes here -->
           <div class = "row">
           	<div class = "small-8 medium-8 large-10 large-centered medium-centered columns">
-              {% assign sorted_team = site.data.staff | sort:'netid' %}
+              <!-- A bit janky: assumes zero or one instructors. Why can't Jekyll have stable sort??? :( -->
+              {% assign team = site.data.staff | sort: 'netid' | sort: 'instructor', 'last' %}
+              {% assign instructor = team | first %}
+              {% assign sorted_team = team | shift | sort: 'netid' | unshift: instructor %}
               {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/'" %}
               {% for member in sorted_team %}
                 <div class = "small-12 medium-12 large-3 columns" title="{{member.roles}} interested in {{member.speciality}} and has been on staff for {{member.semesters}}" >

@@ -85,7 +85,8 @@
     "class": "",
     "roles": "Captain and Lecturer",
     "speciality": "Systems and CS Education",
-    "semesters": "Fall 2014, Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
+    "semesters": "Fall 2014, Spring 2015, Fall 2015, Spring 2016, and Fall 2016",
+    "instructor": true
   },
   {
     "name": "Alec Kochevar-Cureton",
