@@ -161,6 +161,7 @@ Nota Bene:
 *   All changes in enviroment variables and execution must happen only in the child process.
 *   You MUST use fork/exec/wait.
 *   If a variable doesn't exist, interpret its value as a zero-length string.
+*   DO NOT FORK BOMB THE AUTOGRADER - You will fail if you fork bomb the AG.
 
 ### Useful Resources
 
