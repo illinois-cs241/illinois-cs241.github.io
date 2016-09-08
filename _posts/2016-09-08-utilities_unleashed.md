@@ -82,8 +82,8 @@ then time will run 'sleep' with the argument '2' and record how long it took in 
 2.002345 seconds
 {% endhighlight %}
 
-Note that we only care about wall clock time and we recommend [clock_gettime](http://linux.die.net/man/3/clock_gettime) and CLOCK_MONOTONIC.  
-Pro Tip: 1 second == 1,000,000,000 nanoseconds.  
+Note that we only care about wall clock time and we recommend [clock_gettime](http://linux.die.net/man/3/clock_gettime) and CLOCK_MONOTONIC.
+Pro Tip: 1 second == 1,000,000,000 nanoseconds.
 Nota Bene:
 
 *   You MAY NOT call on the existing time program.
