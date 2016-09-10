@@ -90,7 +90,7 @@ Nota bene:
 
 *   You __may not__ use on the existing `time` program.
 *   You must use `fork`, `exec`, and `wait` (no other solutions will be accepted).
-*   You need to account for programs that do not terminate successfully (where the program's exit code is non-zero).
+*   If the program does not terminate successfully (where its exit status is non-zero), you should exit with status 1 and not print the time.
 *   We will only run `time` with one program.
 *   The commands we will run can take any number of arguments.
 *   Do your time computations with double-precision floating pointer numbers (`double`) rather that single-precision (`float`).
