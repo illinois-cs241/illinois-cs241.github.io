@@ -42,7 +42,7 @@ Please keep the following in mind when implementing your text editor:
   document. Don't write directly to the file!
 
 ## Valid Input and Documents?
-For input, we have provided a function that validates input given to the text editor! It is constructed from the DFA below.
+For input, we have provided a function that validates input given to the text editor! It is constructed from the NFA below.
 
 ![](./images/text_editor_dfa.png)
 As for opening documents, assume that the document will always be a document created from this text editor. That means it will always have valid characters (defined from the input validator above).
