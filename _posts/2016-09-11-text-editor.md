@@ -1,8 +1,8 @@
 ---
 layout: doc
 title: "Text Editor"
-permalink: text_editor
-dueDates: "02/15 11:59pm"
+permalink: Text Editor
+dueDates: "09/19 11:59pm"
 ---
 
 ## Backstory
@@ -41,15 +41,11 @@ Please keep the following in mind when implementing your text editor:
 * All your editor operations should use the `Document` library to modify the
   document. Don't write directly to the file!
 
-## Reference Implementation
-In case some of the documentation does not go into detail on edge cases or if
-you have questions on how your text editor should behave under certain
-conditions, please refer to `editor_reference`.
+## Valid Input and Documents?
+For input, we have provided a function that validates input given to the text editor! It is constructed from the DFA below.
 
-`editor_reference` is an executable that the company stole (don't ask), which is
-what your manager wants implemented, since the company does not have its source
-code. For evaluation purposes `editor_reference` is the final say for how your
-editor should behave.
+![](./images/text_editor_dfa.png)
+As for opening documents, assume that the document will always be a document created from this text editor. That means it will always have valid characters (defined from the input validator above).
 
 ## Format Library
 We have provided a format library that handles all printing to `stdout`.  This
@@ -304,6 +300,13 @@ $ ./editor kitties.txt
 4	I like [cats]
 {% endhighlight %}
 
+Searching for empty string should return nothing.
+
+{% highlight text %}
+$ ./editor kitties.txt
+/
+{% endhighlight %}
+
 ## Saving Text
 Your text editor should be able to save all of the changes you make to the
 file on disk (otherwise, what's the point?)
@@ -406,7 +409,7 @@ svn ci -m "mp2 submission"
 
 Your repository directory can be viewed from a web browser from the
 following URL:
-[https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/vector](https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/text_editor)
+[https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/vector](https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/vector)
 where NETID is your University NetID. It is important to check that the
 files you expect to be graded are present and up to date in your svn copy.
 
