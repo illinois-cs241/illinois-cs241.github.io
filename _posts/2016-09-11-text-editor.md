@@ -45,6 +45,9 @@ Please keep the following in mind when implementing your text editor:
 For input, we have provided a function that validates input given to the text editor! It is constructed from the NFA below.
 
 ![](./images/text_editor_dfa.png)
+
+Note: Sigma is the alphabet for the language of the text editor and it include the union of the character set of `isprint()` and `isspace()`.
+
 As for opening documents, assume that the document will always be a document created from this text editor. That means it will always have valid characters (defined from the input validator above).
 
 ## Format Library
