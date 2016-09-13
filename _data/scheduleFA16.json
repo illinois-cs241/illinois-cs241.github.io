@@ -147,7 +147,7 @@
         color: "#03A9F4"
     week: "#6: 9/26 - 9/30"
     announcement: >
-      <!-- <!-- <ul>
+        <!-- <ul>
         <li>
           Practice Midterm: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
         </li>
@@ -160,7 +160,7 @@
         <li>
           MP: <a target='blank' href='./malloc'>Malloc Part 1</a> Due
         </li>
-      </ul> -->
+        </ul> -->
   -
     schedule:
       -
