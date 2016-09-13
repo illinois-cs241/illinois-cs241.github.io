@@ -239,5 +239,13 @@
     "roles": "Lab/Office Hours Assistant",
     "speciality": "Undecided",
     "semesters": "Fall 2016"
+  },
+  {
+    "name": "Arman Tajback",
+    "netid": "tajback2",
+    "class": "18",
+    "roles": "Assignment Development",
+    "speciality": "Neural Networks and ML",
+    "semesters": "Fall 2016"
   }
 ]
