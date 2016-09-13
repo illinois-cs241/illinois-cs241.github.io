@@ -71,12 +71,12 @@
       <ul>
         <li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up for Quiz 1!</a></li>
       </ul>
-<!--
+      <!--
         <li>Lab: <a target='blank' href='./extreme_edge_cases'>Extreme Edge Cases</a> Due</li>
         <li>Lab: <a target='blank' href='./utilities_unleashed'>Utilities Unleashed</a> Released</li>
         <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Due</li>
         <li> MP: <a target='blank' href='./vector'>Vector</a> Released</li>
-     -->
+      -->
   -
     schedule:
       -
@@ -119,10 +119,9 @@
         summary: "14. Mutex and Semaphore examples. How to implement a lock (The critical section problem)."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 5</a>"
         color: "#2196F3"
-      -
     week: "#5: 9/19 - 9/23"
     announcement: >
-      <!-- <!-- <ul>
+      <!-- <ul>
         <li>Quiz 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
         <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
         <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
