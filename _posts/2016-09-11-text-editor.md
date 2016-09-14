@@ -310,6 +310,26 @@ $ ./editor kitties.txt
 /
 {% endhighlight %}
 
+Finally, searching should be case-sensitive. Suppose `kitties.txt` looks like this:
+{% highlight text %}
+I like cats
+I like CATS
+I like cAtS
+{% endhighlight %}
+
+Running a search:
+{% highlight text %}
+$ ./editor kitties.txt
+/cats
+{% endhighlight %}
+
+Should output:
+{% highlight text %}
+1 I like [cats]
+{% endhighlight}
+and nothing else.
+
+
 ## Saving text
 Your text editor should be able to save all of the changes you make to the
 file on disk. (Otherwise, what's the point?)
