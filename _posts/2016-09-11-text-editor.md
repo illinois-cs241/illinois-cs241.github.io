@@ -317,14 +317,10 @@ I like CATS
 I like cAtS
 {% endhighlight %}
 
-Running a search:
+Running a search should output the exact match and nothing else:
 {% highlight text %}
 $ ./editor kitties.txt
 /cats
-{% endhighlight %}
-
-Should output:
-{% highlight text %}
 1 I like [cats]
 {% endhighlight %}
 and nothing else.
