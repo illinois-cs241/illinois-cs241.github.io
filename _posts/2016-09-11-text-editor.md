@@ -326,7 +326,7 @@ $ ./editor kitties.txt
 Should output:
 {% highlight text %}
 1 I like [cats]
-{% endhighlight}
+{% endhighlight %}
 and nothing else.
 
 
