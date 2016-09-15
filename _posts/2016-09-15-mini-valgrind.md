@@ -45,7 +45,7 @@ Take a look at the `#define` statements in `mini_valgrind.h` to understand how t
 
 ### mini_realloc
 
-Now you are to implement `realloc`, which resizes memory. The basic logic for `realloc` is if the pointer is not NULL, then you will need to either grow or shrink the block of memory it points to. If the size increases, you should increase `total_usage`; otherwise, you should increase `total_free`. If the given pointer is NULL, then `realloc` is the same as `malloc`.
+Now you are to implement `realloc`, which resizes memory. The basic logic for `realloc` is if the pointer is not NULL, then you will need to either grow or shrink the block of memory it points to. If the size increases, you should increase `total_usage`; if it decreases, you should increase `total_free`. If the given pointer is NULL, then `realloc` is the same as `malloc`.
 
 ### insert_meta_data
 
