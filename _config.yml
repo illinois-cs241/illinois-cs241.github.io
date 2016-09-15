@@ -17,3 +17,6 @@ github_username: illinois-cs241
 
 # Build settings
 markdown: kramdown
+
+gems:
+ - jemoji
