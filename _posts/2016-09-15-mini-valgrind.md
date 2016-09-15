@@ -30,7 +30,7 @@ If you do feel that you need a refresher on linked lists or other prerequisite c
 
 ## mini_valgrind.c and .h
 
-There are five functions in total you must be writing.
+There are six functions in total you must be writing.
 
 ### mini_malloc
 
