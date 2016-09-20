@@ -20,10 +20,10 @@
     dueDate: "Week 5"
     url: "mini_valgrind"
   -
-    name: "Mangled Mutexes"
+    name: "Teaching Threads"
     releaseDate: "Week 5"
     dueDate: "Week 6"
-    url: "mangled_mutexes"
+    url: "teaching_threads"
   -
     name: "Terrible Threads"
     releaseDate: "Week 6"
