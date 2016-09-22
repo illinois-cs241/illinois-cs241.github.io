@@ -30,13 +30,13 @@ double *map(double *list, size_t length, mapper map_func) {
 }
 {% endhighlight %}
 
-Notice that this is basically a for-loop on the list. There are no fancy algorithms that can make this faster, since the callback function is essentially a [magic-black-box] (https://en.wikipedia.org/wiki/Black_box) that we know nothing about.
+Notice that this is basically a for-loop on the list. There are no fancy algorithms that can make this faster, since the callback function is essentially a [magic-black-box](https://en.wikipedia.org/wiki/Black_box) that we know nothing about.
 
 Parallelism to the rescue!
 
 ## par_map()
 
-The first thing to notice is that `map()` is ["embarrassingly parallel"] (https://en.wikipedia.org/wiki/Embarrassingly_parallel), which means that
+The first thing to notice is that `map()` is ["embarrassingly parallel"](https://en.wikipedia.org/wiki/Embarrassingly_parallel), which means that
 * it is easy to divide the problem into subproblems
 * none of the subproblems depend on each other
 
@@ -54,6 +54,7 @@ For our running example of `[1,2,3]` and `triple()`, we can meet the requirement
 And finally we should have our list of `[3,6,9]`.
 
 Now, it would be unfortunate if someone had to figure out the assignment of jobs to each thread manually every time the problem changes slightly:
+
 * input list changes
 * callback function changes
 * number of threads changes
