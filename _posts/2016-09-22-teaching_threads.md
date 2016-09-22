@@ -6,7 +6,7 @@ dueDates: "9/28/2016, 11:59 PM"
 ---
 
 ## Learning Objectives
-* using <pthread.h>
+* using &lt;pthread.h&gt;
 * Working with threads in an embarassingly parallel setting.
 * Dividing a problem into a lot of smaller subproblems.
 
