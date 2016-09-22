@@ -12,7 +12,7 @@ dueDates: "9/28/2016, 11:59 PM"
 
 ## map()
 
-In functional programming, there is a concept of `map()` https://en.wikipedia.org/wiki/Map_(higher-order_function). Map takes two parameters which are a list and a function. The list is the input list that you wish to transform and the function "maps" one element of the list to another value in the same domain. `map()` then returns a list where each element is the result of applying the provided function on every element (in the same order). It is why `map()` is often called "appply-to-all".
+In functional programming, there is a concept of [`map()`](https://en.wikipedia.org/wiki/Map_(higher-order_function)). Map takes two parameters which are a list and a function. The list is the input list that you wish to transform and the function "maps" one element of the list to another value in the same domain. `map()` then returns a list where each element is the result of applying the provided function on every element (in the same order). It is why `map()` is often called "appply-to-all".
 
 So, a concrete example is if we have the input list `[1,2,3]`, and we have a callback function `int triple(int elem)` which takes a number and returns 3 times that number. If we call map, the results list would be `[triple(1), triple(2), triple(3)]` or simply `[3,6,9]`
 
@@ -30,13 +30,13 @@ double *map(double *list, size_t length, mapper map_func) {
 }
 {% endhighlight %}
 
-Notice that this is basically a for-loop on the list. There are no fancy algorithms that can make this faster, since the callback function is essentially a magic-black-box https://en.wikipedia.org/wiki/Black_box that we know nothing about.
+Notice that this is basically a for-loop on the list. There are no fancy algorithms that can make this faster, since the callback function is essentially a [magic-black-box] (https://en.wikipedia.org/wiki/Black_box) that we know nothing about.
 
 Parallelism to the rescue!
 
 ## par_map()
 
-The first thing to notice is that `map()` is "embarrassingly parallel" https://en.wikipedia.org/wiki/Embarrassingly_parallel, which means that
+The first thing to notice is that `map()` is ["embarrassingly parallel"] (https://en.wikipedia.org/wiki/Embarrassingly_parallel), which means that
 * it is easy to divide the problem into subproblems
 * none of the subproblems depend on each other
 
@@ -76,10 +76,12 @@ Some food for thought:
 We have provided a makefile that will compile your code along with our framework. We insist that you read through `main.c`, so that you understand just how we are calling your `par_map()` in `par_map.c`.
 
 After running `make`, you can run the executable with the following usage:
-par_map <csv_filename> <callback_function_name> <num_threads>
+par_map <callback_function_name> <num_elements> <num_threads>
 
 We have already provided a csv file and some sample callbacks so you can run:
-./par_map sample_csv.txt triple 3
-which should run your `par_map()` with the dataset provided in `sample_csv.txt` with 3 threads.
+{% highlight bash %}
+./par_map triple 500 4
+{% endhighlight %}
+which should run your `par_map()` with the `triple` callback function on 500 elements with 4 threads (in addition to the main thread).
 
 Note: that a valid csv file for this assignment is a text file that has one line of doubles separated by commas.
