@@ -82,12 +82,10 @@ After running `make`, you can run the executable with the following usage:
 ./par_map <callback_function_name> <num_elements> <num_threads>
 {% endhighlight %}
 
-We have provided a CSV file and some sample callbacks, so you can run:
+We have provided some sample callbacks, so you can run:
 
 {% highlight bash %}
 ./par_map triple 500 4
 {% endhighlight %}
 
 which should run your `par_map()` with the `triple` callback function on 500 elements with 4 worker threads.
-
-Note: a valid CSV file for this assignment is a text file that has one line of doubles separated by commas.
