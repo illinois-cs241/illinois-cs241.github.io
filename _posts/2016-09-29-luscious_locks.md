@@ -58,12 +58,12 @@ In rendezvous you saw an example of an one-time-use barrier.  Now, you get to bu
 
 You can find more info in the [WIKI](https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-6%3A-Implementing-a-barrier)
 
-In `barrier.c` you may modify the struct.  Your goal is to implement the functions
-***
-int barrier_destroy(barrier_t *barrier);
-int barrier_init(barrier_t *barrier, unsigned num_threads);
-int barrier_wait(barrier_t *barrier);
-***
+Your goal is to implement the functions
+
+* int barrier_destroy(barrier_t *barrier);
+* int barrier_init(barrier_t *barrier, unsigned num_threads);
+* int barrier_wait(barrier_t *barrier);
+
 so that a `barrier_t` using these functions is a working reusable barrier.
 
 ## queue.c
@@ -111,7 +111,7 @@ Here you recieve a pointer to a `queue_t` struct. You must cleanup the items for
 
 **Testing is ungraded, but highly recommended**
 
-Since the implementation of your semamore is quite close to an actual semaphore, please test this on your own in a variety of ways. Be careful of race conditions! They can be hard to find!
+Since the implementation of your semamore is quite close to an actual semaphore, please test this on your own in a variety of ways. Be careful of race conditions! They can be hard to find!  We've given you a `semamore_tests.c` file to write tests in.
 
 
 For `barrier_test.c` we have provided you with a simple test case.  Feel free to expand on it, as it is not exhaustive/perfect.  Learning how to use the barrier is just as important as writing it, since you will be using barriers on the Password Cracker MP :)
