@@ -54,7 +54,7 @@ Here you are passed a Semamore struct in which you want to clean up the data. Yo
 
 ## barrier.c
 
-In rendezvous you saw an example of an one-time-use barrier.  Now, you get to build code to support a reusable barrier.  At the cost of being redundant, a reusable barrier is one that can get used more than once.  Say you have threads executing code in a for loop and you want them to stay in sync.  That is, each thread should be on the i'th iteration of the loop when every other thread is on the i'th iteration.  With a reusable barrier, you can stop threads from going to the i+1'th iteration until all of them have finished the i+1'th.
+In rendezvous you saw an example of an one-time-use barrier.  Now, you get to build code to support a reusable barrier.  At the cost of being redundant, a reusable barrier is one that can get used more than once.  Say you have threads executing code in a for loop and you want them to stay in sync.  That is, each thread should be on the i'th iteration of the loop when every other thread is on the i'th iteration.  With a reusable barrier, you can stop threads from going to the i+1'th iteration until all of them have finished the i'th.
 
 You can find more info in the [WIKI](https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-6%3A-Implementing-a-barrier)
 
