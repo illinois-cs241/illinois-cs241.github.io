@@ -97,7 +97,7 @@ You should be pushing the new node on in constant time. Be careful with the vari
 
 NOTE: This can be called by multiple threads!
 
-In `queue_pull`, you are given a pointer to a `queue_t` struct. This function should take the queue and get the data located in the current head of the list, free and then update the head, and finally return the data while following the rules we defined above. Specifically, if the queue is empty, then you should block.
+In `queue_pull`, you are given a pointer to a `queue_t` struct. This function should take the queue and get the data located in the current head of the list, free the current head of the list, and then update the head, and finally return the data while following the rules we defined above. Specifically, if the queue is empty, then you should block.
 
 You should be getting data to be returned from your queue. Ensure that you have updated the variables in queue_t properly!
 
