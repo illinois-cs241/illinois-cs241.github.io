@@ -83,7 +83,7 @@ Total Billable days : 13262
 then the simulation terminated successfully.
 This does not mean your solution is correct.
 There may still be race conditions, so it it up to you to test your code throughly with all sorts of parameters.
-If the simulator stops without billing the companies just hit `CTRL+C`.
+If the simulator stops without billing the companies just hit `CTRL+Z`.
 
 ## Grading
 Your grade depends on having a good working solution.
