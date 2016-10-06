@@ -44,7 +44,7 @@ which wont be released until the first intern is given a break...
 ## Your Job
 
 * Read [Resource Allocation Graphs](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-1%3A-Resource-Allocation-Graph) and [Deadlock Conditions](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions) to have all the knowledge you will need for this assignment.
-* Fill out this [Google Form](http://goo.gl/forms/BdDaErdQjT) **BEFORE** you write any code (see the section on testing for details on gathering data).
+* We recommend you fill out this [Google Form](http://goo.gl/forms/BdDaErdQjT) **BEFORE** you write any code (see the section on testing for details on gathering data).  It ins't graded but should help you wrap your head aroung the problem conceptually.
 * Read `simulator.c`, `bad_company.c`, and `company.h` until you have a good sense of what the code is doing (Nothing will make sense until you do).
 * Overwrite `good_company.c` with your correct solution.
 
@@ -86,7 +86,7 @@ There may still be race conditions, so it it up to you to test your code through
 If the simulator stops without billing the companies just hit `CTRL+C`.
 
 ## Grading
-Your grade will depend on having a filled out the Google form (see link at the top of this page) with correct answers and having a working solution.
+Your grade depends on having a good working solution.
 
 A good solution must have the following:
 
