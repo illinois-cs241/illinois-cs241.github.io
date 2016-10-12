@@ -50,11 +50,11 @@ You should check the man page for `crypt_r,` do you need to free the string it r
 
 ## Why is there salt in my hash?
 
-The salt argument 'flavors' the string so that when you hash the same password twice, you'll get a different result (if you use a different salt).
+The salt argument "flavors" the string so that when you hash the same password with different salts, you'll get different results.
 For example, we can use part of a user's username to salt their password before hashing.
 This way, two users with the same password will not have the same hash stored in the database.
 
-**For the sake of this assignment, always use `"xx"` for the salt argument.**
+**For this assignment, always use `"xx"` for the salt argument.**
 
 ## Problem Statement
 
