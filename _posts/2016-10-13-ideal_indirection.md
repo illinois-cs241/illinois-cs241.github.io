@@ -38,7 +38,7 @@ void *MMU_get_physical_address(MMU *mmu, void *virtual_address, size_t pid)
 
 This should convert a virtual address to a physical address from a three level page table.
 
-mmu here is a pointer to the MMU struct defined in `mmu.h`, virtual_address is the virtual address you are transforming into a physical address, and pid is the ID of this process. You can assume that the pid will its first page created.
+mmu here is a pointer to the MMU struct defined in `mmu.h`, virtual_address is the virtual address you are transforming into a physical address, and pid is the ID of this process. You can assume that the pid will always have its first page created.
 
 From the wikibook: "For most memory accesses of most programs, there is a significant chance that the TLB has cached the results... the TLB [may] not have the result cached and the MMU must use the much slower page table to determine the physical frame."
 
