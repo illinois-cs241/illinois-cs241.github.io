@@ -288,30 +288,38 @@ Please modify only the following files:
 By definition, latency is the delay from input into a system to desired outcome or the execution time of a single task. Throughput is the maximum rate at which something can be processed or the amount of task that could be completed in a period of time.
 
 Let’s take pizza delivery for an example,
-- Do you want your pizza hot? Low latency!
-- Or do you want your pizza to be inexpensive?
-  High throughput - lots of pizzas per hour
+- Do you want your pizza hot? Low latency = pizza arrives quicker!
+- Or do you want your pizza to be inexpensive? High throughput = lots of pizzas per hour
 
-For this MP, in the “Version 1: Thread Pool” solution, because the amount of time needed for every task is different, the tasks needed less time won’t be blocked by the tasks that needed longer time. Besides, the execution time for each task is longer than having all the thread working on the single task.
+For the "Version 1: Thread Pool" solution, because the amount of time needed for every task is different, the tasks that need less time won’t be blocked by the tasks that needed longer time. On the other hand, the execution time for each task is longer than having all the thread working on the single task.
 
-Consider the case,
-A thread can run 100 iterations per second.
-task1: 10000 iterations
-task2: 100 iterations
-task3: 100 iterations
-task4: 100 iterations
-task5: 100 iterations
+Consider the following tasks (in order), where a thread can run 100 iterations per second:
 
-Suppose there are 4 threads available and the program starts for 1 second.
-For version 1: The throughput is 4 since task 2~5 have already completed.
-For version 2: The throughput is 0 since there is no task have yet completed..
+1. task 1: 100 iterations
+2. task 2: 10000 iterations
+3. task 3: 100 iterations
+4. task 4: 100 iterations
+5. task 5: 100 iterations
 
-|                    | Task1 | Task2 | Task3 | Task4 | Task5 |
-| ------------------ | ----- | ----- | ----- | ----- | ----- |
-| Latency (version1) |   100 |      1|      1|      1|      1|
-| Latency (version2) |    20 |    0.2|    0.2|    0.2|    0.2|
+### Throughput
 
-Therefore, this solution would result in high throughput but high latency. Similarly, “Version 2: Parallelize Each Task” solution would result in low latency but low throughput.
+Suppose there are 4 threads available and the program runs for 1 seconds.
+
+For version 1: The throughput is 3 since tasks 1, 2, and 4 will have completed, while 3 is still being worked on (and 5 is just being started).
+
+For version 2: The throughput is 1 since only the first task will have completed and all of the threads are busy working on task 2.
+
+### Latency
+
+The latency is determined by how quickly each password can be cracked.
+
+|                     | Task1 | Task2 | Task3 | Task4 | Task5 |
+| ------------------- | ----- | ----- | ----- | ----- | ----- |
+| Latency (version 1) |      1|    100|      1|      1|      1|
+| Latency (version 2) |    0.2|     20|    0.2|    0.2|    0.2|
+
+
+Version 2 has much lower latency since each password is cracked faster by multiple threads working on the same task.
 
 ## Building and Running
 As usual, we have provided a Makefile which can build a `release` and a `debug` version of your code.
