@@ -18,6 +18,8 @@ This way, there's no need to store your actual password.
 Given the output of a good hash function, it is hard or impossible to reconstruct the input using the hashed value.
 However, if you are willing to burn some CPU time, it is possible to try every possible password (brute force attack) until you find one such that hashes to the target hash.
 
+**Note:** For part 1's deadline you need to have "Version 1: Thread Pool" done and for part 2's deadline you need to have "Version 2: Parallelize each task" done.
+
 ## `crypt_r()`
 
 We will be using `crypt_r()` (a reentrant/thread safe version) of the `crypt()` function, as our hashing function.
