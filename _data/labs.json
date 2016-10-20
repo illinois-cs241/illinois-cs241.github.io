@@ -40,10 +40,10 @@
     dueDate: "Week 9"
     url: "ideal_indirection"
   -
-    name: "Et tu, Brute?"
+    name: "MR0"
     releaseDate: "Week 9"
     dueDate: "Week 10"
-    url: "et_tu_brute"
+    url: "mr0"
   -
     name: "Scheduler"
     releaseDate: "Week 10"
