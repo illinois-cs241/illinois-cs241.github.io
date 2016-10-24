@@ -18,12 +18,11 @@
         color: "#F44336"
     week: "#1: 8/22 - 8/26"
     announcement: >
-      <!-- <!-- <ul>
+       <ul>
         <li>
           <a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a> is out
         </li>
-        <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Will be released</li>
-      </ul> -->
+       </ul>
   -
     schedule:
       -
@@ -43,7 +42,7 @@
         color: "#E91E63"
     week: "#2: 8/29 - 9/2"
     announcement: >
-      <!-- <!-- <ul>
+      <!-- <ul>
         <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Due</li>
         <li>Lab: <a target='blank' href='./extreme_edge_cases'>Extreme Edge Cases</a> Released</li>
         <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Released</li>
@@ -71,12 +70,6 @@
       <ul>
         <li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up for Quiz 1!</a></li>
       </ul>
-      <!--
-        <li>Lab: <a target='blank' href='./extreme_edge_cases'>Extreme Edge Cases</a> Due</li>
-        <li>Lab: <a target='blank' href='./utilities_unleashed'>Utilities Unleashed</a> Released</li>
-        <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Due</li>
-        <li> MP: <a target='blank' href='./vector'>Vector</a> Released</li>
-      -->
   -
     schedule:
       -
@@ -96,11 +89,7 @@
         color: "#673AB7"
     week: "#4: 9/12 - 9/16"
     announcement: >
-      <!-- <!-- <ul>
-        <li>Lab: <a target='blank' href='./Utilities%20Unleashed'>Utilities Unleashed</a> Due</li>
-        <li>Lab: <a target='blank' href='./Mini%20Valgrind'>Mini Valgrind</a> Released</li>
-        <li>MP: <a target='blank' href='./Vector'>Vector</a> Due</li>
-        <li>MP: <a target='blank' href='./Shell'>Shell</a> Released</li>
+      <!-- <ul>
       </ul> -->
   -
     schedule:
@@ -151,15 +140,6 @@
         <li>
           Practice Midterm: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
         </li>
-        <li>
-          Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Due
-        </li>
-        <li>
-          Lab: <a target='blank' href='./terrible_threads'>Terrible Threads</a> Released
-        </li>
-        <li>
-          MP: <a target='blank' href='./malloc'>Malloc Part 1</a> Due
-        </li>
         </ul> -->
   -
     schedule:
@@ -180,18 +160,9 @@
         color: "#00BCD4"
     week: "#7: 10/3 - 10/7"
     announcement: >
-      <!-- <!-- <ul>
+      <!-- <ul>
         <li>
           Midterm 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
-        </li>
-        <li>
-          Lab: <a target='blank' href='./terrible_threads'>Terrible Threads</a> Due
-        </li>
-        <li>
-          Lab: <a target='blank' href='./broken_barriers'>Broken Barriers</a> Released
-        </li>
-        <li>
-          MP: <a target='blank' href='./malloc'>Malloc Part 2</a> Due
         </li>
       </ul> -->
   -
@@ -213,18 +184,9 @@
         color: "#4CAF50"
     week: "#8: 10/10 - 10/14"
     announcement: >
-      <!-- <!-- <ul>
+      <!-- <ul>
         <li>
           Quiz 3: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
-        </li>
-        <li>
-          Lab: <a target='blank' href='./broken_barriers'>Broken Barriers</a> Due
-        </li>
-        <li>
-          Lab: <a target='blank' href='./overworked_interns'>Overworked Interns</a> Released
-        </li>
-        <li>
-          MP: <a target='blank' href='./password_cracker'>Password Cracker</a> Released
         </li>
       </ul> -->
   -
@@ -250,15 +212,6 @@
         <li>
           Lab: <a target='blank' href='./overworked_interns'>Overworked Interns</a> Due
         </li>
-        <li>
-          Lab: <a target='blank' href='./ideal_indirection'>Ideal Indirection</a> Released
-        </li>
-        <li>
-          MP: <a target='blank' href='./password_cracker'>Password Cracker Part 1</a> Due
-        </li>
-        <li>
-          MP: <a target='blank' href='./password_cracker'>Password Cracker Part 2</a> Due
-        </li>
       </ul> -->
   -
     schedule:
@@ -283,15 +236,6 @@
         <li>
           Quiz 4: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
         </li>
-        <li>
-          Lab: <a target='blank' href='./mad_mad_access_pattern'>Mad Mad Access Pattern</a> Released
-        </li>
-        <li>
-          Lab: <a target='blank' href='./ideal_indirection'>Ideal Indirection</a> Due
-        </li>
-        <li>
-          MP: <a target='blank' href='./parmake'>Parmake</a> Released
-        </li>
       </ul> -->
   -
     schedule:
@@ -311,15 +255,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
         color: "#FFC107"
     week: "#11: 10/31 - 11/4"
-    announcement: >
-      <!-- <ul>
-        <li>
-          Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Released
-        </li>
-        <li>
-          Lab: <a target='blank' href='./mad_mad_access_pattern'>Mad Mad Access Pattern</a> Due
-        </li>
-      </ul> -->
+    announcement: ""
   -
     schedule:
       -
@@ -343,51 +279,7 @@
         <li>
           Midterm 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
         </li>
-        <li>
-          Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Due
-        </li>
-        <li>
-          Lab: <a target='blank' href='./chatroom'>Chatroom</a> Released
-        </li>
-        <li>
-          MP: <a target='blank' href='./parmake'>Parmake</a> Due
-        </li>
       </ul> -->
-    week: "#12: 11/14- 11/18"
-    announcement: >
-      <!-- <ul>
-        <li>
-          Quiz 5: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
-        </li>
-        <li>
-          Lab: <a target='blank' href='./chatroom'>Chatroom</a> Due
-        </li>
-        <li>
-          Lab: <a target='blank' href='./scheduler'>Scheduler</a> Released
-        </li>
-        <li>
-          MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Released
-        </li>
-      </ul> -->
-  -
-    schedule:
-      -
-        title: "No lecture"
-        summary: "Thanksgiving Break"
-        resources: ""
-        color: "#aaaaaa"
-      -
-        title: "No lecture"
-        summary: "Thanksgiving Break"
-        resources: ""
-        color: "#aaaaaa"
-      -
-        title: "No lecture"
-        summary: "Thanksgiving Break"
-        resources: ""
-        color: "#aaaaaa"
-    week: "#13: 11/21- 11/25"
-    announcement: >
   -
     schedule:
       -
@@ -405,19 +297,27 @@
         summary: "38. Exam practice/review"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
         color: "#FFC107"
-    week: "#14: 11/28 - 12/2"
-    announcement: >
-      <!-- <ul>
-        <li>
-          Lab: <a target='blank' href='./scheduler'>Scheduler</a> Due
-        </li>
-        <li>
-          ICES Forms in Lab
-        </li>
-        <li>
-          MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Due
-        </li>
-      </ul> -->
+    week: "#13: 11/14- 11/18"
+    announcement: "<!-- -->"
+  -
+    schedule:
+      -
+        title: "No lecture"
+        summary: "Thanksgiving Break"
+        resources: ""
+        color: "#aaaaaa"
+      -
+        title: "No lecture"
+        summary: "Thanksgiving Break"
+        resources: ""
+        color: "#aaaaaa"
+      -
+        title: "No lecture"
+        summary: "Thanksgiving Break"
+        resources: ""
+        color: "#aaaaaa"
+    week: "#14: 11/21- 11/25"
+    announcement: "<!-- -->"
   -
     schedule:
       -
