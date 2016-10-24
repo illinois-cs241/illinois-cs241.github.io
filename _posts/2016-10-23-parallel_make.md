@@ -2,7 +2,7 @@
 layout: doc
 title: "Parallel Make"
 permalink: parallel_make
-dueDates: "<b>November 8, 2016</b>"
+dueDates: "<b>November 7, 2016 11:59pm</b>"
 ---
 
 ## Introduction
