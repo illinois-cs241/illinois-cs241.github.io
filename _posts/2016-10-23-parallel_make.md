@@ -1,8 +1,8 @@
 ---
 layout: doc
 title: "Parallel Make"
-permalink: parmake
-dueDates: "<b>April 11th, 2016</b>"
+permalink: parallel_make
+dueDates: "<b>November 8, 2016</b>"
 ---
 
 ## Introduction
