@@ -170,25 +170,25 @@ When a rule is ready to be satisfied, we must determine if we actually need to r
     **Example:**
 
 {% highlight text %}
-        clean :
-            rm -rf *
+clean :
+    rm -rf *
 {% endhighlight %}
 
 or
 
 {% highlight text %}
-        makenewfile:
-            touch newfile
+makenewfile:
+    touch newfile
 {% endhighlight %}
 
 *   The rule depends on another rule that is not the name of a file on disk.
     **Example:**
 
 {% highlight text %}
-        clean : take_backup
-            rm -rf *
-        take_backup :
-            cp -r * ../backup
+clean : take_backup
+    rm -rf *
+take_backup :
+    cp -r * ../backup
 {% endhighlight %}
 
 *   The rule is the name of a file on disk, and it depends on another file with a NEWER modification time than the modification time of the file which corresponds to the name of the rule. To determine whether a file is NEWER, you should use stat and difftime to determine if it is newer. The differences in time will have a granularity of 1 second. That means a file will only be newer if it was modifed sometime more than 1 second.
