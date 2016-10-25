@@ -32,12 +32,12 @@
   -
     name: "Parallel Make"
     releaseDate: "Week 10"
-    dueDate: "Week 11 & 12"
+    dueDate: "Week 12"
     url: "parallel_make"
   -
     name: "Mapreduce"
     releaseDate: "Week 12"
-    dueDate: "Week 14"
+    dueDate: "Week 13 & 14"
     url: "mapreduce"
   -
     name: "Wearables"

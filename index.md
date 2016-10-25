@@ -98,20 +98,22 @@ The 3 hour handwritten final exam is comprehensive and will test all CS241 topic
 Grading issues should be raised with your TA e.g. during section or by email. Missing scores need to be reported on or before the next section.
 
 ## Exams
-All exams are in the CBTF and require signing up here: <https://edu.cs.illinois.edu/testcenter>
+All exams except the final are in the CBTF and require signing up here: <https://edu.cs.illinois.edu/testcenter>
 
-Approximate schedule (subject to change):
+Approximate schedule (subject to change). The CBTF schedule when known will be published Piazza but is also available at the above link.
 
-|  Week  | Exam             | Start | End |
-|--------|------------------|-------|-----|
-| Week 4 | Quiz 1           | TBA | TBA |
-| Week 5 | Quiz 2           | TBA | TBA |
-| Week 6 | Practice Midterm | TBA | TBA |
-| Week 7 | Midterm 1        | TBA | TBA |
-| Week 8 | Quiz 3           | TBA | TBA |
-| Week 11| Quiz 4           | TBA | TBA |
-| Week 13| Midterm 2        | TBA | TBA |
-| Week 14| Quiz 5           | TBA | TBA |
+|  Week  | Exam             | 
+|--------|------------------|
+| Week 4 | Quiz 1           |
+| Week 5 | Quiz 2           |
+| Week 6 | Practice Midterm |
+| Week 7 | Midterm 1        |
+| Week 8 | Quiz 3           |
+| Week 11| Quiz 4           |
+| Week 13| Midterm 2        |
+| Week 14| Quiz 5           |
+
+The final exam will be scantron and paper-based and during Final's exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [here](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT)
 
 ### Practice Midterm Explanation
 The practice midterm is ungraded (worth 0% of your final grade).
