@@ -5,7 +5,7 @@ permalink: scheduler
 dueDates: "November 2, 2016, 11:59 PM"
 ---
 
-# Introduction
+## Introduction
 
 This week, you won't be working at a start up. There won't be any made up CEO, any manager, any mentor.
 
@@ -44,7 +44,7 @@ You will find several files:
     
 __In short, all you need to write is libscheduler.c.__
 
-# Before you start
+## Before you start
 
 __Think about how to implement a scheduler!__
 
@@ -70,14 +70,14 @@ Take Shortest Job First(SJF) for another example. You can give those jobs that c
 
 So basically, half of your job in this lab is simply writing a comparator function that helps you decide which job has higher priority.
 
-# Mission
+## Mission
 
 
-## \[Part 1\]: Priority Queue
+### \[Part 1\]: Priority Queue
 
 To build a scheduler, a fundamental data structure is a priority queue. The first part of this lab requires you to ~~implement~~ read and understand `libpriqueue`, our priority queue library. You will be using this library in your scheduler.
 
-## \[Part 2\]: Scheduler
+### \[Part 2\]: Scheduler
 
 You will need to implement a multi-core scheduler in a simulated computer. You will be provided with a set of cores to schedule a set of tasks on, much like a real Linux scheduler.
 
@@ -97,7 +97,7 @@ To complete this lab, you must implement the six comparator functions and eight 
 
 You might want to understand how scheduler works. So we put a detailed explanation in the bottom of this webpage.
 
-# Directions
+## Directions
 
 To help you finish this lab efficiently, we recommend you to follow these steps:
 
@@ -118,7 +118,7 @@ The last part of your job is computing stats and clean-up, which is fairly trivi
 
 
 
-# Compile and run
+## Compile and run
 
 To compile this lab, run:
 
@@ -151,23 +151,23 @@ To test your program aganist all the test cases in an automated way, we provide 
 
 All differences will be printed. Therefore, if no data is printed, your program has passed the test cases in the `examples` directory.
 
-# Logistics
+## Logistics
 
-## Don't edit the makefile
+### Don't edit the makefile
 
 In CS 241, every program will be compiled using `make`. When autograding your lab, we add additional files for test cases and use a different Makefile. Therefore, we do not use your Makefile to compile the code. **If you edit your Makefile, your code probably won't compile for the autograder.**
 
-## Testing your program
+### Testing your program
 
 Since all testing and grading by course staff will be done on the VMs, it is **STRONGLY ADVISED** that you test your program on your CS241 VM before submission. The fact that your program "runs perfectly" on your own machine will get you zero points if your program does not run at all on the provided CS241 VMs.
 
-# Examples
+## Examples
 
 -   [Example 1](http://cs241.cs.illinois.edu/scheduler_example1.html)
 -   [Example 2](http://cs241.cs.illinois.edu/scheduler_example2.html)
 -   [Example 3](http://cs241.cs.illinois.edu/scheduler_example3.html)
 
-# How simulator.c works
+## How simulator.c works
 
 In libscheduler.c, you'll implement a bunch of methods that we'll call as follows:
 
@@ -179,7 +179,7 @@ In libscheduler.c, you'll implement a bunch of methods that we'll call as follow
     -   Then we'll run the next time unit and repeat.
 
 
-## Scheduler details
+### Scheduler details
 
 The simulator will always follow a few, very specific rules. It's not important to understand the specifics of the simulator, but we provide these to help you with debugging:
 
