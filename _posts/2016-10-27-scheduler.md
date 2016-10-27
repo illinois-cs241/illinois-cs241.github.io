@@ -1,3 +1,10 @@
+---
+layout: doc
+title: "Scheduler"
+permalink: scheduler
+dueDates: "<b>November 2, 2016 11:59pm</b>"
+---
+
 Due: 2016 Nov 2, 2359
 ======================
 
