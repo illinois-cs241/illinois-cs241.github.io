@@ -1,3 +1,9 @@
+---
+layout: doc
+title: "Example3"
+permalink: scheduler_example3
+---
+
 Example 3
 =========
 
