@@ -169,9 +169,9 @@ Since all testing and grading by course staff will be done on the VMs, it is **S
 Examples
 ========
 
--   [Example 1](./_posts/scheduler_example1.md)
--   [Example 2](./_posts/scheduler_example2.md)
--   [Example 3](./_posts/scheduler_example3.md)
+-   [Example 1](http://cs241.cs.illinois.edu/scheduler_example1.html)
+-   [Example 2](http://cs241.cs.illinois.edu/scheduler_example2.html)
+-   [Example 3](http://cs241.cs.illinois.edu/scheduler_example3.html)
 
 ------------------------------------------------------------------------
 
