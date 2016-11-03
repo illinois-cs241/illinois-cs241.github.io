@@ -126,7 +126,7 @@ You may not need to use this macro, but if you choose to then any `data_block` o
 
 ## `cat`
 
-So, each inode block has datablocks attatched. Each data block's address can be addressed like `file_system->data_root[inode->direct_blocks[0]]` for example for the 0th data_block. The data_blocks run for sizeof(data_block) bytes. Your job is to write a function that loops through all of the datablocks in the node (possibly indirect nodes) and prints out all of the bytes to standard out, check out a simple, complex, and very complex example in the testing section.
+So, each inode block has datablocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct_blocks[0]]` for example for the 0th data_block. The data_blocks run for sizeof(data_block) bytes. Your job is to write a function that loops through all of the datablocks in the node (possibly indirect nodes) and prints out all of the bytes to standard out, check out a simple, complex, and very complex example in the testing section.
 
 
 If in your get_inode, the inode doesn't exist -- call `print_no_file_or_directory` and return.
@@ -143,7 +143,7 @@ Print out the filename using `print_file(char*)`
 
 **For directories:**
 
-Our directorie data_blocks look like the following
+Our directory data_blocks look like the following
 
 {% highlight c %}
 
@@ -153,7 +153,7 @@ Our directorie data_blocks look like the following
 
 {% endhighlight %}
 
-The filesystem gaurentees that size of a directory is a multiple of 256. You need to loop through all of the directory entries and get the name of the entry, and print it out to standard out. You are going to need to call two different flavors of printing based on whether the inode that you are pointing to is a directory or a file (which means you have to get the inode number and check that inode...).
+The filesystem guarantees that size of a directory is a multiple of 256. You need to loop through all of the directory entries and get the name of the entry, and print it out to standard out. You are going to need to call two different flavors of printing based on whether the inode that you are pointing to is a directory or a file (which means you have to get the inode number and check that inode...).
 
 Use `make_dirent_from_string`
 
@@ -251,9 +251,9 @@ You can store anything on filesystems. See what we hid around the filesystem for
 
 ## Helpful Hints and Notes
 
-*   Handle the edge conditions, you can assume that size will be valid. What is the code supposed to do when you get to a singly indirected block?
+*   Handle the edge conditions, you can assume that size will be valid. What is the code supposed to do when you get to a singly indirect block?
 *   Draw pictures! Understand what each of the things in the struct mean
-*   Review your pointer arithmatic
+*   Review your pointer arithmetic
 *   You cannot change any file but fs.c
 
 ## Files to be graded
