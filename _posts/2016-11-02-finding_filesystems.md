@@ -15,11 +15,11 @@ permalink: finding_filesystems
 
 Your friendly neighborhood 241 course staff asked themselves, what's the best way to learn filesystems? Write One!
 
-In this lab, you will be implementing two utilites: `ls` and `cat` on the filesystem level. Normally, these commands call system calls to do work for them, but now they are going under the hood. You will be exploring how the metadata is stored in the inode and how the data is stored in the datablocks.
+In this lab, you will be implementing two utilites: `ls` and `cat` on the filesystem level. Normally, these commands call system calls to do work for them, but now they are going under the hood. You will be exploring how metadata is stored in the inode and how data is stored in the datablocks.
 
 ## minixy-fs
 
-Although EXT2 is very good filesystem, it had some constraints that made it difficult to turn it into a file filesystem. Your TAs took a predecessor of the file system (the [Minix Filesystem](https://en.wikipedia.org/wiki/MINIX_file_system)) and edited it to make it a good in file filesystem. As such, you will have to learn our filesystem in addition, ours is simplier though!
+Although EXT2 is very good filesystem, it had some constraints that made it difficult to turn it into a file filesystem. Your TAs took a predecessor of the file system (the [Minix Filesystem](https://en.wikipedia.org/wiki/MINIX_file_system)) and edited it to make it a good in file filesystem. As such, you will have to learn our filesystem in addition; ours is simpler though!
 
 ## Superblock
 
@@ -36,7 +36,7 @@ typedef struct {
 
 {% endhighlight %}
 
-The superblock is a block that all file systems have, it stores information like the size, the number of inodes, data blocks, and whether those datablocks are being used or not. Remember from class that inodes stop being used when their hard links reach zero, but data blocks need some kind of bitmap or sentinel to tell if they are being used. `data_map` is a variable sized array that holds this information **You don't need to worry about these abstractions, they are taken care of you**.
+The superblock is a block that all file systems have, it stores information like the size, the number of inodes, data blocks, and whether those datablocks are being used or not. Remember from class that inodes stop being used when their hard links reach zero, but data blocks need some kind of bitmap or sentinel to tell if they are being used. `data_map` is a variable sized array that holds this information **You don't need to worry about these abstractions, they are taken care of for you**.
 
 ## Inodes
 
@@ -62,7 +62,7 @@ This is the famous inode struct that you have been learning about! Here are a br
 - `group` is the id of the inode group, does not have to include the owner
 - `permissions` is a bitmask where the bottom 9 bits are read-write-execute for owner-group-everyone. Bits 11-10 are a type. (permissions >> 9) equals one of a bunch of file types. ***You don't need to worry about this we have given you two functions `is_file` and `is_directory` that tells you whether or not the file is a directory or inode. You don't need to worry about any other type.***
 - `hard_link_count` is the number of directories that the file is linked to (directories can't be hard linked)
-- `last_access` is the last time a file was `read(2)`. **You don't need to worry about the changing them.**
+- `last_access` is the last time a file was `read(2)`. **You don't need to worry about changing them.**
 - `last_modification` is the last metadata change
 - `last_change` is last time the file was changed with `write(2)`
 - `direct_nodes` is an array where the direct_node[i] represents an offset from the data_root 
