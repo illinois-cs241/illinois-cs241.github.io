@@ -7,36 +7,34 @@ permalink: finding_filesystems
 
 ## Learning Objectives
 
-*   Learn How Inodes are Represented in the Kernel
-*   How to write commands like ls and cat.
-*   Traversing through singly indirected blocks.
+*   Learn how inodes are represented in the kernel
+*   How to write commands like `ls` and `cat`
+*   Traverse through singly indirected blocks
 
 ## Overview
 
-Your friendly neighborhood 241 course staff asked themselves, what's the best way to learn filesystems? Write One!
+Your friendly neighborhood 241 course staff asked themselves, _"What's the best way to learn filesystems?"_ Write one!
 
-In this lab, you will be implementing two utilites: `ls` and `cat` on the filesystem level. Normally, these commands call system calls to do work for them, but now they are going under the hood. You will be exploring how metadata is stored in the inode and how data is stored in the datablocks.
+In this lab, you will be implementing two utilites, `ls` and `cat`, on the filesystem level. Normally, these commands make system calls to do work for them, but now they are going under the hood. You will be exploring how metadata is stored in the inode and how data is stored in the data blocks.
 
-## minixy-fs
+## minixfs
 
-Although EXT2 is very good filesystem, it had some constraints that made it difficult to turn it into a file filesystem. Your TAs took a predecessor of the file system (the [Minix Filesystem](https://en.wikipedia.org/wiki/MINIX_file_system)) and edited it to make it a good in file filesystem. As such, you will have to learn our filesystem in addition; ours is simpler though!
+Although ext2 is good filesystem, it had some constraints that made it difficult to turn it into a file filesystem. Your TAs took a predecessor of the file system (the [Minix Filesystem](https://en.wikipedia.org/wiki/MINIX_file_system)) and edited it to make it a good in file filesystem. As such, you will have to learn our filesystem in addition; ours is simpler though!
 
 ## Superblock
 
 {% highlight c %}
 
 typedef struct {
-
 	uint64_t size;
 	uint64_t inode_count;
 	uint64_t dblock_count;
 	char data_map[0];
-
 } superblock;
 
 {% endhighlight %}
 
-The superblock is a block that all file systems have, it stores information like the size, the number of inodes, data blocks, and whether those datablocks are being used or not. Remember from class that inodes stop being used when their hard links reach zero, but data blocks need some kind of bitmap or sentinel to tell if they are being used. `data_map` is a variable sized array that holds this information **You don't need to worry about these abstractions, they are taken care of for you**.
+The superblock is a block that all file systems have. It stores information like the size of the filesystem, the number of inodes and data blocks, and whether those data blocks are being used. Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to tell if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
 
 ## Inodes
 
@@ -57,16 +55,17 @@ typedef struct {
 
 {% endhighlight %}
 
-This is the famous inode struct that you have been learning about! Here are a breakdown of the variables
-- `owner` is the id of the inode owner
-- `group` is the id of the inode group, does not have to include the owner
-- `permissions` is a bitmask where the bottom 9 bits are read-write-execute for owner-group-everyone. Bits 11-10 are a type. (permissions >> 9) equals one of a bunch of file types. ***You don't need to worry about this we have given you two functions `is_file` and `is_directory` that tells you whether or not the file is a directory or inode. You don't need to worry about any other type.***
-- `hard_link_count` is the number of directories that the file is linked to (directories can't be hard linked)
-- `last_access` is the last time a file was `read(2)`. **You don't need to worry about changing them.**
-- `last_modification` is the last metadata change
-- `last_change` is last time the file was changed with `write(2)`
-- `direct_nodes` is an array where the direct_node[i] represents an offset from the data_root 
-- `single_indirect` is a node that points to another inode. ***The inode at this number is only going to be used for its direct nodes, none of the metadata at this inode is going to be valid***
+This is the famous inode struct that you have been learning about! Here are a breakdown of the variables:
+
+- `owner` is the ID of the inode owner.
+- `group` is the ID of the inode group (does not have to include the owner().
+- `permissions` is a bitmask. The bottom 9 bits are read-write-execute for owner-group-others. Bits 11-10 are the type of the file. `(permissions >> 9)` corresponds to a particular type. We have given you two functions, `is_file` and `is_directory`, that tell you whether or not the inode represents a directory or file. There are no other types in our filesystem.
+- `hard_link_count` is the number of directories that the file is linked to from (directories can't be hard linked).
+- `last_access` is the last time a file was `read(2)`. You don't need to worry about changing this.
+- `last_modification` is the last time the file's metadata was changed.
+- `last_change` is last time the file was changed with `write(2)`.
+- `direct_nodes` is an array where the `direct_nodes[i]` is the `i`th data block's offset from the `data_root`.
+- `single_indirect` is a node that points to another inode. **The inode at this number is only going to be used for its direct nodes; none of the metadata at this inode is going to be valid.**
 
 {% highlight c %}
 
@@ -76,7 +75,7 @@ typedef struct {
 
 {% endhighlight %}
 
-Datablocks are currently defined to be 16 kilobytes. Nothing fancy here.
+Data blocks are currently defined to be 16 kilobytes. Nothing fancy here.
 
 {% highlight c %}
 
@@ -90,11 +89,13 @@ typedef struct {
 
 ![](http://cs241.cs.illinois.edu/images/map.png)
 
-* The Metadata pointer points to the start of the file system includes the superblock and the data_map
-* The inode_root points to the start of the inodes as in the picture, right after the data_map
-* The data_root points to the start of the data_blocks as in the picture, right after the inodes
+The `file_system` struct keeps track of the metadata, the root inode (where `fs->inode_root[0]` is the root `"/"` inode), and the root of the `data_block`s.
 
-File system is an object that keeps track of the metadata, the root of the inode (where `fs->inode_root[0]` is the root `/` inode), and the root of all the data_blocks. The inodes and data blocks are laid sequentially out so you can just use them like an array. Think about how you could get a pointer to the nth data_block.
+* The `meta` pointer points to the start of the file system, which includes the superblock and the `data_map`.
+* The `inode_root` points to the start of the inodes as in the picture, right after the `data_map`.
+* The `data_root` points to the start of the `data_blocks` as in the picture, right after the inodes.
+
+The inodes and data blocks are laid sequentially out so you can treat them like an array. Think about how you could get a pointer to the nth `data_block`.
 
 ## Helper Functions/Macros
 
