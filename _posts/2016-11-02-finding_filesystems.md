@@ -108,11 +108,11 @@ This function takes a string name like '/path/to/file' and returns the inode tha
 
 Only call this when there is no file or directory, ie when `get_inode` returns null.
 
-### format: `print_file` `print_directory`
+### format: `print_file`/`print_directory`
 
 You are going to pass in the filename (not the entire path). These methods will format the output for a terminal and put a forward slash for if it is a directory.
 
-### `is_file` and `is_directory`
+### `is_file`/`is_directory`
 
 Call `is_file` or `is_directory` on an inode to tell whether it is a directory or a file. You don't need to worry about other inode types.
 
