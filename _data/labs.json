@@ -50,10 +50,10 @@
     dueDate: "Week 11"
     url: "scheduler"
   -
-    name: "File Systems"
+    name: "Finding Filesystems"
     releaseDate: "Week 11"
     dueDate: "Week 12"
-    url: "file_systems"
+    url: "finding_filesystems"
   -
     name: "Chatroom"
     releaseDate: "Week 12"
