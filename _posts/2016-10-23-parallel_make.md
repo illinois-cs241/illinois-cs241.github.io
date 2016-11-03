@@ -170,25 +170,25 @@ When a rule is ready to be satisfied, we must determine if we actually need to r
     **Example:**
 
 {% highlight text %}
-        clean :
-            rm -rf *
+clean :
+    rm -rf *
 {% endhighlight %}
 
 or
 
 {% highlight text %}
-        makenewfile:
-            touch newfile
+makenewfile:
+    touch newfile
 {% endhighlight %}
 
 *   The rule depends on another rule that is not the name of a file on disk.
     **Example:**
 
 {% highlight text %}
-        clean : take_backup
-            rm -rf *
-        take_backup :
-            cp -r * ../backup
+clean : take_backup
+    rm -rf *
+take_backup :
+    cp -r * ../backup
 {% endhighlight %}
 
 *   The rule is the name of a file on disk, and it depends on another file with a NEWER modification time than the modification time of the file which corresponds to the name of the rule. To determine whether a file is NEWER, you should use stat and difftime to determine if it is newer. The differences in time will have a granularity of 1 second. That means a file will only be newer if it was modifed sometime more than 1 second.
@@ -198,6 +198,7 @@ Once we run a rule's commands, we may mark the rule as satisfied.
 ### Running the commands
 
 You can use `system()` to run the commands associated with each rule. There are a few conditions to think about when evaluating whether or not a rule should be satisfied:
+
 * If any of a rule's commands fail while evaluating that rule, then the rule should "fail" and no more of its commands should be run
 * If a rule fails, its parent rules (rules which have this rule as a dependency) should fail as well. Note that this is not necessarily true for the converse (i.e. if a parent fails, its children may still be satisfied -- why is that?)
 * Finally, if a rule is part of a circular dependency then it should fail
