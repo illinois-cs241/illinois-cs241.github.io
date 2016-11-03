@@ -1,7 +1,7 @@
 ---
 layout: doc
 title: "Finding Filesystems"
-dueDates: "11/09 11:59pm"
+dueDates: "11/9/2016, 11:59 PM"
 permalink: finding_filesystems
 ---
 
@@ -103,27 +103,27 @@ There are some functions that you are going to need to know in order to finish t
 
 ### `get_inode`
 
-This function takes a string name like '/path/to/file' and returns the inode that is at the end of that path. `get_inode` returns NULL when the intended file does not exist or the file is invalid.
+This function takes a string name like `/path/to/file` and returns the inode corresponding to the file at end of that path. `get_inode` returns NULL when the intended file does not exist or the file is invalid.
 
-### format: `print_no_file_or_directory`
+### `print_no_file_or_directory`&nbsp;(format)
 
-Only call this when there is no file or directory, ie when `get_inode` returns null.
+Only call this when there is no file or directory, i.e. when `get_inode` returns NULL.
 
-### format: `print_file`/`print_directory`
+### `print_file` / `print_directory `&nbsp;(format)
 
-You are going to pass in the filename (not the entire path). These methods will format the output for a terminal and put a forward slash for if it is a directory.
+You should pass in the filename (not the entire path). These methods will format the output for a terminal and add a forward slash if it is a directory.
 
-### `is_file`/`is_directory`
+### `is_file` / `is_directory`
 
-Call `is_file` or `is_directory` on an inode to tell whether it is a directory or a file. You don't need to worry about other inode types.
+Call `is_file` or `is_directory` on an inode to tell whether it is a directory or a file. You don't need to consider other inode types.
 
 ### `NUM_DIRECT_INODES`
 
-`NUM_DIRECT_INODES` is the number of directly connected data_block nodes to a single inode. The single_indirect array is this long.
+`NUM_DIRECT_INODES` is the number of direct `data_block` nodes in a single inode. The `single_indirect` array has this many entires.
 
 ### `UNASSIGNED_NODE`
 
-You may not need to use this macro, but if you choose to then any `data_block` or `inode` that is not currently being used will have this number.
+You may not need to use this macro, but if you choose to, then any `data_block` or `inode` that is not currently being used will have this number.
 
 ## `cat`
 
