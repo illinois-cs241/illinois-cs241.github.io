@@ -236,7 +236,7 @@ Want something fun?
 {% highlight console %}
 
 $ ./minixfs test.fs cat /goodies/dog.png > dog.png
-$ xdg-open dog.jpg
+$ xdg-open dog.png
 
 {% endhighlight %}
 
