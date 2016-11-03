@@ -171,7 +171,7 @@ Again, if your inode doesn't exist, just use the format function to print no fil
 
 **Testing is ungraded, but highly recommended**
 
-You can grab the test file using `make testfs`. **Do not commit this file, if you overwrite it for any reason just `rm test.fs` and do `make testfs` again**
+You can grab the test filesystem using `make testfs`. **Do not commit this file. If you overwrite it for any reason just `rm test.fs` and do `make testfs` again**
 
 Here are some sample testcases!
 
@@ -240,22 +240,22 @@ $ xdg-open dog.png
 
 You can store anything on filesystems. See what we hid around the filesystem for you...
 
-## Other Edge Cases you don't need to worry about
+## Other edge cases you don't need to worry about
 
-*	You don't need to update the `last_access` and the `last_change`
+*	You don't need to update the `last_access` and the `last_change`.
 *	You don't need to worry about data corruption or checksums or anything fancy, the filesystem will be valid.
-*	Make sure you can ls the `/directory_alot` and the `/directory_alot_alot`, these test if you go over multiple data blocks
-*	Make sure all the files you cat out in `/goodies` look correct when you `xdg-open` them. Make sure you can get the pngs and the pdfs to print out correctly
+*	Make sure you can `ls` the `/directory_alot` and the `/directory_alot_alot`; these test if you go over multiple data blocks.
+*	Make sure all the files you cat out in `/goodies` look correct when you `xdg-open` them. Make sure you can get the PNGs and the PDFs to print out correctly.
 
 ## Helpful Hints and Notes
 
-*   Handle the edge conditions, you can assume that size will be valid. What is the code supposed to do when you get to a singly indirect block?
-*   Draw pictures! Understand what each of the things in the struct mean
-*   Review your pointer arithmetic
-*   You cannot change any file but fs.c
+*   Handle the edge conditions. You can assume that size will be valid. What is the code supposed to do when you get to a singly indirect block?
+*   Draw pictures! Understand what each of the things in the structs mean.
+*   Review your pointer arithmetic.
+*   You cannot change any file but `fs.c`.
 
 ## Files to be graded
 
 *   `fs.c`
 
-**ANYTHING not specified in these docs is considered undefined behavior and we will not test it**
+**Anything not specified in these docs is considered undefined behavior, and we will not test it.**
