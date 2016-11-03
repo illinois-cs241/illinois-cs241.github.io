@@ -240,7 +240,7 @@ $ xdg-open dog.png
 
 You can store anything on filesystems. See what we hid around the filesystem for you...
 
-## Other edge cases you don't need to worry about
+## Other Edge Cases
 
 *	You don't need to update the `last_access` and the `last_change`.
 *	You don't need to worry about data corruption or checksums or anything fancy, the filesystem will be valid.
