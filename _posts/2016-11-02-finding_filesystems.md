@@ -127,10 +127,9 @@ You may not need to use this macro, but if you choose to, then any `data_block` 
 
 ## `cat`
 
-So, each inode block has datablocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct_blocks[0]]` for example for the 0th data_block. The data_blocks run for sizeof(data_block) bytes. Your job is to write a function that loops through all of the datablocks in the node (possibly indirect nodes) and prints out all of the bytes to standard out, check out a simple, complex, and very complex example in the testing section.
+So, each inode block has data blocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct_blocks[0]]`, for example, for the 0th `data_block`. The `data_block`s run for `sizeof(data_block)` bytes. Your job is to write a function that loops through all of the data blocks in the node (possibly including indirect blocks) and prints out all of the bytes to standard out. Check out a simple, complex, and very complex example in the testing section.
 
-
-If in your get_inode, the inode doesn't exist -- call `print_no_file_or_directory` and return.
+If `get_inode` indicates the inode doesn't exist, then call `print_no_file_or_directory` and return.
 
 ## `ls`
 
@@ -144,31 +143,29 @@ Print out the filename using `print_file(char*)`
 
 **For directories:**
 
-Our directory data_blocks look like the following
+Our directory `data_blocks` look like the following:
 
 {% highlight c %}
 
-|--248 Bytes Name String--||-8 Bytes Inode Number-|
-|--248 Bytes Name String--||-8 Bytes Inode Number-|
+|--248 Byte Name String--||-8 Byte Inode Number-|
+|--248 Byte Name String--||-8 Byte Inode Number-|
 ...
 
 {% endhighlight %}
 
-The filesystem guarantees that size of a directory is a multiple of 256. You need to loop through all of the directory entries and get the name of the entry, and print it out to standard out. You are going to need to call two different flavors of printing based on whether the inode that you are pointing to is a directory or a file (which means you have to get the inode number and check that inode...).
+The filesystem guarantees that size of a directory is a multiple of 256. You need to loop through all of the directory entries and get the name of the entry, and print it out to standard out. You are going to need to call two different print functions based on whether the inode that you are pointing to is a directory or a file, which means you have to get the inode number and check that inode.
 
-Use `make_dirent_from_string`
-
-It accepts a `char* ptr` to the start of a dirent block like this.
+Use `make_dirent_from_string`: it accepts a `char* ptr` to the start of a dirent block like this.
 
 {% highlight c %}
 
-|--248 Bytes Name String--||-8 Bytes Inode Number-|
+|--248 Byte Name String--||-8 Byte Inode Number-|
 ^ -- Points here
 {% endhighlight %}
 
-The function then fills out the a reference to the passed in struct include the name and the inode number as an inode_num
+The function then fills out a reference to the passed in struct with the name and the inode number as an `inode_num`.
 
-Again if your inode doesn't exist, just use the format function to print no file or directory and return.
+Again, if your inode doesn't exist, just use the format function to print no file or directory and return.
 
 ## Testing
 
