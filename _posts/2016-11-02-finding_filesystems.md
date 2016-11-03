@@ -9,13 +9,13 @@ permalink: finding_filesystems
 
 *   Learn how inodes are represented in the kernel
 *   How to write commands like `ls` and `cat`
-*   Traverse through singly indirected blocks
+*   Traverse through singly indirect blocks
 
 ## Overview
 
 Your friendly neighborhood 241 course staff asked themselves, _"What's the best way to learn filesystems?"_ Write one!
 
-In this lab, you will be implementing two utilites, `ls` and `cat`, on the filesystem level. Normally, these commands make system calls to do work for them, but now they are going under the hood. You will be exploring how metadata is stored in the inode and how data is stored in the data blocks.
+In this lab, you will be implementing two utilities, `ls` and `cat`, on the filesystem level. Normally, these commands make system calls to do work for them, but now they are going under the hood. You will be exploring how metadata is stored in the inode and how data is stored in the data blocks.
 
 ## minixfs
 
@@ -65,7 +65,7 @@ This is the famous inode struct that you have been learning about! Here are a br
 - `last_modification` is the last time the file's metadata was changed.
 - `last_change` is last time the file was changed with `write(2)`.
 - `direct_nodes` is an array where the `direct_nodes[i]` is the `i`th data block's offset from the `data_root`.
-- `single_indirect` is a node that points to another inode. **The inode at this number is only going to be used for its direct nodes; none of the metadata at this inode is going to be valid.**
+- `single_indirect` is a node that points to another inode. **This is not how real filesystems do it, real filesystems point to a data_block that contains numbers of other data_blocks. The inode at this number is only going to be used for its direct nodes; none of the metadata at this inode is going to be valid.**
 
 {% highlight c %}
 
@@ -119,7 +119,7 @@ Call `is_file` or `is_directory` on an inode to tell whether it is a directory o
 
 ### `NUM_DIRECT_INODES`
 
-`NUM_DIRECT_INODES` is the number of direct `data_block` nodes in a single inode. The `single_indirect` array has this many entires.
+`NUM_DIRECT_INODES` is the number of direct `data_block` nodes in a single inode. The `single_indirect` array has this many entries.
 
 ### `UNASSIGNED_NODE`
 
@@ -127,7 +127,7 @@ You may not need to use this macro, but if you choose to, then any `data_block` 
 
 ## `cat`
 
-So, each inode block has data blocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct_blocks[0]]`, for example, for the 0th `data_block`. The `data_block`s run for `sizeof(data_block)` bytes. Your job is to write a function that loops through all of the data blocks in the node (possibly including indirect blocks) and prints out all of the bytes to standard out. Check out a simple, complex, and very complex example in the testing section.
+So, each inode block has data blocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct_nodes[0]]`, for example, for the 0th `data_block`. The `data_block`s run for `sizeof(data_block)` bytes. Your job is to write a function that loops through all of the data blocks in the node (possibly including indirect blocks) and prints out all of the bytes to standard out. Check out a simple, complex, and very complex example in the testing section.
 
 If `get_inode` indicates the inode doesn't exist, then call `print_no_file_or_directory` and return.
 
