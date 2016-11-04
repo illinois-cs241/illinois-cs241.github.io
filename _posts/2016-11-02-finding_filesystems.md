@@ -131,7 +131,7 @@ You may not need to use this macro, but if you choose to, then any `data_block` 
 
 ## `cat`
 
-So, each inode block has data blocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct_nodes[0]]`, for example, for the 0th `data_block`. The `data_block`s run for `sizeof(data_block)` bytes. Your job is to write a function that loops through all of the data blocks in the node (possibly including indirect blocks) and prints out all of the bytes to standard out. Check out a simple, complex, and very complex example in the testing section.
+So, each inode block has data blocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct_nodes[0]]`, for example, for the 0th `data_block` of that inode. The `data_block`s run for `sizeof(data_block)` bytes. Your job is to write a function that loops through all of the data blocks in the node (possibly including indirect blocks) and prints out all of the bytes to standard out. Check out a simple, complex, and very complex example in the testing section.
 
 If `get_inode` indicates the inode doesn't exist, then call `print_no_file_or_directory` and return.
 
