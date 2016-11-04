@@ -77,7 +77,7 @@ parmake [ -f makefile ] [ -j threads ] [ targets ]
 As stated above, the input for this MP will be expected to be in the following format:
 
 {% highlight text %}
-./path/to/parmake [-f &lt;path/to/makefile&gt;] [-j &lt;positive-integer&gt;] [targets ...]
+./path/to/parmake [-f path/to/makefile] [-j positive-integer] [targets ...]
 {% endhighlight %}
 
 This means that all the inputs will either be empty or have a list of string targets with optional flags from {-f, -j} in any order, followed by a space and then the parameter for the flag as specified by the input description.
