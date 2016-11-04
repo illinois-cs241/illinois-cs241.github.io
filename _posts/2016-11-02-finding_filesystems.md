@@ -34,7 +34,7 @@ typedef struct {
 
 {% endhighlight %}
 
-The superblock is a block that all file systems have. It stores information like the size of the filesystem, the number of inodes and data blocks, and whether those data blocks are being used. Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to tell if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
+The superblock stores information like the size of the filesystem, the number of inodes and data blocks, and whether those data blocks are being used. Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to indicate if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
 
 ## Inodes
 
@@ -65,7 +65,7 @@ This is the famous inode struct that you have been learning about! Here are a br
 - `last_modification` is the last time the file's metadata was changed.
 - `last_change` is last time the file was changed with `write(2)`.
 - `direct_nodes` is an array where the `direct_nodes[i]` is the `i`th data block's offset from the `data_root`.
-- `single_indirect` is a node that points to another inode. **This is not how real filesystems do it, real filesystems point to a data_block that contains numbers of other data_blocks. The inode at this number is only going to be used for its direct nodes; none of the metadata at this inode is going to be valid.**
+- `single_indirect` points to another inode that contains additional data blocks for this file. *The inode at this number is only going to be used for its direct nodes; none of the metadata at this inode is going to be valid.* **In real filesystems, the single indirect block is a *data block* that points to other data blocks, but here, it is an inode.**
 
 {% highlight c %}
 
