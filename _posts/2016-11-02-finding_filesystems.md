@@ -19,9 +19,9 @@ In this lab, you will be implementing two utilities, `ls` and `cat`, on the file
 
 ## minixfs
 
-Although ext2 is good filesystem, it had some constraints that made it difficult to turn it into a file filesystem. Your TAs took a predecessor of the file system (the [Minix Filesystem](https://en.wikipedia.org/wiki/MINIX_file_system)) and edited it to make it a good in file filesystem. As such, you will have to learn our filesystem in addition; ours is simpler though!
+ext2 is good filesystem, but to keep things simple, we will be using a modified version of its predecessor (the [MINIX filesystem](https://en.wikipedia.org/wiki/MINIX_file_system)) in this lab.
 
-## Superblock
+### Superblock
 
 {% highlight c %}
 
@@ -36,7 +36,7 @@ typedef struct {
 
 The superblock stores information like the size of the filesystem, the number of inodes and data blocks, and whether those data blocks are being used. Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to indicate if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
 
-## Inodes
+### Inodes
 
 {% highlight c %}
 
@@ -67,6 +67,8 @@ This is the famous inode struct that you have been learning about! Here are a br
 - `direct_nodes` is an array where the `direct_nodes[i]` is the `i`th data block's offset from the `data_root`.
 - `single_indirect` points to another inode that contains additional data blocks for this file. *The inode at this number is only going to be used for its direct nodes; none of the metadata at this inode is going to be valid.* **In real filesystems, the single indirect block is a *data block* that points to other data blocks, but here, it is an inode.**
 
+### Data blocks
+
 {% highlight c %}
 
 typedef struct {
@@ -76,6 +78,8 @@ typedef struct {
 {% endhighlight %}
 
 Data blocks are currently defined to be 16 kilobytes. Nothing fancy here.
+
+### file_system struct
 
 {% highlight c %}
 
