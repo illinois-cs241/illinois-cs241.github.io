@@ -9,7 +9,7 @@ dueDates: "<b>Part 1: November 14th</b><br><b>Part 2: November 28th</b>"
 
 **This is a continuation of the [MapReduce lab](http://cs241.cs.illinois.edu/mr0.html).**
 
-The inputs, outputs, and general flow are the same, but now you will be solving more difficult and interesting problems...
+The inputs, outputs, and general flow are the same, but now you will be solving more difficult and interesting problems.
 
 In 2004, Google released a general framework for processing large data sets on clusters of computers.
 We recommend you read [this link](http://en.wikipedia.org/wiki/MapReduce) on Wikipedia for a general understanding of MapReduce.
