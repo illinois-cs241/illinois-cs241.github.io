@@ -87,9 +87,15 @@ Lab Programming Assignments: 13%
 
 Lab Attendance & other items: 4%
 
-Course grades: We publish the following thresholds: 92: A-  82: B-  72: C-   
 {% endhighlight %}
 
+We publish the following thresholds: 
+
+|   Points   |  Minimum Grade  | 
+|------------|-----------------|
+| [92 - 100] | A-              |
+| [82 - 92)  | B-              |
+| [72 - 82)  | C-              | 
 
 If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the mp programming assignments are weighted by the time we give to complete them. There are multiple choice quizzes at the testing center approximately every other week. There will be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (gedit,vim,gcc,man,make,bash terminal etc) but in an exam environment. Runnable tests will be provided. The quizzes and midterms will be in room 57 Grainger Library (to the far left side of the basement) and you will be asked to register for a time slot that works for you. The signup link is [here](https://edu.cs.illinois.edu/testcenter/) (Chrome recommended). Rules, requirements and expectations of the testing center are [here](https://edu.cs.illinois.edu/cbtf/). For grading we will drop your lowest quiz score, lowest lab score and 1 lab attendance. Sickness/ vacation / sleep *  whatever *  we don't care. Unless exceptions (which are almost never granted) have been arranged with the course admin (cs241admin@illinois.edu) or Director of Undergrad studies: Miss 3+ sections or 3+ quizzes is automaticaully a failing grade.
 
