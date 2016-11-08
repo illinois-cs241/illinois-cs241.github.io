@@ -55,12 +55,17 @@
     dueDate: "Week 12"
     url: "finding_filesystems"
   -
-    name: "Chatroom"
+    name: "Mad Mad Access Pattern"
     releaseDate: "Week 12"
-    dueDate: "Week 14"
+    dueDate: "Week 13"
+    url: "mad_mad_access_pattern"
+  -
+    name: "Chatroom"
+    releaseDate: "Week 13"
+    dueDate: "Week 15"
     url: "chatroom"
   -
-    name: "Mad Mad Access Pattern"
-    releaseDate: "Week 14"
-    dueDate: "Week 15"
-    url: "mad_mad_access_pattern"
+    name: "ECE 391: Linux Kernal Super Lab"
+    releaseDate: "Week 15"
+    dueDate: "Week 16"
+    url: "no_url"
