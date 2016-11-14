@@ -9,16 +9,23 @@
             {% capture metadata %}
               {% if page.date %} <!-- this is a post -->
                 <ul class="metadata">
-                  {% if page.dueDates %}
-                    <li><strong>Due date(s):</strong> <span class="due-date">{{ page.dueDates }}</span></li>
+                  {% if page.submissions %}
+					{% for submission in page.submissions %}
+					<b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
+					<ul>
+						{% for graded_file in submission.graded_files %}
+						<li>{{ graded_file }}</li>
+						{% endfor %}
+					</ul>
+				    {% endfor %}
                   {% endif %}
                   <li class="github-date" style="display: none;"><strong>Last modified:</strong> <span class="github-date-value"></span></li>
                 </ul>
               {% endif %}
             {% endcapture %}
             <nav id="toc" style="position: fixed" class="small-12 medium-12 large-3 columns show-for-xlarge-up">
-              <br/>
-              {{ metadata }}
+			  <br/>
+			  {{ metadata }}
             </nav>
             <div class="small-12 medium-12 large-7 large-centered columns">
               <h1>
