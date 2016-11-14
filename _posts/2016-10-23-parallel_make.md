@@ -287,19 +287,3 @@ This should generate the same output as:
 {% highlight text %}
     $ make -s -f testfile4 -j 2
 {% endhighlight %}
-
-## Grading, Submission, and Other Details
-
-Please fully read details on [Academic Honesty](https://courses.engr.illinois.edu/cs241/#/overview#integrity).
-These are shared between all MPs in CS 241.
-
-To check out the provided code for parmake from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
-
-{% highlight bash %} svn up {% endhighlight %}
-
-If you run ls you will now see a parmake folder, where you can find this assignment! To commit your changes (send them to us) type:
-
-{% highlight bash %} svn ci -m "parmake submission" {% endhighlight %}
-
-Your repository directory can be viewed from a web browser from the following URL: https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/parmake where NETID is your University NetID.
-It is important to check that the files you expect to be graded are present and up to date in your svn copy.
