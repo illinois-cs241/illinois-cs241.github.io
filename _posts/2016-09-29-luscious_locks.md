@@ -1,8 +1,14 @@
 ---
 layout: doc
 title: "Luscious Locks"
-dueDates: "10/05 11:59pm"
 permalink: luscious_locks
+submissions:
+- title: Entire Assignment
+  due_date: 10/05 11:59pm
+  graded_files:
+  - barrier.c
+  - queue.c
+  - semmamore.c
 ---
 
 ## Learning Objectives

@@ -2,7 +2,12 @@
 layout: doc
 title: "Extreme Edge Cases"
 permalink: extreme_edge_cases
-dueDates: "9/7/2016, 11:59 PM"
+submissions:
+- title: Entire Assignment
+  due_date: 09/07/2016 11:59pm
+  graded_files:
+  - camelCaser.c
+  - camelCaser_tests.c
 ---
 
 ## Backstory

@@ -2,7 +2,11 @@
 layout: doc
 title: "Parallel Make"
 permalink: parallel_make
-dueDates: "<b>November 7, 2016 11:59pm</b>"
+submissions:
+- title: Entire Assignment
+  due_date: 11/07 11:59pm
+  graded_files:
+  - parmake.c
 ---
 
 ## Introduction

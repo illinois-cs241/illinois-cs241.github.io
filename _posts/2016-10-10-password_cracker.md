@@ -2,13 +2,12 @@
 layout: doc
 title: "Password Cracker"
 permalink: password_cracker
-dueDates: "<br>Part 1 due 10/17 11:59pm <br> Part 2 due 10/24 11:59pm"
 submissions:
 - title: Part 1
   due_date: 10/17 11:59pm
   graded_files:
   - cracker1.c
-- title: Part 1
+- title: Part 2
   due_date: 10/24 11:59pm
   graded_files:
   - cracker2.c

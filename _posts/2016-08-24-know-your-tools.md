@@ -2,7 +2,12 @@
 layout: doc
 title: "Know Your Tools"
 permalink: know_your_tools
-dueDates: "8/31/2016, 11:59 PM"
+submissions:
+- title: Entire Assignment
+  due_date: 10/17 11:59pm
+  graded_files:
+  - dumb.c
+  - HW0
 ---
 
 ## Introduction

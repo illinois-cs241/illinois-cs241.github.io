@@ -2,7 +2,11 @@
 layout: doc
 title: "Scheduler"
 permalink: scheduler
-dueDates: "November 2, 2016, 11:59 PM"
+submissions:
+- title: Entire Assignment
+  due_date: 11/02 11:59pm
+  graded_files:
+  - libscheduler.c
 ---
 
 ## Introduction

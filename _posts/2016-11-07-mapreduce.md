@@ -2,7 +2,15 @@
 layout: doc
 title: "MapReduce"
 permalink: mapreduce
-dueDates: "<b>Part 1: November 14th 11:59pm</b><br><b>Part 2: November 28th 11:59pm</b>"
+submissions:
+- title: Part 1
+  due_date: 11/14 11:59pm
+  graded_files:
+  - mr1.c
+- title: Part 2
+  due_date: 11/28 11:59pm
+  graded_files:
+  - mr2.c
 ---
 
 ## MapReduce
