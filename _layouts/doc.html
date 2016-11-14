@@ -36,7 +36,7 @@
 				<h2 id="submission-instructions">Submission Instructions</h2>
 				<p>
 					Please fully read details on
-					<a href="https://courses.engr.illinois.edu/cs241/#/overview#integrity"> Academic Integrity </a>.
+					<a href="{{ site.url }}/#academic-integrity"> Academic Integrity </a>.
 					These are shared between all MPs in CS 241.
 				</p>
 				<p>
@@ -45,20 +45,22 @@
 					Therefore, to hand in your code, all you have to do is commit it to your Subversion repository.
 				</p>
 				<p>
-				To check out the provided code for
-				<code>pointers_gone_wild</code> from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
-					{% highlight console %}$ svn up{% endhighlight %}
+					To check out the provided code for
+					<code>{{ page.permalink }}</code>
+					from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
+					{% highlight text %}svn up{% endhighlight %}
 				</p>
 				<p>
-				If you run <code>ls</code> you will now see a
-				<code>pointers_gone_wild</code> folder, where you can find this assignment! To commit your changes (send them to us) type:
+					If you run <code>ls</code> you will now see a
+					<code>{{ page.permalink }}</code> folder, where you can find this assignment! To commit your changes (send them to us) type:
 
-					{% highlight console %}$ svn ci -m "mp0 submission"{% endhighlight %}
+					{% highlight text %}svn ci -m "{{ page.permalink }} submission"{% endhighlight %}
 				</p>
 				<p>
 					Your repository directory can be viewed from a web browser from the following URL:
-					<a href="https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild">
-						https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild
+					<a
+						href="https://subversion.ews.illinois.edu/svn/{{site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ page.permalink }}">
+						https://subversion.ews.illinois.edu/svn/{{site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ page.permalink }}
 					</a>
 					where NETID is your University NetID.
 					It is important to check that the files you expect to be graded are present and up to date in your SVN copy.
