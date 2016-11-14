@@ -33,6 +33,7 @@
               <div id="content">
                 {{ content }}
 
+                {% if page.date %}
 				<h2 id="submission-instructions">Submission Instructions</h2>
 				<p>
 					Please fully read details on
@@ -65,6 +66,7 @@
 					where NETID is your University NetID.
 					It is important to check that the files you expect to be graded are present and up to date in your SVN copy.
 				</p>
+                {% endif %}
               </div>
             </div>
           </div>
