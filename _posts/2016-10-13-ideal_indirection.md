@@ -47,8 +47,8 @@ Thus for any virtual address, you should check whether the result has been alrea
 Virtual addresses use 64 bits with only 51 bits used for the actual virtual address as you can see from the diagram below. MISC is not counted as part of the virtual address here. Make sure to remove these unused bits when storing it in the TLB. In this simulation, the virtual address is broken up as follows for a three level page table.
 
 {% highlight text %}
-|----------|---------|---------|---------|-----------|
-  MISC (13) VPN1 (12) VPN2 (12) VPN3 (12) Offset (15)
+|-------------|------------|------------|------------|---------------|
+    MISC (13)   VPN1 (12)     VPN2 (12)    VPN3 (12)     Offset (15)
 {% endhighlight %}
 
 Using PageTable_get_entry() (see `pagetable.h`) will allow you to traverse through the page table using the VPNx addresses. Consider what should be done if the page table or frame we are trying to access has not yet been created.
