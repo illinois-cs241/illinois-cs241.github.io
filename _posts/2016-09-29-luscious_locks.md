@@ -3,13 +3,11 @@ layout: doc
 title: "Luscious Locks"
 dueDates: "10/05 11:59pm"
 permalink: luscious_locks
+learning_objectives:
+  - Synchronization Primitives
+  - Common Patterns in Multi-Threaded Programs
+  - Thread-Safe Datastructures and Their Design
 ---
-
-## Learning Objectives
-
-*   Synchronization primitives
-*   Common patterns in multi-threaded programs
-*   Thread-safe datastructures and their design
 
 ## Overview
 

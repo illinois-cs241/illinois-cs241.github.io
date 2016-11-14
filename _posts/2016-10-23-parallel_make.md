@@ -3,6 +3,12 @@ layout: doc
 title: "Parallel Make"
 permalink: parallel_make
 dueDates: "<b>November 7, 2016 11:59pm</b>"
+learning_objectives:
+  - Parallel Programming with Dependancies
+  - Using a Threadsafe Datastructure
+  - Resource Allocation Graphs (RAG)
+  - Deadlock Detection
+  - Synchronization
 ---
 
 ## Introduction

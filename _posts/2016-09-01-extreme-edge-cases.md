@@ -3,6 +3,11 @@ layout: doc
 title: "Extreme Edge Cases"
 permalink: extreme_edge_cases
 dueDates: "9/7/2016, 11:59 PM"
+learning_objectives:
+  - Test Driven Development
+  - Thinking of Edge Cases
+  - String Manipulation
+  - C Programming
 ---
 
 ## Backstory

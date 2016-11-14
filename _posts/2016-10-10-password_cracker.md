@@ -3,6 +3,10 @@ layout: doc
 title: "Password Cracker"
 permalink: password_cracker
 dueDates: "<br>Part 1 due 10/17 11:59pm <br> Part 2 due 10/24 11:59pm"
+learning_objectives:
+  - Multithread Programming and its performance gains
+  - Using a thread safe datastructure
+  - Using synchronization primatives
 ---
 
 ## Introduction

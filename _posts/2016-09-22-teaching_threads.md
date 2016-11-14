@@ -3,12 +3,11 @@ layout: doc
 title: "Teaching Threads"
 permalink: teaching_threads
 dueDates: "9/28/2016, 11:59 PM"
+learning_objectives:
+  - Using `<pthread.h>`
+  - Working With Threads In An Embarassingly Parallel Setting
+  - Dividing a Problem Into Smaller Subproblems
 ---
-
-## Learning Objectives
-* Using `<pthread.h>`
-* Working with threads in an embarassingly parallel setting
-* Dividing a problem into a lot of smaller subproblems
 
 ## map()
 

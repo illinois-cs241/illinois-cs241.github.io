@@ -3,17 +3,13 @@ layout: doc
 title: "Utilities Unleashed"
 permalink: utilities_unleashed
 dueDates: "9/14/2016, 11:59 PM"
+learning_objectives:
+  - Fork, Exec, Wait
+  - Environment Variables
+  - Writing a C Program
+  - Using argv, argc
+  - Introduction to core utils
 ---
-
-## Demo
-
-Your section leaders will demo a working implementation of all the C utilities.
-
-## Learning Objectives
-
-*   C Utilities
-*   Fork, Exec, Wait
-*   Environmental Variables
 
 ## Overview
 

@@ -3,6 +3,8 @@ layout: doc
 title: "Know Your Tools"
 permalink: know_your_tools
 dueDates: "8/31/2016, 11:59 PM"
+learning_objectives:
+  - Using the tools needed for CS 241
 ---
 
 ## Introduction

@@ -3,6 +3,10 @@ layout: doc
 title: "Scheduler"
 permalink: scheduler
 dueDates: "November 2, 2016, 11:59 PM"
+learning_objectives:
+  - scheduling algorithms
+  - preemptive vs non-premptive
+  - Relating the different algorithms with a priority queue
 ---
 
 ## Introduction

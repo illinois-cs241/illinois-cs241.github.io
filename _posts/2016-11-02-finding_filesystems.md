@@ -3,13 +3,11 @@ layout: doc
 title: "Finding Filesystems"
 dueDates: "11/9/2016, 11:59 PM"
 permalink: finding_filesystems
+learning_objectives:
+  - Learn how inodes are represented in the kernel
+  - How to write commands like `ls` and `cat`
+  - Traverse through singly indirect blocks
 ---
-
-## Learning Objectives
-
-*   Learn how inodes are represented in the kernel
-*   How to write commands like `ls` and `cat`
-*   Traverse through singly indirect blocks
 
 ## Overview
 

@@ -3,6 +3,12 @@ layout: doc
 title: "MapReduce"
 permalink: mapreduce
 dueDates: "<b>Part 1: November 14th 11:59pm</b><br><b>Part 2: November 28th 11:59pm</b>"
+learning_objectives:
+  - Interprocess Communication (IPC)
+  - Pipes
+  - Files and File Descriptors
+  - MapReduce
+  - Jeff Dean
 ---
 
 ## MapReduce

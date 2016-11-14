@@ -2,6 +2,10 @@
 layout: doc
 title: "Pointers Gone Wild"
 permalink: pointers_gone_wild
+learning_objectives:
+  - Pointers
+  - Strings
+  - Functions
 ---
 
 ## Introduction

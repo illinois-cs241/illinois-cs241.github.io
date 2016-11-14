@@ -31,6 +31,17 @@
                 {{ metadata }}
               </nav>
               <div id="content">
+                {% if page.date %} <!-- this is a post -->
+				<h2 id="learning-objectives">Learning Objectives</h2>
+				<p>
+					The learning objectives for {{ page.title }} are: <br/>
+					<ul>
+					{% for objective in page.learning_objectives %}
+						<li>{{ objective }}</li>
+					{% endfor %}
+					</ul>
+				</p>
+                {% endif %}
                 {{ content }}
               </div>
             </div>

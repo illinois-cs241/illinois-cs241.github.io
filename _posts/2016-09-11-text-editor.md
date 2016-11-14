@@ -3,6 +3,12 @@ layout: doc
 title: "Text Editor"
 permalink: text_editor
 dueDates: "9/19/2016, 11:59 PM"
+learning_objectives:
+  - Writing a C program
+  - File I/O
+  - String Manipulation
+  - Leveraging a Datastructure
+  - Writing an Event Driven Program
 ---
 
 ## Backstory
