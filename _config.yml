@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: CS 241 - System Programming
+title: "CS 241 - System Programming"
 email: angrave@illinois.edu
 description: > # this means to ignore newlines until "baseurl:"
   Webpage for CS241.
@@ -14,6 +14,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://illinois-cs241.github.io" # the base hostname & protocol for your site
 repository: illinois-cs241/illinois-cs241.github.io
 github_username: illinois-cs241
+semester: "fa16"
+course_number: "241"
+subject_code: "cs"
+course_name: "System Programming"
 
 # Build settings
 markdown: kramdown
