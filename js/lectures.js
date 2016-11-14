@@ -9,10 +9,9 @@
   };
 
   // Get today's Date
-      var today = new Date()
-      var dd = today.getDate()
-      var mm = today.getMonth() + 1
-
+  var today = new Date()
+  var dd = today.getDate()
+  var mm = today.getMonth() + 1
   var currentDateKey = dateToKey (mm + "/" + dd)
 
   // Function that returns that start and end date keys
@@ -38,7 +37,7 @@
 
   // This will return the dom element that wraps the entire week
   var getAncestorDom = function (week) {
-    return $(week).parent().parent()
+    return $(week).parent().parent().parent()
   }
   // Add an archor to the ancestor dom
   $(getAncestorDom(currentWeek)).prepend("<div id = 'currentWeek'></div")

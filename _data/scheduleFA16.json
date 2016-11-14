@@ -16,7 +16,7 @@
         summary: "3. man,asprintf,free,assert"
         resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-3%3A-Common-Gotchas' target='_blank'>Wikibook C Gotchas</a>"
         color: "#F44336"
-    week: "#1: 8/22 - 8/26"
+    week: "8/22 - 8/26"
     announcement: >
        <ul>
         <li>
@@ -40,7 +40,7 @@
         summary: "6. The fork-exec-wait pattern"
         resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-2%3A-Fork%2C-Exec%2C-Wait' target='_blank'>Wikibook Fork, Exec, Wait</a>"
         color: "#E91E63"
-    week: "#2: 8/29 - 9/2"
+    week: "8/29 - 9/2"
     announcement: >
       <!-- <ul>
         <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Due</li>
@@ -65,7 +65,7 @@
         summary: "8. How to build a memory allocator. Placement algorithms. Fragmentation."
         resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-1%3A-Heap-Memory-Introduction'>Wikibook heap memory introduction</a>"
         color: "#9C27B0"
-    week: "#3: 9/5 - 9/9"
+    week: "9/5 - 9/9"
     announcement: >
       <ul>
         <li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up for Quiz 1!</a></li>
@@ -87,7 +87,7 @@
         summary: "11. Introducing pthreads. stacks. Concurrency programming gotchas."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
         color: "#673AB7"
-    week: "#4: 9/12 - 9/16"
+    week: "9/12 - 9/16"
     announcement: >
       <!-- <ul>
       </ul> -->
@@ -108,7 +108,7 @@
         summary: "14. Mutex and Semaphore examples. How to implement a lock (The critical section problem)."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 5</a>"
         color: "#2196F3"
-    week: "#5: 9/19 - 9/23"
+    week: "9/19 - 9/23"
     announcement: >
       <!-- <ul>
         <li>Quiz 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
@@ -134,7 +134,7 @@
         summary: "17. Implementing a barrier. Implementing the R/W Problem using Condition Variables."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>"
         color: "#03A9F4"
-    week: "#6: 9/26 - 9/30"
+    week: "9/26 - 9/30"
     announcement: >
         <!-- <ul>
         <li>
@@ -158,7 +158,7 @@
         summary: "20. The Dining Philosophers problem"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-8'>wikibook week 8</a>."
         color: "#00BCD4"
-    week: "#7: 10/3 - 10/7"
+    week: "10/3 - 10/7"
     announcement: >
       <!-- <ul>
         <li>
@@ -182,7 +182,7 @@
         summary: "23. POSIX Pipes, files, memory II"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
         color: "#4CAF50"
-    week: "#8: 10/10 - 10/14"
+    week: "10/10 - 10/14"
     announcement: >
       <!-- <ul>
         <li>
@@ -206,7 +206,7 @@
         summary: "26. Passive sockets. The 4 server calls and what they do. Gotchas."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>"
         color: "#8BC34A"
-    week: "#9: 10/17 - 10/21"
+    week: "10/17 - 10/21"
     announcement: >
       <!-- <ul>
         <li>
@@ -230,7 +230,7 @@
         summary: "29. Scheduling simulator. epoll"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
         color: "#CDDC39"
-    week: "#10: 10/24 - 10/28"
+    week: "10/24 - 10/28"
     announcement: >
       <!-- <ul>
         <li>
@@ -254,7 +254,7 @@
         summary: "32. Dirs and symlinks"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
         color: "#FFC107"
-    week: "#11: 10/31 - 11/4"
+    week: "10/31 - 11/4"
     announcement: ""
   -
     schedule:
@@ -273,7 +273,7 @@
         summary: "35. POSIX Signals Revisited"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
         color: "#FFC107"
-    week: "#12: 11/7 - 11/11"
+    week: "11/7 - 11/11"
     announcement: >
       <!-- <ul>
         <li>
@@ -297,7 +297,7 @@
         summary: "38. Exam practice/review"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
         color: "#FFC107"
-    week: "#13: 11/14- 11/18"
+    week: "11/14 - 11/18"
     announcement: "<!-- -->"
   -
     schedule:
@@ -316,7 +316,7 @@
         summary: "Thanksgiving Break"
         resources: ""
         color: "#aaaaaa"
-    week: "#14: 11/21- 11/25"
+    week: "11/21 - 11/25"
     announcement: "<!-- -->"
   -
     schedule:
@@ -335,5 +335,5 @@
         summary: "Exams start"
         resources: ""
         color: "#aaaaaa"
-    week: "#15: 12/5 - 12/9"
+    week: "12/5 - 12/9"
     announcement: "<!-- <ul><li>Announcements will appear here.</li></ul> -->"
