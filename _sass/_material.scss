@@ -50,3 +50,8 @@ blockquote p:last-child::after {
 blockquote::after {
   display: none;
 }
+
+// make code blocks (not in pre tags) stand out 
+.content .highlighter-rouge {
+	background-color: rgb(225, 233, 241);
+}
