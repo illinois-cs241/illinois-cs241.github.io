@@ -9,6 +9,11 @@ learning_objectives:
   - String Manipulation
   - Leveraging a Datastructure
   - Writing an Event Driven Program
+wikibook:
+  - "C Programming, Part 1: Introduction"
+  - "C Programming, Part 2: Text Input And Output"
+  - "C Programming, Part 3: Common Gotchas"
+  - "Memory, Part 1: Heap Memory Introduction"
 ---
 
 ## Backstory

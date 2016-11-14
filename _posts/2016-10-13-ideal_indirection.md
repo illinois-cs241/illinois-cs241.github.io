@@ -9,6 +9,8 @@ learning_objectives:
   - Memory Management Unit (MMU)
   - Page Tables
   - Translation Lookaside Buffer (TLB)
+wikibook:
+  - "Virtual Memory, Part 1: Introduction to Virtual Memory"
 ---
 ## Required Reading
 

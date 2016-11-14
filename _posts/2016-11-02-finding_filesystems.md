@@ -7,6 +7,11 @@ learning_objectives:
   - Learn how inodes are represented in the kernel
   - How to write commands like `ls` and `cat`
   - Traverse through singly indirect blocks
+wikibook:
+  - "File System, Part 1: Introduction"
+  - "File System, Part 2: Files are inodes (everything else is just data...)"
+  - "File System, Part 3: Permissions"
+  - "File System, Part 4: Working with directories"
 ---
 
 ## Overview

@@ -7,6 +7,13 @@ learning_objectives:
   - Synchronization Primitives
   - Common Patterns in Multi-Threaded Programs
   - Thread-Safe Datastructures and Their Design
+wikibook:
+  - "Synchronization, Part 1: Mutex Locks"
+  - "Synchronization, Part 2: Counting Semaphores"
+  - "Synchronization, Part 3: Working with Mutexes And Semaphores"
+  - "Synchronization, Part 4: The Critical Section Problem"
+  - "Synchronization, Part 5: Condition Variables"
+  - "Synchronization, Part 6: Implementing a barrier"
 ---
 
 ## Overview

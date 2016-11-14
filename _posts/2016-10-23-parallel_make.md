@@ -9,6 +9,11 @@ learning_objectives:
   - Resource Allocation Graphs (RAG)
   - Deadlock Detection
   - Synchronization
+wikibook:
+  - "Synchronization, Part 4: The Critical Section Problem"
+  - "Synchronization, Part 5: Condition Variables"
+  - "Deadlock, Part 1: Resource Allocation Graph"
+  - "Deadlock, Part 2: Deadlock Conditions"
 ---
 
 ## Introduction

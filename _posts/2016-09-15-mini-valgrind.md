@@ -8,6 +8,10 @@ learning_objectives:
   - Prepartion for the Malloc MP
   - malloc(), free(), realloc()
   - Learning what Valgrind Does
+wikibook:
+  - "Memory, Part 1: Heap Memory Introduction"
+  - "Memory, Part 2: Implementing a Memory Allocator"
+  - "Memory, Part 3: Smashing the Stack Example"
 ---
 
 ## Overview

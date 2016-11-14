@@ -8,6 +8,10 @@ learning_objectives:
   - Thinking of Edge Cases
   - String Manipulation
   - C Programming
+wikibook:
+  - "C Programming, Part 1: Introduction"
+  - "C Programming, Part 2: Text Input And Output"
+  - "C Programming, Part 3: Common Gotchas"
 ---
 
 ## Backstory

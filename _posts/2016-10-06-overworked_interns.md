@@ -9,6 +9,10 @@ learning_objectives:
   - Coffman Conditions
   - Dining Philosophers
   - Messing with Interns
+wikibook:
+  - "Dining Philosophers"
+  - "Deadlock, Part 1: Resource Allocation Graph"
+  - "Deadlock, Part 2: Deadlock Conditions"
 ---
 
 ## Learning Objectives

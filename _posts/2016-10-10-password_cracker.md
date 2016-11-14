@@ -7,6 +7,15 @@ learning_objectives:
   - Multithread Programming and its performance gains
   - Using a thread safe datastructure
   - Using synchronization primatives
+wikibook:
+  - "Pthreads, Part 1: Introduction"
+  - "Pthreads, Part 2: Usage in Practice"
+  - "Synchronization, Part 1: Mutex Locks"
+  - "Synchronization, Part 2: Counting Semaphores"
+  - "Synchronization, Part 3: Working with Mutexes And Semaphores"
+  - "Synchronization, Part 4: The Critical Section Problem"
+  - "Synchronization, Part 5: Condition Variables"
+  - "Synchronization, Part 6: Implementing a barrier"
 ---
 
 ## Introduction
