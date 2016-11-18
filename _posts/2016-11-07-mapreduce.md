@@ -196,7 +196,7 @@ In our simplified version of MapReduce, one process will handle the routing of k
 As before, all mapper processes will read from `stdin` and write to `stdout`. You should redirect `stdout` of splitter to `stdin` of mapper as in Version 1 and send `stdout` of all mapper to write end of a pipe that is attachted to `stdin` of the shuffler process, which you will write.
 
 The shuffler will be run with N output filenames as command line parameters, where N is the number of reducer processes.
-It will read key/value pairs from `stdin`, hash the key with `hashKey()` function declared in `commmon.h` and then use the hash, modulo N, to decide which output file will the key/value pair will be written to.
+It will read key/value pairs from `stdin`, hash the key with `hashKey()` function declared in `utils.h` and then use the hash, modulo N, to decide which output file will the key/value pair will be written to.
 Please note, you **must** put your shuffler implementation in 'shuffler.c'.
 
 {% highlight C %}
