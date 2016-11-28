@@ -165,9 +165,7 @@ This too can be done in the Unix shell:
 ### Things that will not be tested for in Part 1:
 * Illegal inputs for either the mapper or reducer (Input data in a format other than as described above)
 * Invalid mapper or reducer code (mappers or reducers that do not work)
-* Input data larger than 1 MB
-* Empty inputs
-* Greater than 5 mappers
+* Key Value pairs that are larger than a pipe buffer.
 
 
 ## Version 2 - many mappers, many reducers
@@ -293,9 +291,7 @@ Your program will:
 
 * Illegal inputs for either the mapper or reducer (Input data in a format other than as described above)
 * Invalid mapper or reducer code (mappers or reducers that do not work)
-* Input data larger than 1 MB
-* Empty inputs
-* Greater than 5 mappers or reducers
+* Key Value pairs that are larger than a pipe buffer.
 
 
 ##  Building and Running
