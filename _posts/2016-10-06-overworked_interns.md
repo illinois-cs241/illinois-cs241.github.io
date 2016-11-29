@@ -7,14 +7,15 @@ submissions:
   due_date: 10/12 11:59pm
   graded_files:
   - good_company.c
+learning_objectives:
+  - Synchronization
+  - Deadlock / Livelock / Starvation
+  - Coffman Conditions
+  - Dining Philosophers
+  - Messing with Interns
 ---
 
 ## Learning Objectives
-* Synchronization
-* Deadlock / Livelock / Starvation
-* Coffman Conditions
-* Dining Philosophers
-* Messing with Interns
 
 ## Backstory
 You are creating a start up that allows companies to rent <s>code monkeys</s> interns for a project.

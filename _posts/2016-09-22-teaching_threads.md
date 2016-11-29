@@ -7,12 +7,11 @@ submissions:
   due_date: 09/28/2016, 11:59pm
   graded_files:
   - par_map.c
+learning_objectives:
+  - Using `<pthread.h>`
+  - Working With Threads In An Embarassingly Parallel Setting
+  - Dividing a Problem Into Smaller Subproblems
 ---
-
-## Learning Objectives
-* Using `<pthread.h>`
-* Working with threads in an embarassingly parallel setting
-* Dividing a problem into a lot of smaller subproblems
 
 ## map()
 

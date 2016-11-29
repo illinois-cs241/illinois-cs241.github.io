@@ -8,6 +8,10 @@ submissions:
   graded_files:
   - part1-functions.c
   - part2-main.c 
+learning_objectives:
+  - Pointers
+  - Strings
+  - Functions
 ---
 
 ## Introduction

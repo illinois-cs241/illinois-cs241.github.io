@@ -8,6 +8,8 @@ submissions:
   graded_files:
   - dumb.c
   - HW0
+learning_objectives:
+  - Using the tools needed for CS 241
 ---
 
 ## Introduction

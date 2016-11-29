@@ -7,17 +7,13 @@ submissions:
   due_date: 10/17 11:59pm
   graded_files:
   - mini_valgrind.c
+learning_objectives:
+  - Using Metadata to Bookkeep segments of memory
+  - Memory Management and Linked Lists
+  - Prepartion for the Malloc MP
+  - malloc(), free(), realloc()
+  - Learning what Valgrind Does
 ---
-
-## Demo
-
-Your section leaders will demo a implementation of a working Mini Valgrind. Please also make an effort to read over the code that is provided for you.
-
-## Learning Objectives
-
-*   Metadata
-*   Review of memory management and linked lists
-*   Preparation for the Malloc MP
 
 ## Overview
 
