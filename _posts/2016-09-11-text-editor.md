@@ -2,7 +2,11 @@
 layout: doc
 title: "Text Editor"
 permalink: text_editor
-dueDates: "9/19/2016, 11:59 PM"
+submissions:
+- title: Entire Assignment
+  due_date: 09/19/2016, 11:59 PM
+  graded_files:
+  - editor.c
 ---
 
 ## Backstory

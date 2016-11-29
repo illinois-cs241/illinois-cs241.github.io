@@ -2,7 +2,11 @@
 layout: doc
 title: "Teaching Threads"
 permalink: teaching_threads
-dueDates: "9/28/2016, 11:59 PM"
+submissions:
+- title: Entire Assignment
+  due_date: 09/28/2016, 11:59pm
+  graded_files:
+  - par_map.c
 ---
 
 ## Learning Objectives

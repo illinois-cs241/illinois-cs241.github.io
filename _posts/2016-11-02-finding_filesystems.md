@@ -1,8 +1,12 @@
 ---
 layout: doc
 title: "Finding Filesystems"
-dueDates: "11/9/2016, 11:59 PM"
 permalink: finding_filesystems
+submissions:
+- title: Entire Assignment
+  due_date: 11/09/2016 11:59pm
+  graded_files:
+  - fs.c
 ---
 
 ## Learning Objectives

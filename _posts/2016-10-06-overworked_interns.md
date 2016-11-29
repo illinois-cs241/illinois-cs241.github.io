@@ -2,7 +2,11 @@
 layout: doc
 title: "Overworked Interns"
 permalink: overworked_interns
-dueDates: "10/12 11:59pm"
+submissions:
+- title: Entire Assignment
+  due_date: 10/12 11:59pm
+  graded_files:
+  - good_company.c
 ---
 
 ## Learning Objectives

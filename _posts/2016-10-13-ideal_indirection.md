@@ -1,8 +1,12 @@
 ---
 layout: doc
 title: "Ideal Indirection"
-sdueDates: "10/19 11:59pm"
 permalink: ideal_indirection
+submissions:
+- title: Entire Assignment
+  due_date: 10/19 11:59pm
+  graded_files:
+  - mmu.c
 ---
 
 ## Learning Objectives

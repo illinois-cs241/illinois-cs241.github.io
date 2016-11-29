@@ -2,7 +2,12 @@
 layout: doc
 title: "Utilities Unleashed"
 permalink: utilities_unleashed
-dueDates: "9/14/2016, 11:59 PM"
+submissions:
+- title: Entire Assignment
+  due_date: 09/14/2016, 11:59 PM
+  graded_files:
+  - env.c
+  - time.c
 ---
 
 ## Demo
