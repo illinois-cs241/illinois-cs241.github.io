@@ -278,12 +278,6 @@ When the worker threads finish a task, each thread will print the number of pass
 After all worker threads finish each task, the main thread will print the password (if found), the total number of hashes, the wall clock and CPU time spent on that task, and the ratio of CPU time to wall clock time.
 Note that we have not provided any of the timing print statements in `cracker2`.
 
-## Submission instructions
-As usual, we will use subversion for your submission of this MP.
-Please modify only the following files:
-- `cracker1.c`
-- `cracker2.c`
-
 ## Concept
 
 ### Latency & Throughput

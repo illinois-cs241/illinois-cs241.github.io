@@ -156,23 +156,3 @@ or
 {% highlight bash %}
 ./part2-debug
 {% endhighlight %}
-
-## Grading, Submission, and Other Details
-
-Please fully read details on [Academic Honesty](https://courses.engr.illinois.edu/cs241/#/overview#integrity). These are shared between all MPs in CS 241.
-
-We will be using Subversion as our hand-in system this semester. Our grading system will checkout your most recent (pre-deadline) commit for grading. Therefore, to hand in your code, all you have to do is commit it to your Subversion repository.
-
-To check out the provided code for `pointers_gone_wild`from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
-
-{% highlight bash %}
-svn up
-{% endhighlight %}
-
-If you run `ls` you will now see a `pointers_gone_wild` folder, where you can find this assignment! To commit your changes (send them to us) type:
-
-{% highlight bash %}
-svn ci -m "mp0 submission"
-{% endhighlight %}
-
-Your repository directory can be viewed from a web browser from the following URL: [https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild](https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/pointers_gone_wild) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your SVN copy.

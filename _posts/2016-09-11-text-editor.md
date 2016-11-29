@@ -401,43 +401,6 @@ your mentor with a bash script that runs some editor scripts over some files
 you create, then uses the `diff` tool (check the man pages) to make sure your
 editor did the right thing.
 
-## Grading, submission, and other details
-Please fully read details on [Academic
-Honesty](https://courses.engr.illinois.edu/cs241/#/overview#integrity).  These
-are shared by all MPs in CS 241.
-
-We will be using Subversion as our hand-in system this semester. Our grading
-system will checkout your most recent (pre-deadline) commit for grading.
-Therefore, to hand in your code, all you have to do is commit it to your
-Subversion repository.
-
-To check out the provided code for `text_editor` from the class repository,
-go to your cs241 directory (the one you checked out for "know your tools")
-and run:
-
-{% highlight bash %}
-svn up
-{% endhighlight %}
-
-If you run `ls` you will now see a `text_editor` folder, where you can find
-this assignment! To commit your changes (send them to us) type:
-
-{% highlight bash %}
-svn ci -m "mp2 submission"
-{% endhighlight %}
-
-Your repository directory can be viewed from a web browser from the
-following URL:
-[https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/vector](https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/vector)
-where NETID is your University NetID. It is important to check that the
-files you expect to be graded are present and up to date in your svn copy.
-
-### Only edit the following files
-
-We will only use the files in this list when running the autograder:
-
-*   `editor.c`
-
 ## Compile and run
 
 Because we have provided `Document` and `Vector` as a precompiled archive

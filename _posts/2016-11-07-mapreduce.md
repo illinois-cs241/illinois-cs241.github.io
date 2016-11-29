@@ -350,20 +350,5 @@ With 4 mappers and 4 reducers
 ### Record Setting Pi Code
 As well as the simple mapper/reducer pairs, we also have also included some really cool pi computation code (see [this](http://www.karrels.org/pi/) for more info).
 For instructions on how to use the pi code, see the file `pi/README.txt`.
-Note that we don't currently compile this with an NVIDIA compiler, so you won't be able to use the CUDA version of this code (which we haven't tested) unless you fiddle with the `Makefile`.
-
-## Grading, Submission, and Other Details
-
-Please fully read details on [Academic Honesty](http://cs241.cs.illinois.edu/#academic-integrity).
-These are shared between all MPs in CS 241.
-
-To check out the provided code for mapreduce from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
-
-{% highlight bash %} svn up {% endhighlight %}
-
-If you run ls you will now see a mapreduce folder, where you can find this assignment! To commit your changes (send them to us) type:
-
-{% highlight bash %} svn ci -m "mapreduce submission" {% endhighlight %}
-
-Your repository directory can be viewed from a web browser from the following URL: https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/mapreduce where NETID is your University NetID.
-It is important to check that the files you expect to be graded are present and up to date in your svn copy.
+Note that we do not currently compile this with an NVIDIA compiler, so you will
+not be able to use the CUDA version of this code (which we have not tested) unless you fiddle with the `Makefile`.
