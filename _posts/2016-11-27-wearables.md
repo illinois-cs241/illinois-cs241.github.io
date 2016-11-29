@@ -2,7 +2,15 @@
 layout: doc
 title: "Wearables"
 permalink: wearables
-dueDates: "December 5th"
+submissions:
+- title: Entire Assignment
+  due_date: 12/05 11:59pm
+  graded_files:
+  - wearable_server.c
+learning_objectives:
+  - Client/Server Model
+  - Networking
+  - Streaming Data
 ---
 ## Wearables
 
