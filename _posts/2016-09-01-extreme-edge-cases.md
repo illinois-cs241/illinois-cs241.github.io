@@ -8,6 +8,11 @@ submissions:
   graded_files:
   - camelCaser.c
   - camelCaser_tests.c
+learning_objectives:
+  - Test Driven Development
+  - Thinking of Edge Cases
+  - String Manipulation
+  - C Programming
 ---
 
 ## Backstory

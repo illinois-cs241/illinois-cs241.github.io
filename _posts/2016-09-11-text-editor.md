@@ -7,6 +7,12 @@ submissions:
   due_date: 09/19/2016, 11:59 PM
   graded_files:
   - editor.c
+learning_objectives:
+  - Writing a C program
+  - File I/O
+  - String Manipulation
+  - Leveraging a Datastructure
+  - Writing an Event Driven Program
 ---
 
 ## Backstory

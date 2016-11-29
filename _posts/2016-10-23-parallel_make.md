@@ -7,6 +7,12 @@ submissions:
   due_date: 11/07 11:59pm
   graded_files:
   - parmake.c
+learning_objectives:
+  - Parallel Programming with Dependancies
+  - Using a Threadsafe Datastructure
+  - Resource Allocation Graphs (RAG)
+  - Deadlock Detection
+  - Synchronization
 ---
 
 ## Introduction

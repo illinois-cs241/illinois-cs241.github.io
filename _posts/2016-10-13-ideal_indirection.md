@@ -7,16 +7,13 @@ submissions:
   due_date: 10/19 11:59pm
   graded_files:
   - mmu.c
+learning_objectives:
+  - Virtual Memory
+  - The virtual address translation process
+  - Memory Management Unit (MMU)
+  - Page Tables
+  - Translation Lookaside Buffer (TLB)
 ---
-
-## Learning Objectives
-
-* Virtual memory
-* The virtual address translation process
-*   Memory Management Unit (MMU)
-*   Page Tables
-*   Translation Lookaside Buffer (TLB)
-
 ## Required Reading
 
 Read this in the wikibook before starting the lab.

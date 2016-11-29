@@ -11,6 +11,10 @@ submissions:
   due_date: 10/24 11:59pm
   graded_files:
   - cracker2.c
+learning_objectives:
+  - Multithread Programming and its performance gains
+  - Using a thread safe datastructure
+  - Using synchronization primatives
 ---
 
 ## Introduction

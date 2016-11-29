@@ -7,13 +7,11 @@ submissions:
   due_date: 11/09/2016 11:59pm
   graded_files:
   - fs.c
+learning_objectives:
+  - Learn how inodes are represented in the kernel
+  - How to write commands like `ls` and `cat`
+  - Traverse through singly indirect blocks
 ---
-
-## Learning Objectives
-
-*   Learn how inodes are represented in the kernel
-*   How to write commands like `ls` and `cat`
-*   Traverse through singly indirect blocks
 
 ## Overview
 

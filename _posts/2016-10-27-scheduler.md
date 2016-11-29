@@ -7,6 +7,10 @@ submissions:
   due_date: 11/02 11:59pm
   graded_files:
   - libscheduler.c
+learning_objectives:
+  - scheduling algorithms
+  - preemptive vs non-premptive
+  - Relating the different algorithms with a priority queue
 ---
 
 ## Introduction

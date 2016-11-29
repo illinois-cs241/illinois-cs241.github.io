@@ -11,6 +11,12 @@ submissions:
   due_date: 11/28 11:59pm
   graded_files:
   - mr2.c
+learning_objectives:
+  - Interprocess Communication (IPC)
+  - Pipes
+  - Files and File Descriptors
+  - MapReduce
+  - Jeff Dean
 ---
 
 ## MapReduce
