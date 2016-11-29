@@ -17,6 +17,9 @@ learning_objectives:
   - Files and File Descriptors
   - MapReduce
   - Jeff Dean
+wikibook:
+  - "Pipes, Part 1: Introduction to pipes"
+  - "Pipes, Part 2: Pipe programming secrets"
 ---
 
 ## MapReduce

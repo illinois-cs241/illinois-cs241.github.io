@@ -10,6 +10,9 @@ submissions:
   - HW0
 learning_objectives:
   - Using the tools needed for CS 241
+wikibook:
+  - "HW0"
+  - "System Programming Jokes"
 ---
 
 ## Introduction

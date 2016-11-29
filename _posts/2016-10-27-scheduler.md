@@ -11,6 +11,9 @@ learning_objectives:
   - scheduling algorithms
   - preemptive vs non-premptive
   - Relating the different algorithms with a priority queue
+wikibook:
+  - "Scheduling, Part 1: Scheduling Processes"
+  - "Scheduling, Part 2: Scheduling Processes: Algorithms"
 ---
 
 ## Introduction

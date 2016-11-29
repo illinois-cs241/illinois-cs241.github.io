@@ -14,6 +14,9 @@ learning_objectives:
   - Writing a C Program
   - Using argv, argc
   - Introduction to core utils
+wikibook:
+  - "Forking, Part 1: Introduction"
+  - "Forking, Part 2: Fork, Exec, Wait"
 ---
 
 ## Overview

@@ -11,6 +11,9 @@ learning_objectives:
   - Using `<pthread.h>`
   - Working With Threads In An Embarassingly Parallel Setting
   - Dividing a Problem Into Smaller Subproblems
+wikibook:
+  - "Pthreads, Part 1: Introduction"
+  - "Pthreads, Part 2: Usage in Practice"
 ---
 
 ## map()
