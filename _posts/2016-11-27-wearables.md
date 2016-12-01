@@ -11,6 +11,10 @@ learning_objectives:
   - Client/Server Model
   - Networking
   - Streaming Data
+wikibook:
+  - "Networking, Part 2: Using getaddrinfo"
+  - "Networking, Part 3: Building a simple TCP Client"
+  - "Networking, Part 4: Building a simple TCP Server"
 ---
 ## Wearables
 
