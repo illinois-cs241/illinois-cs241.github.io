@@ -79,12 +79,8 @@ If you do not want students to be able to access this page (say you are beta tes
 ### Syntax Highlighting
 Also you might want to add syntax highlighting.
 
-This can be done by adding the following syntax to your content:
-```
-{% highlight <language> linenos%}
-This text will show up in a code block and have syntax highlighting for the <language> language and you add line numbers if 'linenos' is present.
-{% endhighlight %}
-```
+This can be done by [fencing with triple backticks](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/e48fe59238600be6e1ec9e4add21c513cbac86d0#code):
+
 [A full list of languages that Jekyll supports.](https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/)
 
 
