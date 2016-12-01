@@ -81,9 +81,9 @@ Also you might want to add syntax highlighting.
 
 This can be done by adding the following syntax to your content:
 ```
-{% highlight <language> linenos%}
-This text will show up in a code block and have syntax highlighting for the <language> language and you add line numbers if 'linenos' is present.
-{% endhighlight %}
+```<language>
+This text will show up in a code block and have syntax highlighting for the <language> language.
+```
 ```
 [A full list of languages that Jekyll supports.](https://haisum.github.io/2014/11/07/jekyll-pygments-supported-highlighters/)
 
