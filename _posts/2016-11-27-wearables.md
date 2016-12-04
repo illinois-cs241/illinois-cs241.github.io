@@ -202,22 +202,3 @@ This portion is ungraded, but you may find it helpful for both checking understa
 * Explain in plain English what sockets are, and how we use them inside Unix programs (hint: think files). How are sockets different from other files you have encountered `so far? (Do they have inode metadata? Do writes on sockets result in Disk I/O?).
 * How are sockets related to ports? Can you think of a way to uniquely identify a connection with sockets? What could be some reasons to allow for the reusing of ports?
 * Does TCP encrypt packets that are sent over the network? If not, what are some ways in which encryption is carried out?
-
-## Grading, Submission, and Other Details
-
-Please fully read details on [Academic Honesty](https://courses.engr.illinois.edu/cs241/#/overview#integrity).
-These are shared between all MPs in CS 241.
-
-To check out the provided code for wearables from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
-
-{% highlight bash %} svn up {% endhighlight %}
-
-If you run ls you will now see a wearables folder, where you can find this assignment! To commit your changes (send them to us) type:
-
-{% highlight bash %} svn ci -m "wearables submission" {% endhighlight %}
-
-Your repository directory can be viewed from a web browser from the following URL: https://subversion.ews.illinois.edu/svn/fa16-cs241/NETID/wearables where NETID is your University NetID.
-
-You will implement the logic for your server in wearable_server.c. This file will be used for grading.
-
-It is important to check that the files you expect to be graded are present and up to date in your svn copy.
