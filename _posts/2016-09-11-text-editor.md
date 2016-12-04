@@ -443,4 +443,3 @@ compile in debug mode, you will get an executable call `editor-debug`.
 
 We have also provided a file `editor_test.c` where you can programmatically test
 your editor. This compiles to `editor_test` and `editor_test-debug`.
-q
