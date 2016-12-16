@@ -19,8 +19,9 @@
                 <div class = "small-12 medium-12 large-3 columns" title="{{member.roles}} interested in {{member.speciality}} and has been on staff for {{member.semesters}}" >
                   <div class = "pad" id = "{{member.netid}}" >
                     {% assign photo = photos | where_exp: "file", "file.path contains member.netid" | first | map: "path" | default: "./images/staffPhotos/default.jpg" %}
-                    <a href = "{{ photo }}">
-                      <div class="card-staff mdl-card mdl-shadow--2dp" style = "background-image: url('{{ photo }}');">
+                    <a href = "./{{ photo }}">
+                      <div class="card-staff mdl-card mdl-shadow--2dp" style =
+						  "background-image: url('./{{ photo }}');">
                         <div class = "spacer" style = "height: 0; padding-bottom: 85%; width:100%;">
                           <!-- Horrible Hack! Please fix me -->
                         </div>
