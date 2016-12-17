@@ -211,7 +211,7 @@ When the simulator is executed and the flow of execution is implemented correctl
 
   FINAL TIMING DIAGRAM:
   Core 0: 00110022110022110011
-  
+
   Average Waiting Time: 9.33
   Average Turnaround Time: 16.00
   Average Response Time: 1.33

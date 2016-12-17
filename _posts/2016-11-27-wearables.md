@@ -102,48 +102,48 @@ To build the server, run `make`.
 
 We've provided a wearables simulator for your testing purposes, so you can focus on creating the server. Recall that your server takes 2 ports--wearables and request. Starting your server, where 8888 and 8889 are arbitrary ports, should look like:
 
-{% highlight bash %}
+```
 % ./wearable_server 8888 8889
-{% endhighlight %}
+```
 
 Once your server has started, you can begin the wearables simulator which will simulate sending data from wearables and requests. We've included some basic but insufficient test scripts to check your output against. They're human-readable, so you can create your own tests to verify your output with one command on each line. Please make sure your server is restarted before every simulator run.
 
-{% highlight bash %}
+```
 % ./wearable_sim 8888 8889 tests/[Testname].ww
-{% endhighlight %}
+```
 
 While the simulator is running, it will report back the data you sent from your server. Additionally, it also generates the expected output for you to compare against. After running the simulator you should see 3 files, `_expected.rp`, `_received.rp`, and `_error_report.rp`. `_received.rp` will hold the exact data sent from your server, so to see if your output is correct after running the simulator, you can use:
 
-{% highlight bash %}
+```
 % diff _received.rp _expected.rp
-{% endhighlight %}
+```
 
 or
 
-{% highlight bash %}
+```
 % bash check_solution.sh
-{% endhighlight %}
+```
 
 Please note that `_error_report.rp` will hold any errors that may have been encountered while running the simulator.
 
 You can create your tests like this:
 
-{% highlight text %}
+```
 BEGIN - Signifies the beginning of a wearable definition.
 START: - States how much time before this wearable begins transmitting information.
 INTERVAL: - States the time delay between sending data points. <type>:<value> - One data point, where type is a string corresponding TYPE1, TYPE2, TYPE3. Value is an integer. Note all data points are transmitted sequentially by order in which they appear in a BEGIN-END wearable definition.
 END - Signifies the end of a wearable definition
-{% endhighlight %}
+```
 
-{% highlight text %}
+```
 SAMPLE_INT:<wait time>:<timestamp1>:<timestamp2> - Simulates a user request.
-{% endhighlight %}
+```
 
 There can be multiple commands of this time, and the are simulated sequentially. `<wait time>` represents the time (in millis) to sleep before this request is sent. The timestamp values represent the range of timestamps requested.
 
 A basic test that creates one wearable which starts 1 second after the simulator is started, with 3 data points (send every second) and requests timestamp between 0, 2000 (with the request started 2 seconds after) would look like:
 
-{% highlight text %}
+```
 SAMPLE_INT:2000:0:2000
 BEGIN
 START:1000
@@ -152,19 +152,19 @@ heart_beat:100
 blood_sugar:104
 body_temp:104
 END
-{% endhighlight %}
+```
 
 This test script would send the data:
 
-{% highlight text %}
+```
 1000:heart_beat:100
 2000:blood_sugar:104
 3000:body_temp:104
-{% endhighlight %}
+```
 
 and the expected output would be:
 
-{% highlight text %}
+```
 Results for heart_beat:
 Size:1
 0 100
@@ -178,7 +178,7 @@ Results for body_temp:
 Size:0
 Median:0
 Average:0
-{% endhighlight %}
+```
 
 If you want to kill the wearable server:
 You might have to do this if you have not implemented the signal handler or if your socket isn't closed properly.

@@ -30,7 +30,7 @@ ext2 is good filesystem, but to keep things simple, we will be using a modified 
 
 ### Superblock
 
-{% highlight c %}
+```
 
 typedef struct {
 	uint64_t size;
@@ -39,13 +39,13 @@ typedef struct {
 	char data_map[0];
 } superblock;
 
-{% endhighlight %}
+```
 
 The superblock stores information like the size of the filesystem, the number of inodes and data blocks, and whether those data blocks are being used. Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to indicate if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
 
 ### Inodes
 
-{% highlight c %}
+```
 
 typedef struct {
 	uint8_t 	owner;				/* Owner ID */
@@ -60,7 +60,7 @@ typedef struct {
 	inode_number single_indirect;		/* points to a singly indirect block */
 } inode;
 
-{% endhighlight %}
+```
 
 This is the famous inode struct that you have been learning about! Here are a breakdown of the variables:
 
@@ -76,19 +76,19 @@ This is the famous inode struct that you have been learning about! Here are a br
 
 ### Data blocks
 
-{% highlight c %}
+```
 
 typedef struct {
 	char data[16 * KILOBYTE];
 } data_block;
 
-{% endhighlight %}
+```
 
 Data blocks are currently defined to be 16 kilobytes. Nothing fancy here.
 
 ### file_system struct
 
-{% highlight c %}
+```
 
 typedef struct {
 	superblock* meta;
@@ -96,7 +96,7 @@ typedef struct {
 	data_block* data_root;
 } file_system;
 
-{% endhighlight %}
+```
 
 ![](http://cs241.cs.illinois.edu/images/map.png)
 
@@ -156,23 +156,23 @@ Print out the filename using `print_file(char*)`
 
 Our directory `data_blocks` look like the following:
 
-{% highlight c %}
+```
 
 |--248 Byte Name String--||-8 Byte Inode Number-|
 |--248 Byte Name String--||-8 Byte Inode Number-|
 ...
 
-{% endhighlight %}
+```
 
 The filesystem guarantees that size of a directory is a multiple of 256. You need to loop through all of the directory entries and get the name of the entry, and print it out to standard out. You are going to need to call two different print functions based on whether the inode that you are pointing to is a directory or a file, which means you have to get the inode number and check that inode.
 
 Use `make_dirent_from_string`: it accepts a `char* ptr` to the start of a dirent block like this.
 
-{% highlight c %}
+```
 
 |--248 Byte Name String--||-8 Byte Inode Number-|
 ^ -- Points here
-{% endhighlight %}
+```
 
 The function then fills out a reference to the passed in struct with the name and the inode number as an `inode_num`.
 
@@ -186,7 +186,7 @@ You can grab the test filesystem using `make testfs`. **Do not commit this file.
 
 Here are some sample testcases!
 
-{% highlight console %}
+```
 $ ./minixfs test.fs ls /
 you
 got
@@ -194,17 +194,17 @@ ls!
 congrats
 [more stuff]
 $
-{% endhighlight %}
+```
 
-{% highlight console %}
+```
 $ ./minixfs test.fs ls /directory
 recursion
 nice
 $
-{% endhighlight %}
+```
 
 
-{% highlight console %}
+```
 
 $ ./minixfs test.fs ls /directory_alot
 file1
@@ -212,42 +212,42 @@ file2
 ...
 file70
 $
-{% endhighlight %}
+```
 
-{% highlight console %}
+```
 $ ./minixfs test.fs ls /directory_alot_alot
 file1
 file2
 ...
 file710
 $
-{% endhighlight %}
+```
 
 
-{% highlight console %}
+```
 $ ./minixfs test.fs cat /goodies/hello.txt
 Hello World!
 $
-{% endhighlight %}
+```
 
 You can even cat directories!
 
-{% highlight console %}
+```
 $ ./minixfs test.fs cat /
 you00000001got00000002ls!00000003congrats00000004 [...]
 $
-{% endhighlight %}
+```
 
 So that's what really is going on under the hood?
 
 Want something fun?
 
-{% highlight console %}
+```
 
 $ ./minixfs test.fs cat /goodies/dog.png > dog.png
 $ xdg-open dog.png
 
-{% endhighlight %}
+```
 
 You can store anything on filesystems. See what we hid around the filesystem for you...
 

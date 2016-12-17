@@ -48,43 +48,43 @@ For this lab, we have provided the following reference executables:
 
 These are correct implementations of the programs you are being asked to write. You can use these to determine how your programs should behave in edge cases. For example, if you are wondering what `time` should do if not given the correct number of arguments, then just try it out:
 
-{% highlight text %}
+```
 ./time_reference
-{% endhighlight %}
+```
 
 and you should see the following output:
 
-{% highlight text %}
+```
 ./time <command> [args]
-{% endhighlight %}
+```
 
 ## Setup
 
-{% highlight bash %}
+```
 cd ~/cs241
 svn up
 cd utilities_unleashed
-{% endhighlight %}
+```
 
 ## time
 
 In this lab, you will be implementing `time`.
 
-{% highlight text %}
+```
 time – run a program and report how long it took
-{% endhighlight %}
+```
 
 So if a user enters:
 
-{% highlight bash %}
+```
 ./time sleep 2
-{% endhighlight %}
+```
 
 then time will run `sleep` with the argument `2` and record how long it took in seconds:
 
-{% highlight bash %}
+```
 2.002345 seconds
-{% endhighlight %}
+```
 
 Note that we only care about [wall-clock time](https://en.wikipedia.org/wiki/Wall-clock_time), and we recommend using [`clock_gettime`](http://linux.die.net/man/3/clock_gettime) with `CLOCK_MONOTONIC`.
 
@@ -111,17 +111,17 @@ Nota bene:
 
 In this lab, you will be implementing `env`.
 
-{% highlight text %}
+```
 env – run a program in a modified environment
-{% endhighlight %}
+```
 
 When run without arguments, it prints a list of all the current environment variables.
 
 When run with arguments, it will be given at least two, and will be called like so:
 
-{% highlight bash %}
+```
 ./env <var-list> <command-name>
-{% endhighlight %}
+```
 
 *   `<var-list>` is a comma-separated list of changes that are to be made to environment variables, and `<command-name>` is the name of a command that is to be run after making those changes.
 *   Any additional arguments are to be passed as arguments to `<command-name>`.
@@ -134,25 +134,25 @@ When run with arguments, it will be given at least two, and will be called like 
 
 For example, if the user enters:
 
-{% highlight bash %}
+```
 ./env
-{% endhighlight %}
+```
 
 then you should print out all the environment variables. Try `./env_reference` in your terminal to see it in action.
 
 If the user enters:
 
-{% highlight bash %}
+```
 ./env TZ=MST7MDT date
-{% endhighlight %}
+```
 
 then it changes the `TZ` environment variable while running the `date` command.
 
 And, if the user enters:
 
-{% highlight bash %}
+```
 ./env PATH=%HOME/bin:%PATH,IDIR=/%HOME/include,LIBDIR=/%HOME/lib make -j4
-{% endhighlight %}
+```
 
 then it changes the `PATH`, `IDIR`, and `LIBDIR` variables while running `make` with the `j4` option.
 
