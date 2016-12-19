@@ -24,7 +24,7 @@ Here's a concrete example. Say we have the input list `[1,2,3]` and a callback f
 
 In C code, it looks something like this (which you can find in `map.c`):
 
-{% highlight c %}
+```
 double *map(double *list, size_t length, mapper map_func) {
   double *ret_list = malloc(sizeof(double) * length);
 
@@ -34,7 +34,7 @@ double *map(double *list, size_t length, mapper map_func) {
 
   return ret_list;
 }
-{% endhighlight %}
+```
 
 (To keep things simple: while the `map` in functional programming is generic, our version for this lab always maps a list of doubles to a list of doubles.)
 
@@ -84,14 +84,14 @@ We have provided a makefile that will compile your code along with our framework
 
 After running `make`, you can run the executable with the following usage:
 
-{% highlight c %}
+```
 ./par_map <callback_function_name> <num_elements> <num_threads>
-{% endhighlight %}
+```
 
 We have provided some sample callbacks, so you can run:
 
-{% highlight bash %}
+```
 ./par_map triple 500 4
-{% endhighlight %}
+```
 
 which should run your `par_map()` with the `triple` callback function on 500 elements with 4 worker threads.

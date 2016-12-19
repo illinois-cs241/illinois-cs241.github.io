@@ -7,7 +7,7 @@ submissions:
   due_date: 10/24 11:59pm
   graded_files:
   - part1-functions.c
-  - part2-main.c 
+  - part2-main.c
 learning_objectives:
   - Pointers
   - Strings
@@ -34,7 +34,7 @@ All other files will be replaced with new/different files for grading. If you mo
 ## Part 1:
 
 There are erroneous/unimplemented functions in <tt>part1-functions.c</tt>. Your task is to modify functions according to comment above each function such that the output of part1 looks exactly as follows:
-{% highlight text %}
+```
 == one() ==
 3^2 + 4^2 = 25
 10^2 + 10^2 = 200
@@ -64,9 +64,9 @@ The value of p is: 12.500000
 == eleven() ==
 Hello World!
 == twelve() ==
-0.000000 0.100000 0.200000 0.300000 0.400000 0.500000 0.600000 0.700000 0.800000 0.900000 
+0.000000 0.100000 0.200000 0.300000 0.400000 0.500000 0.600000 0.700000 0.800000 0.900000
 == thirteen() ==
-0 10 40 90 160 250 360 490 640 810 
+0 10 40 90 160 250 360 490 640 810
 == fourteen() ==
 orange and blue!
 ORANGE and blue!
@@ -96,7 +96,7 @@ Result: 2499
 4
 6
 7
-{% endhighlight %}
+```
 
 Note that you can just diff with ```part1-expected-output```.
 
@@ -104,16 +104,16 @@ Note that you can just diff with ```part1-expected-output```.
 
 We have pre-uploaded some files to your mp0 SVN directory, including <tt>part2-functions.c</tt>. Inside <tt>part2-functions.c</tt>, you will see twelve different functions, including <tt>first_step()</tt> (re-printed below).
 
-{% highlight c %}
+```
 void first_step(int value) {
   if (value == 81)
     printf("1: Illinois\n");
 }
-{% endhighlight %}
+```
 
 To complete Part 2, you must complete the program <tt>part2-main.c</tt> so that <tt>part2-main.c</tt> makes calls to all twelve functions in <tt>part2-functions.c</tt> such that they print their "Illinois" line. When running <tt>./part2</tt>, your output should look exactly like:
 
-{% highlight text %}
+```
 1: Illinois
 2: Illinois
 3: Illinois
@@ -125,7 +125,7 @@ To complete Part 2, you must complete the program <tt>part2-main.c</tt> so that 
 9: Illinois
 10: Illinois
 11: Illinois
-{% endhighlight %}
+```
 
 Note that you can just diff with ```part2-expected-output```.
 
@@ -135,10 +135,10 @@ Note that you can just diff with ```part2-expected-output```.
 
 To compile the release version of the code run:
 
-{% highlight bash %}
+```
 make clean
 make
-{% endhighlight %}
+```
 
 
 This will compile your code with some optimizations enabled, and will not include debugging information (if you use a debugger on the 'release' build, it will not be able to show you the original source code, or line numbers). Optimizations sometimes expose bugs in your code that would not show up otherwise, but since optimizations tend to reorder your code while compiling, an optimized version of your code is not optimal for debugging.
@@ -149,24 +149,24 @@ To compile your code in debug mode, run `make debug` instead of `make`.
 
 To run Part 1:
 
-{% highlight bash %}
+```
 ./part1
-{% endhighlight %}
+```
 
 or
 
-{% highlight bash %}
+```
 ./part1-debug
-{% endhighlight %}
+```
 
 To run Part 2:
 
-{% highlight bash %}
+```
 ./part2
-{% endhighlight %}
+```
 
 or
 
-{% highlight bash %}
+```
 ./part2-debug
-{% endhighlight %}
+```

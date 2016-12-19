@@ -69,9 +69,9 @@ All handling of options should be done using [getopt()](http://www.gnu.org/softw
 This function will allow you to specify which options are valid and which require arguments.
 The usage for parmake looks like:
 
-{% highlight text %}
+```
 parmake [ -f makefile ] [ -j threads ] [ targets ]
-{% endhighlight %}
+```
 
 * If a `-f makefile` is not specified, `./makefile` or `./Makefile` should be used (in that order), if they exist (see `access()`).
   Return a non-zero value if
@@ -91,9 +91,9 @@ parmake [ -f makefile ] [ -j threads ] [ targets ]
 
 As stated above, the input for this MP will be expected to be in the following format:
 
-{% highlight text %}
+```
 ./path/to/parmake [-f path/to/makefile] [-j positive-integer] [targets ...]
-{% endhighlight %}
+```
 
 This means that all the inputs will either be empty or have a list of string targets with optional flags from {-f, -j} in any order, followed by a space and then the parameter for the flag as specified by the input description.
 If -f exists in the arguments,then it will only be followed a single space, then by a string (which will be a path).
@@ -119,17 +119,17 @@ Nota Bene: If you use `getopt()`, then you can pretty much ignore this section.
 Next, the main thread should process the makefile.
 The makefile will always consist of one or more rules of the form:
 
-{% highlight text %}
+```
 target [target ...]: [dependency ...]
     [command 1]
     .
     .
     [command n]
-{% endhighlight %}
+```
 
 For example:
 
-{% highlight text %}
+```
 rule1: rule2 rule3
     commandtoberun withargs
     commandtoberun2 withargs
@@ -139,7 +139,7 @@ rule2:
 
 rule3 rule4:
     finalcommand
-{% endhighlight %}
+```
 
 If you are unfamiliar with the syntax, do not be afraid.
 We have provided you with a parsing function, `parser_parse_makefile()`.
@@ -151,14 +151,14 @@ The parser will call `parsed_new_target()` on each target needed to be compiled.
 
 For example, suppose we have `makefile`:
 
-{% highlight text %}
+```
 a: b c
     echo A
 b: c
     echo B
 c:
     echo C
-{% endhighlight %}
+```
 
 The parser will call your function 3 times, once for rule a, b and c. Below is what the data will look like to you.
 
@@ -184,29 +184,29 @@ When a rule is ready to be satisfied, we must determine if we actually need to r
 *   The name of the rule is not the name of a file on disk.
     **Example:**
 
-{% highlight text %}
+```
 clean :
     rm -rf *
-{% endhighlight %}
+```
 
 or
 
-{% highlight text %}
+```
 makenewfile:
     touch newfile
-{% endhighlight %}
+```
 
 *   The rule depends on another rule that is not the name of a file on disk.
     **Example:**
 
-{% highlight text %}
+```
 clean : take_backup
     rm -rf *
 take_backup :
     cp -r * ../backup
-{% endhighlight %}
+```
 
-*   The rule is the name of a file on disk, and it depends on another file with a NEWER modification time than the modification time of the file which corresponds to the name of the rule. To determine whether a file is NEWER, you should use stat and difftime to determine if it is newer. The differences in time will have a granularity of 1 second. 
+*   The rule is the name of a file on disk, and it depends on another file with a NEWER modification time than the modification time of the file which corresponds to the name of the rule. To determine whether a file is NEWER, you should use stat and difftime to determine if it is newer. The differences in time will have a granularity of 1 second.
 
 Once we run a rule's commands, we may mark the rule as satisfied.
 
@@ -237,22 +237,22 @@ There are several important parallelism requirements:
 
 Suppose we have `makefile`:
 
-{% highlight text %}
+```
 a: b c
     echo A
 b: c
     echo B
 c:
     echo C
-{% endhighlight %}
+```
 
 Running `./parmake` should output:
 
-{% highlight text %}
+```
 C
 B
 A
-{% endhighlight %}
+```
 
 There are many more examples provided in your MP folder.
 
@@ -282,7 +282,7 @@ To compile in release mode, run `make`, for debug mode, use `make debug.`
 The provided `Makefile` also builds a ThreadSanitizer instrumented version of your code.
 The tsan executable is `parmake-tsan`.
 You can run this (instead of `parmake`) to use the ThreadSanitizer race condition detection tool with parmake.
-For a tsan example, see [the tsan docs](http://illinois-cs.github.io/tsan)
+For a tsan example, see [the tsan docs](./tsan)
 
 **We will be using ThreadSanitizer to grade your code! If the autograder detects a data race, you won't automatically get 0 points, but a few points will be deducted.**
 
@@ -293,12 +293,12 @@ Your implementation of `parmake` is not required to print every command it runs,
 
 Example:
 
-{% highlight text %}
+```
     $ ./parmake -f testfile4 -j 2
-{% endhighlight %}
+```
 
 This should generate the same output as:
 
-{% highlight text %}
+```
     $ make -s -f testfile4 -j 2
-{% endhighlight %}
+```

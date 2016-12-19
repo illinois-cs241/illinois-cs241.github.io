@@ -62,16 +62,16 @@ We provided you with a Makefile.
 
 Typing
 
-{% highlight bash %}
+```
 make
-{% endhighlight %}
+```
 
 will create the `good_company` and `bad_company` executable.
 For both the `good_company` and `bad_company` executable you can execute them with 2 required arguments and 3<sup>rd</sup> optional argument as follows:
 
-{% highlight bash %}
+```
 ./bad_company 5 6 100000
-{% endhighlight %}
+```
 
 
 will run the bad solution with 5 companies and 6 interns and with a delta of 100000.
@@ -79,7 +79,7 @@ Delta is approximately how long an operation takes in microseconds (read the sou
 
 If you see something like this:
 
-{% highlight text %}
+```
 Company 0 used our services for 2083 billable days.
 Company 1 used our services for 2164 billable days.
 Company 2 used our services for 2456 billable days.
@@ -87,7 +87,7 @@ Company 3 used our services for 2826 billable days.
 Company 4 used our services for 3733 billable days.
 
 Total Billable days : 13262
-{% endhighlight %}
+```
 
 then the simulation terminated successfully.
 This does not mean your solution is correct.

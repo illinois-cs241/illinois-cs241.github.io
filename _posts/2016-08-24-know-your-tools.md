@@ -26,9 +26,9 @@ In this course, we are using VMs for all our development, so it is important tha
 
 Please `ssh` or FastX into your VM. The IP is in your SVN repo. For example, if you want to `ssh` in and your netid is `bschong2` and your hostname is `fa16-cs241-000.cs.illinois.edu`, then all you need to do is enter
 
-{% highlight bash %}
-ssh bschong2@fa16-cs241-000.cs.illinois.edu
-{% endhighlight %}
+```console
+$ ssh bschong2@fa16-cs241-000.cs.illinois.edu
+```
 
 into your terminal. If you want a GUI, then you should use FastX and follow these [instructions](https://it.engineering.illinois.edu/user-guides/remote-access/connecting-ews-linux-fastx) or add the `-Y` flag to `ssh`. We also have a nice [Developing in 241 Guide](./static/Developing In CS241.pdf) to solve your problems and (hopefully) make getting started in setting up your dev environment much easier.
 
@@ -37,40 +37,38 @@ into your terminal. If you want a GUI, then you should use FastX and follow thes
 You will be using SVN to submit all your assignments in this course.
 
 **Once you are in your VM**, please checkout your SVN repo with the following command
-
-{% highlight bash %}
+```console
 svn co https://subversion.ews.illinois.edu/svn/fa16-cs241/YOUR-NETID cs241
-{% endhighlight %}
+```
 
 which will check out your entire SVN repo into a folder called 'cs241' into your current directory. Now change your directory into the 'cs241' folder
 
-{% highlight bash %}
+```console
 cd cs241
-{% endhighlight %}
+```
 
 and create a 'know_your_tools' folder
 
-{% highlight bash %}
+```console
 mkdir know_your_tools
-{% endhighlight %}
+```
 
 Now check the status of your repo
-
-{% highlight bash %}
+```console
 svn status
-{% endhighlight %}
+```
 
 and notice that you now have a 'know_your_tools' folder that needs to be added. Add the 'know_your_tools' folder to SVN
 
-{% highlight bash %}
+```console
 svn add know_your_tools
-{% endhighlight %}
+```
 
 and commit it
 
-{% highlight bash %}
+```console
 svn ci -m "adding the know_your_tools folder"
-{% endhighlight %}
+```
 
 This is just the bare minimum you might need to know when using SVN. We recommend that you refer to the [SVN Bible](http://svnbook.red-bean.com/en/1.7/) if you ever have a problem. It is always good to learn the ins and outs of a version control system, since it makes it easier to pick them up when you are working in industry.
 
@@ -81,35 +79,35 @@ In this course, you will need to know how to use Valgrind + GDB + Clang.
 
 **Once you are in your VM**, please create a file called 'dumb.c' in your 'know_your_tools' directory that you just made. Now write a valid C program in 'dumb.c' that will segfault. Now compile with clang
 
-{% highlight bash %}
+```console
 clang dumb.c -o dumb -g
-{% endhighlight %}
+```
 
 Run it to make sure it segfaults
 
-{% highlight bash %}
+```console
 ./dumb
-{% endhighlight %}
+```
 
 Run valgrind to see what line it segfaults on
 
-{% highlight bash %}
+```console
 valgrind ./dumb
-{% endhighlight %}
+```
 
 Run gdb to see what line it segfaults on
 
-{% highlight bash %}
+```console
 gdb ./dumb
 run
 backtrace
-{% endhighlight %}
+```
 
 Then exit gdb
 
-{% highlight bash %}
+```console
 quit
-{% endhighlight %}
+```
 
 Now commit 'dumb.c' to your 'know_your_tools' folder on svn (I leave this as an exercise to the reader).
 
@@ -125,7 +123,7 @@ All the assignments in this class will use a similar makefile.
 
 Here is what a typical makefile will look like:
 
-{% highlight make %}
+```make
 # directory to store object files
 OBJS_DIR = .objs
 
@@ -184,34 +182,34 @@ $(LD) $^ $(LDFLAGS) -o $@
 clean:
 rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
 
-{% endhighlight %}
+```
 
 This looks scary, but if you google some makefile basics and carefully read the comments it should mostly make sense. However, these are the things you will need to know at the minimum:
 
 
 * Compile the assignment:
 
-{% highlight bash %}
+```console
 make
-{% endhighlight %}
+```
 
 * Clean up the assignment directory:
 
-{% highlight bash %}
+```console
 make clean
-{% endhighlight %}
+```
 
 * Compile a debugable version of your code that you can use gdb on:
 
-{% highlight bash %}
+```console
 make debug
-{% endhighlight %}
+```
 
 * Compile a release version of your assignment that you test with:
 
-{% highlight bash %}
+```console
 make release
-{% endhighlight %}
+```
 
 
 ## Lab Attendance

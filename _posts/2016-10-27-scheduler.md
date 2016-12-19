@@ -52,7 +52,7 @@ You will find several files:
     -   `...` *(View the example directory for the full set.)*
 
     Note that for each unit of time, the output files tell you state of priority queue along with all the cores and jobs running on them. It will also provide information about any jobs that arrive, are scheduled or finished.
-    
+
 __In short, all you need to write is libscheduler.c.__
 
 ## Before you start

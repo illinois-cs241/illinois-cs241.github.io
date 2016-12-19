@@ -44,9 +44,9 @@ In this Lab, your goal is to create and test the behavior of an arbitrary string
 
 We have chosen
 
-{% highlight c %}
+```
 char ** camel_caser(const char* input)
-{% endhighlight %}
+```
 
 as your arbitrary string manipulation function.
 
@@ -54,19 +54,19 @@ Your manager, to celebrate Hump Day, has asked all of the interns to implement a
 
 Let's say I want to get a sequence of sentences in camelCase. This is the string passed into your method:
 
-{% highlight text %}
+```
 "The Heisenbug is an incredible creature. Facenovel servers get their power from its indeterminism. Code smell can be ignored with INCREDIBLE use of air freshener. God objects are the new religion."
-{% endhighlight %}
+```
 
 Your method should return the following:
 
-{% highlight text %}
+```
 ["theHeisenbugIsAnIncredibleCreature",
 "facenovelServersGetTheirPowerFromItsIndeterminism",
 "codeSmellCanBeIgnoredWithIncredibleUseOfAirFreshener",
 "godObjectsAreTheNewReligion",
 NULL]
-{% endhighlight %}
+```
 
 The brackets denote that the above is an array of those strings. (More details in this [section](#memory))
 
@@ -102,13 +102,13 @@ For those who like pictures I will explain what the return value of camelCaser l
 
 In the above picture you can see that we have a char double pointer called 'array'. Now in this scenario the char double pointer is a character pointer that points to the beginning of a NULL terminated array of character pointers. Each of the character pointers in the array point to the beginning of a NULL terminated char array that can be anywhere in memory in a separate buffer. The reason why these arrays are NULL terminated is because your user will need to know when these arrays end so they do not start reading garbage values. This means that
 
-{% highlight c %}
+```
 array[0]
-{% endhighlight %}
+```
 
 will return a character pointer. Dereferencing that character pointer gets me an actual character. For demonstration purposes I am going to show you how to grab the character "s" in "as".
 
-{% highlight c %}
+```
 // Take array and move it over by 3 times the size of a char pointer.
 char **ptr = array + 3;
 // Deference ptr to get back a character pointer pointing to the beginning of "as".
@@ -117,7 +117,7 @@ char *as = *ptr;
 char *ptr2 = as + 1;
 // Now dereference that to get an actual char.
 char s = *ptr2;
-{% endhighlight %}
+```
 
 ## Writing Unit Tests
 

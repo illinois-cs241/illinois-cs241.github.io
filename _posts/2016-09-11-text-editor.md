@@ -32,9 +32,9 @@ for use in your text editor.
 ## Overview
 Your editor can be run like any other editor with:
 
-{% highlight bash %}
+```
 $ ./editor <filename>
-{% endhighlight %}
+```
 
 The filename provided will be loaded into the `Document` for manipulation using
 `Document_create_from_file()`. Then, `editor_main.c` reads commands from `stdin`.
@@ -106,15 +106,15 @@ line 2), then print out as many lines as you can, up to 5.
 To print the contents of the file `editor.h` using the editor, the user would
 first open the file with the editor:
 
-{% highlight text %}
+```
 $ ./editor editor.h
-{% endhighlight %}
+```
 
 Then, to print out whatever is on the 30th line of this file, type:
 
-{% highlight bash %}
+```
 p 30
-{% endhighlight %}
+```
 
 Then hit enter.
 
@@ -122,7 +122,7 @@ The editor will now print out line 30 of the file, including five lines above
 and below for context. (This is done by calling `handle_display_command()` in
 `editor.c` with the string `"p 30"` as `command`.)
 
-{% highlight text %}
+```
 $ ./editor editor.h
 p 30
 25	 * based on the command passed in.
@@ -136,27 +136,27 @@ p 30
 33	void handle_delete_command(Document *document, const char *command);
 34
 35	/**
-{% endhighlight %}
+```
 
 Suppose we had a file `things_on_my_table.txt` which contained the following:
-{% highlight text %}
+```
 mug
 salt
 T.V. remote
-{% endhighlight %}
+```
 
 (Since I am very clean, there are only three things on my table.)
 
 If we try to print out line 3 of this file, the printout will include up to 5
 lines above and below the line specified:
 
-{% highlight bash %}
+```
 $ ./editor things_on_my_table.txt
 p 2
 1    mug
 2    salt
 3    T.V. remote
-{% endhighlight %}
+```
 
 **Important:** the `p` command includes line numbers in its printout. Make sure
 to use `format.{c,h}` to print this line out. Remember that lines are 1-indexed,
@@ -168,13 +168,13 @@ wish to print the whole document.
 
 For example (using the same file we used above):
 
-{% highlight bash %}
+```
 $ ./editor things_on_my_table.txt
 p
 1    mug
 2    salt
 3    T.V. remote
-{% endhighlight %}
+```
 
 Again, make sure to use `format.{c,h}` to print these lines out.
 
@@ -192,9 +192,9 @@ There are two write modes for your editor: "write" and "append".
 ### The write command
 The `w` command should **overwrite** a line completely. For example:
 
-{% highlight bash %}
+```
 w 3 I like cats!
-{% endhighlight %}
+```
 
 This will **overwrite** line 3 with "I like cats!".
 
@@ -202,19 +202,19 @@ This will **overwrite** line 3 with "I like cats!".
 `a` will **append** its argument to the end of a line. For example, if line
 three contained "I like cats!", and the user ran this command:
 
-{% highlight bash %}
+```
 a 3  I also like dogs.
-{% endhighlight %}
+```
 
 (append the string " I also like dogs." to line three, noting the extra space)
 
 They should then be able to run the print command and see the following output:
 
-{% highlight bash %}
+```
 1   mug
 2   salt
 3   I like cats! I also like dogs.
-{% endhighlight %}
+```
 
 Note: If the line a user is appending to is currently empty, that's fine!
 
@@ -226,9 +226,9 @@ yet, then it should fill in the gap with empty lines. (How can you use
 An extra feature your editor needs to account for is multi-line writes. For
 example, the user can input the following:
 
-{% highlight bash %}
+```
 w 3 I like cats!$Dogs are alright.
-{% endhighlight %}
+```
 
 This will *overwrite* line 3 with "I like cats!".
 
@@ -241,7 +241,7 @@ inserted for each.
 
 So, for a complete example:
 
-{% highlight bash %}
+```
 $ ./editor things_on_my_table.txt
 p
 1   mug
@@ -253,12 +253,12 @@ p
 2   salt
 3   I like cats! I also like dogs
 4   But I prefer cats.
-{% endhighlight %}
+```
 
 ## Deleting text
 The `d` command should delete a single line from a file. For example:
 
-{% highlight bash %}
+```
 $ ./editor things_on_my_table.txt
 p
 1    mug
@@ -270,7 +270,7 @@ p
 1    mug
 2    salt
 3    Dogs are alright.
-{% endhighlight %}
+```
 
 Notice that the line "Dogs are alright" shifted up. (Is there anything in
 `Document` that might help you with this?)
@@ -285,59 +285,59 @@ the occurrences with the line numbers they were found on.
 
 If your user inputs the following:
 
-{% highlight bash %}
+```
 /like cats
-{% endhighlight %}
+```
 
 Then your text editor should print all occurrences (the whole line) with their
 line numbers in following format:
 
-{% highlight text %}
+```
 3    I [like cats]!
-{% endhighlight %}
+```
 
 You only need to surround the first occurrence of the search term in each line
 with square brackets. Use the `print_search_line()` function in `format.h` for
 this.
 
 So, for another example, suppose I had a file `kitties.txt` with the content:
-{% highlight text %}
+```
 I like cats
 I like cats
 Dogs are alright
 I like cats
-{% endhighlight %}
+```
 
 And I ran a search operation:
 
-{% highlight text %}
+```
 $ ./editor kitties.txt
 /cats
 1	I like [cats]
 2	I like [cats]
 4	I like [cats]
-{% endhighlight %}
+```
 
 Searching for an empty string should return nothing.
 
-{% highlight text %}
+```
 $ ./editor kitties.txt
 /
-{% endhighlight %}
+```
 
 Finally, searching should be case-sensitive. Suppose `kitties.txt` looks like this:
-{% highlight text %}
+```
 I like cats
 I like CATS
 I like cAtS
-{% endhighlight %}
+```
 
 Running a search should output the exact match and nothing else:
-{% highlight text %}
+```
 $ ./editor kitties.txt
 /cats
 1 I like [cats]
-{% endhighlight %}
+```
 and nothing else.
 
 
@@ -347,18 +347,18 @@ file on disk. (Otherwise, what's the point?)
 
 The save command is just the character `s`.
 
-{% highlight bash %}
+```
 s
-{% endhighlight %}
+```
 
 ## Quitting your editor
 Your text editor should be able to quit without memory leaks.
 
 If your user inputs the following:
 
-{% highlight bash %}
+```
 q
-{% endhighlight %}
+```
 
 Then your text editor should quit and free/destroy your `Document`, even if
 there are changes the user has not saved.
@@ -372,18 +372,18 @@ Suppose you think 241 is the best class ever and you want to write a script
 that makes sure everyone else knows that too. Create a file containing the
 following:
 
-{% highlight bash %}
+```
 w 1 I LOVE 241
 w 2 241 is my FAVORITE class at UIUC
 w 3 I$LOVE$CS$241
 s
 q
-{% endhighlight %}
+```
 
 Let's try running this two different ways. First, on a file that doesn't
 exist:
 
-{% highlight bash %}
+```
 $ ./editor new_file < script
 p
 1   I LOVE 241
@@ -392,11 +392,11 @@ p
 4   LOVE
 5   CS
 6   241
-{% endhighlight %}
+```
 
 And on a file that already has some content:
 
-{% highlight bash %}
+```
 $ ./editor editor.c < script
 $ head editor.c
 I LOVE 241
@@ -409,7 +409,7 @@ CS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-{% endhighlight %}
+```
 
 Scripts like these might be able to help you debug. Perhaps you can impress
 your mentor with a bash script that runs some editor scripts over some files
@@ -425,9 +425,9 @@ assignment.
 
 To compile the release version of the code, run:
 
-{% highlight bash %}
+```
 make
-{% endhighlight %}
+```
 
 This will compile your code with some optimizations enabled. If you use a
 debugger on the 'release' build, it will not be able to show you the original
@@ -443,4 +443,3 @@ compile in debug mode, you will get an executable call `editor-debug`.
 
 We have also provided a file `editor_test.c` where you can programmatically test
 your editor. This compiles to `editor_test` and `editor_test-debug`.
-q

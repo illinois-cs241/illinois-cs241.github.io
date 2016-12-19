@@ -48,7 +48,7 @@ We will be using `crypt_r()` (a reentrant/thread safe version) of the `crypt()` 
 Make sure to set the `initialized` member of your `struct crypt_data` before using it for the first time.
 For example:
 
-{% highlight c %}
+```
 struct crypt_data cdata;
 cdata.initialized = 0;
 
@@ -57,14 +57,14 @@ printf("hash of 'example1' = %s\n", hashed);
 
 hashed = crypt_r("example2", "xx", &cdata);
 printf("hash of 'example2' = %s\n", hashed);
-{% endhighlight %}
+```
 
 This code outputs the following:
 
-{% highlight c %}
+```
 hash of 'example1' = xxPXiOTQGgNxc
 hash of 'example2' = xx96r6/l1aOi.
-{% endhighlight %}
+```
 
 The `struct crypt_data` is necessary for `crypt_r()`.
 This is because `crypt()` needs to store information between invocations, so calling `crypt()` on multiple threads will cause this information to be inaccurate.
@@ -108,14 +108,14 @@ All input we provide is guaranteed to be in this format.
 
 Example input:
 
-{% highlight text %}
+```
 donna xxC4UjY9eNri6 hello...
 eric xxqJ7cKzV3v4E zip.....
 francie xxGGPN89YLcGY cham....
 george xxq5aBqiB66j2 xz....
 helen xxhx0AsVpMTMU sysx....
 inigo xxHUf9zUctXNA miss....
-{% endhighlight %}
+```
 
 ## Version 1: Thread Pool
 
@@ -149,7 +149,7 @@ If a command line argument is supplied to the program, it will use that as the n
 
 Example:
 
-{% highlight text %}
+```
 $ cat password_file.txt
 donna xxC4UjY9eNri6 hello...
 eric xxqJ7cKzV3v4E zip.....
@@ -157,15 +157,15 @@ francie xxGGPN89YLcGY cham....
 george xxq5aBqiB66j2 xz....
 helen xxhx0AsVpMTMU sysx....
 inigo xxHUf9zUctXNA miss....
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```
 $ ./cracker1 [thread_pool_size] <  password_file.txt
-{% endhighlight %}
+```
 
 Example output:
 
-{% highlight text %}
+```
 Thread 1: Start donna
 Thread 4: Start francie
 Thread 3: Start george
@@ -182,7 +182,7 @@ Thread 3: Password for george is xzzzzy (456975 hashes in 1.75 seconds)
 Total time: 1.74 seconds.
 Total CPU time: 5.77 seconds.
 CPU usage: 3.31x
-{% endhighlight %}
+```
 
 The times and order may vary slightly.
 
@@ -198,15 +198,15 @@ For version 2, you'll still have a pool of threads, but rather than assigning on
 
 Example input:
 
-{% highlight text %}
+```
 maude xxEe0WApyDMcg a......
 jesse xxsJNywggi0lA za......
 francie xxGGPN89YLcGY cham....
-{% endhighlight %}
+```
 
 Example output:
 
-{% highlight text %}
+```
 Start maude
 Thread 2: Start maude at 77228944 (agnaaaa)
 Thread 4: Start maude at 231686832 (atnaaaa)
@@ -243,7 +243,7 @@ Thread 1: Stop after 114244 iterations (end)
 Password for francie not found (456976 hashes in 0.40 seconds)
 Total CPU time: 1.53 seconds.
 CPU usage: 3.81x
-{% endhighlight %}
+```
 
 Distribute the work by splitting the search space into equal-sized chunks, one for each worker thread.
 For example, if there are 3 unknown characters, then there are 26^3 = 17576 possible passwords that need to be tested.
@@ -260,14 +260,14 @@ We've provided functions `getSubrange()` and `setStringPosition()` to help you w
 With all the threads working on the same task, you may want to restructure your thread synchronization a little.
 Rather than a queue, you may wish to use a barrier.
 
-{% highlight text %}
+```
                 Startup     Task 0..............................   Task 1..............................
 
 main thread:    read task | idle      | print results, read next | idle      | print results, read next
 worker threads: idle      | computing | idle                     | computing | idle
                           &uarr;
                        barrier
-{% endhighlight %}
+```
 
 Like with version 1, you may not create new threads for each task.
 The threads you create at the beginning of the program must be the same threads that compute the last task.
@@ -277,14 +277,14 @@ When a thread starts processing a task, it should print its index and starting p
 As usual, make sure to use `format.h`.
 For example:
 
-{% highlight text %}
+```
 % echo eric xxqJ7cKzV3v4E zip..... | ./cracker2
 Start eric
 Thread 1: Start eric at 0 (zipaaaaa)
 Thread 2: Start eric at 2970344 (zipgnaaa)
 Thread 4: Start eric at 8911032 (ziptnaaa)
 Thread 3: Start eric at 5940688 (zipnaaaa)
-{% endhighlight %}
+```
 
 When a worker thread finds the correct password, it should tell all the other threads to stop working on the task.
 You can implement this with a simple flag variable that each thread checks on each iteration.
@@ -358,7 +358,7 @@ We've provided a simple tool to help you when debugging your program. See `threa
 It will print a brief summary of what each thread is currently doing any time you hit ctrl-c.
 For example:
 
-{% highlight text %}
+```
 % ./cracker2 cracker2.in 2 100000 2
 Start u0000000
 Start u0000001
@@ -366,14 +366,14 @@ Start u0000001
 ** Thread 0: semaphore wait at cracker2.c:219
 ** Thread 1: processing at cracker2.c:269
 ** Thread 2: processing at cracker2.c:269
-{% endhighlight %}
+```
 
 To use it:
 
 * `#include "thread_status.h"`
 * Call threadStatusSet() to describe what the thread is currently doing. The argument to `threadStatusSet()` should be a string constant. For example:
 
-{% highlight c %}
+```
 threadStatusSet("initializing");
 ...
 while (!done) {
@@ -382,7 +382,7 @@ while (!done) {
   threadStatusSet("processing");
   ...
 }
-{% endhighlight %}
+```
 
 When `threadStatusPrint()` is called, it doesn't print the exact line number that each thread is at. It just prints the line number of the most recent call to `threadStatusSet()`. So, for more precise reporting, add more calls to `threadStatusSet()` to your code.
 
@@ -399,10 +399,10 @@ We've also provided a small program to create example input files, to help you w
 To use the program, write it's output to a file, then use the file as input to a cracker program.
 For example:
 
-{% highlight bash %}
+```
 ./create_examples 10 100 150 > my_examples.in # write the output to a file
 ./cracker1 < my_examples.in
-{% endhighlight %}
+```
 
 To see what the cracked passwords should be, use the `-soln` flag when running `create_examples` (see the usage documentation given when running the program with no arguments).
 
@@ -422,8 +422,8 @@ To demonstrate these differences, we've provided a program in `tools/timing.c` w
 
 To compile this program, run `make timing`, then run `./timing.` You should see output like this:
 
-{% highlight bash %}
+```
 sleep(1): 1.00 seconds wall time, 0.00 seconds CPU time
 single threaded cpu work: 0.14 seconds wall time, 0.14 seconds CPU time
 multi threaded cpu work: 0.14 seconds wall time, 0.28 seconds CPU time
-{% endhighlight %}
+```

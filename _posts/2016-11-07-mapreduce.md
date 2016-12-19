@@ -35,11 +35,11 @@ However, we will explain everything you need to know below.
 
 To demonstrate what MapReduce can do, we'll start with a small dataset--three lines of text:
 
-{% highlight text %}
+```
 Hello
 there
 class!
-{% endhighlight %}
+```
 
 The goal of this MapReduce program will be to count the number of occurrences of each letter in the input.
 
@@ -97,11 +97,11 @@ It will run multiple processes on one machine as independent processing units an
 The input data for each mapper program will be lines of text.
 Key/value pairs will be represented as a line of text with ": " between the key and the value:
 
-{% highlight text %}
+```
 key1: value1
 key two: values and keys may contain spaces
 key_3: but they cannot have colons or newlines
-{% endhighlight %}
+```
 
 
 ## Version 1 - many mappers, one reducer
@@ -214,12 +214,12 @@ The shuffler will be run with N output filenames as command line parameters, whe
 It will read key/value pairs from `stdin`, hash the key with `hashKey()` function declared in `utils.h` and then use the hash, modulo N, to decide which output file will the key/value pair will be written to.
 Please note, you **must** put your shuffler implementation in 'shuffler.c'.
 
-{% highlight C %}
+```
 const char *key = ...
 const char *value = ...
 FILE *outf = output_files[ hashKey(key) % N ];
 fprintf(outf, "%s: %s\n", key, value)
-{% endhighlight %}
+```
 
 
 Sample shuffler input:
@@ -316,11 +316,11 @@ Your program will:
 ### Building
 This MP has a very complicated `Makefile`, but, it defines all the normal targets.
 
-{% highlight bash %}
+```
 make # builds provided code and student code in release mode
 make debug # builds provided code and student code in debug mode
 # there is no tsan target because threading is not needed for this MP.
-{% endhighlight %}
+```
 
 If you are curious, you can run `make test` to build and run all of the tests in the `unit_tests` directory.
 These tests test the provided code, and can serve as some examples of how it all works.
@@ -328,9 +328,9 @@ These tests test the provided code, and can serve as some examples of how it all
 ### Input Data
 To download the example input files (books from [Project Gutenberg](https://www.gutenberg.org/)), use the `Makefile`:
 
-{% highlight bash %}
+```
 make data
-{% endhighlight %}
+```
 
 You should now see `data/dracula.txt` and `data/alice.txt` in your mp folder
 
