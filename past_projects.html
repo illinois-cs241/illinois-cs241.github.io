@@ -1,0 +1,69 @@
+---
+---
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body>
+      {% include header.html %}
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here -->
+          <div class="row">
+          	<div class="small-12 medium-12 large-8 large-centered columns">
+              <h1>Past Projects</h1>
+
+              {% for term in site.data.honors %}
+                <h2>{{term.term}}</h2>
+
+                <!-- Desktop Table -->
+                <div class="show-for-large-up">
+                  <table width = "100%" class="mdl-data-table mdl-js-data-table">
+              		  <thead>
+              		    <tr>
+              		      <th class="mdl-data-table__cell--non-numeric">Name</th>
+              		      <th class="mdl-data-table__cell--non-numeric">Description</th>
+                        <th class="mdl-data-table__cell--non-numeric">Link</th>
+              		    </tr>
+              		  </thead>
+              		  <tbody>
+                      {% for project in term.projects %}
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">{{project.name}}</td>
+                          <td class="mdl-data-table__cell--non-numeric">{{project.description}}</td>
+                          <td class="mdl-data-table__cell--non-numeric">{{project.link}}</td>
+                        </tr>
+                      {% endfor %}
+              		  </tbody>
+              		</table>
+                </div>
+              {% endfor %}
+            	<!-- Mobile Table -->
+            	<div class="hide-for-large-up">
+                {% for lab in site.data.labs %}
+                  <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Lab</td>
+                      <td><a href="./{{lab.url}}.html">{{lab.name}}</a></td>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Release Date</td>
+                      <td>{{lab.releaseDate}}</td>
+                    </tr>
+                    <tr>
+                      <td class="mdl-data-table__cell--non-numeric">Due Date</td>
+                      <td>{{lab.dueDate}}</td>
+                    </tr>
+                  </table>
+                {% endfor %}
+            	</div>
+            </div>
+
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
