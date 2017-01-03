@@ -21,13 +21,13 @@ At the end of the semester each student is expected to prepare a presentation of
 
 ## Grading
 
-{% highlight text %}
+```
 Project Proposal   : 5%
 Final Presentation : 10%
 Final Project      : 35%
-Weekly Checkins    : 20%
+Weekly Checkins    : 25%
 Lecture Attendance : 25%
-{% endhighlight %}
+```
 
 We do not have minimum thresholds and will be grading against other projects with a generous curve.
 
