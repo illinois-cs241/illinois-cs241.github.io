@@ -198,8 +198,8 @@ $
 
 ```
 $ ./minixfs test.fs ls /directory
-recursion
 nice
+recursion
 $
 ```
 
