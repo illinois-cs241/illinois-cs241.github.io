@@ -9,7 +9,8 @@
 title: "CS 241 - System Programming"
 email: angrave@illinois.edu
 description: > # this means to ignore newlines until "baseurl:"
-  Webpage for CS241.
+  Webpage for CS241: System Programming at the University of Illinois Urbana-Champaign.
+  All documentation and information about the course can be found here.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://illinois-cs241.github.io" # the base hostname & protocol for your site
 repository: illinois-cs241/illinois-cs241.github.io
