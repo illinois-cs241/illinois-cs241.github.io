@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Late Add
+title: Getting Caught Up
 ---
 
 ## Quick Links
