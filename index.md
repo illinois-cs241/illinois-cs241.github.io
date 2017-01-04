@@ -59,6 +59,7 @@ By the end of the course you should be proficient with this programming environm
 * Write distributed applications that communicate across a network.
 
 ## Resources
+**If you added late check [this page](./late_add.html) to get caught up**
 
 A really useful, accessible introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
 
@@ -66,17 +67,17 @@ Angrave's mini searchable video* introduction and playful _system programming-in
 [cs-education.github.io/sys/](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
 No formal textbook is required but if you really want to buy some books we recommend the following custom book Angrave put together in 2007:
-
+```
 Introduction to Systems Concepts and Systems Programming
 University of Illinois Custom Edition
 Copyright 2007 by Pearson Custom Publishing
 ISBN 0* 536* 48928* 9
-
+```
 ## Grading
 
 The following is subject to minor changes:
 
-{% highlight text %}
+```
 Final Exam : 25%
 Midterm 1  : 10%
 Midterm 2  : 10%
@@ -86,8 +87,7 @@ MP Programming Assignments : 25%
 Lab Programming Assignments: 13%
 
 Lab Attendance & other items: 4%
-
-{% endhighlight %}
+```
 
 We publish the following thresholds: 
 
