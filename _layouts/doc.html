@@ -3,6 +3,7 @@
   {% include head.html %}
   <body>
       {% include header.html %}
+      <div class="content-wrapper">
       <main class="mdl-layout__content">
         <div class="page-content">
           <div class="row">
@@ -25,8 +26,9 @@
             {% endcapture %}
             <nav id="toc" style="position: fixed" class="small-12 medium-12 large-3 columns show-for-xlarge-up">
 			  <br/>
-			  {{ metadata }}
+			  {{ content | toc }}
             </nav>
+
             <div class="small-12 medium-12 large-7 large-centered columns">
               <h1>
                 {{ page.title }}
@@ -35,11 +37,17 @@
                 {% endif %}
               </h1>
               <nav id="tocMobile" class="small-12 medium-12 large-7 columns hide-for-xlarge-up">
-                {{ metadata }}
+
+                {{ content | toc }}
               </nav>
               <div id="content">
                 {% if page.date %} <!-- this is a post -->
-				<h2 id="learning-objectives">Learning Objectives</h2>
+                <div class="pad">
+                <div class="mdl-card mdl-shadow--2dp large-card">
+                <div class="mdl-card__title">
+				<h2 id="learning-objectives" class="mdl-card__title-text">Learning Objectives</h2>
+				</div>
+				<div class="content">
 				<p>
 					The learning objectives for {{ page.title }} are: <br/>
 					<ul>
@@ -48,8 +56,16 @@
 					{% endfor %}
 					</ul>
 				</p>
-				{% if page.wikibook %} <!-- this is a post -->
-				<h2 id="suggested-readings">Suggested Readings</h2>
+				</div>
+				</div>
+				</div>
+				{% if page.wikibook %}
+				<div class="pad">
+                <div class="mdl-card mdl-shadow--2dp large-card">
+                <div class="mdl-card__title">
+				<h2 id="suggested-readings" class="mdl-card__title-text">Suggested Readings</h2>
+				</div>
+				<div class="content">
 				<p>
 					We suggest you read the following from the
 					<a href="https://github.com/angrave/SystemProgramming/wiki">wikibook</a>
@@ -64,12 +80,21 @@
 					{% endfor %}
 					</ul>
 				</p>
+				</div>
+				</div>
+				</div>
                 {% endif %}
                 {% endif %}
-                {{ content }}
+
+                {{ content | content_style }}
 
                 {% if page.date %}
-				<h2 id="submission-instructions">Submission Instructions</h2>
+                <div class="pad">
+                <div class="mdl-card mdl-shadow--2dp large-card">
+                <div class="mdl-card__title">
+					<h2 id="submission-instructions" class="mdl-card__title-text">Submission Instructions</h2>
+				</div>
+				<div class="content">
 				<p>
 					Please fully read details on
 					<a href="{{ site.url }}/#academic-integrity"> Academic Integrity </a>.
@@ -101,8 +126,11 @@
 					where NETID is your University NetID.
 					It is important to check that the files you expect to be graded are present and up to date in your SVN copy.
 				</p>
+				</div>
+				</div>
+				</div>
                 {% endif %}
-              </div>
+              	</div>
             </div>
           </div>
         </div>
@@ -112,10 +140,5 @@
       var github_repo = "{{ site.repository | escape }}";
       var github_path = "{{ page.path | escape }}";
     </script>
-    <script src="./js/toc.js"></script>
-    <script src="./js/materialize.js"></script>
-    <script src="./js/smoothscroll.js"></script>
-    <script src="./js/github.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   </body>
 </html>
