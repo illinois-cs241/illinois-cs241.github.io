@@ -32,7 +32,7 @@ try{
           $(this).foundation();
       });
     });
-  require(['github', 'analytics', 'MathJax']);
+  require(['github', 'material', 'analytics', 'MathJax']);
 }catch(e){
   console.log(e);
 }
