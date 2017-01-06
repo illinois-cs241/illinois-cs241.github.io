@@ -7,8 +7,8 @@ var params = {
       github:      '/js/github',
       textfill:    '/js/textfill',
       smoothscroll:'/js/smoothscroll',
-      toc:         '/js/toc',
       lecture:     '/js/lectures',
+      toc:         '/js/toc',
       /* Has to be loaded from CDN for accessibility */
       MathJax:     'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
     },  
@@ -32,7 +32,7 @@ try{
           $(this).foundation();
       });
     });
-  require(['github', 'material', 'analytics', 'MathJax']);
+  require(['github', 'material', 'analytics', 'MathJax', 'smoothscroll', 'textfill', 'toc']);
 }catch(e){
   console.log(e);
 }
