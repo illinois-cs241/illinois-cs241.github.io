@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Tsan Tutorial"
-permalink: tsan
 ---
 
 ## ThreadSanitizer Overview

@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Text Editor"
-permalink: text_editor
 submissions:
 - title: Entire Assignment
   due_date: 09/19/2016, 11:59 PM

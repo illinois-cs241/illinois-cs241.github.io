@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Luscious Locks"
-permalink: luscious_locks
 submissions:
 - title: Entire Assignment
   due_date: 10/05 11:59pm

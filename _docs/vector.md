@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Vector"
-permalink: vector
 submissions:
 - title: Entire Assignment
   due_date: 09/13/2016 11:59pm

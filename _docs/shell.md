@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Shell"
-permalink: shell
 submissions:
 - title: Entire Assignment
   due_date: 09/26/2016 11:59pm

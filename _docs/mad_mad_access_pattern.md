@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Mad Mad Access Pattern"
-permalink: mad_mad_access_pattern
 submissions:
 - title: Entire Assignment
   due_date: 11/16 11:59pm

@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Password Cracker"
-permalink: password_cracker
 submissions:
 - title: Part 1
   due_date: 10/17 11:59pm

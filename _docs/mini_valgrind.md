@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Mini Valgrind"
-permalink: mini_valgrind
 submissions:
 - title: Entire Assignment
   due_date: 10/17 11:59pm

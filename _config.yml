@@ -24,6 +24,7 @@ course_name: "System Programming"
 collections:
   docs:
     output: true
+    permalink: :path
 # Build settings
 markdown: kramdown
 
