@@ -19,6 +19,8 @@ semester: "fa16"
 course_number: "241"
 subject_code: "cs"
 course_name: "System Programming"
+collection:
+- docs
 
 # Build settings
 markdown: kramdown
