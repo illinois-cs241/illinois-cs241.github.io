@@ -12,3 +12,30 @@
         "syntax-highlighting",
         "github"
 ;
+
+h2{
+	&.mdl-card__title-text{
+		color: white;
+	}
+	&:hover > .anchor {
+		opacity: 1;
+	}
+}
+
+
+div.mdl-card__title {
+	background-color: #03a9f4;
+}
+
+.anchor {
+	padding-left: 10px;
+	color: white !important;
+	text-decoration: underline;
+	opacity:0;
+}
+
+.anchor_fade_wrapper:hover + .anchor {
+	opacity:1;
+}
+
+

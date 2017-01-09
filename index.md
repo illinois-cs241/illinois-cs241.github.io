@@ -2,6 +2,7 @@
 layout: doc
 title: Syllabus
 ---
+
 ## Course Description (Informal)
 This course will challenge you as a programmer and nascent computer scientist of Illinois. Rather than sand-boxed, contained and simple problems of your previous courses that used significant scaffolding and pre-built libraries, you will be interacting with a much more complex environment - the entire system and even computing networks. Further you will need to fully understand how memory is allocated, used and re-used within a process and how input and output can be buffered (or not) between processes and files. In short - it is time to remove the carefully tailored training wheels and that closed course and instead fling open the doors and welcome you to the big wide world of computing. Oh and did we mention the challenge of concurrency and solving asynchronous problems so that your program can take advantage of the multi-cpu cores inside each machine?
 
