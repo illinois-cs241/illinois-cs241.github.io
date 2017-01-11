@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Parallel Make"
-permalink: parallel_make
 submissions:
 - title: Entire Assignment
   due_date: 11/07 11:59pm

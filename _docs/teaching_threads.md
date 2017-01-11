@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Teaching Threads"
-permalink: teaching_threads
 submissions:
 - title: Entire Assignment
   due_date: 09/28/2016, 11:59pm

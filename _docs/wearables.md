@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Wearables"
-permalink: wearables
 submissions:
 - title: Entire Assignment
   due_date: 12/05 11:59pm

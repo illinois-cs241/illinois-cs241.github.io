@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Malloc"
-permalink: malloc
 submissions:
 - title: Part 1
   due_date: 10/03/2016 11:59 pm

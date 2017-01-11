@@ -16,7 +16,7 @@
               {% assign sorted_team = team | shift | sort: 'netid' | unshift: instructor %}
               {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/'" %}
               {% for member in sorted_team %}
-                <div class = "small-12 medium-12 large-3 columns" title="{{member.roles}} interested in {{member.speciality}} and has been on staff for {{member.semesters}}" >
+                <div class = "small-12 medium-12 large-3 columns" title="{{member.roles}} interested in {{member.specialty}} and has been on staff for {{member.semesters}}" >
                   <div class = "pad" id = "{{member.netid}}" >
                     {% assign photo = photos | where_exp: "file", "file.path contains member.netid" | first | map: "path" | default: "./images/staffPhotos/default.jpg" %}
                     <a href = "./{{ photo }}">

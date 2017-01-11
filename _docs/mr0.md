@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Map Reduce 0 - Lab Edition"
-permalink: mr0
 submissions:
 - title: Entire Assignment
   due_date: 10/26 11:59pm

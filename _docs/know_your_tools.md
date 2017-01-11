@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Know Your Tools"
-permalink: know_your_tools
 submissions:
 - title: Entire Assignment
   due_date: 10/17 11:59pm

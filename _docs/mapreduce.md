@@ -1,7 +1,6 @@
 ---
 layout: doc
-title: "MapReduce"
-permalink: mapreduce
+title: "Mapreduce"
 submissions:
 - title: Part 1
   due_date: 11/14 11:59pm

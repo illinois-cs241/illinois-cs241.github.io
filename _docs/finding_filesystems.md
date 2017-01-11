@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Finding Filesystems"
-permalink: finding_filesystems
 submissions:
 - title: Entire Assignment
   due_date: 11/09/2016 11:59pm

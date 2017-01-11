@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Extreme Edge Cases"
-permalink: extreme_edge_cases
 submissions:
 - title: Entire Assignment
   due_date: 09/07/2016 11:59pm

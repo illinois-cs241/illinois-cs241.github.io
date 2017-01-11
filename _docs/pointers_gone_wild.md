@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Pointers Gone Wild"
-permalink: pointers_gone_wild
 submissions:
 - title: Entire Assignment
   due_date: 10/24 11:59pm

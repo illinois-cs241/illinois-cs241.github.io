@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Example1"
-permalink: scheduler_example1
 ---
 
 Example 1

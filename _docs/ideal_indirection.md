@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Ideal Indirection"
-permalink: ideal_indirection
 submissions:
 - title: Entire Assignment
   due_date: 10/19 11:59pm

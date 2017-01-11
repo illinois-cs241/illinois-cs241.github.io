@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Scheduler"
-permalink: scheduler
 submissions:
 - title: Entire Assignment
   due_date: 11/02 11:59pm

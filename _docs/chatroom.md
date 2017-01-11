@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Chatroom"
-permalink: chatroom
 submissions:
 - title: Entire Assignment
   due_date: 11/30 11:59pm

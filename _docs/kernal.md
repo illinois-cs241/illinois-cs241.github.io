@@ -1,7 +1,6 @@
 ---
 layout: doc
 title: "Kernel Lab"
-permalink: kernal
 submissions:
 - title: Entire Assignment
   due_date: 12/08/2016 11:59pm
