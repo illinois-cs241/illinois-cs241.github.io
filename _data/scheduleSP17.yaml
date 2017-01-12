@@ -1,0 +1,453 @@
+---
+  -
+    schedule:
+      -
+        title: "Martin Luther King, Jr. Day"
+        summary: "No Classes"
+        resources: "<a href = 'https://en.wikipedia.org/wiki/Martin_Luther_King,_Jr._Day'>Martin Luther King, Jr. Day</a> (wikipedia)"
+        color: "#9E9E9E"
+      -
+        title: "System Programming"
+        summary: "1. Dive into System programming"
+        resources: "Prelecture: <a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a>. The lecture will assume you've made significant progress on this homework"
+        color: "#F44336"
+      -
+        title: "How to crash in C"
+        summary: "2. Dive into C programming"
+        resources: "Prelecture: <a href = 'https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-1%3A-Introduction'>Intro to C Notes</a>. The lecture will assume you've already reviewed and played with this material."
+        color: "#F44336"
+    week: "1/16 - 1/20"
+    announcement: >
+      <ul>
+        <li>
+          <a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a> is out
+        </li>
+        <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Released</li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "C Crash Course 2"
+        summary: "3. man,asprintf,free,assert"
+        resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-3%3A-Common-Gotchas' target='_blank'>Wikibook C Gotchas</a>"
+        color: "#F44336"
+      -
+        title: "C Crash Course 3"
+        summary: "4. getenv, scanf, getline, fork "
+        resources: "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-2%3A-Text-Input-And-Output'>Wikibook Input and Output</a>"
+        color: "#F44336"
+      -
+        title: "Fork and wait"
+        summary: "5. fork and waitpid"
+        resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-1%3A-Introduction'>Wikibook forking</a>"
+        color: "#E91E63"
+    week: "1/23 - 1/27"
+    announcement: >
+      <ul>
+        <li>Lab: <a target='blank' href='./know_your_tools'>Know Your Tools</a> Due</li>
+        <li>Lab: <a target='blank' href='./extreme_edge_cases'>Extreme Edge Cases</a> Released</li>
+        <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Released</li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Forking Processes"
+        summary: "6. The fork-exec-wait pattern"
+        resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-2%3A-Fork%2C-Exec%2C-Wait' target='_blank'>Wikibook Fork, Exec, Wait</a>"
+        color: "#E91E63"
+      -
+        title: "Signals for Process Control"
+        summary: "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT"
+        resources: "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/Process-Control%2C-Part-1%3A-Wait-macros%2C-using-signals'>Wikibook process control</a>"
+        color: "#E91E63"
+      -
+        title: "Thanks for the heap memory"
+        summary: "8. How to build a memory allocator. Placement algorithms. Fragmentation."
+        resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-1%3A-Heap-Memory-Introduction'>Wikibook heap memory introduction</a>"
+        color: "#9C27B0"
+    week: "1/30 - 2/3"
+    announcement: >
+      <ul>
+        <li>Quiz 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
+        <li>Lab: <a target='blank' href='./extreme_edge_cases'>Extreme Edge Cases</a> Due</li>
+        <li>Lab: <a target='blank' href='./utilities_unleashed'>Utilities Unleashed</a> Released</li>
+        <li> MP: <a target='blank' href='./pointers_gone_wild'>Pointers Gone Wild</a> Due</li>
+        <li> MP: <a target='blank' href='./vector'>Vector</a> Released</li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Memory allocators I"
+        summary: "9. Hone your pointer skills when writing malloc and free."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
+        color: "#9C27B0"
+      -
+        title: "Memory allocators II "
+        summary: "10. Memory allocators part 2."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
+        color: "#9C27B0"
+      -
+        title: "Threads"
+        summary: "11. Introducing pthreads. stacks. Concurrency programming gotchas."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
+        color: "#673AB7"
+    week: "2/6 - 2/10"
+    announcement: >
+      <ul>
+        <li>Lab: <a target='blank' href='./Utilities%20Unleashed'>Utilities Unleashed</a> Due</li>
+        <li>Lab: <a target='blank' href='./Mini%20Valgrind'>Mini Valgrind</a> Released</li>
+        <li>MP: <a target='blank' href='./Vector'>Vector</a> Due</li>
+        <li>MP: <a target='blank' href='./Shell'>Shell</a> Released</li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Threads and mutex locks"
+        summary: "12. Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
+        color: "#673AB7"
+      -
+        title: "Mutexes and semaphores"
+        summary: "13. Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-5'>wikibook week 5</a>."
+        color: "#2196F3"
+      -
+        title: "Critical Section Problem"
+        summary: "14. Mutex and Semaphore examples. How to implement a lock (The critical section problem)."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 5</a>"
+        color: "#2196F3"
+    week: "2/13 - 2/17"
+    announcement: >
+      <ul>
+        <li>Quiz 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
+        <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
+        <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
+        <li>MP: <a target='blank' href='./Shell'>Shell</a> Due</li>
+        <li>MP: <a target='blank' href='./malloc'>Malloc</a> Released</li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Critical Section Problem II"
+        summary: "15. Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>."
+        color: "#2196F3"
+      -
+        title: "Condition Variables"
+        summary: "16. Condition Variables. Implementing a semaphore using a Condition Variable."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>."
+        color: "#2196F3"
+      -
+        title: "Reader Writer Problem"
+        summary: "17. Implementing a barrier. Implementing the R/W Problem using Condition Variables."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>"
+        color: "#03A9F4"
+    week: "2/20 - 2/24"
+    announcement: >
+      <ul>
+        <li>
+          Practice Midterm: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./terrible_threads'>Terrible Threads</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./malloc'>Malloc Part 1</a> Due
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Producer Consumer. RW II"
+        summary: "18. Implementing the Producer Consumer using semaphores. Analysis of Reader Writer solutions."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>."
+        color: "#03A9F4"
+      -
+        title: "Deadlock"
+        summary: "19. Introduction to Deadlock. Coffman conditions."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>."
+        color: "#00BCD4"
+      -
+        title: "Dining Philosophers"
+        summary: "20. The Dining Philosophers problem"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-8'>wikibook week 8</a>."
+        color: "#00BCD4"
+    week: "2/27 - 3/3"
+    announcement: >
+      <ul>
+        <li>
+          Midterm 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./terrible_threads'>Terrible Threads</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./broken_barriers'>Broken Barriers</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./malloc'>Malloc Part 2</a> Due
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Page tables"
+        summary: "21. Virtual memory"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>."
+        color: "#009688"
+      -
+        title: "Pipes and Files"
+        summary: "22. POSIX Pipes and random access files"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
+        color: "#4CAF50"
+      -
+        title: "Pipes, Files, VM II"
+        summary: "23. POSIX Pipes, files, memory II"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
+        color: "#4CAF50"
+    week: "3/6 - 3/10"
+    announcement: >
+      <ul>
+        <li>
+          Quiz 3: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./broken_barriers'>Broken Barriers</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./overworked_interns'>Overworked Interns</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./password_cracker'>Password Cracker</a> Released
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Errno. Networking Intro"
+        summary: "24. Robust error handling. EINTR. Intro to TCP,UDP,IP"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>"
+        color: "#8BC34A"
+      -
+        title: "TCP"
+        summary: "25. TCP/IP Header. IPv4 exhaustion. A web client"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>"
+        color: "#8BC34A"
+      -
+        title: "No lecture"
+        summary: "No lecture"
+        resources: ""
+        color: "#9E9E9E"
+    week: "3/13 - 3/17"
+    announcement: >
+      <ul>
+        <li>
+          Lab: <a target='blank' href='./overworked_interns'>Overworked Interns</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./ideal_indirection'>Ideal Indirection</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./password_cracker'>Password Cracker Part 1</a> Due
+        </li>
+        <li>
+          MP: <a target='blank' href='./password_cracker'>Password Cracker Part 2</a> Due
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "SPRING BREAK!"
+        summary: ""
+        resources: ""
+        color: "#9E9E9E"
+      -
+        title: "SPRING BREAK!"
+        summary: ""
+        resources: ""
+        color: "#9E9E9E"
+      -
+        title: "SPRING BREAK!"
+        summary: ""
+        resources: ""
+        color: "#9E9E9E"
+    week: "3/20 - 3/24"
+    announcement: >
+      <ul>
+        <li>
+          Spring Break: There will be no office hours or staff on piazza.
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "TCP Server"
+        summary: "26. Passive sockets. The 4 server calls and what they do. Gotchas."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>"
+        color: "#8BC34A"
+      -
+        title: "TCP Server II"
+        summary: "27. Socket Programming Gotchas. Intro to scheduling"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 11</a>"
+        color: "#8BC34A"
+      -
+        title: "Scheduling. TCP Handshake"
+        summary: "28. Scheduling examples. The SYN ACKSYN ACK Handshake of TCP"
+        resources: "See <a href='https://gotchasithub.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>"
+        color: "#CDDC39"
+    week: "3/27 - 3/31"
+    announcement: >
+      <ul>
+        <li>
+          Quiz 4: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./mad_mad_access_pattern'>Mad Mad Access Pattern</a> Released
+        </li>
+        <li>
+          Lab: <a target='blank' href='./ideal_indirection'>Ideal Indirection</a> Due
+        </li>
+        <li>
+          MP: <a target='blank' href='./parmake'>Parmake</a> Released
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Scheduling-2. epoll"
+        summary: "29. Scheduling simulator. epoll"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
+        color: "#CDDC39"
+      -
+        title: "Files-1"
+        summary: "30. ext2/3/4 filesystem. inode"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
+        color: "#FFC107"
+      -
+        title: "Files-2"
+        summary: "31. file meta data"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
+        color: "#FFC107"
+    week: "4/3 - 4/7"
+    announcement: >
+      <ul>
+        <li>
+          Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Released
+        </li>
+        <li>
+          Lab: <a target='blank' href='./mad_mad_access_pattern'>Mad Mad Access Pattern</a> Due
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Files-3"
+        summary: "32. Dirs and symlinks"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
+        color: "#FFC107"
+      -
+        title: "Files-4"
+        summary: "33. Virtual f/s"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
+        color: "#FFC107"
+      -
+        title: "Files-5"
+        summary: "34. Memory mapped files"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
+        color: "#FFC107"
+    week: "4/10 - 4/14"
+    announcement: >
+      <ul>
+        <li>
+          Midterm 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./chatroom'>Chatroom</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./parmake'>Parmake</a> Due
+        </li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Signals"
+        summary: "35. POSIX Signals Revisited"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        color: "#FFC107"
+      -
+        title: "Protocols"
+        summary: "36. Protocols and Serialization"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        color: "#FFC107"
+      -
+        title: "RPC"
+        summary: "37. RPC"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        color: "#FFC107"
+    week: "4/17 - 4/21"
+    announcement: >
+      <ul>
+        <li>
+          Quiz 5: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+        </li>
+        <li>
+          Lab: <a target='blank' href='./chatroom'>Chatroom</a> Due
+        </li>
+        <li>
+          Lab: <a target='blank' href='./scheduler'>Scheduler</a> Released
+        </li>
+        <li>
+          MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Released
+        </li>
+      </ul>
+-
+    schedule:
+      -
+        title: "Course review"
+        summary: "38. Exam practice/review"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
+        color: "#FFC107"
+      -
+        title: "UDP"
+        summary: "39. UDP."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
+        color: "#FFC107"
+      -
+        title: "O/S Concepts"
+        summary: "40. Operating System Concepts"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-15'>wikibook week 15</a>."
+        color: "#FFC107"
+    week: "4/24 - 4/28"
+    announcement: >
+      <ul>
+        <li>
+          Lab: <a target='blank' href='./scheduler'>Scheduler</a> Due
+        </li>
+        <li>
+          ICES Forms in Lab 
+        </li>
+        <li>
+          MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Due
+        </li>
+      </ul>
+-
+    schedule:
+      -
+        title: "O/S Concepts II"
+        summary: "41. O/S Concepts II"
+        resources: ""
+        color: "#FFC107"
+      -
+        title: "Special topics"
+        summary: "42. Special topics"
+        resources: ""
+        color: "#FFC107"
+    week: "5/1 - 5/3"
+    announcement: "<ul><li>Announcements will appear here.</li></ul>"
