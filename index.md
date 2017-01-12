@@ -117,8 +117,8 @@ Approximate schedule (subject to change). The CBTF schedule when known will be p
 | Week 7 | Midterm 1        |
 | Week 8 | Quiz 3           |
 | Week 11| Quiz 4           |
-| Week 13| Midterm 2        |
-| Week 14| Quiz 5           |
+| Week 12| Midterm 2        |
+| Week 13| Quiz 5           |
 
 The final exam will be scantron and paper-based and during Final's exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [here](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT)
 
