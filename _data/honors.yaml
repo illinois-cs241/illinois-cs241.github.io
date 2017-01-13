@@ -33,3 +33,38 @@
     -
       name: "Super Debugger"
       description: "GDB-Like Debugger From Scratch"
+    -
+      name: "C Garbage Collector"
+      description: "A garbage collector for C code that supports multithreading"
+      link: "https://github.com/faisalabujabal/gc4c/"
+    -
+      name: "LocChat"
+      description: "Location-based app where nearby users can talk to each other based on common interests"
+      link: "https://github.com/crkainrath/CS296Project"
+    -
+      name: "Chess Engine"
+      description: "Engine to compute optimal moves in a game of chess"
+    -
+      name: "High Frequency Sports Gambling"
+      description: "Analyzes and places bets on sports games in real-time"
+      link: "https://github.com/zbrusso2/cs296-41"
+    -
+      name: "TCP Network Encryption"
+      description: "A network encryption tool that implements the Serpent cipher"
+    -
+      name: "Webcam Theremin"
+      description: "Theremin simulation using a webcam and video processing"
+    -
+      name: "Spacecluster.io"
+      description: "Remake of Agai.io in space"
+      link: "https://github.com/dylanplecki/spacecluster.io"
+    -
+      name: "EDF Schedluing Policy"
+      description: "Implementation of the earliest-deadline first scheduling policy as a Linux kernel module"
+    -
+      name: "Win Debugger"
+      description: "A gdb-like Windows C debugger written in C++"
+      link: "https://www.youtube.com/watch?v=4u8ArJTRFsl"
+    -
+      name: "Personalized Trash Control"
+      description: "A feature-rich trash can for Linux that supports compression and remote storage of trash"
