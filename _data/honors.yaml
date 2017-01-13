@@ -5,28 +5,32 @@
   projects:
     -
       name: "Distributed FUZE"
-      description: "Distributed Filesystem using FUZE"
+      description: "Distributed filesystem using FUSE"
     -
       name: "Hermes"
-      description: "Online Real-Time Text Editor"
+      description: "Online real-time text editor"
+      link: "<a href=\"https://github.com/Horizon-Blue/Hermes\">GitHub</a>"
     -
       name: "Kernel Filesystem"
-      description: "Kernel Module Virtual Filesystem"
+      description: "Kernel module virtual filesystem"
     -
       name: "Root Kit"
-      description: "Spying on your Kernel"
+      description: "Spying on your kernel"
     -
       name: "Fluid Simulator"
-      description: "Simulating Fluid"
+      description: "2D fluid simulation that takes advantage of GPU architecture"
     -
       name: "Steganography Toolset"
-      description: "Hiding Data in Plain Sight"
+      description: "Toolset capable of encoding information in images/audio/code and subsequently decoding it"
     -
       name: "Remote Desktop Client"
-      description: "Remote Client for your desktop"
+      description: "Remote client for your desktop"
     -
       name: "ShadowPager"
       description: "Hacking around firewalls"
+    -
+      name: "Multiplayer Tron Game"
+      description: "An implementation of the video game Tron entirely in the terminal"
 -
   term: "Spring 2016"
   projects:
