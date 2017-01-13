@@ -2,67 +2,73 @@
 layout: doc
 title: Honors
 ---
-## Honors
-Couldn't get enough Systems Programming? Welcome to the Honors Section! In the CS 296 section 41 we go into in depth about operating systems. We will talk in depth about Security, Kernels, Parallel Programming and More!
-
-This course is recommended for people who want to expand their systems knowledge with additional topics and a semester long group project of your choosing. You are given freedom to choose your project so long as it has a significant systems component in it.
-
-You can also come to an assortment of mini-lectures at our regularly scheduled time. These will consist of advanced systems topics corresponding to what you are currently learning in 241.
-
 ## Syllabus
 
-There will be several mini-lectures throughout the semester. These lectures will take place during the scheduled lecture time and will be announced ahead of time on Piazza. Slides will be posted below!
+Couldn't get enough systems programming from CS 241? Welcome to the honors section! This course is recommended for those who want to expand their systems knowledge with additional lectures and a semester long project in systems programming.
 
-Every student is required to propose a project that must be approved by a TA. The project should be related to systems programming and it should clearly demonstrate and build upon concepts learned in regular [and/or honors] CS241 lectures.
+There will be near-weekly lectures throughout the semester given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241. 
 
-Once every student has an approved project, you will be assigned a mentor who you will check-in with weekly for progress reports and code review.
+You are also required to propose and complete a project of your own. Your project should be related to systems programming and it should clearly demonstrate and build upon concepts learned in regular [and/or honors] CS 241 lectures. Once your project has been approved by course staff, you will be assigned a mentor who you will check in with weekly for progress reports and code review.
 
-At the end of the semester each student is expected to prepare a presentation of their project and give that presentation to their peers. It will include what you learned, challenges faced, results (if any), etc. The presentation will consist of a demonstration of your project along with a brief explanation of your project and results.
+At the end of the semester, you will present your work to your peers. The presentation will consist of a demonstration of your project along with a brief explanation of your project and results. Your presentation should include what you learned working on your project, challenges faced, results (if any), etc.
 
 ## Grading
 
 ```
-Project Proposal   : 5%
-Final Presentation : 10%
-Final Project      : 35%
-Weekly Checkins    : 25%
-Lecture Attendance : 25%
+Lecture Attendance  : 25%
+Project Proposal    : 5%
+Weekly Check-ins    : 25%
+
+Presentation        : 10%
+Final Project       : 35%
 ```
 
-We do not have minimum thresholds and will be grading against other projects with a generous curve.
+We publish the same grading thresholds as CS 241:
 
-We will give you 3 lecture attendance drops, no questions asked you can miss three lectures.
+|   Points   |  Minimum Grade  |
+|:-----------|:----------------|
+| [92 - 100] | A-              |
+| [82 - 92)  | B-              |
+| [72 - 82)  | C-              |
 
-## Proposals
+Your project will be graded in a holistic manner against other projects in the class. Note that this does not imply only a handful of projects can receive an A; education is not a zero-sum game. Historically, grades have been assigned with a generous curve.
+
+## Absences 
+
+We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance, we will drop three attendance grades, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
+
+If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or have a sudden death in the family, please refer to the [CS 241 absence policy](./index.html#absences).
+
+## Project
 
 Requirements:
+
 * Projects may be done in teams of up to 3 people; if you want to work on a larger team, ask us first
-* Project should be novel to you and your partners (we want you to explore new things)
-* Project should take about 3 hours a week for each member of the team
-* Must relate to systems programming in a meaningful way (ask us in advance if you aren't sure)
+* Your project should be novel to you and your partners. We want you to explore new things!
+* Work on your project should take about 3 hours a week for each member of the team
+* Your project must relate to systems programming in a meaningful way. If you aren't sure whether your idea meets this requirement, ask us in advance
   
-Your proposal should include the following:
+After the first few weeks of the course, you will be required to submit a project proposal. Your proposal should include the following:
+
 * Overview (Alternatively, “Explain it to me like I am five”)
 * Purpose (Why are you doing this? Why is it interesting?)
 * Expected workload distribution among group members
 * Projected project milestones (What will you do in the first month? Second month? etc.)
 * Challenges you expect will arise in working on this project
+
+The exact grading requirements of each project vary. You and your mentor will decide on a reasonable scope for your project at the beginning of the semester, though this target may move as appropriate throughout the semester.
  
 ## Presentations
 
-More information to be posted soon.
+More information to be posted later in the semester.
 
-## Project
+## Weekly Check-ins
 
-The exact grading requirements of each project vary. You and your mentor will decide a reasonable scale at the beginning of the semester as a moving target.
+You are required to meet with your mentor on a weekly basis. The meeting can last up to an hour and you will typically go over what you did that week, what your goals are for the next week, and any roadblocks you encountered. To get full credit, you must meet with your mentor and display satisfactory progress on your project.
 
-## Weekly Checkins
+If your project requires research before beginning your design and implementation (i.e., figuring out what a filesystem is before implementing it), you should write up a short summary of your work for that week and share it with your mentor during your check-in. This should include what you learned that week, how it relates to your project, and what you plan to learn about going forward.
 
-You are required to meet with your mentor on a weekly basis. The meeting can last up to an hour and you will typically be going over what you did that week/what your goals are and any roadblocks you have encountered. To get full credit, you must show up and show the work that you have done.
-
-We also add two requirements. For those of you starting your projects with research (ie figuring out what a filesystem is before implementing it) we want you to write about one paragraph for each checkin until you start writing code.
-
-When you and your group start writing code, we expect you to use git and each group member commits his/her changes using their own account, this way the mentors can track how much each person is contributing to the project. That being said, a group project is a group effort meaning the group must coordinate who is doing what and what a fair load balance is between group members. Your mentor is here to guide you through roadblocks; check in on progress; and to answer any questions you have about the project.
+When you and your group start writing code, we expect you to use git and for each group member to commit their changes using their own account. Your commit history will be used in part to determine your individual contribution to the project. Keep in mind that a group project is a group effort; the group must coordinate who is doing what and what a fair work balance is between group members. Your mentor is here to guide you through roadblocks, check in on progress, and to answer any questions you have about the project. Your mentor is **not** a personalized debugger, nor are they an additional group member.
 
 ## The Team
 
@@ -83,15 +89,9 @@ When you and your group start writing code, we expect you to use git and each gr
 <a href="NOT_HERE">Videos</a>
 
 | Date        | Lecture Content |
-| ----------- | ------------- |
-| 01/01/2017  | Introduction/Project Development |
-| 01/01/2017  | Brainstorming  |
-| 01/01/2017  | Memory and Garbage Collection |
-| 01/01/2017  | Security  |
-| 01/01/2017  | Parallel Programming |
-| 01/01/2017  | Linux Kernel  |
-| 01/01/2017  | File Systems  |
+|:----------- |:------------- |
+| TBA         | Introduction and Project Development |
 
 ## Past Projects
 
-Come check out what other people have created in the [past project page](./past_projects.html)
+Come check out what past students have created in the [past project page](./past_projects.html)
