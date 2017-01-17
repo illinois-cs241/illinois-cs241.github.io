@@ -48,13 +48,6 @@
     specialty: VR, Systems, Databases
     semesters: Spring 2016, Fall 2016, and Spring 2017
 -
-    name: Noel Fortman
-    netid: nfortma2
-    class: 17
-    roles: Office Hours and Lab Team
-    specialty: Computational Musical Analysis
-    semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
--
     name: CS241 Admin
     netid: cs241admin
     class: ""
@@ -146,4 +139,3 @@
     specialty: Compilers and Parallel
     semesters: Spring 2017
     instructor: true
-
