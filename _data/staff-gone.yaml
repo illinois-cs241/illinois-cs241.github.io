@@ -1,31 +1,31 @@
 -
-  name: Atul Kumar S Sandur
-  netid: sandur2
-  class: 
-  roles: Teaching Assistant
-  speciality: Distributed systems and Mobile Computing
-  semesters: Spring 2016
+    name: Atul Kumar S Sandur
+    netid: sandur2
+    class: 
+    roles: Teaching Assistant
+    speciality: Distributed systems and Mobile Computing
+    semesters: Spring 2016
 -
-  name: Boyang Chen
-  netid: bchen11
-  class: 
-  roles: Teaching Assistant
-  speciality: Data Structure
-  semesters: Spring 2016
+    name: Boyang Chen
+    netid: bchen11
+    class: 
+    roles: Teaching Assistant
+    speciality: Data Structures
+    semesters: Spring 2016
 -
-  name: Braden Ehrat
-  netid: ehrat1
-  class: 
-  roles: Teaching Assistant (Exam and future MP development)
-  speciality: Networks
-  semesters: Spring 2016
+    name: Braden Ehrat
+    netid: ehrat1
+    class: 
+    roles: Teaching Assistant (Exam and future MP development)
+    speciality: Networks
+    semesters: Spring 2016
 -
-  name: Güliz Seray Tuncay
-  netid: tuncay2
-  class: 
-  roles: Teaching Assistant
-  speciality: Systems and Networking
-  semesters: Spring 2016
+    name: Güliz Seray Tuncay
+    netid: tuncay2
+    class: 
+    roles: Teaching Assistant
+    speciality: Systems and Networking
+    semesters: Spring 2016
 -
     name: Lawrence Angrave
     netid: angrave
@@ -34,3 +34,94 @@
     specialty: Systems and CS Education
     semesters: Fall 2006, Fall 2007, Spring 2007, Spring 2008, Fall 2014, Spring 2015, Fall 2015, Spring 2016, and Fall 2016
     instructor: true
+-
+    name: Eric Sauer
+    netid: emsauer2
+    class: 17
+    roles: Assignment Development
+    specialty: Game Engines
+    semesters: Fall 2015, Spring 2016, and Fall 2016
+-
+    name: Varun Thangavelu
+    netid: thangav2
+    class: 17
+    roles: Lab and Officer Hours Assistant
+    specialty: Big Data
+    semesters: Fall 2015, Spring 2016, and Fall 2016
+-
+    name: Yushuo Lin
+    netid: ylin91
+    class: 17
+    roles: Lab and Officer Hours Assistant
+    specialty: CS and Stat
+    semesters: Fall 2015, Spring 2016, and Fall 2016
+-
+    name: Porter Smith
+    netid: pmsmith2
+    class: 17
+    roles: Office Hours Team Leader
+    specialty: System Programming and Embedded Programming
+    semesters: Fall 2015, Spring 2016, and Fall 2016
+-
+    name: Maddie Lin
+    netid: mlin35
+    class: 16
+    roles: Lab and Officer Hours Assistant
+    specialty: Software Engineering
+    semesters: Fall 2015, Spring 2016, and Fall 2016
+-
+    name: Yuxian Zhu
+    netid: yzhu73
+    class: 18
+    roles: MP Development, Office hour
+    specialty: Distributed systems, Embedded systems, Parallel Programming
+    semesters: Spring 2016 and Fall 2016
+-
+    name: Alexander Wu
+    netid: awu14
+    class: 17
+    roles: Lab/Office Hours Assistant
+    specialty: Performance
+    semesters: Spring 2016 and Fall 2016
+-
+    name: Po-Tsung Chiu
+    netid: ptchiu2
+    class: ""
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Fall 2016
+-
+    name: Surtai Han
+    netid: sshan7
+    class: ""
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Spring 2014 and Fall 2016
+-
+    name: Saad Hussain
+    netid: msh5
+    class: 18
+    roles: Teaching Assistant
+    specialty: Undecided
+    semesters: Fall 2016
+-
+    name: Hsuan-Yu Chen
+    netid: hychen2
+    class: ""
+    roles: Teaching Assistant
+    specialty: HCI
+    semesters: Fall 2016
+-
+    name: Yi Zhou
+    netid: yizhou7
+    class: 17
+    roles: Lab Assistant
+    specialty: Computer Security
+    semesters: Fall 2015, Spring 2016, and Fall 2016
+-
+    name: Mengting Yan
+    netid: myan9
+    class: 18
+    roles: Honors Assistant
+    specialty: Operating System, Distributed System
+    semesters: Fall 2016
