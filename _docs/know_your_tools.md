@@ -226,7 +226,7 @@ make release
 
 Part of your grade in this class relies on you attending labs. Toward the end of every lab, we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time. If you are more than 10 minutes late to class, then your lab attendant reserves the right to not swipe you for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a zero in lab attendance for the semester). Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:
 
-- Go to section ADJ at 9-10:20am in 0222.  This section only has 7 registered students, and thus there will be room to accommodate you on a first come first served basis.
+- Go to section ADH at 7:30pm-8:50pm in 0218.  This section only has the least registered students, and thus there will be room to accommodate you on a first come first served basis.
 - Get permission from the TA of another section to go to their section, provided
     - you will be working on your laptop in the room, or
     - there is seating available where registered students get priority.
@@ -238,4 +238,3 @@ Remember that lab attendance is required; per course policy, missing 3 or more l
 You can still get credit for attending a different section due to special or occasional circumstances by making arangments with the GA at [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu). However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office SC1210 to change your section without having to drop your enrollment.
 
 We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).
-
