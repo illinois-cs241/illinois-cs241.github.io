@@ -48,47 +48,40 @@
     specialty: VR, Systems, Databases
     semesters: Spring 2016, Fall 2016, and Spring 2017
 -
-    name: Noel Fortman
-    netid: nfortma2
-    class: 17
-    roles: Office Hours and Lab Team
-    specialty: Computational Musical Analysis
-    semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
--
     name: CS241 Admin
     netid: cs241admin
     class: ""
     roles: "Graduate Assistant: Assist with course administration (e.g. exam sickness, DRES)."
     specialty: CS Education
-    semesters: Spring 2016, Fall 2016, Spring 2017
+    semesters: Spring 2016, Fall 2016, and Spring 2017
 -
     name: Ben Kurtovic
     netid: kurtovc2
-    class: 18
-    roles: Historian, Lab, Office Hours, and Honors Assistant
+    class: 17
+    roles: Historian and Honors Mentor
     specialty: Operating systems, networking, security
-    semesters: Spring 2016 and Fall 2016
+    semesters: Spring 2016, Fall 2016, and Spring 2017
 -
     name: WeiChun Lee
     netid: wlee114
     class: ""
     roles: Teaching Assistant
     specialty: Algorithmic Game Theory and Social Network
-    semesters: Fall 2015, Spring 2016, and Fall 2016
+    semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
     name: Bhatt Mayank
     netid: mayankb2
     class: ""
     roles: Teaching Assistant
     specialty: ""
-    semesters: Fall 2016
+    semesters: Fall 2016 and Spring 2017
 -
     name: Peng Li
     netid: pengl3
     class: 18
     roles: Teaching Assistant
     specialty: Image Processing
-    semesters: Fall 2016
+    semesters: Fall 2016 and Spring 2017
 -
     name: Bhuvan Venkatesh
     netid: bvenkat2
@@ -132,6 +125,76 @@
     specialty: Systems
     semesters: Spring 2017
 -
+    name: Brian Kurek
+    netid: bkurek2
+    class: 19
+    roles: Lab/Office Hours Assistant
+    specialty: Web Development
+    semesters: Spring 2017
+-
+    name: Aneesh Durg
+    netid: durg2
+    class:
+    roles:
+    specialty:
+    semesters: Spring 2017
+-
+    name: Devon Papanicolas
+    netid: papanic2
+    class:
+    roles:
+    specialty:
+    semesters: Spring 2017
+-
+    name: Jonathan Wexler
+    netid: jwexler2
+    class: 19
+    roles: Lab/Office Hours Assistant
+    specialty: Procrastination
+    semesters: Spring 2017
+-
+    name: Kevin Hong
+    netid: khong18
+    class:
+    roles:
+    specialty:
+    semesters: Spring 2017
+-
+    name: Mark Schmidt
+    netid: mwschmi2
+    class: 19
+    roles: Lab/Office Hours Assistant
+    specialty: Synchronization
+    semesters: Spring 2017
+-
+    name: Navneeth Jayendran
+    netid: jayndrn2
+    class: 18
+    roles: Assignment Developer
+    specialty: TBA
+    semesters: Spring 2017
+-
+    name: Ruihan Shan
+    netid: rshan3
+    class:
+    roles:
+    specialty:
+    semesters: Spring 2017
+-
+    name: Spencer Lee
+    netid: syl4
+    class:
+    roles:
+    specialty:
+    semesters: Spring 2017
+-
+    name: Yasha Mostofi
+    netid: mostofi2
+    class: 18
+    roles: Assignment Development
+    specialty: Beards
+    semesters: Spring 2017
+-
     name: G Carl Evans
     netid: gcevans
     class: ""
@@ -139,4 +202,3 @@
     specialty: Compilers and Parallel
     semesters: Spring 2017
     instructor: true
-
