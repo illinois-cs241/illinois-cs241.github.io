@@ -3,7 +3,7 @@ layout: doc
 title: "Know Your Tools"
 submissions:
 - title: Entire Assignment
-  due_date: 10/17 11:59pm
+  due_date: 1/25 11:59pm
   graded_files:
   - read_wrap.c
   - secure_move.c
