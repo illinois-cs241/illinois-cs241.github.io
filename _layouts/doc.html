@@ -7,9 +7,8 @@
         <div class="page-content">
           <div class="row">
             {% capture metadata %}
-              {% if page.date %} <!-- this is a post -->
-                <ul class="metadata">
                   {% if page.submissions %}
+                <ul class="metadata">
 					{% for submission in page.submissions %}
 					<b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
 					<ul>
@@ -18,10 +17,9 @@
 						{% endfor %}
 					</ul>
 				    {% endfor %}
-                  {% endif %}
                   <li class="github-date" style="display: none;"><strong>Last modified:</strong> <span class="github-date-value"></span></li>
                 </ul>
-              {% endif %}
+                  {% endif %}
             {% endcapture %}
             <nav id="toc" style="position: fixed" class="small-12 medium-12 large-3 columns show-for-xlarge-up">
 			  <br/>
@@ -30,7 +28,7 @@
             <div class="small-12 medium-12 large-7 large-centered columns">
               <h1>
                 {{ page.title }}
-                {% if page.date %}
+                {% if page.submissions %}
                   <a class="github-link" href="https://github.com/{{ site.repository | uri_escape }}/blob/master/{{ page.path | uri_escape }}">Edit on Github</a>
                 {% endif %}
               </h1>
@@ -38,7 +36,7 @@
                 {{ metadata }}
               </nav>
               <div id="content">
-                {% if page.date %} <!-- this is a post -->
+                {% if page.learning_objectives %} 
 				<h2 id="learning-objectives">Learning Objectives</h2>
 				<p>
 					The learning objectives for {{ page.title }} are: <br/>
@@ -48,7 +46,7 @@
 					{% endfor %}
 					</ul>
 				</p>
-				{% if page.wikibook %} <!-- this is a post -->
+				{% if page.wikibook %}
 				<h2 id="suggested-readings">Suggested Readings</h2>
 				<p>
 					We suggest you read the following from the
@@ -68,7 +66,7 @@
                 {% endif %}
                 {{ content }}
 
-                {% if page.date %}
+                {% if page.submissions %}
 				<h2 id="submission-instructions">Submission Instructions</h2>
 				<p>
 					Please fully read details on
