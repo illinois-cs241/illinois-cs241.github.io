@@ -19,6 +19,8 @@
             		    <tr>
             		      <th class="mdl-data-table__cell--non-numeric">Lab</th>
             		      <th class="mdl-data-table__cell--non-numeric">Release Date</th>
+                      <th class="mdl-data-table__cell--non-numeric">Slides</th>
+                      <th class="mdl-data-table__cell--non-numeric">Handout</th>
             		      <th class="mdl-data-table__cell--non-numeric">Due Date</th>
             		    </tr>
             		  </thead>
@@ -27,7 +29,17 @@
                       <tr>
                         <td class="mdl-data-table__cell--non-numeric"><a href="./{{lab.url}}.html">{{lab.name}}</a></td>
               		    	<td class="mdl-data-table__cell--non-numeric">{{lab.releaseDate}}</td>
-              		    	<td class="mdl-data-table__cell--non-numeric">{{lab.dueDate}}</td>
+                        {% if lab.resources %}
+                        <td class="mdl-data-table__cell--non-numeric"><a href="./lab_resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html"><img src="./images/lab_assets/animation.png"></a></td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                        <a href="./lab_resources/handouts/{{lab.name | downcase | replace: " ", "_"}}.pdf"><img src="./images/lab_assets/file-document.png"></a></td>
+                        {% else %}
+                        <td class="mdl-data-table__cell--non-numeric">
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric">
+                        </td>
+                        {% endif %}
+                        <td class="mdl-data-table__cell--non-numeric">{{lab.dueDate}}</td>
                       </tr>
                     {% endfor %}
             		  </tbody>
