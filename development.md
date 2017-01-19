@@ -64,7 +64,7 @@ logout
 ```
 
 ## I AM OFF CAMPUS AND CANNOT CONNECT TO THE VM, HELP!
-You can use a VPN (Virtual Private Network) to access on campus resources and then use Putty or SSH directly into your VM. [Tutorial](http://techservices.illinois.edu/services/virtual­private­networking­vpn/download­and­set­up­the­vpn­client)
+You can use a VPN (Virtual Private Network) to access on campus resources and then use Putty or SSH directly into your VM. [Tutorial](https://techservices.illinois.edu/services/virtual-private-networking-vpn/download-and-set-up-the-vpn-client)
 
 OR, you can SSH twice. First into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
 
