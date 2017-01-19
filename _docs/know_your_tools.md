@@ -36,13 +36,13 @@ You will be using SVN to submit all your assignments in this course.
 **Once you are in your VM**, please checkout your SVN repo with the following command
 
 ```console
-svn co https://subversion.ews.illinois.edu/svn/fa16-cs241/YOUR-NETID cs241
+svn co https://subversion.ews.illinois.edu/svn/{{site.semester}}-{{site.subject_code}}{{site.course_number}}/YOUR-NETID {{site.subject_code}}{{site.course_number}}
 ```
 
-which will check out your entire SVN repo into a folder called 'cs241' into your current directory. Now change your directory into the 'cs241' folder
+which will check out your entire SVN repo into a folder called '{{site.subject_code}}{{site.course_number}}' into your current directory. Now change your directory into the 'cs241' folder
 
 ```console
-cd cs241
+cd {{site.subject_code}}{{site.course_number}}
 ```
 
 ## The Problem
