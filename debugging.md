@@ -28,7 +28,7 @@ know your tools deploy
 ------------------------------------------------------------------------
 ```
 
-Looks like your co-worker was cut off mid commit message. To make sure that we are looking at the code the autograder was looking at, we are going to revert to the _autograde commit_. We want to do this because there could be more failed test cases at this comit; we want to fix the code given the failed test cases.
+**You don't need to do this for this lab**
 
 ```console
 $ svn revert -r52470 #Or whatever revision number
