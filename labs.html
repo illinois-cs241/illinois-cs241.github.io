@@ -29,6 +29,7 @@
                       <tr>
                         <td class="mdl-data-table__cell--non-numeric"><a href="./{{lab.url}}.html">{{lab.name}}</a></td>
               		    	<td class="mdl-data-table__cell--non-numeric">{{lab.releaseDate}}</td>
+                        <td class="mdl-data-table__cell--non-numeric">{{lab.dueDate}}</td>
                         {% if lab.resources %}
                         <td class="mdl-data-table__cell--non-numeric"><a href="./lab_resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html"><img src="./images/lab_assets/animation.png"></a></td>
                         <td class="mdl-data-table__cell--non-numeric">
@@ -39,7 +40,6 @@
                         <td class="mdl-data-table__cell--non-numeric">
                         </td>
                         {% endif %}
-                        <td class="mdl-data-table__cell--non-numeric">{{lab.dueDate}}</td>
                       </tr>
                     {% endfor %}
             		  </tbody>
