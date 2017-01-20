@@ -78,23 +78,24 @@
 					Our grading system will checkout your most recent (pre-deadline) commit for grading.
 					Therefore, to hand in your code, all you have to do is commit it to your Subversion repository.
 				</p>
+				{% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '.md' %}
 				<p>
 					To check out the provided code for
-					<code>{{ page.permalink }}</code>
+					<code>{{ filename }}</code>
 					from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
 					{% highlight text %}svn up{% endhighlight %}
 				</p>
 				<p>
 					If you run <code>ls</code> you will now see a
-					<code>{{ page.permalink }}</code> folder, where you can find this assignment! To commit your changes (send them to us) type:
+					<code>{{ filename }}</code> folder, where you can find this assignment! To commit your changes (send them to us) type:
 
-					{% highlight text %}svn ci -m "{{ page.permalink }} submission"{% endhighlight %}
+					{% highlight text %}svn ci -m "{{ filename }} submission"{% endhighlight %}
 				</p>
 				<p>
 					Your repository directory can be viewed from a web browser from the following URL:
 					<a
-						href="https://subversion.ews.illinois.edu/svn/{{site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ page.permalink }}">
-						https://subversion.ews.illinois.edu/svn/{{site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ page.permalink }}
+						href="https://subversion.ews.illinois.edu/svn/{{ site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ filename }}">
+						https://subversion.ews.illinois.edu/svn/{{ site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ filename }}
 					</a>
 					where NETID is your University NetID.
 					It is important to check that the files you expect to be graded are present and up to date in your SVN copy.
