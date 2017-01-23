@@ -74,6 +74,14 @@ Copyright 2007 by Pearson Custom Publishing
 ISBN 0* 536* 48928* 9
 ```
 
+If you want some general guides to development in this class:
+
+### [Debugging Tutorial](./debugging.html)
+
+### [Development Tutorial](./development.html)
+
+### [Emacs Tutorial](./emacs.html)
+
 ## Grading
 
 The following is subject to minor changes:
