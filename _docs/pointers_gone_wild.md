@@ -33,6 +33,7 @@ All other files will be replaced with new/different files for grading. If you mo
 ## Part 1:
 
 There are erroneous/unimplemented functions in <tt>part1-functions.c</tt>. Your task is to modify functions according to comment above each function such that the output of part1 looks exactly as follows:
+
 ```
 == one() ==
 3^2 + 4^2 = 25
