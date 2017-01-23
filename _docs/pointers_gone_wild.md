@@ -3,7 +3,7 @@ layout: doc
 title: "Pointers Gone Wild"
 submissions:
 - title: Entire Assignment
-  due_date: 10/24 11:59pm
+  due_date: 1/30 11:59pm
   graded_files:
   - part1-functions.c
   - part2-main.c
