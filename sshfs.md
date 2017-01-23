@@ -3,9 +3,11 @@ layout: doc
 title: SSHFS Workflow Tutorial
 ---
 
-## Why SSHFS?
+## SSHFS?
 
 SSHFS is a tool that allows you to mount any directory from a remote machine on your local machine, and consequently use your favorite text editor/IDE/code editing environment and still be able to compile and run your code on the remote machine.
+
+Using SSHFS means that you don't have to include a `svn ci -m "asdf"` and `svn up` in between every small change, ad your machine can cache the files so you don't have to deal with network lag. Essentially, SSHFS will allow you to directly edit any files that exist on a remote machine.
 
 ## Installation
 
@@ -48,6 +50,8 @@ mkdir ~/remote
 
 Then, you can use sshfs to mount the file system locally. You can also specify what the entry point is on the remote machine, rather than just starting at the root of the drive (/), you can have it start in your home folder (~) or any folder, really. replace <MOUNT_POINT> with the entry point you would like, or leave it empty to mount the root of the drive.
 
+Mount point? The mount point is the directory that sshfs will give you access to. You can use the whole machine as that directory, or just your CS241 directory that contains all of your code.
+
 ```
 sudo sshfs NETID@sp17-cs241-???.cs.illinois.edu:/<MOUNT_POINT> ~/remote
 ```
@@ -65,6 +69,8 @@ sudo umount ~/remote
 ``` 
 
 (Note: depending on where you made the mount point, you may not need sudo to unmount the remote filesystem.)
+
+**WARNING**: When you unmount, your changes will no longer be saved, so make sure you have closed any remote files *before* unmounting the remote machine. In fact, if you have a file open in Sublime Text, and then unmount, the open file will become red, because Sublime will notice that it no longer has access to that file. You also do need to unmount before logging out or shutting down your machine, or potentially disconnecting from the Internet. 
 
 ### Windows
 
