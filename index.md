@@ -82,6 +82,8 @@ If you want some general guides to development in this class:
 
 ### [Emacs Tutorial](./emacs.html)
 
+### [SSHFS Workflow Tutorial](./sshfs.html)
+
 ## Grading
 
 The following is subject to minor changes:
