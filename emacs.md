@@ -161,6 +161,7 @@ Here are a few more miscellaneous customizations I use, with comments to explain
 One popular mode which I choose not to use, but I have already been asked about, is enabling mouse mode in emacs, essentially making it much more similar to a text editor.  This means you can use your mouse to select where to insert new characters, mark a region, and use the scroll wheel.
 
 (Note: Since I don't use this mode, I found these commands on StackOverflow.)
+
 ```
 ;; enable mouse support
 (unless window-system
