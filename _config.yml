@@ -25,7 +25,6 @@ collections:
   docs:
     output: true
     permalink: :path
-collections:
   tutorials:
     output: true
     permalink: :path
