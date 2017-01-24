@@ -76,13 +76,10 @@ ISBN 0* 536* 48928* 9
 
 If you want some general guides to development in this class:
 
-### [Debugging Tutorial](./debugging.html)
-
-### [Development Tutorial](./development.html)
-
-### [Emacs Tutorial](./emacs.html)
-
-### [SSHFS Workflow Tutorial](./sshfs.html)
+* [Debugging Tutorial](./debugging.html)
+* [Development Tutorial](./development.html)
+* [Emacs Tutorial](./emacs.html)
+* [SSHFS Workflow Tutorial](./sshfs.html)
 
 ## Grading
 
