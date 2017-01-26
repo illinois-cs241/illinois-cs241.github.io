@@ -3,7 +3,7 @@ layout: doc
 title: "Extreme Edge Cases"
 submissions:
 - title: Entire Assignment
-  due_date: 02/01/2017 11:59pm
+  due_date: 02/01/2016 11:59pm
   graded_files:
   - camelCaser.c
   - camelCaser_tests.c
@@ -23,7 +23,7 @@ wikibook:
 
 What makes code good? Is it camelCase? Lots of comments? Descriptive variable names, perhaps?
 
-One thing we know is that good code is generally modular—it consists of discrete "units" of functionality that are only responsible for certain behavior. In our case, where we're working with C, these units are primarily functions.
+One thing we know is that good code is generally modular - it consists of discrete "units" of functionality that are only responsible for certain behavior. In our case, where we're working with C, these units are primarily functions.
 
 For example, the C string function `strlen` is responsible solely for determining the length of a string; it doesn't do any I/O or networking. A function that knows all and tries to do all would be bad design, and testing whether that kind of function adheres to expectations would be nontrivial.
 
@@ -33,7 +33,7 @@ Enter unit testing.
 
 ## Unit Testing
 
-Unit testing is a ubiquitous and crucial software development method used heavily in industry. [According to artofunittesting.com](http://artofunittesting.com/definition-of-a-unit-test/), "a unit test is an automated piece of code that invokes a _unit of work_ in the system _and then checks a single assumption about the behavior of that unit of work_". This sounds like testing—leave it to the QAs, right? Actually, developers, much to their chagrin, are expected to write their own unit tests.
+Unit testing is a ubiquitous and crucial software development method used heavily in industry. [According to artofunittesting.com](http://artofunittesting.com/definition-of-a-unit-test/), "a unit test is an automated piece of code that invokes a _unit of work_ in the system _and then checks a single assumption about the behavior of that unit of work_". This sounds like testing - leave it to the QAs, right? Actually, developers, much to their chagrin, are expected to write their own unit tests.
 
 In order to write effective unit tests, all possible cases of input to a unit (mainly functions, in C), including edge cases, should be tested. Good unit tests test (extreme) edge cases, making sure that the discrete unit of functionality performs as specified with unexpected inputs.
 
@@ -71,22 +71,23 @@ The brackets denote that the above is an array of those strings. (More details i
 
 *   A NULL pointer is undefined for camelCaser, so you should just return a NULL pointer.
 *   A input sentence, `input_s`, is defined as any MAXIMAL substring of the input string that ends with a punctuation mark and does not contain a punctuation mark.
-    *   This means that “Hello.World.” gets split into 2 sentences “Hello” and “World” and NOT “Hello.World”.
+    *   This means that "Hello.World." gets split into 2 sentences "Hello" and "World" and NOT "Hello.World".
 *   Let the camelCasing of `input_s` be called `output_s`
 *   `output_s` is the the concatenation of all words `w` in `input_s` after `w` has been camelcased
     *   The puncation from `input_s` is not added to `output_s`
-*   `w` is camelCased iff
-    *   it is first lowercased and if it is not the first word in the sentence, then it has its first letter uppercased.
-*   words are
+*   words are:
     *   delimited by the MAXIMAL amount of whitespace
-        *   This means that “hello world” is split into “hello” and world" and NOT "hello ", " “, " world” or any other combination of whitespaces
+        *   This means that "hello world" is split into "hello" and world" and NOT "hello ", " ", " world" or any other combination of whitespaces
     *   considered uppercased words if all of its letters are uppercased.
     *   considered lowercased words if all of its letters are lowercased.
+*   a word `w` is camelCased if and only if:
+    *   it is the first word and it is lowercased
+    *   it is any word after the first word and its first letter is uppercased
 *   punctuation marks, whitespace, and letters are defined by `ispunct()`, `isspace()`, and `isalpha()` respectively.
     *   These are parts of the C standard, so you can `man ispunct` for more information.
 *   Finally, you return an array of `output_s` for every `input_s` in the input string terminated by a NULL pointer.
 
-We have also included a reference implementation in the folder named "reference". In the reference folder you can find the main file, which will let you interact with the reference implementation. This means that if you have a question like "what should be the result of inputting `<blah>` into `camel_caser()`", then you should try it out in the reference main file.
+We have also included a reference implementation. This means that if you have a question like "what should be the result of inputting `<blah>` into `camel_caser()`", then you should try it out.  You can start the program with `./camelCaser-reference` and the program will take your input and return it camelCased.
 
 Your implementation goes in camelCaser.c and you may not leak any memory.
 
@@ -120,7 +121,7 @@ char s = *ptr2;
 
 ## Writing Unit Tests
 
-Your goal is to show that the other interns’ implementations of camelCaser—which, of course, you can’t see directly—fail on some extreme test cases, and, in the meantime, demonstrate to the head honcho at Facenovel exactly how robust your own function is.
+Your goal is to show that the other interns' implementations of camelCaser - which, of course, you can't see directly - fail on some extreme test cases, and, in the meantime, demonstrate to the head honcho at Facenovel exactly how robust your own function is.
 
 Facenovel promises to pass in C-strings. Likewise, you promise to return a dynamically allocated NULL-terminated array of strings (the array and the strings both on the heap and each string in separate buffers).
 
@@ -132,9 +133,4 @@ Because Facenovel values their testing server time you may not try more than 16 
 
 Also it is not in the spirit of unit testing to diff your implementation with the one you are testing. So for this lab you may not call on your own camel_caser when implementing the tester.
 
-## Files
-
-*   camelCaser_main.c – Calls your unit tester
-*   camelCaser-reference – The reference implementation of camelCaser
-*   camelCaser.c – Contains your implementation of camelCaser
-*   camelCaser_tests.c – Contains your unit tester for a camelCaser implementation
+Other helpful resources: [Test-Driven Development](http://wiki.c2.com/?TestDrivenDevelopment)
