@@ -3,7 +3,7 @@ layout: doc
 title: "Extreme Edge Cases"
 submissions:
 - title: Entire Assignment
-  due_date: 09/07/2016 11:59pm
+  due_date: 02/01/2017 11:59pm
   graded_files:
   - camelCaser.c
   - camelCaser_tests.c
