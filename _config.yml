@@ -25,6 +25,9 @@ collections:
   docs:
     output: true
     permalink: :path
+  tutorials:
+    output: true
+    permalink: :path
 # Build settings
 markdown: kramdown
 

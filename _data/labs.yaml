@@ -10,6 +10,7 @@
     releaseDate: "Week 2"
     dueDate: "Week 3"
     url: "extreme_edge_cases"
+    resources: true
   -
     name: "Utilities Unleashed"
     releaseDate: "Week 3"
@@ -31,20 +32,20 @@
     dueDate: "Week 7"
     url: "luscious_locks"
   -
-    name: "Overworked Interns"
+    name: "Deadlock Resiliant Mutexes"
     releaseDate: "Week 7"
     dueDate: "Week 8"
-    url: "overworked_interns"
+    url: "deadlock_resiliant_mutexes"
   -
     name: "Ideal Indirection"
     releaseDate: "Week 8"
     dueDate: "Week 9"
     url: "ideal_indirection"
   -
-    name: "MR0"
+    name: "Pied Piper"
     releaseDate: "Week 9"
     dueDate: "Week 10"
-    url: "mr0"
+    url: "pied_piper"
   -
     name: "Scheduler"
     releaseDate: "Week 10"

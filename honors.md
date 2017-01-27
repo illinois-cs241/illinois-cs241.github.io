@@ -72,17 +72,15 @@ When you and your group start writing code, we expect you to use git and for eac
 
 ## The Team
 
-### Robert Andrews
-
-<img src="./images/staffPhotos/rgandre2.jpg" width="200px" height="200px">
-
-### Ben Kurtovic
-
-<img src="./images/staffPhotos/kurtovc2.jpg" width="200px" height="200px">
-
-### Bhuvan Venkatesh
-
-<img src="./images/staffPhotos/bvenkat2.jpg" width="200px" height="200px">
+| Name | NetID | Interests |
+|:-----|:------|:----------|
+| Robert Andrews | rgandre2 | Algorithms, complexity, parallel computing |
+| Aneesh Durg | durg2 | Computer vision, AI |
+| Kevin Hong | khong18 | Concurrency, IPC, security, statistics |
+| Ben Kurtovic | kurtovc2 | Operating systems, networking, security |
+| Bhuvan Venkatesh | bvenkat2 | Cloud computing |
+| Jonathan Wexler | jwexler2 | Parallelism, networking |
+| Brian Zhou | bwzhou2 | Networking, full-stack development |
 
 ## Lectures and Videos
 
@@ -90,8 +88,24 @@ When you and your group start writing code, we expect you to use git and for eac
 
 | Date        | Lecture Content |
 |:----------- |:------------- |
-| TBA         | Introduction and Project Development |
+| January 24  | Introduction and Project Development [[pdf][intro_pdf]] |
+| January 31  | Project Brainstorming |
+| February 7  | Security |
+| February 14 | Memory and Garbage Collection |
+| February 21 | Parallel Programming |
+| February 28 | Linux Kernel |
+| March 7     | Lock-free Data Structures |
+| March 14    | Cloud Computing |
+| March 28    | Peer Mentoring |
+| April 4     | TCP |
+| April 11    | Filesystems |
+| April 18    | TBA |
+| April 25    | Project Presentations |
+| May 2       | Project Presentations |
 
 ## Past Projects
 
-Come check out what past students have created in the [past project page](./past_projects.html)
+Come check out what past students have created in the [past project page](./past_projects.html).
+
+[intro_pdf]:honors_resources/introduction.pdf
+[intro_video]:NOT_HERE
