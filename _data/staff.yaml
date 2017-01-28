@@ -141,9 +141,9 @@
 -
     name: Devon Papanicolas
     netid: papanic2
-    class:
-    roles:
-    specialty:
+    class: 18
+    roles: Lab/Office Hours Assistant, Assignment Dev, and Infra
+    specialty: Material Science
     semesters: Spring 2017
 -
     name: Jonathan Wexler
@@ -155,9 +155,9 @@
 -
     name: Kevin Hong
     netid: khong18
-    class:
-    roles:
-    specialty:
+    class: 19
+    roles: Lab/Office Hours Assistant and Honors Section Staff Member
+    specialty: Statistics and Machine Learning
     semesters: Spring 2017
 -
     name: Mark Schmidt
@@ -178,7 +178,7 @@
     netid: rshan3
     class:
     roles: Teaching Assistant
-    specialty: Algorithms 
+    specialty: Algorithms
     semesters: Spring 2017
 -
     name: Spencer Lee

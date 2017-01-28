@@ -87,6 +87,7 @@ The brackets denote that the above is an array of those strings. (More details i
     *   These are parts of the C standard, so you can `man ispunct` for more information.
 *   Finally, you return an array of `output_s` for every `input_s` in the input string terminated by a NULL pointer.
 
+_Hint:_ `ctype.h` has a lot of useful functions for this.
 We have also included a reference implementation. This means that if you have a question like "what should be the result of inputting `<blah>` into `camel_caser()`", then you should try it out.  You can start the program with `./camelCaser-reference` and the program will take your input and return it camelCased.
 
 Your implementation goes in camelCaser.c and you may not leak any memory.
