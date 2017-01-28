@@ -103,9 +103,31 @@ When you and your group start writing code, we expect you to use git and for eac
 | April 25    | Project Presentations |
 | May 2       | Project Presentations |
 
-## Past Projects
+## Project Ideas?
 
 Come check out what past students have created in the [past project page](./past_projects.html).
+
+If not here are some project ideas
+
+* GPU/Device Programming
+* Networking
+    * Decentralized Chat
+    * Proxies/Firewalls/Encryption
+    * Network Congestion
+    * [Other Project] With Networking
+    * Implementing Remote Procedure Calls
+    * Messaging Queues
+* Kernel Programming
+    * Debugging with a Twist
+    * Hacking the Kernel
+    * High Performance System Calls
+* Scheduling
+    * Custom Scheduling
+* MultiThreading
+    * High Performance Threading Library with Purpose
+* Memory Management
+    * Garbage Collection
+
 
 [intro_pdf]:honors_resources/introduction.pdf
 [intro_video]:NOT_HERE
