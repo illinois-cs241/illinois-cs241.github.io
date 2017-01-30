@@ -88,7 +88,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 | Date        | Lecture Content |
 |:----------- |:------------- |
-| January 24  | Introduction and Project Development [[pdf][intro_pdf]] |
+| January 24  | Introduction and Project Development [[pdf][intro_pdf]][[video][intro_video]] |
 | January 31  | Project Brainstorming |
 | February 7  | Security |
 | February 14 | Memory and Garbage Collection |
@@ -130,4 +130,4 @@ If not here are some project ideas
 
 
 [intro_pdf]:honors_resources/introduction.pdf
-[intro_video]:NOT_HERE
+[intro_video]:https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true
