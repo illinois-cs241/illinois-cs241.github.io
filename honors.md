@@ -84,7 +84,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 ## Lectures and Videos
 
-<a href="NOT_HERE">Videos</a>
+<a href="https://recordings.engineering.illinois.edu:8443/ess/portal/section/1946e3ad-25b8-4600-9752-6f2893ad7c84">Videos</a>
 
 | Date        | Lecture Content |
 |:----------- |:------------- |
