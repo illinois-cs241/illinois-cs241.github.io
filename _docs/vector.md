@@ -58,7 +58,7 @@ Here's an illustration:
 
 ![](./images/vector.jpg)
 
-What you'll end up with is a useful general-purpose vector, capable of dynamically expanding and shrinking. (No more fixed-sized buffers, guys!)
+What you'll end up with is a useful general-purpose vector, capable of dynamically expanding and shrinking. (No more fixed-sized buffers!)
 
 Note: Remember that vector size (the number of actual objects held in the vector) and capacity (size of the storage space currently allocated for the vector) are two different things. Refer to documentation in vector.h and vector.c for more information.
 
