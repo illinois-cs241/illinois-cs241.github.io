@@ -89,7 +89,7 @@ You can find all lecture recordings for the semester <a href="https://recordings
 | Date        | Lecture Content | Slides | Recording |
 |:----------- |:--------------- |:------ |:--------- |
 | January 24  | Introduction and Project Development | [[pdf][intro_pdf]] | [[video][intro_video]] |
-| January 31  | Project Brainstorming |
+| January 31  | Project Brainstorming | [[pdf][brainstorming_pdf]] | [[video][brainstorming_video]]
 | February 7  | Security |
 | February 14 | Memory and Garbage Collection |
 | February 21 | Parallel Programming |
@@ -131,3 +131,6 @@ If not here are some project ideas
 
 [intro_pdf]:honors_resources/introduction.pdf
 [intro_video]:https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true
+
+[brainstorming_pdf]:honors_resources/brainstorming.pdf
+[brainstorming_video]:NOT_HERE
