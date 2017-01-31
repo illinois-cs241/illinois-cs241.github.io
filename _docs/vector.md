@@ -42,7 +42,7 @@ However, after hearing tales of your talent, and with vectors being all the rage
 
 ## Vector
 
-A vector is an array that grows and shrinks as a user adds and removes items from it. (Since CS 225 was a prerequisite, you probably knew all of that already.) However, your vector will need to be feature-rich enough for someone to easily create a log or document from it, or anything else the other sneaky teams want for their projects.
+A vector is an array that grows as a user adds and removes items from it. (Since CS 225 was a prerequisite, you probably knew all of that already.) However, your vector will need to be feature-rich enough for someone to easily create a log or document from it, or anything else the other sneaky teams want for their projects.
 
 Your implementation should go in `vector.c`, which is the only file that will be sent to your team lead for review. As an intern looking to become a full-time employee, you should create test cases in `vector_test.c` to show you are a responsible programmer. Your mentor has left notes in `vector.h` guiding your implementation.
 
@@ -58,7 +58,7 @@ Since this vector is generic, it will have to call custom constructor and destru
 
 ![](./images/vector.jpg)-->
 
-What you'll end up with is a useful general-purpose vector, capable of dynamically expanding and shrinking. (No more fixed-sized buffers!)
+What you'll end up with is a useful general-purpose vector, capable of dynamically expanding. (No more fixed-sized buffers!)
 
 Note: Remember that vector size (the number of actual objects held in the vector) and capacity (size of the storage space currently allocated for the vector) are two different things. Refer to documentation in vector.h and vector.c for more information.
 
