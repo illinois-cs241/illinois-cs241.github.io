@@ -110,7 +110,7 @@ You can find all lecture recordings for the semester <a href="https://recordings
 		</td>
 		{% endif %}
 		{% if lecture.video %}
-		<td class="mdl-data-table__cell--non-numeric"><a href="{{lecture.video}}"><img src="./images/lab_assets/animation.png"></a></td>
+		<td class="mdl-data-table__cell--non-numeric"><a href="{{lecture.video}}"><img src="./images/lab_assets/video.png"></a></td>
 		{% else %}
 		<td class="mdl-data-table__cell--non-numeric">
 		</td>
