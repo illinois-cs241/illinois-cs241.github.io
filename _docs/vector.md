@@ -54,9 +54,9 @@ In case a fellow employee asks what you learned in CS 225, here's some review:
 
 Since this vector is generic, it will have to call custom constructor and destructor functions when objects are added or removed. (How is this better than a single function which handles all possible types?) Thus, your vector structure will contain pointers to your constructor or destructor routines, and you can initialize the vector by passing pointers to these functions as parameters.
 
-Here's an illustration:
+<!--Here's an illustration:
 
-![](./images/vector.jpg)
+![](./images/vector.jpg)-->
 
 What you'll end up with is a useful general-purpose vector, capable of dynamically expanding and shrinking. (No more fixed-sized buffers!)
 
