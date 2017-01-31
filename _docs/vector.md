@@ -52,7 +52,7 @@ In case a fellow employee asks what you learned in CS 225, here's some review:
 * [Array Resizing](https://web.archive.org/web/20160119032015/https://chara.cs.illinois.edu/cs225/lectures/slides/lec0928-resizing.pdf)
 * [Lecture Recording](https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/a73d58c6-98a0-4a8c-bf68-f0fb224f5c26)
 
-Since this vector is generic, it will have to call custom constructor and destructor functions when objects are added or removed. (How is this better than a single function which handles all possible types?) Thus, your vector structure will contain pointers to your constructor or destructor routines, and you can initialize the vector by passing pointers to these functions as parameters.
+Since this vector is generic, it will have to call custom constructor, destructor, and default constructor functions when objects are added or removed. (How is this better than a single function which handles all possible types?) Thus, your vector structure will contain pointers to your constructor or destructor routines, and you can initialize the vector by passing pointers to these functions as parameters.
 
 <!--Here's an illustration:
 
