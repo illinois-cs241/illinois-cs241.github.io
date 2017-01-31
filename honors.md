@@ -86,22 +86,55 @@ When you and your group start writing code, we expect you to use git and for eac
 
 You can find all lecture recordings for the semester <a href="https://recordings.engineering.illinois.edu:8443/ess/portal/section/1946e3ad-25b8-4600-9752-6f2893ad7c84">here</a>.
 
-| Date        | Lecture Content | Slides | Recording |
-|:----------- |:--------------- |:------ |:--------- |
-| January 24  | Introduction and Project Development | [[pdf][intro_pdf]] | [[video][intro_video]] |
-| January 31  | Project Brainstorming | [[pdf][brainstorming_pdf]] | [[video][brainstorming_video]]
-| February 7  | Security |
-| February 14 | Memory and Garbage Collection |
-| February 21 | Parallel Programming |
-| February 28 | Linux Kernel |
-| March 7     | Lock-free Data Structures |
-| March 14    | Cloud Computing |
-| March 28    | Peer Mentoring |
-| April 4     | TCP |
-| April 11    | Filesystems |
-| April 18    | TBA |
-| April 25    | Project Presentations |
-| May 2       | Project Presentations |
+
+<!-- Desktop Table -->
+<div class="show-for-large-up">
+<table width = "100%" class="mdl-data-table mdl-js-data-table">
+	  <thead>
+		<tr>
+		  <th class="mdl-data-table__cell--non-numeric">Date</th>
+		  <th class="mdl-data-table__cell--non-numeric">Lecture Content</th>
+		  <th class="mdl-data-table__cell--non-numeric">Slides</th>
+		  <th class="mdl-data-table__cell--non-numeric">Recording</th>
+		</tr>
+	  </thead>
+	  <tbody>
+	{% for lecture in site.data.honors_schedule %}
+	  <tr>
+		<td class="mdl-data-table__cell--non-numeric">{{lecture.date}}</td>
+		<td class="mdl-data-table__cell--non-numeric">{{lecture.content}}</td>
+		{% if lecture.slides %}
+		<td class="mdl-data-table__cell--non-numeric"><a href="./honors_resources/{{lecture.slides}}"><img src="./images/lab_assets/animation.png"></a></td>
+		{% else %}
+		<td class="mdl-data-table__cell--non-numeric">
+		</td>
+		{% endif %}
+		{% if lecture.video %}
+		<td class="mdl-data-table__cell--non-numeric"><a href="{{lecture.video}}"><img src="./images/lab_assets/animation.png"></a></td>
+		{% else %}
+		<td class="mdl-data-table__cell--non-numeric">
+		</td>
+		{% endif %}
+	  </tr>
+	{% endfor %}
+	  </tbody>
+	</table>
+</div>
+<!-- Mobile Table -->
+<div class="hide-for-large-up">
+{% for lecture in site.data.honors_schedule %}
+  <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
+	<tr>
+	  <td class="mdl-data-table__cell--non-numeric">Date</td>
+	  <td>{{lecture.date}}</td>
+	</tr>
+	<tr>
+	  <td class="mdl-data-table__cell--non-numeric">Lecture Content</td>
+	  <td>{{lecture.content}}</td>
+	</tr>
+  </table>
+{% endfor %}
+</div>
 
 ## Project Ideas?
 
@@ -127,10 +160,3 @@ If not here are some project ideas
     * High Performance Threading Library with Purpose
 * Memory Management
     * Garbage Collection
-
-
-[intro_pdf]:honors_resources/introduction.pdf
-[intro_video]:https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true
-
-[brainstorming_pdf]:honors_resources/brainstorming.pdf
-[brainstorming_video]:NOT_HERE
