@@ -112,7 +112,7 @@ The 3 hour handwritten final exam is comprehensive and will test all CS241 topic
 Grading issues should be raised with your TA e.g. during section or by email. Missing scores need to be reported on or before the next section.
 
 ## Exams
-All exams except the final are in the CBTF and require signing up here: <https://edu.cs.illinois.edu/testcenter>
+All exams except the final are in the CBTF and require signing up here: <https://cbtf.engr.illinois.edu/>
 
 Approximate schedule (subject to change). The CBTF schedule when known will be published Piazza but is also available at the above link.
 
