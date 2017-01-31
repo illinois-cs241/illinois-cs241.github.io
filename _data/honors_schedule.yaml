@@ -1,0 +1,72 @@
+---
+# Honors Schedule
+  -
+    date: "January 24"
+    content: "Introduction and Project Development"
+    slides: "introduction.pdf"
+    video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true"
+  -
+    date: "January 31"
+    content: "Project Brainstorming"
+    slides: "brainstorming.pdf"
+    video:
+  -
+    date: "February 7"
+    content: "Security"
+    slides:
+    video:
+  -
+    date: "February 14"
+    content: "Memory and Garbage Collection"
+    slides:
+    video:
+  -
+    date: "February 21"
+    content: "Parallel Programming"
+    slides:
+    video:
+  -
+    date: "February 28"
+    content: "Linux Kernel"
+    slides:
+    video:
+  -
+    date: "March 7"
+    content: "Lock-free Data Structures"
+    slides:
+    video:
+  -
+    date: "March 14"
+    content: "Cloud Computing"
+    slides:
+    video:
+  -
+    date: "March 28"
+    content: "Peer Mentoring"
+    slides:
+    video:
+  -
+    date: "April 4"
+    content: "TCP"
+    slides:
+    video:
+  -
+    date: "April 11"
+    content: "Filesystems"
+    slides:
+    video:
+  -
+    date: "April 18"
+    content: "TBA"
+    slides:
+    video:
+  -
+    date: "April 25"
+    content: "Project Presentations"
+    slides:
+    video:
+  -
+    date: "May 2"
+    content: "Project Presentations"
+    slides:
+    video:
