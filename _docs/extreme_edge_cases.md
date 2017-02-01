@@ -44,7 +44,7 @@ In this Lab, your goal is to create and test the behavior of an arbitrary string
 We have chosen
 
 ```
-char ** camel_caser(const char* input)
+char **camel_caser(const char* input)
 ```
 
 as your arbitrary string manipulation function.
@@ -109,7 +109,7 @@ array[0]
 
 will return a character pointer. Dereferencing that character pointer gets me an actual character. For demonstration purposes I am going to show you how to grab the character "s" in "as".
 
-```
+```C
 // Take array and move it over by 3 times the size of a char pointer.
 char **ptr = array + 3;
 // Deference ptr to get back a character pointer pointing to the beginning of "as".
