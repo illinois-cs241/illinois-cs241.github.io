@@ -24,7 +24,7 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
 - _layouts: hold layout templates
   - doc.html: layout template for documentation
 - _docs: where all the documentation is stored as markdown
-- _sass: sass files (files named approriately)
+- _sass: sass files (files named appropriately)
 - css: holds css
 - images: holds images
 - js: holds javascripts
@@ -53,7 +53,7 @@ To create a new doc, all you need to do is create a new file in the `_docs` dire
 
 ### Content for this file
 
-Once you have created this file you can add all the markdown you please. Somethings to take note of is that javascript will run to make all the areas between `h2`/`##` tags into sections and add an entry to the table of content. The title of the section and the entry of in the table of content is exactly the text that comes after your `h2`/`##`. Also `h1`/`#` is reserved for the title which will automatically be added in. If you get stuck trying to format something with markdown, then you can just write html and it will get injected (but, then I will be dissapointed in you).
+Once you have created this file you can add all the markdown you please. Somethings to take note of is that javascript will run to make all the areas between `h2`/`##` tags into sections and add an entry to the table of content. The title of the section and the entry of in the table of content is exactly the text that comes after your `h2`/`##`. Also `h1`/`#` is reserved for the title which will automatically be added in. If you get stuck trying to format something with markdown, then you can just write html and it will get injected (but, then I will be disappointed in you).
 
 ### Front Matter (configurations)
 
@@ -135,7 +135,7 @@ wikibook:
   - "Synchronization, Part 6: Implementing a barrier"
 ```
 
-Will automatically add a section labeled "Suggested Readings" to the top of the docs. Note that these are the titles of the pages of the wikibook and must be wrapped in quotes to escape the ":". This will also automatically generate the links to the wikibook (and only wikibook). If you want to link to something outside of the wikibook, then you will need to create another section for that. 
+Will automatically add a section labeled "Suggested Readings" to the top of the docs. Note that these are the titles of the pages of the wikibook and must be wrapped in quotes to escape the ":". This will also automatically generate the links to the wikibook (and only wikibook). If you want to link to something outside of the wikibook, then you will need to create another section for that.
 
 If you do not want students to be able to access this page (say you are beta testing), then put them in `_drafts` and you can preview the site with `--drafts`, when you build with Jekyll.
 
