@@ -7,7 +7,7 @@ This course will challenge you as a programmer and nascent computer scientist of
 
 ## Course Description (Formal)
 System programming refers to writing code that tasks advantage of operating system support for programmers.
-This course is designed to introduce you to system programming. 
+This course is designed to introduce you to system programming.
 
 A computer needs an operating system to manage its resources and provide support for common functions such as accessing peripherals.
 There are two categories of "customers" that an operating system must support.
@@ -63,7 +63,7 @@ By the end of the course you should be proficient with this programming environm
 
 A really useful, accessible introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
 
-Angrave's mini searchable video* introduction and playful _system programming-in-the-browser_ environment is at:  
+Angrave's mini searchable video* introduction and playful _system programming-in-the-browser_ environment is at:
 [cs-education.github.io/sys/](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
 No formal textbook is required but if you really want to buy some books we recommend the following custom book Angrave put together in 2007:
@@ -97,15 +97,15 @@ Lab Programming Assignments: 13%
 Lab Attendance & other items: 4%
 ```
 
-We publish the following thresholds: 
+We publish the following thresholds:
 
-|   Points   |  Minimum Grade  | 
+|   Points   |  Minimum Grade  |
 |------------|-----------------|
 | [92 - 100] | A-              |
 | [82 - 92)  | B-              |
-| [72 - 82)  | C-              | 
+| [72 - 82)  | C-              |
 
-If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the mp programming assignments are weighted by the time we give to complete them. There are multiple choice quizzes at the testing center approximately every other week. There will be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (gedit,vim,gcc,man,make,bash terminal etc) but in an exam environment. Runnable tests will be provided. The quizzes and midterms will be in room 57 Grainger Library (to the far left side of the basement) and you will be asked to register for a time slot that works for you. The signup link is [here](https://edu.cs.illinois.edu/testcenter/) (Chrome recommended). Rules, requirements and expectations of the testing center are [here](https://edu.cs.illinois.edu/cbtf/). For grading we will drop your lowest quiz score, lowest lab score and 1 lab attendance. Sickness/ vacation / sleep *  whatever *  we don't care. Unless exceptions (which are almost never granted) have been arranged with the course admin (cs241admin@illinois.edu) or Director of Undergrad studies: Miss 3+ sections or 3+ quizzes is automaticaully a failing grade.
+If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the mp programming assignments are weighted by the time we give to complete them. There are multiple choice quizzes at the testing center approximately every other week. There will be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided. The quizzes and midterms will be in room 57 Grainger Library (to the far left side of the basement) and you will be asked to register for a time slot that works for you. The signup link is [here](https://edu.cs.illinois.edu/testcenter/) (Chrome recommended). Rules, requirements and expectations of the testing center are [here](https://edu.cs.illinois.edu/cbtf/). For grading we will drop your lowest quiz score, lowest lab score and 1 lab attendance. Sickness/ vacation / sleep _whatever_  we don't care. Unless exceptions (which are almost never granted) have been arranged with the course admin (cs241admin@illinois.edu) or Director of Undergrad studies: Missing 3 (or more) sections or 3 (or more) quizzes is automatically a failing grade.
 
 The 3 hour handwritten final exam is comprehensive and will test all CS241 topics including programming topics covered in the MP and Labs. Do not book your flights until the exam date is known. Early exams will not be offered. Conflict final exams will be offered if you have 3 exams in a 24 hour period or you have an exam in another, smaller enrollment course at the same time.
 
@@ -116,7 +116,7 @@ All exams except the final are in the CBTF and require signing up here: <https:/
 
 Approximate schedule (subject to change). The CBTF schedule when known will be published Piazza but is also available at the above link.
 
-|  Week  | Exam             | 
+|  Week  | Exam             |
 |--------|------------------|
 | Week 4 | Quiz 1           |
 | Week 5 | Quiz 2           |
@@ -134,9 +134,9 @@ The practice midterm is ungraded (worth 0% of your final grade).
 Unlike the real midterm there are no unit-tests provided.
 This exam will let you practice using `man` from the command line (ex. `man 2 open` will open the documentation on the system call `open`).
 Note that the C library calls are in section 3.
-This exam will also let you practice using the provided text editors: vim, nano, gedit, etc.
+This exam will also let you practice using the provided text editors: vim, `nano`, `gedit`, etc.
 The practice exam is not required, but we highly encourage you to take it.
-You will get to practice your CS 241 skills and exam logistics and therefore more likely to succeed on the real midterm. 
+You will get to practice your CS 241 skills and exam logistics and therefore more likely to succeed on the real midterm.
 
 ## Absences
 If your absence is unplanned—if you have a sudden illness or have a sudden death in the family—we will deal with your situation on a case-by-case basis with the course admin (cs241admin@illinois.edu).
@@ -166,6 +166,6 @@ CS241 is considered a critical step in your ability to create useful programs fo
 
 <span style="color:red">EVERY ASSIGNMENT IS A SOLO ASSIGNMENT IN THIS CLASS!</span>. This means you are not allowed to split the work with a partner unlike other 2xx classes. You are however allowed to discuss the assignments at a very high level.
 
-Additionally, you may not publish your solutions or leave them in 'plain view' thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicy accesible, then you will receive a letter grade reduction for each assignment. For example, if we find your code on GitHub for one MP then you will receive a letter grade reduction. 2 letter grades for 2 assignments and so on. If you are confused on what it means to be 'publicly accessible', then do not put your code anywhere besides <https://subversion.ews.illinois.edu> and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
+Additionally, you may not publish your solutions or leave them in 'plain view' thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction for each assignment. For example, if we find your code on GitHub for one MP then you will receive a letter grade reduction. 2 letter grades for 2 assignments and so on. If you are confused on what it means to be 'publicly accessible', then do not put your code anywhere besides <https://subversion.ews.illinois.edu> and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
 
 We want you to get the most out your education and cheating not only affects your peers but also you.
