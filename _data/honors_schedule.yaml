@@ -9,7 +9,7 @@
     date: "January 31"
     content: "Project Brainstorming"
     slides: "brainstorming.pdf"
-    video:
+    video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
   -
     date: "February 7"
     content: "Security"
