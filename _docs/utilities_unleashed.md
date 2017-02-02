@@ -67,7 +67,7 @@ then time will run `sleep` with the argument `2` and record how long it took in 
 2.002345 seconds
 ```
 
-For more examples, you can play with the UNIX's builtin `time` command by typing `time YOURCOMMAND` (`time ls -l`, for example) in your terminal. Be sure to add `./` (or the path to your `time` executable file if you are under the different folder) at the beginning, otherwise the UNIX's `time` will be called.
+For more examples, you can play with the UNIX's builtin `time` command by typing `time YOURCOMMAND` (`time ls -l`, for example) in your terminal. Be sure to add `./` (or the path to your `time` executable file if you are in another directory) at the beginning, otherwise the UNIX's `time` will be called.
 
 Note that we only care about [wall-clock time](https://en.wikipedia.org/wiki/Wall-clock_time), and we recommend using [`clock_gettime`](http://linux.die.net/man/3/clock_gettime) with `CLOCK_MONOTONIC`.
 
@@ -114,7 +114,7 @@ When run with arguments, it will be given at least two, and will be called like 
 *   Each reference to `<srcvar>` should be replaced with the value of `<srcvar>`.
 *   The names of the variables `<destvar>` and `<srcvar>` will contain only letters, numbers, or underscore characters.
 *   For each environment variable change in `<var-list>`, your program will assign `<value>` to `<destvar>` in the current environment so when `<command-name>` is executed, it will inherit the new value of the `<destvar>` variable.
-*   Any invalid input passed to `env` should result in the above usage being printed
+*   Any invalid input passed to `env` should result in the above usage being printed.
 
 For example, if the user enters:
 
@@ -140,9 +140,11 @@ And, if the user enters:
 
 then it changes the `PATH`, `IDIR`, and `LIBDIR` variables while running `make` with the `j4` option.
 
-*   `env` update the environment variables sequentially. For example, `./env PATH=%HOME,IDIR=%PATH` will update `$PATH` before we start processing `$IDIR`, so it would be equal to `$HOME`.
+*   `env` updates the environment variables sequentially. For example, `./env PATH=%HOME,IDIR=%PATH` will update `$PATH` before we start processing `$IDIR`, so it would be equal to `$HOME`.
 
 Again like `time`, you can play with the UNIX's builtin `env` command by typing `env <var-list> <command-name>` (`env MYVAR=CS241 printenv`, for example) in your terminal. Notice, when running your own program, you should always remember to put `./` (or the path to your `env` executable file if you are under different folder) at the beginning, otherwise the UNIX's `env` will be called.
+
+In addition, keep in mind that variable names are denoted by the `$` symbol and are separated by spaces instead of commas.
 
 In practice, it can be very useful to change some environment variables when running certain command.
 
