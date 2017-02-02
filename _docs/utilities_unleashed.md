@@ -113,7 +113,7 @@ For example, if the user enters:
 ./env
 ```
 
-then you should print out all the environment variables.
+then you should print out all the environment variables and their values, like the builtin Linux `env` command.
 
 If the user enters:
 
