@@ -38,15 +38,6 @@ Since this lab requires your programs to print messages to stdout and stderr, we
 
 There is no provided format function for printing the envrionment variables. To do so, you should print each one on its own line (e.g. with `printf("%s\n")`).
 
-
-## Setup
-
-```
-cd ~/cs241
-svn up
-cd utilities_unleashed
-```
-
 ## time
 
 In this lab, you will be implementing `time`.
