@@ -34,7 +34,7 @@ Notes:
 
 ## format.c and .h
 
-Since this lab requires your programs to print messages to stdout and stderr, we have provided you with `format.c` and `format.h`. You should not be printing out to stdout and stderr at all, expect for the print feature of `env`; instead, you should be using the provided functions. You can find documentation for each function in `format.h`. This is our way of ensuring that you do not lose points for formatting issues, but it also means that you are responsible for handling any errors mentioned in `format.c` and `format.h`.
+Since this lab requires your programs to print messages to stdout and stderr, we have provided you with `format.c` and `format.h`. You should not be printing out to stdout and stderr at all, except for the print feature of `env`; instead, you should be using the provided functions. You can find documentation for each function in `format.h`. This is our way of ensuring that you do not lose points for formatting issues, but it also means that you are responsible for handling any errors mentioned in `format.c` and `format.h`.
 
 There is no provided format function for printing the envrionment variables. To do so, you should print each one on its own line (e.g. with `printf("%s\n")`).
 
