@@ -36,7 +36,7 @@ Notes:
 
 Since this lab requires your programs to print messages to stdout and stderr, we have provided you with `format.c` and `format.h`. You should not be printing out to stdout and stderr at all, except for the print feature of `env`; instead, you should be using the provided functions. You can find documentation for each function in `format.h`. This is our way of ensuring that you do not lose points for formatting issues, but it also means that you are responsible for handling any errors mentioned in `format.c` and `format.h`.
 
-There is no provided format function for printing the envrionment variables. To do so, you should print each one on its own line (e.g. with `printf("%s\n")`).
+There is no provided format function for printing the environment variables. To do so, you should print each one on its own line (e.g. with `printf("%s\n")`).
 
 ## time
 
@@ -52,13 +52,13 @@ So if a user enters:
 ./time sleep 2
 ```
 
-then time will run `sleep` with the argument `2` and record how long it took in seconds:
+then time will run `sleep` with the argument `2` and print how long it took in seconds:
 
 ```
 2.002345 seconds
 ```
 
-For more examples, you can play with the UNIX's builtin `time` command by typing `time YOURCOMMAND` (`time ls -l`, for example) in your terminal. Be sure to add `./` (or the path to your `time` executable file if you are in another directory) at the beginning, otherwise the UNIX's `time` will be called.
+For more examples, you can play with Linux's builtin `time` command by typing `time YOURCOMMAND` (`time ls -l`, for example) in your terminal. Be sure to add `./` to the beginning (or use the full path to your `time` executable file if you are in another directory), otherwise the builtin `time` will be called.
 
 Note that we only care about [wall-clock time](https://en.wikipedia.org/wiki/Wall-clock_time), and we recommend using [`clock_gettime`](http://linux.die.net/man/3/clock_gettime) with `CLOCK_MONOTONIC`.
 
@@ -68,7 +68,7 @@ Nota bene:
 
 *   You __may not__ use on the existing `time` program.
 *   You must use `fork`, `exec`, and `wait` (no other solutions will be accepted).
-*   If the child process does not terminate successfully (where its exit status is non-zero), you should exit with status 1 and _not_ print the time.
+*   If the child process does not terminate successfully (where its exit status is non-zero), you should exit with status 1 _without_ printing the time.
 *   We will only run `time` with one program.
 *   The commands we will run can take any number of arguments.
 *   Do your time computations with double-precision floating pointer numbers (`double`) rather that single-precision (`float`).
@@ -113,7 +113,7 @@ For example, if the user enters:
 ./env
 ```
 
-then you should print out all the environment variables. Try `./env_reference` in your terminal to see it in action.
+then you should print out all the environment variables.
 
 If the user enters:
 
@@ -131,11 +131,11 @@ And, if the user enters:
 
 then it changes the `PATH`, `IDIR`, and `LIBDIR` variables while running `make` with the `j4` option.
 
-*   `env` updates the environment variables sequentially. For example, `./env PATH=%HOME,IDIR=%PATH` will update `$PATH` before we start processing `$IDIR`, so it would be equal to `$HOME`.
+`env` updates the environment variables sequentially. For example, `./env PATH=%HOME,IDIR=%PATH` will update `$PATH` before we start processing `$IDIR`, so `$IDIR` would be equal to `$HOME`.
 
-Again like `time`, you can play with the UNIX's builtin `env` command by typing `env <var-list> <command-name>` (`env MYVAR=CS241 printenv`, for example) in your terminal. Notice, when running your own program, you should always remember to put `./` (or the path to your `env` executable file if you are under different folder) at the beginning, otherwise the UNIX's `env` will be called.
+Again like `time`, you can play with Linux's builtin `env` command by typing `env <var-list> <command-name>` (`env MYVAR=CS241 printenv`, for example) in your terminal. Again, remember to add `./` to the beginning (or the full path to your `env` executable file if you are in another directory), otherwise the builtin `env` will be called.
 
-In addition, keep in mind that variable names are denoted by the `$` symbol and are separated by spaces instead of commas.
+In addition, keep in mind that the builtin `env` uses `$` instead of `%` to denote environment variables, and they are separated by spaces in the var list instead of commas.
 
 In practice, it can be very useful to change some environment variables when running certain command.
 
@@ -153,9 +153,9 @@ then it runs the script with the desired Python interpreter.
 
 Nota bene:
 
-*   You __may not__ use the existing env program.
+*   You __may not__ use the existing `env` program.
 *   You __may not__ replace `%` with `$` or use `wordexp(3)`.
-*   You __may not__ use `execvpe`
+*   You __may not__ use `execvpe`.
 *   All changes in enviroment variables and execution must happen only in the child process.
 *   You must use `fork`/`exec`/`wait`.
 *   If a variable doesn't exist, interpret its value as a zero-length string.
@@ -163,7 +163,7 @@ Nota bene:
 
 ### Useful Resources
 
-*   [Envionrment variables](http://cs-education.github.io/sys/#chapter/2/section/1/activity/0)
-*   [Enviornment variable functions](http://www.gnu.org/software/libc/manual/html_node/Environment-Variables.html)
+*   [Environment variables](http://cs-education.github.io/sys/#chapter/2/section/1/activity/0)
+*   [Environment variable functions](http://www.gnu.org/software/libc/manual/html_node/Environment-Variables.html)
 *   [string.h](http://man7.org/linux/man-pages/man3/string.3.html)
 *   [Split a string by a delimiter](https://www.quora.com/How-do-you-write-a-C-program-to-split-a-string-by-a-delimiter)
