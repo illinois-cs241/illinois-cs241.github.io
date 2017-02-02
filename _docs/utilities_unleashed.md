@@ -3,7 +3,7 @@ layout: doc
 title: "Utilities Unleashed"
 submissions:
 - title: Entire Assignment
-  due_date: 09/14/2016, 11:59 PM
+  due_date: 02/08/16, 11:59 PM
   graded_files:
   - env.c
   - time.c
@@ -67,7 +67,7 @@ then time will run `sleep` with the argument `2` and record how long it took in 
 2.002345 seconds
 ```
 
-For more examples, you can play with the UNIX's builtin `time` command by typing `time YOURCOMMAND` (`time ls -l`, for example) in your terminal. Be sure to add `./` (or the path to your `time` executable file if you are under the different folder) at the beginning, otherwise the UNIX's `time` will be called. 
+For more examples, you can play with the UNIX's builtin `time` command by typing `time YOURCOMMAND` (`time ls -l`, for example) in your terminal. Be sure to add `./` (or the path to your `time` executable file if you are under the different folder) at the beginning, otherwise the UNIX's `time` will be called.
 
 Note that we only care about [wall-clock time](https://en.wikipedia.org/wiki/Wall-clock_time), and we recommend using [`clock_gettime`](http://linux.die.net/man/3/clock_gettime) with `CLOCK_MONOTONIC`.
 
@@ -114,7 +114,7 @@ When run with arguments, it will be given at least two, and will be called like 
 *   Each reference to `<srcvar>` should be replaced with the value of `<srcvar>`.
 *   The names of the variables `<destvar>` and `<srcvar>` will contain only letters, numbers, or underscore characters.
 *   For each environment variable change in `<var-list>`, your program will assign `<value>` to `<destvar>` in the current environment so when `<command-name>` is executed, it will inherit the new value of the `<destvar>` variable.
-*   Any invalid input passed to `env` should result in the above usage being printed 
+*   Any invalid input passed to `env` should result in the above usage being printed
 
 For example, if the user enters:
 
