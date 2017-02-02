@@ -16,6 +16,7 @@
     releaseDate: "Week 3"
     dueDate: "Week 4"
     url: "utilities_unleashed"
+    resources: true
   -
     name: "Mini Valgrind"
     releaseDate: "Week 4"

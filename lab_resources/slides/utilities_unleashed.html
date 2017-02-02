@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lab 3 - Processes">
+  <title>CS241</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/lib/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/lib/reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/lib/reveal.js/css/print/pdf.css' : '/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">CS241</h1>
+  <p class="author">Lab 3 - Processes</p>
+</section>
+
+<section><section id="processes" class="titleslide slide level1"><h1>Processes!</h1></section><section id="address-space" class="slide level2">
+<h2>Address Space</h2>
+</section><section class="slide level2">
+
+<figure>
+<img src="/lab_resources/slides/fork/address_space.jpg" />
+</figure>
+</section><section id="what-is-copied-over" class="slide level2">
+<h2>What is Copied Over?</h2>
+</section><section id="forkbomb" class="slide level2">
+<h2>Forkbomb</h2>
+</section><section id="process-flowchart" class="slide level2">
+<h2>Process Flowchart</h2>
+</section><section class="slide level2">
+
+</section></section>
+<section><section id="utilities-unleashed" class="titleslide slide level1"><h1>Utilities Unleashed</h1></section></section>
+<section><section id="what-are-you-going-to-learn" class="titleslide slide level1"><h1>What are you going to learn?</h1></section><section id="all-fork-exec-wait-code" class="slide level2">
+<h2>All Fork-Exec-Wait Code</h2>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">pid_t pid = fork();
+<span class="cf">if</span>(pid == -<span class="dv">1</span>){
+    <span class="co">//fork failed</span>
+}<span class="cf">else</span> <span class="cf">if</span>(pid == <span class="dv">0</span>){
+    <span class="co">//I am the child</span>
+    exec(...)
+}<span class="cf">else</span>{
+    <span class="co">//I Am the parent</span>
+    wait(pid);
+}</code></pre></div>
+</section><section id="exec-family" class="slide level2">
+<h2>Exec Family</h2>
+<ul>
+<li>There are three modifiers/mnemonic
+<ul>
+<li>Either past a <strong>l</strong>ist or arg<strong>v</strong> (null terminated array) of arguments</li>
+<li>Search for the executable either in the current directory or in the <strong>p</strong>ath</li>
+<li>Use the parent’s environment variables or use an <strong>e</strong>nvironment setting</li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>Here are the list <code>exec</code>
+<ul>
+<li><code>execl( path, arg, … )</code>,execute the file in current directory</li>
+<li><code>execlp( file, arg, … )</code>, executes a file only searching in the path</li>
+<li><code>execle( path, arg, …, envp[])</code>, execute the file in path + environment settings</li>
+</ul></li>
+</ul>
+</section><section class="slide level2">
+
+<ul>
+<li>Pass an array of string as arguments
+<ul>
+<li><code>execv( path, argv[])</code>, execute the file in current directory</li>
+<li><code>execvp( file, argv[])</code>, execute the file in the path only</li>
+<li><code>execvpe( file, argv[]), envp[])</code> // environment setting</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="time" class="titleslide slide level1"><h1>time</h1></section><section id="time-workflow" class="slide level2">
+<h2>time Workflow</h2>
+<figure>
+<img src="/lab_resources/slides/fork/time_workflow.png" />
+</figure>
+</section><section id="helper-functions" class="slide level2">
+<h2>Helper Functions</h2>
+<ul>
+<li><code>struct timespec</code>
+<ul>
+<li><code>time_t tv_sec</code>;</li>
+<li><code>long tv_nsec</code>;</li>
+<li><code>tv_sec = 10</code>, <code>tv_nsec = 992300000</code> -&gt; <code>10.9923 sec</code></li>
+</ul></li>
+<li><code>int clock_gettime(clockid_t, timespec *)</code>;
+<ul>
+<li><code>clockid_t</code>: should use CLOCK_MONOTONIC in this lab</li>
+</ul></li>
+<li>return 0 when success, -1 otherwise</li>
+</ul>
+</section></section>
+<section><section id="env" class="titleslide slide level1"><h1>env</h1></section><section id="env-workflow" class="slide level2">
+<h2>env Workflow</h2>
+<figure>
+<img src="/lab_resources/slides/fork/env_workflow.png" />
+</figure>
+</section><section id="helper-functions-1" class="slide level2">
+<h2>Helper Functions</h2>
+<ul>
+<li><code>int setenv(const char* name, const char* value,</code><br />
+<code>int overwrite)</code></li>
+<li><code>char *getenv(const char *name)</code></li>
+<li>Write a split function that can split string based on <code>,</code></li>
+<li>Write a function that can find all <code>%notation</code> in a string</li>
+<li>Extend that function so that you can replace variables<br />
+with environment variables</li>
+<li>Use getenv to get environment variables</li>
+<li>Be familiar with: return array of strings, clear an array<br />
+of strings-&gt; camelCasers</li>
+</ul>
+</section></section>
+<section><section id="authors-steve-bhuvan" class="titleslide slide level1"><h1>Authors: Steve &amp; Bhuvan</h1></section></section>
+    </div>
+  </div>
+
+  <script src="/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: '/lib/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
