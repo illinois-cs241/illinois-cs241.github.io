@@ -108,7 +108,7 @@ note: You may be wondering why we use `ctrl+x` instead of `ctrl+s` to save. By d
 
 In order to keep track of the cursor position, we have provided a struct typedef'ed to `location` defined in editor.h as:
 
-```
+```C
 typedef struct {
   size_t line_no;
   size_t idx;
@@ -320,30 +320,7 @@ For example, you could implement a copy/paste function for lines or words.
 Share your extensions on Piazza if you come up with a cool feature!
 
 
-## Compile and run
+## Testing
 
-Because we have provided `Document` and `Vector` as a precompiled archive
-file, please make sure to work on this assignment on your student VM. We
-can't say what will happen on any other machine when you try to compile the
-assignment.
-
-To compile the release version of the code, run:
-
-```
-make
-```
-
-This will compile your code with some optimizations enabled. If you use a
-debugger on the 'release' build, it will not be able to show you the original
-source code, or line numbers, most of the time. Optimizations sometimes expose
-some bugs in your code that would not show up when no optimizations are enabled,
-but since optimizations tend to reorder your code while compiling, an optimized
-version of your code is not optimal for debugging.
-
-To compile your code in debug mode, run `make debug` instead of `make`.
-
-If you compile in release mode, you will an executable called `editor`. If you
-compile in debug mode, you will get an executable call `editor-debug`.
-
-We have also provided a file `editor_test.c` where you can programmatically test
+We have provided a file `editor_test.c` where you can programmatically test
 your editor. This compiles to `editor_test` and `editor_test-debug`. We STRONGLY reccomend testing by adding test cases to `editor_test.c` and running `editor_test` instead of testing using `editor` as the tui may overwrite any print statements you wanted to see.
