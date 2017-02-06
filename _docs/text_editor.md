@@ -162,7 +162,7 @@ If a user were to call `handle_insert_command()` with
 The result of the file would be
 
 ```
-1    mpeanutsug
+1    mpeanuts ug
 2    salt
 3    T.V. remote
 ```
