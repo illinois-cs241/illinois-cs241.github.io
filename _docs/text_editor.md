@@ -58,11 +58,14 @@ Please keep the following in mind when implementing your text editor:
 * All your editor operations should use the `Document` library to modify the
   document. Don't write directly to the file!
 
-## Valid documents?
-As for opening documents, assume that the document will always be a document
+## Valid documents and inputs?
+For opening documents, assume that the document will always be a document
 created from this text editor. That means it will always have valid characters.
 
 Remember! An empty or non-existant file can be a valid document!
+
+Additionally, keep in mind that for all functions that take in a character index, we guarantee that the index is always within the range of 0 and the length of the current line, inclusive.
+
 
 ## Format library
 We have provided a format library that handles all printing to `stdout` or `stderr`.  This is to ensure that you do not lose points for not matching the format that the autograder expects.
