@@ -173,7 +173,9 @@ Note: If the line a user is inserting to is currently empty, that's fine!
 
 Note: If your editor is asked to insert to a line that does not exist
 yet, then it should fill in the gap with empty lines. (How can you use
-`Document` to make this easy?)
+`Document` to make this easy?). You must handle inserts at the end
+of a line (so that appending text is possible), but you do not need
+to handle inserts past the end of line.
 
 
 ## Deleting text
