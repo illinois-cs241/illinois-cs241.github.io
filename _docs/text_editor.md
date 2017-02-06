@@ -19,6 +19,7 @@ wikibook:
   - "Memory, Part 1: Heap Memory Introduction"
 ---
 
+
 ## Backstory
 You have just finished implementing a `Document` library, and now your mentor
 wants you to implement a text editor using it. Since you've already turned your
