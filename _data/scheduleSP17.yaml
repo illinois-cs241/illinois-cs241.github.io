@@ -79,17 +79,17 @@
       -
         title: "Memory allocators I"
         summary: "9. Hone your pointer skills when writing malloc and free."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-2%3A-Implementing-a-Memory-Allocator'>Memory, Part 2</a>"
         color: "#9C27B0"
       -
         title: "Memory allocators II "
         summary: "10. Memory allocators part 2."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-2%3A-Implementing-a-Memory-Allocator'>Memory, Part 2</a>"
         color: "#9C27B0"
       -
         title: "Threads"
         summary: "11. Introducing pthreads. stacks. Concurrency programming gotchas."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Pthreads%2C-Part-1%3A-Introduction'>Intro to Threads</a>"
         color: "#673AB7"
     week: "2/6 - 2/10"
     announcement: >
