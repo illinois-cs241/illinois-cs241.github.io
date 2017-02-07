@@ -267,7 +267,7 @@ hint: `man strstr`
 ## Merging Lines
 When a user enters a backspace at the beginning of a line or delete at the end of a line, then the previous line and the current line should merge (if you used backspace, vice versa for delete).  
 
-You must implement the function `handle_merge_line`. This function has a `location` as an argument and requires you to merge the line located at `loc.line_no` with the line located at `loc.line_no - 1`. (We will ALWAYS call this function with a valid line number such that `loc.line_no` and `loc.line_no - 1` both exist)
+You must implement the function `handle_merge_line`. This function has a `location` as an argument and requires you to merge the line located at `loc.line_no` with the line located at `loc.line_no + 1`. (We will ALWAYS call this function with a valid line number such that `loc.line_no` and `loc.line_no + 1` both exist)
 
 An example using the same lines as in the first example:
 
