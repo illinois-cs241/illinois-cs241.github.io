@@ -105,22 +105,22 @@
       -
         title: "Threads and mutex locks"
         summary: "12. Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-1%3A-Mutex-Locks'>Synchronization, Part 1: Mutex Locks</a>"
         color: "#673AB7"
       -
         title: "Mutexes and semaphores"
         summary: "13. Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-5'>wikibook week 5</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-3%3A-Working-with-Mutexes-And-Semaphores'>Synchronization, Part 3: Working with Mutexes And Semaphores</a>."
         color: "#2196F3"
       -
         title: "Critical Section Problem"
         summary: "14. Mutex and Semaphore examples. How to implement a lock (The critical section problem)."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 5</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-4%3A-The-Critical-Section-Problem'>Synchronization, Part 4: The Critical Section Problem</a>"
         color: "#2196F3"
     week: "2/13 - 2/17"
     announcement: >
       <ul>
-        <li>Quiz 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a></li>
+        <li>Quiz 2: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
         <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
         <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
         <li>MP: <a target='blank' href='./Shell'>Shell</a> Due</li>
