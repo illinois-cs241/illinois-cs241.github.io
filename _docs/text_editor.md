@@ -64,8 +64,7 @@ created from this text editor. That means it will always have valid characters.
 
 Remember! An empty or non-existant file can be a valid document!
 
-Additionally, keep in mind that for all functions that take in a character index, we guarantee that the index is always within the range of 0 and the length of the current line, inclusive.
-
+Additionally, keep in mind that for all functions that take in a location or line number, the line numbers will be in the range [1, Document_size(document)] and character indicies in the range [0, strlen(Document_get_line(document, line_no))]. 
 
 ## Format library
 We have provided a format library that handles all printing to `stdout` or `stderr`.  This is to ensure that you do not lose points for not matching the format that the autograder expects.
@@ -268,7 +267,7 @@ hint: `man strstr`
 ## Merging Lines
 When a user enters a backspace at the beginning of a line or delete at the end of a line, then the previous line and the current line should merge (if you used backspace, vice versa for delete).  
 
-You must implement the function `handle_merge_line`. This function has a `location` as an argument and requires you to merge the line located at `loc.line_no` with the line located at `loc.line_no - 1`. (We will provide the appropriate line number, don't worry about the different cases for backspace and delete).
+You must implement the function `handle_merge_line`. This function has a `location` as an argument and requires you to merge the line located at `loc.line_no` with the line located at `loc.line_no - 1`. (We will ALWAYS call this function with a valid line number such that `loc.line_no` and `loc.line_no - 1` both exist)
 
 An example using the same lines as in the first example:
 
