@@ -13,7 +13,7 @@
   -
     date: "February 7"
     content: "Security"
-    slides:
+    slides: "security.pdf"
     video:
   -
     date: "February 14"
