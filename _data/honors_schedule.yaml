@@ -17,17 +17,17 @@
     video:
   -
     date: "February 14"
-    content: "Memory and Garbage Collection"
+    content: "Linux Kernel"
     slides:
     video:
   -
     date: "February 21"
-    content: "Parallel Programming"
+    content: "Memory and Garbage Collection"
     slides:
     video:
   -
     date: "February 28"
-    content: "Linux Kernel"
+    content: "Parallel Programming"
     slides:
     video:
   -
