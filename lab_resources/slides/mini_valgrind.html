@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Memory">
+  <title>CS241</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/lib/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/lib/reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/lib/reveal.js/css/print/pdf.css' : '/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">CS241</h1>
+  <p class="author">Memory</p>
+</section>
+
+<section><section id="question-1" class="titleslide slide level1"><h1>Question 1</h1></section><section id="allocation" class="slide level2">
+<h2>Allocation!</h2>
+</section></section>
+<section><section id="question-2---formulas" class="titleslide slide level1"><h1>Question 2 - Formulas</h1></section><section class="slide level2">
+
+<p>I know that you don’t like these formulas or this pseudocode. It helps a lot though to write out the pseudocode and think about all of the possible outcomes</p>
+</section></section>
+<section><section id="lab-time" class="titleslide slide level1"><h1>Lab Time!</h1></section><section id="why-am-i-doing-this-lab" class="slide level2">
+<h2>Why am I doing this lab?</h2>
+<ul>
+<li>Learn how Valgrind works</li>
+<li>Learn memory layout and how malloc/free works</li>
+<li>How does free know how many bytes it has to free?</li>
+</ul>
+</section><section id="memory-in-c" class="slide level2">
+<h2>Memory in C</h2>
+<p>So we are going to do a little review of memory and offsets in C. There are a fair amount of you which haven’t taken 233 (Which is okay!) but we need to get you up to speed on the prerequisites. So here is a struct.</p>
+</section><section class="slide level2">
+
+<figure>
+<img src="/lab_resources/slides/memory/PointerStructDeclaration.png" />
+</figure>
+<p>How we are going to lay this out in memory is with offsets. We will malloc a certain amount of space and each of the variables will take up space right next to each other and take up as much space as the variable is defined to in the standard.</p>
+</section></section>
+<section><section id="so-how-does-this-look-with-some-actually-simple-code" class="titleslide slide level1"><h1>So how does this look with some actually simple code?</h1></section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">typedef</span> <span class="kw">struct</span>{
+    <span class="dt">int</span> n1;
+    <span class="dt">float</span> n2;
+    <span class="dt">char</span> st[<span class="dv">10</span>];
+} contact;
+
+<span class="dt">int</span> main(){
+    contact bhuvan;
+    printf(<span class="st">&quot;Contact address:</span><span class="sc">\t</span><span class="st">%p</span><span class="sc">\n</span><span class="st">&quot;</span>, &amp;bhuvan);
+    printf(<span class="st">&quot;Contact n1 location:</span><span class="sc">\t</span><span class="st">%p</span><span class="sc">\n</span><span class="st">&quot;</span>, &amp;bhuvan.n1);
+    printf(<span class="st">&quot;Contact n2 location:</span><span class="sc">\t</span><span class="st">%p</span><span class="sc">\n</span><span class="st">&quot;</span>, &amp;bhuvan.n2);
+    printf(<span class="st">&quot;Contact nst location:</span><span class="sc">\t</span><span class="st">%p</span><span class="sc">\n</span><span class="st">&quot;</span>, &amp;bhuvan.st);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</section><section class="slide level2">
+
+<pre class="console"><code>$ gcc main.c -o stack
+$ ./stack
+    Contact address:        0x7ffcc8568b40
+    Contact n1 location:    0x7ffcc8568b40
+    Contact n2 location:    0x7ffcc8568b44
+    Contact nst location:   0x7ffcc8568b48</code></pre>
+</section><section id="so-what-does-this-mean" class="slide level2">
+<h2>So what does this mean?</h2>
+<p>GCC or Clang or whatever compiler you use calculates offsets form the base address of your contact (in this case bhuvan). It knows that the first element is at offset 0 and the second element is at offset +4 and the third element is at offset +8 from your starting address.</p>
+</section></section>
+<section><section id="cool-so-what-does-this-have-to-do-with-malloc" class="titleslide slide level1"><h1>Cool So What does this have to do with Malloc?</h1></section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="kw">typedef</span> <span class="kw">struct</span>{
+    <span class="dt">int</span> n1;
+    <span class="dt">float</span> n2;
+    <span class="dt">char</span> st[<span class="dv">10</span>];
+} contact;
+
+<span class="dt">int</span> main(){
+    contact* bhuvan = malloc(<span class="kw">sizeof</span>(*bhuvan));
+    printf(<span class="st">&quot;Contact address:</span><span class="sc">\t</span><span class="st">%p</span><span class="sc">\n</span><span class="st">&quot;</span>, bhuvan);
+    printf(<span class="st">&quot;Contact n1 location:</span><span class="sc">\t</span><span class="st">%p</span><span class="sc">\n</span><span class="st">&quot;</span>, &amp;bhuvan-&gt;n1);
+    printf(<span class="st">&quot;Contact n2 location:</span><span class="sc">\t</span><span class="st">%p</span><span class="sc">\n</span><span class="st">&quot;</span>, &amp;bhuvan-&gt;n2);
+    printf(<span class="st">&quot;Contact nst location:</span><span class="sc">\t</span><span class="st">%p</span><span class="sc">\n</span><span class="st">&quot;</span>, &amp;bhuvan-&gt;st);
+    free(bhuvan);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</section><section class="slide level2">
+
+<pre class="console"><code>$ gcc malloc-main.c -o malloc-main
+$ ./malloc-main
+    Contact address:        0x1bcd010
+    Contact n1 location:    0x1bcd010
+    Contact n2 location:    0x1bcd014
+    Contact nst location:   0x1bcd018</code></pre>
+</section></section>
+<section><section id="right-but-what-does-this-have-to-do-with-our-mini-malloc" class="titleslide slide level1"><h1>Right But What Does this have to do with <em>our</em> Mini-Malloc?</h1></section></section>
+<section><section id="whats-pointer-arithmetic" class="titleslide slide level1"><h1>What’s Pointer Arithmetic?</h1></section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#define print_increment(var_name) \</span>
+<span class="pp">do { \</span>
+<span class="pp">    printf(#var_name &quot;&#39;s address before: %p\n&quot;, var_name); \</span>
+<span class="pp">    printf(#var_name &quot;&#39;s address after + 1: %p\n\n&quot;, var_name+1); \</span>
+<span class="pp">} \</span>
+<span class="pp">while(0)</span>
+<span class="dt">int</span> main(){
+    <span class="dt">char</span> *char_ptr;
+    <span class="dt">int</span> *int_ptr;
+    <span class="dt">double</span> *double_ptr;
+    <span class="dt">void</span> *void_ptr;
+
+    print_increment(char_ptr);
+    print_increment(int_ptr);
+    print_increment(double_ptr);
+    print_increment(void_ptr);
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</section><section class="slide level2">
+
+<pre class="console"><code>$ gcc pointer.c -O0 -o pointer
+$ ./pointer
+    char_ptr&#39;s address before: 0x400600
+    char_ptr&#39;s address after + 1: 0x400601
+
+    int_ptr&#39;s address before: 0x400430
+    int_ptr&#39;s address after + 1: 0x400434
+
+    double_ptr&#39;s address before: 0x7ffe282f0b20
+    double_ptr&#39;s address after + 1: 0x7ffe282f0b28
+
+    void_ptr&#39;s address before: (nil)
+    void_ptr&#39;s address after + 1: 0x1</code></pre>
+</section><section id="hey-shouldnt-we-not-be-able-to-do-arithmetic-with-void-pointers" class="slide level2">
+<h2>Hey! Shouldn’t we not be able to do arithmetic with void pointers?</h2>
+<p>Technically yeah, but gcc and clang treats it as a char*. In short, don’t do it because the standard doesn’t gaurentee it.</p>
+</section></section>
+<section><section id="the-big-picture" class="titleslide slide level1"><h1>The Big Picture</h1></section><section class="slide level2">
+
+<figure>
+<img src="/lab_resources/slides/memory/val1.png" />
+</figure>
+</section><section class="slide level2">
+
+<figure>
+<img src="/lab_resources/slides/memory/val2.png" />
+</figure>
+</section></section>
+<section><section id="hints" class="titleslide slide level1"><h1>Hints</h1></section><section class="slide level2">
+
+<ul>
+<li><code>meta_data * head</code> : head for linked-list</li>
+<li><code>total_usage</code>: keep track of bytes used</li>
+<li><code>total_free</code>: keep track of bytes freed</li>
+<li>Think about how to create a linked-list and insert/remove</li>
+<li>Insert has to be constant time</li>
+<li>Have to catch the bad call of free(like double free).</li>
+</ul>
+</section></section>
+<section><section id="questions" class="titleslide slide level1"><h1>Questions?</h1></section></section>
+<section><section id="authors-steve-bhuvan" class="titleslide slide level1"><h1>Authors: Steve &amp; Bhuvan</h1></section></section>
+    </div>
+  </div>
+
+  <script src="/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: '/lib/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
