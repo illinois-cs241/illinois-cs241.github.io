@@ -202,12 +202,12 @@ $ ./pointer
 <section><section id="hints" class="titleslide slide level1"><h1>Hints</h1></section><section class="slide level2">
 
 <ul>
-<li><code>meta_data * head</code> : head for linked-list</li>
-<li><code>total_usage</code>: keep track of bytes used</li>
-<li><code>total_free</code>: keep track of bytes freed</li>
+<li><code>meta_data *head</code>: head for linked-list</li>
+<li><code>total_memory_requested</code>: keep track of bytes used</li>
+<li><code>total_memory_freed</code>: keep track of bytes freed</li>
 <li>Think about how to create a linked-list and insert/remove</li>
 <li>Insert has to be constant time</li>
-<li>Have to catch the bad call of free(like double free).</li>
+<li>Have to catch bad calls to free (like double frees)</li>
 </ul>
 </section></section>
 <section><section id="questions" class="titleslide slide level1"><h1>Questions?</h1></section></section>
