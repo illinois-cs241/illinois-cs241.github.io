@@ -123,15 +123,15 @@ Some functions which you will have to implement will take in a `location` argume
 Your text editor should be able to print out the contents of the file that is loaded.
 
 Suppose we had a file `things_on_my_table.txt` which contained the following:
+
 ```
 mug
 salt
 T.V. remote
 ```
 
-Now calling `handle_display_command()` with `start_line` and
-` max_lines` as 1 would print out the following 
-if `things_on_my_table.txt` was loaded as a document.
+Now calling `handle_display_command()` with `start_line` and `max_lines` as 1 
+would print out the following if `things_on_my_table.txt` was loaded as a document.
 
 ```
 1    mug
@@ -267,7 +267,7 @@ hint: `man strstr`
 ## Merging Lines
 When a user enters a backspace at the beginning of a line or delete at the end of a line, then the previous line and the current line should merge (if you used backspace, vice versa for delete).  
 
-You must implement the function `handle_merge_line`. This function has a `location` as an argument and requires you to merge the line located at `loc.line_no` with the line located at `loc.line_no - 1`. (We will ALWAYS call this function with a valid line number such that `loc.line_no` and `loc.line_no - 1` both exist)
+You must implement the function `handle_merge_line`. This function has a `location` as an argument and requires you to merge the line located at `loc.line_no` with the line located at `loc.line_no + 1`. (We will ALWAYS call this function with a valid line number such that `loc.line_no` and `loc.line_no + 1` both exist)
 
 An example using the same lines as in the first example:
 

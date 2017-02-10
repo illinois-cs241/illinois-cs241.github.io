@@ -35,14 +35,14 @@ The _Text Editor_ will use a [TUI](https://en.wikipedia.org/wiki/Text-based_user
 
 The _Shell_ is a terminal. Like all good terminals, your shell will need to remember what processes are running. 
 
-Your mentor has realized that documents and logs are both just arrays of strings. So, to implement the document, your mentor has decided that you will create a _Vector_ to store strings.
+Your mentor has realized that documents are just arrays of strings. So, to implement the document, your mentor has decided that you will create a _Vector_ to store strings.
 
 However, after hearing tales of your talent, and with vectors being all the rage, other team leads have asked for vectors that they can use in their own projects. One option would be to write a vector for each team. However, being a good programmer, you know that code duplication is bad. Also, you're a lazy programmer, so you want to write as little code as possible to accomplish everything. You decide to implement a generic vector, something that every team can use with minimal changes.
 
 
 ## Vector
 
-A vector is an array that grows as a user adds and removes items from it. (Since CS 225 was a prerequisite, you probably knew all of that already.) However, your vector will need to be feature-rich enough for someone to easily create a log or document from it, or anything else the other sneaky teams want for their projects.
+A vector is an array that grows as a user adds and removes items from it. (Since CS 225 was a prerequisite, you probably knew all of that already.) However, your vector will need to be feature-rich enough for someone to easily create a document from it, or anything else the other sneaky teams want for their projects.
 
 Your implementation should go in `vector.c`, which is the only file that will be sent to your team lead for review. As an intern looking to become a full-time employee, you should create test cases in `vector_test.c` to show you are a responsible programmer. Your mentor has left notes in `vector.h` guiding your implementation.
 

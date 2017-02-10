@@ -13,21 +13,21 @@
   -
     date: "February 7"
     content: "Security"
-    slides:
-    video:
+    slides: "security.pdf"
+    video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
   -
     date: "February 14"
-    content: "Memory and Garbage Collection"
+    content: "Linux Kernel"
     slides:
     video:
   -
     date: "February 21"
-    content: "Parallel Programming"
+    content: "Memory and Garbage Collection"
     slides:
     video:
   -
     date: "February 28"
-    content: "Linux Kernel"
+    content: "Parallel Programming"
     slides:
     video:
   -
