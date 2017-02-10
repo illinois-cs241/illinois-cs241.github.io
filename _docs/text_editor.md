@@ -130,9 +130,8 @@ salt
 T.V. remote
 ```
 
-Now calling `handle_display_command()` with `start_line` and
-` max_lines` as 1 would print out the following 
-if `things_on_my_table.txt` was loaded as a document.
+Now calling `handle_display_command()` with `start_line` and `max_lines` as 1 
+would print out the following if `things_on_my_table.txt` was loaded as a document.
 
 ```
 1    mug
