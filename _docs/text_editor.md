@@ -123,6 +123,7 @@ Some functions which you will have to implement will take in a `location` argume
 Your text editor should be able to print out the contents of the file that is loaded.
 
 Suppose we had a file `things_on_my_table.txt` which contained the following:
+
 ```
 mug
 salt
