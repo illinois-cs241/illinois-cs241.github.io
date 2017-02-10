@@ -205,10 +205,10 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
         color: "#4CAF50"
       -
-        title: "Pipes, Files, VM II"
-        summary: "23. POSIX Pipes, files, memory II"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
-        color: "#4CAF50"
+        title: "No lecture"
+        summary: "No lecture for EoH"
+        resources: ""
+        color: "#9E9E9E"
     week: "3/6 - 3/10"
     announcement: >
       <ul>
@@ -238,10 +238,10 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>"
         color: "#8BC34A"
       -
-        title: "No lecture"
-        summary: "No lecture"
-        resources: ""
-        color: "#9E9E9E"
+        title: "Pipes, Files, VM II"
+        summary: "23. POSIX Pipes, files, memory II"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
+        color: "#4CAF50"
     week: "3/13 - 3/17"
     announcement: >
       <ul>
