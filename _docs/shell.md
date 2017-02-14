@@ -165,6 +165,8 @@ This command resumes the  specified process by sending it SIGCONT.
 - No such process exists
 - `cont` was ran without a pid
 
+**Any <pid> used in `kill`, `stop`, or, `cont` will either be a non-existant pid or one of a process that is a direct child of your shell**
+
 ### `exit`
 
 Causes your shell to exit. You should also cleanup any running/stopped background processes. See the `Cleanup` section for more.
