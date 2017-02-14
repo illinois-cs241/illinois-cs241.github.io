@@ -131,17 +131,17 @@
       -
         title: "Critical Section Problem II"
         summary: "15. Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-4%3A-The-Critical-Section-Problem'>Synchronization, Part 4: The Critical Section Problem</a>."
         color: "#2196F3"
       -
         title: "Condition Variables"
         summary: "16. Condition Variables. Implementing a semaphore using a Condition Variable."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-5%3A-Condition-Variables'>Condition Variables</a>."
         color: "#2196F3"
       -
         title: "Reader Writer Problem"
         summary: "17. Implementing a barrier. Implementing the R/W Problem using Condition Variables."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-6%3A-Implementing-a-barrier'>Implementing a barrier</a>,<a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-7%3A-The-Reader-Writer-Problem'>The Reader Writer Problem</a>"
         color: "#03A9F4"
     week: "2/20 - 2/24"
     announcement: >
