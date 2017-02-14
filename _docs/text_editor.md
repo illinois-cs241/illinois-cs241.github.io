@@ -64,8 +64,6 @@ created from this text editor. That means it will always have valid characters.
 
 Remember! An empty or non-existant file can be a valid document!
 
-Additionally, keep in mind that for all functions that take in a location or line number, the line numbers will be in the range [1, Document_size(document)] and character indicies in the range [0, strlen(Document_get_line(document, line_no))]. 
-
 ## Format library
 We have provided a format library that handles all printing to `stdout` or `stderr`.  This is to ensure that you do not lose points for not matching the format that the autograder expects.
 
