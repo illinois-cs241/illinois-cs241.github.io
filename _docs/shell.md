@@ -222,6 +222,7 @@ While the shell should be usable after calling the command, after the process fi
 ### `Cleanup`
 
 If there are currently stopped or running background processes when your shell receives `exit` or `Ctrl+D`, you should kill and cleanup each of those children before your shell exits. (Think, what function lets you cleanup information about child processes?)
+**Your shell can not have zombies** (but your children's children might turn into zombies.  You don't have to handle those.
 
 ### `Memeory`
 
