@@ -110,7 +110,7 @@
       -
         title: "Mutexes and semaphores"
         summary: "13. Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-3%3A-Working-with-Mutexes-And-Semaphores'>Synchronization, Part 3: Working with Mutexes And Semaphores</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-2%3A-Counting-Semaphores'>Synchronization, Part 2: Counting Semaphores</a>.<a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-3%3A-Working-with-Mutexes-And-Semaphores'>Synchronization, Part 3: Working with Mutexes And Semaphores</a>."
         color: "#2196F3"
       -
         title: "Critical Section Problem"
