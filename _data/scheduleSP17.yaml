@@ -94,10 +94,10 @@
     week: "2/6 - 2/10"
     announcement: >
       <ul>
-        <li>Lab: <a target='blank' href='./Utilities%20Unleashed'>Utilities Unleashed</a> Due</li>
-        <li>Lab: <a target='blank' href='./Mini%20Valgrind'>Mini Valgrind</a> Released</li>
-        <li>MP: <a target='blank' href='./Vector'>Vector</a> Due</li>
-        <li>MP: <a target='blank' href='./Shell'>Shell</a> Released</li>
+        <li>Lab: <a target='blank' href='./utilities_unleashed'>Utilities Unleashed</a> Due</li>
+        <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Released</li>
+        <li>MP: <a target='blank' href='./text_editor'>Text Editor</a> Due</li>
+        <li>MP: <a target='blank' href='./shell'>Shell</a> Released</li>
         <li>Quiz 1: <a target='blank' href='https://cbtf.engr.illinois.edu/'>CBTF</a> Thursday-Sunday</li>
       </ul>
   -
@@ -123,7 +123,7 @@
         <li>Quiz 2: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
         <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
         <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
-        <li>MP: <a target='blank' href='./Shell'>Shell</a> Due</li>
+        <li>MP: <a target='blank' href='./shell'>Shell</a> Due</li>
         <li>MP: <a target='blank' href='./malloc'>Malloc</a> Released</li>
       </ul>
   -
