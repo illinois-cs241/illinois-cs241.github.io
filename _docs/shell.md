@@ -165,6 +165,8 @@ This command resumes the  specified process by sending it SIGCONT.
 - No such process exists
 - `cont` was ran without a pid
 
+**Any <pid> used in `kill`, `stop`, or, `cont` will either be a non-existant pid or one of a process that is a direct child of your shell**
+
 ### `exit`
 
 Causes your shell to exit. You should also cleanup any running/stopped background processes. See the `Cleanup` section for more.
@@ -220,7 +222,8 @@ While the shell should be usable after calling the command, after the process fi
 ### `Cleanup`
 
 If there are currently stopped or running background processes when your shell receives `exit` or `Ctrl+D`, you should kill and cleanup each of those children before your shell exits. (Think, what function lets you cleanup information about child processes?)
+**Your shell can not have zombies** (but your children's children might turn into zombies.  You don't have to handle those.
 
-### `Memeory`
+### `Memory`
 
 No memory leaks or errors.
