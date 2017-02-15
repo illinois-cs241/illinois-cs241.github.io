@@ -18,8 +18,8 @@
   -
     date: "February 14"
     content: "Linux Kernel"
-    slides:
-    video:
+    slides: "kernel.pdf"
+    video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
   -
     date: "February 21"
     content: "Memory and Garbage Collection"
