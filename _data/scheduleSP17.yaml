@@ -228,6 +228,11 @@
   -
     schedule:
       -
+        title: "Pipes, Files, VM II"
+        summary: "23. POSIX Pipes, files, memory II"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
+        color: "#4CAF50"
+      -
         title: "Errno. Networking Intro"
         summary: "24. Robust error handling. EINTR. Intro to TCP,UDP,IP"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>"
@@ -237,11 +242,6 @@
         summary: "25. TCP/IP Header. IPv4 exhaustion. A web client"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>"
         color: "#8BC34A"
-      -
-        title: "Pipes, Files, VM II"
-        summary: "23. POSIX Pipes, files, memory II"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
-        color: "#4CAF50"
     week: "3/13 - 3/17"
     announcement: >
       <ul>
