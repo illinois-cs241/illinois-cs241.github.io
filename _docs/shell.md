@@ -188,9 +188,9 @@ For commands that are not built-in, the shell should consider the command name t
 The `fork()`, `exec()`, `wait()` paradigm is as follows: `fork()` a child process. The child process must execute the command with `exec()`, while the parent must `wait()` for the child to terminate before printing the next prompt. You are responsible of cleaning up all the child processes upon termination of your program. It is important to note that, upon a successful execution of the command, `exec()` never returns to the child process. `exec()` only returns to the child process when the command fails to execute successfully. If any of `fork()`, `exec()`, or `wait()` fail, the appropriate error should be printed. For example:
 
 ```
-(pid=1234)/home/user$ invalid_command --flag-that-is-ignored also_ignored also_ignored
+(pid=1234)/home/user$ kill blahblah 12345
 Command executed by pid=1235
-invalid_command: not found
+invalid_command: kill blahblah 12345
 (pid=1234)/home/user$
 ```
 
