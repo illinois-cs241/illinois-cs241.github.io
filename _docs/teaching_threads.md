@@ -13,16 +13,16 @@ learning_objectives:
 wikibook:
   - "Pthreads, Part 1: Introduction"
   - "Pthreads, Part 2: Usage in Practice"
-  - "Pthreads, Part 3: Parallel Problems"
+  - "Pthreads, Part 3: Parallel Problems (Bonus)"
   - "Synchronization, Part 1: Mutex Locks"
 ---
 ## reduce()
 
-In functional programming, there is a concept of `reduce()` https://en.wikipedia.org/wiki/Fold_(higher-order_function). Reduce takes three parameters which are a list, a function, and a base case. The function takes two inputs and returns a value. The list is the input list that you wish to transform. The function is applied first to the base case and the first element, and from then on, the function is repeatedly applied to the cumulative result and the next element. `reduce()` then returns the "reduced" value of the entire list. Depending on which direction this is applied, this is sometimes called left-fold or right-fold but the functions given in the problem are associative, so it does not matter.
+In functional programming, there is an operation called [`reduce`](https://en.wikipedia.org/wiki/Fold_(higher-order_function\)). `reduce` takes three parameters: an input list, a function to apply to the elements of that list, and an initial value (or base case). The function takes two inputs and returns a value. It is first applied to the base case and the first element, and from then on, the function is repeatedly applied to the cumulative result and the next element. `reduce` then returns the "reduced" value of the entire list. Depending on which direction this is applied, this is sometimes called a _left-fold_ or _right-fold_. In this problem, the functions are associative, so it does not matter.
 
-So, a concrete example is if we have the input list `[1,2,3]`, and we have a callback function `int add(int elem1, int elem2)` which takes two numbers and returns the sum, and a base case of 0. If we call reduce, the resulting value would be add(add(add(0,1),2),3) = 6.
+Here's a concrete example. Say we have the input list `[1,2,3]`, a callback function `int add(int elem1, int elem2)` which takes two numbers and returns their sum, and a base case of 0. If we call `reduce`, the resulting value would be `add(add(add(0,1),2),3) = 6`.
 
-In C code it looks something like this (you can find this in `reduce.c`):
+In C code, it looks something like this (you can find this in `reduce.c`):
 
 ```
 int reduce(int *list, size_t length, reducer reduce_func,
@@ -38,7 +38,7 @@ int reduce(int *list, size_t length, reducer reduce_func,
 }
 ```
 
-Notice that this is basically a for-loop on the list. There are no fancy algorithms we can use to improve runtime, since the callback function is essentially a black box. So how can we make it faster? Parallelism to the rescue!
+Notice that this is basically a for-loop on the list. There are no fancy algorithms we can use to improve runtime, since the callback function is essentially a black box. So, how can we make it faster? Parallelism to the rescue!
 
 ## par_reduce()
 
