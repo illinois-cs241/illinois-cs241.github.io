@@ -28,6 +28,7 @@
     releaseDate: "Week 5"
     dueDate: "Week 6"
     url: "teaching_threads"
+    resources: true
   -
     name: "Luscious Locks"
     releaseDate: "Week 6"
