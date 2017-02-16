@@ -113,7 +113,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-2%3A-Counting-Semaphores'>Synchronization, Part 2: Counting Semaphores</a>.<a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-3%3A-Working-with-Mutexes-And-Semaphores'>Synchronization, Part 3: Working with Mutexes And Semaphores</a>."
         color: "#2196F3"
       -
-        title: "Condition Variables and Critical Section Problem"
+        title: "Condition Variables and Critical Sections"
         summary: "14. Mutex and Condition Variable examples. How to implement a lock (The critical section problem)."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-4%3A-The-Critical-Section-Problem'>Synchronization, Part 4: The Critical Section Problem</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-5%3A-Condition-Variables'>Condition Variables</a>"
         color: "#2196F3"
