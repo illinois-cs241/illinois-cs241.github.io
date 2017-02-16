@@ -139,7 +139,7 @@ imaginary_directory: No such file or directory
 
 ### `ps`
 
-Like our good old ps, your shell should print out information about all currently running processes (inluding the shell). Make sure you use `print_process_info()`! Note, while `ps` is normally a separate binary, it is a built-in command for your shell (this is not "execing ps", this is you implementing it in the code.  Thus you have to keep track of process statuses and such).
+Like our good old ps, your shell should print out information about all currently running processes (including the shell). Make sure you use `print_process_info()`! Note, while `ps` is normally a separate binary, it is a built-in command for your shell (this is not "execing ps", this is you implementing it in the code.  Thus you have to keep track of process statuses and such).
 
 ### `kill <pid>`
 
@@ -154,7 +154,7 @@ Use the appropriate prints from `format.h` for:
 
 This command will allow your shell to stop a currently executing process by sending it the SIGSTOP signal. It may be resumed by using the command `cont`.
 
-Print for:
+Use the appropriate prints from `format.h` for:
 - Process was successfully sent SIGSTOP
 - No such process exists
 - `stop` was ran without a pid
@@ -162,10 +162,12 @@ Print for:
 ### `cont <pid>`
 
 This command resumes the  specified process by sending it SIGCONT.
+
+Use the appropriate prints from `format.h` for:
 - No such process exists
 - `cont` was ran without a pid
 
-**Any <pid> used in `kill`, `stop`, or, `cont` will either be a non-existant pid or one of a process that is a direct child of your shell**
+**Any `<pid>` used in `kill`, `stop`, or, `cont` will either be a non-existant pid or one of a process that is a direct child of your shell**
 
 ### `exit`
 
