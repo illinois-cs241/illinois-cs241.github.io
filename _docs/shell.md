@@ -213,7 +213,8 @@ A command suffixed with & should be run in the background. The shell should be r
 
 ```
 (pid=1873)/home/user$ pwd &
-(pid=1873)/home/user$ Command executed by pid=1874
+Command executed by pid=1874
+(pid=1873)/home/user$ 
 /home/user
 When I type, it shows up on this line
 ```
