@@ -140,7 +140,13 @@ The malloc contest pits your implementations of memory allocating functions agai
 
 Your score will be computed by the following formula:
 
-$$ 100\% \times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{student, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{student, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{student, i}} + (b-1))) $$
+$$
+\begin{aligned}
+100\% \times &\frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{student, i}} + (b-1)) + \\
+            &(log_b(\frac{avg_{reference, i}}{avg_{student, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{student, i}} + (b-1))) 
+\end{aligned}
+$$
+
 
 Where:
 
@@ -163,18 +169,19 @@ $$
 \begin{aligned}
 score_x 
 &= 
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{x, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{x, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{x, i}} + (b-1))) \\
+100\%\times &\frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{x, i}} + (b-1)) + \\
+  &(log_b(\frac{avg_{reference, i}}{avg_{x, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{x, i}} + (b-1))) \\
 &= 
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( 1+ (b-1)) + (log_b(1 + (b-1)) +(log_b(1+ (b-1))) \\
-&= 100\%\times \frac{1}{3n} \sum_{i=1}^n 3\\
-&=  100\%
+100\%\times &\frac{1}{3n} \sum_{i=1}^n ((log_b( 1+ (b-1)) + (log_b(1 + (b-1)) +(log_b(1+ (b-1))) \\
+&= 100\%\times &\frac{1}{3n} \sum_{i=1}^n 3\\
+&=  100\%&
 \end{aligned}
 $$
 
 
 __Example 1.__
 
-If a student implementation _x_ performs three times better than the reference implementation, which means $time_{x, i} = \frac{1}{2}\times time_{reference, i}$ , $avg_{x, i} = \frac{1}{2}\times avg_{reference, i}$, and  $max_{x, i} = \frac{1}{2}\times max_{reference, i}$, x's score will be:
+If a student implementation _x_ performs three times better than the reference implementation, which means $$time_{x, i} = \frac{1}{2}\times time_{reference, i}$$, $$avg_{x, i} = \frac{1}{2}\times avg_{reference, i}$$, and  $$max_{x, i} = \frac{1}{2}\times max_{reference, i}$$, x's score will be:
 
 $$
 \begin{aligned}
