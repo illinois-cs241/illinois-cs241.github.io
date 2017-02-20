@@ -3,7 +3,7 @@ layout: doc
 title: "Malloc"
 submissions:
 - title: Part 1
-  due_date: 02/17/2017 11:59 pm
+  due_date: 02/27/2017 11:59 pm
   graded_files:
   - alloc.c
 - title: Part 2
