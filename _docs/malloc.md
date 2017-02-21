@@ -80,7 +80,7 @@ It will automatically make clean and make again, and then run each test case in 
 some test cases, you can do:
 
 ```
-./run_all_mcontest.sh -s 1 2 3 
+./run_all_mcontest.sh -s 1 2 3
 ```
 
 where 1, 2, and 3 are the tests you want to skip. You can skip as many as you like.
@@ -129,13 +129,13 @@ Here is the grading breakdown:
 
 * Correctness (75%)
   * Part 1 (25%): tests 1-6 complete successfully - due 02/27 11:59pm
-  * Part 2 (50%): tests 1-11 complete successfully - due 03/06 11:59pm
+  * Part 2 (50%): tests 1-12 complete successfully - due 03/06 11:59pm
 * Performance (25%): Points only awarded if all part 2 testers complete
   successfully - due with part2
 
-There are 13 testcases in total. For part 1, you will be graded using tests 1
-through 6. For part 2, you will be graded using tests 1 to 13 (tests 1 through 6
-get graded twice).
+There are 12 testcases in total. For part 1, you will be graded using tests 1
+through 6. For part 2, you will be graded using tests 1 to 12 (tests 1 through 6
+get graded twice). Tester 13 is not graded.
 
 There are also performance points, which you are only eligible for if you pass
 all the testcases. Your malloc will be compared against the `glibc` version of
@@ -153,26 +153,26 @@ awarded in buckets:
 So lets work out some scenarios:
 
 * Scenario 1: A student gets tests 1 through 6 working for part1 and misses 2
-  tests on part2. Then they get all of the correctness points for part1, 9/11
+  tests on part2. Then they get all of the correctness points for part1, 10/12
   of the correctness points for part2 and none of the performance points. Thus
-  this student will receive a `(6 / 6) * 25 + (9 / 11) * 50 + 0 = 65.90%`.
+  this student will receive a `(6 / 6) * 25 + (10 / 12) * 50 + 0 = 66.67%`.
 * Scenario 2: A student gets none of the tests working for part1 and gets
   everything working for part2 and beats `glibc`. Then they get none of the
-  correctness points for part1, 11/11 of the correctness points for part2, and
+  correctness points for part1, 12/12 of the correctness points for part2, and
   the performance points. This student will receive a
-  `(0 / 6) * 25 + (11 / 11) * 50 + 25 = 75.00%`.
+  `(0 / 6) * 25 + (12 / 12) * 50 + 25 = 75.00%`.
 * Scenario 3: A student gets tests 1 through 6 working for part1, then they get
   all the tests expect test 4 working for part2. Then they get all of the
-  correctness points for part1, 10/11 of the correctness points for part2, but
+  correctness points for part1, 11/12 of the correctness points for part2, but
   they will not receive any of the performance points. This student will
-  receive a `(6 / 6) * 25 + (10 / 11) * 50 + 0 = 70.45%`.
+  receive a `(6 / 6) * 25 + (11 / 12) * 50 + 0 = 70.83%`.
 * Scenario 4: A student gets tests 1 through 6 working for part1, then they get
   all of the tests working for part2, but they never can only get to `350%` of
   `glibc`. In this case, they get all of the correctness points for part 1, all
   of the correctness points for part 2, but only 15% performance points. So,
-  they get `(6 / 6) * 25 + (11 / 11) * 50 + 15 = 90`
+  they get `(6 / 6) * 25 + (12 / 12) * 50 + 15 = 90`
 
-* We modify the allocation numbers slightly when we actually grade. 
+* We modify the allocation numbers slightly when we actually grade.
 
 ## Contest
 
@@ -187,7 +187,7 @@ The malloc contest pits your memory allocator implementation against your fellow
 * You can pick a nickname in `nickname.txt`. You will show up as this name on the contest webpage.
 * On the webpage, each test will either be green, which signifies that you passed the test, or red, which signifies that you failed the test. Clicking on the failed test will give you more details on the error output of the test.
 
-### Scores and ranking 
+### Scores and ranking
 
 Your score will be computed by the following formula:
 
@@ -195,10 +195,10 @@ $$ 100\% \times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{tim
 
 Where:
 
-* n is the number of tests.
-* b is the base of log function. Which is 2. 
+* $$n$$ is the number of tests.
+* $$b$$ is the base of log function. Which is 2.
 * _reference_ in the subscript means reference implementation and _student_ means student's implementation.
-* $$time_{reference, i}$$ is the time reference implementation spends on test i. 
+* $$time_{reference, i}$$ is the time reference implementation spends on test i.
 * $$time_{student, i}$$ is the time student spends on test i.
 * $$avg_{reference, i}$$ is the average memory used by reference implementation on test i.
 * $$avg_{student, i}$$ is the average memory used by student implementation on test i.
@@ -212,10 +212,10 @@ If a student implementation _x_ performs like the reference implementation, whic
 
 $$
 \begin{aligned}
-score_x 
-&= 
+score_x
+&=
 100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{x, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{x, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{x, i}} + (b-1))) \\
-&= 
+&=
 100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( 1+ (b-1)) + (log_b(1 + (b-1)) +(log_b(1+ (b-1))) \\
 &= 100\%\times \frac{1}{3n} \sum_{i=1}^n 3\\
 &=  100\%
@@ -229,10 +229,10 @@ If a student implementation _x_ performs three times better than the reference i
 
 $$
 \begin{aligned}
-score_x 
-&= 
+score_x
+&=
 100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{x, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{x, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{x, i}} + (b-1))) \\
-&= 
+&=
 100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( 3 + (b-1)) + (log_b(3 + (b-1)) +(log_b(3+ (b-1))) \\
 &= 100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( b+2 ) + (log_b(b+2) +(log_b(b+2)) \\
 &= 100\%\times \frac{1}{3n} \times n\times 3log_b(b+2) \\
@@ -240,4 +240,4 @@ score_x
 \end{aligned}
 $$
 
-**WARNING:** As the deadline approaches, the contest page will refresh more slowly. There are 400 students, 13 test cases, and up to 30 seconds per test case. It will only retest a student's code if it has been updated, but many more students will be updating their code causing longer waits. Start early, and don't become reliant on the contest page by testing locally!
+**WARNING:** As the deadline approaches, the contest page will refresh more slowly. There are 400 students, 12 test cases, and up to 30 seconds per test case. It will only retest a student's code if it has been updated, but many more students will be updating their code causing longer waits. Start early, and don't become reliant on the contest page by testing locally!
