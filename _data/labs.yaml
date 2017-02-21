@@ -30,10 +30,10 @@
     url: "teaching_threads"
     resources: true
   -
-    name: "Luscious Locks"
+    name: "Splendid Synchronization"
     releaseDate: "Week 6"
     dueDate: "Week 7"
-    url: "luscious_locks"
+    url: "splendid_synchronization"
   -
     name: "Deadlock Resiliant Mutexes"
     releaseDate: "Week 7"
