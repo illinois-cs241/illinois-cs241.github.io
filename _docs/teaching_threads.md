@@ -25,7 +25,7 @@ Here's a concrete example. Say we have the input list `[1, 2, 3]`, a callback fu
 
 In C code, it looks something like this (you can find this in `reduce.c`):
 
-```
+```c
 int reduce(int *list, size_t length, reducer reduce_func,
            int base_case) {
 
