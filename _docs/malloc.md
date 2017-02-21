@@ -191,7 +191,7 @@ The malloc contest pits your memory allocator implementation against your fellow
 
 Your score will be computed by the following formula:
 
-$$ 100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(log_2\Big(\frac{time_{\textit{reference}, i}}{time_{\textit{student}, i}} + 1\Big) + log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{\textit{student}, i}} + 1\Big) + log_2\Big(\frac{max_{\textit{reference}, i}}{max_{\textit{student}, i}} + 1\Big)\bigg) $$
+$$ 100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{reference}, i}}{time_{\textit{student}, i}} + 1\Big) + \log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{\textit{student}, i}} + 1\Big) + \log_2\Big(\frac{max_{\textit{reference}, i}}{max_{\textit{student}, i}} + 1\Big)\bigg) $$
 
 Where:
 
@@ -208,34 +208,48 @@ Higher scores are better. This differs from previous versions of the contest.
 
 __Example 1.__
 
-If a student implementation _x_ performs like the reference implementation, which means it spends the same time and memory like the reference, the score of x will be:
+If a student implementation $$x$$ performs like the reference implementation, which means it spends the same time and memory as the reference, then $$x$$'s score will be:
 
 $$
 \begin{aligned}
 score_x
 &=
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_2(\frac{time_{reference, i}}{time_{x, i}} + (1)) + (log_2(\frac{avg_{reference, i}}{avg_{x, i}} + (1)) +(log_2(\frac{max_{reference, i}}{max_{x, i}} + (1))) \\
+100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{reference}, i}}{time_{x, i}} + 1\Big) + \log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{x, i}} + 1\Big) + \log_2\Big(\frac{max_{\textit{reference}, i}}{max_{x, i}} + 1\Big)\bigg) \\
 &=
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_2( 1+ (1)) + (log_2(1 + (1)) +(log_2(1+ (1))) \\
+100\% \times \frac{1}{3n} \sum_{i=1}^n \big(\log_2(2) + \log_2(2) + \log_2(2)\big) \\
 &= 100\%\times \frac{1}{3n} \sum_{i=1}^n 3\\
-&=  100\%
+&= 100\%
 \end{aligned}
 $$
 
-
 __Example 2.__
 
-If a student implementation _x_ performs three times better than the reference implementation, which means $time_{x, i} = \frac{1}{2}\times time_{reference, i}$ , $avg_{x, i} = \frac{1}{2}\times avg_{reference, i}$, and  $max_{x, i} = \frac{1}{2}\times max_{reference, i}$, x's score will be:
+If a student implementation $$y$$ performs the same as the reference implementation on memory usage, but is twice as slow (meaning $$time_{y, i} = 2 \times time_{\textit{reference}, i}$$), then $$y$$'s score will be:
 
 $$
 \begin{aligned}
-score_x
+score_y
 &=
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_2(\frac{time_{reference, i}}{time_{x, i}} + (1)) + (log_2(\frac{avg_{reference, i}}{avg_{x, i}} + (1)) +(log_2(\frac{max_{reference, i}}{max_{x, i}} + (1))) \\
+100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{reference}, i}}{time_{y, i}} + 1\Big) + \log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{y, i}} + 1\Big) + \log_2\Big(\frac{max_{\textit{reference}, i}}{max_{y, i}} + 1\Big)\bigg) \\
 &=
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_2( 3 + (1)) + (log_2(3 + (1)) +(log_2(3+ (1))) \\
-&= 100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_2( b+2 ) + (log_2(b+2) +(log_2(b+2)) \\
-&= 100\%\times \frac{1}{3n} \times n\times 3log_2(b+2) \\
+100\% \times \frac{1}{3n} \sum_{i=1}^n \big(\log_2(\tfrac{1}{2} + 1) + \log_2(2) + \log_2(2)\big) \\
+&= 100\%\times \frac{1}{3n} \sum_{i=1}^n 2.585\\
+&= 86.2\%
+\end{aligned}
+$$
+
+__Example 3.__
+
+If a student implementation $$z$$ performs three times better than the reference implementation, which means $$time_{z, i} = \frac{time_{\textit{reference}, i}}{3}$$, $$avg_{z, i} = \frac{avg_{\textit{reference}, i}}{3}$$, and $$max_{z, i} = \frac{max_{\textit{reference}, i}}{3}$$, then $$z$$'s score will be:
+
+$$
+\begin{aligned}
+score_z
+&=
+100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{reference}, i}}{time_{z, i}} + 1\Big) + \log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{z, i}} + 1\Big) + \log_2\Big(\frac{max_{\textit{reference}, i}}{max_{z, i}} + 1\Big)\bigg) \\
+&=
+100\% \times \frac{1}{3n} \sum_{i=1}^n \big(\log_2(4) + \log_2(4) + \log_2(4)\big) \\
+&= 100\%\times \frac{1}{3n} \sum_{i=1}^n 6 \\
 &= 200\%
 \end{aligned}
 $$
