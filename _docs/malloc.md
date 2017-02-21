@@ -11,9 +11,9 @@ submissions:
   graded_files:
   - alloc.c
 learning_objectives:
-  - Building Character
-  - Rite of Passage
-  - Memory Allocation
+  - Memory Allocation and Management
+  - Performance Optimization
+  - Developing in a Restricted Environment
 wikibook:
   - "Memory, Part 1: Heap Memory Introduction"
   - "Memory, Part 2: Implementing a Memory Allocator"
