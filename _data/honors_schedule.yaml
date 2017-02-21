@@ -23,7 +23,7 @@
   -
     date: "February 21"
     content: "Memory and Garbage Collection"
-    slides:
+    slides: "memory.pdf"
     video:
   -
     date: "February 28"
