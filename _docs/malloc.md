@@ -7,7 +7,7 @@ submissions:
   graded_files:
   - alloc.c
 - title: Part 2
-  due_date: 03/06/2017 11:59pm
+  due_date: 03/06/2017 11:59 pm
   graded_files:
   - alloc.c
 learning_objectives:
@@ -21,13 +21,13 @@ wikibook:
 
 ## Introduction
 
-In the past, you have been using `malloc()` to allocate memory on the heap. In this MP, you will be implementing your own version of `malloc()`. So by the end of this MP, you would theoretically be able to use your own malloc to compile and run any C code.
+In the past, you have been using `malloc()` to allocate memory on the heap. In this MP, you will be implementing your own version of `malloc()`. By the end of this MP, you would theoretically be able to use your own malloc to compile and run any C code.
 
 ## Overview
 
 You should write your implementations of `calloc()`, `malloc()`, `realloc()`, and `free()` in `alloc.c`. `alloc.c` will be the only file we test.
 
-Don't modify `mreplace.c`, `mcontest.c`, `alloc-contest.c`. Those files create the environment that replaces the standard glibc malloc with your malloc. These files will be used for testing.
+Don't modify `mcontest.c`, `contest.h`, or `contest-alloc.so`. Those files create the environment that replaces the standard glibc malloc with your malloc. These files will be used for testing.
 
 Your `malloc()` must allocate heap memory using `sbrk()`. You may not use files, pipes, system shared memory, `mmap()`, a chunk of pre-defined stack memory, other external memory libraries found on the Internet, or any of the various other external sources of memory that exist on modern operating systems.
 
@@ -50,13 +50,13 @@ void free(void *ptr) {
 }
 ```
 
-This is a "correct" way to implement `free()`. However, the obvious drawback with our implementation is that we can't reuse memory after we are done with it. Also, we have yet to implement `realloc()` and `calloc()`. Finally, we also have to check for errors when we call [`sbrk()`](http://linux.die.net/man/2/sbrk).
+This is a "correct" way to implement `free()`. However, the obvious drawback with our implementation is that we can't reuse memory after we are done with it. Also, we have not checked for errors when we call `sbrk()`, and we have not implemented `realloc()` or `calloc()`.
 
-Despite all of this, this is still a "working" implementation of `malloc()`. So the job of `malloc()` is not really to allocate memory, it is to keep track of the memory we've allocated so that we can reuse it. You will use methods that you've learned in class and practiced in the mini-valgrind lab to do this.
+Despite all of this, this is still a "working" implementation of `malloc()`. So, the job of `malloc()` is not really to allocate memory, but to keep track of the memory we've allocated so that we can reuse it. You will use methods that you've learned in class and practiced in the Mini Valgrind lab to do this.
 
 ## Testing Your Code
 
-In order to test your solution against the testers, run `./mcontest` with the tester you want. You MUST do this or your code will be run with the glibc implementation!
+In order to run your solution on the testers, run `./mcontest` with the tester you want. You MUST do this or your code will be run with the glibc implementation!
 
 Example:
 
@@ -70,14 +70,14 @@ Memory failed to allocate!
 ```
 
 We've also distributed a bash script `run_all_mcontest.sh` to run all testers. We design the script so that you can
-easily test your malloc implementation. Here is how you use the script 
+easily test your malloc implementation. Here is how you use the script:
 
 ```
 ./run_all_mcontest.sh
 ```
 
-It will automatically make clean and make again. And then run each test cases in _testers_ folder. If you want to skip
-some test cases, you can do
+It will automatically make clean and make again, and then run each test case in the _testers_ folder. If you want to skip
+some test cases, you can do:
 
 ```
 ./run_all_mcontest.sh -s 1 2 3 
@@ -88,9 +88,9 @@ where 1, 2, and 3 are the tests you want to skip. You can skip as many as you li
 Here are what each of our error codes mean:
 
 ```
-11: Seg Fault
+11: Segmentation Fault
 15: Executed Too Long
-139: Seg Fault
+139: Segmentation Fault
 256, 512, 768, 1024: various errors in tester-# files
 16640: Dynamic linking error
 17408: Exceeded Memory Limit (2684354560)
@@ -99,8 +99,8 @@ Here are what each of our error codes mean:
 ### Debugging
 `./mcontest` runs an optimized version of your code, so you won't be able to
 debug with `gdb.` `./mreplace` uses a version of your malloc which is compiled
-without optimization, so you can debug with `gdb.` Here's an example, running
-tester2 with gdb:
+without optimization, so you can debug with `gdb`. Here's an example, running
+tester 2 with gdb:
 
 ```
 gdb --args ./mreplace testers_exe/tester-2
@@ -123,74 +123,6 @@ or
 There are some programs that might not work correctly under your malloc, for a variety of reasons. You might be able to avoid this problem if you make all your
 global variables static. If you encounter a program for which this fix doesn't work, post on piazza!
 
-## Contest
-
-View the malloc contest [here!](http://cs241grader.web.engr.illinois.edu/malloc/)
-
-The malloc contest pits your implementations of memory allocating functions against your fellow students. There are a few things to know:
-
-* The test cases provided will be used for grading. We may also use some real linux utilities (like ls).
-* The memory limit is 2.500GB.
-* To submit your program into the contest, you simply commit to subversion. Your most recent SVN submission will be fetched somewhat frequently.
-* We will assign a score to each of the three categories (max heap, average heap, and total time) based on how well your program performs memory management relative to a standard solution.
-* You can pick a nickname in `nickname.txt`. You will show up as this name on the contest webpage.
-* On the webpage, each test will have either be green, which signifies that you passed the test, or red, which signifies that you failed the test. Clicking on the failed test will give you more details on the error output of the test.
-
-### Scores and ranking 
-
-Your score will be computed by the following formula:
-
-$$ 100\% \times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{student, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{student, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{student, i}} + (b-1))) $$
-
-Where:
-
-* n is the number of tests.
-* b is the base of log function. Which is 2. 
-* _reference_ in the subscript means reference implementation and _student_ means student's implementation.
-* $time_{reference, i}$ is the time reference implementation spends on test i. 
-* $time_{student, i}$ is the time student spends on test i.
-* $avg_{reference, i}$ is the average memory used by reference implementation on test i.
-* $avg_{student, i}$ is the average memory used by student implementation on test i.
-* $max_{reference, i}$ is the max memory used by the reference implementation on test i.
-* $max_{student, i}$ is the max memory used by the student implementation on test i.
-
-
-__Example 1.__
-
-If a student implementation _x_ performs like the reference implementation, which means it spends the same time and memory like the reference, the score of x will be:
-
-$$
-\begin{aligned}
-score_x 
-&= 
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{x, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{x, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{x, i}} + (b-1))) \\
-&= 
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( 1+ (b-1)) + (log_b(1 + (b-1)) +(log_b(1+ (b-1))) \\
-&= 100\%\times \frac{1}{3n} \sum_{i=1}^n 3\\
-&=  100\%
-\end{aligned}
-$$
-
-
-__Example 1.__
-
-If a student implementation _x_ performs three times better than the reference implementation, which means $time_{x, i} = \frac{1}{2}\times time_{reference, i}$ , $avg_{x, i} = \frac{1}{2}\times avg_{reference, i}$, and  $max_{x, i} = \frac{1}{2}\times max_{reference, i}$, x's score will be:
-
-$$
-\begin{aligned}
-score_x 
-&= 
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{x, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{x, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{x, i}} + (b-1))) \\
-&= 
-100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( 3 + (b-1)) + (log_b(3 + (b-1)) +(log_b(3+ (b-1))) \\
-&= 100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( b+2 ) + (log_b(b+2) +(log_b(b+2)) \\
-&= 100\%\times \frac{1}{3n} \times n\times 3log_b(b+2) \\
-&= 200\%
-\end{aligned}
-$$
-
-**WARNING:** Especially as the deadline approaches, the contest page will refresh slower and slower. There are 400 students, 11 test cases, and up to 30 seconds per test case. It will only retest a student's code if it has been updated, but many more students will be updating their code causing longer waits. Start early, and don't become reliant on the contest page by testing locally!
-
 ## Grading
 
 Here is the grading breakdown:
@@ -201,8 +133,8 @@ Here is the grading breakdown:
 * Performance (25%): Points only awarded if all part 2 testers complete
   successfully - due with part2
 
-There are 11 testcases in total. For part 1 you will be graded using tests 1
-through 6. For part 2 you will be graded using tests 1 to 11 (tests 1 through 6
+There are 13 testcases in total. For part 1, you will be graded using tests 1
+through 6. For part 2, you will be graded using tests 1 to 13 (tests 1 through 6
 get graded twice).
 
 There are also performance points, which you are only eligible for if you pass
@@ -240,4 +172,72 @@ So lets work out some scenarios:
   of the correctness points for part 2, but only 15% performance points. So,
   they get `(6 / 6) * 25 + (11 / 11) * 50 + 15 = 90`
 
-* We modified the allocation numbers slightly when we actually grade. 
+* We modify the allocation numbers slightly when we actually grade. 
+
+## Contest
+
+**View the malloc contest [here](http://cs241grader.web.engr.illinois.edu/malloc/)!**
+
+The malloc contest pits your memory allocator implementation against your fellow students. There are a few things to know:
+
+* The test cases provided will be used for grading. We may also use some real linux utilities (like `ls`).
+* The memory limit is 2.500GB.
+* To submit your program to the contest, you simply commit to Subversion. Your most recent SVN submission will be fetched somewhat frequently.
+* We will assign a score to each of the three categories (max heap, average heap, and total time) based on how well your program performs memory management relative to a standard solution.
+* You can pick a nickname in `nickname.txt`. You will show up as this name on the contest webpage.
+* On the webpage, each test will either be green, which signifies that you passed the test, or red, which signifies that you failed the test. Clicking on the failed test will give you more details on the error output of the test.
+
+### Scores and ranking 
+
+Your score will be computed by the following formula:
+
+$$ 100\% \times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{student, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{student, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{student, i}} + (b-1))) $$
+
+Where:
+
+* n is the number of tests.
+* b is the base of log function. Which is 2. 
+* _reference_ in the subscript means reference implementation and _student_ means student's implementation.
+* $$time_{reference, i}$$ is the time reference implementation spends on test i. 
+* $$time_{student, i}$$ is the time student spends on test i.
+* $$avg_{reference, i}$$ is the average memory used by reference implementation on test i.
+* $$avg_{student, i}$$ is the average memory used by student implementation on test i.
+* $$max_{reference, i}$$ is the max memory used by the reference implementation on test i.
+* $$max_{student, i}$$ is the max memory used by the student implementation on test i.
+
+
+__Example 1.__
+
+If a student implementation _x_ performs like the reference implementation, which means it spends the same time and memory like the reference, the score of x will be:
+
+$$
+\begin{aligned}
+score_x 
+&= 
+100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{x, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{x, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{x, i}} + (b-1))) \\
+&= 
+100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( 1+ (b-1)) + (log_b(1 + (b-1)) +(log_b(1+ (b-1))) \\
+&= 100\%\times \frac{1}{3n} \sum_{i=1}^n 3\\
+&=  100\%
+\end{aligned}
+$$
+
+
+__Example 2.__
+
+If a student implementation _x_ performs three times better than the reference implementation, which means $time_{x, i} = \frac{1}{2}\times time_{reference, i}$ , $avg_{x, i} = \frac{1}{2}\times avg_{reference, i}$, and  $max_{x, i} = \frac{1}{2}\times max_{reference, i}$, x's score will be:
+
+$$
+\begin{aligned}
+score_x 
+&= 
+100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b(\frac{time_{reference, i}}{time_{x, i}} + (b-1)) + (log_b(\frac{avg_{reference, i}}{avg_{x, i}} + (b-1)) +(log_b(\frac{max_{reference, i}}{max_{x, i}} + (b-1))) \\
+&= 
+100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( 3 + (b-1)) + (log_b(3 + (b-1)) +(log_b(3+ (b-1))) \\
+&= 100\%\times \frac{1}{3n} \sum_{i=1}^n ((log_b( b+2 ) + (log_b(b+2) +(log_b(b+2)) \\
+&= 100\%\times \frac{1}{3n} \times n\times 3log_b(b+2) \\
+&= 200\%
+\end{aligned}
+$$
+
+**WARNING:** As the deadline approaches, the contest page will refresh more slowly. There are 400 students, 13 test cases, and up to 30 seconds per test case. It will only retest a student's code if it has been updated, but many more students will be updating their code causing longer waits. Start early, and don't become reliant on the contest page by testing locally!
