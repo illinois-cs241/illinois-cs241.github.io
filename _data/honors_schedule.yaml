@@ -24,7 +24,7 @@
     date: "February 21"
     content: "Memory and Garbage Collection"
     slides: "memory.pdf"
-    video:
+    video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
   -
     date: "February 28"
     content: "Parallel Programming"
