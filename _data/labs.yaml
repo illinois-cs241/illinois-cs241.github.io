@@ -34,6 +34,7 @@
     releaseDate: "Week 6"
     dueDate: "Week 7"
     url: "splendid_synchronization"
+    resources: true
   -
     name: "Deadlock Resiliant Mutexes"
     releaseDate: "Week 7"
