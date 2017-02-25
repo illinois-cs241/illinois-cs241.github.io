@@ -122,7 +122,7 @@
       <ul>
         <li>Quiz 2: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
         <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
-        <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
+        <li>Lab: <a target='blank' href='./mangled_mutexes'>Teaching Threads</a> Released</li>
         <li>MP: <a target='blank' href='./shell'>Shell</a> Due</li>
         <li>MP: <a target='blank' href='./malloc'>Malloc</a> Released</li>
       </ul>
@@ -147,13 +147,13 @@
     announcement: >
       <ul>
         <li>
-          Practice Midterm: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+          Practice Midterm: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
         </li>
         <li>
-          Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Due
+          Lab: <a target='blank' href='./mangled_mutexes'>Teaching Threads</a> Due
         </li>
         <li>
-          Lab: <a target='blank' href='./terrible_threads'>Terrible Threads</a> Released
+          Lab: <a target='blank' href='./terrible_threads'>Splendid Synchronization</a> Released
         </li>
         <li>
           MP: <a target='blank' href='./malloc'>Malloc Part 1</a> Due
@@ -162,31 +162,31 @@
   -
     schedule:
       -
-        title: "Producer Consumer. RW II"
-        summary: "18. Implementing the Producer Consumer using semaphores. Analysis of Reader Writer solutions."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>."
+        title: "Reader Writer Problem & Deadlock"
+        summary: "18. Implementing Reader Write. Introduction to Deadlock."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-7%3A-The-Reader-Writer-Problem'>The Reader Writer Problem</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions'>Deadlock</a>."
         color: "#03A9F4"
       -
         title: "Deadlock"
         summary: "19. Introduction to Deadlock. Coffman conditions."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions'>Deadlock</a>."
         color: "#00BCD4"
       -
         title: "Dining Philosophers"
         summary: "20. The Dining Philosophers problem"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-8'>wikibook week 8</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-3%3A-Dining-Philosophers'>Dining Philosophers</a>."
         color: "#00BCD4"
     week: "2/27 - 3/3"
     announcement: >
       <ul>
         <li>
-          Midterm 1: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+          Midterm 1: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
         </li>
         <li>
-          Lab: <a target='blank' href='./terrible_threads'>Terrible Threads</a> Due
+          Lab: <a target='blank' href='./terrible_threads'>Splendid Synchronization</a> Due
         </li>
         <li>
-          Lab: <a target='blank' href='./broken_barriers'>Broken Barriers</a> Released
+          Lab: <a target='blank' href='./broken_barriers'>Deadlock Resiliant Mutexes</a> Released
         </li>
         <li>
           MP: <a target='blank' href='./malloc'>Malloc Part 2</a> Due
