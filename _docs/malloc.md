@@ -85,15 +85,15 @@ some test cases, you can do:
 
 where 1, 2, and 3 are the tests you want to skip. You can skip as many as you like.
 
-Here are what each of our error codes mean:
+Here is what some of our error codes mean:
 
 ```
-11: Segmentation Fault
-15: Executed Too Long
-139: Segmentation Fault
-256, 512, 768, 1024: various errors in tester-# files
-16640: Dynamic linking error
-17408: Exceeded Memory Limit (2684354560)
+11: (SIGSEGV) Segmentation fault
+15: (SIGTERM) Timed out
+65, 66: Dynamic linking error
+67: Failed to collect memory info
+68: Exceeded memory limit
+91: Data allocated outside of heap
 ```
 
 ### Debugging
