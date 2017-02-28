@@ -27,8 +27,8 @@
     video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
   -
     date: "February 28"
-    content: "Parallel Programming"
-    slides:
+    content: "Parallel Programming [<a href=\"honors_resources/mp1.zip\">optional MP</a>]"
+    slides: "parallel.pdf"
     video:
   -
     date: "March 7"
