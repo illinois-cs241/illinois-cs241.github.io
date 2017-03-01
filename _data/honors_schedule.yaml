@@ -29,7 +29,7 @@
     date: "February 28"
     content: "Parallel Programming [<a href=\"honors_resources/mp1.zip\">optional MP</a>]"
     slides: "parallel.pdf"
-    video:
+    video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/76567804-1eac-45ad-9ebb-7d39e69a0443?ec=true"
   -
     date: "March 7"
     content: "Lock-free Data Structures"
