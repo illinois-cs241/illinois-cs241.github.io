@@ -36,10 +36,10 @@
     url: "splendid_synchronization"
     resources: true
   -
-    name: "Overworked Interns"
+    name: "Deadlocked Diners"
     releaseDate: "Week 7"
     dueDate: "Week 8"
-    url: "overworked_interns"
+    url: "deadlocked_diners"
     resources: true
   -
     name: "Ideal Indirection"
