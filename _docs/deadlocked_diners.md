@@ -18,9 +18,6 @@ wikibook:
   - "Deadlock, Part 3: Dining Philosophers"
 ---
 
-## Learning Objectives
-
-
 ## Backstory
 You are creating a start up that allows companies to rent <s>code monkeys</s> interns for a project.
 They are billed by the number of days it takes to complete the project.
