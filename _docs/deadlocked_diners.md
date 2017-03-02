@@ -42,7 +42,7 @@ A company might decide to give the interns a break from the project,
 in which case they are free to be assigned to another company that wants them and won't be reassigned until said company gives them a break.
 
 Your mentor has written a simulation of this scenario with a synchronization strategy, but it does not work.
-The mentor left some notes that reads
+The mentor left a note that reads:
 
 >
 Dear intern, I have written a simulation of the 'intern for rent' program,
@@ -53,7 +53,7 @@ which wont be released until the first intern is given a break...
 ## Your Job
 
 * Read [Resource Allocation Graphs](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-1%3A-Resource-Allocation-Graph) and [Deadlock Conditions](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions) to have all the knowledge you will need for this assignment.
-* We recommend you fill out this [Google Form](http://goo.gl/forms/BdDaErdQjT) **BEFORE** you write any code (see the section on testing for details on gathering data).  It ins't graded but should help you wrap your head aroung the problem conceptually.
+* We recommend you fill out this [Google Form](http://goo.gl/forms/BdDaErdQjT) **BEFORE** you write any code (see the section on testing for details on gathering data).  It isn't graded but should help you wrap your head around the problem conceptually.
 * Read `simulator.c`, `bad_company.c`, and `company.h` until you have a good sense of what the code is doing (Nothing will make sense until you do).
 * Overwrite `good_company.c` with your correct solution.
 
