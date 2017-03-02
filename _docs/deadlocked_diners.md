@@ -13,9 +13,9 @@ learning_objectives:
   - Dining Philosophers
   - Messing with Interns
 wikibook:
-  - "Dining Philosophers"
   - "Deadlock, Part 1: Resource Allocation Graph"
   - "Deadlock, Part 2: Deadlock Conditions"
+  - "Deadlock, Part 3: Dining Philosophers"
 ---
 
 ## Learning Objectives
