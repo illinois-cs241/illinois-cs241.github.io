@@ -197,12 +197,12 @@
       -
         title: "Page tables"
         summary: "21. Virtual memory"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Virtual-Memory%2C-Part-1%3A-Introduction-to-Virtual-Memory'>Virtual Memory</a>."
         color: "#009688"
       -
         title: "Pipes and Files"
         summary: "22. POSIX Pipes and random access files"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Pipes%2C-Part-1%3A-Introduction-to-pipes'>Introduction to Pipes</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Pipes%2C-Part-2%3A-Pipe-programming-secrets'>Working with Pipes</a>"
         color: "#4CAF50"
       -
         title: "No lecture"
@@ -213,7 +213,7 @@
     announcement: >
       <ul>
         <li>
-          Quiz 3: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+          Quiz 3: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
         </li>
         <li>
           Lab: <a target='blank' href='./broken_barriers'>Broken Barriers</a> Due
