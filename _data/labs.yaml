@@ -36,10 +36,11 @@
     url: "splendid_synchronization"
     resources: true
   -
-    name: "Deadlock Resiliant Mutexes"
+    name: "Deadlocked Diners"
     releaseDate: "Week 7"
     dueDate: "Week 8"
-    url: "deadlock_resiliant_mutexes"
+    url: "deadlocked_diners"
+    resources: true
   -
     name: "Ideal Indirection"
     releaseDate: "Week 8"

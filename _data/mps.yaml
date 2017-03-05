@@ -27,20 +27,20 @@
   -
     name: "Password Cracker"
     releaseDate: "Week 8"
-    dueDate: "Week 9 & 10"
+    dueDate: "Week 9"
     url: "password_cracker"
   -
     name: "Parallel Make"
-    releaseDate: "Week 10"
-    dueDate: "Week 12"
+    releaseDate: "Week 9"
+    dueDate: "Week 11"
     url: "parallel_make"
   -
     name: "Mapreduce"
-    releaseDate: "Week 12"
-    dueDate: "Week 13 & 14"
+    releaseDate: "Week 11"
+    dueDate: "Week 12 & 13"
     url: "mapreduce"
   -
     name: "Wearables"
-    releaseDate: "Week 14"
+    releaseDate: "Week 13"
     dueDate: "Week 15"
     url: "wearables"

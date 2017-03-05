@@ -85,15 +85,15 @@ some test cases, you can do:
 
 where 1, 2, and 3 are the tests you want to skip. You can skip as many as you like.
 
-Here are what each of our error codes mean:
+Here is what some of our error codes mean:
 
 ```
-11: Segmentation Fault
-15: Executed Too Long
-139: Segmentation Fault
-256, 512, 768, 1024: various errors in tester-# files
-16640: Dynamic linking error
-17408: Exceeded Memory Limit (2684354560)
+11: (SIGSEGV) Segmentation fault
+15: (SIGTERM) Timed out
+65, 66: Dynamic linking error
+67: Failed to collect memory info
+68: Exceeded memory limit
+91: Data allocated outside of heap
 ```
 
 ### Debugging
@@ -139,18 +139,18 @@ get graded twice). Tester 13 is not graded.
 
 There are also performance points, which you are only eligible for if you pass
 all the testcases. Your malloc will be compared against the `glibc` version of
-malloc, and given a performance score as a percentage. For example, if your
-malloc is 2 times slower than the `glibc` version of malloc, we will say it
-runs in `200%` of the performance of `glibc` malloc. Performance points are
-awarded in buckets:
+malloc, and given a base performance score as a percentage (accounting for
+runtime, maximum memory usage, and average memory usage). The base score is
+calculated using the formula from the contest section below; higher percentages
+are better. Performance points are then awarded in buckets:
 
-- Better than or equal to 200% of `glibc`: Full 25% awarded.
-- 200-300% (exclude 200%, include 300%): 20% awarded.
-- 300-400%: 15% awarded.
-- 400-500%: 10% awarded.
-- 500% and worse: 0% awarded.
+- Better than or equal to 60% of `glibc`: Full 25% awarded.
+- 40-60% (include 40%, exclude 60%): 20% awarded.
+- 30-40%: 15% awarded.
+- 20-30%: 10% awarded.
+- 20% and worse: 0% awarded.
 
-So lets work out some scenarios:
+So let's work out some scenarios:
 
 * Scenario 1: A student gets tests 1 through 6 working for part1 and misses 2
   tests on part2. Then they get all of the correctness points for part1, 10/12
@@ -167,7 +167,7 @@ So lets work out some scenarios:
   they will not receive any of the performance points. This student will
   receive a `(6 / 6) * 25 + (11 / 12) * 50 + 0 = 70.83%`.
 * Scenario 4: A student gets tests 1 through 6 working for part1, then they get
-  all of the tests working for part2, but they never can only get to `350%` of
+  all of the tests working for part2, but they can only get to `35%` of
   `glibc`. In this case, they get all of the correctness points for part 1, all
   of the correctness points for part 2, but only 15% performance points. So,
   they get `(6 / 6) * 25 + (12 / 12) * 50 + 15 = 90`
