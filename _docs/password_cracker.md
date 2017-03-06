@@ -5,7 +5,8 @@ submissions:
   title: Version 1 and 2
   due_date: 03/13 11:59pm
   graded_files:
-  - cracker1.c, cracker2.c
+  - cracker1.c
+  - cracker2.c
 learning_objectives:
   - Multithread Programming and its performance gains
   - Using a thread safe datastructure
