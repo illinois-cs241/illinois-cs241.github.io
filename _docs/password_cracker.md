@@ -184,7 +184,7 @@ CPU usage: 3.31x
 The times and order may vary slightly.
 
 **Remember to use appropriate synchronization, and make sure to use `crypt_r`.**
-If you create a new thread for each task (instead of keeping the threads in the thread pool running), you will loose points! (and your implementation will be very slow)
+If you create a new thread for each task (instead of keeping the threads in the thread pool running), you will lose points! (and your implementation will be very slow)
 
 ## Version 2: Parallelize each task
 
@@ -393,7 +393,7 @@ You're not required to use the thread status tool as part of the assignment, we 
 ### create_examples
 
 We've also provided a small program to create example input files, to help you with your testing. To build the `create_examples` program, run `make create_examples`.
-To use the program, write it's output to a file, then use the file as input to a cracker program.
+To use the program, write its output to a file, then use the file as input to a cracker program.
 For example:
 
 ```
