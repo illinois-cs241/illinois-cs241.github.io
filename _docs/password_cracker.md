@@ -8,9 +8,9 @@ submissions:
   - cracker1.c
   - cracker2.c
 learning_objectives:
-  - Multithread Programming and its performance gains
+  - Multithreaded programming and its performance gains
   - Using a thread safe datastructure
-  - Using synchronization primatives
+  - Using synchronization primitives
 wikibook:
   - "Pthreads, Part 1: Introduction"
   - "Pthreads, Part 2: Usage in Practice"
@@ -305,7 +305,7 @@ Let’s take pizza delivery for an example,
 - Do you want your pizza hot? Low latency = pizza arrives quicker!
 - Or do you want your pizza to be inexpensive? High throughput = lots of pizzas per hour
 
-For the "Version 1: Thread Pool" solution, because the amount of time needed for every task is different, the tasks that need less time won’t be blocked by the tasks that needed longer time. On the other hand, the execution time for each task is longer than having all the thread working on the single task.
+For the "Version 1: Thread Pool" solution, because the amount of time needed for every task is different, the tasks that need less time won’t be blocked by the tasks that needed longer time. On the other hand, the execution time for each task is longer than having all the threads working on the single task.
 
 Consider the following tasks (in order), where a thread can run 100 iterations per second:
 
@@ -317,7 +317,7 @@ Consider the following tasks (in order), where a thread can run 100 iterations p
 
 ### Throughput
 
-Suppose there are 4 threads available and the program runs for 1 seconds.
+Suppose there are 4 threads available and the program runs for 1 second.
 
 For version 1: The throughput is 2 since tasks 1, 3, and 4 will have completed, while 2 is still being worked on (and 5 is just being started).
 
