@@ -2,7 +2,7 @@
 layout: doc
 title: "Password Cracker"
 submissions:
-  title: Version 1 and 2
+  - title: Version 1 and 2
   due_date: 03/13 11:59pm
   graded_files:
   - cracker1.c
