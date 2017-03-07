@@ -9,7 +9,7 @@ submissions:
   - cracker2.c
 learning_objectives:
   - Multithreaded programming and its performance gains
-  - Using a thread safe datastructure
+  - Using a thread-safe datastructure
   - Using synchronization primitives
 wikibook:
   - "Pthreads, Part 1: Introduction"
@@ -27,20 +27,20 @@ wikibook:
 In this MP, you will be creating a program that can recover lost passwords.
 For security reasons, passwords are usually never stored in plain text.
 Instead, the hashed versions of passwords are stored.
-For an example of this, take a look at the `/etc/shadow` file on any modern linux machine.
+For an example of this, take a look at the `/etc/shadow` file on any modern Linux machine.
 
 When a user tries to log in, the password they enter is hashed and compared with the stored hash.
 This way, there's no need to store your actual password.
 
 Given the output of a good hash function, it is hard or impossible to reconstruct the input using the hashed value.
-However, if you are willing to burn some CPU time, it is possible to try every possible password (brute force attack) until you find one such that hashes to the target hash.
+However, if you are willing to burn some CPU time, it is possible to try every possible password (brute force attack) until you find one that hashes to the target hash.
 
 
 ## `crypt_r()`
 
-We will be using `crypt_r()` (a reentrant/thread safe version) of the `crypt()` function, as our hashing function.
+We will be using `crypt_r()` (a reentrant/thread-safe version of the `crypt()` function) as our hashing function.
 `crypt_r()` takes three arguments: the string to hash, a salt string, a `struct crypt_data`.
-Make sure to set the `initialized` member of your `struct crypt_data` before using it for the first time.
+Make sure to set the `initialized` member of your `struct crypt_data` to zero before using it for the first time.
 For example:
 
 ```
@@ -62,22 +62,19 @@ hash of 'example2' = xx96r6/l1aOi.
 ```
 
 The `struct crypt_data` is necessary for `crypt_r()`.
-This is because `crypt()` needs to store information between invocations, so calling `crypt()` on multiple threads will cause this information to be inaccurate.
+This is because `crypt()` stores information between invocations, so calling `crypt()` in multiple threads at the same time will cause this information to be inaccurate.
 `crypt_r()` gets around this by storing information in a `struct crypt_data` instead.
-You should check the man page for `crypt_r,` do you need to free the string it returns?
+You should check the man page for `crypt_r`. Do you need to free the string it returns?
 
-## Why is there salt in my hash?
+### Why is there salt in my hash?
 
-The salt argument "flavors" the string so that when you hash the same password with different salts, you'll get different results.
-For example, we can use part of a user's username to salt their password before hashing.
-This way, two users with the same password will not have the same hash stored in the database.
+The salt argument "flavors" the string so that when you hash the same password with different salts, you'll get different results. In practice, we might use a random value generated for every user. This prevents an attacker from noticing that two people have the same password just by comparing their hash values.
 
 **For this assignment, always use `"xx"` for the salt argument.**
 
 ## Problem Statement
 
-You will be given a list of password hashes which you must recover.
-Each password is a password partial, meaning that we have these two pieces of information:
+You will be given a list of hashes that you must recover the passwords for. For each hash, we have two other pieces of information:
 
 * The first few letters in their password
 * The total length of the password
