@@ -33,7 +33,7 @@
   -
     date: "March 7"
     content: "Lock-free Data Structures"
-    slides:
+    slides: "lock_free.pdf"
     video:
   -
     date: "March 14"
