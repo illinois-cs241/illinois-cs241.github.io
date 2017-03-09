@@ -34,7 +34,7 @@
     date: "March 7"
     content: "Lock-free Data Structures"
     slides: "lock_free.pdf"
-    video:
+    video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f49eb1bc-8d6d-44aa-ac98-4fc43d408651?ec=true"
   -
     date: "March 14"
     content: "Instrumentation"
