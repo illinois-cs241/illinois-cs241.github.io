@@ -72,4 +72,4 @@ You can run the simulator with the following command (see `simulator.c`):
 
 ## Testing
 
-*   Make sure you throughly test your code as usual. We have provided some tests cases, but we encourage you to write your own as well. Use the provided test cases as a reference to learn to create tests with good coverage.
+*   Make sure you thoroughly test your code as usual. We have provided some tests cases, but we encourage you to write your own as well. Use the provided test cases as a reference to learn to create tests with good coverage.
