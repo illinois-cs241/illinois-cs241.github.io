@@ -20,7 +20,7 @@ wikibook:
 
 This lab simulates the behavior of virtual memory for multiple processes. Before getting started, we highly recommend that you have read the wikibook and answer the [Google Form](http://goo.gl/forms/4Us4vBPJnj). Next, please read through the provided code as many files have comments on usage that you will find useful. There are a few different files in this lab that each represent a different component important to virtual memory. Reading through these files can start to help one understand the roles of the different hardware and software involved with virtual memory.
 
-You will only have to write one function in `mmu.c`, but it requires a good understand of the wikibook and decent knowledge of the rest of the provided code.
+You will only have to write one function in `mmu.c`, but it requires a good understanding of the wikibook and decent knowledge of the rest of the provided code.
 
 Good luck!
 
