@@ -35,7 +35,7 @@ void *MMU_get_physical_address(MMU *mmu, void *virtual_address, size_t pid)
 
 This should convert a virtual address to a physical address from a three level page table.
 
-mmu here is a pointer to the MMU struct defined in `mmu.h`, virtual_address is the virtual address you are transforming into a physical address, and pid is the ID of this process. You can assume that the pid will always have its first page created.
+`mmu` here is a pointer to the MMU struct defined in `mmu.h`, `virtual_address` is the virtual address you are transforming into a physical address, and `pid` is the ID of this process. You can assume that the pid will always have its first page initialized.
 
 From the wikibook: "For most memory accesses of most programs, there is a significant chance that the TLB has cached the results... the TLB [may] not have the result cached and the MMU must use the much slower page table to determine the physical frame."
 
@@ -48,13 +48,13 @@ Virtual addresses use 64 bits with only 51 bits used for the actual virtual addr
     MISC (13)   VPN1 (12)     VPN2 (12)    VPN3 (12)     Offset (15)
 ```
 
-Using PageTable_get_entry() (see `pagetable.h`) will allow you to traverse through the page table using the VPNx addresses. Consider what should be done if the page table or frame we are trying to access has not yet been created.
+Using `PageTable_get_entry()` (see `pagetable.h`) will allow you to traverse through the page table using the `VPNx` addresses. Consider what should be done if the page table or frame we are trying to access has not yet been created.
 
-For the pid, when a new pid tries to access the tlb, what do you think should happen? Think about the security risks!
+For the pid, when a new pid tries to access the TLB, what do you think should happen? Think about the security risks!
 
 Be sure to read all of the functions within `mmu.h`, paying close attention to the comments to see the circumstances in which these functions should be called.
 
-NOTE: You must use the `PageTable_get_entry` and `PageTable_set_entry` functions rather than directly accessing the `PageTable` struct. The same goes for the MMU with modifying the `num_tlb_misses` and `num_page_faults`. These should be done using the provided functions.
+Note: You must use the `PageTable_get_entry` and `PageTable_set_entry` functions rather than directly accessing the `PageTable` struct. The same goes for the MMU with modifying the `num_tlb_misses` and `num_page_faults`. These should be done using the provided functions.
 
 
 ## Running the simulator
