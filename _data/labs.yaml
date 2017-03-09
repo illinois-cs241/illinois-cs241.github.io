@@ -46,6 +46,7 @@
     releaseDate: "Week 8"
     dueDate: "Week 9"
     url: "ideal_indirection"
+    resources: true
   -
     name: "Pied Piper"
     releaseDate: "Week 9"
