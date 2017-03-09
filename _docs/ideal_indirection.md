@@ -15,11 +15,6 @@ learning_objectives:
 wikibook:
   - "Virtual Memory, Part 1: Introduction to Virtual Memory"
 ---
-## Required Reading
-
-Read this in the wikibook before starting the lab.
-
-* [Introduction to Virtual Memory](https://github.com/angrave/SystemProgramming/wiki/Virtual-Memory%2C-Part-1%3A-Introduction-to-Virtual-Memory)
 
 ## Overview
 
