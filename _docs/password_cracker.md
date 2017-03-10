@@ -180,6 +180,10 @@ CPU usage: 3.31x
 
 The times and order may vary slightly.
 
+Note that the queue does not have a `queue_empty()` function (as explained in `queue.h`).
+So a question you might ask yourself is "How do I know when the queue is empty?".
+This is an exercise we have intentionally left for the reader, but one hint we will give is "How does `strlen()` know when it has reached the end of a C style string?".
+
 **Remember to use appropriate synchronization, and make sure to use `crypt_r`.**
 If you create a new thread for each task (instead of keeping the threads in the thread pool running), you will lose points! (and your implementation will be very slow)
 
