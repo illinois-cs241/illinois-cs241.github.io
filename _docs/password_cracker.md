@@ -344,7 +344,7 @@ Running `make debug` will compile `cracker1` and `cracker2` in debug mode, and w
 ### ThreadSanitizer
 We have also included the target `make tsan`, which compiles your code with Thread Sanitizer (run `cracker1-tsan` and `cracker2-tsan`)
 
-ThreadSantizer is a race condition detection tool. See [this page](http://cs241.cs.illinois.edu/tsan.html) for more information.
+ThreadSantizer is a race condition detection tool. See [this page](https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-5%3A-Debugging#tsan) for more information.
 
 **We will be using ThreadSanitizer to grade your code! If the autograder detects a data race, you won't automatically get 0 points, but a few points will be deducted.**
 
