@@ -66,12 +66,22 @@ Some more resources on RAGs & Deadlock: [Wikipedia](https://en.wikipedia.org/wik
 
 ## Graph Data Structure
 
-Since a Makefile is a representation of a dependency graph, our parser returns a directed graph data structure. You may find the graph API in `includes/graph.h`. To access Makefile rules from this graph, you would use 
-`rule_t * rule = (rule_t *)graph_get_vertex_value(dependency_graph, target_name)`,
+Since a Makefile is a representation of a dependency graph, our parser returns a directed graph data structure. You may find the graph API in `includes/graph.h`. To access Makefile rules from this graph, you would use
+```
+rule_t * rule = (rule_t *)graph_get_vertex_value(dependency_graph, target_name)
+```
+
 where `target_name` is a string representing a rule. To get a list of all target names, use 
-`vector *target_names = graph_vertices(dependency_graph)`
+
+```
+vector *target_names = graph_vertices(dependency_graph)
+```
+
 To get a list of all the dependencies of a rule with a given target name, use 
-`vector *dependencies = graph_neighbors(dependency_graph, target_name)`
+
+```
+vector *dependencies = graph_neighbors(dependency_graph, target_name)
+```
 
 See `rule.h` for a description of the `rule_t` API. And read `parser.h` for more usage details on the dependency graph.
 
