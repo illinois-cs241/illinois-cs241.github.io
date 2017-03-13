@@ -64,20 +64,27 @@ The following graph represents the above Makefile. Note that 'a' and 'b' form a 
 
 Some more resources on RAGs & Deadlock: [Wikipedia](https://en.wikipedia.org/wiki/Deadlock), [Wikibook](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions).
 
-##Graph Data Structure
+## Graph Data Structure
 
-Since a Makefile is (in part) a representation of a dependency graph, our parser returns a (directed) graph data structure. You may find the graph API in `includes/graph.h`. To access Makefile rules from this graph, you would use `rule_t * rule = (rule_t *)graph_get_vertex_value(dependency_graph, target_name)`, where `target_name` is a string representing a rule. To get a list of all target names, use `vector *target_names = graph_vertices(dependency_graph)`. To get a list of all the dependencies of a rule with a given target name, use `vector *dependencies = graph_neighbors(dependency_graph, target_name)`. See `rule.h` for a description of the rule\_t API.
+Since a Makefile is a representation of a dependency graph, our parser returns a directed graph data structure. You may find the graph API in `includes/graph.h`. To access Makefile rules from this graph, you would use 
+`rule_t * rule = (rule_t *)graph_get_vertex_value(dependency_graph, target_name)`,
+where `target_name` is a string representing a rule. To get a list of all target names, use 
+`vector *target_names = graph_vertices(dependency_graph)`
+To get a list of all the dependencies of a rule with a given target name, use 
+`vector *dependencies = graph_neighbors(dependency_graph, target_name)`
+
+See `rule.h` for a description of the `rule_t` API. And read `parser.h` for more usage details on the dependency graph.
 
 **USAGE WARNINGS**:
-* Any vectors returned from graph functions *must be destroyed manually* to prevent memory leaks. Destroying these vectors will not destroy anything in the actual graph. 
-* Destroying the graph or removing vertices from the graph **will completely destroy all associated target names, rules, and edges**. So copy anything you need for later use before removal or destruction.
-* **The graph and vector classes are *not* thread-safe!** You must enforce mutual exclusion if multiple threads are to concurrently modify and access these structures!
+* Any vectors returned from graph functions must be destroyed manually to prevent memory leaks. Destroying these vectors will not destroy anything in the actual graph. 
+* Destroying the graph or removing vertices from the graph will completely destroy all associated target names, rules, and edges. So copy anything you need for later use before removal or destruction.
+* **The graph and vector classes are *not* thread-safe!** You must enforce mutual exclusion if multiple threads are to concurrently modify and access these structures.
 
 ## Graph Searching and Cycle Detection
 
-The graph returned from the `parmake` parser will contain *all* the vertices and edges depicting rules and dependencies in a makefile. In addition, it will contain an empty sentinel rule (with key "") whose neighbors are the build targets. **Do not execute this rule**. Instead, you should only work on rules that descend from this rule. Here, "B descends from A" implies there exists a path from the vertex 'A' to the vertex 'B'.
+The graph returned from the `parmake` parser will contain all the vertices and edges depicting rules and dependencies in a Makefile. In addition, it will contain an empty sentinel rule (with key "") whose neighbors are the build targets. *Do not execute this rule*. Instead, you should only work on rules that descend from this rule (i.e. the build targets and all their descendents). Here, "B descends from A" means that that 'A' implicitly depends on 'B' to run.
 
-GNU `make` handles cyclical dependencies by attempting to delete edges that cause cycles. If you tried to call `make b` on the example Makefile shown earlier, GNU `make` would essentially attempt to convert that Makefile to this one:
+GNU `make` handles cyclical dependencies by attempting to delete edges that cause cycles. If you tried to call `make d` on the example Makefile shown earlier, GNU `make` would essentially attempt to convert that Makefile to this one:
 
     d: a c
     	echo D
@@ -88,8 +95,8 @@ GNU `make` handles cyclical dependencies by attempting to delete edges that caus
     c:
     	echo C
 
-To highlight the importance of cycle detection in resource allocation schemes, we also require that you explicitly handle cycles. However, *your implementation of parmake will ignore all build targets whose descendents belong to cycles*. That is, calling `./parmake d` on this makefile would execute *nothing*, since 'd' cannot be satisfied due to the cyclical dependency (-> 'a' -> 'b' ->). However, calling `./parmake c` will still execute `echo C`, since the descendents of 'c'
-don't belong to cycles (indeed, 'c' has no descendents at all).
+To highlight the importance of cycle detection in resource allocation schemes, we also require that you explicitly handle cycles. However, *your implementation of parmake will ignore all build targets whose descendents belong to cycles*. That is, calling `./parmake d` on this makefile would execute nothing, since 'd' cannot be satisfied due to the cyclical dependency (-> 'a' -> 'b' ->). However, calling `./parmake c` will still execute `echo C`, since the (nonexistent) descendents of 'c'
+don't belong to cycles.
 
 Moreover, you must announce any build targets that are dropped due to existence of cyclical dependencies *before you start working on any rules* using the function `print_cycle_failure()` found in `format.h`. Read the header file for usage information.
 
@@ -177,10 +184,9 @@ We have provided you with a parsing function, `parser_parse_makefile()`.
 However, you should still take a look at the [Wikipedia page](https://en.wikipedia.org/wiki/Make_(software)) if you do not know how to read a Makefile.
 
 `parser_parse_makefile()` takes the filename and a `NULL`-terminated array of strings as inputs.
-The array of strings specify the targets you are planning to run (specified by the arguments to the program, see the first section). Remember, if the array is null or empty, the parser will use the first target found in the Makefile.
-The parser will call `parsed_new_target()` on each target needed to be compiled.
+The array of strings specify the targets you are planning to run (specified by the arguments to the program, see the first section). Remember, if the array is null or empty, the parser will use the first target found in the Makefile. The parser returns a graph data structure containing all rules and dependencies in the `Makefile`, even those that do not need to be executed.
 
-For example, suppose we have `makefile`:
+For example, suppose we have the `Makefile`:
 
 ```
 a: b c
@@ -189,9 +195,11 @@ b: c
     echo B
 c:
     echo C
+d:
+    echo D
 ```
 
-The parser will return a graph containing 4 vertices, once each for rule 'a', 'b' and 'c', as well as one sentinel (labelled '') whose neighbor is rule 'a' (i.e. the only build target).
+The parser will return a graph containing 5 vertices, once each for rule 'a', 'b', 'c', and 'd', as well as one sentinel (labelled as an empty string) whose neighbor is rule 'a' (i.e. the only build target).
 
 Those curious of the implementation can view the source in `parser.c` although this is not necessary.
 
@@ -204,11 +212,11 @@ You can view the header information in `includes/`.
 Each rule depends on a set of other rules and files.
 It is important to note that each dependency is either the name of another rule or the name of a file on disk or BOTH. A rule can be run if and only if all of rules that it depends on have been satisfied and none of them have failed (See what determines a failed rule in Running Commands).
 
-Note that rules which do not descend from build targets, or rules whose ancestors possess descendents that form cycles, *should never be run*.
+Note that rules which do not descend from any build targets, or whose only ancestors otherwise possess descendents that form cycles, should never be run.
 
 `parmake` must satisfy all of the rules needed to build the specified targets correctly and as quickly as possible.
 To ensure that rules are executed correctly, a rule can only be run once it's dependencies are satisfied.
-Because we want maximum runtime performance, we need to be running a rule on each worker thread, if possible. Threads should not stay idle when there are jobsthat can be executed.
+Because we want maximum runtime performance, you need to be running a rule on each worker thread, if possible. Threads should not stay idle when there are jobs that can be executed.
 
 When a rule is ready to be satisfied, we must determine if we actually need to run the rule's commands. We run its commands if and only if at least one of the following is true:
 
@@ -247,7 +255,7 @@ You can use `system()` to run the commands associated with each rule. There are 
 
 * If any of a rule's commands fail while evaluating that rule, then the rule should "fail" and no more of its commands should be run
 * If a rule fails, its parent rules (rules which have this rule as a dependency) should fail as well. Note that this is not necessarily true for the converse (i.e. if a parent fails, its children may still be satisfied -- why is that?)
-* Finally, if all of  a rule's highest ancestors are not build targets or are build targets that cannot be satisfied due to circular dependencies, the rule should never be worked on.
+* Finally, if none of a rule's ancestors are build targets, or its only build target ancestors cannot be satisfied due to circular dependencies, the rule should never be worked on.
 
 For your convenience these rules are captured in the following flow chart:
 
@@ -259,7 +267,7 @@ The number of threads running rules is given as the command-line option `-j.`
 Each worker thread process rules as soon as they become available.
 To process a rule, first determine whether its dependencies have been fulfilled.
 If they have, execute any associated commands.
-There are several important parallelism requirements:
+There are two important parallelism requirements:
 
 * You should NOT run any rule unless its dependencies have been met (all dependent rules have been run, see the previous section)
 * If a thread is available, and there is at least one rule which is ready to run (all of its dependencies satisfied), the available thread should work on that rule.
@@ -341,15 +349,15 @@ provided that testfile4 does not contain cycles.
 
 Here is the grading breakdown:
 
-* Part 1 (50%): Create a single-threaded version of `parmake` (so just the `make` part). This version should:
-	- parse user arguments and correctly select a makefile and appropriate build targets for the parser (in particular, you should still parse the 'j' flag)
+* Part 1 (50%): Create a single-threaded version of `parmake` (so just `make`). This version should:
+	- parse user arguments and correctly select a makefile and appropriate build targets for the parser (in particular, you should still parse the -j flag, though we will only test -j 1)
 	- identify cycles in the dependency graph returned by the parser and remove build targets that depend on them
 	- attempt to run all other build targets by recursively running all their dependencies and *only* their dependencies
 	- identify whether or not to run a rule as per the flowchart recipe and run it once possible (or reject it if not possible)
-* Part 2 (50%): Create the full multi-threaded version of `parmake` (so the `par` part). This version should:
+* Part 2 (50%): Create the full multi-threaded version of `parmake` (so `par`). This version should:
 	- perform the same functions as in Part 1
 	- run with 2-4 threads (excluding the main thread) for any given makefile
 	- concurrently run all rules whose dependencies have been satisfied, subject to the thread limit
 	- avoid deadlock, data races, livelock, and busy-waiting
-	- create performant code that doesn't incur excessive *overhead* (e.g > 10 ms per rule)
+	- create performant code that doesn't incur excessive overhead (e.g > 10 ms per rule)
 
