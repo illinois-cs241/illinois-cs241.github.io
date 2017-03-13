@@ -8,8 +8,6 @@ submissions:
   - parmake.c
 -  title: Part 2
   due_date: 04/03 11:59pm
-  graded_files:
-  - parmake.c
 learning_objectives:
   - Parallel Programming with Dependencies
   - Using a Threadsafe Data structure
