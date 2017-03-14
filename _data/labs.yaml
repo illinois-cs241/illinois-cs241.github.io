@@ -58,20 +58,20 @@
     dueDate: "Week 12"
     url: "scheduler"
   -
-    name: "Finding Filesystems"
+    name: "Chatroom"
     releaseDate: "Week 12"
     dueDate: "Week 13"
+    url: "chatroom"
+  -
+    name: "Finding Filesystems"
+    releaseDate: "Week 13"
+    dueDate: "Week 14"
     url: "finding_filesystems"
   -
     name: "Mad Mad Access Pattern"
-    releaseDate: "Week 13"
-    dueDate: "Week 14"
-    url: "mad_mad_access_pattern"
-  -
-    name: "Chatroom"
     releaseDate: "Week 14"
     dueDate: "Week 15"
-    url: "chatroom"
+    url: "mad_mad_access_pattern"
   -
     name: "Super Linux Kernel Super Lab"
     releaseDate: "Week 15"
