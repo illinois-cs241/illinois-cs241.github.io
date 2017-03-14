@@ -37,10 +37,10 @@
   -
     name: "Mapreduce"
     releaseDate: "Week 12"
-    dueDate: "Week 13 & 14"
+    dueDate: "Week 13"
     url: "mapreduce"
   -
-    name: "Wearables"
-    releaseDate: "Week 14"
+    name: "Networking"
+    releaseDate: "Week 13"
     dueDate: "Week 16"
-    url: "wearables"
+    url: "networking"
