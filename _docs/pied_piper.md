@@ -82,8 +82,9 @@ If there is one thing that you know can solve systems programming problems, it i
 ```console
 grep piano < inventory.txt | cut -f2 -d'\t' | mail -s "sing me a song" piano_man@gmail.com
 ```
+---
 
-(If you've forgotten, '<' causes the contents of the file 'inventory.txt' to be used as STDIN for 'grep piano', and '|' (the pipe operator) causes the STDOUT of the program on the left to be 'piped' as the STDIN of the program on the right - but it'll probably be clearer if you try this stuff out yourself!)
+If you've forgotten, '<' causes the contents of the file 'inventory.txt' to be used as STDIN for 'grep piano', and '\|' (the pipe operator) causes the STDOUT of the program on the left to be 'piped' as the STDIN of the program on the right - but it'll probably be clearer if you try this stuff out yourself!
 
 You would create an executable that does the same thing - 
 
