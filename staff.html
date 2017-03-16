@@ -18,6 +18,14 @@
               {% for member in sorted_team %}
                 <div class = "small-12 medium-12 large-3 columns">
                   <div class = "pad" id = "{{member.netid}}" >
+                    {% assign allfiles = photos | where_exp: "file", "file.path contains member.netid" %}
+			<!--
+				{{ allfiles }}
+			-->
+		    {% assign mapped = allfiles | first | map: "path" %}
+			<!--
+				{{ mapped }}
+			-->
                     {% assign photo = photos | where_exp: "file", "file.path contains member.netid" | first | map: "path" | default: "./images/staffPhotos/default.jpg" %}
                     <a href = "./{{ photo }}">
                       <div class="card-staff mdl-card mdl-shadow--2dp" style =
