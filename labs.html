@@ -31,9 +31,15 @@
               		    	<td class="mdl-data-table__cell--non-numeric">{{lab.releaseDate}}</td>
                         <td class="mdl-data-table__cell--non-numeric">{{lab.dueDate}}</td>
                         {% if lab.resources %}
+
+                        
                         <td class="mdl-data-table__cell--non-numeric"><a href="./lab_resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html"><img src="./images/lab_assets/animation.png"></a></td>
+                        
+                        {% if lab.worksheet == nil or lab.worksheet != false %}
                         <td class="mdl-data-table__cell--non-numeric">
                         <a href="./lab_resources/handouts/{{lab.name | downcase | replace: " ", "_"}}.pdf"><img src="./images/lab_assets/file-document.png"></a></td>
+                        {% endif %}
+
                         {% else %}
                         <td class="mdl-data-table__cell--non-numeric">
                         </td>

@@ -52,6 +52,8 @@
     releaseDate: "Week 9"
     dueDate: "Week 11"
     url: "pied_piper"
+    worksheet: false
+    resources: true
   -
     name: "Savage Scheduler"
     releaseDate: "Week 11"
