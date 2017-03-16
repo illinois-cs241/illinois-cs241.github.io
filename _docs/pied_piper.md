@@ -3,8 +3,8 @@ layout: doc
 title: "Pied Piper"
 submissions:
 - title: Entire Assignment
-  due_date: Someday
-  graded_files:
+  due_date: 3/29 @ 11:59pm
+  graded_files:
   - pied_piper.c
 learning_objectives:
   - Using Pipes
