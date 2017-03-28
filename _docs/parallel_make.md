@@ -3,7 +3,7 @@ layout: doc
 title: "Parallel Make"
 submissions:
 - title: Part 1
-  due_date: 03/27 11:59pm
+  due_date: 03/28 11:59pm
   graded_files:
   - parmake.c
 - title: Part 2
