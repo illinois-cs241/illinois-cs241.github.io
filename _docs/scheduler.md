@@ -136,11 +136,15 @@ make
 ```
 To run the simulator, run:
 
-`./simulator -s <scheme> <input file>`
+```
+./simulator -s <scheme> <input file>
+```
 
 For example:
 
-`./simulator -s FCFS examples/proc1.in`
+```
+./simulator -s FCFS examples/proc1.in
+```
 
 The acceptable (case-insensitive) values for `scheme` (outlined above) are:
 
