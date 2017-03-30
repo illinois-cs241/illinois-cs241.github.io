@@ -110,7 +110,7 @@ You must implement the `pied_piper()` function in `pied_piper.c`, which does the
 2. Try `exec`ing all of the processes and setting up all the pipes. This means that the first process should have its stdin redirected from the input file (if exists). If you get a failure with `exec`, `pipe`, or `dup2` for any reason, you can simply exit with a nonzero code, though you won't be explicitly tested on it; these calls failing usually means the entire system is coming down (or maybe you passed a bad executable to `exec()`, in which case there isn't much a resilient pipe can do for you).
 3. Wait on all of the processes and check their return codes.
 4. If *any* process has a non-zero return code, then restart the script (go back to step 2). Try restarting all the processes up a total of two additional times (three runs in total).
-5. If you everything goes well one of the times, you are done! Exit with status 0 for success in the pied piper process.
+5. If everything goes well once, you are done! Exit with status 0 for success in the pied piper process.
 6. If at least one process fails on the final run, print out a summary of commands, their return codes, and anything printed out to standard error *for the last run* (hint: look in the `utils.h` file). You should print out the info for every command, even the ones that succeeded. You should then exit with status `EXIT_OUT_OF_RETRIES` (see `pied_piper.h`).
 * Note: You don't have to worry about the pipe filling up; the commands we run will have an output of less than the size of the pipe.
 
