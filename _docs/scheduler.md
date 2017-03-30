@@ -54,7 +54,6 @@ You will find several files:
     -   `...` *(View the example directory for the full set.)*
 
     Note that for each unit of time, the output files tell you state of priority queue and the job that is currently running. It will also provide information about any jobs that arrive, are scheduled or finished.
-### In short, all you need to write is libscheduler.c.
 
 ## Before you start
 
