@@ -6,6 +6,7 @@ submissions:
   due_date: 04/5 11:59pm
   graded_files:
   - libscheduler.c
+  - libscheduler.h
 learning_objectives:
   - scheduling algorithms
   - preemptive vs non-premptive
@@ -34,6 +35,7 @@ You will find several files:
 
 -   Files you need to edit and commit:
     -   `libscheduler.c`
+    -   `libscheduler.h`
 
 -   Example input files:
     -   `examples/proc1.in`
