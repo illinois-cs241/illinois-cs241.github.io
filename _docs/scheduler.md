@@ -165,17 +165,6 @@ Failed examples/proc1-rr4.out
 Failed examples/proc1-sjf.out
 ```
 
-Logistics
-=========
-
-#### DON'T EDIT THE MAKEFILE
-
-In CS 241, every program will be compiled using `make`. When autograding your lab, we add additional files for test cases and use a different Makefile. Therefore, we do not use your Makefile to compile the code. **If you edit your Makefile, your code probably won't compile for the autograder.**
-
-#### TESTING YOUR PROGRAM
-
-Since all testing and grading by course staff will be done on the VMs, it is **STRONGLY ADVISED** that you test your program on your CS241 VM before submission. The fact that your program "runs perfectly" on your own machine will get you zero points if your program does not run at all on the provided CS241 VMs.
-
 ------------------------------------------------------------------------
 
 Examples
