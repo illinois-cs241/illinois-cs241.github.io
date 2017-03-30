@@ -29,7 +29,7 @@ You will find several files:
 -   Programming files:
     -   `simulator.c`: **You should not edit this file.** This file is the discrete event simulator that, when run, will interact with your library. You can find more information on how to run this at the end of this web page. This file will be replaced by the autograder, so any changes you make will be ignored.
     -   `libpriqueue.h`: **You should not edit this file.** Files related to the priority queue.
-    -   `libscheduler.h`: Header file for libscheduler. You may want to change this file.
+    -   `libscheduler.h`: Header file for libscheduler. To pass this assignment, you will **have** to change this file.
     -   `libscheduler.c`: Files related to the scheduler. Feel free to add any helper functions, but you must implement all the functions where we provide outlines.
     -   `examples.sh`: A bash script of `diff` runs that tests your program against the 24 test output files. This file will output differences between your program and the examples.
 
