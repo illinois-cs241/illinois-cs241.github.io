@@ -16,162 +16,189 @@ Consider the following simple schedule:
 | 2          | 3            | 4            | 2        |
 
 The flow of execution of functions calls is as follows:
+
 ```
- scheduler start up(cores = 2, scheme = FCFS)
+ scheduler_start_up(s = SJF)
      --> scheduler initialized
 
- new job(job number = 0, time = 0, running time = 8, priority = 1)
-     --> returns 0, indicating job(id=0) should run on core(id=0)
+ scheduler_new_job(job_number = 0, time = 0, running_time = 8, priority = 1)
+     --> returns true, indicating that job(id=0) should be scheduled at this time.
 
- new job(job number = 1, time = 1, running time = 8, priority = 1)
-     --> returns 1, indicating that job(id=1) should run on core(id=1).
+ scheduler_new_job(job_number = 1, time = 1, running_time = 8, priority = 1)
+     --> returns false, indicating that job(id=1) will not be scheduled at this time.
 
- new job(job number = 2, time = 3, running time = 4, priority = 2)
-     --> returns -1, indicating that job(id=2) will not be scheduled at this time.
+ scheduler_new_job(job_number = 2, time = 3, running_time = 4, priority = 2)
+     --> returns false, indicating that job(id=2) will not be scheduled at this time.
 
- job finished(core id = 0, job number = 0, time = 8)
-     --> returns 2, indicating job(id=2) should run next on core(id=0).
+ scheduler_job_finished(job_number = 0, time = 8)
+     --> returns 2, indicating that job(id=2) should be run next on the processor.
 
- job finished(core id = 1, job number = 1, time = 9)
-     --> returns -1, indicating that core(id=1) should remain idle.
+ scheduler_job_finished(job_number = 2, time = 12)
+     --> returns 1, indicating that job(id=1) should be run next on the processor.
 
- job finished(core id = 0, job number = 2, time = 12)
-     --> returns -1, indicating that core(id=0) should remain idle.
+ scheduler_job_finished(job_number = 1, time = 20)
+     --> returns -1, indicating that the processor should remain idle.
 
  scheduler average waiting time()
-     --> returns (5/3) == 1.67.
+     --> returns (16/3) == 5.33
 
  scheduler average turnaround time()
-     --> returns (25/3) == 8.33.
+     --> returns (36/3) == 12.00
 
  scheduler average response time()
-     --> returns (5/3) == 1.67.
+     --> returns (16/3) == 5.33
 
- scheduler clean up()
+ scheduler_clean_up()
      --> cleans up and frees all memory used by the scheduler
 ```
 When the simulator is executed and the flow of execution is implemented correctly, you will see the following output:
 
 ```
-  Loaded 2 core(s) and 3 job(s) using First Come First Served (FCFS) scheduling...
+Loaded 3 job(s) using Non-preemptive Shortest Job First (SJF) scheduling...
 
-  === [TIME 0] ===
-  A new job, job 0 (running time=8, priority=1), arrived. Job 0 is now running on core 0.
-  Queue: 0(0)
+=== [TIME 0] ===
+A new job, job 0 (running time=8, priority=1), arrived. Job 0 is now running on processor.
+  Queue: 
 
-  At the end of time unit 0...
-  Core 0: 0
-  Core 1: -
+At the end of time unit 0...
+  History: 0
 
-  Queue: 0(0)
+  Queue: 
 
-  === [TIME 1] ===
-  A new job, job 1 (running time=8, priority=1), arrived. Job 1 is now running on core 1.
-  Queue: 0(0) 1(1)
+=== [TIME 1] ===
+A new job, job 1 (running time=8, priority=1), arrived. Job 1 is set to idle (-1).
+  Queue: 
 
-  At the end of time unit 1...
-  Core 0: 00
-  Core 1: -1
+At the end of time unit 1...
+  History: 00
 
-  Queue: 0(0) 1(1)
+  Queue: 
 
-  === [TIME 2] ===
-  At the end of time unit 2...
-  Core 0: 000
-  Core 1: -11
+=== [TIME 2] ===
+At the end of time unit 2...
+  History: 000
 
-  Queue: 0(0) 1(1)
+  Queue: 
 
-  === [TIME 3] ===
-  A new job, job 2 (running time=4, priority=2), arrived. Job 2 is set to idle (-1).
-  Queue: 0(0) 1(1) 2(-1)
+=== [TIME 3] ===
+A new job, job 2 (running time=4, priority=2), arrived. Job 2 is set to idle (-1).
+  Queue: 
 
-  At the end of time unit 3...
-  Core 0: 0000
-  Core 1: -111
+At the end of time unit 3...
+  History: 0000
 
-  Queue: 0(0) 1(1) 2(-1)
+  Queue: 
 
-  === [TIME 4] ===
-  At the end of time unit 4...
-  Core 0: 00000
-  Core 1: -1111
+=== [TIME 4] ===
+At the end of time unit 4...
+  History: 00000
 
-  Queue: 0(0) 1(1) 2(-1)
+  Queue: 
 
-  === [TIME 5] ===
-  At the end of time unit 5...
-  Core 0: 000000
-  Core 1: -11111
+=== [TIME 5] ===
+At the end of time unit 5...
+  History: 000000
 
-  Queue: 0(0) 1(1) 2(-1)
+  Queue: 
 
-  === [TIME 6] ===
-  At the end of time unit 6...
-  Core 0: 0000000
-  Core 1: -111111
+=== [TIME 6] ===
+At the end of time unit 6...
+  History: 0000000
 
-  Queue: 0(0) 1(1) 2(-1)
+  Queue: 
 
-  === [TIME 7] ===
-  At the end of time unit 7...
-  Core 0: 00000000
-  Core 1: -1111111
+=== [TIME 7] ===
+At the end of time unit 7...
+  History: 00000000
 
-  Queue: 0(0) 1(1) 2(-1)
+  Queue: 
 
-  === [TIME 8] ===
-  Job 0, running on core 0, finished. Core 0 is now running job 2.
-  Queue: 1(1) 2(0)
+=== [TIME 8] ===
+Job 0 finished. Processor is now running job 2.
+  Queue: 
 
-  At the end of time unit 8...
-  Core 0: 000000002
-  Core 1: -11111111
+At the end of time unit 8...
+  History: 000000002
 
-  Queue: 1(1) 2(0)
+  Queue: 
 
-  === [TIME 9] ===
-  Job 1, running on core 1, finished. Core 1 is now running job -1.
-  Queue: 2(0)
+=== [TIME 9] ===
+At the end of time unit 9...
+  History: 0000000022
 
-  At the end of time unit 9...
-  Core 0: 0000000022
-  Core 1: -11111111-
+  Queue: 
 
-  Queue: 2(0)
+=== [TIME 10] ===
+At the end of time unit 10...
+  History: 00000000222
 
-  === [TIME 10] ===
-  At the end of time unit 10...
-  Core 0: 00000000222
-  Core 1: -11111111--
+  Queue: 
 
-  Queue: 2(0)
+=== [TIME 11] ===
+At the end of time unit 11...
+  History: 000000002222
 
-  === [TIME 11] ===
-  At the end of time unit 11...
-  Core 0: 000000002222
-  Core 1: -11111111---
+  Queue: 
 
-  Queue: 2(0)
+=== [TIME 12] ===
+Job 2 finished. Processor is now running job 1.
+  Queue: 
 
-  === [TIME 12] ===
-  Job 2, running on core 0, finished. Core 0 is now running job -1.
-  Queue:
+At the end of time unit 12...
+  History: 0000000022221
 
-  FINAL TIMING DIAGRAM:
-  Core 0: 000000002222
-  Core 1: -11111111---
+  Queue: 
 
-  Average Waiting Time: 1.67
-  Average Turnaround Time: 8.33
-  Average Response Time: 1.67
-  ==19777==
-  ==19777== HEAP SUMMARY:
-  ==19777== in use at exit: 0 bytes in 0 blocks
-  ==19777== total heap usage: 16 allocs, 16 frees, 3,102 bytes allocated
-  ==19777==
-  ==19777== All heap blocks were freed -- no leaks are possible
-  ==19777==
-  ==19777== For counts of detected and suppressed errors, rerun with: -v
-  ==19777== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 4 from 4)
+=== [TIME 13] ===
+At the end of time unit 13...
+  History: 00000000222211
+
+  Queue: 
+
+=== [TIME 14] ===
+At the end of time unit 14...
+  History: 000000002222111
+
+  Queue: 
+
+=== [TIME 15] ===
+At the end of time unit 15...
+  History: 0000000022221111
+
+  Queue: 
+
+=== [TIME 16] ===
+At the end of time unit 16...
+  History: 00000000222211111
+
+  Queue: 
+
+=== [TIME 17] ===
+At the end of time unit 17...
+  History: 000000002222111111
+
+  Queue: 
+
+=== [TIME 18] ===
+At the end of time unit 18...
+  History: 0000000022221111111
+
+  Queue: 
+
+=== [TIME 19] ===
+At the end of time unit 19...
+  History: 00000000222211111111
+
+  Queue: 
+
+=== [TIME 20] ===
+Job 1 finished. Processor is now running job -1.
+  Queue: 
+
+FINAL TIMING DIAGRAM:
+  History: 00000000222211111111
+
+Average Waiting Time: 5.33
+Average Turnaround Time: 12.00
+Average Response Time: 5.33
 ```
