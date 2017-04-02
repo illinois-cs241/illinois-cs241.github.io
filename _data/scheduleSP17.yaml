@@ -287,17 +287,17 @@
       -
         title: "TCP Server"
         summary: "26. Passive sockets. The 4 server calls and what they do. Gotchas."
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-4%3A-Building-a-simple-TCP-Server'>TCP Server</a>"
         color: "#8BC34A"
       -
         title: "TCP Server II"
         summary: "27. Socket Programming Gotchas. Intro to scheduling"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-4%3A-Building-a-simple-TCP-Server'>TCP Server</a>"
         color: "#8BC34A"
       -
-        title: "Scheduling. TCP Handshake"
-        summary: "28. Scheduling examples. The SYN ACKSYN ACK Handshake of TCP"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>"
+        title: "Scheduling"
+        summary: "28. Scheduling examples"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-1%3A-Scheduling-Processes'>Scheduling</a>"
         color: "#CDDC39"
     week: "3/27 - 3/31"
     announcement: >
@@ -318,19 +318,19 @@
   -
     schedule:
       -
-        title: "Scheduling-2. epoll"
+        title: "Scheduling-2"
         summary: "29. Scheduling simulator. epoll"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-2%3A-Scheduling-Processes%3A-Algorithms'>Scheduling</a>."
         color: "#CDDC39"
       -
         title: "Files-1"
         summary: "30. ext2/3/4 filesystem. inode"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-1%3A-Introduction'>Files</a>."
         color: "#FFC107"
       -
         title: "Files-2"
         summary: "31. file meta data"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-2%3A-Files-are-inodes-%28everything-else-is-just-data...%29'>Files</a>."
         color: "#FFC107"
     week: "4/3 - 4/7"
     announcement: >
@@ -346,24 +346,24 @@
     schedule:
       -
         title: "Files-3"
-        summary: "32. Dirs and symlinks"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
+        summary: "32. Permissions"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-3%3A-Permissions'>Permissions</a>."
         color: "#FFC107"
       -
         title: "Files-4"
         summary: "33. Virtual f/s"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-5%3A-Virtual-file-systems'>VFS</a>."
         color: "#FFC107"
       -
         title: "Files-5"
         summary: "34. Memory mapped files"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-6%3A-Memory-mapped-files-and-Shared-memory'>Memory Mapped</a>."
         color: "#FFC107"
     week: "4/10 - 4/14"
     announcement: >
       <ul>
         <li>
-          Midterm 2: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+          Midterm 2: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
         </li>
         <li>
           Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Due
