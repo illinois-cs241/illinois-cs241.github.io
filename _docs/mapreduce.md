@@ -210,7 +210,7 @@ These each be used anywhere we specify `my_reducer` in these docs.
 
 For example, if you wanted to count the occurrences of each word in Alice in Wonderland, you can run and of the following
 
-    ./mr1 data/alice.txt test.out ./mapper_wordcount ./reducer_sum 4
+    ./mapreduce data/alice.txt test.out ./mapper_wordcount ./reducer_sum 4
 
 ### Record Setting Pi Code
 As well as the simple mapper/reducer pairs, we also have also included some really cool pi computation code (see [this](http://www.karrels.org/pi/) for more info).
