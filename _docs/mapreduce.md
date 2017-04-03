@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Mapreduce"
+title: "MapReduce"
 submissions:
 - title: Mapreduce
   due_date: 04/10 11:59pm
