@@ -41,11 +41,6 @@
     slides:
     video:
   -
-    date: "April 4"
-    content: "TCP"
-    slides:
-    video:
-  -
     date: "April 11"
     content: "Filesystems"
     slides:
