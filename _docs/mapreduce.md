@@ -136,16 +136,12 @@ Sample Usage
 
 
     % ./mapreduce test.in test.out ./my_mapper ./my_reducer 3
-    my_mapper 0 exited with status 1
-    my_mapper 2 exited with status 2
-    output pairs in test.out: 9
 
 
 Your program will:
 
 * Split the input file into <mapper_count> parts and pipe the contents into <mapper_count> different mapper processes (use splitter).
 * Write the output of the reducer process to the output file.
-* Count the number of lines in the output file and print it to `stdout`.
 
 
 **Remember to close all the unused file descriptors!**
