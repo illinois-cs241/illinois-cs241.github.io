@@ -109,7 +109,7 @@ Messages in our server/client will be exchanged in the following format:
 informally: 0x0000000C"hello world\n"
 ```
 where the **first 4 bytes** of the message indicate the size of the message in bytes.
-We use network-to-host byte-order (ntohs) and host-to-network byte-order (htons) for this.
+We use network-to-host byte-order (ntohl) and host-to-network byte-order (htonl) for this.
 We've given you `get_message_size()`, you **must** implement `write_message_size()`.  As we will be testing your server and client separately, and because our server and client expect this setup, be sure this works; it is like our "protocol".
 Please see how `get_message_size()` it is done in `utils.c`
 
