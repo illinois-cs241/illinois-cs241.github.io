@@ -64,6 +64,7 @@
     releaseDate: "Week 12"
     dueDate: "Week 13"
     url: "chatroom"
+    resources: true
   -
     name: "Finding Filesystems"
     releaseDate: "Week 13"
