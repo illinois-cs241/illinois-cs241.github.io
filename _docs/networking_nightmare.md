@@ -33,7 +33,7 @@ wikibook:
   - "Networking, Part 7: Nonblocking I O, select(), and epoll"
 ---
 
-# Networking Nightmare (or some other name)
+# Networking Nightmare
 
 We strongly recommend reading this entire document at least twice to make sure you understand what the exact requirements of the assignment are. This is a three week MP (one fifth of your MP grade!), and it may be long and painstaking. We strongly recommend starting early.
 
