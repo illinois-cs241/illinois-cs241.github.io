@@ -2,19 +2,19 @@
 layout: doc
 title: "Networking Nightmare"
 submissions:
-- title: Part 1: The Client
+- title: Part 1 The Client
   due_date: 04/17/2017 11:59pm
   graded_files:
   - client.c
   - common.c
   - common.h
-- title: Part 2: The Server Part 1
+- title: Part 2 The Server Part 1
   due_date: 04/24/2017 11:59pm
   graded_files:
   - server.c
   - common.c
   - common.h
-- title: Part 3: The Server Part 2
+- title: Part 3 The Server Part 2
   due_date: 05/01/2017 11:59pm
   graded_files:
   - server.c
