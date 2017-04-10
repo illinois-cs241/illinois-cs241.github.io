@@ -80,8 +80,8 @@ This is a text-based protocol (similar to HTTP and FTP). The client sends plaint
 
 ### Client request
 ```
-VERB \[filename\]\n
-\[File size\]\[Binary Data\]
+VERB [filename]\n
+[File size][Binary Data]
 ```
 - VERB can be any one of '`GET`', '`PUT`', '`DELETE`' or '`LIST`' (_Case sensitive_ - VERB must be capitalized).
 - '\n' is the newline character (a single byte)
@@ -92,8 +92,8 @@ If VERB is "LIST", then only the newline after will be present (no space, file s
 ### Server response
 ```
 RESPONSE\n
-\[Error Message\]\n
-\[File size\]\[Binary Data\]
+[Error Message]\n
+[File size][Binary Data]
 ```
 RESPONSE can be either OK or ERROR, depending on how the request went (details on error handling are in a later section).
 Error message and the newline after it are only present if and only if the RESPONSE is ERROR.
@@ -179,7 +179,7 @@ Notice there is no new line at the end of the list.
 
 The client's job is simple: execute a single request. The usage is as follows:
 
-`./client \<server IP\>:\<server port\> VERB \[remote\] \[local\]`
+`./client <server IP>:<server port> VERB [remote] [local]`
 
 Where remote is the filename used in the request and local is the filename that the client uses while uploading/downloading. For example:
 
