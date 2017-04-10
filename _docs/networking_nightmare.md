@@ -291,7 +291,7 @@ Alternatively, if higher level languages are more your thing, you could try writ
 
 We will also be providing a reference client and server.
 
-## Notes:
+## Notes
 
 Make sure you use `SO\_REUSEADDR` and `SO\_REUSEPORT` to ensure `bind()` doesn't fail in the event that your server or client crashes. This will enable faster debugging for you (otherwise, you would have to wait for the port to open up again). We will be making sure that your socket is setup with these options (look into `setsockopt`) so please make sure you use these flags! If you don't, you will not pass this assignment.
 
