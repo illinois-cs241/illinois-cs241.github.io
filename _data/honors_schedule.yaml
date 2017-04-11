@@ -43,7 +43,7 @@
   -
     date: "April 11"
     content: "TCP"
-    slides:
+    slides: "tcp.pdf"
     video:
   -
     date: "April 18"
@@ -57,6 +57,6 @@
     video:
   -
     date: "May 2"
-    content: "Project Presentations"
+    content: "Project Presentations and ICES Forms"
     slides:
     video:
