@@ -55,7 +55,7 @@ Think of it as an event driven system. At a high level, you maintain a set of fi
 
 `epoll()` arose out of the inefficiencies of `select()` and `poll()` (O(N) waiting is so 20th century) (Check out the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem) for more information). It provides two modes of operation, edge triggered (ET) and level triggered (LT). Think of it as follows, you have a tank (the descriptor) that you want a notification for whenever there's water (data) in it. Edge triggered mode would wake up your program once and expect you to empty out the entire tank (process all the data). If you only process half of it and call `epoll\_wait()` again, your process will to block (that's not good - there is data waiting to be processed and other connections to handle).
 
-On the other hand, level triggered will wake up your `epoll\_wait()` call any time there is any data in the descriptor. In this case, if you process half, and then call `epoll\_wait()` again, it'll immediately return with a notification about that descriptor.
+On the other hand, level triggered will wake up your `epoll_wait()` call any time there is any data in the descriptor. In this case, if you process half, and then call `epoll_wait()` again, it'll immediately return with a notification about that descriptor.
 
 So why would we ever want to use edge triggered behavior? Well, consider what happens when there are multiple threads blocking on the same epoll descriptor (yes, we can do that; yes, people do that). Some data arrives on a socket, a thread wakes up and starts processing it. But there's still data, so another thread might accidentally get woken up and start processing data for the same descriptor. That's bad, very bad.
 
