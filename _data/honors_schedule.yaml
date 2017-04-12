@@ -44,7 +44,7 @@
     date: "April 11"
     content: "TCP"
     slides: "tcp.pdf"
-    video:
+    video: "https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/ad1d1a76-8365-4169-a229-c8c2065b37eb?ec=true"
   -
     date: "April 18"
     content: "Filesystems"
