@@ -87,7 +87,7 @@ VERB [filename]\n
 - '\n' is the newline character (a single byte).
 - There is a space character in between VERB and [filename].
 - [filename] is limited to 255 bytes.
-- File size and binary data are only present for a PUT operation (since the client is trying to upload a file). File size is a `size_t` which indicates how many bytes are present in the binary data in the request. For example, if file size is 32, then the client should expect 32 bytes of binary data to be in the response from the server. For this binary data, we will be using the Little Endian form of byte ordering (the system used by Intel hardware) while sending size\_t over the network. Because of this, you do not need to convert the byte ordering in either the client or server.
+- File size and binary data are only present for a PUT operation (since the client is trying to upload a file). File size is a `size_t` which indicates how many bytes are present in the binary data in the request. For example, if file size is 32, then the server should expect 32 bytes of binary data to be in the request from the client. For this binary data, we will be using the Little Endian form of byte ordering (the system used by Intel hardware) while sending size\_t over the network. Because of this, you do not need to convert the byte ordering in either the client or server.
 
 If VERB is "LIST", then only the newline after will be present (no space, file size, or data).
 
