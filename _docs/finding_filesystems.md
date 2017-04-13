@@ -47,14 +47,14 @@ The superblock stores information like the size of the filesystem, the number of
 ```
 
 typedef struct {
-	uint16_t 	mode;				/* <d,f,c,p>rwxrwxrwx */
-	uint32_t 	nlink;				/* number of hard links, reference count, when hit 0 */
 	uint8_t 	uid;				/* user ID of owner */
 	uint8_t 	gid;				/* group ID of owner */
-	uint64_t 	size;				/* total size, in bytes */
+	uint16_t 	mode;				/* <d,f,c,p>rwxrwxrwx */
+	uint32_t 	nlink;				/* number of hard links, reference count, when hit 0 */
 	time_t 		atim;				/* time of last access */
 	time_t 		mtim;				/* time of last modification */
 	time_t 		ctim;				/* time of last status change */
+	uint64_t 	size;				/* total size, in bytes */
 	data_block_number direct[NUM_DIRECT_INODES]; /* data_blocks */
 	inode_number indirect;		/* points to a singly indirect block */
 } inode;
@@ -63,14 +63,14 @@ typedef struct {
 
 This is the famous inode struct that you have been learning about! Here are a breakdown of the variables:
 
-- `mode` is a bitmask. The bottom 9 bits are read-write-execute for owner-group-others. Bits 11-10 are the type of the file. `(mode >> 9)` corresponds to a particular type. We have given you two functions, `is_file` and `is_directory`, that tell you whether or not the inode represents a directory or file. There are no other types in our filesystem.
-- `nlink` is the hard link count which is the number of directories that the file is linked to from (directories can't be hard linked).
 - `uid` is the user ID of the inode owner.
 - `gid` is the ID of the inode group (does not have to include the owner).
-- `size` is the size of the file in bytes
+- `mode` is a bitmask. The bottom 9 bits are read-write-execute for owner-group-others. Bits 11-10 are the type of the file. `(mode >> 9)` corresponds to a particular type. We have given you two functions, `is_file` and `is_directory`, that tell you whether or not the inode represents a directory or file. There are no other types in our filesystem.
+- `nlink` is the hard link count which is the number of directories that the file is linked to from (directories can't be hard linked).
 - `atim` is access time, which is the time of last access or the last time a file was `read(2)`. You don't need to worry about changing this.
 - `mtim` is the last modification time, or in other words, the last time the file's metadata was changed.
 - `ctim` is the last change time, or in other words, the last time the file was changed with `write(2)`.
+- `size` is the size of the file in bytes
 - `direct` is an array where the `direct[i]` is the `i`th data block's offset from the `data_root`.
 - `indirect` points to another inode that contains additional data blocks for this file. *The inode at this number is only going to be used for its direct nodes; none of the metadata at this inode is going to be valid.* **In real filesystems, the single indirect block is a *data block* that points to other data blocks, but here, it is an inode.**
 
