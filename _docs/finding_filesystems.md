@@ -9,7 +9,7 @@ submissions:
 learning_objectives:
   - Learn how inodes are represented in the kernel
   - How to write commands like `ls` and `cat`
-  - Traverse singly indirect blocks
+  - Traverse through singly indirect blocks
 wikibook:
   - "File System, Part 1: Introduction"
   - "File System, Part 2: Files are inodes (everything else is just data...)"
@@ -56,7 +56,7 @@ typedef struct {
 	time_t 		mtim;				/* time of last modification */
 	time_t 		ctim;				/* time of last status change */
 	data_block_number direct[NUM_DIRECT_INODES]; /* data_blocks */
-	data_block indirect;		/* points to a singly indirect block */
+	inode_number indirect;		/* points to a singly indirect block */
 } inode;
 
 ```
@@ -72,18 +72,19 @@ This is the famous inode struct that you have been learning about! Here are a br
 - `mtim` is the last modification time, or in other words, the last time the file's metadata was changed.
 - `ctim` is the last change time, or in other words, the last time the file was changed with `write(2)`.
 - `direct` is an array where the `direct[i]` is the `i`th data block's offset from the `data_root`.
-- `indirect` points to an indirect data block that contains additional data blocks for this file.
+- `indirect` points to another inode that contains additional data blocks for this file. *The inode at this number is only going to be used for its direct nodes; none of the metadata at this inode is going to be valid.* **In real filesystems, the single indirect block is a *data block* that points to other data blocks, but here, it is an inode.**
 
 ### Data blocks
 
 ```
+
 typedef struct {
-	char data[4 * KILOBYTE];
+	char data[16 * KILOBYTE];
 } data_block;
 
 ```
 
-Data blocks are currently defined to be 4 kilobytes. Nothing fancy here.
+Data blocks are currently defined to be 16 kilobytes. Nothing fancy here.
 
 ### file_system struct
 
@@ -137,7 +138,7 @@ You may not need to use this macro, but if you choose to, then any `data_block` 
 
 ## `cat`
 
-Each inode block has data blocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct[0]]`, for example, for the 0th `data_block` of that inode. The `data_block`s run for `sizeof(data_block)` bytes. Your job is to write a function that loops through all of the data blocks in the node (possibly including indirect blocks) and prints out all of the bytes to standard out. Check out a simple, complex, and very complex example in the testing section.
+So, each inode block has data blocks attached. Each data block's address can be addressed like `file_system->data_root[inode->direct[0]]`, for example, for the 0th `data_block` of that inode. The `data_block`s run for `sizeof(data_block)` bytes. Your job is to write a function that loops through all of the data blocks in the node (possibly including indirect blocks) and prints out all of the bytes to standard out. Check out a simple, complex, and very complex example in the testing section.
 
 If `get_inode` indicates the inode doesn't exist, then call `print_no_file_or_directory` and return.
 
@@ -181,9 +182,16 @@ Again, if your inode doesn't exist, just use the format function to print no fil
 
 **Testing is ungraded, but highly recommended**
 
-You can grab the test filesystem using `make testfs`. **Do _not_ commit this file. If you overwrite it for any reason just `rm test.fs` and do `make testfs` again**
+You can grab the test filesystem using `make testfs`. **Do not commit this file. If you overwrite it for any reason just `rm test.fs` and do `make testfs` again**
 
-Here are some sample (and not comprehensive) testcases:
+Note: There's a small chance that `make testfs` can fail - in this case `rm test.fs` and `make testfs` again.
+
+make will generate the minixfs executable that you can use for testing.
+The `goodies` directory is also included and can also be used to check against the /goodies directory in test.fs.
+For example, the output of:
+`./minixfs test.fs cat /goodies/hello.txt` should be the same as `cat ./goodies/hello.txt`
+
+Here are some sample testcases!
 
 ```
 $ ./minixfs test.fs ls /
@@ -262,9 +270,9 @@ You can store anything on filesystems. See what we hid around the filesystem for
 *   Handle the edge conditions. You can assume that size will be valid. What is the code supposed to do when you get to a singly indirect block?
 *   Draw pictures! Understand what each of the things in the structs mean.
 *   Review your pointer arithmetic.
-*   **Only** change`fs.c`.
+*   You cannot change any file but `fs.c`.
 
-## Graded Files
+## Files to be graded
 
 *   `fs.c`
 
