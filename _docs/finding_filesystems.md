@@ -9,7 +9,7 @@ submissions:
 learning_objectives:
   - Learn how inodes are represented in the kernel
   - How to write commands like `ls` and `cat`
-  - Traverse through singly indirect blocks
+  - Traverse singly indirect blocks
 wikibook:
   - "File System, Part 1: Introduction"
   - "File System, Part 2: Files are inodes (everything else is just data...)"
@@ -77,7 +77,6 @@ This is the famous inode struct that you have been learning about! Here are a br
 ### Data blocks
 
 ```
-
 typedef struct {
 	char data[16 * KILOBYTE];
 } data_block;
@@ -270,9 +269,9 @@ You can store anything on filesystems. See what we hid around the filesystem for
 *   Handle the edge conditions. You can assume that size will be valid. What is the code supposed to do when you get to a singly indirect block?
 *   Draw pictures! Understand what each of the things in the structs mean.
 *   Review your pointer arithmetic.
-*   You cannot change any file but `fs.c`.
+*   **Only** change`fs.c`.
 
-## Files to be graded
+## Graded Files
 
 *   `fs.c`
 
