@@ -70,6 +70,7 @@
     releaseDate: "Week 13"
     dueDate: "Week 14"
     url: "finding_filesystems"
+    resources: true
   -
     name: "Mad Mad Access Pattern"
     releaseDate: "Week 14"
