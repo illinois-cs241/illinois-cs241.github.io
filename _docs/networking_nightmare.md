@@ -118,6 +118,8 @@ In all four examples, the first line represents how we call the client in the co
 
 - GET
 
+Here, the client is GET'ing the file "The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4" and saving it locally as "social_network.mp4". 
+
 ```
 $ ./client server:port GET The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4 social_network.mp4
 ```
@@ -132,6 +134,8 @@ OK\n
 ```
 
 - PUT
+
+In this example, the client is PUT'ing the file "Prison.Break.S05E01.WEB-DL.x264-FUM[ettv].mp4" (local to the client) on the server as "prison_break_s05_e01.mp4".
 
 ```
 $ ./client server:port PUT prison_break_s05_e01.mp4 Prison.Break.S05E01.WEB-DL.x264-FUM[ettv].mp4
@@ -148,6 +152,8 @@ OK\n
 
 - DELETE
 
+In this case, the client DELETE's the file "prison_break_s05_e01.mp4" from the server.
+
 ```
 $ ./client server:port DELETE prison_break_s05_e01.mp4
 ```
@@ -161,6 +167,8 @@ OK\n
 ```
 
 - LIST
+
+In LIST requests, the client LIST's all available files on the server.
 
 ```
 $ ./client server:port LIST
