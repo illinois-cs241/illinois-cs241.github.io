@@ -190,7 +190,7 @@ The `goodies` directory is also included and can also be used to check against t
 For example, the output of:
 `./minixfs test.fs cat /goodies/hello.txt` should be the same as `cat ./goodies/hello.txt`
 
-Here are some sample testcases!
+Here are some sample (and not comprehensive) testcases!
 
 ```
 $ ./minixfs test.fs ls /
