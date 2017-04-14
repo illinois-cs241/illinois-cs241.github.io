@@ -130,7 +130,7 @@ GET The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4\n
 
 ```
 OK\n
-040f8148deadbeef...
+00000000040f8148deadbeef...
 ```
 
 - PUT
@@ -143,7 +143,7 @@ $ ./client server:port PUT prison_break_s05_e01.mp4 Prison.Break.S05E01.WEB-DL.x
 
 ```
 PUT prison_break_s05_e01.mp4\n
-0a56ec4esome call it prison break others call it privilege escalation ...
+000000000a56ec4esome call it prison break others call it privilege escalation ...
 ```
 
 ```
