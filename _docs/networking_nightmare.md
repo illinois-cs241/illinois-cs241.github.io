@@ -200,9 +200,10 @@ Where remote is the filename used in the request and local is the filename that 
 
 That would download the file 'remotefile' from the server and store it as 'localfile'.
 
-The client runs a single command (GET, PUT, LIST or DELETE) with the chosen arguments, makes sure the file it's trying to upload (if it is uploading one) actually exists, connects to the server, sends the request (and file data, if needed), and finally prints out the response message to STDOUT. Once the client has sent all the data to the server, it should perform a 'half close' by closing the write half of the socket (hint: `shutdown()`). This ensures that the server will eventually realize that the client has stopped sending data, and can move forward with processing the request.
+The client runs a single command (GET, PUT, LIST or DELETE) with the chosen arguments, makes sure the file it's trying to upload (if it is uploading one) actually exists, connects to the server, sends the request (and file data, if needed), and finally prints out any error messages to STDOUT. Once the client has sent all the data to the server, it should perform a 'half close' by closing the write half of the socket (hint: `shutdown()`). This ensures that the server will eventually realize that the client has stopped sending data, and can move forward with processing the request.
 
-If there is binary data in the response, for a LIST command, it should be printed to STDOUT as it arrives, and for file data, it should be written into the local file that the user indicated.
+For LIST, binary data from the server should be printed to STDOUT, each file on a seperate line.
+For GET, binary data should be written to the `[local]` file specified when the user ran the command.  If not created, create the file.  If it exists, truncate the file.  You should create the file with all permissions set.
 
 Your client is allowed to use blocking I/O, since clients don't really care about scaling. However, there are a few important things to keep in mind:
 
