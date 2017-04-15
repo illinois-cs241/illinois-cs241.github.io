@@ -114,7 +114,7 @@ The large size\_t referred to comes from the length of the filenames, plus the n
 
 ## Specifics: Examples
 
-In all four examples, the first line represents how we call the client in the command line, followed by the client's request to the server, and finally followed by the server's response. Notice how we **always** send all `sizeof(size_t)` bytes as hex. While you're looking at these examples, think about what parts of the request and response you want to print (if any), depending on request and response types.
+In all four examples, the first line represents how we call the client in the command line, followed by the client's request to the server, and finally followed by the server's response. Notice how we **always** send all `sizeof(size_t)` as raw bytes. While you're looking at these examples, think about what parts of the request and response you want to print (if any), depending on request and response types.
 
 - GET
 
