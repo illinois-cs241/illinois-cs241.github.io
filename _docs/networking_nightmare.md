@@ -114,7 +114,7 @@ The large size\_t referred to comes from the length of the filenames, plus the n
 
 ## Specifics: Examples
 
-In all four examples, the first line represents how we call the client in the command line, followed by the client's request to the server, and finally followed by the server's response. Notice how we **always** send all `sizeof(size_t)` as raw bytes. While you're looking at these examples, think about what parts of the request and response you want to print (if any), depending on request and response types.
+In all four examples, the first line represents how we call the client in the command line, followed by the client's request to the server, and finally followed by the server's response. Notice how we **always** send all `sizeof(size_t)` as raw bytes. That is, in each below, `[size]` is 8 bytes that represent the number of bytes the binary data that follows should be.  You did something similar to this in chatroom.  While you're looking at these examples, think about what parts of the request and response you want to print (if any), depending on request and response types.
 
 - GET
 
@@ -130,7 +130,7 @@ GET The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4\n
 
 ```
 OK\n
-00000000040f8148deadbeef...
+[size]...
 ```
 
 - PUT
@@ -143,7 +143,7 @@ $ ./client server:port PUT prison_break_s05_e01.mp4 Prison.Break.S05E01.WEB-DL.x
 
 ```
 PUT prison_break_s05_e01.mp4\n
-000000000a56ec4esome call it prison break others call it privilege escalation ...
+[size]some call it prison break others call it privilege escalation ...
 ```
 
 ```
@@ -179,7 +179,7 @@ LIST\n
 ```
 
 ```
-OK\n43
+OK\n[size]
 logan.mp3\n
 laura.log\n
 live.avi\n
