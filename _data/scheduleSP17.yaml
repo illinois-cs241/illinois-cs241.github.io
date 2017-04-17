@@ -386,14 +386,14 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/RPC%2C-Part-1%3A-Introduction-to-Remote-Procedure-Calls'>RPC</a>."
         color: "#FFC107"
       -
-        title: "Protocols"
-        summary: "36. Protocols and Serialization"
+        title: "UDP"
+        summary: "36. UDP"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-6%3A-Creating-a-UDP-server'>UDP</a>."
         color: "#FFC107"
       -
         title: "Misc"
-        summary: "35. POSIX Signals Revisited"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#10-signals'>Signals</a>."
+        summary: "36. Misc O/S Concepts"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki'>Everything</a>."
         color: "#FFC107"
     week: "4/17 - 4/21"
     announcement: >
