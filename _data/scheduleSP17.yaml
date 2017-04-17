@@ -336,6 +336,9 @@
     announcement: >
       <ul>
         <li>
+          Midterm 2: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
+        </li>
+        <li>
           Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Released
         </li>
         <li>
@@ -363,7 +366,7 @@
     announcement: >
       <ul>
         <li>
-          Midterm 2: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
+          Quiz 5: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
         </li>
         <li>
           Lab: <a target='blank' href='./et_tu_brute'>Et tu, Brute?</a> Due
@@ -378,34 +381,31 @@
   -
     schedule:
       -
-        title: "Signals"
-        summary: "35. POSIX Signals Revisited"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        title: "RPC"
+        summary: "35. RPC"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/RPC%2C-Part-1%3A-Introduction-to-Remote-Procedure-Calls'>RPC</a>."
         color: "#FFC107"
       -
         title: "Protocols"
         summary: "36. Protocols and Serialization"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-6%3A-Creating-a-UDP-server'>UDP</a>."
         color: "#FFC107"
       -
-        title: "RPC"
-        summary: "37. RPC"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 14</a>."
+        title: "Misc"
+        summary: "35. POSIX Signals Revisited"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#10-signals'>Signals</a>."
         color: "#FFC107"
     week: "4/17 - 4/21"
     announcement: >
       <ul>
         <li>
-          Quiz 5: <a target='blank' href='https://edu.cs.illinois.edu/testcenter'>Sign up!</a>
+          Lab: <a target='blank' href='./finding_filesystems'>Finding Filesystems</a> Due
         </li>
         <li>
-          Lab: <a target='blank' href='./chatroom'>Chatroom</a> Due
+          Lab: <a target='blank' href='./mad_mad_access_pattern'>Mad Mad Access Pattern</a> Released
         </li>
         <li>
-          Lab: <a target='blank' href='./scheduler'>Scheduler</a> Released
-        </li>
-        <li>
-          MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Released
+          MP: <a target='blank' href='./networking_nightmare'>Networking Nightmare</a> Continued
         </li>
       </ul>
 -
@@ -429,13 +429,13 @@
     announcement: >
       <ul>
         <li>
-          Lab: <a target='blank' href='./scheduler'>Scheduler</a> Due
+          Lab: <a target='blank' href='./mad_mad_access_pattern'>Mad Mad Access Pattern</a> Due
         </li>
         <li>
           ICES Forms in Lab 
         </li>
         <li>
-          MP: <a target='blank' href='./mapreduce'>Mapreduce</a> Due
+          MP: <a target='blank' href='./networking_nightmare'>Networking Nightmare</a> Continued
         </li>
       </ul>
 -
