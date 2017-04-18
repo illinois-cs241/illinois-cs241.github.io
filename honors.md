@@ -68,6 +68,8 @@ You need to have some sort of visual presentation (Powerpoint, Google Slides, La
  
 To ensure everyone has adequate time to present, we will pre-load all presentations on the computer in 0216. **Please email your presentation to course staff by 5pm on the day you are presenting** so that we have adequate time to prepare this.
 
+Remember that you do not have to have completed your project by the time you present. However, you should make sure you briefly cover any remaining work you plan to do.
+
 ## Weekly Check-ins
 
 You are required to meet with your mentor on a weekly basis. The meeting can last up to an hour and you will typically go over what you did that week, what your goals are for the next week, and any roadblocks you encountered. To get full credit, you must meet with your mentor and display satisfactory progress on your project.
