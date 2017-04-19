@@ -3,15 +3,21 @@ layout: doc
 title: "Troll"
 submissions:
 - title: Entire Assignment
-  due_date: 04/12 11:59pm
+  due_date: 05/03 11:59pm
   graded_files:
-  - server.c
-  - client.c
-  - utils.c
+  - kernel.c
 learning_objectives:
   - Building Character
   - Proving a Point
 ---
+
+## ECE 391 vs. CS 241
+
+A common question point of contention among ECE and CS majors: "Is CS 241 harder than ECE 391?".
+This has probably been debated, since the beginning of either course's conception.
+Your TAs discussed this and we wanted to settle this question once and for all.
+ECE 391 is known for their killer semester long final project, which is building an operating system from scratch.
+Normally a 391 student is given 6 weeks and 3 partners to finish this assignment, but since 241 students are superior programmers we feel that 1.5 weeks should be plenty of time to do this on your own. We decided that, since this assignment is very demanding we would make it worth 50% of your lab assignment grade in the class meaning that you can NOT use your 1 lab drop on this. The rest of the documentation and starter code is transcribed from the actual assignment.
 
 ## Introduction
 
@@ -603,3 +609,7 @@ of the website.
 Finally, signal handling information should go in the process control block (PCB). You will need to keep track of
 pending signals, masked signals, and handler actions / addresses for each signal. Much information on Linux’s implementation of signals (which your implementation will closely match) can be found in Understanding the Linux Kernel
 chapter 10.
+
+## Alternative
+
+As an alternative you may submit answers to the following google doc and have it count for a regular lab grade (1/14 of your total lab grade). You will be graded for completion and a good faith attempt. An instructor will hand grade each question and use their best judgement for whether you gave each question a solid attempt. Note that this assignment is mainly to get you started for studying for the final and it is to your benefit to give it a solid attempt.
