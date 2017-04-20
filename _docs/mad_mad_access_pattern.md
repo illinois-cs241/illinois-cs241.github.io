@@ -144,7 +144,7 @@ werd not found
 ```
 
 ## Testing notes
-
++ You are given reference files! Compare your outputs with ./lookup1-reference and ./lookup2-reference :) 
 + Write your test cases to include comparison of performance between the two versions (lookup1 and lookup2). Think about which one is faster and why.
 + In order to generate different binary tree structured data files based on input required for each test case, use the `create_data` executable.
   See `input_file` for sample input to this executable.
