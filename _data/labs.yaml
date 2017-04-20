@@ -76,6 +76,8 @@
     releaseDate: "Week 14"
     dueDate: "Week 15"
     url: "mad_mad_access_pattern"
+    worksheet: false
+    resources: true
   -
     name: "Super Linux Kernel Super Lab"
     releaseDate: "Week 15"
