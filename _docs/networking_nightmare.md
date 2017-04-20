@@ -103,12 +103,14 @@ Error message and the newline after it are only present if and only if the RESPO
 
 File size and binary data are only present in GET or LIST responses, and refer to the number of bytes (size\_t, same way the client sent size\_t in a PUT request) of binary data that follows. If it's a GET request, the binary data is the data in the file being requested. If it's a LIST request, the binary data is a series of filenames, separated by newlines, referring to files currently stored on the server. For example, if a server is hosting files 'you.txt', 'gonna.log', 'give.avi', 'never.mp3', and 'up.mov', the response to a LIST might look like this-
 
-OK\n\<10 + 10 + 9 + 8 + 6, expressed as a size\_t\>
+```
+OK\n\<10 + 10 + 9 + 8 + 6, expressed as a size_t\>
 never.mp3\n
 gonna.log\n
 give.avi\n
 you.txt\n
 up.mov
+```
 
 The large size\_t referred to comes from the length of the filenames, plus the newlines between filenames (there is no newline after the last file, or before the first one) - the value is broken down into a sum on a per line basis for ease of understanding. In that example, the actual value that would be sent would be 43.
 
