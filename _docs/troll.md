@@ -296,15 +296,7 @@ switch back and forth to see the programs running. For scheduling, we expect tha
 (on an inactive terminal) will make progress. For example, we expect a fish program running on such a terminal to
 continue despite not actually being displayed on the screen.
 
-## Design Competition
-We will hold a design competition at the end of the semester. In order to be eligible for this competition, your
-operating system must implement all required functionality correctly. The competition will then be decided based
-on the amount and difficulty of additional functionality that your team has incorporated into your operating system.
-You may also be able to earn some extra credit (or make up for other lost points) by choosing to include some of the
-features in this section. Extra credit earned in this way will be limited to 10 points of the baseline grade.
-In order to be eligible for extra credit, your operating system must implement all required functionality correctly.
-Extra credit is due by the design competition, however you may turn in extra credit with your final checkpoint handin.
-Make sure your extra credit does not break anything or make your OS unstable.
+## Bells and Whistle
 
 ### Signals
 Add support for delivery of five different signals to a task. Appendix F details the specifications and implementation
@@ -415,7 +407,8 @@ is that given by the program’s call to halt.
 The `halt` system call terminates a process, returning the specified value to its parent process. The system call handler
 itself is responsible for expanding the 8-bit argument from BL into the 32-bit return value to the parent program’s
 execute system call. Be careful not to return all 32 bits from EBX. This call should never return to the caller.
-The read system call reads data from the keyboard, a file, device (RTC), or directory. This call returns the number
+
+The `read` system call reads data from the keyboard, a file, device (RTC), or directory. This call returns the number
 of bytes read. If the initial file position is at or beyond the end of file, 0 shall be returned (for normal files and the
 directory). In the case of the keyboard, read should return data from one line that has been terminated by pressing
 Enter, or as much as fits in the buffer from one such line. The line returned should include the line feed character.
