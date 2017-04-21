@@ -298,6 +298,8 @@ continue despite not actually being displayed on the screen.
 
 ## Bells and Whistle
 
+The following is *OPTIONAL* and is only for fun:
+
 ### Signals
 Add support for delivery of five different signals to a task. Appendix F details the specifications and implementation
 details to make this work.
