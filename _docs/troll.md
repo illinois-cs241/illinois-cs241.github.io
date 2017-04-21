@@ -21,7 +21,7 @@ Normally a 391 student is given 6 weeks and 3 partners to finish this assignment
 
 ## Introduction
 
-Read the Whole document before you begin, or you may miss points on some requirements (for example, the
+*Read the Whole document before you begin*, or you may miss points on some requirements (for example, the
 bug log).
 
 In this machine problem, you will work in teams to develop the core of an operating system. We will provide you with
