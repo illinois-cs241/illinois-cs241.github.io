@@ -53,7 +53,7 @@ Think of it as an event driven system. At a high level, you maintain a set of fi
 
 ## Epoll basics
 
-`epoll()` arose out of the inefficiencies of `select()` and `poll()` (O(N) waiting is so 20th century) (Check out the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem) for more information). It provides two modes of operation, edge triggered (ET) and level triggered (LT). Think of it as follows, you have a tank (the descriptor) that you want a notification for whenever there's water (data) in it. Edge triggered mode would wake up your program once and expect you to empty out the entire tank (process all the data). If you only process half of it and call `epoll\_wait()` again, your process will to block (that's not good - there is data waiting to be processed and other connections to handle).
+`epoll()` arose out of the inefficiencies of `select()` and `poll()` (O(N) waiting is so 20th century) (Check out the [C10k problem](https://en.wikipedia.org/wiki/C10k_problem) for more information). It provides two modes of operation, edge triggered (ET) and level triggered (LT). Think of it as follows, you have a tank (the descriptor) that you want a notification for whenever there's water (data) in it. Edge triggered mode would wake up your program once and expect you to empty out the entire tank (process all the data). If you only process half of it and call `epoll\_wait()` again, your process will block (that's not good - there is data waiting to be processed and other connections to handle).
 
 On the other hand, level triggered will wake up your `epoll_wait()` call any time there is any data in the descriptor. In this case, if you process half, and then call `epoll_wait()` again, it'll immediately return with a notification about that descriptor.
 
@@ -120,7 +120,7 @@ In all four examples, the first line represents how we call the client in the co
 
 - GET
 
-Here, the client is GET'ing the file "The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4" and saving it locally as "social_network.mp4". 
+Here, the client is GET'ing the file "The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4" and saving it locally as "social_network.mp4".
 
 ```
 $ ./client server:port GET The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4 social_network.mp4
