@@ -320,7 +320,7 @@ Part 1 requires **full** client functionality, and is due Monday, April 17th at 
 
 - Part 2: The Server Part 1
 
-Part 2 requires you to implement `PUT` and `LIST` in your server. This is due Monday, April 24th at 23:59.
+Part 2 requires you to implement `PUT` in your server and handle the errors associated with it. This is due Monday, April 24th at 23:59.
 
 - Part 3: The Server Part 2
 
