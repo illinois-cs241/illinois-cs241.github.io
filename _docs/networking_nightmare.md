@@ -324,6 +324,6 @@ Part 2 requires you to implement `PUT` in your server and handle the errors asso
 
 - Part 3: The Server Part 2
 
-Part 3 requires full server functionality (`GET`, `PUT`, `DELETE`, and `LIST`). This is due Monday, May 1st, at 23:59.
+Part 3 requires full server-client functionality (`GET`, `PUT`, `DELETE`, and `LIST`). This is due Monday, May 1st, at 23:59.
 
 Your final grade for this assignment is computed using 1/3 from part 1 and 2/3 from parts 2 and 3.
