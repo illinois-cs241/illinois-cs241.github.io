@@ -326,4 +326,4 @@ Part 2 requires you to implement `PUT` in your server and handle the errors asso
 
 Part 3 requires full server-client functionality (`GET`, `PUT`, `DELETE`, and `LIST`). This is due Monday, May 1st, at 23:59.
 
-Your final grade for this assignment is computed as totla = max(part1, part3) + max(part2, part3) + part3
+Your final grade for this assignment is computed as total = max(part1, part3) + max(part2, part3) + part3
