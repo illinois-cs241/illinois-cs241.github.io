@@ -15,16 +15,8 @@
 		width: 60%;
     	margin: 0 auto;
 	}
-	/* Chrome, Safari, Opera */
-	@-webkit-keyframes fadein {
-	    from { opacity: 0; }
-	    to   { opacity: 1; }
-	}
-	body {
-	  -webkit-animation-name: fadein !important; /* Safari */
-	  -webkit-animation-duration: 4s !important; /* Safari */
-	  animation-name: fadein !important;
-	  animation-duration: 5s !important;
+	.apply {
+		text-align:center;
 	}
 </style>
 </head>
@@ -32,9 +24,8 @@
 <div class="bs-example">
 	<ul class="nav nav-tabs navbar navbar-default navbar-fixed-top">
 		<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-		<li><a data-toggle="tab" href="#office">Office Hour and Lab Assistant</a></li>
-		<li><a data-toggle="tab" href="#mp">Assignment Developer</a></li>
-		<li><a data-toggle="tab" href="#honors">Honors Section</a></li>
+		<li><a data-toggle="tab" href="#office">Front Facing</a></li>
+		<li><a data-toggle="tab" href="#mp">Back End</a></li>
 	</ul>
 	<!-- Need these line breaks for no good reasons for top sticky nav bar -->
 	<br/><br/>
@@ -45,25 +36,19 @@
 			<p>
 				Are you interested in becoming a course assistant for CS 241: System Programming? <br/>
 				If so, then you should apply for one (or more) of the positions
-				below.
+				above.
 			</p>
 			<hr>
 			<p>
 				All positions require dedicated people who have a passion for
-				teaching system programming.<br/>
-				Everyone is welcome to apply!<br/>
+				teaching system programming. Everyone is welcome to apply!<br/>
 				Those who submit a promising application will be offered an interview.
 			</p>
 			<hr>
-			<ul> 
-				<li><a data-toggle="tab" href="#office">Office Hour and Lab Assistant</a></li>
-				<li><a data-toggle="tab" href="#mp">Assignment Developer</a></li>
-				<li><a data-toggle="tab" href="#honors">Honors Section</a></li>
-			</ul>
-			<a href = "https://goo.gl/forms/Ib0Syz2v0GfOjysF2" rel="no-follow" target="_blank"><h1>APPLY NOW!</h1></a>
+			<a href = "https://bvenkat.typeform.com/to/ci1DYr" rel="no-follow" target="_blank"><h1 class="apply">Apply!</h1></a>
 		</div>
 		<div id="office" class="tab-pane fade">
-			<h1>Office Hour and Lab Assistant</h1>
+			<h1>Front Facing</h1>
 			<hr>
 			<h2>Introduction</h2>
 			<div class="panel panel-default">
@@ -77,6 +62,33 @@
 					student understand and develop a passion for the subject you teach.
 				</div>
 			</div>
+			<h2>Areas of practice</h2>
+			<ul class="list-group">
+				<div class = "list-group-item">
+					<h4 class="list-group-item-heading">
+					Lab Section
+					</h4>
+					<p>
+					In lab section you will be instructing, helping students out with lab, and being able to explain concepts at a high level.
+					</p>
+				</div>
+				<div class = "list-group-item">
+					<h4 class="list-group-item-heading">
+					Office Hours
+					</h4>
+					<p>
+					Got a problem? Come in to office hours. We have a team of CAs and TAs ready and eager to answer your questions. You will be hosting your own round robin office hours, answering questions and clarifying concepts.
+					</p>
+				</div>
+				<div class = "list-group-item">
+					<h4 class="list-group-item-heading">
+					Honors
+					</h4>
+					<p>
+					If you have a deep passion for systems and want to instill that passion in the course's 1%, then this is the position for you. You get to mentor highly talented and passionate students in a semester long project of their choosing.
+					</p>
+				</div>
+			</ul>
 			<h2>Skills Required</h2>
 			<ul class="list-group">
 				<div class = "list-group-item">
@@ -84,7 +96,7 @@
 						Patience and Empathy
 					</h4>
 					<p class="list-group-item-text">
-						A lot of the times students might ask you questions that you feel are "dumb" or "trivial", but the reality is that we were all there at one point and it is important to constantly empathize and think back to when you were a CS 241 Student.
+						A lot of the times students might ask you questions that you feel are "dumb" or "trivial", but the reality is that we were all there at one point. It is important to constantly empathize and think back to when you were a CS 241 Student.
 						Most of the time, you can fill the gap in a student's understanding of the material just by remembering why you struggled with the material and what helped you understand it.
 						However, some students might not get the material even after the third time you explained it to them.
 						This is where patience comes into play, since you probably just have to think of another way of explaining the material to them.
@@ -138,12 +150,22 @@
 						can help students master them.
 					</p>
 				</div>
+				<div class = "list-group-item">
+					<h4 class="list-group-item-heading">
+						Honors Only: Mentoring Ability
+					</h4>
+					<p class="list-group-item-text">
+						Students need guidance in the honors section, and you can provide that! You will help students along with projects.
+						You have to be a jack of all trades in regard and have
+						excellent ability to advise and oversee groups of students
+					</p>
+				</div>
 			</ul>
 			<h2>Expected Time Obligations</h2>
 			<ul class="list-group">
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
-						Team Meetings (1 or 2 hrs / week)
+						Team Meetings (1 hr / week)
 					</h4>
 					<p class="list-group-item-text">
 						It is important for everyone on staff to be on the same
@@ -186,6 +208,15 @@
 						Also, answering one question well on piazza can potentially resolve the problem for the entire class.
 					</p>
 				</div>
+				<div class = "list-group-item">
+					<h4 class="list-group-item-heading">
+						Honors Section (~4 hrs / week)
+					</h4>
+					<p class="list-group-item-text">
+						The honors section will have a weekly 1 hr meeting, and you will be expected to have about 3, 1 hr meetings with your assigned groups.
+						The meeting will primarily cover what happened this past week and prepare for the next week where as the student meetings are to make sure that students are keeping up with there projects.
+					</p>
+				</div>
 			</ul>
 		</div>
 
@@ -207,25 +238,31 @@
 					Finally, with any good assignments comes excellent documentation that is clear, concise, contextual and correct.
 					Assignment development is also where autograding comes into play.
 					Autograding is essentially writing scripts that can take a student's code and run a series of testcases to best measure its correctness and performance.
-					At a high level the process of autograding is as follows:
-					<ul class="list-group">
-						<li class = "list-group-item">Write testcases and scripts</li>
-						<li class = "list-group-item">Have script grade students acording to timetable</li>
-						<li class = "list-group-item">
-							<ul class="list-group">
-								<li class = "list-group-item">Pull code from SVN</li>
-								<li class = "list-group-item">Run each testcase</li>
-								<li class = "list-group-item">Gather statistics like points earned, memory usuage and time</li>
-								<li class = "list-group-item">Tally everything up</li>
-							</ul>
-						</li>
-						<li class = "list-group-item">Commit grades to gradebook</li>
-					</ul>
 			 		There are many assignments in a programming class and CS 241 is no exception.
 					All these assignments need to be graded and as the field of computing grow so does its students.
 					It is no longer feasible to grade all these assignments by hand or have every student present their code to a T.A.
 				</div>
 			</div>
+			<h2>Areas of practice</h2>
+			<ul class="list-group">
+				<div class = "list-group-item">
+					<h4 class="list-group-item-heading">
+					Assignment Development
+					</h4>
+					<p>
+					You will be tweaking past assignments as well as creating new assignments in order to make sure that students are always learning the cutting edge practices in systems programming.
+					</p>
+				</div>
+				<div class = "list-group-item">
+					<h4 class="list-group-item-heading">
+					Infrastructure
+					</h4>
+					<p>
+					We need a lot of code for our code. Welcome to infrastructure, we develop the autograder along with tools and scripts that the rest of the staff uses. The autograder always has new edge cases it runs into when grading students, but is absolutely vital to the courses success.
+					</p>
+				</div>
+			</ul>
+
 			<h2>Skills Required</h2>
 			<ul class="list-group">
 				<div class = "list-group-item">
@@ -233,7 +270,7 @@
 						Firm Knoweledge of C
 					</h4>
 					<p class="list-group-item-text">
-						Unlike lab assisting and office hours, you will be doing a lot of coding for MP development.
+						Unlike lab and office hours, you will be doing a lot of coding for MP development.
 						It is exponentially harder to write and develop an MP than it is to solve an MP.
 						You will not be provided any utility functions, since you are the one providing them.
 						Everything that was out of the scope of the course is now fair game as a MP developer.
@@ -246,6 +283,7 @@
 					<p class="list-group-item-text">
 						As an assignment developer you must really understand the things you write, since writing a bug in your MP is equivalent to writing 400+ bugs that get deployed to students.
 						Any race conditions or memory leaks left in the provided code you write will be deployed to 400+ students.
+						In class, you only need to get the test cases working, here you need to make sure that your code is resilient against all test cases or there is a bug in the assignment.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -306,21 +344,6 @@
 		</div>
 
 		<div id="honors" class="tab-pane fade">
-			<h1>Honors Section Mentors</h1>
-			<hr>
-			<h2>Introduction</h2>
-			<div class="panel panel-default">
-			 	<div class="panel-body">
-			 		The honors sections for CS 241 is a lot like anything else in 241: fun, challenging and rewarding.
-			 		This section will be filled with the university's most talented and most enthusiastic.
-			 		This translates to the honors students being the most
-					knowledge-hungry and our pickiest customers.
-			 		They will expect a section that pushes the bounds of a system programming course and you will be responsible for providing exactly that.
-			 		Unlike the rest of the course, the content will be geared toward the A and A+ students.
-			 		You will interact with students that match and may surpass your intelligence and the thought of this should excite you.
-			 		If you have a deep passion for systems and want to instill that passion in the course's 1%, then this is the position for you.
-				</div>
-			</div>
 			<h2>Skills Required</h2>
 			<ul class="list-group">
 				<div class = "list-group-item">
