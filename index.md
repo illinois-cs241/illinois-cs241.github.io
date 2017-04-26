@@ -169,11 +169,11 @@ We will test your code on a multi-core machine; testing on your own laptop is in
 
 If you have a question about your personal autograde results after the final autograde, then feel free to make a private piazza post titled `<assignment name> Autograde Question` with the folders/tags/labels `autograder` and `<assignment name>` selected.
  
-1)  It will take time to go through autograder questions.  So please do not expect an immediate (or even same day/ same week) answer.  Trying to debug 20+ people's code and the autograder takes time, and we have school too :(
-2)  You *must show us your test cases first*. If they are not close to exhaustive we reserve to right to not answer your question.
-3)  Questions like "What is test x?" is *not* something we will answer.
-4)  These questions should be for "I have exhaustive test cases for X, so how am I failing Y?"
-5)  Please add your netid in the post, so we can look up your code if needed. 
+* It will take time to go through autograder questions.  So please do not expect an immediate (or even same day/ same week) answer.  Trying to debug 20+ people's code and the autograder takes time, and we have school too :(
+* You **must show us your test cases first**. If they are not close to exhaustive we reserve to right to not answer your question.
+* Questions like "What is test x?" is **not** something we will answer.
+* These questions should be for "I have exhaustive test cases for X, so how am I failing Y?"
+* Please add your netid in the post, so we can look up your code if needed. 
 
 ## Academic Integrity
 
