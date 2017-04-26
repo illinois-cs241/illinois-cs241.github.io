@@ -167,6 +167,14 @@ Forgot to commit or your committed code that does not compile? Zero. The basic h
 
 We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected in a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM (which is near identical to the grading machine). We will attempt to give you some partial credit if your code passes the tests, but for that it is your responsibility to fully read and understand the specification.
 
+If you have a question about your personal autograde results after the final autograde, then feel free to make a private piazza post titled `<assignment name> Autograde Question` with the folders/tags/labels `autograder` and `<assignment name>` selected.
+ 
+1)  It will take time to go through autograder questions.  So please do not expect an immediate (or even same day/ same week) answer.  Trying to debug 20+ people's code and the autograder takes time, and we have school too :(
+2)  You *must show us your test cases first*. If they are not close to exhaustive we reserve to right to not answer your question.
+3)  Questions like "What is test x?" is *not* something we will answer.
+4)  These questions should be for "I have exhaustive test cases for X, so how am I failing Y?"
+5)  Please add your netid in the post, so we can look up your code if needed. 
+
 ## Academic Integrity
 
 CS 241 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously in CS 241, and all cases of cheating will be brought to the University, your department, and your college. You should understand how [academic integrity](https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code) applies to Computer Science courses.
