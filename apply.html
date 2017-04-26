@@ -19,13 +19,21 @@
 		text-align:center;
 	}
 </style>
+<script>
+	$(function() {
+		$(".tab-toggle").click(function() {
+			$('.navbar a[href="' + $(this).attr("href") + '"]').tab('show');
+			return false;
+		});
+	});
+</script>
 </head>
 <body>
 <div class="bs-example">
 	<ul class="nav nav-tabs navbar navbar-default navbar-fixed-top">
 		<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-		<li><a data-toggle="tab" href="#office">Front Facing</a></li>
-		<li><a data-toggle="tab" href="#mp">Back End</a></li>
+		<li><a data-toggle="tab" href="#frontend">Student-Facing</a></li>
+		<li><a data-toggle="tab" href="#backend">Back-End</a></li>
 	</ul>
 	<!-- Need these line breaks for no good reasons for top sticky nav bar -->
 	<br/><br/>
@@ -34,24 +42,28 @@
 			<h1>CS 241 Course Assistant Positions Available!</h1>
 			<hr>
 			<p>
-				Are you interested in becoming a course assistant for CS 241: System Programming? If so, then you should apply for the positions of above.
+				Are you interested in becoming a course assistant for CS 241: System Programming?
+				If so, then you are welcome to apply for the positions below:
 			</p>
-			<hr>
+			<ul>
+				<li><a class="tab-toggle" href="#frontend">Student-Facing</a> (Labs, Office Hours, Honors Section)</li>
+				<li><a class="tab-toggle" href="#backend">Back-End</a> (Assignment Development, Infrastructure)</li>
+			</ul>
 			<p>
 				All positions require dedicated people who have a passion for
-				teaching system programming. Everyone is welcome to apply!
-				Those who submit a promising application will be offered an interview.
+				teaching system programming. Those who submit a promising application
+				will be offered an interview.
 			</p>
 			<hr>
-			<a href = "https://bvenkat.typeform.com/to/ci1DYr" rel="no-follow" target="_blank"><h1 class="apply">Apply!</h1></a>
+			<a href="https://bvenkat.typeform.com/to/ci1DYr" rel="no-follow" target="_blank"><h1 class="apply">Apply!</h1></a>
 		</div>
-		<div id="office" class="tab-pane fade">
-			<h1>Front Facing</h1>
+		<div id="frontend" class="tab-pane fade">
+			<h1>Student-Facing</h1>
 			<hr>
 			<h2>Introduction</h2>
 			<div class="panel panel-default">
-			 	<div class="panel-body">
-			 		UIUC CS has a wide variety of talent ranging from those who know more than all the instructors combined to those who are still learning to use the terminal.
+				<div class="panel-body">
+					UIUC CS has a wide variety of talent, ranging from those who know more than all the instructors combined, to those who are still learning to use the terminal.
 					At some point, almost all of these students come to
 					office hours and lab sections to get extra help.
 					Whether it be drawing figures on the white board or stepping
@@ -66,24 +78,24 @@
 					<h4 class="list-group-item-heading">
 					Lab Section
 					</h4>
-					<p>
-					In lab section you will be instructing, helping students out with lab, and being able to explain concepts at a high level.
+					<p class="list-group-item-text">
+					In lab section, you will be instructing, helping students out with lab, and explaining concepts at a high level.
 					</p>
 				</div>
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
 					Office Hours
 					</h4>
-					<p>
-					Got a problem? Come in to office hours. We have a team of CAs and TAs ready and eager to answer your questions. You will be hosting your own round robin office hours, answering questions and clarifying concepts.
+					<p class="list-group-item-text">
+					Got a problem? Come in to office hours. We have a team of CAs and TAs ready and eager to answer your questions. You will be hosting your own round-robin office hours, answering questions and clarifying concepts.
 					</p>
 				</div>
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
-					Honors
+					Honors Section
 					</h4>
-					<p>
-					If you have a deep passion for systems and want to instill that passion in the course's 1%, then this is the position for you. You get to mentor highly talented and passionate students in a semester long project of their choosing.
+					<p class="list-group-item-text">
+					If you have a deep passion for systems and want to instill that passion in the course's one-percent, then this is the position for you. You get to mentor highly talented and passionate students in a semester-long project of their choosing.
 					</p>
 				</div>
 			</ul>
@@ -94,7 +106,7 @@
 						Patience and Empathy
 					</h4>
 					<p class="list-group-item-text">
-						A lot of the times students might ask you questions that they feel are "dumb" or "trivial", but the reality is that we were all there at one point. Most of the time, you can fill the gap in a student's understanding of the material just by remembering why you struggled with the material and what helped you understand it. However, some students might not get the material even after the third time you explained it to them. You'll need to be patient with these students.
+						Often, students might ask you questions that they feel are "dumb" or "trivial", but the reality is that we were all there at one point. Most of the time, you can fill the gap in a student's understanding of the material just by remembering why you struggled with the material and what helped you understand it. However, some students might not get the material even after the third time you explain it to them. You'll need to be patient with these students.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -102,7 +114,7 @@
 						Friendly Personality and Demeanor
 					</h4>
 					<p class="list-group-item-text">
-						Students will most likely be stressed and upset after debugging for several hours and waiting on a long queue.A lot of this tension is easily alleviated if you approach them nicely :) It is important to never appear condescending or annoyed.
+						Students will most likely be stressed and upset after debugging for several hours and waiting on a long queue. A lot of this tension is easily alleviated if you approach them nicely. It is important to never appear condescending or annoyed.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -110,7 +122,7 @@
 						Communication and Teaching Ability
 					</h4>
 					<p class="list-group-item-text">
-						Understanding is only have the battle to being an effective teacher. It helps to understand the material well and be comfortable with it, but if you can not explain the material, then you are essentially useless in office hours. You also have to be adaptable in the ways you explain things, since how you understand the problem might not be how your students best understand a problem.
+						Understanding is only half the battle to being an effective teacher. It helps to understand the material well and be comfortable with it, but if you cannot explain the material, then you are essentially useless in office hours. You also have to be adaptable in the ways you explain things, since how you understand the problem might not be how your students best understand a problem.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -118,7 +130,7 @@
 						Debugging
 					</h4>
 					<p class="list-group-item-text">
-						It should go without saying that debugging is a critical skill to have when helping students. Most bugs can be easily found by using GDB, Valgrind and print statements. You need to be able to understand edge cases, step through student logic, and narrow the search of the bug. Remember that we do not debug programs but we give hints to where the program may be going wrong as well as reinforcing core concepts.
+						It should go without saying that debugging is a critical skill to have when helping students. Most bugs can be found by effectively using GDB, Valgrind, and print statements. You need to be able to understand edge cases, step through student logic, and narrow the search of the bug. Remember that we do not debug programs, but we give hints to where the program may be going wrong, as well as reinforcing core concepts.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -134,9 +146,7 @@
 						Honors Only: Mentoring Ability
 					</h4>
 					<p class="list-group-item-text">
-						Students need guidance in the honors section, and you can provide that! You will help students along with projects.
-						You have to be a jack of all trades in regard and have
-						excellent ability to advise and oversee groups of students
+						Students need guidance in the honors section, and it's your job to provide that! You will help students with their projects. Since topics vary widely, it's useful to be a jack-of-all-trades with respect to system programming topics, and you should have an excellent ability to advise and oversee groups of students.
 					</p>
 				</div>
 			</ul>
@@ -152,26 +162,26 @@
 				</div>
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
-						Office Hours (3 hrs / week)
+						Office Hours (2-3 hrs / week)
 					</h4>
 					<p class="list-group-item-text">
-						It should go without being said that as an office hour assistant you will be hosting office hours. This is the time where you will put yourself on the chara queue and help students.
+						It should go without saying that as an office hour assistant you will be hosting office hours. This is the time where you will put yourself on the Chara queue and help students.
 					</p>
 				</div>
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
-						Lab Sections(2 or 3 lab sections  = ~3 hrs / week)
+						Lab Sections (2 or 3 sections = ~3 hrs / week)
 					</h4>
 					<p class="list-group-item-text">
-						Most lab sections will run about an hour and twenty minutes. You are expected to have read the documentation already and at a high level know how to solve the assignment. In the bulk of lab time, you will be going around helping students with the assignment. At the beginning of the lab, you will do a demo on the projector and explain to the students what they have to do.
+						Most lab sections will run about an hour and twenty minutes. You are expected to have read the documentation already and at a high level know how to solve the assignment. In the bulk of lab time, you will be going around helping students with the assignment. At the beginning of the lab, you may do a demo on the projector and explain to the students what they have to do.
 					</p>
 				</div>
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
-						Piazza (1 hr / week)
+						Piazza (1-2 hrs / week)
 					</h4>
 					<p class="list-group-item-text">
-						It is also important to answer questions on piazza, since some students are too shy to come to office hours or ask you in lab section. Also, answering one question well on piazza can potentially resolve the problem for the entire class.
+						It is also important to answer questions on Piazza, since some students are too shy to come to office hours or ask you in lab section. Also, answering one question well on Piazza can potentially resolve a problem for the entire class.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -179,24 +189,31 @@
 						Honors Section (~4 hrs / week)
 					</h4>
 					<p class="list-group-item-text">
-						The honors section will have a weekly 1 hr meeting, and you will be expected to have about 3, 1 hr meetings with your assigned groups.
-						The meeting will primarily cover what happened this past week and prepare for the next week where as the student meetings are to make sure that students are keeping up with there projects.
+						The honors section has weekly one-hour meetings, and you will be expected to have about three one-hour meetings with your assigned groups.
+						The meeting will primarily cover what happened this past week and prepare for the next week, while the student meetings are to make sure that students are keeping up with their projects.
+					</p>
+					<p class="list-group-item-text">
+						You are also encouraged to attend the weekly honors section lecture and give one or two honors lectures on advanced systems concepts.
 					</p>
 				</div>
 			</ul>
 		</div>
 
-		<div id="mp" class="tab-pane fade">
-			<h1>Assignment Developer</h1>
+		<div id="backend" class="tab-pane fade">
+			<h1>Back-End</h1>
 			<hr>
 			<h2>Introduction</h2>
 			<div class="panel panel-default">
-			 	<div class="panel-body">
-			 		Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems and interesting enough, so that they have a memorable experience of the course.
-					
-					Writing assignments involves coming up with a meaningful assignments where students can master the learning objectives. Writing these assignments involves a lot of time drafting on white boards and bouncing ideas. As you are writing these assignments you will have to ask yourself "What am I trying to have the students learn?".
-					
-					Finally, with any good assignments comes excellent documentation that is clear, concise, contextual and correct. Assignment development is also where autograding comes into play. Autograding is essentially writing scripts that can take a student's code and run a series of test cases to best measure its correctness and performance. There are many assignments in a programming class and CS 241 is no exception. All these assignments need to be graded and as the field of computing grow so does its students. It is no longer feasible to grade all these assignments by hand or have every student present their code to a T.A.
+				<div class="panel-body">
+				<p>
+					Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course.
+		 		</p>
+		 		<p>
+					Writing assignments involves coming up with a meaningful tasks where students can master the learning objectives. Writing these assignments involves a lot of time spent drafting on white boards and bouncing ideas around. As you are writing these assignments, you will have to ask yourself, "What am I trying to have the students learn?".
+				</p>
+				<p>
+					Finally, with any good assignment comes excellent documentation that is clear, concise, contextual, and correct. Assignment development is also where autograding comes into play. Autograding is essentially writing scripts that can take a student's code and run a series of test cases to best measure its correctness and performance. There are many assignments in a programming class, and CS 241 is no exception. All these assignments need to be graded, and as the field of computing grow so does its students. It is no longer feasible to grade all these assignments by hand, or have every student present their code to a TA.
+				</p>
 				</div>
 			</div>
 			<h2>Areas of practice</h2>
@@ -205,16 +222,16 @@
 					<h4 class="list-group-item-heading">
 					Assignment Development
 					</h4>
-					<p>
-					You will be tweaking past assignments as well as creating new assignments in order to make sure that students are always learning the cutting edge practices in systems programming.
+					<p class="list-group-item-text">
+					You will be tweaking past assignments as well as creating new assignments to make sure that students are always learning relevant material in an effective way.
 					</p>
 				</div>
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
 					Infrastructure
 					</h4>
-					<p>
-					We need a lot of code for our code. Welcome to infrastructure, we develop the autograder along with tools and scripts that the rest of the staff uses. The autograder always has new edge cases it runs into when grading students, but is absolutely vital to the course's success.
+					<p class="list-group-item-text">
+					We need a lot of code to support our code. Welcome to infrastructure, where the autograder is developed along with tools and scripts that the rest of the staff uses. The autograder always has new edge cases it runs into when grading students, but is absolutely vital to the course's success.
 					</p>
 				</div>
 			</ul>
@@ -226,7 +243,7 @@
 						Firm Knoweledge of C
 					</h4>
 					<p class="list-group-item-text">
-						Unlike lab and office hours, you will be doing a lot of coding for MP development. It is exponentially harder to write and develop an MP than it is to solve an MP. You will not be provided any utility functions, since you are the one providing them. Everything that was out of the scope of the course is now fair game as a MP developer.
+						Unlike lab and office hours, you will be doing a lot of coding for MP development. It is much harder to write and develop an MP than it is to solve an MP. You will not be provided any utility functions, since you are the one creating them. Everything that was out of the scope of the course is now fair game as a MP developer.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -234,7 +251,7 @@
 						Solid Understanding of System Programming
 					</h4>
 					<p class="list-group-item-text">
-						As an assignment developer you must really understand the things you write, since writing a bug in your MP is equivalent to writing 400+ bugs that get deployed to students. Any race conditions or memory leaks left in the provided code you write will be deployed to 400+ students. In class, you only need to get the test cases working, here you need to make sure that your code is resilient against all test cases or there is a bug in the assignment.
+						As an assignment developer, you must really understand the things you write, since writing a bug in your MP is equivalent to writing 400+ bugs that get deployed to students. Any race conditions or memory leaks left in the provided code you write will be deployed to 400+ students. In class, you only need to get the test cases working, here you need to make sure that your code is resilient against all test cases, or there is a bug in the assignment.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -242,12 +259,12 @@
 						Extensive Knowledge of Linux
 					</h4>
 					<p class="list-group-item-text">
-						As an assignment developer, you will probably have to write makefiles for the class. You will need to understand Linux at a level that was never required of you as a student, including obscure kernel conditions, process groups, etc (don't worry we'll teach you!).
+						As an assignment developer, you will need to be comfortable working in a Linux environment beyond a level that was required as a student. You may need to write makefiles, be prepared for obscure kernel conditions, understand process groups, and so on. (Don't worry, we can teach you many of these!)
 					</p>
 				</div>
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
-						Goal Driven
+						Goal-Driven
 					</h4>
 					<p class="list-group-item-text">
 						You will need to be efficient with your student's time. You need to set clear learning goals for your students. It is very bad to waste your students time with an MP that is not relevant to the material being taught in the course.
@@ -255,10 +272,10 @@
 				</div>
 				<div class = "list-group-item">
 					<h4 class="list-group-item-heading">
-						Team Oriented
+						Team-Oriented
 					</h4>
 					<p class="list-group-item-text">
-						If you don't mind the buzzword, we have a team of assignment developers that word on the assignment. You will need to collaborate with them in order to get your ideas and code across pull requests.
+						If you don't mind the buzzword, we have a team of assignment developers that work on each assignment. You will need to collaborate with them in order to get your ideas and code across pull requests.
 					</p>
 				</div>
 			</ul>
@@ -269,7 +286,7 @@
 						Team Meetings (2 hrs / week)
 					</h4>
 					<p class="list-group-item-text">
-						You will need to meet with the rest of the assignment development team frequently. This is so that everyone is on the same page on what the MP is supposed to teach its students.This is also an excellent time for the team to separate out the work for a divide and conquer strategy, since you will constantly be up against a deadline. These meetings will also be an excellent time to learn from course staff more experienced than you.
+						You will need to meet with the rest of the assignment development team frequently. This is so that everyone is on the same page on what the MP is supposed to teach its students. This is also an excellent time for the team to separate out the work for a divide-and-conquer strategy, since you will constantly be up against a deadline. These meetings will also be an excellent time to learn from course staff more experienced than you.
 					</p>
 				</div>
 				<div class = "list-group-item">
@@ -277,7 +294,7 @@
 						Development and Testing (5 hrs / week)
 					</h4>
 					<p class="list-group-item-text">
-						You will need to develop meaningful assignments and doing so takes a lot of labor. Even after the team has written documentation and a TA solution, you will need to test the provided code throughly. This is to ensure the assignment is at least doable and hopefully catch any potential bugs.
+						You will need to develop meaningful assignments, and doing so takes a lot of effort. Even after the team has written documentation and a TA solution, you will need to test the provided code throughly. This is to ensure the assignment is solid and understandable, and hopefully catch any potential bugs.
 					</p>
 				</div>
 				<div class = "list-group-item">
