@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Troll"
+title: "Super Linux Kernel Super Lab"
 submissions:
 - title: Entire Assignment
   due_date: 05/03 11:59pm
