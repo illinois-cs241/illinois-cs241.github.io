@@ -605,6 +605,7 @@ Finally, signal handling information should go in the process control block (PCB
 pending signals, masked signals, and handler actions / addresses for each signal. Much information on Linux’s implementation of signals (which your implementation will closely match) can be found in Understanding the Linux Kernel
 chapter 10.
 
-## Alternative
+## Alternative (with video)
+Please watch this [introductory video to linux kernels](https://www.youtube.com/watch?v=oHg5SJYRHA0) before you begin.
 
-As an alternative you may take your answers to the [final review](https://subversion.ews.illinois.edu/svn/sp17-cs241/_shared/lecture_handouts/CS241-FinalExamPractice.pdf) and submit them [here](https://goo.gl/forms/3QxcmPGh8ihTzKIE2).   This will count for a regular lab grade (1/14 of your total lab grade). You will be graded for completion and a good faith attempt. An instructor will hand grade each question and use their best judgement for whether you gave each question a solid attempt. Note that this assignment is mainly to get you started for studying for the final and it is to your benefit to give it a solid attempt.
+And then, as an alternative you may take your answers to the [final review](https://subversion.ews.illinois.edu/svn/sp17-cs241/_shared/lecture_handouts/CS241-FinalExamPractice.pdf) and submit them [here](https://goo.gl/forms/3QxcmPGh8ihTzKIE2).   This will count for a regular lab grade (1/14 of your total lab grade). You will be graded for completion and a good faith attempt. An instructor will hand grade each question and use their best judgement for whether you gave each question a solid attempt. Note that this assignment is mainly to get you started for studying for the final and it is to your benefit to give it a solid attempt.
