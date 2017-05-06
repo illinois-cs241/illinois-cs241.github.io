@@ -83,3 +83,5 @@
     releaseDate: "Week 15"
     dueDate: "Week 16"
     url: "super_linux_kernel_super_lab"
+    resources: true
+    worksheet: false
