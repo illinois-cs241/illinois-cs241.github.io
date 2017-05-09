@@ -8,7 +8,7 @@ submissions:
   - pied_piper.c
 learning_objectives:
   - Using Pipes
-  - System Call Resillence
+  - System Call Resilience
 wikibook:
   - "Pipes, Part 1: Introduction to pipes"
   - "Pipes, Part 2: Pipe programming secrets"

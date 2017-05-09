@@ -9,7 +9,7 @@ submissions:
   - libscheduler.h
 learning_objectives:
   - scheduling algorithms
-  - preemptive vs non-premptive
+  - preemptive vs non-preemptive
   - Relating the different algorithms with a priority queue
 wikibook:
   - "Scheduling, Part 1: Scheduling Processes"
@@ -157,7 +157,7 @@ The acceptable (case-insensitive) values for `scheme` (outlined above) are:
 -   `SJF`
 
 We provide three sample schedules: `examples/proc1.in`, `examples/proc2.in` and `examples/proc3.in`. We also provide the expected output of those schedules in the `examples` directory. **It's only important that lines starting with `FINAL TIMING DIAGRAM` match.** We will not grade any output except the last few lines, as `show_queue()` is not required to be implemented in the same way as we did.
-To test your program aganist all the test cases in an automated way, we provide a simple bash script. To run all 24 tests, simply run:
+To test your program against all the test cases in an automated way, we provide a simple bash script. To run all 24 tests, simply run:
 
 > ./examples.sh
 

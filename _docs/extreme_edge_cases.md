@@ -27,7 +27,7 @@ One thing we know is that good code is generally modular - it consists of discre
 
 For example, the C string function `strlen` is responsible solely for determining the length of a string; it doesn't do any I/O or networking. A function that knows all and tries to do all would be bad design, and testing whether that kind of function adheres to expectations would be nontrivial.
 
-A programmer might ask, "Do my units of work behave the way I expect? If my function expects a string, how does it behave when given NULL?". These are crucial questions, since ensuring that units of code work exactly the way one would expect makes it easy to build reliable and robust software. An unreliable unit in a large system can affect the entire system significantly. Imagine if `strcpy`, for example, did not behave properly on all inputs; all of the higher-level units that use `strcpy`, and all of the units that interact with those units, would in-turn have unpredictable behavior, and so the unreliablity would propagate through the whole system.
+A programmer might ask, "Do my units of work behave the way I expect? If my function expects a string, how does it behave when given NULL?". These are crucial questions, since ensuring that units of code work exactly the way one would expect makes it easy to build reliable and robust software. An unreliable unit in a large system can affect the entire system significantly. Imagine if `strcpy`, for example, did not behave properly on all inputs; all of the higher-level units that use `strcpy`, and all of the units that interact with those units, would in-turn have unpredictable behavior, and so the unreliability would propagate through the whole system.
 
 Enter unit testing.
 
@@ -74,7 +74,7 @@ The brackets denote that the above is an array of those strings. (More details i
     *   This means that "Hello.World." gets split into 2 sentences "Hello" and "World" and NOT "Hello.World".
 *   Let the camelCasing of `input_s` be called `output_s`
 *   `output_s` is the the concatenation of all words `w` in `input_s` after `w` has been camelcased
-    *   The puncation from `input_s` is not added to `output_s`
+    *   The punctuation from `input_s` is not added to `output_s`
 *   words are:
     *   delimited by the MAXIMAL amount of whitespace
         *   This means that "hello world" is split into "hello" and world" and NOT "hello ", " ", " world" or any other combination of whitespaces

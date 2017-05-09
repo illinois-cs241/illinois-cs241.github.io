@@ -33,7 +33,7 @@ Well, we'll keep it short, you got fired. Your boss brought you in for a code re
 
 ## `format.h`
 
-Since this MP **requires** your programs to print a variety of things like error messages, we have provided you with our own highly customized formatting library. You should not be printing out to stdout and stderr at all; instead, all output and errors should be printed using the functions provided in `format.c` and `format.h`. In `format.h` you can find documentation of what each function does and you should use them whenever approriate. This is our way of ensuring that you do not lose points for formatting issues, but it also means that you are responsible for handling any and all errors mentioned in `format.c` and `format.h`.
+Since this MP **requires** your programs to print a variety of things like error messages, we have provided you with our own highly customized formatting library. You should not be printing out to stdout and stderr at all; instead, all output and errors should be printed using the functions provided in `format.c` and `format.h`. In `format.h` you can find documentation of what each function does and you should use them whenever appropriate. This is our way of ensuring that you do not lose points for formatting issues, but it also means that you are responsible for handling any and all errors mentioned in `format.c` and `format.h`.
 
 ## Overview
 
@@ -167,7 +167,7 @@ Use the appropriate prints from `format.h` for:
 - No such process exists
 - `cont` was ran without a pid
 
-**Any `<pid>` used in `kill`, `stop`, or, `cont` will either be a non-existant pid or one of a process that is a direct child of your shell**
+**Any `<pid>` used in `kill`, `stop`, or, `cont` will either be a non-existent pid or one of a process that is a direct child of your shell**
 
 ### `exit`
 

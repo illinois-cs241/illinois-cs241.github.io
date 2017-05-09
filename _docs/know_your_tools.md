@@ -181,7 +181,7 @@ rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
 
 ```
 
-This looks scary, but if you google some makefile basics and carefully read the comments it should mostly make sense. However, these are the things you will need to know at the minimum:
+This looks scary, but if you Google some makefile basics and carefully read the comments it should mostly make sense. However, these are the things you will need to know at the minimum:
 
 
 * Compile the assignment:
@@ -196,7 +196,7 @@ make
 make clean
 ```
 
-* Compile a debugable version of your code that you can use gdb on:
+* Compile a debug-able version of your code that you can use gdb on:
 
 ```console
 make debug
@@ -213,7 +213,7 @@ make release
 * Log into your VM
 * Clone your SVN repository on your VM
 * Check the grade report on subversion and see what test cases you failed
-* _Fix the code usign the test cases_
+* _Fix the code using the test cases_
 	* Look through the code in the files!
 	* Use Printf's!
     * Use valgrind!
@@ -235,6 +235,6 @@ If choosing the latter option, you must email the TA beforehand.
 
 Remember that lab attendance is required; per course policy, missing 3 or more lab sections will result in a failing grade.
 
-You can still get credit for attending a different section due to special or occasional circumstances by making arangments with the GA at [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu). However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office SC1210 to change your section without having to drop your enrollment.
+You can still get credit for attending a different section due to special or occasional circumstances by making arrangements with the GA at [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu). However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office SC1210 to change your section without having to drop your enrollment.
 
 We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).

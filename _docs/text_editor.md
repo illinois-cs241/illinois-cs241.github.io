@@ -43,7 +43,7 @@ into the text user interface (TUI) and the appropriate function in
 
 You can optionally provide a window size (default = 20 lines) for the TUI (so long as it's greater than or equal to 20).
 
-**Important:** Lines will be 1-indexed for this assignment! Character indicies are still 0-indexed.
+**Important:** Lines will be 1-indexed for this assignment! Character indices are still 0-indexed.
 
 **Important:** Send all your debug printing to `stderr` instead of `stdout`.
 
@@ -62,7 +62,7 @@ Please keep the following in mind when implementing your text editor:
 For opening documents, assume that the document will always be a document
 created from this text editor. That means it will always have valid characters.
 
-Remember! An empty or non-existant file can be a valid document!
+Remember! An empty or non-existent file can be a valid document!
 
 ## Format library
 We have provided a format library that handles all printing to `stdout` or `stderr`.  This is to ensure that you do not lose points for not matching the format that the autograder expects.
@@ -77,7 +77,7 @@ Make sure your editor can perform the following basic tasks:
 *   Insert text to a file at a specified line number and character index.
 *   Delete `n` characters of text from a file at a specified line number and character index.
 *   Delete a line of text from a file
-*   Find the next occurance of text in a file and return the location of the match.
+*   Find the next occurrence of text in a file and return the location of the match.
 *   Merge and split lines
 *   Save the file to disk.
 *   Quit the editor
@@ -92,7 +92,7 @@ The TUI supports the following interaction:
 *    Splitting a line (Press `enter` while in the middle of a line)
 *    Merging a line (Press `delete` at the end of a line or `backspace` at the starting of one)
 *    Deleting text (`delete` or `backspace`)
-*    Deleteing a line (`ctrl+w`)
+*    Deleting a line (`ctrl+w`)
 *    Finding text in the file (`ctrl+f` to search, read below to see how search should work)
 *    Saving the file (`ctrl+x`)
 *    Exiting (`ctrl+a`)
@@ -182,7 +182,7 @@ to handle inserts past the end of line.
 
 There are two types of deletes. Deleting characters and deleting lines.
 
-### Deleting Characers
+### Deleting Characters
 
 This function is to be implemented in `handle_delete_command`. The current location of the cursor is defined by the `location` argument `loc`. The function will delete `num_chars` characters at the specified line number from the specified character index till the end of the line.
 
@@ -232,7 +232,7 @@ Additionally, the search IS case-sensitive, so searching for bee again:
 3    bees beEs Bees [b]ees
 ```
 
-will skip the two instances of bee with captial letters. 
+will skip the two instances of bee with capital letters. 
 
 Finally, the search wraps around the file. So if we search for bee one more time:
 
@@ -325,4 +325,4 @@ Share your extensions on Piazza if you come up with a cool feature!
 ## Testing
 
 We have provided a file `editor_test.c` where you can programmatically test
-your editor. This compiles to `editor_test` and `editor_test-debug`. We STRONGLY reccomend testing by adding test cases to `editor_test.c` and running `editor_test` instead of testing using `editor` as the tui may overwrite any print statements you wanted to see.
+your editor. This compiles to `editor_test` and `editor_test-debug`. We STRONGLY recommend testing by adding test cases to `editor_test.c` and running `editor_test` instead of testing using `editor` as the tui may overwrite any print statements you wanted to see.

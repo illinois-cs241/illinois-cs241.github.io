@@ -75,7 +75,7 @@ To find the amount of memory the user is leaking, we just need to subtract `tota
 
 ## Testing
 
-You'll want to test your `mini_valgrind` throughly.
+You'll want to test your `mini_valgrind` thoroughly.
 
 We've provided you with a `test.c` file that you can put test cases in. Running `make` will generate a `./test` executable alongside `mini_valgrind`. You can use it like the regular Valgrind:
 

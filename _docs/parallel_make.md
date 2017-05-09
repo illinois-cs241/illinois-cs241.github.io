@@ -92,7 +92,7 @@ See `rule.h` for a description of the `rule_t` API. And read `parser.h` for more
 
 ## Graph Searching and Cycle Detection
 
-The graph returned from the `parmake` parser will contain all the vertices and edges depicting rules and dependencies in a Makefile. In addition, it will contain an empty sentinel rule (with key "") whose neighbors are the build targets. *Do not execute this rule*. Instead, you should only work on rules that descend from this rule (i.e. the build targets and all their descendents). Here, "B descends from A" means that that 'A' implicitly depends on 'B' to run.
+The graph returned from the `parmake` parser will contain all the vertices and edges depicting rules and dependencies in a Makefile. In addition, it will contain an empty sentinel rule (with key "") whose neighbors are the build targets. *Do not execute this rule*. Instead, you should only work on rules that descend from this rule (i.e. the build targets and all their descendants). Here, "B descends from A" means that that 'A' implicitly depends on 'B' to run.
 
 GNU `make` handles cyclical dependencies by attempting to delete edges that cause cycles. If you tried to call `make d` on the example Makefile shown earlier, GNU `make` would essentially attempt to convert that Makefile to this one:
 
@@ -105,7 +105,7 @@ GNU `make` handles cyclical dependencies by attempting to delete edges that caus
     c:
     	echo C
 
-To highlight the importance of cycle detection in resource allocation schemes, we also require that you explicitly handle cycles. However, *your implementation of parmake will ignore all build targets whose descendents belong to cycles*. That is, calling `./parmake d` on this makefile would execute nothing, since 'd' cannot be satisfied due to the cyclical dependency (-> 'a' -> 'b' ->). However, calling `./parmake c` will still execute `echo C`, since the (nonexistent) descendents of 'c'
+To highlight the importance of cycle detection in resource allocation schemes, we also require that you explicitly handle cycles. However, *your implementation of parmake will ignore all build targets whose descendants belong to cycles*. That is, calling `./parmake d` on this makefile would execute nothing, since 'd' cannot be satisfied due to the cyclical dependency (-> 'a' -> 'b' ->). However, calling `./parmake c` will still execute `echo C`, since the (nonexistent) descendants of 'c'
 don't belong to cycles.
 
 Moreover, you must announce any build targets that are dropped due to existence of cyclical dependencies *before you start working on any rules* using the function `print_cycle_failure()` found in `format.h`. Read the header file for usage information.
@@ -222,7 +222,7 @@ You can view the header information in `includes/`.
 Each rule depends on a set of other rules and files.
 It is important to note that each dependency is either the name of another rule or the name of a file on disk or BOTH. A rule can be run if and only if all of rules that it depends on have been satisfied and none of them have failed (See what determines a failed rule in Running Commands).
 
-Note that rules which do not descend from any build targets, or whose only ancestors otherwise possess descendents that form cycles, should never be run.
+Note that rules which do not descend from any build targets, or whose only ancestors otherwise possess descendants that form cycles, should never be run.
 
 `parmake` must satisfy all of the rules needed to build the specified targets correctly and as quickly as possible.
 To ensure that rules are executed correctly, a rule can only be run once it's dependencies are satisfied.

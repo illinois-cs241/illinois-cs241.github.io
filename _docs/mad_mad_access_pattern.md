@@ -110,7 +110,7 @@ same results, but using different file access methods.
 
 ## Version 1: fseek / fread
 When reading a node from the file, use **fseek()** to jump to the
-correct posistion and read the node with **fread() and/or fgetc()**.
+correct position and read the node with **fread() and/or fgetc()**.
 You may not use mmap() for this part.
 
 Put the code for this in lookup1.c.

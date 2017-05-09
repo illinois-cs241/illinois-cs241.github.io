@@ -82,7 +82,7 @@ You should also make use of `endSession`.  This will be set upon SIGINT and acts
 
 To sum up, you have to:
 
-* Implement `run_server()` and `close_server()` (the signal hanlder for SIGINT)
+* Implement `run_server()` and `close_server()` (the signal handler for SIGINT)
 * Set up server (TCP & IPv4).
 * Accept connecting clients up to `MAX_CLIENTS` and spawn a thread for each one.
 
@@ -90,13 +90,13 @@ To sum up, you have to:
 
 Read and Write calls (general read/write - this extends to recv, send, etc.) can fail to send/receive all bytes or get interrupted by signals.
 
-We've defined read and write to follow the same rules.  So, without loss of generallity, we will explain what to do for read/write failures by explaining with read:
+We've defined read and write to follow the same rules.  So, without loss of generality, we will explain what to do for read/write failures by explaining with read:
 
 Let y = read(x bytes)
 
 * if 0 < y < x then read did not read all of the bytes and should continue reading
 * if y == 0 then connection was closed and readall should return total bytes read
-* if y == -1 && errno == EINTR then read was interupted by a signal and should try again
+* if y == -1 && errno == EINTR then read was interrupted by a signal and should try again
 * if y == -1 && errno != EINTR then read failed and should not try again and readall should return -1
 
 
@@ -160,7 +160,7 @@ Notice the **XYZ**, that is the machine number you will use to connect to the se
 In the above "terminals", there are things like "Waiting for connection..." and "Ending Server": do not worry about having to do this. It is simply flavor text printed to the window. Feel free to do that; we will only test the bytes that are sent and received.
 
 **Because it's particularly important for this lab, we want to reiterate that you should not have any memory leaks**
-We will test memory leaks in only one situation: all clients exit and then server recieves SIGINT.  We will not close your server while clients are still connected.
+We will test memory leaks in only one situation: all clients exit and then server receives SIGINT.  We will not close your server while clients are still connected.
 
 
 

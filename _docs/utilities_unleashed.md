@@ -156,7 +156,7 @@ Nota bene:
 *   You __may not__ use the existing `env` program.
 *   You __may not__ replace `%` with `$` or use `wordexp(3)`.
 *   You __may not__ use `execvpe`, `execve`, or `execle`.
-*   All changes in enviroment variables and execution must happen only in the child process.
+*   All changes in environment variables and execution must happen only in the child process.
 *   You must use `fork`/`exec`/`wait`.
 *   If a variable doesn't exist, interpret its value as a zero-length string.
 *   __Do not fork bomb the autograder!__ You will fail if you forkbomb the AG.
