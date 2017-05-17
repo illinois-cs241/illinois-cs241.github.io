@@ -167,7 +167,7 @@ Use the appropriate prints from `format.h` for:
 
 ### `exit`
 
-The shell will exit once it receives the `exit` command or an EOF. The latter is sent by typing `Ctrl+D` on an empty line, and from a script file (as used with the `-f` flag) this is sent once the end of the file is reached.  This should cause your shell to exit with return code 0. You should also cleanup any running/stopped background processes.
+The shell will exit once it receives the `exit` command or an EOF. The latter is sent by typing `Ctrl+D` on an empty line, and from a script file (as used with the `-f` flag) this is sent once the end of the file is reached.  This should cause your shell to exit with exit status 0. You should also cleanup any running/stopped background processes.
 
 If there are currently stopped or running background processes when your shell receives `exit` or `Ctrl+D`, you should kill and cleanup each of those children before your shell exits. You do not need to worry about SIGTERM.  (Think, what function lets you cleanup information about child processes?)
 **Your shell can not have zombies** (but your children's children might turn into zombies.  You don't have to handle those.)
