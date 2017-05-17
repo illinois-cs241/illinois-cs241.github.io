@@ -103,10 +103,6 @@ This should be printed before any of the output of the command is printed (print
 
 Usually when we do `Ctrl+C`, the current running program will exit. However, we want the shell to ignore the `Ctrl+C` signal (`SIGINT`). The shell should not exit upon receiving `SIGINT`. Instead, it should check if there is a currently running foreground process, and if so, it should kill it using SIGINT (the `kill()` function might come in handy, here and elsewhere).
 
-### Exiting
-
-The shell will exit once it receives the `exit` command or an EOF. The latter is sent by typing `Ctrl+D` on an empty line, and from a script file (as used with the `-f` flag) this is sent once the end of the file is reached. 
-
 ### Tracking process state
 
 Your shell should keep track of the name, PID and status of every child, it creates. You suggested keeping a fixed sized array, but your manager will not tolerate such blasphemy anymore.
@@ -171,7 +167,10 @@ Use the appropriate prints from `format.h` for:
 
 ### `exit`
 
-Causes your shell to exit. You should also cleanup any running/stopped background processes. See the `Cleanup` section for more.
+The shell will exit once it receives the `exit` command or an EOF. The latter is sent by typing `Ctrl+D` on an empty line, and from a script file (as used with the `-f` flag) this is sent once the end of the file is reached.  This should cause your shell to exit with return code 0. You should also cleanup any running/stopped background processes.
+
+If there are currently stopped or running background processes when your shell receives `exit` or `Ctrl+D`, you should kill and cleanup each of those children before your shell exits. You do not need to worry about SIGTERM.  (Think, what function lets you cleanup information about child processes?)
+**Your shell can not have zombies** (but your children's children might turn into zombies.  You don't have to handle those.)
 
 ### Invalid built-in commands
 
@@ -220,11 +219,6 @@ When I type, it shows up on this line
 ```
 
 While the shell should be usable after calling the command, after the process finishes the parent is still responsible for waiting on the child (hint: catch a signal). Avoid creating zombies! Think about what happens when multiple children finish around the same time!
-
-### `Cleanup`
-
-If there are currently stopped or running background processes when your shell receives `exit` or `Ctrl+D`, you should kill and cleanup each of those children before your shell exits. You do not need to worry about SIGTERM.  (Think, what function lets you cleanup information about child processes?)
-**Your shell can not have zombies** (but your children's children might turn into zombies.  You don't have to handle those.)
 
 ### `Memory`
 
