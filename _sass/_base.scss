@@ -35,6 +35,12 @@ a {
   overflow-x:hidden;
 }
 
+// making latex scrollable for overflow
+div.MathJax_Display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
 body {
   background-color: #FAFAFA !important;
 }

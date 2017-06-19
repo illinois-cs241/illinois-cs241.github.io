@@ -8,20 +8,20 @@
       <main class="mdl-layout__content">
         <div class="page-content">
           <!-- Your content goes here -->
-          <div class = "row">
-          	<div class = "small-8 medium-8 large-10 large-centered medium-centered columns">
+          <div class = "row" style="padding-bottom: 8%">
+            <div class = "small-8 medium-8 large-10 large-centered medium-centered small-centered columns">
               <!-- A bit janky: assumes zero or one instructors. Why can't Jekyll have stable sort??? :( -->
               {% assign team = site.data.staff | sort: 'netid' | sort: 'instructor', 'last' %}
               {% assign instructor = team | first %}
               {% assign sorted_team = team | shift | sort: 'netid' | unshift: instructor %}
               {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/'" %}
               {% for member in sorted_team %}
-                <div class = "small-12 medium-12 large-3 columns" title="{{member.roles}} interested in {{member.speciality}} and has been on staff for {{member.semesters}}" >
+                <div class = "small-12 medium-12 large-3 columns">
                   <div class = "pad" id = "{{member.netid}}" >
-                    {% assign photo = photos | where_exp: "file", "file.path contains member.netid" | first | map: "path" | default: "./images/staffPhotos/default.jpg" %}
-                    <a href = "./{{ photo }}">
-                      <div class="card-staff mdl-card mdl-shadow--2dp" style =
-						  "background-image: url('./{{ photo }}');">
+                    {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
+                    {% assign photo = photofile.path | default: "/images/staffPhotos/default.jpg" %}
+                    <a href = ".{{ photo }}">
+                      <div class="card-staff mdl-card mdl-shadow--2dp" style="background-image: url('.{{ photo }}');">
                         <div class = "spacer" style = "height: 0; padding-bottom: 85%; width:100%;">
                           <!-- Horrible Hack! Please fix me -->
                         </div>
@@ -38,9 +38,12 @@
                       </div>
                     </a>
                   </div>
+                  <div class="mdl-tooltip" data-mdl-for="{{member.netid}}">
+                    {{member.roles}} interested in {{member.specialty}} and has been on staff for {{member.semesters}}
+                  </div>
                 </div>
               {% endfor %}
-          	</div>
+            </div>
           </div>
         </div>
       </main>

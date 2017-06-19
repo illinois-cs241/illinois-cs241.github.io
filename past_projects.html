@@ -9,55 +9,63 @@
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="row">
-          	<div class="small-12 medium-12 large-8 large-centered columns">
+            <div class="small-12 medium-12 large-8 large-centered columns">
               <h1>Past Projects</h1>
 
-              {% for term in site.data.honors %}
+              {% for term in site.data.honors_projects %}
                 <h2>{{term.term}}</h2>
 
                 <!-- Desktop Table -->
                 <div class="show-for-large-up">
                   <table width = "100%" class="mdl-data-table mdl-js-data-table">
-              		  <thead>
-              		    <tr>
-              		      <th class="mdl-data-table__cell--non-numeric">Name</th>
-              		      <th class="mdl-data-table__cell--non-numeric">Description</th>
+                    <thead>
+                      <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Name</th>
+                        <th class="mdl-data-table__cell--non-numeric">Description</th>
                         <th class="mdl-data-table__cell--non-numeric">Link</th>
-              		    </tr>
-              		  </thead>
-              		  <tbody>
+                      </tr>
+                    </thead>
+                    <tbody>
                       {% for project in term.projects %}
                         <tr>
                           <td class="mdl-data-table__cell--non-numeric">{{project.name}}</td>
                           <td class="mdl-data-table__cell--non-numeric">{{project.description}}</td>
-                          <td class="mdl-data-table__cell--non-numeric">{{project.link}}</td>
+                          <td class="mdl-data-table__cell--non-numeric">
+                            {% if project.link_url and project.link_title %}
+                              <a href="{{project.link_url}}">{{project.link_title}}</a>
+                            {% endif %}
+                          </td>
                         </tr>
                       {% endfor %}
-              		  </tbody>
-              		</table>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Mobile Table -->
+                <div class="hide-for-large-up">
+                  {% for project in term.projects %}
+                    <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Name</td>
+                        <td>{{project.name}}</td>
+                      </tr>
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Description</td>
+                        <td>{{project.description}}</td>
+                      </tr>
+                      <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Link</td>
+                        <td>
+                          {% if project.link_url and project.link_title %}
+                            <a href="{{project.link_url}}">{{project.link_title}}</a>
+                          {% endif %}
+                        </td>
+                      </tr>
+                    </table>
+                  {% endfor %}
                 </div>
               {% endfor %}
-            	<!-- Mobile Table -->
-            	<div class="hide-for-large-up">
-                {% for lab in site.data.labs %}
-                  <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">Lab</td>
-                      <td><a href="./{{lab.url}}.html">{{lab.name}}</a></td>
-                    </tr>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">Release Date</td>
-                      <td>{{lab.releaseDate}}</td>
-                    </tr>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">Due Date</td>
-                      <td>{{lab.dueDate}}</td>
-                    </tr>
-                  </table>
-                {% endfor %}
-            	</div>
             </div>
-
           </div>
         </div>
       </main>

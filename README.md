@@ -23,8 +23,8 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
   - header.html: top nav bar code
 - _layouts: hold layout templates
   - doc.html: layout template for documentation
-- _posts: where all the documentation is stored as markdown
-- _sass: sass files (files named approriately)
+- _docs: where all the documentation is stored as markdown
+- _sass: sass files (files named appropriately)
 - css: holds css
 - images: holds images
 - js: holds javascripts
@@ -42,28 +42,27 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
 ## How to write documentation
 
 ### TLDR
-Just go to `_posts` and copy an existing doc and fill it out with the approriate markdown content.
+
+Just go to `_docs` and copy an existing doc and fill it out with the approriate markdown content.
 
 ### Where to create the file
-All documentation is stored in _posts.
 
-To create a new post, all you need to do is create a new file in the _posts directory. How you name files in this folder is important. Jekyll requires these files to be named according to the following format:
+All documentation is stored in `_docs`.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+To create a new doc, all you need to do is create a new file in the `_docs` directory. How you name files in this folder is important. If you name the file "my_awesome_doc.md", then that page can be access at "https://illinois-cs241.github.io/my_awesome_doc.html". You should not use any other configuration to change the url of the file, but rather stick to the convention.
 
 ### Content for this file
-Once you have created this file you can add all the markdown you please. Somethings to take note of is that javascript will run to make all the areas between `h2`/`##` tags into sections and add an entry to the table of content. The title of the section and the entry of in the table of content is exactly the text that comes after your `h2`/`##`. Also `h1`/`#` is reserved for the title which will automatically be added in. If you get stuck trying to format something with markdown, then you can just write html and it will get injected (but, then I will be dissapointed in you).
+
+Once you have created this file you can add all the markdown you please. Somethings to take note of is that javascript will run to make all the areas between `h2`/`##` tags into sections and add an entry to the table of content. The title of the section and the entry of in the table of content is exactly the text that comes after your `h2`/`##`. Also `h1`/`#` is reserved for the title which will automatically be added in. If you get stuck trying to format something with markdown, then you can just write html and it will get injected (but, then I will be disappointed in you).
 
 ### Front Matter (configurations)
 
-TODO: Document Learning Objectives, Graded Files, and Deadlines.
 After you are done writing content you need to add front matter to the top of the file. Front matter allows Jekyll to know things like "which template should be used to generate this page", "what is the title of this page?", and "should this page be accessible through a custom link?". To put it simply just add the following:
 
 ```
 ---
 layout: doc
 title: "Password Cracker"
-permalink: password_cracker
 submissions:
 - title: Part 1
   due_date: 10/17 11:59pm
@@ -92,10 +91,6 @@ wikibook:
 `layout: doc` will tell jekyll to use `_layouts/doc.html` as the layout.
 
 `title: "Password Cracker"` will tell jekyll that the title is "Password Cracker" and add that in an `h1` tag.
-
-`permalink: password_cracker` will tell jekyll that someone should be able to access this page with the url `http://illinois-cs241.github.io/password_cracker`.
-
-`dueDates: "02/15 11:59pm"` will add due dates to the page.
 
 ```
 submissions:
@@ -126,7 +121,7 @@ learning_objectives:
   - Using synchronization primatives
 ```
 
-Will automatically add a section labeled "Learning Objectives" to the top of the docs.
+Will automatically add a section labeled "Learning Objectives" to the top of the docs with the appropriate bullet points.
 
 ```
 wikibook:
@@ -140,9 +135,9 @@ wikibook:
   - "Synchronization, Part 6: Implementing a barrier"
 ```
 
-Will automatically add a section labeled "Suggested Readings" to the top of the docs. Note that these are the titles of the pages of the wikibook and must be wrapped in quotes to escape the ":". This will also automatically generate the links to the wikibook (and only wikibook). If you want to link to something outside of the wikibook, then you will need to create another section for that. 
+Will automatically add a section labeled "Suggested Readings" to the top of the docs. Note that these are the titles of the pages of the wikibook and must be wrapped in quotes to escape the ":". This will also automatically generate the links to the wikibook (and only wikibook). If you want to link to something outside of the wikibook, then you will need to create another section for that.
 
-If you do not want students to be able to access this page (say you are beta testing), then just don't add the permalink or have it be something like `Know Your Tools Beta`. By default these pages can be accessed at `http://illinois-cs241.github.io/<YEAR>/<MONTH>/<DATE>/<title>.html`
+If you do not want students to be able to access this page (say you are beta testing), then put them in `_drafts` and you can preview the site with `--drafts`, when you build with Jekyll.
 
 ### Syntax Highlighting
 Also you might want to add syntax highlighting.

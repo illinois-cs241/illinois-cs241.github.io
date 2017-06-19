@@ -1,0 +1,80 @@
+---
+# Honors Projects
+-
+  term: "Fall 2016"
+  projects:
+    -
+      name: "Distributed FUZE"
+      description: "Distributed filesystem using FUSE"
+    -
+      name: "Hermes"
+      description: "Online real-time text editor"
+      link_url: "https://github.com/Horizon-Blue/Hermes"
+      link_title: GitHub
+    -
+      name: "Kernel Filesystem"
+      description: "Kernel module virtual filesystem"
+    -
+      name: "Root Kit"
+      description: "Spying on your kernel"
+    -
+      name: "Fluid Simulator"
+      description: "2D fluid simulation that takes advantage of GPU architecture"
+    -
+      name: "Steganography Toolset"
+      description: "Toolset capable of encoding information in images/audio/code and subsequently decoding it"
+    -
+      name: "Remote Desktop Client"
+      description: "Remote client for your desktop"
+    -
+      name: "ShadowPager"
+      description: "Hacking around firewalls"
+    -
+      name: "Multiplayer Tron Game"
+      description: "An implementation of the video game Tron entirely in the terminal"
+-
+  term: "Spring 2016"
+  projects:
+    -
+      name: "Super Debugger"
+      description: "GDB-Like Debugger From Scratch"
+    -
+      name: "C Garbage Collector"
+      description: "A garbage collector for C code that supports multithreading"
+      link_url: "https://github.com/faisalabujabal/gc4c/"
+      link_title: GitHub
+    -
+      name: "LocChat"
+      description: "Location-based app where nearby users can talk to each other based on common interests"
+      link_url: "https://github.com/crkainrath/CS296Project"
+      link_title: GitHub
+    -
+      name: "Chess Engine"
+      description: "Engine to compute optimal moves in a game of chess"
+    -
+      name: "High Frequency Sports Gambling"
+      description: "Analyzes and places bets on sports games in real-time"
+      link_url: "https://github.com/zbrusso2/cs296-41"
+      link_title: GitHub
+    -
+      name: "TCP Network Encryption"
+      description: "A network encryption tool that implements the Serpent cipher"
+    -
+      name: "Webcam Theremin"
+      description: "Theremin simulation using a webcam and video processing"
+    -
+      name: "Spacecluster.io"
+      description: "Remake of Agai.io in space"
+      link_url: "https://github.com/dylanplecki/spacecluster.io"
+      link_title: GitHub
+    -
+      name: "EDF Schedluing Policy"
+      description: "Implementation of the earliest-deadline first scheduling policy as a Linux kernel module"
+    -
+      name: "Win Debugger"
+      description: "A gdb-like Windows C debugger written in C++"
+      link_url: "https://www.youtube.com/watch?v=4u8ArJTRFsl"
+      link_title: YouTube
+    -
+      name: "Personalized Trash Control"
+      description: "A feature-rich trash can for Linux that supports compression and remote storage of trash"

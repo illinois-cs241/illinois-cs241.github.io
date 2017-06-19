@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lab 1 - Introduction to C">
+  <title>Welcome to CS 241!</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/lib/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/lib/reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/lib/reveal.js/css/print/pdf.css' : '/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">Welcome to CS 241!</h1>
+  <p class="author">Lab 1 - Introduction to C</p>
+</section>
+
+<section><section id="whats-lab-gonna-be-like" class="titleslide slide level1"><h1>What’s Lab Gonna Be Like?</h1></section><section class="slide level2">
+
+<h3 id="rules">Rules</h3>
+<ul>
+<li>The first 20ish minutes are going to be dedicated going over a review worksheet</li>
+<li>Then you can work on your labs the rest of the time</li>
+<li>You get credit by making an honest effort in the worksheet</li>
+<li>Email GA if you need an exemption</li>
+</ul>
+</section><section id="lab-attendance" class="slide level2">
+<h2>Lab Attendance</h2>
+<ul>
+<li>10 Minute Rule, if you aren’t here in the first 10 minutes of class, you don’t get credit</li>
+<li>Part of your grade in this class relies on you attending labs. Toward the end of every lab, we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time.</li>
+</ul>
+</section><section id="different-lab-sections" class="slide level2">
+<h2>Different Lab Sections</h2>
+<p>Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:</p>
+<ul>
+<li>Go to section ADH at 7:30pm-8:50pm in 0218. This section only has the least registered students, and thus there will be room to accommodate you on a first come first served basis.</li>
+</ul>
+</section><section id="section" class="slide level2">
+<h2></h2>
+<ul>
+<li>Get permission from the TA of another section to go to their section, provided
+<ul>
+<li>you will be working on your laptop in the room, or</li>
+<li>there is seating available where registered students get priority.</li>
+</ul></li>
+</ul>
+</section><section id="section-1" class="slide level2">
+<h2></h2>
+<p>If choosing the latter option, you must email the TA in charge of your assigned lab and the TA for the lab to which you are going.</p>
+<p>Remember that lab attendance is required; per course policy, missing 3 or more lab sections will result in a failing grade.</p>
+</section></section>
+<section><section id="virtual-machines" class="titleslide slide level1"><h1>Virtual Machines</h1></section><section class="slide level2">
+
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> **NETID**@sp17-cs241-**xxx**.cs.illinois.edu</code></pre></div>
+</section><section id="note" class="slide level2">
+<h2>Note</h2>
+<p>You are going to need to be on campus VPN for this to work. If you want to make it work at home, make sure to log in to campus VPN then try ssh’ing. Look at the development guide!</p>
+</section><section id="late-adds" class="slide level2">
+<h2>Late Adds</h2>
+<p>If you added in the past 24 hours you should be getting an email soon about your VM from there you can get working. If you cannot find the assignments</p>
+</section></section>
+<section><section id="worksheets" class="titleslide slide level1"><h1>Worksheets</h1></section><section id="what-are-they" class="slide level2">
+<h2>What are they?</h2>
+<p>You all should have gotten worksheets when you came in, these will mainly be review/expansion from the topics that you learn in lecture so shouldn’t be anything new.</p>
+</section><section class="slide level2">
+
+<p><strong>Note</strong>: There is a typo in this worksheet (sorry we make mistakes too!) In a bit about bits, the line</p>
+<p><code>(short | 0xCC)</code> -&gt; <code>(shifted | 0xCC)</code>.</p>
+</section></section>
+<section><section id="time-to-work" class="titleslide slide level1"><h1>Time to work</h1></section><section class="slide level2">
+
+<p>Start working on the sheet, we will be around to ask some questions. We will see how long people are taking at around 15ish minutes and then go through those parts of the worksheets (the rest will be a challenge for to complete).</p>
+</section><section id="informational-slides" class="slide level2">
+<h2>Informational Slides</h2>
+</section><section id="question-1" class="slide level2">
+<h2>Question 1</h2>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> a = <span class="dv">0</span>;
+<span class="dt">size_t</span> a_size = <span class="kw">sizeof</span>(a++);
+printf(<span class="st">&quot;size: %zu, a: %d</span><span class="sc">\n</span><span class="st">&quot;</span>, a_size, a);</code></pre></div>
+</section><section id="question-2" class="slide level2">
+<h2>Question 2</h2>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#define swap(a, b) temp = a; \</span>
+<span class="pp">    a = b; \</span>
+<span class="pp">    b = temp;</span>
+    
+<span class="dt">void</span> selection_sort(<span class="dt">int</span>* a, <span class="dt">size_t</span> len){
+    <span class="dt">size_t</span> temp = len - <span class="dv">1</span>;
+    <span class="cf">for</span>(<span class="dt">size_t</span> i = <span class="dv">0</span>; i &lt; temp; ++i){
+        <span class="dt">size_t</span> min_index = i;
+        <span class="cf">for</span>(<span class="dt">size_t</span> j = i<span class="dv">+1</span>; j &lt; len; ++i){
+            <span class="cf">if</span>(a[j] &lt; a[i]) min_index = j;
+        }
+        <span class="cf">if</span>(i != min_index) 
+            swap(a[i], a[min_index]);     
+    }
+}</code></pre></div>
+</section><section id="question-3" class="slide level2">
+<h2>Question 3</h2>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">short</span> mystery_bits(<span class="dt">short</span> input){
+    <span class="dt">short</span> max_set = ~<span class="dv">0</span>;
+    <span class="dt">short</span> masked = input &amp; (<span class="bn">0xFF00</span> ^ max_set);
+    <span class="dt">short</span> shifted = masked &lt;&lt; <span class="dv">16</span>;
+    <span class="dt">short</span> ret = (shifted | <span class="bn">0xCC</span>);
+    <span class="cf">return</span> ret;
+}</code></pre></div>
+</section><section id="question-4" class="slide level2">
+<h2>Question 4</h2>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> positive_under_ten(<span class="dt">int</span> input){
+    <span class="cf">if</span>(<span class="dv">0</span> &lt; input &lt; <span class="dv">10</span>){
+        printf(<span class="st">&quot;Input is in the range</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }<span class="cf">else</span>{
+        printf(<span class="st">&quot;Input is not in the range</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    }
+}</code></pre></div>
+</section><section id="question-5" class="slide level2">
+<h2>Question 5</h2>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> print_error(<span class="dt">int</span> err_num){
+    <span class="cf">switch</span>(err_num){
+    <span class="cf">case</span> ENOENT:
+        printf(<span class="st">&quot;No such file or entry</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    <span class="cf">case</span> EINTR:
+        printf(<span class="st">&quot;Interrupted</span><span class="sc">\n</span><span class="st">&quot;</span>);
+    <span class="cf">default</span>:
+        <span class="cf">break</span>;
+    }
+}</code></pre></div>
+</section></section>
+<section><section id="todays-lab-debugging" class="titleslide slide level1"><h1>Today’s lab: Debugging</h1></section></section>
+<section><section id="valgrind" class="titleslide slide level1"><h1>Valgrind!</h1></section><section id="usage" class="slide level2">
+<h2>Usage</h2>
+<p>Given a program test arg1 arg2. <code>valgrind --leak-check=type command</code> <code>type = &lt;no|summary|yes|full&gt;</code> <code>valgrind --show-leak-kinds=all ...</code></p>
+</section><section id="leak-types" class="slide level2">
+<h2>Leak Types</h2>
+<ol type="1">
+<li>Memory block: a block of allocated, not-freed memory.</li>
+<li>Definitely Lost: No pointer to a memory block.</li>
+<li>Still Reachable: Have pointer to a memory block.</li>
+<li>Indirectly Lost: Memory blocks pointing to a memory block is lost</li>
+<li>Possibly Lost: Have a (moved) pointer pointing to a memory block</li>
+</ol>
+</section></section>
+<section><section id="gdb" class="titleslide slide level1"><h1>GDB</h1></section><section id="a-lot-of-you-are-afraid-dont-be" class="slide level2">
+<h2>A lot of you are afraid, don’t be!</h2>
+</section><section id="commands-intro" class="slide level2">
+<h2>Commands intro</h2>
+<ul>
+<li><code>layout src</code> gives you a text based gui</li>
+<li><code>break &lt;file:line|function&gt; [if condition]</code> You can make powerful breakpoints by giving a line, but only under certain circumstances.</li>
+<li><code>watch (type *)0xADDRESS</code> Watches an address for a read or write and tells you when it has changed – useful for when you don’t know where the bug is.</li>
+<li><code>backtrace</code>, <code>bt</code> see what functions you are in</li>
+<li><code>up</code>, <code>down</code> goes up and down a stack frame</li>
+</ul>
+</section><section id="navigation" class="slide level2">
+<h2>Navigation</h2>
+<ul>
+<li><code>print</code> prints a variable, (aliased <code>p</code>). You can use <code>p/x</code> to print in hex.</li>
+<li><code>next</code> executes the line and goes to the next line, runs functions without stopping.</li>
+<li><code>finish</code> finishes the function and breaks</li>
+<li><code>step</code> executes the line and goes to the next line. If there is a function, gdb steps into the function.</li>
+</ul>
+</section><section id="demo" class="slide level2">
+<h2>Demo!</h2>
+</section></section>
+<section><section id="authors-steve-bhuvan" class="titleslide slide level1"><h1>Authors: Steve &amp; Bhuvan</h1></section></section>
+    </div>
+  </div>
+
+  <script src="/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: '/lib/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

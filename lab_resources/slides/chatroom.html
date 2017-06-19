@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Networking">
+  <title>CS 241</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="/lib/reveal.js/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="/lib/reveal.js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/lib/reveal.js/css/print/pdf.css' : '/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">CS 241</h1>
+  <p class="author">Networking</p>
+</section>
+
+<section><section id="tcpudp" class="titleslide slide level1"><h1>TCP/UDP</h1></section><section id="tcp" class="slide level2">
+<h2>TCP</h2>
+<figure>
+<img src="http://ithare.com/wp-content/uploads/BB_part43_v3.png" />
+</figure>
+</section><section id="ack-dance" class="slide level2">
+<h2>ACK-Dance</h2>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Tcp_normal.png" />
+</figure>
+</section><section id="packet-size" class="slide level2">
+<h2>Packet Size</h2>
+<figure>
+<img src="http://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif" />
+</figure>
+</section><section id="udp" class="slide level2">
+<h2>UDP</h2>
+<figure>
+<img src="http://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif" />
+</figure>
+</section><section id="udp-contents" class="slide level2">
+<h2>UDP Contents</h2>
+<figure>
+<img src="http://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif" />
+</figure>
+</section><section id="diff" class="slide level2">
+<h2>Diff</h2>
+<figure>
+<img src="https://www.bestvpnserver.com/wp-content/uploads/2013/09/UDP_vs_TCP.jpg" />
+</figure>
+</section></section>
+<section><section id="the-4-calls" class="titleslide slide level1"><h1>The 4 Calls</h1></section><section id="socket" class="slide level2">
+<h2>Socket</h2>
+<figure>
+<img src="https://openclipart.org/image/2400px/svg_to_png/212249/rodentia-icons_preferences-system-network.png" />
+</figure>
+</section><section id="bind" class="slide level2">
+<h2>Bind</h2>
+<figure>
+<img src="http://995642590.r.lightningbase-cdn.com/wp-content/uploads/2015/12/2015-12-15-Double-Bind-425x282px.jpg" />
+</figure>
+</section><section id="listen" class="slide level2">
+<h2>Listen</h2>
+<figure>
+<img src="http://calvaryfullerton.org/RichBlog/wp-content/uploads/2015/04/Listen.jpg" />
+</figure>
+</section><section id="accept" class="slide level2">
+<h2>Accept</h2>
+<figure>
+<img src="http://pad2.whstatic.com/images/thumb/4/42/Accept-a-Diploma-Step-4-Version-2.jpg/aid346607-728px-Accept-a-Diploma-Step-4-Version-2.jpg" />
+</figure>
+</section><section id="connect" class="slide level2">
+<h2>Connect</h2>
+<figure>
+<img src="http://www.linkedintraining.net/wp-content/uploads/connecting-people.jpg" />
+</figure>
+</section><section id="important" class="slide level2">
+<h2>Important</h2>
+<p>Make sure to check errors for <em>every</em> call, networking can fail at any point.</p>
+</section></section>
+<section><section id="the-gotchas" class="titleslide slide level1"><h1>The Gotchas</h1></section><section id="network-order" class="slide level2">
+<h2>Network Order</h2>
+<figure>
+<img src="http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png" />
+</figure>
+</section><section id="sock-options" class="slide level2">
+<h2>Sock Options</h2>
+<p>Make sure to set socket options to reuse to enable effective debugging of the server. Why does linux do this for sockets?</p>
+</section><section id="signal-handler-safety" class="slide level2">
+<h2>Signal Handler Safety</h2>
+<p>Most server applications are interupted through a signal, but you shouldn’t do all of the cleanup in the signal handler because not every function is signal handler safe (think back to CS233). That means the often pattern we see is like below.</p>
+</section><section class="slide level2">
+
+<pre><code>int is_running = 1;
+int handler(){
+    is_running = 0;
+}
+int main(){
+    while(is_running){ /*...*/};
+
+    close(...);
+}</code></pre>
+</section><section id="style" class="slide level2">
+<h2>Style</h2>
+<p>Try to modularize your functions so that everything is not in the main method. This is ideally because we <strong>need</strong> to tell the system that we are done using shared resources like sockets, and we need to determine when a socket goes “out of scope” – we don’t have RAII like in C++ so we have to determine that ourselves.</p>
+</section></section>
+<section><section id="nice-to-knows" class="titleslide slide level1"><h1>Nice to Knows</h1></section><section id="latency" class="slide level2">
+<h2>Latency</h2>
+<figure>
+<img src="http://i.imgur.com/k0t1e.png" />
+</figure>
+</section><section id="dropped-packets" class="slide level2">
+<h2>Dropped Packets</h2>
+<figure>
+<img src="https://www.isa.org/uploadedImages/Content/Standards_and_Publications/ISA_Publications/InTech_Magazine/2014/Sep-Oct/SO-2014-System-Int-figure1.jpg" />
+</figure>
+</section><section id="udp-example" class="slide level2">
+<h2>UDP Example</h2>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#include </span><span class="im">&lt;errno.h&gt;</span>
+<span class="pp">#include </span><span class="im">&lt;string.h&gt;</span>
+<span class="pp">#include </span><span class="im">&lt;unistd.h&gt;</span>
+<span class="pp">#include </span><span class="im">&lt;netdb.h&gt;</span>
+<span class="pp">#include </span><span class="im">&lt;sys/socket.h&gt;</span>
+<span class="pp">#include </span><span class="im">&lt;netinet/in.h&gt;</span>
+<span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span>
+<span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span>
+
+<span class="dt">int</span> main(<span class="dt">int</span> argc, <span class="dt">char</span>** argv) {
+    <span class="cf">while</span>(<span class="dv">1</span>) {
+        printf(<span class="st">&quot;Listening on port %s</span><span class="sc">\n</span><span class="st">&quot;</span>, portname);
+
+        <span class="dt">ssize_t</span> bytes_recd=recvfrom(fd,buffer,<span class="kw">sizeof</span>(buffer),<span class="dv">0</span>,(<span class="kw">struct</span> sockaddr*)&amp;source,&amp;source_len);
+        <span class="cf">if</span> (bytes_recd==-<span class="dv">1</span>) quit(<span class="st">&quot;recvfrom&quot;</span>);
+        <span class="cf">if</span>(bytes_recd == source_len)
+            printf(<span class="st">&quot;Datagram &gt; buffer - message truncated</span><span class="sc">\n</span><span class="st">&quot;</span>);
+
+        <span class="co">// Print buffer contents</span>
+        write(<span class="dv">1</span>, buffer, bytes_recd);
+        write(<span class="dv">1</span>, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>,<span class="dv">1</span>);
+
+        <span class="co">// Encrypt the message</span>
+        <span class="cf">for</span>(<span class="dt">int</span> i=<span class="dv">0</span>; i &lt; bytes_recd; i++) {
+            <span class="cf">if</span>( buffer[i] &gt;= <span class="dv">64</span>) buffer[i] ^= <span class="dv">1</span>;
+        }
+
+        <span class="dt">int</span> flags = <span class="dv">0</span>;
+
+        <span class="dt">size_t</span> bytes_sent = sendto(fd, buffer, bytes_recd, flags, (<span class="kw">struct</span> sockaddr*) &amp;source, source_len);
+        <span class="cf">if</span>(bytes_sent==-<span class="dv">1</span>) {
+            quit(<span class="st">&quot;sendto&quot;</span>);
+        }
+
+        <span class="cf">if</span>(bytes_sent == bytes_recd ) printf(<span class="st">&quot;Replied</span><span class="sc">\n</span><span class="st">&quot;</span>);
+        <span class="cf">else</span>  quit(<span class="st">&quot;write&quot;</span>);
+    }
+    <span class="cf">return</span> <span class="dv">0</span>;
+}</code></pre></div>
+</section></section>
+<section><section id="authors-steve-bhuvan" class="titleslide slide level1"><h1>Authors: Steve &amp; Bhuvan</h1></section></section>
+    </div>
+  </div>
+
+  <script src="/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/lib/reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: '/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+              { src: '/lib/reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
