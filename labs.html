@@ -5,16 +5,18 @@
   {% include head.html %}
   <body>
       {% include header.html %}
-      <main class="mdl-layout__content">
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="row">
-          	<div class="small-12 medium-12 large-8 large-centered columns">
+            <div class="col-sm-1"></div>
+          	<div class="col-sm-10">
               <h1>Labs</h1>
               <p>All labs are released on Thursdays and due on the following Wednesday at 11:59pm</p>
               <!-- Desktop Table -->
-              <div class="show-for-large-up">
-                <table width = "100%" class="mdl-data-table mdl-js-data-table">
+              <div class="row">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-10">
+                <table width = "100%" class="table">
             		  <thead>
             		    <tr>
             		      <th class="mdl-data-table__cell--non-numeric">Lab</th>
@@ -27,7 +29,7 @@
             		  <tbody>
                     {% for lab in site.data.labs %}
                       <tr>
-                        <td class="mdl-data-table__cell--non-numeric"><a href="./{{lab.url}}.html">{{lab.name}}</a></td>
+                        <th class="mdl-data-table__cell--non-numeric" scope="row"><a href="./{{lab.url}}.html">{{lab.name}}</a></th>
               		    	<td class="mdl-data-table__cell--non-numeric">{{lab.releaseDate}}</td>
                         <td class="mdl-data-table__cell--non-numeric">{{lab.dueDate}}</td>
                         {% if lab.resources %}
@@ -50,30 +52,12 @@
                     {% endfor %}
             		  </tbody>
             		</table>
+                </div>
               </div>
-            	<!-- Mobile Table -->
-            	<div class="hide-for-large-up">
-                {% for lab in site.data.labs %}
-                  <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">Lab</td>
-                      <td><a href="./{{lab.url}}.html">{{lab.name}}</a></td>
-                    </tr>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">Release Date</td>
-                      <td>{{lab.releaseDate}}</td>
-                    </tr>
-                    <tr>
-                      <td class="mdl-data-table__cell--non-numeric">Due Date</td>
-                      <td>{{lab.dueDate}}</td>
-                    </tr>
-                  </table>
-                {% endfor %}
-            	</div>
             </div>
+            <div class="col-sm-1"></div>
           </div>
         </div>
-      </main>
     </div>
   </body>
 </html>
