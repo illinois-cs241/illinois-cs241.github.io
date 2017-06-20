@@ -7,6 +7,8 @@
     <main class="mdl-layout__content">
       <div class="page-content">
         <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
           {% capture metadata %}
             {% if page.submissions %}
               <ul class="metadata">
@@ -36,9 +38,6 @@
                 <a class="github-link" href="https://github.com/{{ site.repository | uri_escape }}/blob/master/{{ page.path | uri_escape }}">Edit on Github</a>
               {% endif %}
             </h1>
-            <nav id="tocMobile" class="small-12 medium-12 large-7 columns hide-for-xlarge-up">
-              {{ metadata }}
-            </nav>
             <div id="content">
               {% if page.learning_objectives %}
                 <h2 id="learning-objectives">Learning Objectives</h2>
@@ -117,6 +116,8 @@
               {% endif %}
             </div>
           </div>
+          </div>
+          <div class="col-md-1"></div>
         </div>
       </div>
     </main>

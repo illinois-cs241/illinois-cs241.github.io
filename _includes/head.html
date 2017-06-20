@@ -12,23 +12,13 @@
   <meta name="theme-color" content="#ffffff">
 
   <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-  <script src="./js/main.js"></script>
-  <script src="./lib/requirejs/require.min.js" data-main="./js/main"></script>
-    <!--
-  <script src="/lib/jquery-2.1.3.min/index.js"></script> -->
+  <link async rel="stylesheet" href="/lib/bootstrap-3.3.7/dist/css/bootstrap.min.css">
+  <link async rel="stylesheet" href="/css/main.css">
 
-  <link async rel="stylesheet" href="./css/main.css">
-
-  <link async rel="stylesheet" href="./lib/foundation/css/foundation.css">
-  <link async rel="stylesheet" href="./lib/material-design-lite/material.min.css">
-  <!--
-  <link async rel="stylesheet" href="./uncss/foundation.css">
-  <link async rel="stylesheet" href="./uncss/material.min.css">
-  -->
-<link async rel="stylesheet" href="./css/material_icons.css">
-
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="/lib/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
 </head>
