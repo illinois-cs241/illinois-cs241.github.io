@@ -8,38 +8,35 @@
         <div class="page-content">
           <!-- Your content goes here -->
           <div class="row">
-            <div class="col-sm-1"></div>
-          	<div class="col-sm-10">
+            <div class="col-md-2 col-1 col-xs-1"></div>
+          	<div class="col-md-8 col-10 col-xs-10">
               <h1>Labs</h1>
               <p>All labs are released on Thursdays and due on the following Wednesday at 11:59pm</p>
-              <!-- Desktop Table -->
-              <div class="row">
-                <div class="col-sm-1"></div>
-                <div class="col-sm-10">
-                <table width = "100%" class="table">
+              <div class="table-responsive">
+                <table class="table">
             		  <thead>
             		    <tr>
-            		      <th class="mdl-data-table__cell--non-numeric">Lab</th>
-            		      <th class="mdl-data-table__cell--non-numeric">Release Date</th>
-                      <th class="mdl-data-table__cell--non-numeric">Due Date</th>
-                      <th class="mdl-data-table__cell--non-numeric">Slides</th>
-                      <th class="mdl-data-table__cell--non-numeric">Handout</th>
+            		      <th>Lab</th>
+            		      <th>Release Date</th>
+                      <th>Due Date</th>
+                      <th>Slides</th>
+                      <th>Handout</th>
             		    </tr>
             		  </thead>
             		  <tbody>
                     {% for lab in site.data.labs %}
                       <tr>
-                        <th class="mdl-data-table__cell--non-numeric" scope="row"><a href="./{{lab.url}}.html">{{lab.name}}</a></th>
-              		    	<td class="mdl-data-table__cell--non-numeric">{{lab.releaseDate}}</td>
-                        <td class="mdl-data-table__cell--non-numeric">{{lab.dueDate}}</td>
+                        <th scope="row"><a href="./{{lab.url}}.html">{{lab.name}}</a></th>
+              		    	<td>{{lab.releaseDate}}</td>
+                        <td>{{lab.dueDate}}</td>
                         {% if lab.resources %}
-
-                        
-                        <td class="mdl-data-table__cell--non-numeric"><a href="./lab_resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html"><img src="./images/lab_assets/animation.png"></a></td>
+                        <td><a href="./lab_resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html"><img src="./images/lab_assets/animation.png"></a></td>
                         
                         {% if lab.worksheet == nil or lab.worksheet != false %}
-                        <td class="mdl-data-table__cell--non-numeric">
+                        <td>
                         <a href="./lab_resources/handouts/{{lab.name | downcase | replace: " ", "_"}}.pdf"><img src="./images/lab_assets/file-document.png"></a></td>
+                        {% else %}
+                        <td></td>
                         {% endif %}
 
                         {% else %}
@@ -53,10 +50,8 @@
             		  </tbody>
             		</table>
                 </div>
-              </div>
-            </div>
-            <div class="col-sm-1"></div>
-          </div>
+                </div>
+              <div class="col-md-2 col-1 col-xs-1"></div>
         </div>
     </div>
   </body>
