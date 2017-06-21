@@ -62,6 +62,7 @@
             </ul>
           </p>
         {% endif %}
+        {{ content | toc }}
         {{ content | content_style }}
         {% if page.submissions %}
           <h2 id="submission-instructions">Submission Instructions</h2>

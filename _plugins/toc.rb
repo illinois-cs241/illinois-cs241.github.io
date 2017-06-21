@@ -22,7 +22,9 @@ module Jekyll
   			new_link['id'] = "toc_"+id
   			new_link['href'] = "#"+id
   			new_link.inner_html = h2.inner_html
-  			list << new_link.to_html
+        li = Nokogiri::XML::Node.new("li", page)
+        li << new_link
+  			list << li.to_html
   		end
 
   		return list.to_html
