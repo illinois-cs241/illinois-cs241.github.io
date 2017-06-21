@@ -1,3 +1,11 @@
+# Including only the changed build task
+require 'jekyll'
+
 task :default do
-    puts 'Hello'
+  config = Jekyll.configuration({ 
+    'source' => './', 
+    'destination' => './_site' 
+  })
+  site = Jekyll::Site.new(config)
+  Jekyll::Commands::Build.build site, config
 end
