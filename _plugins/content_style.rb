@@ -5,7 +5,7 @@ class Nokogiri::XML::Node
   #   wrap   : e.g. "<section>" or "<div class='section'>"
   #   stops  : array of tag names that stop all sections; use nil for none
   #   levels : array of tag names that control nesting, in order
-  def auto_section(wrap="<div class='mdl-card mdl-shadow--2dp large-card'>", stops=%w[hr], levels=%w[h1 h2 h4 h5 h6])
+  def auto_section(wrap="<div class='card'>", stops=%w[hr], levels=%w[h1 h2 h4 h5 h6])
     levels = Hash[ levels.zip(0...levels.length) ]
     stops  = stops && Hash[ stops.product([true]) ]
     stack = []
@@ -35,7 +35,7 @@ module Jekyll
 
       # Page is sectioned
       # Add classes to h2 and h3s
-      title_text_class = 'mdl-card__title-text'
+      title_text_class = 'title-text'
       h2s = page.css('h2')
       if h2s == nil
       	return text
@@ -51,10 +51,10 @@ module Jekyll
       end
 
       # Wrap the h2s in the title attribute
-      h2s.wrap("<div class='mdl-card__title'/>")
+      h2s.wrap("<div class='title'/>")
 
       # Anchors!
-      page.css('.mdl-card__title').each do |card|
+      page.css('.title').each do |card|
       	h2 = card.css('h2').first
       	anchor = Nokogiri::XML::Node.new("a", page)
       	anchor['class'] = 'anchor '+title_text_class
@@ -64,12 +64,12 @@ module Jekyll
       	# Jekyll.logger.info wrapper.to_html
       end
       # Wrap the entire card in padding
-      page.css('.mdl-card').wrap('<div class="pad" />')
+      page.css('.card').wrap('<div class="pad" />')
 
       # Take each non-title attribute and stick it in
       # The content piece
-      page.css('.mdl-card').each do |card|
-      	ps = card.css('> :not(.mdl-card__title)')
+      page.css('.card').each do |card|
+      	ps = card.css('> :not(.title)')
       	new_div = Nokogiri::XML::Node.new("div", page)
       	new_div['class'] = "content"
       	ps.each do |p|
@@ -84,9 +84,9 @@ module Jekyll
       # Style all tables
       page.css('table').each do |table|
       	if table['class'] != nil
-      		table['class'] << " mdl-data-table"
+      		table['class'] << " table"
       	else
-      		table['class'] = "mdl-data-table"
+      		table['class'] = "table"
       	end
       end
 

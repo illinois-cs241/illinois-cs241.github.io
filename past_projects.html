@@ -2,73 +2,40 @@
 ---
 <!DOCTYPE html>
 <html>
-  {% include head.html %}
-  <body>
-      {% include header.html %}
-      <main class="mdl-layout__content">
-        <div class="page-content">
-          <!-- Your content goes here -->
-          <div class="row">
-            <div class="small-12 medium-12 large-8 large-centered columns">
-              <h1>Past Projects</h1>
-
-              {% for term in site.data.honors_projects %}
-                <h2>{{term.term}}</h2>
-
-                <!-- Desktop Table -->
-                <div class="show-for-large-up">
-                  <table width = "100%" class="mdl-data-table mdl-js-data-table">
-                    <thead>
-                      <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Name</th>
-                        <th class="mdl-data-table__cell--non-numeric">Description</th>
-                        <th class="mdl-data-table__cell--non-numeric">Link</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {% for project in term.projects %}
-                        <tr>
-                          <td class="mdl-data-table__cell--non-numeric">{{project.name}}</td>
-                          <td class="mdl-data-table__cell--non-numeric">{{project.description}}</td>
-                          <td class="mdl-data-table__cell--non-numeric">
-                            {% if project.link_url and project.link_title %}
-                              <a href="{{project.link_url}}">{{project.link_title}}</a>
-                            {% endif %}
-                          </td>
-                        </tr>
-                      {% endfor %}
-                    </tbody>
-                  </table>
-                </div>
-
-                <!-- Mobile Table -->
-                <div class="hide-for-large-up">
-                  {% for project in term.projects %}
-                    <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
-                      <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Name</td>
-                        <td>{{project.name}}</td>
-                      </tr>
-                      <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Description</td>
-                        <td>{{project.description}}</td>
-                      </tr>
-                      <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Link</td>
-                        <td>
-                          {% if project.link_url and project.link_title %}
-                            <a href="{{project.link_url}}">{{project.link_title}}</a>
-                          {% endif %}
-                        </td>
-                      </tr>
-                    </table>
-                  {% endfor %}
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
-      </main>
-    </div>
-  </body>
+{% include head.html %}
+<body>
+{% include header.html %}
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-10">
+    <h1>Past Projects</h1>
+    {% for term in site.data.honors_projects %}
+      <h2>{{term.term}}</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for project in term.projects %}
+            <tr>
+              <th scope="row">{{project.name}}</th>
+              <td>{{project.description}}</td>
+              <td>
+                {% if project.link_url and project.link_title %}
+                  <a href="{{project.link_url}}">{{project.link_title}}</a>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endfor %}
+  </div>
+  <div class="col-md-2"></div>
+</div>
+</body>
 </html>
