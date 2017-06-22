@@ -75,11 +75,35 @@ table {
 	display: inline;
 }
 
-.li {
-	list-style:none;
-}
-
 .day {
 	height:300px;
 	width:100%;
+}
+
+ul.toc {
+	list-style: none;
+}
+
+a {
+	color: #9CB0C1;
+}
+
+.highlighter-rouge {
+	background-color: #383644;
+	color: #CF6A4A;
+	border-radius: 5px;
+}
+
+h1, h2, h3 {
+	color: #2C72AD;
+}
+
+.highlight {
+	background-color: transparent;
+	border: 0px;
+	color: #F2F2F4;
+}
+
+code {
+	color: #F2F2F4;
 }

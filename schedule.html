@@ -5,7 +5,7 @@
 {% include head.html %}
 <body>
 {% include header.html %}
-<div class="page-content">
+<div class="container-fluid">
   <!-- Your content goes here -->
   <div class = "row">
   	<div class = "col-md-3"><h2><a href=""> Recordings</a></h2></div>
@@ -26,14 +26,14 @@
       <div class="day">
         <div class="day-title"  style = "background-color:{{day.color}}">
           <div class="day-title-text" style='width:100%; height: 30px; white-space: nowrap; color: white;'>
-            <span>{{day.title}}</span>
+            <h3>{{day.title}}</h3>
           </div>
         </div>
         <div class="day-summary">
-          {{day.summary}}
+          <p>{{day.summary}}</p>
         </div>
         <div class="day-resources">
-          {{day.resources}}
+          <p>{{day.resources}}</p>
         </div>
       </div>
       </div>

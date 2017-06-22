@@ -71,7 +71,7 @@ module Jekyll
       page.css('.card').each do |card|
       	ps = card.css('> :not(.title)')
       	new_div = Nokogiri::XML::Node.new("div", page)
-      	new_div['class'] = "content"
+      	new_div['class'] = "content col-sm-11 .col-sm-offset-1"
       	ps.each do |p|
       		if p.node_name != 'h2'
 	      		new_div << p.to_html
@@ -80,6 +80,9 @@ module Jekyll
       	end
       	card << new_div
       end
+
+      page.css('.content').wrap('<div class="container-fluid" />')
+      page.css('.content').wrap('<div class="row" />')
 
       # Style all tables
       page.css('table').each do |table|
