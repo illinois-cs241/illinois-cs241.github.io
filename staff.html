@@ -14,6 +14,7 @@
   {% assign instructor = team | first %}
   {% assign sorted_team = team | shift | sort: 'netid' | unshift: instructor %}
   {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/'" %}
+  <div class="container">
   {% for member in sorted_team %}
     {% assign value = forloop.index0 | modulo:3 %}
     {% if value == 0 %}
@@ -21,34 +22,24 @@
     {% endif %}
     {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
     {% assign photo = photofile.path | default: "/images/staffPhotos/default.jpg" %}
-    <div class="col-md-3 col-xs-11 col-centered staff-div" 
+    <div class="col-md-3 staff-div" 
         id="{{member.netid}}"
         data-toggle="tooltip"
         data-placement="bottom"
         title="{{ member.roles }} interested in {{ member.specialty }} and has been on staff for {{ member.semesters }}"
         style="background-image: url({{ photo }});">
-        <a href=".{{ photo }}">
-        <!--
-          <div class="card-staff mdl-card mdl-shadow--2dp" style="background-image: url('.{{ photo }}');">
-            <div style = "width: 100%; background: rgba(0, 0, 0, 0.7);">
-              <div class = "floater" style = "height: 0; padding-bottom: 15%; width:90%; margin: 3% auto">
-                <span style = "color: white; float:left; font-size:1.5em;">{{member.name}}{% if member.class != "" and member.class != nil %} '{{member.class}}{% endif %}</span>
-                <span data-tooltip aria-haspopup="true" class="has-tip" title="{{member.netid}}@illinois.edu" style = "float:right;position:relative">
-                  <span class="icon material-icons">
-                    <i class="material-icons"><a style ="color:white;" href = "mailto:{{member.netid}}@illinois.edu?Subject=CS241%20Student">mail</a></i>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          -->
-        </a>
+        <div class="container">
+        <div class="row">
+          <div class="staff-name col-md-12 col-xs-12">{{ member.name }}</div>
+        </div>
+        </div>
     </div>
-    <div class="col-md-1 col-xs-1"></div>
+    <div class="col-sm-1"></div>
     {% if forloop.last or value == 2 %}
       </div>
     {% endif %}
   {% endfor %}
+  </div>
   </div>
   <div class="col-md-1 col-xs-1"></div>
   </div>

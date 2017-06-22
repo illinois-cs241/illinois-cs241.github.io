@@ -7,7 +7,6 @@
   <div class="row">
     <div class="col-md-2 col-sm-1 col-xs-1"></div>
     <div class="col-md-8 col-sm-10 col-xs-10">
-    <div class="small-12 medium-12 large-7 large-centered columns">
       <h1>
         {{ page.title }}
         {% if page.submissions %}
@@ -15,6 +14,7 @@
         {% endif %}
       </h1>
       {% if page.submissions %}
+      <span class="highlighter-rouge">
       <ul>
         {% for submission in page.submissions %}
           <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
@@ -24,91 +24,87 @@
             {% endfor %}
           </ul>
         {% endfor %}
-        <li class="github-date" style="display: none;">
-          <strong>Last modified:</strong>
-          <span class="github-date-value"></span>
-        </li>
+
       </ul>
+      </span>
       {% endif %}
-      <div id="content">
-        {% if page.learning_objectives %}
-          <h2 id="learning-objectives">Learning Objectives</h2>
-          <p>
-            The learning objectives for {{ page.title }} are: <br/>
-            <ul class="mdl-list">
-              {% for objective in page.learning_objectives %}
-                <li class="mdl-list__item">
-                  <span class="mdl-list__item-primary-content">{{ objective }}</span>
-                </li>
-              {% endfor %}
-            </ul>
-          </p>
-        {% endif %}
-        {% if page.wikibook %}
-          <h2 id="suggested-readings">Suggested Readings</h2>
-          <p>
-            We suggest you read the following from the
-            <a href="https://github.com/angrave/SystemProgramming/wiki">wikibook</a>
-            before starting {{ page.title }}: <br/>
-            <ul>
-              {% for reading in page.wikibook %}
-                <li>
-                  <a
-                    href="https://github.com/angrave/SystemProgramming/wiki/{{reading}}"
-                    target="_blank">{{reading}}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </p>
-        {% endif %}
-        {{ content | toc }}
-        {{ content | content_style }}
-        {% if page.submissions %}
-          <h2 id="submission-instructions">Submission Instructions</h2>
-          <p>
-            Please read details on
-            <a href="{{ site.url }}/#academic-integrity">Academic Integrity</a> fully.
-            These are shared by all assignments in CS 241.
-          </p>
-          <p>
-            We will be using Subversion as our hand-in system this semester.
-            Our grading system will checkout your most recent (pre-deadline) commit for grading.
-            Therefore, to hand in your code, all you have to do is commit it to your Subversion repository.
-          </p>
-          {% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '.md' %}
-          <p>
-            To check out the provided code for
-            <code>{{ filename }}</code>
-            from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
-            {% highlight text %}svn up{% endhighlight %}
-          </p>
-          <p>
-            If you run <code>ls</code> you will now see a
-            <code>{{ filename }}</code> folder, where you can find this assignment!
-            To commit your changes (send them to us) type:
-            {% highlight text %}svn ci -m "{{ filename }} submission"{% endhighlight %}
-          </p>
-          <p>
-            Your repository directory can be viewed from a web browser from the following URL:
-            <a href="https://subversion.ews.illinois.edu/svn/{{ site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ filename }}">
-				      https://subversion.ews.illinois.edu/svn/{{ site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ filename }}
-			      </a>
-            where NETID is your University NetID.
-            It is important to check that the files you expect to be graded are present and up to date in your SVN copy.
-          </p>
-          <h2 id="assignment-feedback">Assignment Feedback</h2>
-          <p>
-            We strive to provide the best assignments that we can for this course and would like your feedback on them!
-          </p>
-          <p>
-            This is the form we will use to evaluate assignments. We appreciate the time you take to give us your honest feedback and we promise to keep iterating on these assignments to make your experience in 241 the best it can be.
-            <br/>
-            <a href="https://goo.gl/forms/z06gBY7MocFDrE3S2">https://goo.gl/forms/z06gBY7MocFDrE3S2</a>
-          </p>
-        {% endif %}
-      </div>
-    </div>
+    {{ content | toc }}
+    <div id="content">
+      {% if page.learning_objectives %}
+        <h2 id="learning-objectives">Learning Objectives</h2>
+        <p>
+          The learning objectives for {{ page.title }} are: <br/>
+          <ul class="mdl-list">
+            {% for objective in page.learning_objectives %}
+              <li class="mdl-list__item">
+                <span class="mdl-list__item-primary-content">{{ objective }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </p>
+      {% endif %}
+      {% if page.wikibook %}
+        <h2 id="suggested-readings">Suggested Readings</h2>
+        <p>
+          We suggest you read the following from the
+          <a href="https://github.com/angrave/SystemProgramming/wiki">wikibook</a>
+          before starting {{ page.title }}: <br/>
+          <ul>
+            {% for reading in page.wikibook %}
+              <li>
+                <a
+                  href="https://github.com/angrave/SystemProgramming/wiki/{{reading}}"
+                  target="_blank">{{reading}}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </p>
+      {% endif %}
+      {{ content | content_style }}
+      {% if page.submissions %}
+        <h2 id="submission-instructions">Submission Instructions</h2>
+        <p>
+          Please read details on
+          <a href="{{ site.url }}/#academic-integrity">Academic Integrity</a> fully.
+          These are shared by all assignments in CS 241.
+        </p>
+        <p>
+          We will be using Subversion as our hand-in system this semester.
+          Our grading system will checkout your most recent (pre-deadline) commit for grading.
+          Therefore, to hand in your code, all you have to do is commit it to your Subversion repository.
+        </p>
+        {% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '.md' %}
+        <p>
+          To check out the provided code for
+          <code class="highlighter-rouge">{{ filename }}</code>
+          from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
+          {% highlight text %}svn up{% endhighlight %}
+        </p>
+        <p>
+          If you run <code class="highlighter-rouge">ls</code> you will now see a
+          <code class="highlighter-rouge">{{ filename }}</code> folder, where you can find this assignment!
+          To commit your changes (send them to us) type:
+          {% highlight text %}svn ci -m "{{ filename }} submission"{% endhighlight %}
+        </p>
+        <p>
+          Your repository directory can be viewed from a web browser from the following URL:
+          <a href="https://subversion.ews.illinois.edu/svn/{{ site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ filename }}">
+			      https://subversion.ews.illinois.edu/svn/{{ site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ filename }}
+		      </a>
+          where NETID is your University NetID.
+          It is important to check that the files you expect to be graded are present and up to date in your SVN copy.
+        </p>
+        <h2 id="assignment-feedback">Assignment Feedback</h2>
+        <p>
+          We strive to provide the best assignments that we can for this course and would like your feedback on them!
+        </p>
+        <p>
+          This is the form we will use to evaluate assignments. We appreciate the time you take to give us your honest feedback and we promise to keep iterating on these assignments to make your experience in 241 the best it can be.
+          <br/>
+          <a href="https://goo.gl/forms/z06gBY7MocFDrE3S2">https://goo.gl/forms/z06gBY7MocFDrE3S2</a>
+        </p>
+      {% endif %}
     </div>
     <div class="col-md-2 col-sm-1 col-xs-1"></div>
   </div>
