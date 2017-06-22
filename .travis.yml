@@ -1,10 +1,15 @@
 language: ruby
 rvm:
     - 2.2
+branches:
+    only:
+        develop
 deploy:
     local_dir: _site
     provider: pages
     skip_cleanup: true
-    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+    github_token: $GITHUB_TOKEN 
+    target_branch: master
+    fqdn: cs241.cs.illinois.edu
     on:
-        branch: master
+        branch: develop
