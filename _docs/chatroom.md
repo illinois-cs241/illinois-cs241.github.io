@@ -32,7 +32,7 @@ The files `client.c` and `server.c` provide an outline of what you are expected 
 
 ## Before You Start
 
-This lab requires the ncurses library.  If out of the box the provided code failed to build (via `make`) because of anything from chatwindow (relating to ncurses), on your vm, please run
+This lab requires the ncurses library.  If out of the box the provided code failed to build (via `make`) because of anything from chat window (relating to ncurses), on your vm, please run
 
 ```
 sudo apt-get install libncurses5-dev
