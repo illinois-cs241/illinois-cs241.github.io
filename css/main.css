@@ -156,11 +156,28 @@ h1, h2, h3 {
 
 pre {
 	color: inherit;
-	background-color:inherit;
+	background-color: #383644;
 	border: inherit;
 }
 
 
 code {
 	color: #F2F2F4;
+}
+
+.code-copy {
+	float: right;
+	right: 0px;
+	display: none;
+	background-color:black;
+	padding: 5px 5px 5px 5px;
+	border-radius: 3px;
+}
+
+pre code {
+	display: block;
+}
+
+pre:hover > .language-C > .code-copy {
+	display: inline;
 }

@@ -371,7 +371,7 @@ To use it:
 * `#include "thread_status.h"`
 * Call threadStatusSet() to describe what the thread is currently doing. The argument to `threadStatusSet()` should be a string constant. For example:
 
-```
+```C
 threadStatusSet("initializing");
 ...
 while (!done) {

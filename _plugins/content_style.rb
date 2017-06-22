@@ -81,6 +81,7 @@ module Jekyll
       	card << new_div
       end
 
+      # Wrap each of the contents in rows
       page.css('.content').wrap('<div class="container-fluid" />')
       page.css('.content').wrap('<div class="row" />')
 
@@ -91,6 +92,15 @@ module Jekyll
       	else
       		table['class'] = "table"
       	end
+      end
+
+      # Style all the code
+      page.css('.language-C').each do |div|
+        copy = Nokogiri::XML::Node.new("a", page)
+        copy['class'] = 'code-copy'
+        copy.inner_html = "Copy"
+        copy['onclick'] = 'onCopy(this);'
+        div.children.before(copy)
       end
 
       return page.to_html
