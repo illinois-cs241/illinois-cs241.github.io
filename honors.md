@@ -96,53 +96,36 @@ You can find all lecture recordings for the semester <a href="https://recordings
 
 
 <!-- Desktop Table -->
-<div class="show-for-large-up">
-<table width = "100%" class="mdl-data-table mdl-js-data-table">
-	  <thead>
-		<tr>
-		  <th class="mdl-data-table__cell--non-numeric">Date</th>
-		  <th class="mdl-data-table__cell--non-numeric">Lecture Content</th>
-		  <th class="mdl-data-table__cell--non-numeric">Slides</th>
-		  <th class="mdl-data-table__cell--non-numeric">Recording</th>
-		</tr>
-	  </thead>
-	  <tbody>
-	{% for lecture in site.data.honors_schedule %}
-	  <tr>
-		<td class="mdl-data-table__cell--non-numeric">{{lecture.date}}</td>
-		<td class="mdl-data-table__cell--non-numeric">{{lecture.content}}</td>
-		{% if lecture.slides %}
-		<td class="mdl-data-table__cell--non-numeric"><a href="./honors_resources/{{lecture.slides}}"><img src="./images/lab_assets/animation.png"></a></td>
-		{% else %}
-		<td class="mdl-data-table__cell--non-numeric">
-		</td>
-		{% endif %}
-		{% if lecture.video %}
-		<td class="mdl-data-table__cell--non-numeric"><a href="{{lecture.video}}"><img src="./images/lab_assets/video.png"></a></td>
-		{% else %}
-		<td class="mdl-data-table__cell--non-numeric">
-		</td>
-		{% endif %}
-	  </tr>
-	{% endfor %}
-	  </tbody>
-	</table>
-</div>
-<!-- Mobile Table -->
-<div class="hide-for-large-up">
+<table width = "100%" class="table">
+  <thead>
+	<tr>
+	  <th>Date</th>
+	  <th>Lecture Content</th>
+	  <th>Slides</th>
+	  <th>Recording</th>
+	</tr>
+  </thead>
+  <tbody>
 {% for lecture in site.data.honors_schedule %}
-  <table width = "100%" class="mdl-data-table mdl-js-data-table" style = "margin-bottom: 5%">
-	<tr>
-	  <td class="mdl-data-table__cell--non-numeric">Date</td>
-	  <td>{{lecture.date}}</td>
-	</tr>
-	<tr>
-	  <td class="mdl-data-table__cell--non-numeric">Lecture Content</td>
-	  <td>{{lecture.content}}</td>
-	</tr>
-  </table>
+  <tr>
+	<td scope="row">{{lecture.date}}</td>
+	<td>{{lecture.content}}</td>
+	{% if lecture.slides %}
+	<td><a href="./honors_resources/{{lecture.slides}}"><img src="./images/lab_assets/animation.png"></a></td>
+	{% else %}
+	<td>
+	</td>
+	{% endif %}
+	{% if lecture.video %}
+	<td><a href="{{lecture.video}}"><img src="./images/lab_assets/video.png"></a></td>
+	{% else %}
+	<td>
+	</td>
+	{% endif %}
+  </tr>
 {% endfor %}
-</div>
+  </tbody>
+</table>
 
 ## Project Ideas?
 

@@ -1,22 +1,49 @@
 <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--no-desktop-drawer-button">
-  <header class="mdl-layout__header">
-    {% capture links %}
-      <a class="mdl-navigation__link" href="./index.html">Overview</a>
-      <a class="mdl-navigation__link" href="./mps.html">MPs</a>
-      <a class="mdl-navigation__link" href="./labs.html">Lab Sections</a>
-      <a class="mdl-navigation__link" href="./help.html">Getting Help</a>
-      <a class="mdl-navigation__link" href="./schedule.html">Schedule</a>
-      <a class="mdl-navigation__link" href="./honors.html">Honors</a>
-      <a class="mdl-navigation__link" href="./staff.html">Meet the Crew!</a>
-    {% endcapture %}
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button> 
+
+            <a class="navbar-brand" href="./">CS 241: System Programming</a>
+
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li>
+            <a href="./mps.html">MPs</a>
+            </li>
+            <li>
+            <a href="./labs.html">Labs</a>
+            </li>
+            <li>
+            <a href="./help.html">Help!</a>
+            </li>
+            <li>
+            <a href="./schedule.html">Schedule</a>
+            </li>
+            <li>
+            <a href="./honors.html">Honors</a>
+            </li>
+            <li>
+            <a href="./staff.html">The Crew</a>
+            </li>
+          </ul>
+        </div>
+        </div>
+</nav>
+      <!-- Title
       <span class="mdl-layout-title">CS 241: System Programming</span>
       <a id="tuxlink"><img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png" title="Tux" alt="Tux" style="margin-left: 1em; width: 24px; filter: drop-shadow(1px 1px 0 white) drop-shadow(1px -1px 0 white) drop-shadow(-1px 1px 0 white) drop-shadow(-1px -1px 0 white);"/></a><script>$(function() { $("#tuxlink").prop("href", "javascript:;").click(function() { if ("WebkitAppearance" in document.documentElement.style) { var style = document.createElement("style"); style.setAttribute("id", "tuxstyle"); style.appendChild(document.createTextNode("")); document.head.appendChild(style); var sheet = style.sheet; sheet.insertRule("::-webkit-scrollbar-thumb {border-radius: 0; background-color: white; -webkit-box-shadow: none;}", 0); } $("html, body, header, nav, :not(.card-staff) > * > div:not(.card-staff), table, pre, span, :not(.card-staff) > a, p, h1, h2, h3, h4, h5, h6").css("color", "white").css("font-family", "monospace").css("background-color", "black"); $("ul").css("list-style-type", "square"); $("img").css("filter", "drop-shadow(white 1px 1px 0px) drop-shadow(white 1px -1px 0px) drop-shadow(white -1px 1px 0px) drop-shadow(white -1px -1px 0px)"); $("pre").css("border-color", "white").css("border-radius", "0"); $(".toc").css("border-left-width", "0"); $(".content .highlighter-rouge").css("font-weight", "bold").css("background-color", "black"); $(".large-centered.columns").css("margin-left", "2em"); $(".pad").css("padding", "0"); $(".mdl-navigation__link").css("padding", "0 16px").css("opacity", "1.0"); $(".mdl-data-table").removeClass("mdl-data-table"); $("#tuxlink img").css("-ms-interpolation-mode", "nearest-neighbor").css("image-rendering", "pixelated").prop("src", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAMAAAA4jZ0cAAAAM1BMVEX///8CAgQMDAwsLCw0NDSjbQCkbQC+vbzOkwDU1NTlrADqvADxtgD0vQD12wD+/vz+//yBSdYEAAAAAXRSTlMAQObYZgAAADFJREFUCB0FwQkCQDAQBLCsq6g1/v9aCVQBthUwX8BIgStZCpUvKXSSLs6eyd0Pdg5+JwkBVyC74QYAAAAASUVORK5CYII="); $("#tuxlink").click(function() { location.reload(); return false; }); return false; }); }); </script>
-      <!-- Add spacer, to align navigation to the right -->
+      <!-- Add spacer, to align navigation to the right
       <div class="mdl-layout-spacer"></div>
-      <!-- Navigation. We hide it in small screens. -->
+      <!-- Navigation. We hide it in small screens.
       <nav class="mdl-navigation mdl-layout--large-screen-only">
         {{ links }}
       </nav>
@@ -28,3 +55,4 @@
       {{ links }}
     </nav>
   </div>
+-->

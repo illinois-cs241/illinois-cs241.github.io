@@ -8,12 +8,12 @@
         color: "#9E9E9E"
       -
         title: "System Programming"
-        summary: "1. Dive into System programming"
+        summary: "Dive into System programming"
         resources: "Prelecture: <a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a>. The lecture will assume you've made significant progress on this homework"
         color: "#F44336"
       -
         title: "How to crash in C"
-        summary: "2. Dive into C programming"
+        summary: "Dive into C programming"
         resources: "Prelecture: <a href = 'https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-1%3A-Introduction'>Intro to C Notes</a>. The lecture will assume you've already reviewed and played with this material."
         color: "#F44336"
     week: "1/16 - 1/20"
@@ -28,17 +28,17 @@
     schedule:
       -
         title: "C Crash Course 2"
-        summary: "3. man,asprintf,free,assert"
+        summary: "man,asprintf,free,assert"
         resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-3%3A-Common-Gotchas' target='_blank'>Wikibook C Gotchas</a>"
         color: "#F44336"
       -
         title: "C Crash Course 3"
-        summary: "4. getenv, scanf, getline, fork "
+        summary: "getenv, scanf, getline, fork "
         resources: "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-2%3A-Text-Input-And-Output'>Wikibook Input and Output</a>"
         color: "#F44336"
       -
         title: "Fork and wait"
-        summary: "5. fork and waitpid"
+        summary: "fork and waitpid"
         resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-1%3A-Introduction'>Wikibook forking</a>"
         color: "#E91E63"
     week: "1/23 - 1/27"
@@ -52,17 +52,17 @@
     schedule:
       -
         title: "Forking Processes"
-        summary: "6. The fork-exec-wait pattern"
+        summary: "The fork-exec-wait pattern"
         resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-2%3A-Fork%2C-Exec%2C-Wait' target='_blank'>Wikibook Fork, Exec, Wait</a>"
         color: "#E91E63"
       -
         title: "Signals for Process Control"
-        summary: "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT"
+        summary: "Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT"
         resources: "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/Process-Control%2C-Part-1%3A-Wait-macros%2C-using-signals'>Wikibook process control</a>"
         color: "#E91E63"
       -
         title: "Thanks for the heap memory"
-        summary: "8. How to build a memory allocator. Placement algorithms. Fragmentation."
+        summary: "How to build a memory allocator. Placement algorithms. Fragmentation."
         resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-1%3A-Heap-Memory-Introduction'>Wikibook heap memory introduction</a>"
         color: "#9C27B0"
     week: "1/30 - 2/3"
@@ -78,17 +78,17 @@
     schedule:
       -
         title: "Memory allocators I"
-        summary: "9. Hone your pointer skills when writing malloc and free."
+        summary: "Hone your pointer skills when writing malloc and free."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-2%3A-Implementing-a-Memory-Allocator'>Memory, Part 2</a>"
         color: "#9C27B0"
       -
         title: "Memory allocators II "
-        summary: "10. Memory allocators part 2."
+        summary: "Memory allocators part 2."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-2%3A-Implementing-a-Memory-Allocator'>Memory, Part 2</a>"
         color: "#9C27B0"
       -
         title: "Threads"
-        summary: "11. Introducing pthreads. stacks. Concurrency programming gotchas."
+        summary: "Introducing pthreads. stacks. Concurrency programming gotchas."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Pthreads%2C-Part-1%3A-Introduction'>Intro to Threads</a>"
         color: "#673AB7"
     week: "2/6 - 2/10"
@@ -104,17 +104,17 @@
     schedule:
       -
         title: "Threads and mutex locks"
-        summary: "12. Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas."
+        summary: "Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-1%3A-Mutex-Locks'>Synchronization, Part 1: Mutex Locks</a>"
         color: "#673AB7"
       -
         title: "Mutexes and semaphores"
-        summary: "13. Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas."
+        summary: "Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-2%3A-Counting-Semaphores'>Synchronization, Part 2: Counting Semaphores</a>.<a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-3%3A-Working-with-Mutexes-And-Semaphores'>Synchronization, Part 3: Working with Mutexes And Semaphores</a>."
         color: "#2196F3"
       -
         title: "Condition Variables"
-        summary: "14. Mutex and Condition Variable examples. How to implement a lock (The critical section problem)."
+        summary: "Mutex and Condition Variable examples. How to implement a lock (The critical section problem)."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-4%3A-The-Critical-Section-Problem'>Synchronization, Part 4: The Critical Section Problem</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-5%3A-Condition-Variables'>Condition Variables</a>"
         color: "#2196F3"
     week: "2/13 - 2/17"
@@ -130,17 +130,17 @@
     schedule:
       -
         title: "Critical Section Problem"
-        summary: "15. Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables."
+        summary: "Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-4%3A-The-Critical-Section-Problem'>Synchronization, Part 4: The Critical Section Problem</a>."
         color: "#2196F3"
       -
         title: "Condition Variables II"
-        summary: "16. Condition Variables. Implementing a semaphore using a Condition Variable."
+        summary: "Condition Variables. Implementing a semaphore using a Condition Variable."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-5%3A-Condition-Variables'>Condition Variables</a>."
         color: "#2196F3"
       -
         title: "Reader Writer Problem"
-        summary: "17. Implementing a barrier. Implementing the R/W Problem using Condition Variables."
+        summary: "Implementing a barrier. Implementing the R/W Problem using Condition Variables."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-6%3A-Implementing-a-barrier'>Implementing a barrier</a>,<a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-7%3A-The-Reader-Writer-Problem'>The Reader Writer Problem</a>"
         color: "#03A9F4"
     week: "2/20 - 2/24"
@@ -163,17 +163,17 @@
     schedule:
       -
         title: "Reader Writer Problem & Deadlock"
-        summary: "18. Implementing Reader Write. Introduction to Deadlock."
+        summary: "Implementing Reader Write. Introduction to Deadlock."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-7%3A-The-Reader-Writer-Problem'>The Reader Writer Problem</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions'>Deadlock</a>."
         color: "#03A9F4"
       -
         title: "Deadlock"
-        summary: "19. Introduction to Deadlock. Coffman conditions."
+        summary: "Introduction to Deadlock. Coffman conditions."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions'>Deadlock</a>."
         color: "#00BCD4"
       -
         title: "Dining Philosophers"
-        summary: "20. The Dining Philosophers problem"
+        summary: "The Dining Philosophers problem"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-3%3A-Dining-Philosophers'>Dining Philosophers</a>."
         color: "#00BCD4"
     week: "2/27 - 3/3"
@@ -196,12 +196,12 @@
     schedule:
       -
         title: "Page tables"
-        summary: "21. Virtual memory"
+        summary: "Virtual memory"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Virtual-Memory%2C-Part-1%3A-Introduction-to-Virtual-Memory'>Virtual Memory</a>."
         color: "#009688"
       -
         title: "Pipes and Files"
-        summary: "22. POSIX Pipes and random access files"
+        summary: "POSIX Pipes and random access files"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Pipes%2C-Part-1%3A-Introduction-to-pipes'>Introduction to Pipes</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Pipes%2C-Part-2%3A-Pipe-programming-secrets'>Working with Pipes</a>"
         color: "#4CAF50"
       -
@@ -229,17 +229,17 @@
     schedule:
       -
         title: "Pipes, Files, VM II"
-        summary: "23. POSIX Pipes, files, memory II"
+        summary: "POSIX Pipes, files, memory II"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Files%2C-Part-1%3A-Working-with-files'>Files</a>"
         color: "#4CAF50"
       -
         title: "Errno. Networking Intro"
-        summary: "24. Robust error handling. EINTR. Intro to TCP,UDP,IP"
+        summary: "Robust error handling. EINTR. Intro to TCP,UDP,IP"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/POSIX%2C-Part-1%3A-Error-handling'>Error handling</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-1%3A-Introduction'>Networking Introduction</a>"
         color: "#8BC34A"
       -
         title: "TCP"
-        summary: "25. TCP/IP Header. IPv4 exhaustion. A web client"
+        summary: "TCP/IP Header. IPv4 exhaustion. A web client"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#8-networking'>Networking</a>"
         color: "#8BC34A"
     week: "3/13 - 3/17"
@@ -286,17 +286,17 @@
     schedule:
       -
         title: "TCP Server"
-        summary: "26. Passive sockets. The 4 server calls and what they do. Gotchas."
+        summary: "Passive sockets. The 4 server calls and what they do. Gotchas."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-4%3A-Building-a-simple-TCP-Server'>TCP Server</a>"
         color: "#8BC34A"
       -
         title: "TCP Server II"
-        summary: "27. Socket Programming Gotchas. Intro to scheduling"
+        summary: "Socket Programming Gotchas. Intro to scheduling"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-4%3A-Building-a-simple-TCP-Server'>TCP Server</a>"
         color: "#8BC34A"
       -
         title: "Scheduling"
-        summary: "28. Scheduling examples"
+        summary: "Scheduling examples"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-1%3A-Scheduling-Processes'>Scheduling</a>"
         color: "#CDDC39"
     week: "3/27 - 3/31"
@@ -319,17 +319,17 @@
     schedule:
       -
         title: "Scheduling-2"
-        summary: "29. Scheduling simulator. epoll"
+        summary: "Scheduling simulator. epoll"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-2%3A-Scheduling-Processes%3A-Algorithms'>Scheduling</a>."
         color: "#CDDC39"
       -
         title: "Files-1"
-        summary: "30. ext2/3/4 filesystem. inode"
+        summary: "ext2/3/4 filesystem. inode"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-1%3A-Introduction'>Files</a>."
         color: "#FFC107"
       -
         title: "Files-2"
-        summary: "31. file meta data"
+        summary: "file meta data"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-2%3A-Files-are-inodes-%28everything-else-is-just-data...%29'>Files</a>."
         color: "#FFC107"
     week: "4/3 - 4/7"
@@ -349,17 +349,17 @@
     schedule:
       -
         title: "Files-3"
-        summary: "32. Permissions"
+        summary: "Permissions"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-3%3A-Permissions'>Permissions</a>."
         color: "#FFC107"
       -
         title: "Files-4"
-        summary: "33. Virtual f/s"
+        summary: "Virtual f/s"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-5%3A-Virtual-file-systems'>VFS</a>."
         color: "#FFC107"
       -
         title: "Files-5"
-        summary: "34. Memory mapped files"
+        summary: "Memory mapped files"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-6%3A-Memory-mapped-files-and-Shared-memory'>Memory Mapped</a>."
         color: "#FFC107"
     week: "4/10 - 4/14"
@@ -382,17 +382,17 @@
     schedule:
       -
         title: "RPC"
-        summary: "35. RPC"
+        summary: "RPC"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/RPC%2C-Part-1%3A-Introduction-to-Remote-Procedure-Calls'>RPC</a>."
         color: "#FFC107"
       -
         title: "UDP"
-        summary: "36. UDP"
+        summary: "UDP"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-6%3A-Creating-a-UDP-server'>UDP</a>."
         color: "#FFC107"
       -
         title: "Misc"
-        summary: "36. Misc O/S Concepts"
+        summary: "Misc O/S Concepts"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki'>Everything</a>."
         color: "#FFC107"
     week: "4/17 - 4/21"
@@ -412,17 +412,17 @@
     schedule:
       -
         title: "Course review"
-        summary: "38. Exam practice/review"
+        summary: "Exam practice/review"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
         color: "#FFC107"
       -
         title: "UDP"
-        summary: "39. UDP."
+        summary: "UDP."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-14'>wikibook week 15</a>."
         color: "#FFC107"
       -
         title: "O/S Concepts"
-        summary: "40. Operating System Concepts"
+        summary: "Operating System Concepts"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-15'>wikibook week 15</a>."
         color: "#FFC107"
     week: "4/24 - 4/28"
@@ -442,12 +442,12 @@
     schedule:
       -
         title: "O/S Concepts II"
-        summary: "41. O/S Concepts II"
+        summary: "O/S Concepts II"
         resources: ""
         color: "#FFC107"
       -
         title: "Special topics"
-        summary: "42. Special topics"
+        summary: "Special topics"
         resources: ""
         color: "#FFC107"
     week: "5/1 - 5/3"

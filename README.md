@@ -149,4 +149,11 @@ This can be done by [fencing with triple backticks](https://github.com/adam-p/ma
 
 ## Updating Schedules and Staff
 
-All the information that gets displayed on `labs.html`, `mps.html`, `schedule.html`, and `staff.html` are stored in `_data` as `labs.yaml`,`mps.yaml`,`scheduleSP17.yaml`, and `staff.json` respectively. These are yaml files and should be intuitive to update.
+All the information that gets displayed on `labs.html`, `mps.html`, `schedule.html`, and `staff.html` are stored in `_data` as `labs.json`,`mps.json`,`scheduleSP16.json`, and `staff.json` respectively. These are json files and should be intuitive to update.
+
+
+## Minifying Foundation and Material Design
+
+Foundation and Material Design are _Massive_ files. In order to compensate for this, There is a gulp task that runs that gets rid of uneeded CSS.
+
+The task currently needs to be modified because it does register the aria menus correctly for CSS so they'll have to be a custom phantom script that tracks the clicks. This is an issue and a todo. The code is currently committed.

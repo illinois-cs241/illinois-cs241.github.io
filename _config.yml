@@ -20,6 +20,7 @@ semester: "sp17"
 course_number: "241"
 subject_code: "cs"
 course_name: "System Programming"
+plugins_dir: _plugins
 # Settings for docs collection
 collections:
   docs:

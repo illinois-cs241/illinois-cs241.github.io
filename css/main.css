@@ -1,0 +1,166 @@
+body {
+    padding-top: 50px;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    background-color: #2A2A3F;
+    color: #F2F2F4;
+}
+
+.navbar {
+	background-color: #2C72AD;
+	border-color: #2C72AD;
+	border: 0px;
+	border-top:none;
+    box-shadow:none;
+}
+
+.navbar-default .navbar-brand {
+	color: #F2F2F4 !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #F2F2F4 !important;
+}
+
+.navbar-collapse {
+	border-top:0px !important;
+	box-shadow:none;
+}
+
+.github-link { 
+	display: inline-block; 
+	vertical-align: middle; 
+	margin-left: 0.5em; 
+	text-indent: -9999px; 
+	width: 32px; 
+	height: 32px; 
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjQgNjQiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDY0IDY0IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMTgxNjE2IiBkPSJNMzIuNiwzLjRDMTYuMywzLjQsMywxNi43LDMsMzMuMWMwLDEzLjEsOC41LDI0LjIsMjAuMywyOC4xDQoJYzEuNSwwLjMsMi0wLjYsMi0xLjRjMC0wLjcsMC0yLjYsMC01Yy04LjIsMS44LTEwLTQtMTAtNGMtMS4zLTMuNC0zLjMtNC4zLTMuMy00LjNjLTIuNy0xLjgsMC4yLTEuOCwwLjItMS44YzMsMC4yLDQuNSwzLjEsNC41LDMuMQ0KCWMyLjYsNC41LDYuOSwzLjIsOC42LDIuNWMwLjMtMS45LDEtMy4yLDEuOS00Yy02LjYtMC43LTEzLjUtMy4zLTEzLjUtMTQuNmMwLTMuMiwxLjItNS45LDMtNy45Yy0wLjMtMC43LTEuMy0zLjgsMC4zLTcuOA0KCWMwLDAsMi41LTAuOCw4LjEsM2MyLjQtMC43LDQuOS0xLDcuNC0xYzIuNSwwLDUsMC4zLDcuNCwxYzUuNy0zLjgsOC4xLTMsOC4xLTNjMS42LDQuMSwwLjYsNy4xLDAuMyw3LjhjMS45LDIuMSwzLDQuNywzLDcuOQ0KCWMwLDExLjQtNi45LDEzLjktMTMuNSwxNC42YzEuMSwwLjksMiwyLjcsMiw1LjVjMCw0LDAsNy4yLDAsOC4xYzAsMC44LDAuNSwxLjcsMiwxLjRjMTEuOC0zLjksMjAuMi0xNSwyMC4yLTI4LjENCglDNjIuMiwxNi43LDQ5LDMuNCwzMi42LDMuNHoiLz4NCjwvc3ZnPg0K); 
+}
+
+h1 {
+	padding-bottom:20px;
+	font-size:48px;
+}
+
+h2 {
+	padding-top: 50px; 
+	margin-top: -20px;
+}
+
+.staff {
+  width: 100%;
+}
+
+.staff-div {
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	background-size: cover;
+	padding:0px;
+	border-radius:5px;
+}
+
+.staff-row {
+	margin-top: 40px;
+}
+
+.staff-name {
+	position: absolute;
+	bottom: 0px;
+	background: rgba(0, 0, 0, 0.5);
+	color:white;
+	text-align: center;
+	font-size:28px;
+	padding-top: 5px;
+}
+
+
+table {
+  @extend .table;
+  width: 100%;
+}
+
+.anchor {
+	display: none;
+	padding-left: 5px;
+}
+
+.title-text:hover > .anchor {
+	display: inline;
+}
+
+.day {
+	height:300px;
+	margin-bottom:20px;
+	width:100%;
+	background-color: #F2F2F4;
+	border-radius:3px; /* Has to be equal to the title border */
+}
+
+.day h1 {
+	color: #F2F2F4;
+}
+
+.day-summary, .day-resources {
+	color: black;
+}
+
+.day-resources {
+	position: absolute;
+	bottom: 20px; /* has to be equal to the day margin-bottom */
+}
+
+.day-summary {
+	position: absolute;
+	top: 75px; /* Related to the .day-title height attr */
+}
+
+.day-title-text h3 {
+	margin: 0px;
+}
+
+.day-title {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 3px;
+	height:70px;
+}
+
+.schedule-container {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+ul.toc {
+	list-style: none;
+}
+
+a {
+	color: #9CB0C1;
+}
+
+.highlighter-rouge {
+	background-color: #383644;
+	color: #CF6A4A;
+	border-radius: 5px;
+}
+
+h1, h2, h3 {
+	color: #2C72AD;
+}
+
+.highlight {
+	background-color: #383644;
+	border: 0px;
+	color: #F2F2F4;
+}
+
+pre {
+	color: inherit;
+	background-color:inherit;
+	border: inherit;
+}
+
+
+code {
+	color: #F2F2F4;
+}
