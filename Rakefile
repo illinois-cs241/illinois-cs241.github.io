@@ -8,4 +8,5 @@ task :default do
   })
   site = Jekyll::Site.new(config)
   Jekyll::Commands::Build.build site, config
+  cp './.travis.yml', './_site/.travis.yml'
 end
