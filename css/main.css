@@ -134,10 +134,6 @@ ul.toc {
 	list-style: none;
 }
 
-a {
-	color: #9CB0C1;
-}
-
 .highlighter-rouge {
 	background-color: #383644;
 	color: #CF6A4A;
@@ -180,4 +176,25 @@ pre code {
 
 pre:hover > .language-C > .code-copy {
 	display: inline;
+}
+
+a {
+    text-decoration: none !important;
+	color: #9CB0C1;
+	display: inline-block;
+	position: relative;
+	padding-bottom: 0px;
+}
+a:after {
+	content: '';
+	display: block;
+	margin: auto;
+	height: 1px;
+	width: 0px;
+	background: transparent;
+	transition: width .3s ease, background-color .3s ease;
+}
+a:hover:after {
+	width: 100%;
+	background: #9CB0C1;
 }
