@@ -8,7 +8,9 @@ env:
     - REPO=illinois-cs241/illinois-cs241.github.io
 before_script:
     - ls .
-    - _script/before_script.sh
+    - echo $TRAVIS_BUILD_DIR
+    - ls $TRAVIS_BUILD_DIR
+    - $TRAVIS_BUILD_DIR/_script/before_script.sh
 deploy:
     local_dir: _site
     provider: pages
