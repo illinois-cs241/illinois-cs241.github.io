@@ -4,6 +4,7 @@ rvm:
 branches:
     only:
         develop
+before_script: ./_script/before_script.sh
 deploy:
     local_dir: _site
     provider: pages
