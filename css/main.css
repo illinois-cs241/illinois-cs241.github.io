@@ -280,3 +280,9 @@ a:not(.anchor):hover:after {
 	width: 100%;
 	background: #9CB0C1;
 }
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}

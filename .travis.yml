@@ -6,7 +6,10 @@ branches:
         develop
 env:
     - REPO=illinois-cs241/illinois-cs241.github.io
-before_script: $REPO/_script/before_script_wrapper.sh
+before_script:
+    - ls $TRAVIS_REPO_SLUG
+    - ls .
+    - $REPO/_script/before_script_wrapper.sh
 deploy:
     local_dir: _site
     provider: pages
