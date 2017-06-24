@@ -286,3 +286,18 @@ a:not(.anchor):hover:after {
     margin-right: auto;
     margin-left: auto;
 }
+
+
+.navbar-brand.small {
+    display:none;
+}
+
+@media (max-width: 767px) { 
+    .navbar-brand.normal {
+        display:none;      
+    }
+
+    .navbar-brand.small {
+        display:inline-block;
+    }
+}
