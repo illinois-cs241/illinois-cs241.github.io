@@ -1,0 +1,25 @@
+---
+---
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body>
+{% include header.html %}
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <h1>Search</h1>
+    <input type="text" name="search" class="search" placeholder="Search..">
+    <div class="loader hidden">Loading...</div>
+    <div class="content">
+    	<ul class="results-list">
+    	</ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.0.1/lunr.min.js"></script>
+    <script src="./js/search.js"></script>
+  </div>
+</div>
+</div>
+</body>
+</html>
