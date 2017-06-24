@@ -21,8 +21,6 @@ $.get('/search_data.json', function(data){
   const idx = lunr(function(){
     this.field('title', {boost: 5});
     this.field('content', {boost: 10});
-    this.field('learning_objectives');
-    this.field('wikibook');
     this.ref('url');
     this.metadataWhitelist = ['position'];
     const idx = this;
@@ -45,6 +43,8 @@ $.get('/search_data.json', function(data){
     });
     displayResults(lunrResults);
   });
+  $('.loader').addClass('hidden');
+  $('.search-page').removeClass('hidden');
 })
 .fail(function() {
   alert( "Data load error" );

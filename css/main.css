@@ -250,15 +250,24 @@ pre:hover > .language-C > .code-copy {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
 
-a {
+.anchor {
+	text-decoration: none;
+}
+
+.anchor:hover {
+	text-decoration: none;
+}
+
+a:not(.anchor){
     text-decoration: none !important;
 	color: #9CB0C1;
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0px;
 }
-a:after {
+a:not(.anchor):after {
 	content: '';
 	display: block;
 	margin: auto;
@@ -267,7 +276,7 @@ a:after {
 	background: transparent;
 	transition: width .3s ease, background-color .3s ease;
 }
-a:hover:after {
+a:not(.anchor):hover:after {
 	width: 100%;
 	background: #9CB0C1;
 }
