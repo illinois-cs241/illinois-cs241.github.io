@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$TRAVIS_BUILD_DIR/$SCRIPTS_DIR/cleanup_wikibook.py $TRAVIS_BUILD_DIR/$WIKIBOOK_DIR
+$TRAVIS_BUILD_DIR/_scripts/cleanup_wikibook.py $TRAVIS_BUILD_DIR/_wikibook
