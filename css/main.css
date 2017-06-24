@@ -260,14 +260,14 @@ pre:hover > .language-C > .code-copy {
 	text-decoration: none;
 }
 
-a:not(.anchor){
+a:not(.anchor):not(.navbar-link){
     text-decoration: none !important;
 	color: #9CB0C1;
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0px;
 }
-a:not(.anchor):after {
+a:not(.anchor):not(.navbar-link):after {
 	content: '';
 	display: block;
 	margin: auto;
@@ -276,7 +276,7 @@ a:not(.anchor):after {
 	background: transparent;
 	transition: width .3s ease, background-color .3s ease;
 }
-a:not(.anchor):hover:after {
+a:not(.anchor):not(.navbar-link):hover:after {
 	width: 100%;
 	background: #9CB0C1;
 }
@@ -285,6 +285,14 @@ a:not(.anchor):hover:after {
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.navbar-toggle {
+	border-width: 0px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #F2F2F4;
 }
 
 

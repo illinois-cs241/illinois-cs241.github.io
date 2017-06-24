@@ -5,12 +5,10 @@ branches:
     only:
         develop
 env:
-    - REPO=illinois-cs241/illinois-cs241.github.io
+    - SCRIPTS_DIR=_scripts
+    - WIKIBOOK_DIR=_wikibook
 before_script:
-    - ls .
-    - echo $TRAVIS_BUILD_DIR
-    - ls $TRAVIS_BUILD_DIR
-    - $TRAVIS_BUILD_DIR/_script/before_script.sh
+    - $TRAVIS_BUILD_DIR/$SCRIPTS_DIR/before_script.sh
 deploy:
     local_dir: _site
     provider: pages

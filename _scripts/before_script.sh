@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "BEFORE BEFORE BEFORE"
+$TRAVIS_BUILD_DIR/$SCRIPTS_DIR/cleanup_wikibook.py $TRAVIS_BUILD_DIR/$WIKIBOOK_DIR
