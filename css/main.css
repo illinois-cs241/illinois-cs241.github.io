@@ -5,6 +5,12 @@ body {
     color: #F2F2F4;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+	body {
+    	padding-top: 100px;
+    }
+}
+
 .navbar {
 	background-color: #2C72AD;
 	border-color: #2C72AD;
