@@ -3,6 +3,7 @@ body {
     font-family: "Roboto","Helvetica","Arial",sans-serif;
     background-color: #2A2A3F;
     color: #F2F2F4;
+    padding-bottom:50px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -79,6 +80,36 @@ h2 {
 	padding-top: 5px;
 }
 
+ /* Popover */
+.popover {
+    background-color: black;
+    color:black;
+    display:block;
+}
+
+/* Popover Header */
+.popover-title {
+    background-color: black; 
+    color: black; 
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 0px;
+}
+
+.popover-title a {
+	color: white;
+	cursor: pointer;
+}
+
+/* Popover Body */
+.popover-content {
+	background-color: black;
+    padding: 0px;
+}
+
+.popover.top>.arrow:after {
+	border-top-color: black;
+}
 
 table {
   @extend .table;
@@ -140,49 +171,10 @@ ul.toc {
 	list-style: none;
 }
 
-.highlighter-rouge {
-	background-color: #383644;
-	color: #CF6A4A;
-	border-radius: 5px;
-}
-
 h1, h2, h3 {
 	color: #2C72AD;
 }
 
-.highlight {
-	background-color: #383644;
-	border: 0px;
-	color: #F2F2F4;
-}
-
-pre {
-	color: inherit;
-	background-color: #383644;
-	border: inherit;
-}
-
-
-code {
-	color: #F2F2F4;
-}
-
-.code-copy {
-	float: right;
-	right: 0px;
-	display: none;
-	background-color:black;
-	padding: 5px 5px 5px 5px;
-	border-radius: 3px;
-}
-
-pre code {
-	display: block;
-}
-
-pre:hover > .language-C > .code-copy {
-	display: inline;
-}
 
 /* Loader */
 
@@ -266,14 +258,14 @@ pre:hover > .language-C > .code-copy {
 	text-decoration: none;
 }
 
-a:not(.anchor):not(.navbar-link){
+a:not([class]){
     text-decoration: none !important;
 	color: #9CB0C1;
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0px;
 }
-a:not(.anchor):not(.navbar-link):after {
+a:not([class]):after {
 	content: '';
 	display: block;
 	margin: auto;
@@ -282,7 +274,7 @@ a:not(.anchor):not(.navbar-link):after {
 	background: transparent;
 	transition: width .3s ease, background-color .3s ease;
 }
-a:not(.anchor):not(.navbar-link):hover:after {
+a:not([class]):hover:after {
 	width: 100%;
 	background: #9CB0C1;
 }
@@ -314,4 +306,141 @@ a:not(.anchor):not(.navbar-link):hover:after {
     .navbar-brand.small {
         display:inline-block;
     }
+}
+
+/* Rouge CSS */
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+ color: #d0d0d0;
+ background-color: #151515;
+}
+.highlight .err {
+ color: #151515;
+ background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+ color: #505050;
+}
+.highlight .cp {
+ color: #f4bf75;
+}
+.highlight .nt {
+ color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+ color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+ color: #d0d0d0;
+}
+.highlight .gi {
+ color: #90a959;
+}
+.highlight .gd {
+ color: #ac4142;
+}
+.highlight .gh {
+ color: #6a9fb5;
+ background-color: #151515;
+ font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+ color: #aa759f;
+}
+.highlight .kc {
+ color: #d28445;
+}
+.highlight .kt {
+ color: #d28445;
+}
+.highlight .kd {
+ color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+ color: #90a959;
+}
+.highlight .sr {
+ color: #75b5aa;
+}
+.highlight .si {
+ color: #8f5536;
+}
+.highlight .se {
+ color: #8f5536;
+}
+.highlight .nn {
+ color: #f4bf75;
+}
+.highlight .nc {
+ color: #f4bf75;
+}
+.highlight .no {
+ color: #f4bf75;
+}
+.highlight .na {
+ color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+ color: #90a959;
+}
+.highlight .ss {
+ color: #90a959;
+}
+
+/***************** Code Copying ***************/
+
+pre {
+	color: inherit;
+	background-color: #151515;
+	border: inherit;
+}
+
+code {
+	color: #F2F2F4;
+}
+
+.code-copy {
+	float: right;
+	right: 0px;
+	display: none;
+	background-color:black;
+	padding: 5px 5px 5px 5px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+pre code {
+	display: block;
+}
+
+pre:hover > .language-C > .code-copy {
+	display: inline;
+}
+
+.code-copy-textarea {
+	position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+pre.highlight {
+	margin-bottom: -10px;
+	padding-bottom: 0px;
+}
+
+.highlighter-rouge {
+	background-color: #151515;
+	color: #CF6A4A;
+	border-radius: 5px;
+}
+
+.highlight {
+	background-color: #151515;
+	border: 0px;
+	color: #F2F2F4;
+}
+
+div.highlighter-rouge {
+	padding-bottom:20px;
 }

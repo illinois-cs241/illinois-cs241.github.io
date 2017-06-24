@@ -1,38 +1,60 @@
-<footer class="site-footer">
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+      trigger: 'manual',
+        container: $(this).attr('id'),
+        placement: 'top',
+        content: function () {
+            return '<div class="hover-hovercard"></div>';
+        }
+    }).on("mouseenter", function () {
+        var _this = this;
+        $(this).popover("show");
+        $(this).siblings(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
+        });
+    }).on("mouseleave", function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!$(".popover:hover").length) {
+               $(_this).popover("hide")
+            }
+        }, 100);
+    });
 
-  <div class="wrapper">
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+/*
+$('[data-toggle="popover"]').on('shown.bs.popover', function () {
+    var $pop = $(this);
+    setTimeout(function () {
+        $pop.popover('hide');
+    }, 2000);
+});*/
+</script>
+<footer class="">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
+<div class="container-fluid">
+<div class="shadow"></div>
+<div class="row">
+  <h4 class="col-md-3">{{ site.title }}</h4>
+  {% if site.github_username %}
+    <div class="col-md-3">
+    {% include icon-github.html username=site.github_username %}
     </div>
+  {% endif %}
+  {% if site.twitter_username %}
+    <div class="col-md-3">
+    {% include icon-twitter.html username=site.twitter_username %}
+    </div>>
+  {% endif %}
+</div>
 
+<div class="row">
+  <div class="col-md-12 col-sm-12">
+    <p>{{ site.description }}</p>
   </div>
+</div>
+</div>
 
 </footer>

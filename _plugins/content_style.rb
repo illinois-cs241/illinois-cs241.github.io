@@ -1,4 +1,10 @@
 require 'nokogiri'
+require 'rouge'
+require 'htmlentities'
+require 'json'
+
+$man_filename = '_data/man.json'
+$data_hash = JSON.parse(File.read($man_filename))
 
 class Nokogiri::XML::Node
   # Create a hierarchy on a document based on heading levels
@@ -93,14 +99,40 @@ module Jekyll
       		table['class'] = "table"
       	end
       end
-
+      html_decoder = HTMLEntities.new
       # Style all the code
-      page.css('.language-C').each do |div|
+      page.css('.language-C').each_with_index do |div, i|
+        id_target = "code-copy-#{i}"
         copy = Nokogiri::XML::Node.new("a", page)
         copy['class'] = 'code-copy'
         copy.inner_html = "Copy"
+        copy['rel'] = id_target
         copy['onclick'] = 'onCopy(this);'
+        copy['data-toggle'] = "popover";
+        copy['data-content'] = "Copied!"
+
+        textarea = Nokogiri::XML::Node.new("textarea", page)
+        textarea['id'] = id_target
+        textarea['class'] = 'code-copy-textarea'
+        textarea['value'] = div.inner_html
+
+        # Before anything style the div
+        formatter = Rouge::Formatters::HTML.new
+        lexer = Rouge::Lexers::C.new
+        div.inner_html = formatter.format(lexer.lex(html_decoder.decode(div.inner_html)))
         div.children.before(copy)
+        div.add_child(textarea)
+      end
+
+      page.css('code.highlighter-rouge').each do |code|
+        uri = $data_hash[code.inner_html]
+        if uri != nil
+          code['data-toggle'] = "popover";
+          code['data-placement'] = "top";
+          code['title'] = "<a href=#{uri}>man</a>"
+          code['class'] += " man-tooltip"
+          code['data-html'] = "true"
+        end
       end
 
       return page.to_html
