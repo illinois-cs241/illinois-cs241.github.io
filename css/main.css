@@ -308,6 +308,14 @@ a:not([class]):hover:after {
     }
 }
 
+.speaker {
+	background-image: url("http://findicons.com/files/icons/949/token/128/speaker.png");
+	background-size: cover;
+	height:40px;
+	width:40px;
+	margin-top: 20px;
+}
+
 /* Rouge CSS */
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
