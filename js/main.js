@@ -7,7 +7,6 @@ function onCopy(elem){
 	const text = jqueryElem.html();
 
 	// Create a fake text area to copy
-	
 	const target = document.createElement("textarea");
     target.style.position = "absolute";
     target.style.left = "-9999px";

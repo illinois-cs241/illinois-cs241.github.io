@@ -1,3 +1,4 @@
 [submodule "_wikibook"]
 	path = _wikibook
 	url = https://github.com/angrave/SystemProgramming.wiki.git
+    ignore = dirty
