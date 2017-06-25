@@ -125,8 +125,6 @@ module Jekyll
         copy.inner_html = "Copy"
         copy['rel'] = id_target
         copy['onclick'] = 'onCopy(this);'
-        copy['data-toggle'] = "popover";
-        copy['data-content'] = "Copied!"
 
         textarea = Nokogiri::XML::Node.new("textarea", page)
         textarea['id'] = id_target

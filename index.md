@@ -155,20 +155,20 @@ Is this course hard? Yes, but you are bright. You're taking computer science at 
 
 With lecture content, one lab, one MP, and one Quiz/Midterm every week or two, it can get easy to fall behind. How to fail: some students do not take the time to learn how to debug and reason about system code and then end up complaining that office hours is too busy before deadlines. If you can't write correct solutions, you need to learn _exactly_ how C works, the _details_ of the system calls you are using, learn _better debugging_ skills and _reason_ behind synchronization. Only then can you spot and fix mistakes. Hard? Yes. Impossible? No. 
 
-There are no short-cuts to mastery but we can help you get there. We recommend the Feynman technique to learning. Remember, simply recognizing some text in a past exam or in the wikibook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes this requires effort. Start the assignments early; expect to get stuck. Write code _slowly_; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending "time on task" with these materials.
+There are no short-cuts to mastery but we can help you get there. We recommend the Feynman technique to learning. Remember, simply recognizing some text in a past exam or in the wikibook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes, this requires effort. Start the assignments early; expect to get stuck. Write code _slowly_; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending "time on task" with these materials.
 
 ## Autograding Policy
 
 You walk into the investor meeting ready to show your demo. You ship your code ready for a million Internet of Things. You deploy your code to the Internet backbone. It had better compile and be functional.
 
-Forgot to commit or your committed code that does not compile? Zero. The basic headline is that you're not in Kansas anymore (to quote Dorothy), and have some pride with your work and don't leave it until the last minute.
+Forgot to commit or your committed code that does not compile? Zero. The basic headline is that you're not in Kansas anymore (to quote Dorothy). Don't leave it until the last minute.
 
-We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected in a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM (which is near identical to the grading machine). We will attempt to give you some partial credit if your code passes the tests, but for that it is your responsibility to fully read and understand the specification.
+We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected in a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM, which is near identical to the grading machine. We will attempt to give you some partial credit if your code passes the tests.
 
-If you have a question about your personal autograde results after the final autograde, then feel free to make a private piazza post titled `<assignment name> Autograde Question` with the folders/tags/labels `autograder` and `<assignment name>` selected.
+If you have a question about your personal autograder results after the final autograder, then feel free to make a private piazza post titled `<assignment name> Autograde Question` with the folders/tags/labels `autograder` and `<assignment name>` selected.
  
-* It will take time to go through autograder questions.  So please do not expect an immediate (or even same day/ same week) answer.  Trying to debug 20+ people's code and the autograder takes time, and we have school too :(
-* You **must show us your test cases first**. If they are not close to exhaustive we reserve to right to not answer your question.
+* It will take time to go through autograder questions.  So please do not expect an immediate (or even same day/ same week) answer.  Trying to debug 20+ people's code and the autograder takes time.
+* `You must show us your test cases first. If they are not close to exhaustive, we reserve to right to not answer your question.`
 * Questions like "What is test x?" is **not** something we will answer.
 * These questions should be for "I have exhaustive test cases for X, so how am I failing Y?"
 * Please add your netid in the post, so we can look up your code if needed. 
@@ -183,6 +183,6 @@ CS 241 is considered a critical step in your ability to create useful programs f
 
 This means you are not allowed to split the work with a partner, unlike other 2xx classes. You are, however, allowed to discuss the assignments at a very high level.
 
-Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive a letter grade reduction, two letter grades for two assignments, and so on. If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides <https://subversion.ews.illinois.edu> and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
+Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive a letter grade reduction, two letter grades for two assignments, and so on. If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides [subversion](https://subversion.ews.illinois.edu) and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
 
 We want you to get the most out your education, and cheating not only affects your peers, but also you.

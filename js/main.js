@@ -74,21 +74,27 @@ var speechUtteranceChunker = function (utt, settings, callback) {
         speechSynthesis.speak(newUtt);
     }, 0);
 };
-
+var speaking = false;
 function speak(){
     if(!('speechSynthesis' in window)){
         return;
     }
-    const cards = $('.card');
+    if(speaking == true){
+        speaking = false;
+        return;
+    }
+    const cards = $('.card').clone();
     const mapped = []
     for(let i = 0; i < cards.length; ++i){
-        mapped.push($(cards[i]).text().replace(/(\n*|#)/i, '').split(new RegExp('[;,.?]', 'g')));
+        mapped.push($(cards[i]).remove('.code').text().replace(/\n*/i, '')
+            .replace('#', ' ')
+            .split(new RegExp('[;,.?]', 'g')));
     };
     console.log(mapped);
     const sentences = [].concat.apply([], mapped);
     console.log(sentences);
     let scope = function(cards, i){
-        if(i == cards.length){
+        if(i == cards.length || !speaking){
             return;
         }
         
@@ -101,5 +107,6 @@ function speak(){
             scope(cards, i+1)
         });
     }
+    speaking = true;
     scope(sentences, 0);
 }
