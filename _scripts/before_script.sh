@@ -11,7 +11,7 @@ for directory in _wikibook _docs _tutorials;
 	for file in $TRAVIS_BUILD_DIR/$directory/*md;
 		do
 		TEMP_FILE=$(basename $file);
-		pandoc -f markdown -t plain --wrap=none -o $TEMP_FILE $file;
+		pandoc -f markdown -t plain -o $TEMP_FILE $file;
 		java -jar LanguageTool-3.7/languagetool-commandline.jar \
 			-l en -d "EN_QUOTES,WHITESPACE_RULE,COMMA_PARENTHESIS_WHITESPACE" \
 			$TEMP_FILE;
