@@ -5,33 +5,31 @@ title: Syllabus
 
 ## Course Description (Informal)
 
-This course will challenge you as a programmer and nascent computer scientist at Illinois. Rather than the sand-boxed, contained, and simple problems of your previous courses that used significant scaffolding and pre-built libraries, you will be interacting with a much more complex environment: the entire system, and even computing networks.
+This course will challenge you as a programmer and nascent computer scientist at Illinois. Rather than the sand-boxed, contained, and simple problems of your previous courses that used significant scaffolding and pre-built libraries, you will be interacting with a much more complex environment: the entire system and even computing networks.
 
-Further, you will need to fully understand how memory is allocated, used and re-used within a process and how input and output can be buffered (or not) between processes and files. In short, it is time to remove the carefully tailored training wheels and that closed course and instead fling open the doors and welcome you to the big wide world of computing.
+Further, you will need to fully understand how memory is allocated, used, and re-used within a process. Also, you will need to know how input and output can be buffered (or not) between processes and files. In short, it is time to remove the carefully tailored training wheels and that closed course and instead fling open the doors, welcoming you to the big wide world of computing.
 
-Oh, and did we mention the challenge of concurrency and solving asynchronous problems so that your program can take advantage of the multi-CPU cores inside each machine?
+Oh, and did we mention the challenge of concurrency and solving asynchronous problems, so that your program can take advantage of the multi-core CPU inside each machine?
 
 ## Course Description (Formal)
 
-System programming refers to writing code that tasks advantage of operating system support for programmers.
-This course is designed to introduce you to system programming.
+This course is an introduction to System Programming. System Programming refers to writing code that prioritizes operating system support for programmers.
 
 A computer needs an operating system to manage its resources and provide support for common functions such as accessing peripherals. There are two categories of "customers" that an operating system must support.
 
-The first category is the community of users. We have all used computers and you may recognize operating systems' functions such as creating folders (directories) and moving files around. These are examples of operating system support for users. User support is not the objective of this course.
+The first category is the community of users. We have all used computers, and you may recognize operating systems' functions such as creating folders (directories) and moving files around. These are examples of operating system support for users. User support is not the objective of this course.
 
-This course addresses operating system support for the second category of customers; namely, the programmers.
-Those are people who write code to execute on the computer. When you write a program, it may have to interact with physical hardware (memory, flash storage, screen, network, etc.). For example, you may want to get input from a keyboard or mouse, you may want to read some configuration file stored on disk, you may want to output data to a screen or printer, or you may want to access a remote server across a network.
+This course addresses operating system support for the second category of customers; namely, the programmers. Those are people who write code to execute on the computer. When you write a program, it may have to interact with physical hardware (memory, flash storage, screen, network, etc.). For example, you may want to get input from a keyboard or mouse; you may want to read some configuration file stored on disk; you may want to output data to a screen or printer; or you may want to access a remote server across a network.
 
-The operating system presents common interfaces for programmers to perform these functions. The operating system also provides useful abstractions such as "tasks" (also called processes), "threads", and "semaphores". You can make the computer multitask by calling the operating system interface for creating new tasks or new threads. You can make these tasks coordinate and synchronize by using operating system semaphores. You can tell the computer the order in which you want tasks to be executed, which is called a scheduling policy. Finally, you can manage computer memory by calling the operating system function for memory management.
+The operating system presents common interfaces for programmers to perform these functions. It also provides useful abstractions such as "tasks" (also called processes), "threads", and "semaphores". You can make the computer multi-task by calling the operating system interface for creating new tasks or new threads. You can make these tasks coordinate and synchronize by using operating system semaphores. You can tell the computer the order in which you want tasks to be executed, which is called a scheduling policy. Finally, you can manage computer memory by calling the operating system function for memory management.
 
 ## Skills Earned
 
 By the end of this course, you should be proficient at writing programs that take full advantage of operating system support.
 
-To be concrete, we need to fix an operating system and we need to choose a programming language for writing programs. We chose the C language running on a Linux/UNIX operating system (which implements the POSIX standard interface between the programmer and the OS). This pairing of C and UNIX/Linux is used heavily by software that must provide high performance and low-level control of the program's execution. Hence, this course introduces you to systems programming via the specific case of C over UNIX.
+To be concrete, we need to fix an operating system and a programming language. We chose the C language running on a Linux/UNIX operating system, which implements the POSIX standard interface between the programmer and the OS. This pairing of C and UNIX/Linux is used heavily by software that must provide high performance and low-level control of the program's execution. Hence, this course introduces you to systems programming via the specific case of C over UNIX.
 
-By the end of the course you should be proficient with this programming environment and should be able to write non-trivial pieces of software from web server code to your own multiplayer Internet games.
+By the end of the course, you should be proficient with this environment and should be able to write non-trivial pieces of software from web server code to your own multiplayer Internet games.
 
 ## Learning Goals
 
@@ -42,7 +40,7 @@ By the end of the course you should be proficient with this programming environm
 * Explain the meaning and purpose of process control blocks and other mechanisms that the operating system uses to implement the process and thread abstractions.
 * Write, compile, debug, and execute C programs that create, manage and terminate processes and threads on UNIX.
 * Define concurrency and explain the problems that may arise because of concurrent execution of multiple processes or threads. Explain how these problems can be avoided. Write code that avoids these problems.
-* Define semaphores, mutexes, and other synchronization primitives, explain their purpose, and describe their internal implementation.
+* Define semaphores, mutexes, and other synchronization primitives. Also, explain their purpose, and describe their internal implementation.
 * Describe possible problems that arise from improper use of synchronization primitives (such as deadlocks) and present their solutions.
 * Write, compile, debug, and execute C programs that use UNIX synchronization primitives.
 * Describe operating system scheduling and use UNIX interfaces to set and modify scheduling policy parameters.
@@ -64,7 +62,7 @@ By the end of the course you should be proficient with this programming environm
 A really useful, accessible introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
 
 Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
-[cs-education.github.io/sys/](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
+[mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
 No formal textbook is required, but if you really want to buy some books, we recommend the following custom book Angrave put together in 2007:
 
@@ -106,13 +104,13 @@ We publish the following thresholds:
 | [82 - 92)  | B-              |
 | [72 - 82)  | C-              |
 
-If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the MP programming assignments are weighted by the time we give to complete them.
+If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the MP programming assignments are weighted by the time we give to complete them. This means that three week MPs are worth triple one week.
 
-There will be multiple choice quizzes at the testing center approximately every other week. There will also be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc), but in an exam environment. Runnable tests will be provided.
+There will be multiple choice quizzes at the testing center approximately every other week. There will also be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
 
-The quizzes and midterms will be in room 57 Grainger Library (to the far-left side of the basement) and you will be asked to register for a time slot that works for you. The signup link is [here](https://cbtf.engr.illinois.edu/sched/) (Chrome recommended). Rules, requirements and expectations of the testing center are [here](https://cbtf.engr.illinois.edu/).
+The quizzes and midterms will be in room 57 Grainger Library (to the far-left side of the basement). You will be asked to register for a time slot that works for you at the [schedule sign-up link](https://cbtf.engr.illinois.edu/sched/) (Chrome recommended). Here are the [rules, requirements and expectations](https://cbtf.engr.illinois.edu/).
 
-For grading, we will drop your lowest quiz score, lowest lab score, and one lab attendance grade. Sickness, vacation, sleep, _whatever_; we don't care. Unless exceptions (which are almost never granted) have been arranged with the course admin ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies, missing three (or more) sections or three (or more) quizzes is automatically a failing grade.
+For grading, we will drop your lowest quiz score, lowest lab score, and one lab attendance grade. Sickness, vacation, sleep, _whatever_; we don't care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies. Missing three (or more) sections or three (or more) quizzes is automatically a failing grade.
 
 The 3-hour handwritten final exam is comprehensive and will test all CS 241 topics, including programming topics covered in the MP and Labs. Do not book your flights until the exam date is known. Early exams will not be offered. Conflict final exams will be offered if you have three exams in a 24 hour period, or you have an exam in another, smaller enrollment course at the same time.
 
@@ -120,9 +118,9 @@ Grading issues should be raised with your TA, e.g. during section or by email. M
 
 ## Exams
 
-All exams, except the final, are in the CBTF and require signing up here: <https://cbtf.engr.illinois.edu/>
+All exams, except the final, can be signed up at the [CBTF sign up page](https://cbtf.engr.illinois.edu/)
 
-Approximate schedule (subject to change). The CBTF schedule when known will be published Piazza, but is also available at the above link.
+The tentative schedule is below. The CBTF schedule, when known, will be published Piazza, but is also available at the above link.
 
 |  Week  | Exam             |
 |--------|------------------|
@@ -135,11 +133,11 @@ Approximate schedule (subject to change). The CBTF schedule when known will be p
 | Week 12| Midterm 2        |
 | Week 13| Quiz 5           |
 
-The final exam will be Scantron- and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [here](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT).
+The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT).
 
 ### Practice Midterm Explanation
 
-The practice midterm is ungraded (worth 0% of your final grade). Unlike the real midterm, there are no unit-tests provided.
+The practice midterm is ungraded. Unlike the real midterm, there are no unit-tests provided.
 
 This exam will let you practice using `man` from the command line (e.g., `man 2 open` will open the documentation on the system call `open`). Note that the C library calls are in section 3. This exam will also let you practice using the provided text editors: `vim`, `nano`, `gedit`, etc.
 
@@ -147,15 +145,15 @@ The practice exam is not required, but we highly encourage you to take it. You w
 
 ## Absences
 
-If your absence is unplanned—if you have a sudden illness or have a sudden death in the family—we will deal with your situation on a case-by-case basis via the course admin ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)).
+If your absence is unplanned -- a sudden illness or have a sudden death in the family -- we will deal with your situation on a case-by-case basis via the course admin ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)).
 
 For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://www.odos.uiuc.edu/contact/) note stating that you contacted the Emergency Dean.
 
 ## How to Succeed
 
-Is this course hard? Yes, but you are bright, and you're taking computer science at UIUC. Just schedule the time to do it right. The two big changes from CS 225: first, your code is now much smaller than the complexity of the system around it. Second, no, we will not debug your code for you.
+Is this course hard? Yes, but you are bright. You're taking computer science at UIUC. Schedule the time to do it. The two big changes from CS 225: first, your code is now much smaller than the complexity of the system around it. Second, no, we will not debug your code for you.
 
-How to fail: Some students do not take the time to learn how to debug and reason about system code and then end up complaining that office hours is too busy before deadlines. If you can't write correct solutions you need to learn _exactly_ how C works, the _details_ of the system calls you are using, learn _better debugging_ skills and _reason_ behind synchronization. Only then can you spot and fix mistakes. Hard? Yes. Impossible? No.
+With lecture content, one lab, one MP, and one Quiz/Midterm every week or two, it can get easy to fall behind. How to fail: some students do not take the time to learn how to debug and reason about system code and then end up complaining that office hours is too busy before deadlines. If you can't write correct solutions, you need to learn _exactly_ how C works, the _details_ of the system calls you are using, learn _better debugging_ skills and _reason_ behind synchronization. Only then can you spot and fix mistakes. Hard? Yes. Impossible? No. 
 
 There are no short-cuts to mastery but we can help you get there. We recommend the Feynman technique to learning. Remember, simply recognizing some text in a past exam or in the wikibook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes this requires effort. Start the assignments early; expect to get stuck. Write code _slowly_; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending "time on task" with these materials.
 
@@ -179,9 +177,9 @@ If you have a question about your personal autograde results after the final aut
 
 CS 241 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously in CS 241, and all cases of cheating will be brought to the University, your department, and your college. You should understand how [academic integrity](https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code) applies to Computer Science courses.
 
-<span style="color:green">Rule of Thumb:</span> If at any point you submit an assignment that does not reflect your understanding of the material, then you have probably cheated.
+`Rule of Thumb:` If at any point you submit an assignment that does not reflect your understanding of the material, then you have probably cheated.
 
-<span style="color:red">EVERY ASSIGNMENT IS A SOLO ASSIGNMENT IN THIS CLASS!</span>
+`EVERY ASSIGNMENT IS A SOLO ASSIGNMENT IN THIS CLASS!`
 
 This means you are not allowed to split the work with a partner, unlike other 2xx classes. You are, however, allowed to discuss the assignments at a very high level.
 
