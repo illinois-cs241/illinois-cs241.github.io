@@ -61,7 +61,7 @@ module Jekyll
       html_decoder = HTMLEntities.new
       # Style all the links
       page.css('a').each do |link|
-        link['class'] = 'fancy-link'
+        link['class'] = 'fancy-link wiki-link'
         ref = link['href']
         
         if ref.index(BASE) == 0
