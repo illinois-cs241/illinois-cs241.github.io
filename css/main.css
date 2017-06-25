@@ -53,6 +53,33 @@ h2 {
 	margin-top: -20px;
 }
 
+@media (max-width: 767px) {
+	h1 {
+		font-size: 36px;
+	}
+
+	h2 {
+		font-size: 22px;
+	}
+
+	p,li {
+		font-size: 12px;
+		text-indent: 10px;
+	}
+
+	p *, li *{
+		text-indent:0px;
+	}
+}
+
+p {
+	text-indent: 20px;
+}
+
+p * {
+	text-indent: 0px;
+}
+
 .staff {
   width: 100%;
 }
@@ -258,14 +285,15 @@ h1, h2, h3 {
 	text-decoration: none;
 }
 
-a:not([class]){
+.fancy-link {
     text-decoration: none !important;
 	color: #9CB0C1;
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0px;
 }
-a:not([class]):after {
+
+.fancy-link:after {
 	content: '';
 	display: block;
 	margin: auto;
@@ -274,10 +302,12 @@ a:not([class]):after {
 	background: transparent;
 	transition: width .3s ease, background-color .3s ease;
 }
-a:not([class]):hover:after {
+
+.fancy-link:hover:after {
 	width: 100%;
 	background: #9CB0C1;
 }
+
 .container-fluid {
     padding-right: 15px;
     padding-left: 15px;

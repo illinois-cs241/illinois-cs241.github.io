@@ -5,7 +5,7 @@ require 'json'
 
 $man_filename = '_data/man.json'
 $data_hash = JSON.parse(File.read($man_filename))
-
+BASE = 'https://github.com/angrave/SystemProgramming/wiki/'
 class Nokogiri::XML::Node
   # Create a hierarchy on a document based on heading levels
   #   wrap   : e.g. "<section>" or "<div class='section'>"
@@ -58,6 +58,22 @@ module Jekyll
 
       # Wrap the h2s in the title attribute
       h2s.wrap("<div class='title'/>")
+      html_decoder = HTMLEntities.new
+      # Style all the links
+      page.css('a').each do |link|
+        link['class'] = 'fancy-link'
+        ref = link['href']
+        
+        if ref.index(BASE) == 0
+            substr = ref[BASE.length..-1]
+            arr = ref.reverse.split('#', 2).map(&:reverse).reverse
+            lhs = URI.unescape(arr[0]).downcase
+            rhs = arr[1]
+            title = lhs.gsub(/[#,:"]/, '').downcase
+            final = "./#{File.basename(title, '.md')}.html"
+            link['href'] = "#{final}\##{rhs}"
+        end
+      end
 
       # Anchors!
       page.css('.title').each do |card|
@@ -99,7 +115,8 @@ module Jekyll
       		table['class'] = "table"
       	end
       end
-      html_decoder = HTMLEntities.new
+
+      
       # Style all the code
       page.css('.language-C').each_with_index do |div, i|
         id_target = "code-copy-#{i}"
