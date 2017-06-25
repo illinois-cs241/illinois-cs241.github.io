@@ -6,11 +6,12 @@ branches:
         develop
 before_install:
     - sudo apt-get update
-    - sudo apt-get install python3
-    - sudo apt-get install pandoc
-    - sudo apt-get install oracle-java8-set-default
+    - sudo apt-get install python3 tidy pandoc oracle-java8-set-default
+    - sudo perl -MCPAN -e 'install W3C::LinkChecker'
 before_script:
     - $TRAVIS_BUILD_DIR/_scripts/before_script.sh
+after_success:
+    - $TRAVIS_BUILD_DIR/_scripts/after_success.sh
 deploy:
     local_dir: _site
     provider: pages
