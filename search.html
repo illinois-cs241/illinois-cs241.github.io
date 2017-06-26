@@ -11,13 +11,24 @@
   <div class="col-md-10">
     <div class="search-page hidden">
     <h1>Search</h1>
-    <input type="text" name="search" class="search" placeholder="Search..">
+
+    <div class="container-fluid">
+    <div class="row row-eq-height no-gutter">
+    <div class="search-icon-div col-md-1 col-sm-1 col-xs-1">
+      <span class="glyphicon glyphicon-search"></span>
+    </div>
+    <div class="search-box-div col-md-11 col-sm-11 col-xs-11">
+    <input class="search form-control" placeholder="Search" name="search" id="search" type="text" alt="search">
+    </div>
+    </div>
+
+    <div class="content">
+      <ul class="results-list">
+      </ul>
+    </div>
+    </div>
     </div>
     <div class="loader">Loading...</div>
-    <div class="content">
-    	<ul class="results-list">
-    	</ul>
-    </div>
     {% include footer.html %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.0.1/lunr.min.js"></script>
     <script src="./js/search.js"></script>

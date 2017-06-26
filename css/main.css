@@ -412,3 +412,45 @@ div.highlighter-rouge {
 	margin-left: 40px;
 	width:75%;
 }
+.search-icon-div {
+	width: initial;
+	padding-left: 10px;
+	background-color: white;
+	height: 34px;
+	border-radius: 3px 0px 0px 3px;
+}
+.glyphicon-search {
+	font-size: 32px;
+	top: 0px;
+	color: #2C72AD;
+}
+
+.search {
+	border-radius: 0px 3px 3px 0px;
+	border: 0px;
+	outline:none;
+	box-shadow:none;
+}
+
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.result-link {
+	font-size: 24px;
+	text-decoration: underline;
+}
+
+.result-div {
+	padding-bottom: 12px;
+}
+
+.highlight-result {
+	background-color: yellow;
+	border-radius: 3px;
+	color: black;
+	padding-left: 2px;
+	padding-right: 2px;
+}
