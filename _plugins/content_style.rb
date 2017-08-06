@@ -139,14 +139,11 @@ module Jekyll
         div.add_child(textarea)
       end
 
+      # Man page links
       page.css('code.highlighter-rouge').each do |code|
         uri = $data_hash[code.inner_html]
         if uri != nil
-          code['data-toggle'] = "popover";
-          code['data-placement'] = "top";
-          code['title'] = "<a href=#{uri}>man</a>"
-          code['class'] += " man-tooltip"
-          code['data-html'] = "true"
+          code.inner_html = "<a href=#{uri} class='fancy-link'>#{code.inner_html}</a>"
         end
       end
 
