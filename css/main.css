@@ -215,6 +215,10 @@ h1, h2, h3 {
 	color: #F2F2F4;
 }
 
+img {
+	width: 100%;
+}
+
 /* Loader */
 
 .hidden {

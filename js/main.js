@@ -86,7 +86,10 @@ function speak(){
     const cards = $('.card').clone();
     const mapped = []
     for(let i = 0; i < cards.length; ++i){
-        mapped.push($(cards[i]).remove('.code').text().replace(/\n*/i, '')
+    	let temp = $(cards[i]);
+    	temp.find('code').remove();
+    	temp.find('h2').remove();
+        mapped.push(temp.text().replace(/\n*/i, '')
             .replace('#', ' ')
             .split(new RegExp('[;,.?]', 'g')));
     };

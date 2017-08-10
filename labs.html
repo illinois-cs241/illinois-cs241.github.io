@@ -30,11 +30,11 @@
       		    	<td>{{lab.releaseDate}}</td>
                 <td>{{lab.dueDate}}</td>
                 {% if lab.resources %}
-                <td><a href="./lab_resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html"><img src="./images/lab_assets/animation.png"></a></td>
+                <td><a href="./lab_resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html" class="fancy-link wiki-link"><img src="./images/lab_assets/animation.png"></a></td>
                 
                 {% if lab.worksheet == nil or lab.worksheet != false %}
                 <td>
-                <a href="./lab_resources/handouts/{{lab.name | downcase | replace: " ", "_"}}.pdf"><img src="./images/lab_assets/file-document.png"></a></td>
+                <a href="./lab_resources/handouts/{{lab.name | downcase | replace: " ", "_"}}.pdf" class="fancy-link wiki-link"><img src="./images/lab_assets/file-document.png"></a></td>
                 {% else %}
                 <td></td>
                 {% endif %}
