@@ -86,12 +86,10 @@ The following is subject to minor changes:
 
 ```
 Final Exam : 25%
-Midterm 1  : 10%
-Midterm 2  : 10%
-M/C Quizzes: 13%
+Quizzes: 35%
 
-MP Programming Assignments : 25%
-Lab Programming Assignments: 13%
+MP Programming Assignments : 27%
+Lab Programming Assignments: 9%
 
 Lab Attendance & other items: 4%
 ```
