@@ -40,7 +40,6 @@
         summary: "5. fork and waitpid"
         resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-1%3A-Introduction'>Wikibook forking</a>"
         color: "#E91E63"
-      -
     week: "9/4 - 9/8"
     announcement: >
       <!-- <ul>
