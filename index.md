@@ -104,11 +104,13 @@ We publish the following thresholds:
 
 If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted, while the MP programming assignments are weighted by the time we give to complete them. This means that three week MPs are worth triple one week.
 
-There will be multiple choice quizzes at the testing center approximately every other week. There will also be two graded programming midterms where you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
+The quizzes are all at the testing center approximately every other week. They are a mix of multiple choice questions and at least one short coding problem. In the coding problem you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
 
-The quizzes and midterms will be in room 57 Grainger Library (to the far-left side of the basement). You will be asked to register for a time slot that works for you at the [schedule sign-up link](https://cbtf.engr.illinois.edu/sched/) (Chrome recommended). Here are the [rules, requirements and expectations](https://cbtf.engr.illinois.edu/).
+The quizzes  will be in room 57 Grainger Library (to the far-left side of the basement). You will be asked to register for a time slot that works for you at the [schedule sign-up link](https://cbtf.engr.illinois.edu/sched/) (Chrome recommended). Here are the [rules, requirements and expectations](https://cbtf.engr.illinois.edu/).
 
-For grading, we will drop your lowest quiz score, lowest lab score, and one lab attendance grade. Sickness, vacation, sleep, _whatever_; we don't care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies. Missing three (or more) sections or three (or more) quizzes is automatically a failing grade.
+For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Sickness, vacation, sleep, _whatever_; we don't care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies. Missing three (or more) sections or three (or more) quizzes is automatically a failing grade.
+
+At the end of the semester there will be a last chance regrade option for two machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops.
 
 The 3-hour handwritten final exam is comprehensive and will test all CS 241 topics, including programming topics covered in the MP and Labs. Do not book your flights until the exam date is known. Early exams will not be offered. Conflict final exams will be offered if you have three exams in a 24 hour period, or you have an exam in another, smaller enrollment course at the same time.
 
@@ -118,28 +120,27 @@ Grading issues should be raised with your TA, e.g. during section or by email. M
 
 All exams, except the final, can be signed up at the [CBTF sign up page](https://cbtf.engr.illinois.edu/)
 
-The tentative schedule is below. The CBTF schedule, when known, will be published Piazza, but is also available at the above link.
+The rough schedule is below. The CBTF detailed schedule is available at the above link.
 
 |  Week  | Exam             |
 |--------|------------------|
-| Week 4 | Quiz 1           |
-| Week 5 | Quiz 2           |
-| Week 6 | Practice Midterm |
-| Week 7 | Midterm 1        |
-| Week 8 | Quiz 3           |
-| Week 11| Quiz 4           |
-| Week 12| Midterm 2        |
-| Week 13| Quiz 5           |
+| Week 2 | Quiz 1           |
+| Week 3 | Quiz 2           |
+| Week 5 | Quiz 3           |
+| Week 7 | Quiz 4           |
+| Week 9 | Quiz 5           |
+| Week 11| Quiz 6           |
+| Week 14| Quiz 7           |
 
 The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT).
 
-### Practice Midterm Explanation
+## Coding Assignments
 
-The practice midterm is ungraded. Unlike the real midterm, there are no unit-tests provided.
+There are two different types of coding assignments in this course Labs and Machine Problems. They are both important to you learning but they serve different purposes.
 
-This exam will let you practice using `man` from the command line (e.g., `man 2 open` will open the documentation on the system call `open`). Note that the C library calls are in section 3. This exam will also let you practice using the provided text editors: `vim`, `nano`, `gedit`, etc.
+Labs are primarily teaching exercises designed either to prepare you for the machine problems or to allow you to explore a topic of systems in a hands on manner. They may be done in a collaborative manner. You are allowed to work with each other so as to learn in the best manner for you. This can include sharing code, debug each others code, and discuss the assignment at any level.
 
-The practice exam is not required, but we highly encourage you to take it. You will get to practice your CS 241 skills and exam logistics and therefore more likely to succeed on the real midterm.
+Machine Problems are different while they are also a key learning experience they are also a key assessment of you skills. These are solo exercises and you must work alone. In this case you may not share code in any way. This includes show, share, email, or debug each others code. You may have high level discussions with each other on the ideas in the assignments but that is it. You are responsible for keeping the code for you machine problems private this includes not letting people view your code. You may not publish your code on any open website.
 
 ## Absences
 
@@ -177,10 +178,14 @@ CS 241 is considered a critical step in your ability to create useful programs f
 
 `Rule of Thumb:` If at any point you submit an assignment that does not reflect your understanding of the material, then you have probably cheated.
 
-`EVERY ASSIGNMENT IS A SOLO ASSIGNMENT IN THIS CLASS!`
+In the cases of lab you are allowed to collaborate with others in the class this can include detailed debugging and code sharing.
 
-This means you are not allowed to split the work with a partner, unlike other 2xx classes. You are, however, allowed to discuss the assignments at a very high level.
+`EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!`
 
-Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive a letter grade reduction, two letter grades for two assignments, and so on. If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides [subversion](https://subversion.ews.illinois.edu) and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
+This means you are not allowed to split the work with a partner, unlike other 2xx classes. You are, however, allowed to discuss the assignments at a very high level. If you are found to have shared code work on any machine problem you will receive a zero on that assignment and a 10% penalty in the course for each incident where you are found to have used material that is not yours.
+
+Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 10% penalty. You also may not publish our code anywhere publicly and you will similarly receive a penalty for sharing our code.  If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides [subversion](https://subversion.ews.illinois.edu) and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
+
+In the case of quizzes in the CBTF it is a violation of our course policy to access or provide access to the quiz material outside your registered window. If you are found to have done so you will receive a zero on the quiz and a 10% penalty in the course. This include seeking descriptions of the questions from students who have taken the quiz as well as any other method that would give you access to the quiz outside your scheduled time. If there is prep-material provided in lecture or on piazza you are welcome to share that material freely. 
 
 We want you to get the most out your education, and cheating not only affects your peers, but also you.
