@@ -108,7 +108,7 @@ The quizzes are all at the testing center approximately every other week. They a
 
 The quizzes  will be in room 57 Grainger Library (to the far-left side of the basement). You will be asked to register for a time slot that works for you at the [schedule sign-up link](https://cbtf.engr.illinois.edu/sched/) (Chrome recommended). Here are the [rules, requirements and expectations](https://cbtf.engr.illinois.edu/).
 
-For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Sickness, vacation, sleep, _whatever_; we don't care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies. Missing three (or more) sections or three (or more) quizzes is automatically a failing grade.
+For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Sickness, vacation, sleep, _whatever_; we don't care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies.
 
 At the end of the semester there will be a last chance regrade option for two machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops.
 
@@ -154,7 +154,7 @@ Is this course hard? Yes, but you are bright. You're taking computer science at 
 
 With lecture content, one lab, one MP, and one Quiz/Midterm every week or two, it can get easy to fall behind. How to fail: some students do not take the time to learn how to debug and reason about system code and then end up complaining that office hours is too busy before deadlines. If you can't write correct solutions, you need to learn _exactly_ how C works, the _details_ of the system calls you are using, learn _better debugging_ skills and _reason_ behind synchronization. Only then can you spot and fix mistakes. Hard? Yes. Impossible? No. 
 
-There are no short-cuts to mastery but we can help you get there. We recommend the Feynman technique to learning. Remember, simply recognizing some text in a past exam or in the wikibook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes, this requires effort. Start the assignments early; expect to get stuck. Write code _slowly_; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending "time on task" with these materials.
+There are no short-cuts to mastery but we can help you get there. We recommend the [Feynman technique](https://www.youtube.com/watch?v=tkm0TNFzIeg) to learning. Remember, simply recognizing some text in a past exam or in the wikibook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes, this requires effort. Start the assignments early; expect to get stuck. Write code _slowly_; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending "time on task" with these materials.
 
 ## Autograding Policy
 
