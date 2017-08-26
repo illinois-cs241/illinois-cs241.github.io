@@ -1,87 +1,87 @@
 ---
-  -
-    name: "Know Your Tools"
-    releaseDate: "Week 1"
-    dueDate: "Week 2"
-    url: "know_your_tools"
-    resources: true
-  -
-    name: "Extreme Edge Cases"
-    releaseDate: "Week 2"
-    dueDate: "Week 3"
-    url: "extreme_edge_cases"
-    resources: true
-  -
-    name: "Utilities Unleashed"
-    releaseDate: "Week 3"
-    dueDate: "Week 4"
-    url: "utilities_unleashed"
-    resources: true
-  -
-    name: "Mini Valgrind"
-    releaseDate: "Week 4"
-    dueDate: "Week 5"
-    url: "mini_valgrind"
-    resources: true
-  -
-    name: "Teaching Threads"
-    releaseDate: "Week 5"
-    dueDate: "Week 6"
-    url: "teaching_threads"
-    resources: true
-  -
-    name: "Splendid Synchronization"
-    releaseDate: "Week 6"
-    dueDate: "Week 7"
-    url: "splendid_synchronization"
-    resources: true
-  -
-    name: "Deadlocked Diners"
-    releaseDate: "Week 7"
-    dueDate: "Week 8"
-    url: "deadlocked_diners"
-    resources: true
-  -
-    name: "Ideal Indirection"
-    releaseDate: "Week 8"
-    dueDate: "Week 9"
-    url: "ideal_indirection"
-    resources: true
-  -
-    name: "Pied Piper"
-    releaseDate: "Week 9"
-    dueDate: "Week 11"
-    url: "pied_piper"
-    worksheet: false
-    resources: true
-  -
-    name: "Savage Scheduler"
-    releaseDate: "Week 11"
-    dueDate: "Week 12"
-    url: "scheduler"
-  -
-    name: "Chatroom"
-    releaseDate: "Week 12"
-    dueDate: "Week 13"
-    url: "chatroom"
-    resources: true
-  -
-    name: "Finding Filesystems"
-    releaseDate: "Week 13"
-    dueDate: "Week 14"
-    url: "finding_filesystems"
-    resources: true
-  -
-    name: "Mad Mad Access Pattern"
-    releaseDate: "Week 14"
-    dueDate: "Week 15"
-    url: "mad_mad_access_pattern"
-    worksheet: false
-    resources: true
-  -
-    name: "Super Linux Kernel Super Lab"
-    releaseDate: "Week 15"
-    dueDate: "Week 16"
-    url: "super_linux_kernel_super_lab"
-    resources: true
-    worksheet: false
+  # -
+  #   name: "Know Your Tools"
+  #   releaseDate: "Week 1"
+  #   dueDate: "Week 2"
+  #   url: "know_your_tools"
+  #   resources: true
+  # -
+  #   name: "Extreme Edge Cases"
+  #   releaseDate: "Week 2"
+  #   dueDate: "Week 3"
+  #   url: "extreme_edge_cases"
+  #   resources: true
+  # -
+  #   name: "Utilities Unleashed"
+  #   releaseDate: "Week 3"
+  #   dueDate: "Week 4"
+  #   url: "utilities_unleashed"
+  #   resources: true
+  # -
+  #   name: "Mini Valgrind"
+  #   releaseDate: "Week 4"
+  #   dueDate: "Week 5"
+  #   url: "mini_valgrind"
+  #   resources: true
+  # -
+  #   name: "Teaching Threads"
+  #   releaseDate: "Week 5"
+  #   dueDate: "Week 6"
+  #   url: "teaching_threads"
+  #   resources: true
+  # -
+  #   name: "Splendid Synchronization"
+  #   releaseDate: "Week 6"
+  #   dueDate: "Week 7"
+  #   url: "splendid_synchronization"
+  #   resources: true
+  # -
+  #   name: "Deadlocked Diners"
+  #   releaseDate: "Week 7"
+  #   dueDate: "Week 8"
+  #   url: "deadlocked_diners"
+  #   resources: true
+  # -
+  #   name: "Ideal Indirection"
+  #   releaseDate: "Week 8"
+  #   dueDate: "Week 9"
+  #   url: "ideal_indirection"
+  #   resources: true
+  # -
+  #   name: "Pied Piper"
+  #   releaseDate: "Week 9"
+  #   dueDate: "Week 11"
+  #   url: "pied_piper"
+  #   worksheet: false
+  #   resources: true
+  # -
+  #   name: "Savage Scheduler"
+  #   releaseDate: "Week 11"
+  #   dueDate: "Week 12"
+  #   url: "scheduler"
+  # -
+  #   name: "Chatroom"
+  #   releaseDate: "Week 12"
+  #   dueDate: "Week 13"
+  #   url: "chatroom"
+  #   resources: true
+  # -
+  #   name: "Finding Filesystems"
+  #   releaseDate: "Week 13"
+  #   dueDate: "Week 14"
+  #   url: "finding_filesystems"
+  #   resources: true
+  # -
+  #   name: "Mad Mad Access Pattern"
+  #   releaseDate: "Week 14"
+  #   dueDate: "Week 15"
+  #   url: "mad_mad_access_pattern"
+  #   worksheet: false
+  #   resources: true
+  # -
+  #   name: "Super Linux Kernel Super Lab"
+  #   releaseDate: "Week 15"
+  #   dueDate: "Week 16"
+  #   url: "super_linux_kernel_super_lab"
+  #   resources: true
+  #   worksheet: false
