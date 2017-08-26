@@ -102,7 +102,7 @@ We publish the following thresholds:
 | [82 - 92)  | B-              |
 | [72 - 82)  | C-              |
 
-If grade results are significantly postponed due to an internal publishing or IT problem, then regrades may be extended to the following day. All lab programming assignments are equally weighted.  MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week.
+All lab programming assignments are equally weighted.  MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week.
 
 The quizzes are held at the testing center in Grainger Library approximately every other week. Quizzes include a mix of multiple choice questions and at least one short coding problem. In the coding problem you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
 
@@ -110,7 +110,7 @@ The quizzes will be in room 57 Grainger Library (to the far-left side of the bas
 
 For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Sickness, vacation, sleep, _whatever_; we don't care. we don’t care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies.
 
-At the end of the semester there will be a last chance regrade option for two machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops.
+At the end of the semester there will be a last chance regrade option for two weeks of machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops.
 
 The 3-hour handwritten final exam is comprehensive and will test all CS 241 topics, including programming topics covered in the MP and Labs. Do not book your flights until the exam date is known. Early exams will not be offered. Conflict final exams will be offered if you have three exams in a 24 hour period, or you have an exam in another, smaller enrollment course at the same time.
 
