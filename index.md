@@ -3,7 +3,7 @@ layout: doc
 title: Syllabus
 ---
 
-## Course Description (Informal)
+## Course Introduction
 
 This course is designed to challenge you as a programmer and nascent computer scientist at Illinois. Rather than the sand-boxed, contained, and simple problems of your previous courses that used significant scaffolding and pre-built libraries, you will be interacting with a much more complex environment: the entire system and even computing networks.
 
@@ -11,7 +11,7 @@ Further, you will need to fully understand how memory is allocated, used, and re
 
 Oh, and did we mention the challenge of concurrency and solving asynchronous problems, so that your program can take advantage of the multi-core CPU inside each machine?
 
-## Course Description (Formal)
+## Formal Course Description
 
 This course is an introduction to System Programming. System Programming refers to writing code that prioritizes operating system support for programmers.
 
