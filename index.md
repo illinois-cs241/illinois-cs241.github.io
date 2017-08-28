@@ -106,7 +106,13 @@ All lab programming assignments are equally weighted.  MP programming assignment
 
 The quizzes are held at the testing center in Grainger Library approximately every other week. Quizzes include a mix of multiple choice questions and at least one short coding problem. In the coding problem you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
 
-The quizzes will be in room 57 Grainger Library (to the far-left side of the basement). You will be asked to register for a time slot that works for you at the [schedule sign-up link](https://cbtf.engr.illinois.edu/sched/) (Chrome recommended). Here are the [rules, requirements and expectations](https://cbtf.engr.illinois.edu/).
+This course uses the College of Engineering Computer-Based Testing Facility (CBTF) for its quizzes[https://cbtf.engr.illinois.edu/sched/](https://cbtf.engr.illinois.edu/sched/).
+
+The policies of the CBTF are the policies of this course, and academic integrity infractions related to the CBTF are infractions in this course.
+
+If you have accommodations identified by the [Division of Rehabilitation-Education Services (DRES)](http://www.disability.illinois.edu/) for exams, please take your Letter of Accomodation (LOA) to the CBTF proctors in person before you make your first exam reservation. The proctors will advise you as to whether the CBTF provides your accommodations or whether you will need to make other arrangements with your instructor.
+
+Any problem with testing in the CBTF **must** be reported to CBTF staff at the time the problem occurs. If you do not inform a proctor of a problem during the test then you **forfeit** all rights to redress.
 
 For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Sickness, vacation, sleep, _whatever_; we don't care. we don’t care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies.
 
