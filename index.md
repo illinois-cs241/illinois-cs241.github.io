@@ -156,14 +156,14 @@ For illness-related excuses, you will need a doctor's note of some kind verifyin
 
 ## How to Succeed
 
-Is this course hard? Yes, but you are bright. You're taking computer science at UIUC. Schedule the time to do it. The two big changes from CS 225: 
+Is this course hard? Yes, but you are bright. You're taking computer science at UIUC. Schedule the time to do it. The two big changes from CS 225:
 
 * your code is now much smaller than the complexity of the system around it.
 * no, we will not debug your code for you.
 
 With lecture content, one lab, one MP, and one Quiz/Midterm every week or two, it can get easy to fall behind.
 
-How to fail: some students do not take the time to learn how to debug and reason about system code and then end up complaining that office hours is too busy before deadlines. If you can't write correct solutions, you need to learn _exactly_ how C works, the _details_ of the system calls you are using, learn _better debugging_ skills and _reason_ behind synchronization. Only then can you spot and fix mistakes. Hard? Yes. Impossible? No. 
+How to fail: some students do not take the time to learn how to debug and reason about system code and then end up complaining that office hours is too busy before deadlines. If you can't write correct solutions, you need to learn _exactly_ how C works, the _details_ of the system calls you are using, learn _better debugging_ skills and _reason_ behind synchronization. Only then can you spot and fix mistakes. Hard? Yes. Impossible? No.
 
 There are no shortcuts to mastery, but we can help you get there. We recommend the [Feynman technique](https://www.youtube.com/watch?v=tkm0TNFzIeg) to learning. Remember, simply recognizing some text in a past exam or in the wikibook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes, this requires effort. Start the assignments early; expect to get stuck. Write code _slowly_; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending "time on task" with these materials.
 
@@ -173,30 +173,30 @@ You walk into the investor meeting ready to show your demo. You ship your code r
 
 Forgot to commit or your committed code that does not compile? Zero. The basic headline is that you're not in Kansas anymore (to quote Dorothy). Don't leave it until the last minute.
 
-We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected in a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM, which is near identical to the grading machine. We will attempt to give you some partial credit if your code passes the tests.
+We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected on a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM, which is near-identical to the grading machine. We will attempt to give you some partial credit if your code passes the tests.
 
-If you have a question about your personal autograder results after the final autograder, then feel free to make a private piazza post titled `<assignment name> Autograde Question` with the folders/tags/labels `autograder` and `<assignment name>` selected.
- 
-* It will take time to go through autograder questions.  So please do not expect an immediate (or even same day/ same week) answer.  Trying to debug 20+ people's code and the autograder takes time.
-* `You must show us your test cases first. If they are not close to exhaustive, we reserve to right to not answer your question.`
-* Questions like "What is test x?" is **not** something we will answer.
-* These questions should be for "I have exhaustive test cases for X, so how am I failing Y?"
-* Please add your netid in the post, so we can look up your code if needed. 
+If you have a question about your personal autograder results after the final autograde run, then feel free to make a private Piazza post titled "&lt;assignment name&gt; Autograde Question" with the folders/tags/labels `autograder` and `<assignment name>` selected.
+
+* It will take time to go through autograder questions, so please do not expect an immediate (or even same day or same week) response. We will try to answer you as quickly as possible.
+* _You must show us your test cases first. If they are not close to exhaustive, we reserve to right to not answer your question._
+* We will not tell you the details of specific tests, beyond what the test description already says.
+* These questions should be for "I have exhaustive test cases for _X_, so how am I failing _Y_?"
+* Please mention your NetID in the post, so we can look up your code if needed.
 
 ## Academic Integrity
 
 CS 241 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously in CS 241, and all cases of cheating will be brought to the University, your department, and your college. You should understand how [academic integrity](https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code) applies to Computer Science courses.
 
-`Rule of Thumb:` If at any point you submit an assignment that does not reflect your understanding of the material, then you have probably cheated.
+__Rule of Thumb:__ If at any point you submit an assignment that does not reflect your understanding of the material, then you have probably cheated.
 
-In the cases of lab you are allowed to collaborate with others in the class this can include detailed debugging and code sharing.
+In the cases of labs, you are allowed to collaborate with others in the class. This can include detailed debugging and code sharing.
 
-`EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!`
+__EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!__
 
-This means you are not allowed to split the work with a partner, unlike other 2xx classes. You are, however, allowed to discuss the assignments at a very high level. If you are found to have shared code work on any machine problem you will receive a zero on that assignment and a 10% penalty in the course for each incident where you are found to have used material that is not yours.
+This means you are not allowed to split the work with a partner, unlike other 2xx classes. You are, however, allowed to discuss the assignments at a very high level. If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% penalty in the course for each incident where you are found to have used material that is not yours.
 
 Additionally, you may not publish your solutions or leave them in “plain view”, thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 20% penalty. You also may not publish our code anywhere publicly and you will receive the same penalty for sharing our code. If you are confused on what it means to be “publicly accessible”, then do not put your code anywhere besides [subversion](https://subversion.ews.illinois.edu) and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
 
-In the case of quizzes in the CBTF it is a violation of our course policy to access or provide access to the quiz material outside your registered window. If you are found to have done so you will receive a zero on the quiz and a 10% penalty in the course. This includes seeking descriptions of the questions from students who have taken the quiz as well as any other method that would give you access to the quiz outside your scheduled time. If there is prep-material provided in lecture or on piazza you are welcome to share that material freely. 
+In the case of quizzes in the CBTF, it is a violation of our course policy to access or provide access to the quiz material outside your registered window. If you are found to have done so you will receive a zero on the quiz and a 10% penalty in the course. This includes seeking descriptions of the questions from students who have taken the quiz, as well as any other method that would give you access to the quiz outside your scheduled time. If there is prep material provided in lecture or on Piazza, you are welcome to share that material freely.
 
 We want you to get the most out your education, and cheating not only affects your peers, but also your level of knowledge and ability.
