@@ -11,7 +11,7 @@
     netid: cs241admin
     class: ""
     roles: "Graduate Assistant: Assists with course administration (e.g. exam sickness, DRES)"
-    specialty:
+    specialty: ""
     semesters: all semesters
 -
     name: Ben Kurtovic
@@ -81,7 +81,7 @@
     netid: jayndrn2
     class: 18
     roles: Assignment Developer
-    specialty:
+    specialty: ""
     semesters: Spring 2017 and Fall 2017
 -
     name: Yasha Mostofi
@@ -95,75 +95,75 @@
     netid: msh5
     class: 18
     roles: Teaching Assistant
-    specialty:
+    specialty: ""
     semesters: Fall 2016 and Fall 2017
 -
     name: Elaine Ang
     netid: ranang2
-    class:
+    class: ""
     roles: Teaching Assistant
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Bhawesh Chhetri
     netid: bchhet2
-    class:
+    class: ""
     roles: Lab/Office Hours Assistant
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Christian Cygnus
     netid: cygnus2
-    class:
+    class: ""
     roles: Lab/Office Hours Assistant and Assignment Developer
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Han Song Huang
     netid: hhuang74
-    class:
+    class: ""
     roles: Lab/Office Hours Assistant and Assignment Developer
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Angelica Li
     netid: li220
-    class:
+    class: ""
     roles: Assignment Developer
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Jing Rong Lim
     netid: jrlim3
-    class:
+    class: ""
     roles: Lab/Office Hours Assistant
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Nick Magerko
     netid: magerko2
-    class:
+    class: ""
     roles: Assignment Developer
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Steven Shang
     netid: shang9
-    class:
+    class: ""
     roles: Lab/Office Hours Assistant and Assignment Developer
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Sibo Wang
     netid: sibow2
-    class:
+    class: ""
     roles: Lab/Office Hours Assistant
-    specialty:
+    specialty: ""
     semesters: Fall 2017
 -
     name: Yuxuan Zou
     netid: zou17
-    class:
+    class: ""
     roles: Teaching Assistant
-    specialty:
+    specialty: ""
     semesters: Fall 2017
