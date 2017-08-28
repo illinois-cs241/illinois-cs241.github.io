@@ -22,11 +22,11 @@
     {% endif %}
     {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
     {% assign photo = photofile.path | default: "/images/staffPhotos/default.jpg" %}
-    <div class="col-md-3 staff-div" 
+    <div class="col-md-3 staff-div"
         id="{{member.netid}}"
         data-toggle="tooltip"
         data-placement="bottom"
-        title="{{ member.roles }} interested in {{ member.specialty }} and has been on staff for {{ member.semesters }}"
+        title="{{ member.roles }} {% if member.specialty != '' %} interested in {{ member.specialty }}{ % endif %} and has been on staff for {{ member.semesters }}"
         style="background-image: url({{ photo }});">
         <div class="container">
         <div class="row">
