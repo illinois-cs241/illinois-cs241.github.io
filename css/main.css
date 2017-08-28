@@ -143,7 +143,7 @@ table {
 	height:300px;
 	margin-bottom:20px;
 	width:100%;
-	background-color: #F2F2F4;
+	background-color: #FFFFFF;
 	border-radius:3px; /* Has to be equal to the title border */
 }
 
@@ -190,7 +190,7 @@ h1, h2, h3 {
 }
 
 .announcement-card {
-    background-color: #F2F2F4;
+    background-color: #FFFFFF;
     border-radius: 5px;
 }
 
