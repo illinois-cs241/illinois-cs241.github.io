@@ -84,7 +84,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section><section id="so-what-is-reduce" class="titleslide slide level1"><h1>So what is reduce?</h1></section><section class="slide level2">
 
 <figure>
-<img src="/lab_resources/slides/intro_threads/map_funny.png" />
+<img src="/resources/slides/intro_threads/map_funny.png" />
 </figure>
 </section></section>
 <section><section id="what-does-it-look-like-in-code" class="titleslide slide level1"><h1>What does it look like in code?</h1></section><section id="example" class="slide level2">
@@ -107,9 +107,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section></section>
 <section><section id="pthreads-what-are-thooooose" class="titleslide slide level1"><h1>Pthreads? What are thooooose?</h1></section><section id="signature" class="slide level2">
 <h2>Signature</h2>
-<pre class="console"><code>int pthread_create(pthread_t *thread, 
+<pre class="console"><code>int pthread_create(pthread_t *thread,
                     const pthread_attr_t *attr,
-                    void *(*start_routine) (void *), 
+                    void *(*start_routine) (void *),
                     void *arg);</code></pre>
 </section><section class="slide level2">
 
@@ -153,7 +153,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section><section id="some-advanced-stuff" class="titleslide slide level1"><h1>Some advanced stuff</h1></section><section class="slide level2">
 
 <figure>
-<img src="/lab_resources/slides/intro_threads/thread2.png" />
+<img src="/resources/slides/intro_threads/thread2.png" />
 </figure>
 </section><section class="slide level2">
 
@@ -162,7 +162,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>Putting it all together</h2>
 <p>We want you to start a thread for each of the elements, do the computation and alter the array. Dividing up the work it should look something like the following</p>
 <figure>
-<img src="/lab_resources/slides/intro_threads/array.gif" />
+<img src="/resources/slides/intro_threads/array.gif" />
 </figure>
 </section><section id="wait-a-minute-dont-we-need-mutexes-and-stuff" class="slide level2">
 <h2>Wait a minute don’t we need mutexes and stuff?</h2>

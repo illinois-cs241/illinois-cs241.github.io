@@ -73,17 +73,17 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section><section id="the-dining-philosopher-problem" class="titleslide slide level1"><h1>The Dining Philosopher Problem</h1></section><section class="slide level2">
 
 <figure>
-<img src="/lab_resources/slides/dining/traffic.gif" />
+<img src="/resources/slides/dining/traffic.gif" />
 </figure>
 </section><section id="bad-solutions-are-everywhere" class="slide level2">
 <h2>Bad Solutions are Everywhere</h2>
 <figure>
-<img src="/lab_resources/slides/dining/dining.gif" />
+<img src="/resources/slides/dining/dining.gif" />
 </figure>
 </section><section id="whos-a-good-dining-philosopher" class="slide level2">
 <h2>Who’s a good Dining Philosopher</h2>
 <figure>
-<img src="/lab_resources/slides/dining/dogdining.gif" />
+<img src="/resources/slides/dining/dogdining.gif" />
 </figure>
 </section><section id="a-good-overview" class="slide level2">
 <h2>A Good Overview</h2>
@@ -97,7 +97,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <span class="dt">int</span> tries_left;
     pthread_mutex_t *fork_lft = phil-&gt;fork_lft;
     pthread_mutex_t *fork_rgt = phil-&gt;fork_rgt;
-    
+
     <span class="cf">while</span> (running) {
         pthread_mutex_lock(fork_lft);
         pthread_mutex_lock(fork_rgt);
@@ -121,14 +121,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             failed = pthread_mutex_lock( fork_lft);
             failed = (tries_left&gt;<span class="dv">0</span>)? pthread_mutex_trylock( fork_rgt )
                                     : pthread_mutex_lock(fork_rgt);
-            
+
             <span class="cf">if</span> (failed) {
                 pthread_mutex_unlock( fork_lft);
                 tries_left--;
             }
         } <span class="cf">while</span>(failed &amp;&amp; running);
-        
-        <span class="cf">if</span> (!failed) {    
+
+        <span class="cf">if</span> (!failed) {
             usleep( <span class="dv">1</span>+ rand() % <span class="dv">8</span>); <span class="co">//eat</span>
             pthread_mutex_unlock(fork_rgt);
             pthread_mutex_unlock(fork_lft);

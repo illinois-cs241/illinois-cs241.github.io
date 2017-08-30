@@ -26,6 +26,9 @@ collections:
   docs:
     output: true
     permalink: :path
+  resources:
+    output: true
+    permalink: :path
   wikibook:
     output: true
     permalink: :path
