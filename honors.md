@@ -6,7 +6,7 @@ title: Honors
 
 Couldn't get enough systems programming from CS 241? Welcome to the honors section! This course is recommended for those who want to expand their systems knowledge with additional lectures and a semester long project in systems programming.
 
-There will be near-weekly lectures throughout the semester given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241.
+There will be lectures throughout the semester, usually every other week, given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241.
 
 You are also required to propose and complete a project of your own. Your project should be related to systems programming and it should clearly demonstrate and build upon concepts learned in regular [and/or honors] CS 241 lectures. Once your project has been approved by course staff, you will be assigned a mentor who you will check in with weekly for progress reports and code review.
 
@@ -15,11 +15,11 @@ At the end of the semester, you will present your work to your peers. The presen
 ## Grading
 
 ```
-Lecture Attendance  : 25%
+Lecture Attendance  : 15%
 Project Proposal    : 5%
 Weekly Check-ins    : 25%
 
-Presentation        : 10%
+Presentation        : 20%
 Final Project       : 35%
 ```
 
@@ -35,7 +35,7 @@ Your project will be graded in a holistic manner against other projects in the c
 
 ## Absences
 
-We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance, we will drop three attendance grades, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
+We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop one lecture attendance grade, no questions asked. This drop is meant for conflicts that you have control over, such as a vacation or job interviews.
 
 If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or have a sudden death in the family, please refer to the [CS 241 absence policy](./index.html#absences).
 
