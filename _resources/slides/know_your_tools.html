@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -47,17 +47,17 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
-  <link rel="stylesheet" href="/lib/reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/black.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '/lib/reveal.js/css/print/pdf.css' : '/lib/reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -106,7 +106,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section></section>
 <section><section id="virtual-machines" class="titleslide slide level1"><h1>Virtual Machines</h1></section><section class="slide level2">
 
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> **NETID**@sp17-cs241-**xxx**.cs.illinois.edu</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> **NETID**@fa16-cs241-**xxx**.cs.illinois.edu</code></pre></div>
 </section><section id="note" class="slide level2">
 <h2>Note</h2>
 <p>You are going to need to be on campus VPN for this to work. If you want to make it work at home, make sure to log in to campus VPN then try ssh’ing. Look at the development guide!</p>
@@ -142,7 +142,7 @@ printf(<span class="st">&quot;size: %zu, a: %d</span><span class="sc">\n</span><
     <span class="dt">size_t</span> temp = len - <span class="dv">1</span>;
     <span class="cf">for</span>(<span class="dt">size_t</span> i = <span class="dv">0</span>; i &lt; temp; ++i){
         <span class="dt">size_t</span> min_index = i;
-        <span class="cf">for</span>(<span class="dt">size_t</span> j = i<span class="dv">+1</span>; j &lt; len; ++i){
+        <span class="cf">for</span>(<span class="dt">size_t</span> j = i+<span class="dv">1</span>; j &lt; len; ++i){
             <span class="cf">if</span>(a[j] &lt; a[i]) min_index = j;
         }
         <span class="cf">if</span>(i != min_index) 
@@ -220,8 +220,8 @@ printf(<span class="st">&quot;size: %zu, a: %d</span><span class="sc">\n</span><
     </div>
   </div>
 
-  <script src="/lib/reveal.js/lib/js/head.min.js"></script>
-  <script src="/lib/reveal.js/js/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
 
   <script>
 
@@ -231,9 +231,9 @@ printf(<span class="st">&quot;size: %zu, a: %d</span><span class="sc">\n</span><
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: '/lib/reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/zoom-js/zoom.js', async: true },
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
