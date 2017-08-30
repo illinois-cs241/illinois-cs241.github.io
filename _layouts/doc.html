@@ -21,7 +21,6 @@
       </div>
       </div>
       {% if page.submissions %}
-      <span class="highlighter-rouge">
       <ul>
         {% for submission in page.submissions %}
           <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
@@ -33,7 +32,6 @@
         {% endfor %}
 
       </ul>
-      </span>
       {% endif %}
     {{ content | toc }}
     <div id="content">
