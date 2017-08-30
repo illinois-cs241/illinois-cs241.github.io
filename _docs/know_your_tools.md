@@ -3,7 +3,7 @@ layout: doc
 title: "Know Your Tools"
 submissions:
 - title: Entire Assignment
-  due_date: 1/25 11:59pm
+  due_date: 9/6 11:59pm
   graded_files:
   - read_wrap.c
   - secure_move.c
@@ -17,7 +17,7 @@ wikibook:
 
 ## Introduction
 
-Your lab lead will do a little intro to get you accustomed to the lab
+Your lab lead will do a little intro to get you accustomed to the lab.
 
 ## HW0
 
