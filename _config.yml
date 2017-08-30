@@ -28,7 +28,7 @@ collections:
     permalink: :path
   resources:
     output: true
-    permalink: :path
+    permalink: resources/:path
   wikibook:
     output: true
     permalink: :path
