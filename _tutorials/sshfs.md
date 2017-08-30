@@ -23,7 +23,7 @@ sudo apt-get install sshfs
 
 ### MacOS
 
-On MacOS, you can install SSHFS via FUSE and SSHFS from the [osxfuse site.](https://osxfuse.github.io). You will want to download both packages. 
+On MacOS, you can install SSHFS via FUSE and SSHFS from the [osxfuse site.](https://osxfuse.github.io). You will want to download both packages.
 
 Alternativey, if you have [Homebrew](http://brew.sh) installed, you can also install it using these two commands:
 
@@ -34,7 +34,7 @@ brew install homebrew/fuse/sshfs    # installs sshfs
 
 ### Windows
 
-For Windows, you can either install it in the Ubuntu subsystem using apt-get, or download the [win-sshfs](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe) package. 
+For Windows, you can either install it in the Ubuntu subsystem using apt-get, or download the [win-sshfs](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe) package.
 
 ## Using SSHFS
 
@@ -53,7 +53,7 @@ Then, you can use sshfs to mount the file system locally. You can also specify w
 Mount point? The mount point is the directory that sshfs will give you access to. You can use the whole machine as that directory, or just your CS241 directory that contains all of your code.
 
 ```
-sudo sshfs NETID@sp17-cs241-???.cs.illinois.edu:/<MOUNT_POINT> ~/remote
+sudo sshfs NETID@{{site.semester}}-{{cs241}}-???.cs.illinois.edu:/<MOUNT_POINT> ~/remote
 ```
 
 After running this command, you will be asked for your password, and then the filesystem will be mounted locally. You can test this by doing `ls ~/remote` to see the contents of the remote filesystem.
@@ -62,21 +62,21 @@ Now, you can open any file that exists on the remote machine with any program yo
 
 ### Unmounting the Filesystem
 
-Once you're done, you can unmount it with 
+Once you're done, you can unmount it with
 
 ```
 sudo umount ~/remote
-``` 
+```
 
 (Note: depending on where you made the mount point, you may not need sudo to unmount the remote filesystem.)
 
-**WARNING**: When you unmount, your changes will no longer be saved, so make sure you have closed any remote files *before* unmounting the remote machine. In fact, if you have a file open in Sublime Text, and then unmount, the open file will become red, because Sublime will notice that it no longer has access to that file. You also do need to unmount before logging out or shutting down your machine, or potentially disconnecting from the Internet. 
+**WARNING**: When you unmount, your changes will no longer be saved, so make sure you have closed any remote files *before* unmounting the remote machine. In fact, if you have a file open in Sublime Text, and then unmount, the open file will become red, because Sublime will notice that it no longer has access to that file. You also do need to unmount before logging out or shutting down your machine, or potentially disconnecting from the Internet.
 
 ### Windows
 
 On Windows, after sucessful installation of win-sshfs, you can open it to configure the remote filesystem. You will need to be on the campus network or VPN for this to work as well.
 
-You'll want to add a new remote, and you can name it whatever you would like. Then, you enter the IP of the remote (for the VM's, it is `sp17-cs241-???.cs.illinois.edu`). Then, enter your NETID and password in their respective boxes, and fill out the mount point you would like. You can specify / to mount at the root of the drive, and you can specify any other directory you would like. Select the drive letter, and click mount to finish the process of mounting the remote filesystem.
+You'll want to add a new remote, and you can name it whatever you would like. Then, you enter the IP of the remote (for the VM's, it is `{{site.semester}}-cs241-???.cs.illinois.edu`). Then, enter your NETID and password in their respective boxes, and fill out the mount point you would like. You can specify / to mount at the root of the drive, and you can specify any other directory you would like. Select the drive letter, and click mount to finish the process of mounting the remote filesystem.
 
 To unmount, you can right-click the drive letter you chose earlier in My Computer and click eject.
 
