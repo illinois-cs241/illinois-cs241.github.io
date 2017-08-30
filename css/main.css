@@ -392,7 +392,7 @@ pre.highlight {
 
 .highlighter-rouge {
 	background-color: #151515;
-	color: #CFCFCF;
+	color: #D7D7D7;
 	border-radius: 5px;
 	padding-top: 4px;
 }
@@ -408,7 +408,7 @@ div.highlighter-rouge {
 }
 
 code .fancy-link {
-    color: #83aed2;
+    color: #a0ccf1;
 }
 
 code .fancy-link:hover {
@@ -416,7 +416,7 @@ code .fancy-link:hover {
 }
 
 code .fancy-link:hover:after {
-    background-color: #83aed2;
+    background-color: #a0ccf1;
 }
 
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
