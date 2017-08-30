@@ -39,7 +39,7 @@ You will be using SVN to submit all your assignments in this course.
 svn co https://subversion.ews.illinois.edu/svn/{{site.semester}}-{{site.subject_code}}{{site.course_number}}/YOUR-NETID {{site.subject_code}}{{site.course_number}}
 ```
 
-which will check out your entire SVN repo into a folder called '{{site.subject_code}}{{site.course_number}}' into your current directory. Now change your directory into the 'cs241' folder
+which will check out your entire SVN repo into a folder called '{{site.subject_code}}{{site.course_number}}' into your current directory. Now change your directory into the 'cs241' folder:
 
 ```console
 cd {{site.subject_code}}{{site.course_number}}
@@ -55,7 +55,7 @@ You are working for ShadyCorp inc. Your boss commissioned your co-worker to writ
 4. Find the first five and the last five lines and put them in the front of the string
 5. Write it to an output file
 
-Here is the usage
+Usage:
 
 ```console
 $ ./secure_move -h
@@ -79,7 +79,7 @@ But the boss at ShadyCorp is _very_ paranoid. So to test that his program, he wr
 
 But, he imposed a penalty. You are currently passing 5/7 test cases, but you won't get any points for those because your co-worker wrote those test. You are failing two testcases. If you get those test cases to pass, you get full points for this lab and keep your job at ShadyCorp. If you mess any test cases that you were passing before, you will lose one point. The boss assures that the code is well sectioned so you won't have to even _look_ at the files that aren't related to the test case.
 
-The output of the file should be 
+The output of the file should be:
 
 ```C
 <first 5 lines>
@@ -89,10 +89,10 @@ The output of the file should be
 <rest of file><newline>
 ```
 
-Where `newline = '\n'`
-A line is defined as zero or more characters ended by a newline
+Where `newline = '\n'`.
+A line is defined as zero or more characters ended by a newline character.
 
-(by the way the scenarios only get worse from here on out)
+(By the way, the scenarios only get worse from here on out.)
 
 ## Debugging Guide
 
@@ -212,19 +212,19 @@ make release
 
 * Log into your VM
 * Clone your SVN repository on your VM
-* Check the grade report on subversion and see what test cases you failed
+* Check the grade report in subversion and see what test cases you failed
 * _Fix the code using the test cases_
 	* Look through the code in the files!
-	* Use Printf's!
+	* Use `printf`'s!
     * Use valgrind!
     * Use GDB!
     * Run on the given files and see if the output is what you expect.
-* `svn ci -m "My Submission"`
+* `svn ci -m "My Submission"` (commit your work to subversion).
 
 
 ## Lab Attendance
 
-Part of your grade in this class relies on you attending labs. Toward the end of every lab, we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time. If you are more than 10 minutes late to class, then your lab attendant reserves the right to not swipe you for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a zero in lab attendance for the semester). Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:
+Part of your grade in this class relies on you attending labs. Towards the end of every lab, we will ask you to swipe out (swipe your I-card). You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls time. If you are more than 10 minutes late to class, then your lab attendant reserves the right to not swipe you out for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a zero in lab attendance for the semester). Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:
 
 - Go to section ADH at 7:30pm-8:50pm in 0218.  This section only has the least registered students, and thus there will be room to accommodate you on a first come first served basis.
 - Get permission from the TA of another section to go to their section, provided
