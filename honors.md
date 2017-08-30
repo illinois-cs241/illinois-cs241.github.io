@@ -109,7 +109,7 @@ You can find all lecture recordings for the semester <a href="https://recordings
 	<td scope="row">{{lecture.date}}</td>
 	<td>{{lecture.content}}</td>
 	{% if lecture.slides %}
-	<td><a href="./honors_resources/{{lecture.slides}}"><img src="./images/lab_assets/animation.png"></a></td>
+	<td><a href="./resources/honors/{{lecture.slides}}"><img src="./images/lab_assets/animation.png"></a></td>
 	{% else %}
 	<td>
 	</td>
