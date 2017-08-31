@@ -73,58 +73,50 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h3 id="rules">Rules</h3>
 <ul>
-<li>The first 20ish minutes are going to be dedicated going over a review worksheet</li>
-<li>Then you can work on your labs the rest of the time</li>
-<li>You get credit by making an honest effort in the worksheet</li>
-<li>Email GA if you need an exemption</li>
+<li>Most labs will begin with a worksheet</li>
+<li>15-20 minutes in, your TA may go over it with the class</li>
+<li>You should work on your lab assignment for the rest of class time</li>
+<li>You get credit by making an honest effort on the worksheet</li>
+<li>Email the GA (cs241admin@illinois.edu) if you need an exemption</li>
 </ul>
 </section><section id="lab-attendance" class="slide level2">
 <h2>Lab Attendance</h2>
 <ul>
-<li>10 Minute Rule, if you aren’t here in the first 10 minutes of class, you don’t get credit</li>
-<li>Part of your grade in this class relies on you attending labs. Toward the end of every lab, we will ask you to swipe out. You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls the time.</li>
+<li>Ten Minute Rule: if you aren’t here in the first ten minutes of class, you don’t get credit</li>
+<li>Part of your grade in this class relies on you attending labs. Near the end of every lab, we will ask you to swipe out. You may only leave early if you show us that you have finished the lab, or if the lab attendant calls the time.</li>
 </ul>
 </section><section id="different-lab-sections" class="slide level2">
 <h2>Different Lab Sections</h2>
-<p>Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:</p>
 <ul>
-<li>Go to section ADH at 7:30pm-8:50pm in 0218. This section only has the least registered students, and thus there will be room to accommodate you on a first come first served basis.</li>
-</ul>
-</section><section id="section" class="slide level2">
-<h2></h2>
-<ul>
-<li>Get permission from the TA of another section to go to their section, provided
+<li>Due to seating limitations, you are required to go to the lab section you signed up for</li>
+<li>If you wish to go to any other lab section, you may get permission from the TA of another section to go to their section, provided:
 <ul>
 <li>you will be working on your laptop in the room, or</li>
 <li>there is seating available where registered students get priority.</li>
 </ul></li>
 </ul>
-</section><section id="section-1" class="slide level2">
+</section><section id="section" class="slide level2">
 <h2></h2>
-<p>If choosing the latter option, you must email the TA in charge of your assigned lab and the TA for the lab to which you are going.</p>
-<p>Remember that lab attendance is required; per course policy, missing 3 or more lab sections will result in a failing grade.</p>
+<p>You must email the TA in charge of your assigned lab and the TA for the lab to which you are going.</p>
 </section></section>
 <section><section id="virtual-machines" class="titleslide slide level1"><h1>Virtual Machines</h1></section><section class="slide level2">
 
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> **NETID**@fa16-cs241-**xxx**.cs.illinois.edu</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">ssh</span> **NETID**@fa17-cs241-**xxx**.cs.illinois.edu</code></pre></div>
 </section><section id="note" class="slide level2">
 <h2>Note</h2>
-<p>You are going to need to be on campus VPN for this to work. If you want to make it work at home, make sure to log in to campus VPN then try ssh’ing. Look at the development guide!</p>
+<p>You are going to need to be on the campus network for this to work. If you want to make it work at home, make sure to log in to the campus VPN first before ssh’ing. See the development guide for details.</p>
 </section><section id="late-adds" class="slide level2">
 <h2>Late Adds</h2>
-<p>If you added in the past 24 hours you should be getting an email soon about your VM from there you can get working. If you cannot find the assignments</p>
+<p>If you added in the past 24 hours you should be getting an email soon about your VM from there you can get working. If you cannot find the assignments, they are available in the shared folder:</p>
+<pre><code>https://subversion.ews.illinois.edu/svn/fa17-cs241/_shared/</code></pre>
 </section></section>
 <section><section id="worksheets" class="titleslide slide level1"><h1>Worksheets</h1></section><section id="what-are-they" class="slide level2">
 <h2>What are they?</h2>
-<p>You all should have gotten worksheets when you came in, these will mainly be review/expansion from the topics that you learn in lecture so shouldn’t be anything new.</p>
-</section><section class="slide level2">
-
-<p><strong>Note</strong>: There is a typo in this worksheet (sorry we make mistakes too!) In a bit about bits, the line</p>
-<p><code>(short | 0xCC)</code> -&gt; <code>(shifted | 0xCC)</code>.</p>
+<p>You all should have gotten worksheets when you came in. These will mainly be review/expansion from the topics that you learn in lecture.</p>
 </section></section>
 <section><section id="time-to-work" class="titleslide slide level1"><h1>Time to work</h1></section><section class="slide level2">
 
-<p>Start working on the sheet, we will be around to ask some questions. We will see how long people are taking at around 15ish minutes and then go through those parts of the worksheets (the rest will be a challenge for to complete).</p>
+<p>Start working on the sheet; we will be around to answer questions. We will see how much progress people have made about 15 minutes in, and then go through some parts of the worksheets. (The rest will be a challenge for you, but feel free to ask us about it!)</p>
 </section><section id="informational-slides" class="slide level2">
 <h2>Informational Slides</h2>
 </section><section id="question-1" class="slide level2">
@@ -137,7 +129,7 @@ printf(<span class="st">&quot;size: %zu, a: %d</span><span class="sc">\n</span><
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#define swap(a, b) temp = a; \</span>
 <span class="pp">    a = b; \</span>
 <span class="pp">    b = temp;</span>
-    
+
 <span class="dt">void</span> selection_sort(<span class="dt">int</span>* a, <span class="dt">size_t</span> len){
     <span class="dt">size_t</span> temp = len - <span class="dv">1</span>;
     <span class="cf">for</span>(<span class="dt">size_t</span> i = <span class="dv">0</span>; i &lt; temp; ++i){
@@ -145,8 +137,8 @@ printf(<span class="st">&quot;size: %zu, a: %d</span><span class="sc">\n</span><
         <span class="cf">for</span>(<span class="dt">size_t</span> j = i+<span class="dv">1</span>; j &lt; len; ++i){
             <span class="cf">if</span>(a[j] &lt; a[i]) min_index = j;
         }
-        <span class="cf">if</span>(i != min_index) 
-            swap(a[i], a[min_index]);     
+        <span class="cf">if</span>(i != min_index)
+            swap(a[i], a[min_index]);
     }
 }</code></pre></div>
 </section><section id="question-3" class="slide level2">
@@ -187,30 +179,30 @@ printf(<span class="st">&quot;size: %zu, a: %d</span><span class="sc">\n</span><
 </section><section id="leak-types" class="slide level2">
 <h2>Leak Types</h2>
 <ol type="1">
-<li>Memory block: a block of allocated, not-freed memory.</li>
-<li>Definitely Lost: No pointer to a memory block.</li>
-<li>Still Reachable: Have pointer to a memory block.</li>
-<li>Indirectly Lost: Memory blocks pointing to a memory block is lost</li>
-<li>Possibly Lost: Have a (moved) pointer pointing to a memory block</li>
+<li><em>Memory block</em>: A block of allocated, not-freed memory</li>
+<li><em>Definitely lost</em>: No pointer to a memory block</li>
+<li><em>Still reachable</em>: Live pointer to a memory block (not freed)</li>
+<li><em>Indirectly lost</em>: Memory blocks pointing to a memory block is lost</li>
+<li><em>Possibly lost</em>: Have a (moved) pointer pointing to a memory block</li>
 </ol>
 </section></section>
 <section><section id="gdb" class="titleslide slide level1"><h1>GDB</h1></section><section id="a-lot-of-you-are-afraid-dont-be" class="slide level2">
-<h2>A lot of you are afraid, don’t be!</h2>
+<h2>A lot of you are afraid – don’t be!</h2>
 </section><section id="commands-intro" class="slide level2">
 <h2>Commands intro</h2>
 <ul>
-<li><code>layout src</code> gives you a text based gui</li>
-<li><code>break &lt;file:line|function&gt; [if condition]</code> You can make powerful breakpoints by giving a line, but only under certain circumstances.</li>
-<li><code>watch (type *)0xADDRESS</code> Watches an address for a read or write and tells you when it has changed – useful for when you don’t know where the bug is.</li>
-<li><code>backtrace</code>, <code>bt</code> see what functions you are in</li>
+<li><code>layout src</code> gives you a text-based GUI</li>
+<li><code>break &lt;file:line|function&gt; [if condition]</code>: You can make powerful breakpoints by giving a line, but only under certain circumstances.</li>
+<li><code>watch (type *)0xADDRESS</code>: Watches an address for a read or write and tells you when it has changed – useful for when you don’t know where the bug is.</li>
+<li><code>backtrace</code>, <code>bt</code> to see what functions you are in</li>
 <li><code>up</code>, <code>down</code> goes up and down a stack frame</li>
 </ul>
 </section><section id="navigation" class="slide level2">
 <h2>Navigation</h2>
 <ul>
-<li><code>print</code> prints a variable, (aliased <code>p</code>). You can use <code>p/x</code> to print in hex.</li>
+<li><code>print</code> prints a variable (aliased <code>p</code>). You can use <code>p/x</code> to print in hex.</li>
 <li><code>next</code> executes the line and goes to the next line, runs functions without stopping.</li>
-<li><code>finish</code> finishes the function and breaks</li>
+<li><code>finish</code> finishes the function and breaks.</li>
 <li><code>step</code> executes the line and goes to the next line. If there is a function, gdb steps into the function.</li>
 </ul>
 </section><section id="demo" class="slide level2">
