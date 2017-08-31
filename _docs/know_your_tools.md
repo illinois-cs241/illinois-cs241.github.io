@@ -51,12 +51,12 @@ cd {{site.subject_code}}{{site.course_number}}
 
 You are working for ShadyCorp, Inc. Your boss commissioned your coworker to write a program. The program reads a file, overwrites it multiple times so that it is harder to recover on the hard disk, then encrypts the file, then writes it once to an output file.
 
-But the head of ShadyCorp is lazy, so they want more features. They want the first five lines of the file and the last five lines of the file to be moved to the beginning. They also want the file to be wrapped to be more easily read on mobile devices. Lines should be at most 80 characters (not including the newline). If a line is longer than 80 characters, then it should be split into two or more lines, where all the but the last line has 80 characters (not including the newline). Your co-worker sighs and comes up with the following game plan.
+But the head of ShadyCorp is lazy, so they want more features. They want the first five lines of the file and the last five lines of the file to be copied to the beginning. They also want the file to be wrapped to be more easily read on mobile devices. Lines should be at most 80 characters (not including the newline). If a line is longer than 80 characters, then it should be split into two or more lines, where all the but the last line has 80 characters (not including the newline). Your co-worker sighs and comes up with the following game plan.
 
 1. Read the entire file from disk
 2. Wrap the lines to 80 characters max
 3. Do the rewrite and make sure the file is mangled
-4. Find the first five and the last five lines and put them in the front of the string
+4. Find the first five and the last five lines and copy them in the front of the string
 5. Write it to an output file
 
 Usage:
