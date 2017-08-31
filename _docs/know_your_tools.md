@@ -23,7 +23,7 @@ Your lab TA will do a brief intro to get you accustomed to the lab.
 
 ## HW0
 
-You have already been assigned a [HW0](https://goo.gl/forms/hI03FxHOSfdfUGSw1) for this class. The lab instructors will go around to make sure that you have made progress on this assignment. HW0 is due Friday, September 1, at 11:59 PM. If you finish the lab early, we recommend sticking around and getting help from the lab assistants.
+You have already been assigned a [HW0](https://goo.gl/forms/ceDM7n4nJ5qK9L8m2) for this class. The lab instructors will go around to make sure that you have made progress on this assignment. HW0 is due Friday, September 1, at 11:59 PM. If you finish the lab early, we recommend sticking around and getting help from the lab assistants.
 
 Your grade for this lab is partly HW0 and partly the assignment below.
 
