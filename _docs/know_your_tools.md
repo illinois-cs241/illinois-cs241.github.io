@@ -2,14 +2,16 @@
 layout: doc
 title: "Know Your Tools"
 submissions:
-- title: Entire Assignment
-  due_date: 9/6 11:59pm
+- title: HW0
+  due_date: 9/1 11:59 PM
+- title: Lab Assignment
+  due_date: 9/6 11:59 PM
   graded_files:
   - read_wrap.c
   - secure_move.c
   - shred.c
 learning_objectives:
-  - Using the tools needed for CS 241
+  - Getting familiar with the tools needed for CS 241!
 wikibook:
   - "HW0"
   - "System Programming Jokes"
@@ -17,13 +19,13 @@ wikibook:
 
 ## Introduction
 
-Your lab lead will do a little intro to get you accustomed to the lab.
+Your lab TA will do a brief intro to get you accustomed to the lab.
 
 ## HW0
 
-You have already been assigned a [HW0](https://goo.gl/forms/hI03FxHOSfdfUGSw1) for this class. The lab instructors will go around to make sure that you have made progress on this assignment. HW0 is due with the rest of the lab. If you finish the lab early, we recommend sticking around and getting help from the lab assistants.
+You have already been assigned a [HW0](https://goo.gl/forms/hI03FxHOSfdfUGSw1) for this class. The lab instructors will go around to make sure that you have made progress on this assignment. HW0 is due Friday, September 1, at 11:59 PM. If you finish the lab early, we recommend sticking around and getting help from the lab assistants.
 
-Your grade for your lab is part HW0 and part the lab below.
+Your grade for this lab is partly HW0 and partly the assignment below.
 
 ## Development
 
@@ -47,7 +49,9 @@ cd {{site.subject_code}}{{site.course_number}}
 
 ## The Problem
 
-You are working for ShadyCorp inc. Your boss commissioned your co-worker to write a program. The program reads a file, overwrites it multiple times so that it is harder to recover on the hard disk, then encrypts the file, then writes it once to an output file (on a hard disk or something). But the head of ShadyCorp wants more features because they are lazy. They want the first 5 lines of the file and the last five lines of the file at the beginning. They also want the file to be wrapped to read it on mobile devices, so they can read on the go. Lines should be at most 80 characters (not including the newline). If a line is longer than 80 characters then it should be split into 2 or more lines where all the but the last line has 80 characters (not including the newline). Your co-worker sighs and comes up with the following game plan.
+You are working for ShadyCorp, Inc. Your boss commissioned your coworker to write a program. The program reads a file, overwrites it multiple times so that it is harder to recover on the hard disk, then encrypts the file, then writes it once to an output file.
+
+But the head of ShadyCorp is lazy, so they want more features. They want the first five lines of the file and the last five lines of the file to be moved to the beginning. They also want the file to be wrapped to be more easily read on mobile devices. Lines should be at most 80 characters (not including the newline). If a line is longer than 80 characters, then it should be split into two or more lines, where all the but the last line has 80 characters (not including the newline). Your co-worker sighs and comes up with the following game plan.
 
 1. Read the entire file from disk
 2. Wrap the lines to 80 characters max
@@ -75,9 +79,9 @@ Then it writes to the file at <desination> the following
 
 ```
 
-But the boss at ShadyCorp is _very_ paranoid. So to test that his program, he wrote a test suite himself. Your co-worker went home sick that day. Now, he hasn't been heard from in 2 weeks; you don't ask any questions. The Boss sent you an email to fix the code that your co-worker gave you. Since you are the Boss' cousin, he gives you the test cases that you failed and promises to run the test cases every day (your mom is _very_ convincing).
+But your boss at ShadyCorp is _very_ paranoid. To test that his program, he wrote a test suite himself. Your co-worker went home sick that day. Now, he hasn't been heard from in two weeks; you don't ask any questions. The Boss sent you an email to fix the code that your co-worker gave you. Since you are the Boss' cousin, he gives you the test cases that you failed and promises to run the test cases every day (your mom is _very_ convincing).
 
-But, he imposed a penalty. You are currently passing 5/7 test cases, but you won't get any points for those because your co-worker wrote those test. You are failing two testcases. If you get those test cases to pass, you get full points for this lab and keep your job at ShadyCorp. If you mess any test cases that you were passing before, you will lose one point. The boss assures that the code is well sectioned so you won't have to even _look_ at the files that aren't related to the test case.
+But, he imposed a penalty. You are currently passing 5/7 test cases, but you won't get any points for those because your co-worker wrote those tests. You are failing two test cases. If you get those test cases to pass, you get full points for this lab and keep your job at ShadyCorp. If you mess any test cases that you were passing before, you will lose one point. The boss assures that the code is well sectioned so you won't have to even _look_ at the files that aren't related to the test case.
 
 The output of the file should be:
 
@@ -90,17 +94,15 @@ The output of the file should be:
 ```
 
 Where `newline = '\n'`.
-A line is defined as zero or more characters ended by a newline character.
-
-(By the way, the scenarios only get worse from here on out.)
+A line is defined as zero or more characters terminated by a newline character.
 
 ## Debugging Guide
 
 Read [this](./debugging.html) to get started with debugging!
 
-## Manual testing
+## Manual Testing
 
-In the end, your boss was nice enough to give you some test cases. In `files/` there are a few files that your boss will use to test you with. One is `files/blank.txt` that file you can use to test blank input. Another if `files/final.txt` which is a file full of secret business-y type stuff. In order to run a test case, try the following few commands.
+In the end, your boss was nice enough to give you some test cases. In `files/`, there are a few files that your boss will use to test the program with. One is `files/blank.txt`, which you can use to test blank input. Another is `files/final.txt`, which is full of secret business-y type stuff. In order to run a test case, try the following commands:
 
 ```console
 $ make reset # Make sure to do this before test cases
@@ -116,7 +118,7 @@ $ # You may want to make sure files/final.txt is overwritten though...
 
 All the assignments in this class will use a similar makefile.
 
-**Note: This is not a class about makefile programming, you will not need to know the advanced parts of makefiles (pattern matching, expansion phases, etc). It is important that you know a little bit about how they work for a future MP.**
+**Note: This is not a class about makefile programming, so you will not need to know the advanced parts of makefiles (pattern matching, expansion phases, etc). Still, it is important that you know a little bit about how they work for a future assignment.**
 
 Here is what a typical makefile will look like:
 
@@ -181,7 +183,7 @@ rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
 
 ```
 
-This looks scary, but if you Google some makefile basics and carefully read the comments it should mostly make sense. However, these are the things you will need to know at the minimum:
+This looks scary, but if you Google some makefile basics and carefully read the comments it should start to make sense. These are the things you will need to know, at the minimum:
 
 
 * Compile the assignment:
@@ -224,17 +226,15 @@ make release
 
 ## Lab Attendance
 
-Part of your grade in this class relies on you attending labs. Towards the end of every lab, we will ask you to swipe out (swipe your I-card). You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls time. If you are more than 10 minutes late to class, then your lab attendant reserves the right to not swipe you out for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a zero in lab attendance for the semester). Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may:
+Part of your grade in this class relies on you attending labs. Towards the end of every lab, we will ask you to swipe out (swipe your i-card). You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls time. If you are more than ten minutes late to class, then your lab attendant reserves the right to not swipe you out for the day. You may never swipe yourself out without your lab attendant's consent (any violation will result in a zero in lab attendance for the semester).
 
-- Go to section ADH at 7:30pm-8:50pm in 0218.  This section only has the least registered students, and thus there will be room to accommodate you on a first come first served basis.
-- Get permission from the TA of another section to go to their section, provided
-    - you will be working on your laptop in the room, or
-    - there is seating available where registered students get priority.
+Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may get permission from the TA of another section to go to their section, provided that:
 
-If choosing the latter option, you must email the TA beforehand.
+* you will be working on your laptop in the room, or
+* there is seating available where registered students get priority.
 
-Remember that lab attendance is required; per course policy, missing 3 or more lab sections will result in a failing grade.
+You must email the TA of that lab section beforehand.
 
-You can still get credit for attending a different section due to special or occasional circumstances by making arrangements with the GA at [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu). However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office SC1210 to change your section without having to drop your enrollment.
+You can still get credit for attending a different section due to special or occasional circumstances by making arrangements with the graduate assistant (GA) at [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu). However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office (SC 1210) to change your section without having to drop your enrollment.
 
-We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your drop). You also can not make up lab attendance. Note that forgetting to swipe out is not a valid excuse (your lab attendant is not allowed to vouch for your attendance).
+We will never grant exemptions for lab attendance (if you have an interview, then you are just going to have to use your lab attendance drop). You also can _not_ make up lab attendance. Be warned that forgetting to swipe out is not a valid excuse—your lab attendant is not allowed to vouch for your attendance.
