@@ -42,9 +42,9 @@
         color: "#E91E63"
     week: "9/4 - 9/8"
     announcement: >
-      <!-- <ul>
+      <ul>
         <li>Quiz 1: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul> -->
+      </ul>
   -
     schedule:
 
