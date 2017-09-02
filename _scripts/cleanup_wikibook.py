@@ -11,7 +11,7 @@ import html
 def prepend(file, string):
     obfFile = '.__asdfasdf.txt'
     with open(file,'r') as f:
-        with open(obfFile,'w') as f2: 
+        with open(obfFile,'w') as f2:
             f2.write(string)
             f2.write(f.read())
     os.rename(obfFile,file)
@@ -31,7 +31,7 @@ def title_from_html(text):
 def link_patterns(file, pattern_map):
     obfFile = '.__qwerwq.txt'
     with open(file,'r') as f:
-        with open(obfFile,'w') as f2: 
+        with open(obfFile,'w') as f2:
             contents = f.read()
             for link, pattern in pattern_map.items():
                 contents = pattern.sub(link, contents)
@@ -63,7 +63,9 @@ def main(folder):
         title = title_from_html(from_f)
         shutil.move(from_f, to_f)
         link_patterns(to_f, pattern_map)
-        template = "---\nlayout: doc\ntitle: \"{}\"\n---\n\n".format(title)
+        ghurl = "angrave/SystemProgramming/wiki/" + from_f.split(
+            folder, 1)[1].rsplit(".md", 1)[0].replace(" ", "-")
+        template = "---\nlayout: doc\ntitle: \"{}\"\ngithuburl: \"{}\"\n---\n\n".format(title, ghurl)
         prepend(to_f, template)
         print("Added template to {}".format(to_f))
 
