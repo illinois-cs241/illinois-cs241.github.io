@@ -14,7 +14,7 @@ git submodule foreach "git pull origin master"
 git add $WIKIBOOK
 
 if ! git diff-index --quiet --cached HEAD -- $WIKIBOOK; then
-    COMMIT=$(git ls-tree --abbrev=10 HEAD $WIKIBOOK | awk '{print $3}')
+    COMMIT=$(git ls-files -s --abbrev=10 HEAD $WIKIBOOK | awk '{print $2}')
     git commit -m "Updating wikibook to latest revision ($COMMIT)"
     git push origin develop
 fi
