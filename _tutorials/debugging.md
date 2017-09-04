@@ -77,10 +77,10 @@ To generate a debug build. A debug build has things like variable names and line
 
 ## Starting to debug - Valgrind
 
-To test for memory errors try
+To test for memory errors, try
 
 ```console
-$ valgrind ./secure_copy-debug files/final.txt files/final_test.txt
+$ valgrind ./secure_move-debug files/final.txt files/final_test.txt
 ```
 
 Valgrind will give you helpful output like the line number and stack trace where a memory error occured as well as where that memory was allocated.
