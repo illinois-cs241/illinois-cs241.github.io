@@ -1,9 +1,9 @@
 ---
-  # -
-  #   name: "Pointers Gone Wild"
-  #   releaseDate: "Week 2"
-  #   dueDate: "Week 3"
-  #   url: "pointers_gone_wild"
+  -
+    name: "Extreme Edge Cases"
+    releaseDate: "Week 2"
+    dueDate: "Week 3"
+    url: "extreme_edge_cases"
   # -
   #   name: "Vector"
   #   releaseDate: "Week 3"
