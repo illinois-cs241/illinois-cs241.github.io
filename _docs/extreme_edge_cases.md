@@ -94,7 +94,7 @@ _Hint:_ `ctype.h` has a lot of useful functions for this.
 
 Your implementation goes in camelCaser.c, and you may not leak any memory.
 
-We have also included a _reference implementation_. It is there to help you answer questions like, "What should be the result of inputting `<blah>` into `camel_caser()`?"  You can start the program with `./camelCaser-reference` and the program will take your input and return it camelCased when you press Enter.
+We have also included a _reference implementation_. It is there to help you answer questions like, "What should be the result of inputting `<blah>` into `camel_caser()`?"  You can start the program with `./camelCaser-reference` and the program will take your input and return it camelCased when you press Enter. You should not add quotes around the strings you test (unless you want to try camelCasing actual quotation marks).
 
 
 #### Destroy
