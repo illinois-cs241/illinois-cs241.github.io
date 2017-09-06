@@ -6,10 +6,10 @@
     url: "know_your_tools"
     resources: true
   # -
-  #   name: "Extreme Edge Cases"
+  #   name: "Pointers Gone Wild"
   #   releaseDate: "Week 2"
   #   dueDate: "Week 3"
-  #   url: "extreme_edge_cases"
+  #   url: "pointers_gone_wild"
   #   resources: true
   # -
   #   name: "Utilities Unleashed"
@@ -55,10 +55,11 @@
   #   worksheet: false
   #   resources: true
   # -
-  #   name: "Savage Scheduler"
+  #   name: "Savvy Scheduler"
   #   releaseDate: "Week 11"
   #   dueDate: "Week 12"
   #   url: "scheduler"
+  #   resources: false
   # -
   #   name: "Chatroom"
   #   releaseDate: "Week 12"
@@ -72,10 +73,10 @@
   #   url: "finding_filesystems"
   #   resources: true
   # -
-  #   name: "Mad Mad Access Pattern"
+  #   name: "Mapping Memory"
   #   releaseDate: "Week 14"
   #   dueDate: "Week 15"
-  #   url: "mad_mad_access_pattern"
+  #   url: "mapping_memory"
   #   worksheet: false
   #   resources: true
   # -
