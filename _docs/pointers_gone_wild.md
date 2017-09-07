@@ -144,15 +144,15 @@ There are six functions in `part3-functions.c` you will need to implement or mod
 
 For `one` and `two`, you will be using the vector struct we provided. Check the comments for details.
 
-`dragon_encode` will take a dragon and a string and return a vector of encoded "chunks". Each chunk is up to 256 bytes of data. For example, if my input string was 700 'a's, and my dragon held a talon which would increment the value of each character, then this function will return a vector that looks like this:
+`dragon_encode` will take a dragon and a string and return a vector of encoded "chunks". Each chunk is a c string with a maximum length of 256. For example, if my input string was 700 'a's (followed by a null byte), and my dragon held a talon which would increment the value of each character, then this function will return a vector of strings that looks like this:
 
 ```
 [ 'b'*256, 'b'*256, 'b'*188 ]
 ```
 
-where `'b'*n` represents memory containing _n_ 'b's.
+where `'b'*n` represents a string composed of _n_ 'b's.
 
-`dragon_decode` is a function that takes in a dragon and a vector of a chunks of encoded strings (each up to 256 bytes), then merges them into one decoded string. (Hint: Have you already implemented a function that can merge a vector of strings together?)
+`dragon_decode` is a function that takes in a dragon and a vector of a chunks of encoded strings (each with a maximum length of 256), then merges them into one decoded string. (Hint: Have you already implemented a function that can merge a vector of strings together?)
 
 `create_dragons` and the function you need to define are described in the comments for `create_dragons`.
 
