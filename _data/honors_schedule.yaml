@@ -3,7 +3,7 @@
   -
     date: "September 6"
     content: "Introduction and Project Brainstorming"
-    slides: #"introduction.pdf"
+    slides: "introduction.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true"
   -
     date: "September 13"
