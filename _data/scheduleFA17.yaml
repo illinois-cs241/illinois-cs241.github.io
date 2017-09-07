@@ -284,25 +284,6 @@
         summary: "Thanksgiving Break"
         resources: ""
         color: "#aaaaaa"
-    week: "11/14 - 11/18"
-    announcement: "<!-- -->"
-  -
-    schedule:
-      -
-        title: "No lecture"
-        summary: "Thanksgiving Break"
-        resources: ""
-        color: "#aaaaaa"
-      -
-        title: "No lecture"
-        summary: "Thanksgiving Break"
-        resources: ""
-        color: "#aaaaaa"
-      -
-        title: "No lecture"
-        summary: "Thanksgiving Break"
-        resources: ""
-        color: "#aaaaaa"
     week: "11/20 - 11/24"
     announcement: "<!-- -->"
   -
