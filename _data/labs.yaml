@@ -5,12 +5,12 @@
     dueDate: "Week 2"
     url: "know_your_tools"
     resources: true
-  # -
-  #   name: "Pointers Gone Wild"
-  #   releaseDate: "Week 2"
-  #   dueDate: "Week 3"
-  #   url: "pointers_gone_wild"
-  #   resources: true
+  -
+    name: "Pointers Gone Wild"
+    releaseDate: "Week 2"
+    dueDate: "Week 3"
+    url: "pointers_gone_wild"
+    resources: true
   # -
   #   name: "Utilities Unleashed"
   #   releaseDate: "Week 3"

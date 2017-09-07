@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Lab 2 - Strings">
+  <meta name="author" content="Lab 2: Strings and Pointers">
   <title>Welcome to CS 241!</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -66,13 +66,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section>
   <h1 class="title">Welcome to CS 241!</h1>
-  <p class="author">Lab 2 - Strings</p>
+  <p class="author">Lab 2: Strings and Pointers</p>
 </section>
 
-<section><section id="strings" class="titleslide slide level1"><h1>Strings!</h1></section><section class="slide level2">
-
-</section></section>
-<section><section id="question-1" class="titleslide slide level1"><h1>Question 1</h1></section><section id="another-one" class="slide level2">
+<section><section id="worksheet-time" class="titleslide slide level1"><h1>Worksheet Time!</h1></section><section id="question-1" class="slide level2">
+<h2>Question 1</h2>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">int_array + <span class="dv">3</span> == 0x</code></pre></div>
+</section><section id="another-one" class="slide level2">
 <h2>Another One</h2>
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">string_array + <span class="dv">2</span> == 0x</code></pre></div>
 </section><section id="another-one-1" class="slide level2">
@@ -81,47 +81,68 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section><section id="another-one-2" class="slide level2">
 <h2>Another One</h2>
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c">string_array[<span class="dv">2</span>] + <span class="dv">10</span> == 0x</code></pre></div>
+</section><section id="question-2-memory-model" class="slide level2">
+<h2>Question 2: Memory Model</h2>
+<p>What does the memory look like after each statement?</p>
+</section><section id="question-3-draw-that-struct" class="slide level2">
+<h2>Question 3: Draw That Struct</h2>
+<p>What does each struct look like in memory?</p>
 </section></section>
-<section><section id="question-2---memory-moves" class="titleslide slide level1"><h1>Question 2 - Memory Moves</h1></section><section class="slide level2">
+<section><section id="lab-time" class="titleslide slide level1"><h1>Lab Time!</h1></section><section id="using-pointers" class="slide level2">
+<h2>Using pointers</h2>
+<p>Where can a pointer point to?</p>
+</section><section class="slide level2">
 
-<p>What does each of the things look like right now.</p>
-</section></section>
-<section><section id="question-3---draw-that-struct" class="titleslide slide level1"><h1>Question 3 - Draw that struct</h1></section><section class="slide level2">
+<p>Heap</p>
+<p>Stack</p>
+<p>Global</p>
+<p>Text</p>
+<p>…Anywhere!</p>
+</section><section id="what-is-a-function-pointer" class="slide level2">
+<h2>What is a function pointer?</h2>
+<p>A pointer that stores the address of a function’s code</p>
+</section><section class="slide level2">
 
-<p>What does this drawing look like?</p>
-</section></section>
-<section><section id="lab-time" class="titleslide slide level1"><h1>Lab Time!</h1></section><section id="what-are-we-going-to-be-doing" class="slide level2">
-<h2>What are we going to be doing?</h2>
-<p>One function</p>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span>** camel_caser(<span class="dt">const</span> <span class="dt">char</span> *input_str);</code></pre></div>
-</section><section id="what-does-it-do" class="slide level2">
-<h2>What does it do</h2>
-<p>Input: A sequence of space seperated words Output: A camelcased version of that sequence</p>
-<p>Example Input: “Do not go gentle into that good night” Example Output: “doNotGoGentleIntoThatGoodNight”</p>
-</section></section>
-<section><section id="what-is-this-null-terminated-array" class="titleslide slide level1"><h1>What is this NULL-terminated array?</h1></section><section class="slide level2">
+<p>With this, we can pass a function as an argument</p>
+<p>This allows us to reuse code</p>
+<p>E.g., sorting an array of arbitrary objects could use a function pointer as the comparison function</p>
+</section><section id="part-1" class="slide level2">
+<h2>Part 1</h2>
+</section><section class="slide level2">
 
-<p>Maybe we don’t want to pass around the size of the array everywhere. We also know that NULL is not a valid string, this is not true in all cases.</p>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span> **ptr = ...;<span class="co">// vs</span>
-<span class="dt">int</span> *arr = ...;
-arr[len] = NULL; <span class="co">//NULL = 0, meaning we have a valid element</span></code></pre></div>
-</section></section>
-<section><section id="test-driven-development" class="titleslide slide level1"><h1>Test Driven Development!</h1></section><section class="slide level2">
+<p>You will be debugging several functions that all use pointers incorrectly</p>
+</section><section id="part-2" class="slide level2">
+<h2>Part 2</h2>
+</section><section class="slide level2">
 
-<p>Write Tests and then write the actual code to make your tests pass.</p>
-</section></section>
-<section><section id="useful-functions" class="titleslide slide level1"><h1>Useful Functions</h1></section><section class="slide level2">
+<p>We’ve given you a set of functions as tools</p>
+<p>Your job is to use these tools in the right order to print “Illinois”</p>
+</section><section id="part-3" class="slide level2">
+<h2>Part 3</h2>
+</section><section class="slide level2">
 
+<p>You are given a vector library, and a few functions that rely on this library to accomplish tasks</p>
+<p>You also need to write some code to encode and decode strings</p>
+<p>The goal of this part is to get you comfortable with function pointers</p>
+</section></section>
+<section><section id="hints-about-the-mp" class="titleslide slide level1"><h1>Hints about the MP</h1></section><section id="what-is-this-null-terminated-array" class="slide level2">
+<h2>What is this NULL-terminated array?</h2>
+<p>Maybe we don’t want to pass around the size of the array everywhere</p>
+<p>We know that NULL is not a valid string (but this doesn’t work for every type)</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span> *ptr[] = ...;<span class="co">// vs</span>
+<span class="dt">int</span> arr[] = ...;
+arr[len] = NULL; <span class="co">// NULL = 0, meaning we have a valid element</span></code></pre></div>
+</section><section id="useful-functions" class="slide level2">
+<h2>Useful Functions</h2>
 <ul>
-<li><code>strdup</code>: return a string copy.</li>
-<li><code>strcpy</code>,<code>strncpy</code>: copy a string to another string.</li>
-<li><code>toupper</code>, <code>tolower</code>: return the upper/lower of input character.</li>
-<li><p><code>ispunct</code>,<code>isspace</code>,<code>isalpha</code>: decide whether it is punct/alpha/space.</p></li>
-<li><p><strong>Be carefull of <code>strtok</code></strong></p></li>
+<li><code>strdup</code>: return a string copy</li>
+<li><code>strcpy</code>,<code>strncpy</code>: copy a string to another string</li>
+<li><code>toupper</code>, <code>tolower</code>: uppercases/lowercases an input character</li>
+<li><p><code>ispunct</code>,<code>isspace</code>,<code>isalpha</code>: decide whether a character is punctuation/alphabetical/whitespace</p></li>
+<li><p><strong>Not so useful: <code>strtok</code></strong></p></li>
 </ul>
 </section></section>
 <section><section id="questions" class="titleslide slide level1"><h1>Questions?</h1></section></section>
-<section><section id="authors-steve-bhuvan" class="titleslide slide level1"><h1>Authors: Steve &amp; Bhuvan</h1></section></section>
     </div>
   </div>
 
