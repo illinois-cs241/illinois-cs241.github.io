@@ -4,16 +4,21 @@
     releaseDate: "Week 2"
     dueDate: "Week 3"
     url: "extreme_edge_cases"
-  # -
-  #   name: "Text Editor"
-  #   releaseDate: "Week 3"
-  #   dueDate: "Week 4"
-  #   url: "text_editor"
+  -
+    name: "Text Editor"
+    releaseDate: "Week 3"
+    dueDate: "Week 4"
+    url: "text_editor"
   # -
   #   name: "Shell"
   #   releaseDate: "Week 4"
-  #   dueDate: "Week 5 & 6"
+  #   dueDate: "Week 5"
   #   url: "shell"
+  # -
+  #   name: "Super Shell"
+  #   releaseDate: "Week 5"
+  #   dueDate: "Week 6"
+  #   url: "super_shell"
   # -
   #   name: "Malloc"
   #   releaseDate: "Week 6"
