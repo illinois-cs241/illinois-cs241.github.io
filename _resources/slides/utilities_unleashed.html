@@ -74,7 +74,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section><section class="slide level2">
 
 <figure>
-<img src="/resources/slides/fork/address_space.jpg" />
+<img src="/resources/slides/fork/address_space.png" />
 </figure>
 </section><section id="what-is-copied-over" class="slide level2">
 <h2>What is Copied Over?</h2>
@@ -149,8 +149,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li>return 0 when success, -1 otherwise</li>
 </ul>
-</section></section>
-<section><section id="env" class="titleslide slide level1"><h1>env</h1></section><section id="env-workflow" class="slide level2">
+</section><section id="env" class="slide level2">
+<h2>env</h2>
+<ul>
+<li><code>./env [-n #] [key=val1,val2,...] [key2=val1,val2,...] ... -- cmd [args] ..</code></li>
+<li><code>./env -n 4 TZ=EST5EDT,CST6CDT,MST7MDT,PST8PDT -- date</code> - execute date under environment TZ=EST5EDT, then TZ=CST6CDT, then TZ=MST7MDT, and finally TZ=PST8PDT</li>
+<li><code>./env -n 4 TEMP=EST5EDT,CST6CDT,MST7MDT,PST8PDT TZ=%TEMP -- date</code> - why is this the same as above?</li>
+</ul>
+</section><section id="env-workflow" class="slide level2">
 <h2>env Workflow</h2>
 <figure>
 <img src="/resources/slides/fork/env_workflow.png" />
