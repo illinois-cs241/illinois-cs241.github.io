@@ -407,15 +407,15 @@ div.highlighter-rouge {
 	padding-bottom:20px;
 }
 
-code .fancy-link {
+code .fancy-link, .fancy-link code {
     color: #a0ccf1;
 }
 
-code .fancy-link:hover {
+code .fancy-link:hover, .fancy-link:hover code {
     color: #337ab7;
 }
 
-code .fancy-link:hover:after {
+code .fancy-link:hover:after, .fancy-link:hover:after code {
     background-color: #a0ccf1;
 }
 
