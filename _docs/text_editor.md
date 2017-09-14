@@ -197,6 +197,7 @@ The TUI supports the following interaction:
 *    Exiting (Ctrl+A)
 
 _Note:_ You may be wondering why we use Ctrl+X instead of Ctrl+S to save. By default, Ctrl+S locks the terminal and Ctrl+Q unlocks it.
+_Note:_ Delete and Backspace are respectively (Shift + Delete) and Delete on Macs. 
 
 **Important:** The TUI isn't capable of using all of your editor's features! For example, the TUI does not support deleting multiple characters at once. You still need to implement everything. We WILL be testing for ALL features.
 
