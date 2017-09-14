@@ -11,12 +11,12 @@
     dueDate: "Week 3"
     url: "pointers_gone_wild"
     resources: true
-  # -
-  #   name: "Utilities Unleashed"
-  #   releaseDate: "Week 3"
-  #   dueDate: "Week 4"
-  #   url: "utilities_unleashed"
-  #   resources: true
+  -
+    name: "Utilities Unleashed"
+    releaseDate: "Week 3"
+    dueDate: "Week 4"
+    url: "utilities_unleashed"
+    resources: true
   # -
   #   name: "Mini Valgrind"
   #   releaseDate: "Week 4"
