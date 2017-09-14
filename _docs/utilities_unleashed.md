@@ -3,7 +3,7 @@ layout: doc
 title: "Utilities Unleashed"
 submissions:
 - title: Entire Assignment
-  due_date: 02/08/16, 11:59 PM
+  due_date: 09/20/17, 11:59 PM
   graded_files:
   - env.c
   - time.c
