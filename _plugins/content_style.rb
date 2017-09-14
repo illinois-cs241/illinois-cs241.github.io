@@ -36,7 +36,7 @@ module Jekyll
       # Wrap everything into a card using the above method
       # We need an outermost element to do this
       page = Nokogiri::HTML::DocumentFragment.parse "<div class='wrapper'>"
-      page.at(".//div").inner_html = text 
+      page.at(".//div").inner_html = text
       page.at(".//div").auto_section
 
       # Page is sectioned
@@ -63,7 +63,7 @@ module Jekyll
       page.css('a').each do |link|
         link['class'] = 'fancy-link wiki-link'
         ref = link['href']
-        
+
         if ref.index(BASE) == 0
             substr = ref[BASE.length..-1]
             arr = ref.reverse.split('#', 2).map(&:reverse).reverse
@@ -116,7 +116,7 @@ module Jekyll
       	end
       end
 
-      
+
       # Style all the code
       page.css('.language-C').each_with_index do |div, i|
         id_target = "code-copy-#{i}"
@@ -141,9 +141,11 @@ module Jekyll
 
       # Man page links
       page.css('code.highlighter-rouge').each do |code|
-        uri = $data_hash[code.inner_html]
-        if uri != nil
-          code.inner_html = "<a href=#{uri} class='fancy-link'>#{code.inner_html}</a>"
+        if code.parent.name != "a"
+          uri = $data_hash[code.inner_html]
+          if uri != nil
+            code.inner_html = "<a href=#{uri} class='fancy-link'>#{code.inner_html}</a>"
+          end
         end
       end
 
