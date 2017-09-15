@@ -159,7 +159,7 @@ One way to solve this is by exporting `$PATH` to the correct position in your te
 An alternative and better way is to use our `env`, and enter:
 
 ```
-./env PATH=/usr/local/bin ./XXX.py
+./env PATH=/usr/local/bin -- ./XXX.py
 ```
 
 then it runs the script with the desired Python interpreter.
