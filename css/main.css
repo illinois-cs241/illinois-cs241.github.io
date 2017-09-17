@@ -203,7 +203,7 @@ h1, h2, h3 {
     color: #F2F2F4;
 }
 
-img {
+img:not(.emoji) {
     width: 100%;
 }
 
