@@ -7,122 +7,55 @@
   <div class="row">
     <div class="col-md-2 col-sm-1 col-xs-0"></div>
     <div class="col-md-8 col-sm-10 col-xs-12">
-      <div class="container-fluid">
-      <div class="col-md-10 col-sm-10 col-xs-10">
-      <h1>
-        {{ page.title }}
-        {% if page.submissions %}
-          <a class="github-link hidden-xs" href="https://github.com/{{ site.repository | uri_escape }}/blob/develop/{{ page.path | uri_escape }}">Edit on Github</a>
-        {% elsif page.githuburl %}
-          <a class="github-link hidden-xs" href="https://github.com/{{ page.githuburl | uri_escape }}">Edit on Github</a>
-        {% endif %}
-      </h1>
+      <div class="wrapper">
+        <div class="pad"><div class="card">
+          <div class="title">
+            <div class="speaker-wrapper">
+              <button onclick="speak()" class="speaker" alt="Read Page"></button>
+            </div>
+            <h1>
+              {{ page.title }}
+              {% if page.submissions %}
+                <a class="github-link hidden-xs" href="https://github.com/{{ site.repository | uri_escape }}/blob/develop/{{ page.path | uri_escape }}">Edit on Github</a>
+              {% elsif page.githuburl %}
+                <a class="github-link hidden-xs" href="https://github.com/{{ page.githuburl | uri_escape }}">Edit on Github</a>
+              {% endif %}
+            </h1>
+          </div>
+          <div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+            {% if page.submissions %}
+              <div class="submission-wrapper">
+                {% for submission in page.submissions %}
+                  <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
+                  {% if submission.graded_files %}
+                    <b>Graded files:</b>
+                    <ul>
+                      {% for graded_file in submission.graded_files %}
+                        <li>{{ graded_file }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div></div></div>
+        </div></div>
       </div>
-      <div class="col-md-2 col-sm-2 col-xs-2">
-        <button onclick="speak()" class="speaker" alt="Read Page"></button>
+      {{ content | toc }}
+      <div id="content">
+        {% capture doc_header %}{% include doc_header.html %}{% endcapture %}
+        {{ doc_header | content_style }}
+        {{ content | content_style }}
+        {% capture doc_footer %}{% include doc_footer.md %}{% endcapture %}
+        {{ doc_footer | markdownify | content_style }}
       </div>
-      </div>
-      {% if page.submissions %}
-      <ul>
-        {% for submission in page.submissions %}
-          <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
-          {% if submission.graded_files %}
-            <b>Graded files:</b>
-            <ul>
-              {% for graded_file in submission.graded_files %}
-                <li>{{ graded_file }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        {% endfor %}
-
-      </ul>
-      {% endif %}
-    {{ content | toc }}
-    <div id="content">
-      {% if page.learning_objectives %}
-        <h2 id="learning-objectives">Learning Objectives</h2>
-        <p>
-          The learning objectives for {{ page.title }} are: <br/>
-          <ul class="mdl-list">
-            {% for objective in page.learning_objectives %}
-              <li class="mdl-list__item">
-                <span class="mdl-list__item-primary-content">{{ objective }}</span>
-              </li>
-            {% endfor %}
-          </ul>
-        </p>
-      {% endif %}
-      {% if page.wikibook %}
-        <h2 id="suggested-readings">Suggested Readings</h2>
-        <p>
-          We suggest you read the following from the
-          <a href="https://github.com/angrave/SystemProgramming/wiki">wikibook</a>
-          before starting {{ page.title }}: <br/>
-          <ul>
-            {% for reading in page.wikibook %}
-              <li>
-                <a
-                  href="https://github.com/angrave/SystemProgramming/wiki/{{reading}}"
-                  target="_blank">{{reading}}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </p>
-      {% endif %}
-      {{ content | content_style }}
-      {% if page.submissions %}
-        <h2 id="submission-instructions">Submission Instructions</h2>
-        <p>
-          Please read details on
-          <a href="{{ site.url }}/#academic-integrity">Academic Integrity</a> fully.
-          These are shared by all assignments in CS 241.
-        </p>
-        <p>
-          We will be using Subversion as our hand-in system this semester.
-          Our grading system will checkout your most recent (pre-deadline) commit for grading.
-          Therefore, to hand in your code, all you have to do is commit it to your Subversion repository.
-        </p>
-        {% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '.md' %}
-        <p>
-          To check out the provided code for
-          <code class="highlighter-rouge">{{ filename }}</code>
-          from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
-          {% highlight text %}svn up{% endhighlight %}
-        </p>
-        <p>
-          If you run <code class="highlighter-rouge">ls</code> you will now see a
-          <code class="highlighter-rouge">{{ filename }}</code> folder, where you can find this assignment!
-          To commit your changes (send them to us) type:
-          {% highlight text %}svn ci -m "{{ filename }} submission"{% endhighlight %}
-        </p>
-        <p>
-          Your repository directory can be viewed from a web browser from the following URL:
-          <a href="https://subversion.ews.illinois.edu/svn/{{ site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ filename }}">
-			      https://subversion.ews.illinois.edu/svn/{{ site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/{{ filename }}
-		      </a>
-          where NETID is your University NetID.
-          It is important to check that the files you expect to be graded are present and up to date in your SVN copy.
-        </p>
-        <h2 id="assignment-feedback">Assignment Feedback</h2>
-        <p>
-          We strive to provide the best assignments that we can for this course, and we would like your feedback on them!
-        </p>
-        <p>
-          This is the form we will use to evaluate our assignments. We appreciate the time you take to give us your honest feedback and we promise to keep improving the course to make your experience in CS 241 the best it can be.
-          <br/>
-          <a href="https://goo.gl/forms/hREf0ojFWumYfQF12">https://goo.gl/forms/hREf0ojFWumYfQF12</a>
-        </p>
-      {% endif %}
+      <div class="col-md-2 col-sm-1 col-xs-0"></div>
     </div>
-    <div class="col-md-2 col-sm-1 col-xs-0"></div>
   </div>
-</div>
-<script>
-  var github_repo = "{{ site.repository | escape }}";
-  var github_path = "{{ page.path | escape }}";
-</script>
-{% include footer.html %}
+  <script>
+    var github_repo = "{{ site.repository | escape }}";
+    var github_path = "{{ page.path | escape }}";
+  </script>
+  {% include footer.html %}
 </body>
 </html>

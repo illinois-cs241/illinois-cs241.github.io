@@ -27,15 +27,15 @@ This lab will be divided up into three parts. In the first part, you will be deb
 
 For this lab, you should modify only:
 
-*   <tt>part1-functions.c</tt>
-*   <tt>part2-main.c</tt>
-*   <tt>part3-functions.c</tt>
+*   `part1-functions.c`
+*   `part2-main.c`
+*   `part3-functions.c`
 
 All other files will be replaced with new/different files for grading. If you modify any other files for debugging purposes, please ensure you test your program with the original files.
 
 ## Part 1
 
-There are erroneous/unimplemented functions in <tt>part1-functions.c</tt>. Your task is to modify the functions according to the comment above each function so that the output of `./part1` looks exactly as follows:
+There are erroneous/unimplemented functions in `part1-functions.c`. Your task is to modify the functions according to the comment above each function so that the output of `./part1` looks exactly as follows:
 
 ```
 == one() ==
@@ -84,7 +84,7 @@ Note that you can just diff with ```part1-expected-output```.
 
 ## Part 2
 
-We have given you a file called <tt>part2-functions.c</tt>, that you may not change. Inside <tt>part2-functions.c</tt>, you will see twelve different functions, such as `first_step()`:
+We have given you a file called `part2-functions.c`, that you may not change. Inside `part2-functions.c`, you will see twelve different functions, such as `first_step()`:
 
 ```
 void first_step(int value) {
@@ -93,7 +93,7 @@ void first_step(int value) {
 }
 ```
 
-To complete Part 2, you must write <tt>part2-main.c</tt> so that it makes calls to all twelve functions in <tt>part2-functions.c</tt>, and such that each one prints out its "Illinois" line. When running `./part2`, your output should look exactly like this:
+To complete Part 2, you must write `part2-main.c` so that it makes calls to all twelve functions in `part2-functions.c`, and such that each one prints out its "Illinois" line. When running `./part2`, your output should look exactly like this:
 
 ```
 1: Illinois
@@ -117,9 +117,9 @@ Note that you can just diff with ```part2-expected-output```.
 
 This part will explore a few different use cases of function pointers.
 
-We have provided a library that implements a `vector`, similar to the C++ vector class. It allows you to supply a copy constructor and destructor which correspond to the data type you want the vector to store. This is useful, since we don't need a separate vector implementation for every data type we want to store. We have provided the header file for the vector interface in` includes/vector.h`. You will see this library being used in future assignments, so it's a good idea to familiarize yourself with it.
+We have provided a library that implements a `vector`, similar to the C++ vector class. It allows you to supply a copy constructor and destructor which correspond to the data type you want the vector to store. This is useful, since we don't need a separate vector implementation for every data type we want to store. We have provided the header file for the vector interface in `includes/vector.h`. You will see this library being used in future assignments, so it's a good idea to familiarize yourself with it.
 
-A similar but simpler design pattern using function pointers is illustrated by the dragon struct (defined in <tt>part3-utils.h</tt>):
+A similar but simpler design pattern using function pointers is illustrated by the dragon struct (defined in `part3-utils.h`):
 
 ```
 typedef struct{
@@ -130,7 +130,7 @@ typedef struct{
 
 As is common knowledge, every dragon has a unique "talon" which it can use to do miraculous things. In this lab, we will be using the power of the dragons to encode and decode data. We can create our own dragons, each with a function for encoding or decoding a single byte, by placing pointers to our own functions in the "talon" field of our new dragon.
 
-The talon data type is defined in <tt>part3-utils.h</tt> as follows:
+The talon data type is defined in `part3-utils.h` as follows:
 
 ```
 typedef char (*talon_data_type)(char c);

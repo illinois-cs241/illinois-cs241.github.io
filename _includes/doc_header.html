@@ -1,0 +1,31 @@
+{% if page.learning_objectives %}
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for {{ page.title }} are: <br/>
+    <ul class="mdl-list">
+      {% for objective in page.learning_objectives %}
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">{{ objective }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </p>
+{% endif %}
+{% if page.wikibook %}
+  <h2 id="suggested-readings">Suggested Readings</h2>
+  <p>
+    We suggest you read the following from the
+    <a href="https://github.com/angrave/SystemProgramming/wiki">wikibook</a>
+    before starting {{ page.title }}: <br/>
+    <ul>
+      {% for reading in page.wikibook %}
+        <li>
+          <a
+            href="https://github.com/angrave/SystemProgramming/wiki/{{reading}}"
+            target="_blank">{{reading}}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </p>
+{% endif %}
