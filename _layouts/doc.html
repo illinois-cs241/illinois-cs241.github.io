@@ -26,11 +26,14 @@
       <ul>
         {% for submission in page.submissions %}
           <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
-          <ul>
-            {% for graded_file in submission.graded_files %}
-              <li>{{ graded_file }}</li>
-            {% endfor %}
-          </ul>
+          {% if submission.graded_files %}
+            <b>Graded files:</b>
+            <ul>
+              {% for graded_file in submission.graded_files %}
+                <li>{{ graded_file }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         {% endfor %}
 
       </ul>
