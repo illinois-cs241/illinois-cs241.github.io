@@ -100,7 +100,7 @@ You can find all lecture recordings for the semester <a href="https://recordings
 	  <th>Date</th>
 	  <th>Lecture Content</th>
 	  <th>Slides</th>
-	  <th>Recording</th>
+	  <!--<th>Recording</th>-->
 	</tr>
   </thead>
   <tbody>
@@ -114,10 +114,10 @@ You can find all lecture recordings for the semester <a href="https://recordings
 	<td>
 	</td>
 	{% endif %}
-	{% if lecture.video %}
+	<!--{% if lecture.video %}
 	<td><a href="{{lecture.video}}"><img src="./images/lab_assets/video.png"></a></td>
 	{% else %}
-	<td>
+	<td>-->
 	</td>
 	{% endif %}
   </tr>
