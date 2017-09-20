@@ -61,7 +61,7 @@ The shell must support the following two optional arguments:
 ./shell -h <filename>
 ```
 
-Even if the the `-h` flag is not specified, the shell will still keep a history of commands run. Just think of it like private browsing mode for your terminal.
+If the the `-h` flag is not specified, the shell will still keep a history of commands run, but will not read/write from/to a history file. Just think of it like private browsing mode for your terminal.
 
 ### File
 
@@ -120,14 +120,6 @@ Your shell should store the command that was just executed, so the user can repe
 ### Catching Ctrl+C
 
 Usually when we do `Ctrl+C`, the current running program will exit. However, we want the shell to ignore the `Ctrl+C` signal (`SIGINT`). The shell should not exit upon receiving `SIGINT`. Instead, it should check if there is a currently running foreground process, and if so, it should kill it using SIGINT (the `kill()` function might come in handy, here and elsewhere).
-
-### Tracking Process State
-
-Your shell should keep track of the name, PID and status of every child, it creates. You suggested keeping a fixed sized array, but your manager will not tolerate such blasphemy anymore.
-
-Being a lazy programmer a while back turned out to be helpful! Your manager decides to allow you to use a QA-certified version of the generic vector you tried to implement a few weeks back. It has been provided to you as a precompiled archive.
-
-You might want to create a struct to track process information. Consider checking the `print_process_info()` function in `format.h` to see what kind of information you might want to keep. For process status, you are provided with appropriate constants in `format.h`.
 
 ## Commands
 
@@ -277,7 +269,9 @@ It is good practice to flush the standard output stream before the fork to be ab
 
 Like `bash`, your shell should support `&&`, `||`, and `;` in between two commands.
 
-**Important**: each input can have _at most_ *one* of `&&`, `||`, or `;`. You do _not_ have to support chaining (e.g. `x && y || z; w`).
+**Important**: each input can have at most *one* of `&&`, `||`, or `;`. You do *not* have to support chaining (e.g. `x && y || z; w`).
+
+**Important**: you should *not* try to handle the combination of the `!history`, `#<n>`, or `!<prefix>` commands with any logical operators. Rather, you can assume these commands will always be run on a line by themselves.
 
 ### AND
 
