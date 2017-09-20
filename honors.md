@@ -117,9 +117,9 @@ You can find all lecture recordings for the semester <a href="https://recordings
 	<!--{% if lecture.video %}
 	<td><a href="{{lecture.video}}"><img src="./images/lab_assets/video.png"></a></td>
 	{% else %}
-	<td>-->
+	<td>
 	</td>
-	{% endif %}
+	{% endif %}-->
   </tr>
 {% endfor %}
   </tbody>
