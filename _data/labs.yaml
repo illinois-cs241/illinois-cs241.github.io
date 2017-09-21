@@ -17,12 +17,12 @@
     dueDate: "Week 4"
     url: "utilities_unleashed"
     resources: true
-  # -
-  #   name: "Mini Valgrind"
-  #   releaseDate: "Week 4"
-  #   dueDate: "Week 5"
-  #   url: "mini_valgrind"
-  #   resources: true
+  -
+    name: "Mini Valgrind"
+    releaseDate: "Week 4"
+    dueDate: "Week 5"
+    url: "mini_valgrind"
+    resources: true
   # -
   #   name: "Teaching Threads"
   #   releaseDate: "Week 5"
