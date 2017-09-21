@@ -215,10 +215,11 @@ echo Echo This!
 Command executed by pid=1239
 Echo This!
 (pid=1234)/home/user$ !history
-0    echo Echo This!
-1    echo Another echo
-2    echo Another echo
-3    echo Echo This!
+0       echo Echo This!
+1       echo Another echo
+2       echo Another echo
+3       echo Echo This!
+4       echo Echo This!
 (pid=1234)/home/user$
 ```
 
