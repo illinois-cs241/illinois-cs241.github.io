@@ -272,7 +272,7 @@ Like `bash`, your shell should support `&&`, `||`, and `;` in between two comman
 
 **Important**: each input can have at most *one* of `&&`, `||`, or `;`. You do *not* have to support chaining (e.g. `x && y || z; w`).
 
-**Important**: you should *not* try to handle the combination of the `!history`, `#<n>`, or `!<prefix>` commands with any logical operators. Rather, you can assume these commands will always be run on a line by themselves.
+**Important**: you should *not* try to handle the combination of the `!history`, `#<n>`, `!<prefix>`, or `exit` commands with any logical operators. Rather, you can assume these commands will always be run on a line by themselves.
 
 ### AND
 
