@@ -357,7 +357,7 @@ img:not(.emoji) {
 /***************** Code Copying ***************/
 
 pre {
-    color: inherit;
+    color: #F2F2F4;
     background-color: #151515;
     border: inherit;
 }
@@ -380,7 +380,7 @@ pre code {
     display: block;
 }
 
-pre:hover > .language-C > .code-copy {
+pre:hover > * > .code-copy {
     display: inline;
 }
 
