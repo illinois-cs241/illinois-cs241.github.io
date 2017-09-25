@@ -62,6 +62,8 @@ When I type, it shows up on this line
 
 While the shell should be usable after calling the command, after the process finishes, the parent is still responsible for waiting on the child (hint: catch a signal). Avoid creating zombies! Think about what happens when multiple children finish around the same time.
 
+Backgrounding will **not** be chained with the logical operators.
+
 ## New Built-ins
 
 Beyond the built-ins you implemented last week, you should implement the following functionality.
