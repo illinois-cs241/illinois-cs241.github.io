@@ -108,11 +108,11 @@ For example:
 
 `export FOO=123`
 
-`export BAR=$FOO:456 BAZ=$BAR:7890 // BAZ will be 123:456:7890`
+`export BAR=$FOO:456` `
+
+`export BAZ=$BAR:7890 // BAZ will be 123:456:7890`
 
 `echo $BAR:hello // should print 123:456:hello`
-
-Note: the behavior of `export BAR=$FOO:456 BAZ=$BAR:7890` is different from `export` in bash.
 
 **Any** input to your shell might reference an environment variable, so be sure to get the value first!
 
