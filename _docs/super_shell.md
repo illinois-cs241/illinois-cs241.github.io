@@ -6,6 +6,7 @@ submissions:
   due_date: 10/2/2017 11:59pm
   graded_files:
   - super_shell.c
+svn_dir: shell
 learning_objectives:
   - Processes
   - Fork, Exec, Wait
