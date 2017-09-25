@@ -14,11 +14,11 @@
     releaseDate: "Week 4"
     dueDate: "Week 5"
     url: "shell"
-  # -
-  #   name: "Super Shell"
-  #   releaseDate: "Week 5"
-  #   dueDate: "Week 6"
-  #   url: "super_shell"
+  -
+    name: "Super Shell"
+    releaseDate: "Week 5"
+    dueDate: "Week 6"
+    url: "super_shell"
   # -
   #   name: "Malloc"
   #   releaseDate: "Week 6"
