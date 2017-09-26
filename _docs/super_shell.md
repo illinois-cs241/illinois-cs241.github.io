@@ -158,13 +158,17 @@ if (pid > 0) {
 Your shell already supports `&&`, `||`, and `;`. However, what if we want to print `||` directly? If any of these special sequences are escaped in the input, you should treat them as literals. For example:
 
 ```
-(pid=1337)/home/user$ echo \||
+(pid=1337)/home/user$ echo \|\|
 ||
 (pid=1337)/home/user$ echo \$
 $
 (pid=1337)/home/user$ echo \;
 ;
+(pid=1337)/home/user$ echo \& 
+&
 ```
+
+Notice how the last command **isn't** backgrounded, since the `&` is escaped and treated as a literal.
 
 **Note**: this applies to `$`, `&`, `&&`, `||`, and `;`. We will only test `&`, `&&`, `||`, and `;` in external commands for this MP, but `$` can be escaped anywhere.
 
