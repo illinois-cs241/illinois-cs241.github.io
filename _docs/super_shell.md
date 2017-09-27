@@ -70,9 +70,14 @@ Beyond the built-ins you implemented last week, you should implement the followi
 
 ### `ps`
 
-Like our good old `ps`, your shell should print out information about all currently running processes. You should include the shell and its immediate children, but don't worry about grandchildren or other processes. Make sure you use `print_process_info()`!
+Like our good old `ps`, your shell should print out information about all currently executing processes. You should include the shell and its immediate children, but don't worry about grandchildren or other processes. Make sure you use `print_process_info()`!
 
 _Note:_ while `ps` is normally a separate binary, it is a built-in command for your shell. (This is not "execing `ps`", this is you implementing it in the code. Thus you have to keep track of process statuses and such.)
+
+Some things to keep in mind:
+
+- The order in which you print the processes does not matter.
+- The 'command' for `print_process_info` should be the full command you executed, with escape sequences and environment variables expanded. (This is _different_ from what gets stored in the history!) The `&` for background processes is optional. For the main shell process _only_, you do not need to include the command-line flags.
 
 ### `kill <pid>`
 
