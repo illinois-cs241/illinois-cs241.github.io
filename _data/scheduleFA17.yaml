@@ -108,13 +108,13 @@
         color: "#2196F3"
     week: "9/25 - 9/29"
     announcement: >
-      <!-- <ul>
+      <ul>
         <li>Quiz 3: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-        <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
+      <!--   <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
         <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
         <li>MP: <a target='blank' href='./Shell'>Shell</a> Due</li>
-        <li>MP: <a target='blank' href='./malloc'>Malloc</a> Released</li>
-      </ul> -->
+        <li>MP: <a target='blank' href='./malloc'>Malloc</a> Released</li> -->
+      </ul> 
   -
     schedule:
       -
