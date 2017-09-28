@@ -66,16 +66,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <section>
   <h1 class="title">CS241</h1>
-  <p class="author">Threads, Concurrency, and Synchronization (oh my!)</p>
+  <h2 class="author">Threads, Concurrency, and Synchronization (oh my!)</h2>
 </section>
 
 <section><section id="processes" class="titleslide slide level1"><h1>Processes!</h1></section><section id="fixing-non-reentrant-code" class="slide level2">
-<h2>Fixing Non-Reentrant Code</h2>
+<h1>Fixing Non-Reentrant Code</h1>
 </section><section id="splitting-the-work-up" class="slide level2">
-<h2>Splitting the Work up</h2>
+<h1>Splitting the Work up</h1>
 </section></section>
-<section><section id="terrible-threads" class="titleslide slide level1"><h1>Terrible Threads</h1></section><section id="learning-objectives" class="slide level2">
-<h2>Learning Objectives</h2>
+<section><section id="teaching-threads" class="titleslide slide level1"><h1>Teaching Threads</h1></section><section id="learning-objectives" class="slide level2">
+<h1>Learning Objectives</h1>
 <ul>
 <li>Using pthreads to speed up code</li>
 <li>Common patterns in multithreaded programs</li>
@@ -88,25 +88,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </figure>
 </section></section>
 <section><section id="what-does-it-look-like-in-code" class="titleslide slide level1"><h1>What does it look like in code?</h1></section><section id="example" class="slide level2">
-<h2>Example</h2>
+<h1>Example</h1>
 <div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="co">// This is fold right</span>
 <span class="dt">int</span> sequential_reduce(<span class="dt">int</span> (*function)(<span class="dt">char</span>, <span class="dt">char</span>), <span class="dt">int</span>* arr){
     <span class="dt">char</span> intial = arr[<span class="dv">0</span>];
     <span class="dt">int</span> offset;
-    <span class="cf">for</span>(offset = <span class="dv">1</span>; arr[offset]; ++offset){
+    <span class="kw">for</span>(offset = <span class="dv">1</span>; arr[offset]; ++offset){
         intial = function(intial, arr);
     }
-    <span class="cf">return</span> mapped_string;
+    <span class="kw">return</span> mapped_string;
 }
 <span class="dt">int</span> main(){
     <span class="dt">char</span> arr[] = {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>};
     <span class="dt">int</span> sum = sequential_reduce(add, arr);
     <span class="co">// Whatever you want</span>
-    <span class="cf">return</span> <span class="dv">0</span>;
+    <span class="kw">return</span> <span class="dv">0</span>;
 }</code></pre></div>
 </section></section>
 <section><section id="pthreads-what-are-thooooose" class="titleslide slide level1"><h1>Pthreads? What are thooooose?</h1></section><section id="signature" class="slide level2">
-<h2>Signature</h2>
+<h1>Signature</h1>
 <pre class="console"><code>int pthread_create(pthread_t *thread,
                     const pthread_attr_t *attr,
                     void *(*start_routine) (void *),
@@ -120,7 +120,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><code>arg</code> the arguments to give to each pthread</li>
 </ul>
 </section><section id="join-me" class="slide level2">
-<h2>Join Me!</h2>
+<h1>Join Me!</h1>
 <pre class="console"><code>int pthread_join(pthread_t thread, void **retval);</code></pre>
 </section><section class="slide level2">
 
@@ -130,24 +130,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>Just like waitpid, you want to join all your terminated threads. There is no analog of waitpid(-1, …) because if you need that ‘you probably need to rethink your application design.’ - man page.</p>
 </section><section id="all-parallel-code" class="slide level2">
-<h2>All parallel code</h2>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="pp">#include </span><span class="im">&lt;pthread.h&gt;</span>
+<h1>All parallel code</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#include &lt;pthread.h&gt;</span>
 
 <span class="dt">void</span>* do_massive_work(<span class="dt">void</span>* payload){
     <span class="co">/* Doing massive work */</span>
-    <span class="cf">return</span> NULL;
+    <span class="kw">return</span> NULL;
 }
 
 <span class="dt">int</span> main(){
     pthread_t threads[<span class="dv">10</span>];
-    <span class="cf">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; ++i){
+    <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; ++i){
         pthread_create(threads+i, NULL, do_massive_work, NULL);
     }
 
-    <span class="cf">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; ++i){
+    <span class="kw">for</span>(<span class="dt">int</span> i = <span class="dv">0</span>; i &lt; <span class="dv">10</span>; ++i){
         pthread_join(threads[i], NULL);
     }
-    <span class="cf">return</span> <span class="dv">0</span>;
+    <span class="kw">return</span> <span class="dv">0</span>;
 }</code></pre></div>
 </section></section>
 <section><section id="some-advanced-stuff" class="titleslide slide level1"><h1>Some advanced stuff</h1></section><section class="slide level2">
@@ -158,18 +158,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section><section class="slide level2">
 
 <p>You can guess what happens in pthread_destroy This may be a bit advanced, but the general gist is that they let you leverage parallelism</p>
-</section><section id="putting-it-all-together" class="slide level2">
-<h2>Putting it all together</h2>
+</section></section>
+<section><section id="putting-it-all-together" class="titleslide slide level1"><h1>Putting it all together</h1></section><section class="slide level2">
+
 <p>We want you to start a thread for each of the elements, do the computation and alter the array. Dividing up the work it should look something like the following</p>
 <figure>
 <img src="/resources/slides/intro_threads/array.gif" />
 </figure>
-</section><section id="wait-a-minute-dont-we-need-mutexes-and-stuff" class="slide level2">
-<h2>Wait a minute don’t we need mutexes and stuff?</h2>
+</section></section>
+<section><section id="wait-a-minute-dont-we-need-mutexes-and-stuff" class="titleslide slide level1"><h1>Wait a minute don’t we need mutexes and stuff?</h1></section><section class="slide level2">
+
 <p>You have been going through mutexes and other synchronization primitives in lecture, but the most efficient data structure uses no synchronization. This means that so long as no other thread touches the exact samepiece of memory that another thread is touching – there is no race condition. We are then using threads to their full potential of parallelism.</p>
 </section></section>
 <section><section id="questions" class="titleslide slide level1"><h1>Questions?</h1></section></section>
-<section><section id="authors-steve-and-bhuvan" class="titleslide slide level1"><h1>Authors: Steve and Bhuvan</h1></section></section>
     </div>
   </div>
 
@@ -186,7 +187,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         dependencies: [
           { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/zoom-js/zoom.js', async: true },
-              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true }
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
