@@ -23,12 +23,12 @@
     dueDate: "Week 5"
     url: "mini_valgrind"
     resources: true
-  # -
-  #   name: "Teaching Threads"
-  #   releaseDate: "Week 5"
-  #   dueDate: "Week 6"
-  #   url: "teaching_threads"
-  #   resources: true
+  -
+    name: "Teaching Threads"
+    releaseDate: "Week 5"
+    dueDate: "Week 6"
+    url: "teaching_threads"
+    resources: true
   # -
   #   name: "Splendid Synchronization"
   #   releaseDate: "Week 6"
