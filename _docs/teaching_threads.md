@@ -3,7 +3,7 @@ layout: doc
 title: "Teaching Threads"
 submissions:
 - title: Entire Assignment
-  due_date: 2/22, 11:59 PM
+  due_date: 10/04, 11:59 PM
   graded_files:
   - par_reduce.c
 learning_objectives:
