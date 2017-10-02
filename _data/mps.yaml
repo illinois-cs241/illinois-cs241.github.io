@@ -19,11 +19,11 @@
     releaseDate: "Week 5"
     dueDate: "Week 6"
     url: "super_shell"
-  # -
-  #   name: "Malloc"
-  #   releaseDate: "Week 6"
-  #   dueDate: "Week 7 & 8"
-  #   url: "malloc"
+  -
+    name: "Malloc"
+    releaseDate: "Week 6"
+    dueDate: "Week 7 & 8"
+    url: "malloc"
   # -
   #   name: "Password Cracker"
   #   releaseDate: "Week 8"
