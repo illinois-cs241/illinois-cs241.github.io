@@ -3,11 +3,11 @@ layout: doc
 title: "Malloc"
 submissions:
 - title: Part 1
-  due_date: 10/08/2017 11:59 pm
+  due_date: 10/09/2017 11:59 pm
   graded_files:
   - alloc.c
 - title: Part 2
-  due_date: 10/15/2017 11:59 pm
+  due_date: 10/16/2017 11:59 pm
   graded_files:
   - alloc.c
 learning_objectives:
@@ -21,21 +21,21 @@ wikibook:
 
 ## Introduction
 
-In the past, you have been using `malloc()` to allocate memory on the heap. In this MP, you will be implementing your own version of `malloc()`. By the end of this MP, you would theoretically be able to use your own malloc to compile and run any C code.
+In the past, you have been using `malloc` to allocate memory on the heap. In this MP, you will be implementing your own version of `malloc`. By the end of this MP, you will theoretically be able to use your own malloc to run any program you wish.
 
 ## Overview
 
-You should write your implementations of `calloc()`, `malloc()`, `realloc()`, and `free()` in `alloc.c`. `alloc.c` will be the only file we test.
+You should write your implementations of `calloc`, `malloc`, `realloc`, and `free` in `alloc.c`. `alloc.c` will be the only file we test.
 
 Don't modify `mcontest.c`, `contest.h`, or `contest-alloc.so`. Those files create the environment that replaces the standard glibc malloc with your malloc. These files will be used for testing.
 
-Your `malloc()` must allocate heap memory using `sbrk()`. You may not use files, pipes, system shared memory, `mmap()`, a chunk of pre-defined stack memory, other external memory libraries found on the Internet, or any of the various other external sources of memory that exist on modern operating systems.
+Your `malloc` must allocate heap memory using `sbrk`. You may not use files, pipes, system shared memory, `mmap`, a chunk of pre-defined stack memory, other external memory libraries found on the Internet, or any of the various other external sources of memory that exist on modern operating systems.
 
 ## A Bad Example
 
-Memory allocation seems like a mystery, but in actuality, we are making a wrapper around the system call [`sbrk()`](http://linux.die.net/man/2/sbrk). Here's a really simple implementation of `malloc()`:
+Memory allocation seems like a mystery, but in actuality, we are making a wrapper around the system call [`sbrk`](http://linux.die.net/man/2/sbrk). Here's a really simple implementation of `malloc`:
 
-```
+```c
 void *malloc(size_t size) {
     return sbrk(size);
 }
@@ -43,20 +43,20 @@ void *malloc(size_t size) {
 
 As you can see, when we request `size` bytes of memory, we call `sbrk(size)` to increase the heap by `size` bytes. Then, we return a pointer to this memory, and we're done. Simple!
 
-Here is our implementation of `free()`:
+Here is our implementation of `free`:
 
-```
+```c
 void free(void *ptr) {
 }
 ```
 
-This is a "correct" way to implement `free()`. However, the obvious drawback with our implementation is that we can't reuse memory after we are done with it. Also, we have not checked for errors when we call `sbrk()`, and we have not implemented `realloc()` or `calloc()`.
+This is a "correct" way to implement `free`. However, the obvious drawback with our implementation is that we can't reuse memory after we are done with it. Also, we have not checked for errors when we call `sbrk`, and we have not implemented `realloc` or `calloc`.
 
-Despite all of this, this is still a "working" implementation of `malloc()`. So, the job of `malloc()` is not really to allocate memory, but to keep track of the memory we've allocated so that we can reuse it. You will use methods that you've learned in class and practiced in the Mini Valgrind lab to do this.
+Despite all of this, this is still a "working" implementation of `malloc`. So, the job of `malloc` is not really to allocate memory, but to keep track of the memory we've allocated so that we can reuse it. You will use methods that you've learned in class and practiced in the Mini Valgrind lab to do this.
 
 ## Testing Your Code
 
-In order to run your solution on the testers, run `./mcontest` with the tester you want. You MUST do this or your code will be run with the glibc implementation!
+In order to run your solution on the testers, run `./mcontest` with the tester you want. You __must__ do this, or your code will be run with the glibc implementation!
 
 Example:
 
@@ -95,6 +95,7 @@ Here is what some of our error codes mean:
 68: Exceeded memory limit
 91: Data allocated outside of heap
 ```
+
 ### Good Practices
 Since you can implement your malloc in whatever way you want, you may end up with a huge chunk of messy code that's hard to debug. Here are some suggestions for organizing and maintaining your code better:
 * Build simple functions before you add advanced features. In other words, make sure your program does what you want it to do before moving on to optimize it. 
@@ -102,15 +103,14 @@ Since you can implement your malloc in whatever way you want, you may end up wit
 * Keep your code readable. This can be naming your variables appropriately or commenting your code well. This will really help you understand what your code is doing when you look back at them three days later!
 
 ### Debugging
-`./mcontest` runs an optimized version of your code, so you won't be able to
-debug with `gdb`. To solve this we have provided another version called `./mreplace` which uses a version of your malloc compiled
-without optimization, so you can debug with `gdb`. Here's an example, running
-tester 2 with gdb:
+`./mcontest` runs an optimized version of your code, so you won't be able to debug with `gdb`. To solve this, we have provided another version called `./mreplace` which uses a version of your malloc compiled without optimization, so you can debug with `gdb`. Here's an example, running tester 2 with gdb:
 
 ```
 gdb --args ./mreplace testers_exe/tester-2
 ```
+
 Since `./mreplace` calls `fork`, you need to change the `follow-fork-mode` in `gdb` to be able to set a breakpoint in your `alloc.c`:
+
 ```
 (gdb) set follow-fork-mode child
 (gdb) break alloc.c:322
@@ -119,7 +119,7 @@ Make breakpoint pending on future shared library load? (y or [n]) y
 Breakpoint 1 (alloc.c:322) pending.
 (gdb) run
 ```
-NOTE: if you terminate your running program and run it again, i.e. if you do this
+_Note:_ if you terminate your running program and run it again, i.e. if you do this:
 ```
 (gdb) run
 Thread 2.1 "tester-2" hit Breakpoint 1, malloc (size=1) at alloc.c:323
@@ -136,7 +136,7 @@ Memory was allocated, used, and freed!
 ```
 it will no longer use your own implementation, and therefore will not stop at the breakpoints you set, and will use the glibc implementations of malloc/calloc/etc. This is because of the way `gdb` handles dynamically loaded libraries. 
 
-### Real programs
+### Real Programs
 Both `mcontest` and `mreplace` can be used to launch "real" programs (not just the testers). For example:
 
 ```
@@ -151,15 +151,15 @@ or
 ```
 
 There are some programs that might not work correctly under your malloc, for a variety of reasons. You might be able to avoid this problem if you make all your
-global variables static. If you encounter a program for which this fix doesn't work, post on piazza!
+global variables static. If you encounter a program for which this fix doesn't work, post on Piazza!
 
 ## Grading
 
 Here is the grading breakdown:
 
 * Correctness (75%)
-  * Part 1 (25%): tests 1-6 complete successfully - due 10/08 11:59pm
-  * Part 2 (50%): tests 1-12 complete successfully - due 10/15 11:59pm
+  * Part 1 (25%): tests 1-6 complete successfully - due 10/09 11:59pm
+  * Part 2 (50%): tests 1-12 complete successfully - due 10/16 11:59pm
 * Performance (25%): Points only awarded if all part 2 testers complete
   successfully - due with part2
 
@@ -180,7 +180,7 @@ are better. Performance points are then awarded in buckets:
 - 40-60%: 10% awarded.
 - 40% and worse: 0% awarded.
 
-So let's work out some scenarios:
+So, let's work out some scenarios:
 
 * Scenario 1: A student gets tests 1 through 6 working for part1 and misses 2
   tests on part2. Then they get all of the correctness points for part1, 10/12
@@ -210,13 +210,13 @@ So let's work out some scenarios:
 
 The malloc contest pits your memory allocator implementation against your fellow students. There are a few things to know:
 
-* The test cases used for grading will be randomized with a different seed everyday.
-* There will be another test added (distinct from  the tests currently in your repositor) next week, which won't count for anything but the contest.
+* The test cases used for grading will be randomized with a different seed every day.
+* There may be additional, more advanced tests added which won't count for anything but the contest.
 * The memory limit is 2.500GB.
 * To submit your program to the contest, you simply commit to Subversion. Your most recent SVN submission will be fetched somewhat frequently.
 * We will assign a score to each of the three categories (max heap, average heap, and total time) based on how well your program performs memory management relative to a standard solution.
 * You can pick a nickname in `nickname.txt`. You will show up as this name on the contest webpage.
-* On the webpage, each test will either be green, which signifies that you passed the test, or red, which signifies that you failed the test. Clicking on the failed test will give you more details on the error output of the test.
+* On the webpage, each test will either be green, which signifies that you passed the test, or red, which signifies that you failed the test.
 
 ### Scores and ranking
 
@@ -226,16 +226,18 @@ $$ 100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{r
 
 Where:
 
-* $$n$$ is the number of tests.
-* $$\textit{reference}$$ in the subscript means reference implementation, and $$\textit{student}$$ means student's implementation.
-* $$time_{\textit{reference}, i}$$ is the time reference implementation spends on test $$i$$.
-* $$time_{\textit{student}, i}$$ is the time student spends on test $$i$$.
-* $$avg_{\textit{reference}, i}$$ is the average memory used by reference implementation on test $$i$$.
-* $$avg_{\textit{student}, i}$$ is the average memory used by student implementation on test $$i$$.
-* $$max_{\textit{reference}, i}$$ is the max memory used by the reference implementation on test $$i$$.
-* $$max_{\textit{student}, i}$$ is the max memory used by the student implementation on test $$i$$.
+* $$n$$ is the number of tests
+* $$\textit{reference}$$ in the subscript means reference implementation, and $$\textit{student}$$ means student's implementation
+* $$time_{\textit{reference}, i}$$ is the time reference implementation spends on test $$i$$
+* $$time_{\textit{student}, i}$$ is the time student spends on test $$i$$
+* $$avg_{\textit{reference}, i}$$ is the average memory used by reference implementation on test $$i$$
+* $$avg_{\textit{student}, i}$$ is the average memory used by student implementation on test $$i$$
+* $$max_{\textit{reference}, i}$$ is the max memory used by the reference implementation on test $$i$$
+* $$max_{\textit{student}, i}$$ is the max memory used by the student implementation on test $$i$$
 
-Higher scores are better. This differs from previous versions of the contest.
+Higher scores are better.
+
+__Note:__ We reserve the right to slightly modify constants inside the formula to ensure fair grading and prevent gaming the system. However, the basic idea will not be changing, and whatever we use will be the same for everyone.
 
 __Example 1.__
 
