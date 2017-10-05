@@ -29,12 +29,12 @@
     dueDate: "Week 6"
     url: "teaching_threads"
     resources: true
-  # -
-  #   name: "Splendid Synchronization"
-  #   releaseDate: "Week 6"
-  #   dueDate: "Week 7"
-  #   url: "splendid_synchronization"
-  #   resources: true
+  -
+    name: "Splendid Synchronization"
+    releaseDate: "Week 6"
+    dueDate: "Week 7"
+    url: "splendid_synchronization"
+    resources: true
   # -
   #   name: "Deadlocked Diners"
   #   releaseDate: "Week 7"
