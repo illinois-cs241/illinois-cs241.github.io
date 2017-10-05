@@ -27,7 +27,7 @@
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
   -
     date: "October 11"
-    content: "Lock Free Data Structures"
+    content: "Linux Kernel"
     slides: #"parallel.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/76567804-1eac-45ad-9ebb-7d39e69a0443?ec=true"
   -
@@ -37,7 +37,7 @@
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f49eb1bc-8d6d-44aa-ac98-4fc43d408651?ec=true"
   -
     date: "October 25"
-    content: "Linux Kernel"
+    content: "Lock Free Data Structures"
     slides:
     video:
   -
