@@ -138,8 +138,6 @@ Stack s; <span class="co">//Thread Safe Stack</span>
 <li>Where/how do you notify these blocked thread when a thread increases the semamore’s value above 0?</li>
 </ul></li>
 </ul>
-</section><section class="slide level2">
-
 </section></section>
 <section><section id="remember-to-not-burn-cpu" class="titleslide slide level1"><h1>Remember to not burn CPU</h1></section><section id="spurious-wakeups" class="slide level2">
 <h2>Spurious Wakeups?</h2>
@@ -201,7 +199,7 @@ Stack s; <span class="co">//Thread Safe Stack</span>
 
 <ul>
 <li><code>PTHREAD_MUTEX_INITIALIZER</code> only works for static initialization</li>
-<li>Use <code>pthread_mutex_init(&amp;mtex, NULL)</code> in other case</li>
+<li>Use <code>pthread_mutex_init(&amp;mtex, NULL)</code> in other cases</li>
 <li>Think of all critical/edge cases to test your queue/semamore</li>
 <li>Consider one thread that starts working really late</li>
 <li>Semamore is not a real term!</li>
