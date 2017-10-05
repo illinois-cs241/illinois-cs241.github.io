@@ -7,7 +7,7 @@ submissions:
   graded_files:
   - barrier.c
   - queue.c
-  - semmamore.c
+  - semamore.c
 learning_objectives:
   - Synchronization Primitives
   - Common Patterns in Multi-Threaded Programs
