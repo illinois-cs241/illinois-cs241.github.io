@@ -37,7 +37,7 @@ The basic function of a shell is to accept commands as inputs and execute the co
 
 Since this MP **requires** your programs to print a variety of things like error messages, we have provided you with our own highly customized formatting library. You should not be printing out to stdout and stderr at all; instead, all output and errors should be printed using the functions provided in `format.c` and `format.h`. In `format.h` you can find documentation about what each function does, and you should use them whenever appropriate. This is our way of ensuring that you do not lose points for formatting issues, but it also means that you are responsible for handling any and all errors mentioned in `format.c` and `format.h`.
 
-Note: don't worry if you don't use some of the functions that are found in `format.c/h`.
+**Note**: don't worry if you don't use all of the functions in `format.c`.
 
 ## Overview
 
