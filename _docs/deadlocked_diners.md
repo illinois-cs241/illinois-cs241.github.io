@@ -50,8 +50,7 @@ which wont be released until the first intern is given a break...
 ## Your Job
 
 * Read [Resource Allocation Graphs](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-1%3A-Resource-Allocation-Graph) and [Deadlock Conditions](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions) to have all the knowledge you will need for this assignment.
-* We recommend you fill out this [Google Form](http://goo.gl/forms/BdDaErdQjT) **BEFORE** you write any code (see the section on testing for details on gathering data).  It isn't graded but should help you wrap your head around the problem conceptually.
-* Read `simulator.c`, `bad_company.c`, and `company.h` until you have a good sense of what the code is doing (Nothing will make sense until you do).
+* Read `simulator.c`, `bad_company.c`, and `company.h` until you have a good sense of what the code is doing (nothing will make sense until you do).
 * Overwrite `good_company.c` with your correct solution (hint: look in `company.h` for useful functions).
 
 ## Testing
