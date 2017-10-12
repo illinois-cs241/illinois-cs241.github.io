@@ -35,12 +35,12 @@
     dueDate: "Week 7"
     url: "splendid_synchronization"
     resources: true
-  # -
-  #   name: "Deadlocked Diners"
-  #   releaseDate: "Week 7"
-  #   dueDate: "Week 8"
-  #   url: "deadlocked_diners"
-  #   resources: true
+  -
+    name: "Deadlocked Diners"
+    releaseDate: "Week 7"
+    dueDate: "Week 8"
+    url: "deadlocked_diners"
+    resources: true
   # -
   #   name: "Ideal Indirection"
   #   releaseDate: "Week 8"
