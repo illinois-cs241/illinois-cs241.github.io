@@ -24,11 +24,11 @@
     releaseDate: "Week 6"
     dueDate: "Week 7 & 8"
     url: "malloc"
-  # -
-  #   name: "Password Cracker"
-  #   releaseDate: "Week 8"
-  #   dueDate: "Week 9"
-  #   url: "password_cracker"
+   -
+     name: "Password Cracker"
+     releaseDate: "Week 8"
+     dueDate: "Week 9"
+     url: "password_cracker"
   # -
   #   name: "Parallel Make"
   #   releaseDate: "Week 9"
