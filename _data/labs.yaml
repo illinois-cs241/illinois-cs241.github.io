@@ -41,12 +41,12 @@
     dueDate: "Week 8"
     url: "deadlocked_diners"
     resources: true
-   -
-     name: "Ideal Indirection"
-     releaseDate: "Week 8"
-     dueDate: "Week 9"
-     url: "ideal_indirection"
-     resources: true
+  -
+    name: "Ideal Indirection"
+    releaseDate: "Week 8"
+    dueDate: "Week 9"
+    url: "ideal_indirection"
+    resources: true
   # -
   #   name: "MapReduce"
   #   releaseDate: "Week 9"
