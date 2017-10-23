@@ -50,17 +50,17 @@ A good way to think about this MP at a high level is by using a model [covered i
 Here is an example Makefile:
 
     d: a c
-        echo D
+    	echo D
     a: b
-        echo A
+    	echo A
     b: a
-        echo B
+    	echo B
     c:
     	echo C
 
 The following graph represents the above Makefile. Note that 'a' and 'b' form a cycle (-> 'b' -> 'a' ->). 
 
-![Flow Chart](images/ColorfulDeadlock.svg)
+![Makefile Graph](../images/ColorfulDeadlock.svg)
 
 Some more resources on RAGs & Deadlock: [Wikipedia](https://en.wikipedia.org/wiki/Deadlock), [Wikibook](https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions).
 
@@ -226,7 +226,7 @@ You can use `system()` to run the commands associated with each rule. There are 
 
 For your convenience these rules are captured in the following flow chart:
 
-![Flow Chart](images/parmake_flowchart.svg)
+![Flow Chart](../images/parmake_flowchart.svg)
 
 ## Parallelize! (Part 2 Only)
 
