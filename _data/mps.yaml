@@ -29,11 +29,11 @@
     releaseDate: "Week 8"
     dueDate: "Week 9"
     url: "password_cracker"
-  # -
-  #   name: "Parallel Make"
-  #   releaseDate: "Week 9"
-  #   dueDate: "Week 10 & 11"
-  #   url: "parallel_make"
+  -
+    name: "Parallel Make"
+    releaseDate: "Week 9"
+    dueDate: "Week 10 & 11"
+    url: "parallel_make"
   # -
   #   name: "Pied Piper"
   #   releaseDate: "Week 11"
