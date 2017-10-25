@@ -183,7 +183,14 @@ Note: You do NOT have to parallelize the cycle detection and rule extraction.
 Each rule depends on a set of other rules and files.
 It is important to note that each dependency is either the name of another rule or the name of a file on disk or BOTH. A rule can be satisfied if and only if all of rules that it depends on have been satisfied and none of them have failed (See what determines a failed rule in Running Commands).
 
-Note that rules which do not descend from any build targets, or whose only ancestors otherwise possess descendants that form cycles, should never be run. In other words, if none of a rule's ancestors are build targets, or if its only build target ancestors cannot be satisfied due to circular dependencies, the rule should never be worked on. 
+Note that you shouldn't try to satisfy rules that aren't good build rules and don't have any good build rules as ancestors. Specifically, you should not try to satisfy a rule if any of the following is true:
+
+1. the rule a build rule, but is involved in a cycle, i.e. there exists a path from the rule to itself in the dependency graph
+2. the rule is a build rule, but at least one of its descendants, i.e. any rule in the dependency graph reachable from the build target, is involved in a cycle
+3. the rule is not a build rule, and it has no ancestors that are build rules
+4. the rule is not a build rule, and all of its build rule ancestors fall under *(1)* or *(2)*
+
+Basically, there is no need to satisfy a rule if it isn't necessary to satisfy the build rules, or if we already know that all the build rules it might satisfy are doomed to fail due to cycles. Trying to satisfying any of them would be impossible at worst or a waste of time at best.
 
 When a rule is ready to be satisfied, we must determine if we actually need to run the rule's commands. We run its commands if and only if at least one of the following is true:
 
@@ -316,8 +323,8 @@ provided that testfile4 does not contain cycles.
 Here is the grading breakdown:
 
 * Part 1 (50%): Create a single-threaded version of `parmake` (so just `make`). This version should:
-	- identify cycles in the dependency graph returned by the parser and remove build targets that depend on them
-	- attempt to run all other build targets by running all their descendants (i.e. implicit dependencies) and *only* their descendants
+	- identify cycles in the dependency graph returned by the parser and remove build rules that depend on them
+	- attempt to run all other build rules by running all their descendants (i.e. implicit dependencies) and *only* their descendants
 	- identify whether or not to run a rule as per the flowchart recipe and run it once possible (or reject it if not possible)
 * Part 2 (50%): Create the full multi-threaded version of `parmake` (so `par`). This version should:
 	- perform the same functions as in Part 1
