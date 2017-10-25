@@ -38,7 +38,7 @@
   -
     date: "October 25"
     content: "Lock Free Data Structures"
-    slides:
+    slides: "lock_free.pdf"
     video:
   -
     date: "November 1"
