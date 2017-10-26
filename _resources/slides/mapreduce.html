@@ -8,19 +8,19 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
-  <link rel="stylesheet" href="/lib/reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/black.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '/lib/reveal.js/css/print/pdf.css' : '/lib/reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -36,7 +36,7 @@
 <section><section id="what-are-they" class="titleslide slide level1"><h1>What are they?</h1></section><section id="in-memory" class="slide level2">
 <h2>In Memory</h2>
 <figure>
-<img src="/resources/slides/pied/pipe.gif" />
+<img src="/resources/slides/mapreduce/pipe.gif" />
 </figure>
 </section><section class="slide level2">
 
@@ -46,7 +46,7 @@
 </section><section class="slide level2">
 
 <figure>
-<img src="/resources/slides/pied/pipes.png" />
+<img src="/resources/slides/mapreduce/pipes.png" />
 </figure>
 </section></section>
 <section><section id="gotchas" class="titleslide slide level1"><h1>Gotchas</h1></section><section id="why-do-i-need-to-close-pipes" class="slide level2">
@@ -55,12 +55,12 @@
 </section><section id="how-does-dup-function" class="slide level2">
 <h2>How does dup function?</h2>
 <figure>
-<img src="/resources/slides/pied/dup.gif" />
+<img src="/resources/slides/mapreduce/dup.gif" />
 </figure>
 </section><section class="slide level2">
 
 <figure>
-<img src="/resources/slides/pied/fd-inode-diagram.png" />
+<img src="/resources/slides/mapreduce/fd-inode-diagram.png" />
 </figure>
 </section><section id="hint-hint" class="slide level2">
 <h2>Hint Hint</h2>
@@ -75,8 +75,8 @@
     </div>
   </div>
 
-  <script src="/lib/reveal.js/lib/js/head.min.js"></script>
-  <script src="/lib/reveal.js/js/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
 
   <script>
 
@@ -86,9 +86,9 @@
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: '/lib/reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/zoom-js/zoom.js', async: true },
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
