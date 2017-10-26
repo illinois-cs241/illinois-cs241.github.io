@@ -47,13 +47,13 @@
     dueDate: "Week 9"
     url: "ideal_indirection"
     resources: true
-  # -
-  #   name: "MapReduce"
-  #   releaseDate: "Week 9"
-  #   dueDate: "Week 10"
-  #   url: "mapreduce"
-  #   worksheet: false
-  #   resources: true
+  -
+    name: "MapReduce"
+    releaseDate: "Week 9"
+    dueDate: "Week 10"
+    url: "mapreduce"
+    worksheet: false
+    resources: true
   # -
   #   name: "Savvy Scheduler"
   #   releaseDate: "Week 10"
