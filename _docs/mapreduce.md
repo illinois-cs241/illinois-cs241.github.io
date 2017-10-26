@@ -3,7 +3,7 @@ layout: doc
 title: "MapReduce"
 submissions:
 - title: Mapreduce
-  due_date: 04/10 11:59pm
+  due_date: 11/1 11:59pm
   graded_files:
   - mapreduce.c
 learning_objectives:
