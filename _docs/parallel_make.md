@@ -319,13 +319,13 @@ Example "good" Makefile:
 
     #testfile
     
-    a: maybefile b c
+    a: maybefile b c 
     	echo "a"
     b:
-        cat / # always fails
-	echo "I should not print out."
+    	cat / # always fails
+    	echo "I should not print out."
     c:
-        echo "c"
+    	echo "c"
     maybefile:
 
 Example commands:
