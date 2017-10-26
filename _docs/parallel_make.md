@@ -180,10 +180,19 @@ Note: You do NOT have to parallelize the cycle detection and rule extraction.
 
 ## Satisfy the rules
 
-Each rule depends on a set of other rules and files.
-It is important to note that each dependency is either the name of another rule or the name of a file on disk or BOTH. A rule can be satisfied if and only if all of rules that it depends on have been satisfied and none of them have failed (See what determines a failed rule in Running Commands).
+Each rule depends on a (possibly empty) set of other rules. It is important to note that every dependency will be a rule, even if the dependency isn't explicitly defined in the Makefile. For example, these two Makefiles are equivalent:
 
-Note that you shouldn't try to satisfy rules that aren't good build rules and don't have any good build rules as ancestors. Specifically, you should not try to satisfy a rule if any of the following is true:
+    # Makefile 1
+    a: b
+    	echo A
+    # Makefile 2
+    a: b
+        echo A
+    b:
+
+Some rules might also be files on the disk. A rule can be satisfied if and only if all of rules that it depends on have been satisfied and none of them have failed (See what determines a failed rule in Running Commands).
+
+Note that you shouldn't try to satisfy rules that aren't "good" build rules and don't have any "good" build rules as ancestors. Specifically, you should not try to satisfy a rule if any of the following is true:
 
 1. the rule a build rule, but is involved in a cycle, i.e. there exists a path from the rule to itself in the dependency graph
 2. the rule is a build rule, but at least one of its descendants, i.e. any rule in the dependency graph reachable from the build target, is involved in a cycle
@@ -278,7 +287,6 @@ There are many more examples provided in your MP folder.
 * For full points, avoid busy-waiting. i.e. threads should not be burning CPU when they aren't doing useful work.
 * You must only ever launch `T+1` threads, where `T` is the number of worker threads (+1 comes from the main thread). Do not keep re-spawning new threads for every rule.
 * We will try to artificially create spurious wakeups, so think about how you would resolve those.
-* GNU `make` will print out the commands such as 'echo hello' before running it. Your `parmake` application should not do this.
 * To achieve a perfect score, you should maximize parallelization by ensuring that every given rule that can be run at a given time is being run.
 * Because rules should be run as soon as they are available, there will sometimes be a well-defined, optimal order of rule execution when multiple threads are used. Think about why that might be the case.
 
@@ -299,24 +307,40 @@ For a tsan example, see [the tsan docs](./tsan)
 **We will be using ThreadSanitizer to grade your code! If the autograder detects a data race, you won't automatically get 0 points, but a few points will be deducted.**
 
 ### (Almost) a reference implementation
-You can use the real GNU `make` to check your code.
-Note that the real version of `make` usually prints every command it runs.
-To get GNU `make` to behave more like `parmake`, run `make` with the flag `-s` (for silent). GNU `make` also deals with cycles differently than `parmake` will, so do not use its behavior as a reference.
+You can use the real GNU `make` to check your implementation. However, it differs from `parmake` in certain substantive aspects that may or may not be resolved. Here is a partial list of differences:
+* `make` usually prints every command it runs. Run `make` with the flag `-s` (for silent) to suppress these.
+* `make` deals with cycles differently than `parmake`, so do not use `make` as a reference for cycle handling.
+* `make` kills the program immediately after a rule fails. Run `make` with the flag `-k` (for keep going) to continue satisfying rules that aren't doomed to fail.
+* `make` requires every dependency to either be explicitly declared in the Makefile or present as a file on the disk. To get `parmake` and `make` to work the same way, define every rule explicitly.
+* `make` spits out error messages when commands fail, even when the flag `-k` is used. `parmake` will not do this.
+    
 
-Example:
+Example "good" Makefile:
+
+    #testfile
+    
+    a: maybefile b c
+    	echo "a"
+    b:
+        cat / # always fails
+	echo "I should not print out."
+    c:
+        echo "c"
+    maybefile:
+
+Example commands:
 
 ```
-    $ ./parmake -f testfile4 -j 2
+    $ ./parmake -f testfile -j 2
 ```
 
 This should generate the same output as:
 
 ```
-    $ make -s -f testfile4 -j 2
+    $ make -s -k -f testfile -j 2
 ```
 
-provided that testfile4 does not contain cycles.
-
+except maybe for some printouts that `make` emits when 'b' fails. Remember that you don't need to implement any GNU Make features that aren't prescribed in these docs.
 
 ## Grading
 
