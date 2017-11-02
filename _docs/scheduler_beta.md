@@ -20,7 +20,7 @@ wikibook:
 
 This lab is an experimental version of scheduler that uses green threads (see below for details). There are a few differences in the scheduler interface, but most of the logic remains the same. Note that your final grade for this lab will be the max of your grade from scheduler and scheduler beta (you don't need to attempt both, if you get a 0 in one of them, you will automatically recieve the grade for the other). 
 
-Since everything is almost the same, these docs will detail the differences and the model of threading explored in this lab. 
+Since everything is almost the same, these docs will detail the differences and the model of threading explored in this lab. We strongly recommend that you go back and read through the orignal version's docs (at least briefly) to get an idea of how scheduling work conceptually before attempting this lab. 
 
 ## job struct
 
