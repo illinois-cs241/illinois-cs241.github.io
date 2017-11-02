@@ -3,7 +3,7 @@ layout: doc
 title: "Scheduler Beta"
 submissions:
 - title: Entire Assignment
-  due_date: 10/09 11:59pm
+  due_date: 11/09 11:59pm
   graded_files:
   - libscheduler.c
   - libscheduler.h
