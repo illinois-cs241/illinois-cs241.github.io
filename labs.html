@@ -30,20 +30,21 @@
       		    	<td>{{lab.releaseDate}}</td>
                 <td>{{lab.dueDate}}</td>
                 {% if lab.resources %}
-                <td><a href="/resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html" class="fancy-link wiki-link"><img src="./images/lab_assets/animation.png"></a></td>
-
-                {% if lab.worksheet == nil or lab.worksheet != false %}
-                <td>
-                <a href="/resources/handouts/{{lab.name | downcase | replace: " ", "_"}}.pdf" class="fancy-link wiki-link"><img src="./images/lab_assets/file-document.png"></a></td>
+                  {% if lab.slides == nil or lab.slides != false %}
+                    <td><a href="/resources/slides/{{lab.name | downcase | replace: " ", "_"}}.html" class="fancy-link wiki-link"><img src="./images/lab_assets/animation.png"></a></td>
+                  {% else %}
+                    <td></td>
+                  {% endif %}
+                  {% if lab.worksheet == nil or lab.worksheet != false %}
+                    <td><a href="/resources/handouts/{{lab.name | downcase | replace: " ", "_"}}.pdf" class="fancy-link wiki-link"><img src="./images/lab_assets/file-document.png"></a></td>
+                  {% else %}
+                    <td></td>
+                  {% endif %}
                 {% else %}
-                <td></td>
-                {% endif %}
-
-                {% else %}
-                <td class="mdl-data-table__cell--non-numeric">
-                </td>
-                <td class="mdl-data-table__cell--non-numeric">
-                </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">
+                  </td>
                 {% endif %}
               </tr>
             {% endfor %}

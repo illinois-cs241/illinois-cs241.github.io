@@ -59,7 +59,8 @@
     releaseDate: "Week 10"
     dueDate: "Week 11"
     url: "savvy_scheduler"
-    resources: true 
+    slides: false
+    resources: true
   # -
   #   name: "Chatroom"
   #   releaseDate: "Week 11"
