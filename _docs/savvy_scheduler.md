@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Scheduler"
+title: "Savvy Scheduler"
 submissions:
 - title: Entire Assignment
   due_date: 11/09 11:59pm
@@ -22,7 +22,7 @@ In this lab you'll be writing a scheduler. Rather than interacting directly with
 
 ## Alternative lab
 
-This semester, we have developed a beta version of this lab that we hope to use in future semesters. You can find it [here](http://cs241.cs.illinois.edu/scheduler_beta.html). As such, your grade for this lab will be the max of your grade on this version and the beta version. That is, you can do one or both version and will only recieve credit for whichever lab you have a higher score after the final autograder run! So essentially there are 4 cases.
+This semester, we have developed a beta version of this lab that we hope to use in future semesters. You can find it [here](http://cs241.cs.illinois.edu/savvy_scheduler_beta.html). As such, your grade for this lab will be the max of your grade on this version and the beta version. That is, you can do one or both version and will only recieve credit for whichever lab you have a higher score after the final autograder run! So essentially there are 4 cases.
 
 - You attempt the beta but not this version and recieve whatever grade you obtain on the beta
 - You attempt this version but not the beta and recieve whatever grade you obtain on this version

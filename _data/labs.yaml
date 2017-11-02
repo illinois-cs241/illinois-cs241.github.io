@@ -58,7 +58,7 @@
     name: "Savvy Scheduler"
     releaseDate: "Week 10"
     dueDate: "Week 11"
-    url: "scheduler"
+    url: "savvy_scheduler"
     resources: true 
   # -
   #   name: "Chatroom"

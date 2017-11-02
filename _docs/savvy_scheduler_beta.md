@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Scheduler Beta"
+title: "Savvy Scheduler Beta"
 submissions:
 - title: Entire Assignment
   due_date: 11/09 11:59pm
