@@ -54,12 +54,12 @@
     url: "mapreduce"
     worksheet: false
     resources: true
-  # -
-  #   name: "Savvy Scheduler"
-  #   releaseDate: "Week 10"
-  #   dueDate: "Week 11"
-  #   url: "scheduler"
-  #   resources: false
+  -
+    name: "Savvy Scheduler"
+    releaseDate: "Week 10"
+    dueDate: "Week 11"
+    url: "scheduler"
+    resources: true 
   # -
   #   name: "Chatroom"
   #   releaseDate: "Week 11"
