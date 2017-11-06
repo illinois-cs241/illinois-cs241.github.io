@@ -3,7 +3,7 @@ layout: doc
 title: "Pied Piper"
 submissions:
 - title: Entire Assignment
-  due_date: 10/12/17 at 11:59pm
+  due_date: 11/13/17 at 11:59pm
   graded_files:
   - pied_piper.c
 learning_objectives:
