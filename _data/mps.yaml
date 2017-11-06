@@ -34,11 +34,11 @@
     releaseDate: "Week 9"
     dueDate: "Week 10 & 11"
     url: "parallel_make"
-  # -
-  #   name: "Pied Piper"
-  #   releaseDate: "Week 11"
-  #   dueDate: "Week 12"
-  #   url: "pied_piper"
+  -
+    name: "Pied Piper"
+    releaseDate: "Week 11"
+    dueDate: "Week 12"
+    url: "pied_piper"
   # -
   #   name: "Networking Nightmare"
   #   releaseDate: "Week 12"
