@@ -48,7 +48,7 @@
   -
     date: "November 8"
     content: "TCP"
-    slides: #"filesystems.pdf"
+    slides: "tcp.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/5de679c3-a1b2-4a4b-aa12-af0a28b4a539?ec=true"
   -
     date: "November 15"
