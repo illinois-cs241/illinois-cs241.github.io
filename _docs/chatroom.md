@@ -3,7 +3,7 @@ layout: doc
 title: "Chatroom"
 submissions:
 - title: Entire Assignment
-  due_date: 04/12 11:59pm
+  due_date: 11/15 11:59pm
   graded_files:
   - server.c
   - client.c
