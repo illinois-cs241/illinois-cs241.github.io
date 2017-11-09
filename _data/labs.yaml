@@ -61,12 +61,12 @@
     url: "savvy_scheduler"
     slides: false
     resources: true
-  # -
-  #   name: "Chatroom"
-  #   releaseDate: "Week 11"
-  #   dueDate: "Week 12"
-  #   url: "chatroom"
-  #   resources: true
+  -
+    name: "Chatroom"
+    releaseDate: "Week 11"
+    dueDate: "Week 12"
+    url: "chatroom"
+    resources: true
   # -
   #   name: "Finding Filesystems"
   #   releaseDate: "Week 12"
