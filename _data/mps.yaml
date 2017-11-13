@@ -39,8 +39,8 @@
     releaseDate: "Week 11"
     dueDate: "Week 12"
     url: "pied_piper"
-  # -
-  #   name: "Networking Nightmare"
-  #   releaseDate: "Week 12"
-  #   dueDate: "Week 14, 15 & 16"
-  #   url: "networking_nightmare"
+  -
+    name: "Nonstop Networking"
+    releaseDate: "Week 12"
+    dueDate: "Week 14, 15 & 16"
+    url: "nonstop_networking"
