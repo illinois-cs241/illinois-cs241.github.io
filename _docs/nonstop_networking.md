@@ -260,11 +260,11 @@ Since your server is expected to be able to serve a large number of clients mult
 
 ### File Storage
 
-You should create a temporary directory using the `mkdtemp(char *template)` function (make sure you follow this convention exactly!). Your server will store all uploaded files in this directory. **Immediately** after creating your directory, you **must** print it out using `print_temp_directory` (found in format.h) from the current directory (do not cd into another directory and then call `print_temp_directory` - if you don't follow this rule, do not expect to pass any of the autograder tests.
+You should create a temporary directory using the `mkdtemp()` function (make sure you follow this convention exactly!). Your server will store all uploaded files in this directory. **Immediately** after creating your directory, you **must** print it out using `print_temp_directory` (found in format.h) from the current directory (do not cd into another directory and then call `print_temp_directory` - if you don't follow this rule, do not expect to pass any of the autograder tests.
 
 When your server exits, it should clean up any files stored in this directory, and then delete the directory itself. `unlink()` and `rmdir()` might be helpful here.
 
-_Note:_ Be sure to use the directory name that `mkdirtmp(char *template)` gives you. Additionally, make sure that your `template` is *exactly* 6 X's, as in `XXXXXX`.
+_Note:_ Be sure to use the directory name that mkdirtmp(char \*template) gives you. Additionally, make sure that your template is *exactly* 6 X's, as in `XXXXXX`.
 
 ### Exiting the server
 
