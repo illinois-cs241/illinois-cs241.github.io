@@ -103,8 +103,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     <span class="dt">uint16_t</span>    permissions;        <span class="co">/* &lt;d,f,c,p&gt;rwxrwxrwx */</span>
     <span class="dt">uint32_t</span>    hard_link_count;    <span class="co">/* reference count, when hit 0 */</span>
     time_t      last_access;        <span class="co">/* read(2) change */</span>
-    time_t      last_modification;  <span class="co">/* any time metadata changes */</span>
-    time_t      last_change;        <span class="co">/* write(2) change */</span>
+    time_t      last_modification;  <span class="co">/* write(2) change */</span>
+    time_t      last_change;        <span class="co">/* any time metadata changes */</span>
     <span class="dt">uint64_t</span>    size;               <span class="co">/* size of the file in bytes */</span>
     data_block_number direct_nodes[NUM_DIRECT_INODES]; <span class="co">/* data_blocks */</span>
     data_block_number single_indirect; <span class="co">/* points to a singly indirect block */</span>
