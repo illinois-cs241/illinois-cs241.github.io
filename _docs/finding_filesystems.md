@@ -257,7 +257,7 @@ $ xdg-open dog.png
 
 You can store anything on filesystems. See what we hid around the testfs filesystem for you...
 
-You can also test by generating your own filesystems. To this end, we have included a script ./make_fs.sh and the executable minixfs-creator. To make your own filesystem, create a directory, put some files in created directory, then run ./make_fs.sh \[name of created directory\] \[outputfile\] where the outputfile is what you want for the generated filesystem to be named. This is useful if you want to test out something different than what's provided in test.fs (e.g. ls when there's only 1 file in the directory, or trying to cat files larger than what we've provided in test.fs)
+You can also test by generating your own filesystems. To this end, we have included a script `./make_fs.sh` and the executable `minixfs-creator`. To make your own filesystem, create a directory, put some files in created directory, then run `./make_fs.sh \[name of created directory\] \[outputfile\]` where the outputfile is what you want for the generated filesystem to be named. This is useful if you want to test out something different than what's provided in test.fs (e.g. ls when there's only 1 file in the directory, or trying to cat files larger than what we've provided in test.fs)
 
 ## Other Edge Cases
 
