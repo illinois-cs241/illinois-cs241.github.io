@@ -3,7 +3,7 @@ layout: doc
 title: "Finding Filesystems"
 submissions:
 - title: Entire Assignment
-  due_date: 11/22/2017 11:59pm
+  due_date: 11/29/2017 11:59pm
   graded_files:
   - fs.c
 learning_objectives:
