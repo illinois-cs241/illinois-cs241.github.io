@@ -107,7 +107,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
     time_t      last_change;        <span class="co">/* write(2) change */</span>
     <span class="dt">uint64_t</span>    size;               <span class="co">/* size of the file in bytes */</span>
     data_block_number direct_nodes[NUM_DIRECT_INODES]; <span class="co">/* data_blocks */</span>
-    data_block single_indirect;     <span class="co">/* points to a singly indirect block */</span>
+    data_block_number single_indirect; <span class="co">/* points to a singly indirect block */</span>
 } inode;</code></pre></div>
 </section>
 <section id="indirect-blocks" class="slide level2">
