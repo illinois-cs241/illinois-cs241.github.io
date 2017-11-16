@@ -67,12 +67,12 @@
     dueDate: "Week 12"
     url: "chatroom"
     resources: true
-  # -
-  #   name: "Finding Filesystems"
-  #   releaseDate: "Week 12"
-  #   dueDate: "Week 14"
-  #   url: "finding_filesystems"
-  #   resources: true
+  -
+    name: "Finding Filesystems"
+    releaseDate: "Week 12"
+    dueDate: "Week 14"
+    url: "finding_filesystems"
+    resources: true
   # -
   #   name: "Mapping Memory"
   #   releaseDate: "Week 14"
