@@ -5,7 +5,7 @@ submissions:
 - title: Entire Assignment
   due_date: 12/06 11:59pm
   graded_files:
-  - mmu.c
+  - mmap.c
 learning_objectives:
   - Memory Mapped Files
   - File Streams 
