@@ -3,7 +3,7 @@ layout: doc
 title: "Mapping Memory"
 submissions:
 - title: Entire Assignment
-  due_date: 10/Something 11:59pm
+  due_date: 12/06 11:59pm
   graded_files:
   - mmu.c
 learning_objectives:
