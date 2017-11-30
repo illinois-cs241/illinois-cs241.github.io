@@ -73,13 +73,13 @@
     dueDate: "Week 14"
     url: "finding_filesystems"
     resources: true
-  # -
-  #   name: "Mapping Memory"
-  #   releaseDate: "Week 14"
-  #   dueDate: "Week 15"
-  #   url: "mapping_memory"
-  #   worksheet: false
-  #   resources: true
+  -
+    name: "Mapping Memory"
+    releaseDate: "Week 14"
+    dueDate: "Week 15"
+    url: "mapping_memory"
+    worksheet: false
+    resources: true
   # -
   #   name: "Super Linux Kernel Super Lab"
   #   releaseDate: "Week 15"
