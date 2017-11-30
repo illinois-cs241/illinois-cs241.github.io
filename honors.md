@@ -60,11 +60,11 @@ The exact grading requirements of each project vary. You and your mentor will de
 
 ## Presentations
 
-Presentations will take place on Wednesday, December 6, and Wednesday, December 13, from 7-7:50pm in 1304 Siebel. Each group will have up to 6 minutes to present their project to the class.
+Presentations will take place on Wednesday, December 13, at 7pm in 1304 Siebel. Each group will have 10-15 minutes to present their project to the class.
 
 You should be sure to touch on what your project is, what interesting systems programming concepts were involved in your project, and any challenges you encountered along the way and how you tackled them. If you have more questions about what to include in your presentation, ask your mentor.
 
-You need to have some sort of visual presentation (Powerpoint, Google Slides, LaTeX beamer, etc.) to accompany your talk. Feel free to include screenshots of your project or pre-recorded demo videos. To avoid losing time to technical difficulties, live project demonstrations are not allowed; you must pre-record any demonstration you plan to give.
+You should have some sort of visual presentation (Powerpoint, Google Slides, LaTeX beamer, etc.) to accompany your talk. Feel free to include screenshots of your project or pre-recorded demo videos. To avoid losing time to technical difficulties, live project demonstrations are not allowed; you must pre-record any demonstration you plan to give.
 
 To ensure everyone has adequate time to present, we will pre-load all presentations on the computer in 1304. **Please email your presentation to course staff by 5pm on the day you are presenting** so that we have adequate time to prepare this.
 
