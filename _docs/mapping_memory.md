@@ -54,7 +54,7 @@ Read from the mmap'd file into a buffer provided by the user. You will need to u
  
 Same as mmap_read, but with writes instead of reads.
 
-##munmap
+## munmap
 
 Cleanup and destroy the mmap object. Remember that you need to copy dirty pages back to the file on disk. Be sure to close the file stream and free all memory allocated here. 
 
