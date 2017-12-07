@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 div.sourceCode { overflow-x: auto; }
@@ -47,17 +47,17 @@ code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Ann
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
   </style>
-  <link rel="stylesheet" href="/lib/reveal.js/css/theme/black.css" id="theme">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/black.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '/lib/reveal.js/css/print/pdf.css' : '/lib/reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="/lib/reveal.js/lib/js/html5shiv.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -73,11 +73,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ol type="1">
 <li><p>Consider the code below:</p>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> main() { 
- <span class="dt">int</span> x = <span class="dv">0</span>; 
- x++; 
- <span class="cf">if</span> (fork()) x++; 
- x++; 
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> main() {
+ <span class="dt">int</span> x = <span class="dv">0</span>;
+ x++;
+ <span class="cf">if</span> (fork()) x++;
+ x++;
  printf(<span class="st">&quot;%d</span><span class="sc">\n</span><span class="st">&quot;</span>);
  } </code></pre></div></li>
 </ol>
@@ -92,21 +92,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>In terms of processes, what is a zombie? Write a piece of code that creates a zombie process.</li>
 </ol>
 </section></section>
-<section><section id="memory-allocators" class="titleslide slide level1"><h1>Memory &amp; Allocators</h1></section><section class="slide level2">
+<!--<section><section id="memory-allocators" class="titleslide slide level1"><h1>Memory &amp; Allocators</h1></section><section class="slide level2">
 
 <p>None! I Couldn’t think of any</p>
-</section></section>
+</section></section>-->
 <section><section id="intro-to-pthreads" class="titleslide slide level1"><h1>Intro to Pthreads</h1></section><section class="slide level2">
 
 <ol type="1">
 <li>Consider the code below:</li>
 </ol>
-<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> * thread(<span class="dt">void</span> *ptr) { printf(<span class="st">&quot;Hello!&quot;</span>); } 
-<span class="dt">void</span> main() { 
-     pthread_t pid1, pid2; 
-     pthread_create(&amp;pid1, NULL, thread, NULL); 
-     pthread_create(&amp;pid2, NULL, thread, NULL); 
-     pthread_join(pid1, NULL); 
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> * thread(<span class="dt">void</span> *ptr) { printf(<span class="st">&quot;Hello!&quot;</span>); }
+<span class="dt">void</span> main() {
+     pthread_t pid1, pid2;
+     pthread_create(&amp;pid1, NULL, thread, NULL);
+     pthread_create(&amp;pid2, NULL, thread, NULL);
+     pthread_join(pid1, NULL);
 }</code></pre></div>
 <p>How many times is “Hello!” printed?</p>
 </section><section class="slide level2">
@@ -133,12 +133,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ol start="6" type="1">
 <li><p>Consider the code below:</p>
-<pre><code>void main() { 
- pthread_mutex_t mutex; 
- pthread_mutex_init(&amp;mutex, NULL); 
- pthread_cond_t cond; 
- pthread_cond_init(&amp;cond, NULL); 
- pthread_cond_broadcast(&amp;cond); 
+<pre><code>void main() {
+ pthread_mutex_t mutex;
+ pthread_mutex_init(&amp;mutex, NULL);
+ pthread_cond_t cond;
+ pthread_cond_init(&amp;cond, NULL);
+ pthread_cond_broadcast(&amp;cond);
  pthread_cond_wait(&amp;cond, &amp;mutex);
  }</code></pre></li>
 </ol>
@@ -266,12 +266,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <ol start="2" type="1">
 <li><p>Consider the code below:</p>
-<pre><code>void handler(int sig) { 
-printf(&quot;foo\n&quot;); 
-} 
-int main() { 
-signal(SIGKILL, handler); 
-while (1) { } 
+<pre><code>void handler(int sig) {
+printf(&quot;foo\n&quot;);
+}
+int main() {
+signal(SIGKILL, handler);
+while (1) { }
 return 0;
  }</code></pre></li>
 </ol>
@@ -284,12 +284,12 @@ return 0;
 
 <ol start="4" type="1">
 <li><p>Consider the code below:</p>
-<pre><code>void handler(int sig) { 
-printf(&quot;foo\n&quot;); 
-} 
-int main() { 
-signal(SIGINT, handler); 
-while (1) { } 
+<pre><code>void handler(int sig) {
+printf(&quot;foo\n&quot;);
+}
+int main() {
+signal(SIGINT, handler);
+while (1) { }
 return 0;
  }</code></pre></li>
 </ol>
@@ -299,8 +299,8 @@ return 0;
     </div>
   </div>
 
-  <script src="/lib/reveal.js/lib/js/head.min.js"></script>
-  <script src="/lib/reveal.js/js/reveal.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
 
   <script>
 
@@ -310,9 +310,9 @@ return 0;
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: '/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: '/lib/reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/zoom-js/zoom.js', async: true },
+              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
