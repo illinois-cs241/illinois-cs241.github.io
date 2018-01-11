@@ -1,11 +1,53 @@
 ---
 -
+  name: Aadil Bhatti
+  netid: abhatti2
+  class: 17
+  roles: Assignment Development
+  specialty: ""
+  semesters: Fall 2016 and Spring 2017
+-
+  name: Alec Kochevar-Cureton
+  netid: kocheva2
+  class: 17
+  roles: Assignment Development Lead
+  specialty: Puzzles
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  class: 17
+  name: "Alexander Wu"
+  netid: awu14
+  roles: "Lab/Office Hours Assistant"
+  semesters: "Spring 2016 and Fall 2016"
+  specialty: Performance
+-
+  name: Angelica Li
+  netid: li220
+  class: 19
+  roles: Assignment Developer
+  specialty: ""
+  semesters: Fall 2017
+-
   class: ""
   name: "Atul Kumar S Sandur"
   netid: sandur2
   roles: "Teaching Assistant"
   semesters: "Spring 2016"
   specialty: "Distributed systems and Mobile Computing"
+-
+  name: Ben Kurtovic
+  netid: kurtovc2
+  class: 17
+  roles: Undergrad Staff Lead and Honors Mentor
+  specialty: operating systems, networking, security
+  semesters: Spring 2016, Fall 2016, Spring 2017, and Fall 2017
+-
+  name: Bhatt Mayank
+  netid: mayankb2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2016 and Spring 2017
 -
   class: ""
   name: "Boyang Chen"
@@ -21,119 +63,6 @@
   semesters: "Spring 2016"
   specialty: Networks
 -
-  class: ""
-  name: "Gliz Seray Tuncay"
-  netid: tuncay2
-  roles: "Teaching Assistant"
-  semesters: "Spring 2016"
-  specialty: "Systems and Networking"
--
-  class: ""
-  instructor: true
-  name: "Lawrence Angrave"
-  netid: angrave
-  roles: "Captain and Lecturer"
-  semesters: "Fall 2006, Fall 2007, Spring 2007, Spring 2008, Fall 2014, Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
-  specialty: "Systems and CS Education"
--
-  class: 17
-  name: "Eric Sauer"
-  netid: emsauer2
-  roles: "Assignment Development"
-  semesters: "Fall 2015, Spring 2016, and Fall 2016"
-  specialty: "Game Engines"
--
-  class: 17
-  name: "Varun Thangavelu"
-  netid: thangav2
-  roles: "Lab and Officer Hours Assistant"
-  semesters: "Fall 2015, Spring 2016, and Fall 2016"
-  specialty: "Big Data"
--
-  class: 17
-  name: "Yushuo Lin"
-  netid: ylin91
-  roles: "Lab and Officer Hours Assistant"
-  semesters: "Fall 2015, Spring 2016, and Fall 2016"
-  specialty: "CS and Stat"
--
-  class: 17
-  name: "Porter Smith"
-  netid: pmsmith2
-  roles: "Office Hours Team Leader"
-  semesters: "Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
-  specialty: "System Programming and Embedded Programming"
--
-  class: 16
-  name: "Maddie Lin"
-  netid: mlin35
-  roles: "Lab and Officer Hours Assistant"
-  semesters: "Fall 2015, Spring 2016, and Fall 2016"
-  specialty: "Software Engineering"
--
-  class: 18
-  name: "Yuxian Zhu"
-  netid: yzhu73
-  roles: "MP Development, Office hour"
-  semesters: "Spring 2016 and Fall 2016"
-  specialty: "Distributed systems, Embedded systems, Parallel Programming"
--
-  class: 17
-  name: "Alexander Wu"
-  netid: awu14
-  roles: "Lab/Office Hours Assistant"
-  semesters: "Spring 2016 and Fall 2016"
-  specialty: Performance
--
-  class: ""
-  name: "Po-Tsung Chiu"
-  netid: ptchiu2
-  roles: "Teaching Assistant"
-  semesters: "Fall 2016"
-  specialty: ""
--
-  class: ""
-  name: "Surtai Han"
-  netid: sshan7
-  roles: "Teaching Assistant"
-  semesters: "Spring 2015 and Fall 2016"
-  specialty: ""
--
-  class: 18
-  name: "Saad Hussain"
-  netid: msh5
-  roles: "Teaching Assistant"
-  semesters: "Fall 2016"
-  specialty: Undecided
--
-  class: ""
-  name: "Hsuan-Yu Chen"
-  netid: hychen2
-  roles: "Teaching Assistant"
-  semesters: "Fall 2016"
-  specialty: HCI
--
-  class: 17
-  name: "Yi Zhou"
-  netid: yizhou7
-  roles: "Lab Assistant"
-  semesters: "Fall 2015, Spring 2016, and Fall 2016"
-  specialty: "Computer Security"
--
-  class: 18
-  name: "Mengting Yan"
-  netid: myan9
-  roles: "Honors Assistant"
-  semesters: "Fall 2016"
-  specialty: "Operating System, Distributed System"
--
-  class: 17
-  name: "Noel Fortman"
-  netid: nfortma2
-  roles: "Office Hours and Lab Team"
-  semesters: "Fall 2015, Spring 2016, and Fall 2016"
-  specialty: "Computational Musical Analysis"
--
   name: Brandon Chong
   netid: bschong2
   class: 17
@@ -148,81 +77,18 @@
   specialty: Software engineering, systems programming, OS, programming languages
   semesters: Spring 2015, Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
+  name: Brian Zhou
+  netid: bwzhou2
+  class: 19
+  roles: Lab/Office Hours Assistant and Honors Mentor
+  specialty: systems
+  semesters: Spring 2017 and Fall 2017
+-
   name: Curtis Bezault
   netid: bezault2
   class: 17
   roles: Lab Assistant
   specialty: High Performance Computing/Massively Parallel Computing
-  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
--
-  name: Luke Liu
-  netid: jianliu4
-  class: 17
-  roles: Infrastructure Developer
-  specialty: Linux
-  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
--
-  name: Robert Andrews
-  netid: rgandre2
-  class: 17
-  roles: Honors Section Team Leader
-  specialty: Theoretical Computer Science
-  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
--
-  name: Alec Kochevar-Cureton
-  netid: kocheva2
-  class: 17
-  roles: Assignment Development Lead
-  specialty: Puzzles
-  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
--
-  name: Margarita Mouschovias
-  netid: mmousch2
-  class: 17
-  roles: Office Hours, Piazza, Lab
-  specialty: VR, Systems, Databases
-  semesters: Spring 2016, Fall 2016, and Spring 2017
--
-  name: WeiChun Lee
-  netid: wlee114
-  class: ""
-  roles: Teaching Assistant
-  specialty: Algorithmic Game Theory and Social Network
-  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
--
-  name: Bhatt Mayank
-  netid: mayankb2
-  class: ""
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2016 and Spring 2017
--
-  name: Aadil Bhatti
-  netid: abhatti2
-  class: 17
-  roles: Assignment Development
-  specialty: ""
-  semesters: Fall 2016 and Spring 2017
--
-  name: Sam Stephens
-  netid: scsteph2
-  class: 18
-  roles: Lab Assistant
-  specialty: Algorithms/Verification
-  semesters: Spring 2016, Fall 2016, and Spring 2017
--
-  name: Erica Lee
-  netid: nlee16
-  class: 17
-  roles: Assignment Development Lead
-  specialty: Undecided
-  semesters: Fall 2016 and Spring 2017
--
-  name: Nishad Phadke
-  netid: nphadke2
-  class: 17
-  roles: Office Hours and Lab
-  specialty: Sucks at Tennis
   semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
   name: Devon Papanicolas
@@ -232,6 +98,111 @@
   specialty: Material Science
   semesters: Spring 2017
 -
+  name: Elaine Ang
+  netid: ranang2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2017
+-
+  class: 17
+  name: "Eric Sauer"
+  netid: emsauer2
+  roles: "Assignment Development"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Game Engines"
+-
+  name: Erica Lee
+  netid: nlee16
+  class: 17
+  roles: Assignment Development Lead
+  specialty: Undecided
+  semesters: Fall 2016 and Spring 2017
+-
+  class: ""
+  name: "Gliz Seray Tuncay"
+  netid: tuncay2
+  roles: "Teaching Assistant"
+  semesters: "Spring 2016"
+  specialty: "Systems and Networking"
+-
+  class: ""
+  name: "Hsuan-Yu Chen"
+  netid: hychen2
+  roles: "Teaching Assistant"
+  semesters: "Fall 2016"
+  specialty: HCI
+-
+  class: 16
+  name: "Maddie Lin"
+  netid: mlin35
+  roles: "Lab and Officer Hours Assistant"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Software Engineering"
+-
+  name: Luke Liu
+  netid: jianliu4
+  class: 17
+  roles: Infrastructure Developer
+  specialty: Linux
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Mark Schmidt
+  netid: mwschmi2
+  class: 19
+  roles: Lab/Office Hours Assistant
+  specialty: synchronization
+  semesters: Spring 2017 and Fall 2017
+-
+  class: 18
+  name: "Mengting Yan"
+  netid: myan9
+  roles: "Honors Assistant"
+  semesters: "Fall 2016"
+  specialty: "Operating System, Distributed System"
+-
+  name: Nishad Phadke
+  netid: nphadke2
+  class: 17
+  roles: Office Hours and Lab
+  specialty: Sucks at Tennis
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  class: 17
+  name: "Noel Fortman"
+  netid: nfortma2
+  roles: "Office Hours and Lab Team"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Computational Musical Analysis"
+-
+  class: 17
+  name: "Porter Smith"
+  netid: pmsmith2
+  roles: "Office Hours Team Leader"
+  semesters: "Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "System Programming and Embedded Programming"
+-
+  class: ""
+  name: "Po-Tsung Chiu"
+  netid: ptchiu2
+  roles: "Teaching Assistant"
+  semesters: "Fall 2016"
+  specialty: ""
+-
+  name: Margarita Mouschovias
+  netid: mmousch2
+  class: 17
+  roles: Office Hours, Piazza, Lab
+  specialty: VR, Systems, Databases
+  semesters: Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Robert Andrews
+  netid: rgandre2
+  class: 17
+  roles: Honors Section Team Leader
+  specialty: Theoretical Computer Science
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
   name: Ruihan Shan
   netid: rshan3
   class:
@@ -239,9 +210,79 @@
   specialty: Algorithms
   semesters: Spring 2017
 -
+  class: 18
+  name: "Saad Hussain"
+  netid: msh5
+  roles: "Teaching Assistant"
+  semesters: "Fall 2016"
+  specialty: Undecided
+-
+  name: Sam Stephens
+  netid: scsteph2
+  class: 18
+  roles: Lab Assistant
+  specialty: Algorithms/Verification
+  semesters: Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Sibo Wang
+  netid: sibow2
+  class: 19
+  roles: Lab/Office Hours Assistant
+  specialty: high performance computing, simulation, and computer vision
+  semesters: Fall 2017
+-
   name: Spencer Lee
   netid: syl4
   class:
   roles: Teaching Assistant
   specialty: Invisibility
   semesters: Spring 2017
+-
+  class: ""
+  name: "Surtai Han"
+  netid: sshan7
+  roles: "Teaching Assistant"
+  semesters: "Spring 2015 and Fall 2016"
+  specialty: ""
+-
+  class: 17
+  name: "Varun Thangavelu"
+  netid: thangav2
+  roles: "Lab and Officer Hours Assistant"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Big Data"
+-
+  name: WeiChun Lee
+  netid: wlee114
+  class: ""
+  roles: Teaching Assistant
+  specialty: Algorithmic Game Theory and Social Network
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  class: 17
+  name: "Yi Zhou"
+  netid: yizhou7
+  roles: "Lab Assistant"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Computer Security"
+-
+  class: 17
+  name: "Yushuo Lin"
+  netid: ylin91
+  roles: "Lab and Officer Hours Assistant"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "CS and Stat"
+-
+  class: 18
+  name: "Yuxian Zhu"
+  netid: yzhu73
+  roles: "MP Development, Office hour"
+  semesters: "Spring 2016 and Fall 2016"
+  specialty: "Distributed systems, Embedded systems, Parallel Programming"
+-
+  name: Yuxuan Zou
+  netid: zou17
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2017

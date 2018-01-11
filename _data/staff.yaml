@@ -1,11 +1,17 @@
 -
+    instructor: true
+    name: "Lawrence Angrave"
+    netid: angrave
+    roles: "Captain and Lecturer"
+    semesters: "Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018"
+    specialty: "Systems and CS Education"
+-
     name: G Carl Evans
     netid: gcevans
     class: ""
     roles: Captain and Lecturer
     specialty: compilers and parallel
     semesters: Spring 2017 and Fall 2017
-    instructor: true
 -
     name: CS241 Admin
     netid: cs241admin
@@ -14,149 +20,100 @@
     specialty: ""
     semesters: all semesters
 -
-    name: Ben Kurtovic
-    netid: kurtovc2
-    class: 17
-    roles: Undergrad Staff Lead and Honors Mentor
-    specialty: operating systems, networking, security
-    semesters: Spring 2016, Fall 2016, Spring 2017, and Fall 2017
+    name: Bhuvan Venkatesh
+    netid: bvenkat2
+    class: 19
+    roles: Historian
+    specialty: Reading
+    semesters: Fall 2016, Spring 2017, Fall 2017, and Spring 2018
 -
     name: Peng Li
     netid: peng24
     class: 18
     roles: Teaching Assistant
     specialty: image processing
-    semesters: Fall 2016, Spring 2017, and Fall 2017
--
-    name: Brian Zhou
-    netid: bwzhou2
-    class: 19
-    roles: Lab/Office Hours Assistant and Honors Mentor
-    specialty: systems
-    semesters: Spring 2017 and Fall 2017
+    semesters: Fall 2016, Spring 2017, Fall 2017, and Spring 2018
 -
     name: Brian Kurek
     netid: bkurek2
     class: 19
     roles: Lab/Office Hours Assistant
     specialty: web development
-    semesters: Spring 2017 and Fall 2017
+    semesters: Spring 2017, Fall 2017, and Spring 2018
 -
     name: Aneesh Durg
     netid: durg2
     class: 19
     roles: Lab/Office Hours Assistant, Assignment Developer, and Honors Mentor
     specialty: memes
-    semesters: Spring 2017 and Fall 2017
+    semesters: Spring 2017, Fall 2017, and Spring 2018
 -
     name: Jonathan Wexler
     netid: jwexler2
     class: 19
     roles: Lab/Office Hours Assistant and Honors Lead
     specialty: procrastination
-    semesters: Spring 2017 and Fall 2017
+    semesters: Spring 2017, Fall 2017, and Spring 2018
 -
     name: Kevin Hong
     netid: khong18
     class: 19
     roles: Lab/Office Hours Assistant and Honors Mentor
     specialty: statistics and machine learning
-    semesters: Spring 2017 and Fall 2017
--
-    name: Mark Schmidt
-    netid: mwschmi2
-    class: 19
-    roles: Lab/Office Hours Assistant
-    specialty: synchronization
-    semesters: Spring 2017 and Fall 2017
+    semesters: Spring 2017, Fall 2017, and Spring 2018
 -
     name: Navneeth Jayendran
     netid: jayndrn2
     class: 18
     roles: Assignment Developer
     specialty: ""
-    semesters: Spring 2017 and Fall 2017
+    semesters: Spring 2017, Fall 2017, and Spring 2018
 -
     name: Yasha Mostofi
     netid: mostofi2
     class: 18
     roles: Assignment Developer and Infrastructure
     specialty: beards
-    semesters: Spring 2017 and Fall 2017
--
-    name: Saad Hussain
-    netid: msh5
-    class: 18
-    roles: Teaching Assistant
-    specialty: ""
-    semesters: Fall 2016 and Fall 2017
--
-    name: Elaine Ang
-    netid: ranang2
-    class: ""
-    roles: Teaching Assistant
-    specialty: ""
-    semesters: Fall 2017
+    semesters: Spring 2017, Fall 2017, and Spring 2018
 -
     name: Bhawesh Chhetri
     netid: bchhet2
     class: ""
     roles: Lab/Office Hours Assistant
     specialty: ""
-    semesters: Fall 2017
+    semesters: Fall 2017 and Spring 2018
 -
     name: Christian Cygnus
     netid: cygnus2
     class: ""
     roles: Lab/Office Hours Assistant and Assignment Developer
     specialty: ""
-    semesters: Fall 2017
+    semesters: Fall 2017 and Spring 2018
 -
     name: Han Song Huang
     netid: hhuang74
     class: ""
     roles: Lab/Office Hours Assistant and Assignment Developer
     specialty: ""
-    semesters: Fall 2017
--
-    name: Angelica Li
-    netid: li220
-    class: ""
-    roles: Assignment Developer
-    specialty: ""
-    semesters: Fall 2017
+    semesters: Fall 2017 and Spring 2018
 -
     name: Jing Rong Lim
     netid: jrlim3
     class: ""
     roles: Lab/Office Hours Assistant
     specialty: ""
-    semesters: Fall 2017
+    semesters: Fall 2017 and Spring 2018
 -
     name: Nick Magerko
     netid: magerko2
     class: ""
     roles: Assignment Developer
     specialty: ""
-    semesters: Fall 2017
+    semesters: Fall 2017 and Spring 2018
 -
     name: Steven Shang
     netid: shang9
     class: 19
     roles: Lab/Office Hours Assistant and Assignment Developer
     specialty: things
-    semesters: Fall 2017
--
-    name: Sibo Wang
-    netid: sibow2
-    class: 19
-    roles: Lab/Office Hours Assistant
-    specialty: high performance computing, simulation, and computer vision
-    semesters: Fall 2017
--
-    name: Yuxuan Zou
-    netid: zou17
-    class: ""
-    roles: Teaching Assistant
-    specialty: ""
-    semesters: Fall 2017
+    semesters: Fall 2017 and Spring 2018

@@ -5,9 +5,9 @@ title: Syllabus
 
 ## Course Introduction
 
-This course is designed to challenge you as a programmer and nascent computer scientist at Illinois. Rather than the sand-boxed, contained, and simple problems of your previous courses that used significant scaffolding and pre-built libraries, you will be interacting with a much more complex environment: the entire system and even computing networks.
+This course is designed to challenge you as a programmer and new computer scientist at the University of Illinois. Rather than the sand-boxed, contained, and simple problems of your previous courses that used significant scaffolding and pre-built libraries, you will be interacting with a much more complex environment: the entire system and even computing networks.
 
-Further, you will need to fully understand how memory is allocated, used, and re-used within a process. You will also need to know how input and output can be buffered (or not) between processes and files. In short, it is time to remove the carefully tailored training wheels of the closed course and instead fling open the doors, welcoming you to the big, wide world of computing.
+Further, you will need to fully understand how memory is allocated, used, and re-used within a process. You will also need to know how input and output can be optionally buffered between processes and files. In short, it is time to remove the training wheels of and instead fling open the doors, welcoming you to the big, wide world of computing.
 
 Oh, and did we mention the challenge of concurrency and solving asynchronous problems, so that your program can take advantage of the multi-core CPU inside each machine?
 
@@ -15,26 +15,24 @@ Oh, and did we mention the challenge of concurrency and solving asynchronous pro
 
 This course is an introduction to System Programming. System Programming refers to writing code that prioritizes operating system support for programmers.
 
-A computer needs an operating system to manage its resources and provide support for common functions, such as accessing peripherals. There are two categories of “customers” that an operating system must support.
+A computer needs an operating system to manage its resources and provide support for common functions, such as accessing peripherals. There are two categories of "customers" that an operating system must support.
 
-The first category is the community of users. We have all used computers, and you may recognize operating systems’ functions such as creating folders (directories) and moving files around. These are examples of operating system support for users. User support is not the objective of this course.
+The first category is the community of users. We have all used computers, and you may recognize operating systems' functions such as creating folders (directories) and moving files around. These are examples of operating system support for users. User support is not the objective of this course.
 
-The second category of users is programmers. This course addresses operating system support for this second category. These are people who write code to execute on the computer. When you write a program, it may have to interact with physical hardware (memory, flash storage, screen, network, etc.). For example, you may want to get input from a keyboard or mouse; you may want to read some configuration file stored on disk; you may want to output data to a screen or printer; or you may want to access a remote server across a network.
+The second category of users is programmers. This course addresses this category. When you write a program, it may have to interact with physical hardware (memory, flash storage, screen, network, etc.). For example, you may want to get input from a keyboard or mouse; you may want to read some configuration file stored on disk; you may want to output data to a screen or printer; or you may want to access a remote server across a network.
 
-The operating system presents common interfaces for programmers to perform these functions. It also provides useful abstractions such as “tasks” (also called processes), “threads”, and “semaphores.” You can make the computer multi-task by calling on the operating system interface to creating new tasks or new threads. You can make these tasks coordinate and synchronize by using operating system semaphores. You can tell the computer the order in which you want tasks to be executed, this is called a scheduling policy. Finally, you can manage computer memory by calling on the operating system function for memory management.
+The operating system presents common interfaces for programmers to perform these functions. It also provides useful abstractions such as "tasks" (also called processes), "threads", and "semaphores". You can make the computer multi-task by creating new tasks or new threads. You can make these tasks coordinate and synchronize by using semaphores. You can tell the computer the order in which you want tasks to be executed by using a scheduling policy. Finally, you can manage computer memory by calling on the function for memory management.
 
 ## Skills Earned
 
 By the end of this course, you should be proficient at writing programs that take full advantage of operating system support.
 
-Specifically, we need to fix an operating system and a programming language. We chose the C language running on a Linux/UNIX operating system, which implements the POSIX standard interface between the programmer and the OS. This pairing of C and UNIX/Linux is used heavily by software that must provide high performance and low-level control of the program’s execution. Hence, this course introduces you to systems programming via the specific case of C over UNIX.
-
-By the end of the course, you should be proficient with this environment and should be able to write non-trivial pieces of software from web server code to your own multiplayer Internet games.
+Specifically, we need to fix an operating system and a programming language. We chose the C language running on a Linux/UNIX operating system, which implements the POSIX standard interface. This pairing of C and UNIX/Linux is used heavily by software that must provide high performance and low-level control of the program's execution. By the end of the course, you should be proficient with this environment and should be able to write non-trivial pieces of software from web server code to your own multiplayer Internet games.
 
 ## Learning Goals
 
 * Identify the basic components of an operating system, describe their purpose, and explain how they function.
-* Write, compile, debug, and execute C programs that correctly use system interfaces provided by UNIX (or a UNIX-like operating system).
+* Write, compile, debug, and execute C programs that correctly use system interfaces provided by UNIX or a UNIX-like operating system.
 * Be familiar with important UNIX system calls and invoke them correctly from within C programs.
 * Describe the difference between programs, processes, and threads.
 * Explain the meaning and purpose of process control blocks and other mechanisms that the operating system uses to implement the process and thread abstractions.
@@ -59,7 +57,7 @@ By the end of the course, you should be proficient with this environment and sho
 
 **If you added late, check [this page](./late_add.html) to get caught up.**
 
-A really useful, accessible introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
+An introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
 
 Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
 [mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
@@ -102,7 +100,7 @@ We publish the following thresholds:
 | [82 - 92)  | B-              |
 | [72 - 82)  | C-              |
 
-All lab programming assignments are equally weighted.  MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week.
+All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week.
 
 For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Sickness, vacation, sleep, _whatever_; we don't care. we don’t care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies.
 
@@ -114,7 +112,7 @@ Grading issues should be raised with your TA during section or by email. Missing
 
 ## Exams
 
-The quizzes are approximately every other week. Quizzes include a mix of multiple choice questions and at least one short coding problem. In the coding problem you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
+The quizzes are approximately every other week. Quizzes include a mix of multiple choice questions and at least one short coding problem. In the coding problem, you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
 
 This course uses the College of Engineering Computer-Based Testing Facility (CBTF) for its quizzes[https://cbtf.engr.illinois.edu/sched/](https://cbtf.engr.illinois.edu/sched/).
 
@@ -141,11 +139,11 @@ The final exam will be scantron and paper-based and during the finals exam perio
 
 ## Coding Assignments
 
-There are two different types of coding assignments in this course Labs and Machine Problems. They are both important to you learning but they serve different purposes.
+There are two different types of coding assignments in this course labs and machine problems.
 
 Labs are primarily teaching exercises designed either to prepare you for the machine problems or to allow you to explore a topic of systems in a hands on manner. Labs may be done in a collaborative manner. You are allowed to work with each other so as to learn in the best manner for you. This can include sharing code, debugging each other’s code, and discussing the assignment at any level. You still may not publicly publish either your solutions or our code. Finally you should have a comment block with any students or other resources you used in the completion of your lab assignments. This block will not be used for grading but is needed the same way that citing your sources is required when writing a paper.
 
-Machine Problems are different. While they are a key learning experience MPs are also a key assessment of your skills. These are solo exercises and you must work alone. For MPs,  you may not share code in any way. This includes show, share, email, or debug each others code. You may have high level discussions with each other on the ideas in the assignments but that is it. You are responsible for keeping the code for you machine problems private this includes not letting people view your code. You may not publish your code on any open website.
+Machine Problems are different. While they are a key learning experience MPs are also a key assessment of your skills. These are solo exercises and you must work alone. For MPs, you may not share code in any way. This includes show, share, email, or debug each others code. You may have high level discussions with each other on the ideas in the assignments but that is it. You are responsible for keeping the code for you machine problems private this includes not letting people view your code. You may not publish your code on any open website.
 
 ## Absences
 
@@ -157,8 +155,8 @@ For illness-related excuses, you will need a doctor's note of some kind verifyin
 
 Is this course hard? Yes, but you are bright. You're taking computer science at UIUC. Schedule the time to do it. The two big changes from CS 225:
 
-* your code is now much smaller than the complexity of the system around it.
-* no, we will not debug your code for you.
+* Your code is now much smaller than the complexity of the system around it.
+* No, we will not debug your code for you.
 
 With lecture content, one lab, one MP, and one Quiz/Midterm every week or two, it can get easy to fall behind.
 
@@ -168,7 +166,7 @@ There are no shortcuts to mastery, but we can help you get there. We recommend t
 
 ## Autograding Policy
 
-You walk into the investor meeting ready to show your demo. You ship your code ready for a million Internet of Things. You deploy your code to the Internet backbone. It had better compile and be functional.
+You walk into the investor meeting ready to show your demo. You ship your code ready for a million Internet of things. You deploy your code to the Internet backbone. It had better compile and be functional.
 
 Forgot to commit or your committed code that does not compile? Zero. The basic headline is that you're not in Kansas anymore (to quote Dorothy). Don't leave it until the last minute.
 
@@ -184,7 +182,7 @@ If you have a question about your personal autograder results after the final au
 
 ## Academic Integrity
 
-CS 241 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously in CS 241, and all cases of cheating will be brought to the University, your department, and your college. You should understand how [academic integrity](https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code) applies to Computer Science courses.
+CS 241 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously, and all cases of cheating will be brought to the University, your department, and your college. You should understand how [academic integrity](https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code) applies to Computer Science courses.
 
 __Rule of Thumb:__ If at any point you submit an assignment that does not reflect your understanding of the material, then you have probably cheated.
 
@@ -194,7 +192,7 @@ __EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!__
 
 This means you are not allowed to split the work with a partner, unlike other 2xx classes. You are, however, allowed to discuss the assignments at a very high level. If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% penalty in the course for each incident where you are found to have used material that is not yours.
 
-Additionally, you may not publish your solutions or leave them in “plain view”, thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 20% penalty. You also may not publish our code anywhere publicly and you will receive the same penalty for sharing our code. If you are confused on what it means to be “publicly accessible”, then do not put your code anywhere besides [subversion](https://subversion.ews.illinois.edu) and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
+Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 20% penalty. You also may not publish our code anywhere publicly and you will receive the same penalty for sharing our code. If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides [subversion](https://subversion.ews.illinois.edu) and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
 
 In the case of quizzes in the CBTF, it is a violation of our course policy to access or provide access to the quiz material outside your registered window. If you are found to have done so you will receive a zero on the quiz and a 10% penalty in the course. This includes seeking descriptions of the questions from students who have taken the quiz, as well as any other method that would give you access to the quiz outside your scheduled time. If there is prep material provided in lecture or on Piazza, you are welcome to share that material freely.
 
