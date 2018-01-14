@@ -9,7 +9,7 @@
     name: G Carl Evans
     netid: gcevans
     class: ""
-    roles: Captain and Lecturer
+    roles: Co-Captain and Lecturer
     specialty: compilers and parallel
     semesters: Spring 2017 and Fall 2017
 -
@@ -117,3 +117,52 @@
     roles: Lab/Office Hours Assistant and Assignment Developer
     specialty: things
     semesters: Fall 2017 and Spring 2018
+-
+    name: Bhatt Mayank
+    netid: mayankb2
+    class: 19
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Fall 2016, Spring 2017, Spring 2018
+-
+    name: Elaine Ang
+    netid: ranang2
+    class: ""
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Fall 2017 and Spring 2018
+-
+    name: Chen Chen
+    netid: chen228
+    class: ""
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Spring 2018
+-
+    name: Jayasi Mehar
+    netid: jmehar2
+    class: ""
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Spring 2018
+-
+    name: Raghav Narain
+    netid: rmnarai2
+    class: ""
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Spring 2018
+-
+    name: Sarah Schieferstein
+    netid: schfrst2
+    class: ""
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Spring 2018
+-
+    name: Boyin Zhang
+    netid: bzhang70
+    class: ""
+    roles: Teaching Assistant
+    specialty: ""
+    semesters: Spring 2018
