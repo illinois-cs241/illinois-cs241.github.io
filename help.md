@@ -15,7 +15,8 @@ These peer tutoring sessions will focus on diagnosing misconceptions and holes i
 
 This department is scaling rapidly, which is great, since computer science is an incredible field of knowledge that will take our civilization to new frontiers. Unfortunately, the number of people on course staff does not scale as fast. This means that we can not sit next to you for 45 minutes to read 800 lines of your code; this is peer tutoring and not a dinner date. We will wear stopwatches and [round robin](https://en.wikipedia.org/wiki/Round-robin_scheduling) between the students on the queue.
 
-<iframe src="https://www.google.com/calendar/embed?title=CS%20241%20Staff%20Calendar&amp;mode=WEEK&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=illinois.edu_8jbds01fpr30pdp8q973qbef80%40group.calendar.google.com&amp;color=%232952A3&amp;ctz=America%2FChicago" style=" border-width:0 " width="100%" height="800px" frameborder="0" scrolling="no"></iframe>
+<iframe src="https://calendar.google.com/calendar/embed?src=illinois.edu_rtpfqbnbvd071rcps8oougljis%40group.calendar.google.com&ctz=America%2FChicago&mode=WEEK&wkst=2&color=%232952A3&bgcolor=%23FFFFFF" style="border: 0" width="800" height="600" frameborder="0" scrolling="no" style=" border-width:0 " width="100%" height="800px" frameborder="0" scrolling="no"></iframe>
+
 
 ## Piazza: Search First. Don't Post.
 
