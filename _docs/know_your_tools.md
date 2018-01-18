@@ -233,8 +233,7 @@ make release
 
 * Log into your VM
 * Clone your SVN repository on your VM
-* Check the grade report in subversion and see what test cases you failed
-* _Fix the code using the test cases_
+* _Fix the code using the test cases described above_
 	* Look through the code in the files!
 	* Use `printf`'s!
     * Use valgrind!
