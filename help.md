@@ -59,6 +59,10 @@ Jillian is our class admin, and she is in charge of all administrative items (e.
 
 Note: We do not provide attendance misses for labs (this is not negotiable), especially for something that is 100% in your control like "I have an interview."
 
+## Lawrence Angrave
+
+Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours Tuesdays 11:30-12:30. He's also able to answer quick questions before or after lecture. Note Lawrence also teaches the VR course that starts immediately after the second CS241 lecture.
+
 ## Carl Evans
 
-Carl is available after every lecture. Other times by appointment. You can also drop by and look for him in the neighborhood of SC3209.
+Carl Evans has also taught this course. His office is on the third floor of Siebel 3209.
