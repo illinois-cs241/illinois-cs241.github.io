@@ -104,10 +104,10 @@ Due to the new [meltdown and spectre](https://meltdownattack.com/) vulnerabiliti
 
 * The address of `main`
 * The address of `strdup`
-* A static variable
-* A string literal (e.g `"abs"`)
-* A malloc'd array
-* Address of argc
+* The address of a static variable
+* The address of a string literal (e.g `"abs"`)
+* The address of a malloc'd array
+* The address of argc
 
 Hint: Do you need to check the order every time? What do you know about process address spaces?
 
@@ -233,8 +233,7 @@ make release
 
 * Log into your VM
 * Clone your SVN repository on your VM
-* Check the grade report in subversion and see what test cases you failed
-* _Fix the code using the test cases_
+* _Fix the code using the test cases described above_
 	* Look through the code in the files!
 	* Use `printf`'s!
     * Use valgrind!
