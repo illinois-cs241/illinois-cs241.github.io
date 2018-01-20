@@ -123,17 +123,20 @@ If you have accommodations identified by the [Division of Rehabilitation-Educati
 Any problem with testing in the CBTF **must** be reported to CBTF staff at the time the problem occurs. If you do not inform a proctor of a problem during the test then you **forfeit** all rights to redress.
 
 
-The rough schedule is below. The CBTF detailed schedule is available at the CBTF website above.
+The rough schedule is below. The CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website).
 
-|  Week  | Exam             |
-|--------|------------------|
-| Week 2 | Quiz 1           |
-| Week 3 | Quiz 2           |
-| Week 5 | Quiz 3           |
-| Week 7 | Quiz 4           |
-| Week 9 | Quiz 5           |
-| Week 11| Quiz 6           |
-| Week 14| Quiz 7           |
+The Spring 2018 schedule is -
+
+| Week | First day | Last day |
+| -----|-----------|----------|
+|Week 2 (Quiz 1)|Wed, Jan 24|Fri, Jan 26|
+|Week 3 (Quiz 2)|Wed, Jan 31|Fri, Feb 2|
+|Week 6 (Quiz 3)|Wed, Feb 21|Fri, Feb 23|
+|Week 7 (Quiz 4)|Wed, Feb 28|Fri, Mar 2|
+|Week 11 (Quiz 5)|Wed, Mar 28|Fri, Mar 30|
+|Week 12 (Quiz 6)|Wed, Apr 4|Fri, Apr 6|
+|Week 13 (Quiz 7)|Wed, Apr 11|Fri, Apr 13|
+|Week 11 (Quiz 8)|Wed, Apr 25|Fri, Apr 27|
 
 The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT).
 

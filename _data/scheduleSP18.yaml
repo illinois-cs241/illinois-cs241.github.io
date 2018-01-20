@@ -43,7 +43,7 @@
     week: "1/22 - 1/26"
     announcement: >
       <ul>
-        <li>Quiz 1: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+        <li>Quiz 1 (Wed-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
       </ul>
   -
     schedule:
@@ -109,7 +109,6 @@
     week: "2/12 - 2/16"
     announcement: >
       <ul>
-        <li>Quiz 3: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
       <!--   <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
         <li>Lab: <a target='blank' href='./mangled_mutexes'>Mangled Mutexes</a> Released</li>
         <li>MP: <a target='blank' href='./Shell'>Shell</a> Due</li>
@@ -132,10 +131,9 @@
         summary: "Condition Variables. Implementing a semaphore using a Condition Variable."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-5%3A-Condition-Variables'>Condition Variables</a>."
         color: "#2196F3"
-    week: "2/26 - 3/2"
+    week: "2/19 - 2/23"
     announcement: >
-        <!-- <ul>
-        </ul> -->
+        Quiz 3: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
   -
     schedule:
       -
@@ -153,7 +151,7 @@
         summary: "Introduction to Deadlock. Coffman conditions."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions'>Deadlock</a>."
         color: "#00BCD4"
-    week: "3/5 - 3/9"
+    week: "2/27 - 3/2" 
     announcement: >
       <!-- <ul>
         <li>Quiz 4: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
@@ -175,8 +173,30 @@
         summary: "Scheduling simulator. epoll"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-2%3A-Scheduling-Processes%3A-Algorithms'>Scheduling</a>."
         color: "#CDDC39"
-    week: "3/12 - 3/16"
+    week: "3/5 - 3/9" 
     announcement:  "<!-- -->" 
+  -
+    schedule:
+      -
+        title: "Pipes and Files"
+        summary: "POSIX Pipes and random access files"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Pipes%2C-Part-1%3A-Introduction-to-pipes'>Introduction to Pipes</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Pipes%2C-Part-2%3A-Pipe-programming-secrets'>Working with Pipes</a>"
+        color: "#4CAF50"
+      -
+        title: "Pipes, Files, VM II"
+        summary: "POSIX Pipes, files, memory II"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Files%2C-Part-1%3A-Working-with-files'>Files</a>"
+        color: "#4CAF50"
+      -
+        title: "Files-1"
+        summary: "ext2/3/4 filesystem. inode"
+        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-1%3A-Introduction'>Files</a>."
+        color: "#FFC107"
+    week: "3/12 - 3/16"
+    announcement: >
+      <!-- <ul>
+        <li>Quiz 5: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+      </ul> -->
   -
     schedule:
       -
@@ -196,28 +216,6 @@
         color: "#aaaaaa"
     week: "3/19 - 3/23"
     announcement: "<!-- -->"
-  -
-    schedule:
-      -
-        title: "Pipes and Files"
-        summary: "POSIX Pipes and random access files"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Pipes%2C-Part-1%3A-Introduction-to-pipes'>Introduction to Pipes</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Pipes%2C-Part-2%3A-Pipe-programming-secrets'>Working with Pipes</a>"
-        color: "#4CAF50"
-      -
-        title: "Pipes, Files, VM II"
-        summary: "POSIX Pipes, files, memory II"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Files%2C-Part-1%3A-Working-with-files'>Files</a>"
-        color: "#4CAF50"
-      -
-        title: "Files-1"
-        summary: "ext2/3/4 filesystem. inode"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-1%3A-Introduction'>Files</a>."
-        color: "#FFC107"
-    week: "3/19 - 3/23"
-    announcement: >
-      <!-- <ul>
-        <li>Quiz 5: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul> -->
   -
     schedule:
       -
