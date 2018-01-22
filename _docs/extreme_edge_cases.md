@@ -161,7 +161,7 @@ Run `make camelCaser` to test. You will have to fill in tests in camelCaser_test
 
 Because Facenovel values their testing server time, you may not try more than 16 different inputs, and each input must be less than 256 characters (only characters). This does NOT mean your implementation can assume input of 256 characters or less.
 
-Also, it is not in the spirit of unit testing to diff your implementation with the one you are testing. Therefore, you may **NOT** call your own camel_caser function when implementing your test cases.
+Also, it is not in the spirit of unit testing to diff your implementation with the one you are testing. Therefore, you may **NOT** call your own camel_caser function when implementing your test cases. To clarify, you *should not* call your own camel_caser function separately and thenc ompare the output of yours to the output of the given function to see if it is valid or not. Rather, you should have predefined inputs and outputs and compare the expected output with the output of the given function.
 
 Other helpful resources: [Test-Driven Development](http://wiki.c2.com/?TestDrivenDevelopment)
 
