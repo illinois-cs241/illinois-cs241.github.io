@@ -6,7 +6,7 @@ title: Honors
 
 Couldn't get enough systems programming from CS 241? Welcome to the honors section! This course is recommended for those who want to expand their systems knowledge with additional lectures and a semester long project in systems programming.
 
-There will be lectures throughout the semester, usually every other week, given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241.
+There will be lectures throughout the semester, usually every week or every other week, given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241.
 
 You are also required to propose and complete a project of your own. Your project should be related to systems programming and it should clearly demonstrate and build upon concepts learned in regular [and/or honors] CS 241 lectures. Once your project has been approved by course staff, you will be assigned a mentor who you will check in with weekly for progress reports and code review.
 
@@ -35,7 +35,7 @@ Your project will be graded in a holistic manner against other projects in the c
 
 ## Absences
 
-We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop one lecture attendance grade, no questions asked. This drop is meant for conflicts that you have control over, such as a vacation or job interviews.
+We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop two lecture attendance grades, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
 
 If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or have a sudden death in the family, please refer to the [CS 241 absence policy](./index.html#absences).
 
@@ -43,7 +43,7 @@ If you have a required conflict (e.g. an exam in another class), please notify c
 
 Requirements:
 
-* Projects may be done in teams of up to 3 people; if you want to work on a larger team, ask us first
+* Projects may be done in teams of 2 or 3 people; if you want to work alone or on a larger team, ask us first
 * Your project should be novel to you and your partners. We want you to explore new things!
 * Work on your project should take about 3 hours a week for each member of the team
 * Your project must relate to systems programming in a meaningful way. If you aren't sure whether your idea meets this requirement, ask us in advance
@@ -56,17 +56,19 @@ After the first few weeks of the course, you will be required to submit a projec
 * Projected project milestones (What will you do in the first month? Second month? etc.)
 * Challenges you expect will arise in working on this project
 
+Project proposals should be submitted as a private post on Piazza, and are due **Friday, February 2nd**
+
 The exact grading requirements of each project vary. You and your mentor will decide on a reasonable scope for your project at the beginning of the semester, though this target may move as appropriate throughout the semester.
 
 ## Presentations
 
-Presentations will take place on Wednesday, December 13, at 7pm in 1304 Siebel. Each group will have 10-15 minutes to present their project to the class.
+Presentations will take place during the last week or two of class during the normal lecture time. Each group will have around 10 minutes to present their project to the class.
 
 You should be sure to touch on what your project is, what interesting systems programming concepts were involved in your project, and any challenges you encountered along the way and how you tackled them. If you have more questions about what to include in your presentation, ask your mentor.
 
 You should have some sort of visual presentation (Powerpoint, Google Slides, LaTeX beamer, etc.) to accompany your talk. Feel free to include screenshots of your project or pre-recorded demo videos. To avoid losing time to technical difficulties, live project demonstrations are not allowed; you must pre-record any demonstration you plan to give.
 
-To ensure everyone has adequate time to present, we will pre-load all presentations on the computer in 1304. **Please email your presentation to course staff by 5pm on the day you are presenting** so that we have adequate time to prepare this.
+To ensure everyone has adequate time to present, we will pre-load all presentations on the computer connected in 3403. **Please email your presentation to course staff by 5pm on the day you are presenting** so that we have adequate time to prepare this.
 
 Remember that you do not have to have completed your project by the time you present. However, you should make sure you briefly cover any remaining work you plan to do.
 
@@ -82,16 +84,13 @@ When you and your group start writing code, we expect you to use git and for eac
 
 | Name | NetID | Interests |
 |:-----|:------|:----------|
-| Aneesh Durg | durg2 | Computer vision, AI |
-| Kevin Hong | khong18 | Concurrency, IPC, security, statistics |
-| Ben Kurtovic | kurtovc2 | Operating systems, networking, security |
-| Jonathan Wexler | jwexler2 | Parallelism, networking |
-| Brian Zhou | bwzhou2 | Networking, full-stack development |
+| Aneesh Durg | durg2 | Computer vision, AI, Functional Programming |
+| Kevin Hong | khong18 | Concurrency, IPC, Statistics, Machine Learning |
+| Shreyas Patil | srpatil2 | Systems, Security, Android |
+| Steven Shang | shang9 | Distributed Systems, Cloud Computing |
+| Jonathan Wexler | jwexler2 | High Performance Computing, Parallelism, Networking |
 
 ## Lectures and Videos
-
-You can find all lecture recordings for the semester <a href="https://recordings.engineering.illinois.edu:8443/ess/portal/section/1946e3ad-25b8-4600-9752-6f2893ad7c84">here</a>.
-
 
 <!-- Desktop Table -->
 <table width = "100%" class="table">
@@ -124,6 +123,12 @@ You can find all lecture recordings for the semester <a href="https://recordings
 {% endfor %}
   </tbody>
 </table>
+
+## Piazza
+
+We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
+
+http://piazza.com/illinois/spring2018/cs29641
 
 ## Project Ideas?
 
