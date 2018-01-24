@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Lab 2">
+  <title>CS 241</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+  <h1 class="title">CS 241</h1>
+  <h2 class="author">Lab 2</h2>
+</section>
+
+<section><section id="worksheet-time" class="titleslide slide level1"><h1>Worksheet Time!</h1></section><section id="question-1" class="slide level2">
+<h1>Question 1</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> a = <span class="dv">0</span>;
+size_t a_size = <span class="kw">sizeof</span>(a++);
+printf(<span class="st">&quot;size: %zu, a: %d</span><span class="ch">\n</span><span class="st">&quot;</span>, a_size, a);</code></pre></div>
+</section><section id="question-2" class="slide level2">
+<h1>Question 2</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="ot">#define swap(a, b) temp = a; \</span>
+<span class="ot">    a = b; \</span>
+<span class="ot">    b = temp;</span>
+
+<span class="dt">void</span> selection_sort(<span class="dt">int</span>* a, size_t len){
+    size_t temp = len - <span class="dv">1</span>;
+    <span class="kw">for</span>(size_t i = <span class="dv">0</span>; i &lt; temp; ++i){
+        size_t min_index = i;
+        <span class="kw">for</span>(size_t j = i<span class="dv">+1</span>; j &lt; len; ++i){
+            <span class="kw">if</span>(a[j] &lt; a[i]) min_index = j;
+        }
+        <span class="kw">if</span>(i != min_index)
+            swap(a[i], a[min_index]);
+    }
+}</code></pre></div>
+</section><section id="question-3" class="slide level2">
+<h1>Question 3</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">short</span> mystery_bits(<span class="dt">short</span> input){
+    <span class="dt">short</span> max_set = ~<span class="dv">0</span>;
+    <span class="dt">short</span> masked = input &amp; (<span class="bn">0xFF00</span> ^ max_set);
+    <span class="dt">short</span> shifted = masked &lt;&lt; <span class="dv">16</span>;
+    <span class="dt">short</span> ret = (shifted | <span class="bn">0xCC</span>);
+    <span class="kw">return</span> ret;
+}</code></pre></div>
+</section><section id="question-4" class="slide level2">
+<h1>Question 4</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">void</span> positive_under_ten(<span class="dt">int</span> input){
+    <span class="kw">if</span>(<span class="dv">0</span> &lt; input &lt; <span class="dv">10</span>){
+        printf(<span class="st">&quot;Input is in the range</span><span class="ch">\n</span><span class="st">&quot;</span>);
+    }<span class="kw">else</span>{
+        printf(<span class="st">&quot;Input is not in the range</span><span class="ch">\n</span><span class="st">&quot;</span>);
+    }
+}</code></pre></div>
+</section><section id="question-5" class="slide level2">
+<h1>Question 5</h1>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">int</span> print_error(<span class="dt">int</span> err_num){
+    <span class="kw">switch</span>(err_num){
+    <span class="kw">case</span> ENOENT:
+        printf(<span class="st">&quot;No such file or entry</span><span class="ch">\n</span><span class="st">&quot;</span>);
+    <span class="kw">case</span> EINTR:
+        printf(<span class="st">&quot;Interrupted</span><span class="ch">\n</span><span class="st">&quot;</span>);
+    <span class="kw">default</span>:
+        <span class="kw">break</span>;
+    }
+}</code></pre></div>
+</section></section>
+<section><section id="lab-time" class="titleslide slide level1"><h1>Lab Time!</h1></section><section id="using-pointers" class="slide level2">
+<h1>Using pointers</h1>
+<p>Where can a pointer point to?</p>
+</section><section class="slide level2">
+
+<p>Heap</p>
+<p>Stack</p>
+<p>Global</p>
+<p>Text</p>
+<p>…Anywhere!</p>
+</section><section id="what-is-a-function-pointer" class="slide level2">
+<h1>What is a function pointer?</h1>
+<p>A pointer that stores the address of a function’s code</p>
+</section><section class="slide level2">
+
+<p>With this, we can pass a function as an argument</p>
+<p>This allows us to reuse code</p>
+<p>E.g., sorting an array of arbitrary objects could use a function pointer as the comparison function</p>
+</section><section id="part-1" class="slide level2">
+<h1>Part 1</h1>
+</section><section class="slide level2">
+
+<p>You will be debugging several functions that all use pointers incorrectly</p>
+</section><section id="part-2" class="slide level2">
+<h1>Part 2</h1>
+</section><section class="slide level2">
+
+<p>We’ve given you a set of functions as tools</p>
+<p>Your job is to use these tools in the right order to print “Illinois”</p>
+</section><section id="part-3" class="slide level2">
+<h1>Part 3</h1>
+</section><section class="slide level2">
+
+<p>You will be implementing map and reduce. You can think of map as apply a function to a list of values. Reduce takes a bunch of values and combines them into one values. The intuition for these can be seen as below.</p>
+<pre><code>map([1, 2, 3], double) = [2, 4, 6]
+reduce([1, 2, 3], sum) = 6  </code></pre>
+</section></section>
+<section><section id="hints-about-the-mp" class="titleslide slide level1"><h1>Hints about the MP</h1></section><section id="what-is-this-null-terminated-array" class="slide level2">
+<h1>What is this NULL-terminated array?</h1>
+<p>Maybe, we don’t want to pass around the size of the array everywhere</p>
+<p>We know that NULL is not a valid string (but this doesn’t work for every type)</p>
+<div class="sourceCode"><pre class="sourceCode c"><code class="sourceCode c"><span class="dt">char</span> *ptr[] = ...;<span class="co">// vs</span>
+<span class="dt">int</span> arr[] = ...;
+arr[len] = NULL; <span class="co">// NULL = 0, meaning we have a valid element</span></code></pre></div>
+</section><section id="useful-functions" class="slide level2">
+<h1>Useful Functions</h1>
+<ul>
+<li><code>strdup</code>: return a string copy</li>
+<li><code>strcpy</code>,<code>strncpy</code>: copy a string to another string</li>
+<li><code>toupper</code>, <code>tolower</code>: uppercases/lowercases an input character</li>
+<li><p><code>ispunct</code>,<code>isspace</code>,<code>isalpha</code>: decide whether a character is punctuation/alphabetical/whitespace</p></li>
+<li><p><strong>Not so useful: <code>strtok</code></strong></p></li>
+</ul>
+</section></section>
+<section><section id="questions" class="titleslide slide level1"><h1>Questions?</h1></section></section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
