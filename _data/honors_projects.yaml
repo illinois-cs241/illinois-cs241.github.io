@@ -1,6 +1,26 @@
 ---
 # Honors Projects
 -
+  term: "Fall 2017"
+  projects:
+    -
+      name: "SSHFS"
+      description: "Distributed filesystem and task executor using FUSE"
+      link_url: "https://github.com/zd-project/sshfs_cs241honor"
+      link_title: Github
+    -
+      name: "TeaTime"
+      description: "Real time file synchronization tool"
+    -
+      name: "GummyWorm"
+      description: "Android phone remote desktop tool"
+    - 
+      name: "BitMesh"
+      description: "Distributed system library"
+    - 
+      name: "File Compressor"
+      description: "Custom file compression server"
+-
   term: "Fall 2016"
   projects:
     -
