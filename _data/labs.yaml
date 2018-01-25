@@ -6,3 +6,10 @@
     url: "know_your_tools"
     resources: true
     worksheet: false
+-
+    name: "Perilous Pointers"
+    releaseDate: "Week 2"
+    dueDate: "Week 3"
+    url: "perilous_pointers"
+    resources: true
+    worksheet: true
