@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Pointers Gone Wild"
+title: "Perilous Pointers"
 submissions:
 - title: Entire Assignment
   due_date: 01/31 11:59pm
