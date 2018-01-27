@@ -1,0 +1,24 @@
+- 
+  semester: Fall 2017
+  scores:
+    - 
+      score: 113.85
+      nickname: 'glibc (optimized)'
+    - 
+      score: 108.11
+      nickname: 'return sbrk(size);'
+    - 
+      score: 107.52
+      nickname: 'void ABJU()'
+- 
+  semester: Spring 2017
+  scores:
+    - 
+      score: 108.11
+      nickname: 'yeke'
+    - 
+      score: 101.94
+      nickname: 'LARGEONE'
+    - 
+      score: 100.67
+      nickname: '承让了我的弟'

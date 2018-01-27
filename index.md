@@ -35,6 +35,7 @@ Specifically, we need to fix an operating system and a programming language. We 
 * Write, compile, debug, and execute C programs that correctly use system interfaces provided by UNIX or a UNIX-like operating system.
 * Be familiar with important UNIX system calls and invoke them correctly from within C programs.
 * Describe the difference between programs, processes, and threads.
+* Write a memory allocator or [malloc](./malloc_hall_of_fame.html).
 * Explain the meaning and purpose of process control blocks and other mechanisms that the operating system uses to implement the process and thread abstractions.
 * Write, compile, debug, and execute C programs that create, manage and terminate processes and threads on UNIX.
 * Define concurrency and explain the problems that may arise because of concurrent execution of multiple processes or threads. Explain how these problems can be avoided. Write code that avoids these problems.

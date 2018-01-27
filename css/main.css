@@ -477,3 +477,8 @@ div.highlighter-rouge, figure.highlighter-rouge {
     padding-left: 2px;
     padding-right: 2px;
 }
+
+tbody tr:nth-child(odd) {
+    background-color: #DDD;
+    border-radius: 20px;
+}
