@@ -1,0 +1,134 @@
+---
+-
+  name: Aadil Bhatti
+  netid: abhatti2
+  class: 17
+  roles: Assignment Development
+  specialty: ""
+  semesters: Fall 2016 and Spring 2017
+-
+  name: Alec Kochevar-Cureton
+  netid: kocheva2
+  class: 17
+  roles: Assignment Development Lead
+  specialty: Puzzles
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Ben Kurtovic
+  netid: kurtovc2
+  class: 17
+  roles: Undergrad Staff Lead and Honors Mentor
+  specialty: operating systems, networking, security
+  semesters: Spring 2016, Fall 2016, Spring 2017, and Fall 2017
+-
+  name: Brandon Chong
+  netid: bschong2
+  class: 17
+  roles: Village Elder
+  specialty: CS Education
+  semesters: Spring 2015, Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Brian Truong
+  netid: btruong2
+  class: 17
+  roles: Infrastructure Lead
+  specialty: Software engineering, systems programming, OS, programming languages
+  semesters: Spring 2015, Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Curtis Bezault
+  netid: bezault2
+  class: 17
+  roles: Lab Assistant
+  specialty: High Performance Computing/Massively Parallel Computing
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  class: 17
+  name: "Eric Sauer"
+  netid: emsauer2
+  roles: "Assignment Development"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Game Engines"
+-
+  name: Erica Lee
+  netid: nlee16
+  class: 17
+  roles: Assignment Development Lead
+  specialty: Undecided
+  semesters: Fall 2016 and Spring 2017
+-
+  class: 16
+  name: "Maddie Lin"
+  netid: mlin35
+  roles: "Lab and Officer Hours Assistant"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Software Engineering"
+-
+  name: Luke Liu
+  netid: jianliu4
+  class: 17
+  roles: Infrastructure Developer
+  specialty: Linux
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Nishad Phadke
+  netid: nphadke2
+  class: 17
+  roles: Office Hours and Lab
+  specialty: Sucks at Tennis
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  class: 17
+  name: "Noel Fortman"
+  netid: nfortma2
+  roles: "Office Hours and Lab Team"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Computational Musical Analysis"
+-
+  class: 17
+  name: "Porter Smith"
+  netid: pmsmith2
+  roles: "Office Hours Team Leader"
+  semesters: "Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "System Programming and Embedded Programming"
+-
+  name: Margarita Mouschovias
+  netid: mmousch2
+  class: 17
+  roles: Office Hours, Piazza, Lab
+  specialty: VR, Systems, Databases
+  semesters: Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Robert Andrews
+  netid: rgandre2
+  class: 17
+  roles: Honors Section Team Leader
+  specialty: Theoretical Computer Science
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  name: Sam Stephens
+  netid: scsteph2
+  class: 18
+  roles: Lab Assistant
+  specialty: Algorithms/Verification
+  semesters: Spring 2016, Fall 2016, and Spring 2017
+-
+  class: 17
+  name: "Varun Thangavelu"
+  netid: thangav2
+  roles: "Lab and Officer Hours Assistant"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "Big Data"
+-
+  name: WeiChun Lee
+  netid: wlee114
+  class: ""
+  roles: Teaching Assistant
+  specialty: Algorithmic Game Theory and Social Network
+  semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
+-
+  class: 17
+  name: "Yushuo Lin"
+  netid: ylin91
+  roles: "Lab and Officer Hours Assistant"
+  semesters: "Fall 2015, Spring 2016, and Fall 2016"
+  specialty: "CS and Stat"

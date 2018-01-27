@@ -1,0 +1,50 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+{% include header.html %}
+<div class="container-fluid" id="page">
+  <div class="row">
+  <div class="col-md-1 col-xs-1"></div>
+  <div class="col-md-10 col-xs-10">
+    <h1>Staff Hall of Fame</h1>
+    <p>These are all graduated TAs and CAs that have been on staff for multiple semesters and contributed greatly to the course.</p>
+
+    <p><i>If I have seen farther than others, it is by standing on the shoulders of giants</i> -- Isaac Newton</p>
+  <!-- A bit janky: assumes zero or one instructors. Why can't Jekyll have stable sort??? :( -->
+  {% assign team = site.data.staff-emeritus | sort: 'netid' %}
+  {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/retired/'" %}
+  <div class="container">
+  {% for member in team %}
+    {% capture mods %}{{ forloop.index0 | modulo: 3 }}{% endcapture %}
+    {% if mods == '0' or forloop.first %}
+    <div class="row row-eq-height staff-row">
+    {% endif %}
+    {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
+  <div class="col-md-3 staff-div"
+      id="{{member.netid}}"
+      data-toggle="tooltip"
+      data-placement="bottom"
+      title="{{ member.roles }} {% if member.specialty != '' %} interested in {{ member.specialty }}{% endif %} and has been on staff for {{ member.semesters }}"
+      style="background-image: url(/images/staffPhotos/retired/{{ member.netid }}.jpg);">
+      <div class="container">
+      <div class="row">
+        <div class="staff-name col-md-12 col-xs-12">{{ member.name }}</div>
+      </div>
+      </div>
+  </div>
+    <div class="col-sm-1"></div>
+    {% if mods == '2' or forloop.last %}
+      </div>
+    {% endif %}
+  {% endfor %}
+  </div>
+  </div>
+  <div class="col-md-1 col-xs-1"></div>
+  </div>
+  </div>
+  {% include footer.html %}
+</body>
+</html>
