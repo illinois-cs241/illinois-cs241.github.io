@@ -23,7 +23,7 @@
     <div class="row row-eq-height staff-row">
     {% endif %}
     {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
-  <div class="col-md-3 staff-div"
+  <div class="col-md-3 col-sm-12 col-xs-12 staff-div"
       id="{{member.netid}}"
       data-toggle="tooltip"
       data-placement="bottom"
@@ -35,14 +35,13 @@
       </div>
       </div>
   </div>
-    <div class="col-sm-1"></div>
+    <div class="col-md-1 col-sm-0 col-xs-0"></div>
     {% if mods == '2' or forloop.last %}
       </div>
     {% endif %}
   {% endfor %}
   </div>
   </div>
-  <div class="col-md-1 col-xs-1"></div>
   </div>
   </div>
   {% include footer.html %}
