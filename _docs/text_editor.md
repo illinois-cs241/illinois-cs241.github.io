@@ -3,7 +3,7 @@ layout: doc
 title: "Text Editor"
 submissions:
 - title: Entire Assignment
-  due_date: 02/04/2018, 11:59 PM
+  due_date: 02/05/2018, 11:59 PM
   graded_files:
   - editor.c
   - document.c
