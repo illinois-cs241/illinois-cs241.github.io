@@ -4,3 +4,8 @@
     releaseDate: "Week 2"
     dueDate: "Week 3"
     url: "extreme_edge_cases"
+-
+    name: "Text Editor"
+    releaseDate: "Week 3"
+    dueDate: "Week 4"
+    url: "text_editor"
