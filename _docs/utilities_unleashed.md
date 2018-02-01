@@ -181,3 +181,7 @@ Nota bene:
 *   [Environment variable functions](http://www.gnu.org/software/libc/manual/html_node/Environment-Variables.html)
 *   [string.h](http://man7.org/linux/man-pages/man3/string.3.html)
 *   [Split a string by a delimiter](https://www.quora.com/How-do-you-write-a-C-program-to-split-a-string-by-a-delimiter)
+
+### QuizIZ
+
+Submit your [QuizIZ username](https://docs.google.com/forms/d/e/1FAIpQLSeFW7Aj5mgRw0OM7cvhq1maHVRHb-IWpkYnpgu1q7ARVMrp0Q/viewform?usp=sf_link)
