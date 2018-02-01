@@ -13,3 +13,10 @@
     url: "perilous_pointers"
     resources: true
     worksheet: true
+-
+    name: "Utilities Unleashed"
+    releaseDate: "Week 3"
+    dueDate: "Week 4"
+    url: "utilities_unleashed"
+    resources: true
+    worksheet: true
