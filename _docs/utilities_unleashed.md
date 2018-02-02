@@ -116,6 +116,7 @@ Please re-read this section *multiple* times before starting:
 * So, if `A=1,2,3` and `B=4,5,6` and we want to exec `cmd`, `cmd` will be executed *three* times. Once with `A = 1, B = 4`, then `A = 2, B = 5`, and finally `A = 3, B = 6`.
 * If any `key` has *one* value instead of `N`, you should set that `key` to that `value` `N` times.
 * If `A=1` and `B=4,5,6`, then you want to execute `cmd` three times again, but each time has `A=1`, and `B` switches between 4, 5, and then 6.
+* Since variables can contain references to environment variables, and execution has to be done sequentially - you can have something of the form `A=1,2,3` and `B=4,%A%B,6`, then you want to execute `cmd` three times again, once with `A = 1, B = 4`, then `A = 2, B = 24`, and finally `A = 3, B = 6`.
 * Invalid input should result in the usage being printed. It is your job to enforce correct usage! You shouldn't ignore bad usage.
 
 This is the canonical example and a practical use case:
