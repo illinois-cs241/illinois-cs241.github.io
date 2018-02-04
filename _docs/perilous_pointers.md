@@ -173,7 +173,7 @@ input = ["foo", "bar", "baz"]
 *vector_reduce(input, length_reducer, NULL) = 9
 ```
 
-`void *concat_reducer(char *input, void *output)` is a specific reducer you will be implementing. It should use the accumulator to store the result from the previous iteration and return a string which is the output of concatenating the input string the the string in the accumulator. This function concats all the strings in a vector in order to form one complete string. They should be joined in the order `input` then `accumulator`. If the accumulator is NULL, allocate enough memory to store the string in `input` and return a copy of `input`. Psuedocode example:
+`void *concat_reducer(char *input, void *output)` is a specific reducer you will be implementing. It should use the accumulator to store the result from the previous iteration and return a string which is the output of concatenating the input string the the string in the accumulator. This function concats all the strings in a vector in order to form one complete string. They should be joined in the order `accumulator` then `input`. If the accumulator is NULL, allocate enough memory to store the string in `input` and return a copy of `input`. Psuedocode example:
 
 ```
 input = ["foo", "bar", "baz"]
