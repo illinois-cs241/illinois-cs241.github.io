@@ -85,7 +85,7 @@ If the user supplies an incorrect number of arguments, or the script file cannot
 
 The [getopt](http://linux.die.net/man/3/getopt) function may come in handy. :smile:
 
-A helpful thought exercise is to review all the different ways your shell can be called (hint: there are 5 ways) and to list them all before you get started.
+A helpful thought exercise is to review all the different ways your shell can be called (hint: there are 5 valid ways) and to list them all before you get started.
 
 ## Specifics
 
