@@ -3,7 +3,7 @@ layout: doc
 title: "Shell"
 submissions:
 - title: Entire Assignment
-  due_date: 2/12/2018 11:59pm
+  due_date: 2/19/2018 11:59pm
   graded_files:
   - shell.c
 learning_objectives:
@@ -38,6 +38,8 @@ The basic function of a shell is to accept commands as inputs and execute the co
 Since this MP **requires** your programs to print a variety of things like error messages, we have provided you with our own highly customized formatting library. You should not be printing out to stdout and stderr at all; instead, all output and errors should be printed using the functions provided in `format.c` and `format.h`. In `format.h` you can find documentation about what each function does, and you should use them whenever appropriate. This is our way of ensuring that you do not lose points for formatting issues, but it also means that you are responsible for handling any and all errors mentioned in `format.c` and `format.h`.
 
 **Note**: don't worry if you don't use all of the functions in `format.c`.
+
+**Note**: this means that your debugging prints to stdout/stderr _will_ cause you to lose points.
 
 ## Overview
 
@@ -229,9 +231,55 @@ Echo This!
 
 :warning: The `!<prefix>` command itself is __not__ stored in history, but the command being executed (if any) __is__.
 
+
+### `ps`
+
+Like our good old `ps`, your shell should print out information about all currently executing processes. You should include the shell and its immediate children, but don't worry about grandchildren or other processes. Make sure you use `print_process_info()`!
+
+_Note:_ while `ps` is normally a separate binary, it is a built-in command for your shell. (This is not "execing `ps`", this is you implementing it in the code. Thus you have to keep track of process statuses and such.)
+
+Some things to keep in mind:
+
+- The order in which you print the processes does not matter.
+- The 'command' for `print_process_info` should be the full command you executed, with escape sequences and environment variables expanded. (This is _different_ from what gets stored in the history!) The `&` for background processes is optional. For the main shell process _only_, you do not need to include the command-line flags.
+
+### `kill <pid>`
+
+The ever-useful panic button. Send `SIGTERM` to the specified process.
+
+Use the appropriate prints from `format.h` for:
+- Successfully sending `SIGTERM` to process
+- No process with `pid` exists
+- `kill` was ran without a `pid`
+
+### `stop <pid>`
+
+This command will allow your shell to stop a currently executing process by sending it the `SIGTSTP` signal. It may be resumed by using the command `cont`.
+
+Use the appropriate prints from `format.h` for:
+- Process was successfully sent `SIGTSTP`
+- No such process exists
+- `stop` was ran without a `pid`
+
+### `cont <pid>`
+
+This command resumes the specified process by sending it `SIGCONT`.
+
+Use the appropriate prints from `format.h` for:
+- No such process exists
+- `cont` was ran without a `pid`
+
+**Any `<pid>` used in `kill`, `stop`, or, `cont` will either be a process that is a direct child of your shell or a non-existent process. You do not have to worry about killing other processes.**
+
 ### `exit`
 
 The shell will exit once it receives the `exit` command or an EOF. The latter is sent by typing `Ctrl+D` on an empty line, and from a script file (as used with the `-f` flag) this is sent once the end of the file is reached.  This should cause your shell to exit with exit status 0. You should make sure that all processes you've started have been cleaned up.
+
+If there are currently stopped or running background processes when your shell receives `exit` or `Control-D` (EOF), you should kill and cleanup each of those children before your shell exits. You do not need to worry about SIGTERM. (Think, what function lets you cleanup information about child processes?)
+
+**You should not let your shell's children be zombies**, but your children's children might turn into zombies. You don't have to handle those.
+
+**`exit`** should _not_ be stored in history.
 
 ### Invalid Built-in Commands
 
@@ -313,6 +361,63 @@ Input: `x; y`
 * The shell then runs `y`.
 
 :question: The two commands are run regardless of whether the first one succeeds.
+
+## Backgrounding
+
+An _external_ command suffixed with `&` should be run in the background. In other words, the shell should be ready to take the next command before the given command has finished running. There is no limit on the number of background processes you can have running at one time (aside from any limits set by the system).
+
+There may or may not be a single space between the rest of the command and `&`. For example, `pwd&` and `pwd &` are both valid.
+
+Since spawning a background process introduces a race condition, it is okay if the prompt gets misaligned as in the following example:
+
+```
+(pid=1873)/home/user$ pwd &
+Command executed by pid=1874
+(pid=1873)/home/user$
+/home/user
+When I type, it shows up on this line
+```
+
+While the shell should be usable after calling the command, after the process finishes, the parent is still responsible for waiting on the child (hint: catch a signal). Avoid creating zombies! Think about what happens when multiple children finish around the same time.
+
+Backgrounding will **not** be chained with the logical operators.
+
+## Process Groups
+
+Signals sent to the foreground process should not be sent to backgrounded processes. You will want to use [`setpgid`](http://man7.org/linux/man-pages/man2/setpgid.2.html) to assign each background process to its own process group:
+
+```
+pid_t pid = fork();
+if (pid > 0) {
+  // ...
+
+  // assign the child's process group id to be its pid
+  if (setpgid(pid, pid) == -1) {
+    print_setpgid_failed();
+    exit(1);
+  }
+
+  // ...
+} else if ( ... ) {
+  // ...
+}
+```
+## Escape Sequences
+
+Your shell already supports `&&`, `||`, and `;`. However, what if we want to print `||` directly? If any of these special sequences are escaped in the input, you should treat them as literals. For example:
+
+```
+(pid=1337)/home/user$ echo \|\|
+||
+(pid=1337)/home/user$ echo \;
+;
+(pid=1337)/home/user$ echo \& 
+&
+```
+
+Notice how the last command **isn't** backgrounded, since the `&` is escaped and treated as a literal.
+
+**Note**: this applies to `&`, `&&`, `||`, and `;`. We will only test `&&`, `||`, and `;` in external commands for this MP.
 
 ## Memory
 
