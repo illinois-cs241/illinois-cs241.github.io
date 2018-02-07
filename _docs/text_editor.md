@@ -99,7 +99,62 @@ Remember! An empty or non-existent file can be a valid document!
 
 ## sstream library
 
-By now you've probably realized that the standard C library doesn't have many tools for working with strings, at least not as many as some other languages, such as python, do by default. To make our lives easier we are going to be building a string library called sstream (which is short for 'string stream') that allows you to deal with strings at a higher level. To this end, we are going to provide you with the skeleton of this library so that you can implement some string manipulation functions, which will make your tasks in `editor.c` much simpler. Details about the functions you will need to implement can be found in `sstream.h`.
+By now you've probably realized that the standard C library doesn't have many tools for working with strings, at least not as many as some other languages, such as python, do by default. To make our lives easier we are going to be building a string library called sstream (which is short for 'string stream') that allows you to deal with strings at a higher level. To this end, we are going to provide you with the skeleton of this library so that you can implement some string manipulation functions, which will make your tasks in `editor.c` much simpler. Here's a proof of concept.
+```C
+bytestring output = {NULL, 0};
+
+// size will be 4, position will be 0
+sstream *strm = sstream_create((bytestring ){"\0\0\0\0", 4}); 
+
+// returns 3, output should be {"\0\0\0", 3}
+sstream_read(strm, &output, 3);
+
+// returns 3
+sstream_tell(strm);
+
+// returns 0, position is now 4
+sstream_seek(strm, 1, SEEK_CUR);
+// returns -1, position is still 4
+sstream_seek(strm, 1, SEEK_END);
+
+// returns 0
+sstream_remain(strm);
+
+// size will be 14, position is now 0
+sstream_str(strm, (bytestring ){"Doesn't matter\0 what comes after", -1});
+
+// size will be 22, position still 0
+sstream_append(strm, (bytestring ){", at all", -1});
+
+sstream_seek(strm, 0, SEEK_END);
+// returns 22, position still 22, output->str is "Doesn't matter, at all"
+// output->size is 22
+sstream_read(strm, &output, -39);
+
+sstream_seek(strm, 0, SEEK_SET);
+// entire expression returns 0, position now is at 11
+sstream_seek(strm, sstream_subseq(strm, (bytestring ){"ter", -1}), SEEK_CUR);
+
+// note that erase operations are commutative; order doesn't matter; after
+// both erases, stream buffer should contain "Doesn't, at all"
+sstream_erase(strm, 3);
+sstream_erase(strm, -4);
+
+// and now should contain "Doesn't compute, at all"
+sstream_insert(strm, (bytestring ){" compute", -1});
+
+// note that LONG_MIN=-9223372036854775808                          
+//                                                        |long will overflow here, starting with the 9
+sstream_write(strm, (bytestring ){"-00009223372036854775809+30", -1});
+long out;
+// returns 23, out = -922337203685477580
+sstream_parse_long(strm, &out);
+// returns 1, out = 9
+sstream_parse_long(strm, &out);
+// returns -1
+sstream_parse_long(strm, &out);
+```
+More details about the functions you will need to implement can be found in `sstream.h`.
 
 ## Line Editor Mode
 
