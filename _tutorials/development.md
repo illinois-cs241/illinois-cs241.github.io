@@ -63,12 +63,63 @@ gedit should then open with a GUI. It really is that easy. Remember, you can exi
 logout
 ```
 
+## scp
+
+`scp` works exactly as `cp` except you can copy from remote machines. The two general format are below. The first one copies a file from a remote machine to a local machine.
+
+```console
+scp user@machine:/path/to/file /path/to/where/you/want/to/store/it/locally
+```
+
+The second one copies a file from the current machine to the remote machine.
+
+```console
+scp /path/to/file user@machine:/path/to/where/you/want/to/store/it/remotely
+```
+
+This helps you not continually ping the svn server.
+
+## Config File
+
+You can edit your configuration file so that ssh remembers where to ssh into when you give it a hostname
+
+```
+Host <HOST>
+    User <NETID>
+    HostName <VM_NAME>
+```
+
+Here is an example
+
+```
+Host cs241
+    User bvenkat2
+    HostName {{site.semester }}-{{ site.subject_code }}{{ site.course_number }}-<NUM>.cs.illinois.edu
+```
+
+Then, running the following command
+
+```
+ssh cs241
+```
+
+Essentially runs this
+
+```
+ssh bvenkat2@{{site.semester }}-{{ site.subject_code }}{{ site.course_number }}-<NUM>.cs.illinois.edu
+```
+
+## Identities
+
+Do you have having to type your password every time? Well generate an identity file!
+
+
 ## I AM OFF CAMPUS AND CANNOT CONNECT TO THE VM, HELP!
 You can use a VPN (Virtual Private Network) to access on campus resources and then use Putty or SSH directly into your VM. [Tutorial](https://techservices.illinois.edu/services/virtual-private-networking-vpn/download-and-set-up-the-vpn-client)
 
 OR, you can SSH twice. First into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
 
-Of course, there are many other ways to do things too. You could just work on your own machine or in EWS and upload all of your work to SVN and then open your VM and pull down all of your saved files and test, but we think that is tedious. If you have anything interesting you would like to add, please post below and share with your classmates; you will also be helping future students. 
+Of course, there are many other ways to do things too. You could just work on your own machine or in EWS and upload all of your work to SVN and then open your VM and pull down all of your saved files and test, but we think that is tedious.
 
 ## Installing other things
 

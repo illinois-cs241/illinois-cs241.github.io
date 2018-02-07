@@ -1,0 +1,466 @@
+{
+  "bvenkat2": {
+    "total_avg_memory": 541714261.444439,
+    "is_ta_solution": false,
+    "total_pts_earned": 13.0,
+    "time_stamp": "2017-12-03 11:53:16.426378",
+    "total_time": 3.356,
+    "total_max_memory": 119226560.0,
+    "test_cases": [
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.42,
+        "max_memory": 0.0,
+        "avg_memory": 0.0,
+        "name": "tester-1",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.44,
+        "max_memory": 2096528.0,
+        "avg_memory": 1674888.408626,
+        "name": "tester-2",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 1.22,
+        "max_memory": 10576.0,
+        "avg_memory": 10401.266456,
+        "name": "tester-3",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.48,
+        "max_memory": 10731824.0,
+        "avg_memory": 3978186.35718995,
+        "name": "tester-4",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.19,
+        "max_memory": 5246336.0,
+        "avg_memory": 2619078.36041299,
+        "name": "tester-5",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 8.14,
+        "max_memory": 17891072.0,
+        "avg_memory": 7903287.111111,
+        "name": "tester-6",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 3.29,
+        "max_memory": 10731824.0,
+        "avg_memory": 4473944.0,
+        "name": "tester-7",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 4.53,
+        "max_memory": 20289456.0,
+        "avg_memory": 8537568.0,
+        "name": "tester-8",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.11,
+        "max_memory": 6529776.0,
+        "avg_memory": 3449703.423817,
+        "name": "tester-9",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 11.0,
+        "max_memory": 2636160.0,
+        "avg_memory": 1678303.731471,
+        "name": "tester-10",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.28,
+        "max_memory": 21483648.0,
+        "avg_memory": 12079353.766156,
+        "name": "tester-11",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 7.64,
+        "max_memory": 10731824.0,
+        "avg_memory": 5892561.95122,
+        "name": "tester-12",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.21,
+        "max_memory": 10739536.0,
+        "avg_memory": 3116985.067978,
+        "name": "tester-secret",
+        "total_pts": 1.0
+      }
+    ],
+    "last_revision": "35437",
+    "nickname": "Yeah booiiii\n"
+  },
+  "durg2": {
+    "total_avg_memory": 5541714261.444439,
+    "is_ta_solution": true,
+    "total_pts_earned": 13.0,
+    "time_stamp": "2017-12-03 11:53:16.426378",
+    "total_time": 38.356,
+    "total_max_memory": 11916226560.0,
+    "test_cases": [
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.424,
+        "max_memory": 0.0,
+        "avg_memory": 0.0,
+        "name": "tester-1",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.444,
+        "max_memory": 209686528.0,
+        "avg_memory": 167724888.408626,
+        "name": "tester-2",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 1.228,
+        "max_memory": 1048576.0,
+        "avg_memory": 1048401.266456,
+        "name": "tester-3",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.484,
+        "max_memory": 1073741824.0,
+        "avg_memory": 397814286.35718995,
+        "name": "tester-4",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.196,
+        "max_memory": 524046336.0,
+        "avg_memory": 261955078.36041299,
+        "name": "tester-5",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 8.148,
+        "max_memory": 1789571072.0,
+        "avg_memory": 790393287.111111,
+        "name": "tester-6",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 3.296,
+        "max_memory": 1073741824.0,
+        "avg_memory": 447391744.0,
+        "name": "tester-7",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 4.532,
+        "max_memory": 2028179456.0,
+        "avg_memory": 853773568.0,
+        "name": "tester-8",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.112,
+        "max_memory": 652619776.0,
+        "avg_memory": 344903703.423817,
+        "name": "tester-9",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 11.4,
+        "max_memory": 268636160.0,
+        "avg_memory": 167834003.731471,
+        "name": "tester-10",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.228,
+        "max_memory": 2147483648.0,
+        "avg_memory": 1207929353.766156,
+        "name": "tester-11",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 7.648,
+        "max_memory": 1073741824.0,
+        "avg_memory": 589248561.95122,
+        "name": "tester-12",
+        "total_pts": 1.0
+      },
+      {
+        "pts_earned": 1.0,
+        "runtime": 0.216,
+        "max_memory": 1073729536.0,
+        "avg_memory": 311697385.067978,
+        "name": "tester-secret",
+        "total_pts": 1.0
+      }
+    ],
+    "last_revision": "35437",
+    "nickname": "glibc\n"
+  },
+    "glibc": {
+    "total_avg_memory": 11046415461.500002,
+    "is_ta_solution": true,
+    "total_pts_earned": 1.0,
+    "total_time": 108013.052,
+    "total_max_memory": 11114572925.0,
+    "last_revision": "35437",
+    "test_cases": [
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-1",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 314572913.0,
+        "runtime": 1.052,
+        "avg_memory": 246415449.500002,
+        "pts_earned": 1.0,
+        "name": "tester-2",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-3",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-4",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-5",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-6",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-7",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-8",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-9",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-10",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-11",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-12",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-secret",
+        "total_pts": 1.0
+      }
+    ],
+    "nickname": "Solution\n",
+    "time_stamp": "2017-12-03 19:20:59.970507"
+  },
+  "test": {
+    "total_avg_memory": 11046415461.500002,
+    "is_ta_solution": true,
+    "total_pts_earned": 1.0,
+    "total_time": 108013.052,
+    "total_max_memory": 11114572925.0,
+    "last_revision": "35437",
+    "test_cases": [
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-1",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 314572913.0,
+        "runtime": 1.052,
+        "avg_memory": 246415449.500002,
+        "pts_earned": 1.0,
+        "name": "tester-2",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-3",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-4",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-5",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-6",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-7",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-8",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-9",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-10",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-11",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-12",
+        "total_pts": 1.0
+      },
+      {
+        "max_memory": 900000001,
+        "runtime": 9001,
+        "avg_memory": 900000001,
+        "pts_earned": 0.0,
+        "name": "tester-secret",
+        "total_pts": 1.0
+      }
+    ],
+    "nickname": "Not Solution\n",
+    "time_stamp": "2017-12-03 19:20:59.970507"
+  }
+}
