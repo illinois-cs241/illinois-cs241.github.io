@@ -20,3 +20,10 @@
     url: "utilities_unleashed"
     resources: true
     worksheet: true
+-
+    name: "Mini Valgrind"
+    releaseDate: "Week 4"
+    dueDate: "Week 5"
+    url: "mini_valgrind"
+    resources: true
+    worksheet: true
