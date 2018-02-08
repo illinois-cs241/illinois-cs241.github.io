@@ -49,6 +49,8 @@ See the `mini_valgrind.h` header file for details.
 
 In addition to the four functions above, you'll need to maintain the following global variables:
 
+* `head`: a pointer to the head of a linked list storing all the metadata corresponding to allocated memory blocks
+
 * `total_memory_requested`: stores the total number of bytes of memory requested by the user throughout the lifetime of the program (excluding metadata)
 
 * `total_memory_freed`: stores the total number of bytes of memory freed by the user throughout the lifetime of the program
@@ -56,6 +58,8 @@ In addition to the four functions above, you'll need to maintain the following g
 * `invalid_addresses`: stores the number of times the user has tried to `realloc` or `free` an invalid pointer
 
 Since we keep track of this data, we can show the user how much memory they've allocated, just like the real Valgrind. We can also find out how much memory a user might be leaking, by subtracting `total_memory_freed` from `total_memory_requested`.
+
+If you look in `mini_valgrind.h`, you'll notice that these are declared as `extern` variables. This allows variables to live somewhere else beside the line where you are 'declaring' them, pushing the responsibility of providing a real location in memory for these variables elsewhere and letting the [linker](https://stackoverflow.com/questions/3322911/what-do-linkers-do) resolve the variable name to where memory is actually reserved. This [link](https://stackoverflow.com/questions/496448/how-to-correctly-use-the-extern-keyword-in-c) has a nice explanation of how to use this. __In order to prevent your code from crashing, you will have to declare these variables as globals in `mini_valgrind.c`__.
 
 ## Testing
 
