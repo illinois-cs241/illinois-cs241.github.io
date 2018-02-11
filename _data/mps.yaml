@@ -7,10 +7,10 @@
 -
     name: "Text Editor"
     releaseDate: "Week 3"
-    dueDate: "Week 4"
+    dueDate: "Week 5"
     url: "text_editor"
 -
     name: "Shell"
     releaseDate: "Week 4"
-    dueDate: "Week 5"
+    dueDate: "Week 6"
     url: "shell"
