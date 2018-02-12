@@ -241,7 +241,7 @@ _Note:_ while `ps` is normally a separate binary, it is a built-in command for y
 Some things to keep in mind:
 
 - The order in which you print the processes does not matter.
-- The 'command' for `print_process_info` should be the full command you executed, with escape sequences and environment variables expanded. (This is _different_ from what gets stored in the history!) The `&` for background processes is optional. For the main shell process _only_, you do not need to include the command-line flags.
+- The 'command' for `print_process_info` should be the full command you executed, with escape sequences expanded. (This is _different_ from what gets stored in the history!) The `&` for background processes is optional. For the main shell process _only_, you do not need to include the command-line flags.
 
 ### `kill <pid>`
 
