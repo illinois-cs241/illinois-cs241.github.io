@@ -312,6 +312,14 @@ Some external commands you may test to see whether your shell works are:
 echo hello
 ```
 
+If `exec` fails:
+```
+(pid=1234)/home/user$ ech test
+Command executed by pid=1235
+ech: not found
+(pid=1234)/home/user$
+```
+
 It is good practice to flush the standard output stream before the fork to be able to correctly display the output.
 
 :bangbang: Please read the disclaimer at the top of the page! We don't want to have to give any failing grades. :bangbang:
