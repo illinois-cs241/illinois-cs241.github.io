@@ -159,8 +159,8 @@ global variables static. If you encounter a program for which this fix doesn't w
 Here is the grading breakdown:
 
 * Correctness (75%)
-  * Part 1 (25%): tests 1-6 complete successfully - due 10/09 11:59pm
-  * Part 2 (50%): tests 1-12 complete successfully - due 10/16 11:59pm
+  * Part 1 (25%): tests 1-6 complete successfully - due 02/26 11:59pm
+  * Part 2 (50%): tests 1-12 complete successfully - due 03/05 11:59pm
 * Performance (25%): Points only awarded if all part 2 testers complete
   successfully - due with part2
 
