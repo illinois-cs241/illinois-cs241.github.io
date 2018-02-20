@@ -4,41 +4,41 @@
   netid: abhatti2
   class: 17
   roles: Assignment Development
-  specialty: ""
+  specialty: "Nonstop Networking, Parmake, Text Editor"
   semesters: Fall 2016 and Spring 2017
 -
   name: Alec Kochevar-Cureton
   netid: kocheva2
   class: 17
-  roles: Assignment Development Lead
-  specialty: Puzzles
+  roles: "Former Assignment Development and Lab Lead"
+  specialty: "Puzzles - Nonstop Networking"
   semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
   name: Ben Kurtovic
   netid: kurtovc2
   class: 17
-  roles: Undergrad Staff Lead and Honors Mentor
+  roles: "Former Historian, Honors Mentor"
   specialty: operating systems, networking, security
   semesters: Spring 2016, Fall 2016, Spring 2017, and Fall 2017
 -
   name: Brandon Chong
   netid: bschong2
   class: 17
-  roles: Village Elder
+  roles: "Former Historian"
   specialty: CS Education
   semesters: Spring 2015, Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
   name: Brian Truong
   netid: btruong2
   class: 17
-  roles: Infrastructure Lead
+  roles: "Former Infrastructure Lead"
   specialty: Software engineering, systems programming, OS, programming languages
   semesters: Spring 2015, Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
   name: Curtis Bezault
   netid: bezault2
   class: 17
-  roles: Lab Assistant
+  roles: "Broken Barriers - The Gradient Edition"
   specialty: High Performance Computing/Massively Parallel Computing
   semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
@@ -53,13 +53,13 @@
   netid: nlee16
   class: 17
   roles: Assignment Development Lead
-  specialty: Undecided
+  specialty: ""
   semesters: Fall 2016 and Spring 2017
 -
   class: 16
   name: "Maddie Lin"
   netid: mlin35
-  roles: "Lab and Officer Hours Assistant"
+  roles: "Lab, Office Hour, Mini Valgrind"
   semesters: "Fall 2015, Spring 2016, and Fall 2016"
   specialty: "Software Engineering"
 -
@@ -74,7 +74,7 @@
   netid: nphadke2
   class: 17
   roles: Office Hours and Lab
-  specialty: Sucks at Tennis
+  specialty: "Sucks at Tennis, Scheduler"
   semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
   class: 17
@@ -87,7 +87,7 @@
   class: 17
   name: "Porter Smith"
   netid: pmsmith2
-  roles: "Office Hours Team Leader"
+  roles: "Office Hours Team Lead, Malloc, Pied Piper"
   semesters: "Spring 2015, Fall 2015, Spring 2016, and Fall 2016"
   specialty: "System Programming and Embedded Programming"
 -
@@ -101,8 +101,8 @@
   name: Robert Andrews
   netid: rgandre2
   class: 17
-  roles: Honors Section Team Leader
-  specialty: Theoretical Computer Science
+  roles: "Former Honors Section Team Leader"
+  specialty: "Master of CS Theory"
   semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
   name: Sam Stephens
