@@ -7,18 +7,18 @@
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true"
   -
     date: "January 30"
-    content: #"Go Presentation"
-    slides: #"brainstorming.pdf"
+    content: "Gitting Your Feet Wet"
+    slides: "gitting.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
   -
     date: "February 6"
-    content: #"Security"
-    slides: #"security.pdf"
+    content: "Security"
+    slides: "security.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
   -
     date: "February 13"
-    content: #"No Class"
-    slides: #
+    content: "Minilectures"
+    slides: #"minilectures.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
   -
     date: "February 20"
