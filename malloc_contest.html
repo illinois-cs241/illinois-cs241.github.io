@@ -25,8 +25,8 @@
       <div class="title"><h2></h2></div>
     </div></div>
 
-    <div class="table-responsive" style="table-layout: fixed;">
-      <table class="table">
+    <div class="table-responsive malloc-div">
+      <table class="table table-fixed">
         <thead id="malloc-head">
         </thead>
         <tbody id="malloc-body">
@@ -50,6 +50,28 @@
     .test-passed, .test-failed {
       color: white;
     }
+
+    .student-result {
+      height: 100px;
+    }
+
+    .nickname-data {
+      height: 100px;
+    }
+
+    .ta-result {
+      background-color: #ECC91C !important; /* Needed to override the odd counter */
+    }
+
+    .ta-result > .test-passed {
+      background-color: #ECC91C;
+      color: black;
+    }
+
+    .malloc-div {
+      height: 900px;
+    }
+
   </style>
 
   {% include footer.html %}
@@ -71,12 +93,16 @@
       })
       .done(function(data){
         function add_titles(test_names) {
+          const pad_len = 50;
           const titles = test_names.map(function(name){
           const elem = $('<th></th>');
-            elem.text(name);
+            const split_name = name.split('-');
+            const nom = "Tester\xa0" + split_name[1];
+            elem.text(nom.padEnd(pad_len, "\xa0"));
             return elem;
           });
-          titles.splice(0, 0, $('<th>Name</th>'));
+          const name_pad = "Name".padEnd(pad_len, "\xa0");
+          titles.splice(0, 0, $('<th>'+name_pad+'</th>'));
           titles.splice(0, 0, $('<th class="medal">🏅</th>'));
           const title_row = $('<tr></tr>');
           title_row.append(titles);
@@ -99,7 +125,7 @@
             }
             t = t.toFixed(2);
           }
-          return [t, unit];
+          return "" + t + " " + unit;
         };
 
         const formatTime = function(t) {
@@ -118,8 +144,18 @@
             }
             t = t.toFixed(2);
           }
-          return [t,unit];
+          return "" + t + " " + unit;
         };
+
+        function formatted_info(title, max_memory, avg_memory, runtime) {
+          var text = '<div class="row"><div class="col-md-12" style="padding-left: 0px;">'+title+'</div></div>';
+          text += '<div class="row"><div class="col-md-5" style="padding-left: 0px; padding-right: 0px">Max Memory:</div><div class="col-md-6">' + formatMem(max_memory) + '</div></div>';
+          text += '<div class="row"><div class="col-md-5" style="padding-left: 0px; padding-right: 0px">Avg Memory:</div><div class="col-md-6">' + formatMem(avg_memory) + '</div></div>';
+          text += '<div class="row"><div class="col-md-5" style="padding-left: 0px; padding-right: 0px">Runtime:</div><div class="col-md-6">' + formatTime(runtime) + '</div></div>';
+          const new_row = $('<div class="container-fluid"></div>');
+          new_row.html(text);
+          return new_row;
+        }
 
         function test_score(student_test_case, ta_test_case) {
           if (student_test_case.pts_earned != student_test_case.total_pts) {
@@ -144,9 +180,6 @@
         }
 
         function student_score(student, ta_sol) {
-          const any_fail = student.test_cases.some(function (test) {
-            return test.pts_earned != test.total_pts;
-          });
 
           const keys = ta_sol.test_cases.map(function (e) {
             return e.name;
@@ -210,6 +243,14 @@
         for (var i = 0; i < sorted.length; ++i) {
           const row = $("<tr></tr>");
           const student = sorted[i];
+          if (student['nickname'] === 'glibc (optimized)\n') {
+            console.log(student);
+          }
+          if (student['is_ta_solution']) {
+            row.addClass('ta-result');
+          } else {
+            row.addClass('student-result');
+          }
           var medal = "" + (i + 1);
           if (i == 0) {
             medal = "🥇"
@@ -221,8 +262,18 @@
           const medal_data = $('<td class="medal"></td>');
           medal_data.text(medal);
           row.append(medal_data);
-          const name = $('<td></td>');
-          name.text(student.nickname);
+          const name = $('<td class="nickname-data"></td>');
+          const any_fail = student.test_cases.some(function (test) {
+            return test.pts_earned != test.total_pts;
+          });
+          var name_info;
+          if (any_fail) {
+            name.text(student.nickname);
+          } else {
+            const elem = formatted_info(student.nickname, student['total_max_memory'], 
+              student['total_avg_memory'], student['total_time']);
+            name.append(elem);
+          }
           row.append(name);
           /* Verify that we are going through in the same order */
           for (var j = 0; j < test_names.length; ++j) {
@@ -242,7 +293,8 @@
               elem.text('Failed');
               elem.addClass('test-failed');
             } else {
-              elem.text('Passed');
+              const new_row = formatted_info('Passed', test['max_memory'], test['avg_memory'], test['runtime']);
+              elem.append(new_row);
               elem.addClass('test-passed');
             }
             row.append(elem);
