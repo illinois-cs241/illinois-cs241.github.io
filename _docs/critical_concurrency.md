@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Critial Concurrency"
+title: "Critical Concurrency"
 submissions:
 - title: Entire Assignment
   due_date: 02/28 11:59pm
