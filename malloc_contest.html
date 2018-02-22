@@ -52,7 +52,7 @@
       };
 
       /* only force a cache update every 10 minutes */
-      const url = '/fa17_contest.json?v=' + roundedTime();
+      const url = 'cs241grader.web.engr.illinois.edu/malloc/data/results.json' + roundedTime();
       $.get(url)
       .always(function(){
         /* Get rid of the loading screen */
