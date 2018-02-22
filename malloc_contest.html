@@ -52,7 +52,7 @@
       };
 
       /* only force a cache update every 10 minutes */
-      const url = 'cs241grader.web.engr.illinois.edu/malloc/data/results.json?v=' + roundedTime();
+      const url = 'http://cs241grader.web.engr.illinois.edu/malloc/data/results.php?v=' + roundedTime();
       $.get(url)
       .always(function(){
         /* Get rid of the loading screen */
@@ -147,9 +147,8 @@
         }
 
         function find_ta_solution(students) {
-          const keys = Object.keys(students);
-          for(var i = 0; keys.length; i++) {
-            const obj = students[keys[i]];
+          for(var i = 0; i < students.length; i++) {
+            const obj = students[i];
             if (obj['is_ta_solution'] && obj['nickname'].trim() === 'glibc') {
               return obj;
             }
@@ -161,7 +160,7 @@
           data = JSON.parse(data);
         }
         const students = Object.keys(data);
-        const test_names = data[students[0]]['test_cases']
+        const test_names = data[0]['test_cases']
           .map(function(e) {return e.name})
           .sort(function(a, b) {
             if (a.length != b.length) return a.length < b.length ? -1 : 1;
@@ -171,8 +170,8 @@
         add_titles(test_names);
         const ta_sol = find_ta_solution(data);
         /* Compute and store all the rankings once */
-        for (var i = 0; i < students.length; ++i) {
-          const student = data[students[i]];
+        for (var i = 0; i < data.length; ++i) {
+          const student = data[i];
           const rating = student_score(student, ta_sol);
           student.normalized_score = rating < 0 ? 0 : rating;
         }
@@ -224,6 +223,7 @@
         }
       })
       .fail(function(err) {
+        console.log(err);
         $('#error').removeClass('hidden');
         $('#malloc-contest').addClass('hidden');
       });
