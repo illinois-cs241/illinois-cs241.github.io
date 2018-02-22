@@ -38,6 +38,18 @@
     .medal {
       font-size: 20px;
     }
+
+    .test-passed {
+      background-color: #2f7a35;
+    }
+
+    .test-failed {
+      background-color: #b72100;
+    }
+
+    .test-passed, .test-failed {
+      color: white;
+    }
   </style>
 
   {% include footer.html %}
@@ -132,6 +144,10 @@
         }
 
         function student_score(student, ta_sol) {
+          const any_fail = student.test_cases.some(function (test) {
+            return test.pts_earned != test.total_pts;
+          });
+
           const keys = ta_sol.test_cases.map(function (e) {
             return e.name;
           });
@@ -142,8 +158,10 @@
             const ta_test = ta_sol.test_cases.find(comp);
             const student_test = student.test_cases.find(comp);
             acc += test_score(student_test, ta_test);
+            return acc;
           }, 0);
-          return raw_score * 100 / student.test_cases.length;
+          const score = raw_score * 100 / student.test_cases.length;
+          return score;
         }
 
         function find_ta_solution(students) {
@@ -159,8 +177,9 @@
         if (typeof data === "string") {
           data = JSON.parse(data);
         }
-        const students = Object.keys(data);
-        const test_names = data[0]['test_cases']
+
+        const ta_sol = find_ta_solution(data);
+        const test_names = ta_sol['test_cases']
           .map(function(e) {return e.name})
           .sort(function(a, b) {
             if (a.length != b.length) return a.length < b.length ? -1 : 1;
@@ -168,7 +187,7 @@
             return (a < b) ? -1 : 1;
           });
         add_titles(test_names);
-        const ta_sol = find_ta_solution(data);
+
         /* Compute and store all the rankings once */
         for (var i = 0; i < data.length; ++i) {
           const student = data[i];
@@ -177,9 +196,9 @@
         }
 
         /* Get a sorted order for the students */
-        const sorted = students.sort(function (st1, st2) {
-          const st1_score = data[st1];
-          const st2_score = data[st2];
+        const sorted = data.sort(function (st1, st2) {
+          const st1_score = st1.normalized_score;
+          const st2_score = st2.normalized_score;
           if (st1_score < st2_score) {
             return 1;
           } else if (st1_score > st2_score) {
@@ -188,9 +207,9 @@
           return 0;
         });
 
-        for (var i = 0; i < students.length; ++i) {
+        for (var i = 0; i < sorted.length; ++i) {
           const row = $("<tr></tr>");
-          const student = data[sorted[i]];
+          const student = sorted[i];
           var medal = "" + (i + 1);
           if (i == 0) {
             medal = "🥇"
@@ -207,15 +226,24 @@
           row.append(name);
           /* Verify that we are going through in the same order */
           for (var j = 0; j < test_names.length; ++j) {
+            const elem = $('<td></td>');
             const comparator = function (test) {
-              return test.name === test_names[i];
+              return test.name === test_names[j];
             };
             const test = student.test_cases.find(comparator);
-            const elem = $('<td></td>');
+            if (test === undefined) {
+              console.log(student.test_cases);
+              elem.text('Not Run');
+              row.append(elem);
+              break;
+            }
+
             if (test.pts_earned != test.total_pts) {
               elem.text('Failed');
+              elem.addClass('test-failed');
             } else {
               elem.text('Passed');
+              elem.addClass('test-passed');
             }
             row.append(elem);
           }
@@ -223,7 +251,6 @@
         }
       })
       .fail(function(err) {
-        console.log(err);
         $('#error').removeClass('hidden');
         $('#malloc-contest').addClass('hidden');
       });
