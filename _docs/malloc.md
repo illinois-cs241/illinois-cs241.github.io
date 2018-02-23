@@ -207,7 +207,7 @@ So, let's work out some scenarios:
 
 ## Contest
 
-**View the malloc contest [here](http://cs241grader.web.engr.illinois.edu/malloc/)!**
+**View the malloc contest [here](/malloc_contest.html)!**
 
 The malloc contest pits your memory allocator implementation against your fellow students. There are a few things to know:
 

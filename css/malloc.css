@@ -1,0 +1,37 @@
+.medal {
+  font-size: 20px;
+}
+
+.test-passed {
+  background-color: #2f7a35;
+  color: white;
+}
+
+.test-failed {
+  background-color: #b72100;
+}
+
+.test-passed, .test-failed {
+  color: white;
+}
+
+.student-result {
+  height: 100px;
+}
+
+.nickname-data {
+  height: 125px;
+}
+
+.ta-result {
+  background-color: #ECC91C !important; /* Needed to override the odd counter */
+}
+
+.ta-result > .test-passed {
+  background-color: #ECC91C;
+  color: black;
+}
+
+.malloc-div {
+  height: 900px;
+}
