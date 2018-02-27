@@ -124,10 +124,7 @@ function test_score(student_test_case, ta_test_case) {
     Math.log2(ta_max / st_max + 1));
 }
 
-function student_score(student, ta_sol) {
-  const keys = ta_sol.test_cases.map(function (e) {
-    return e.name;
-  });
+function student_score(student, ta_sol, keys) {
   const raw_score = keys.reduce(function (acc, cv){
     const comp = function(e) {
       return e.name === cv;
@@ -137,7 +134,7 @@ function student_score(student, ta_sol) {
     const temp = test_score(student_test, ta_test);
     return acc + temp;
   }, 0);
-  const score = raw_score * 100 / student.test_cases.length;
+  const score = raw_score * 100 / keys.length;
   return score;
 }
 
@@ -169,9 +166,27 @@ const get_test_names = function(ta_sol) {
 }
 
 const store_and_sort_data = function(data, ta_sol) {
+  const tester_secret_slug = 'tester-secret';
+  const all_keys = ta_sol.test_cases.map(function (e) {
+    return e.name;
+  })
+  const filtered = all_keys.filter(function (e) {
+    return e !== tester_secret_slug;
+  });
   for (var i = 0; i < data.length; ++i) {
     const student = data[i];
-    const rating = student_score(student, ta_sol);
+    const rating = student_score(student, ta_sol, all_keys);
+    const grade_score = student_score(student, ta_sol, filtered);
+    const any_fail = student.test_cases.some(function (test) {
+      return test.pts_earned !== test.total_pts;
+    });
+    const grade_fail = student.test_cases.some(function (test) {
+      return test.name !== tester_secret_slug && test.pts_earned !== test.total_pts;
+    });
+
+    student.all_fail = any_fail;
+    student.grade_fail = grade_fail;
+    student.grade_score = grade_score;
     student.normalized_score = rating < 0 ? 0 : rating;
   }
 
@@ -211,11 +226,8 @@ const get_correct_medal = function(i) {
 
 const get_formatted_name = function(student) {
   const name = $('<td class="nickname-data"></td>');
-  const any_fail = student.test_cases.some(function (test) {
-    return test.pts_earned != test.total_pts;
-  });
   var name_info;
-  if (any_fail) {
+  if (student.grade_fail) {
     name.text(student.nickname);
   } else {
     const elem = formatted_info(student.nickname, student['total_max_memory'], 
@@ -226,10 +238,17 @@ const get_formatted_name = function(student) {
 
     /* Score! */
     const percentage = $("<div class='row'></div>");
-    percentage.append($("<div class='col-md-5'>Percent:</div>"));
-    console.log("<div class='col-md-6'>" + student.normalized_score.toFixed(2) + "%</div>");
-    percentage.append($("<div class='col-md-6'>" + student.normalized_score.toFixed(2) + "%</div>"));
+    percentage.append($("<div class='col-md-5'>Grade %:</div>"));
+    percentage.append($("<div class='col-md-6'>" + student.grade_score.toFixed(2) + "%</div>"));
     elem.append(percentage);
+
+    if (!student.all_fail) {
+      const contest = $("<div class='row'></div>");
+      contest.append($("<div class='col-md-5'>Rank %:</div>"));
+      contest.append($("<div class='col-md-6'>" + student.normalized_score.toFixed(2) + "%</div>"));
+      elem.append(contest);
+    }
+
     name.append(elem);
   }
   return name;
