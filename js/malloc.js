@@ -108,24 +108,23 @@ function test_score(student_test_case, ta_test_case) {
     return -1e15;
   }
   var runtime_fudge = 0.04;  // 40ms
-  var memory_fudge = 1024;  // 1KB
+  var memory_fudge = 1;  // 1KB
   var ta_run = ta_test_case.runtime + runtime_fudge;
-  var st_run = student_test_case.runtime > 0 ?
+  var st_run = student_test_case.runtime >= 0 ?
       (student_test_case.runtime + runtime_fudge) : Infinity;
   var ta_avg = ta_test_case.avg_memory + memory_fudge;
-  var st_avg = student_test_case.avg_memory > 0 ?
+  var st_avg = student_test_case.avg_memory >= 0 ?
       (student_test_case.avg_memory + memory_fudge) : Infinity;
   var ta_max = ta_test_case.max_memory + memory_fudge;
-  var st_max = student_test_case.max_memory > 0 ?
+  var st_max = student_test_case.max_memory >= 0 ?
       (student_test_case.max_memory + memory_fudge) : Infinity;
-  return (
-    (1/4) * Math.log2(ta_run / st_run + 1) +
-    (3/8) * Math.log2(ta_avg / st_avg + 1) +
-    (3/8) * Math.log2(ta_max / st_max + 1));
+  return (1/3) * (
+    Math.log2(ta_run / st_run + 1) +
+    Math.log2(ta_avg / st_avg + 1) +
+    Math.log2(ta_max / st_max + 1));
 }
 
 function student_score(student, ta_sol) {
-
   const keys = ta_sol.test_cases.map(function (e) {
     return e.name;
   });
@@ -135,8 +134,8 @@ function student_score(student, ta_sol) {
     };
     const ta_test = ta_sol.test_cases.find(comp);
     const student_test = student.test_cases.find(comp);
-    acc += test_score(student_test, ta_test);
-    return acc;
+    const temp = test_score(student_test, ta_test);
+    return acc + temp;
   }, 0);
   const score = raw_score * 100 / student.test_cases.length;
   return score;
@@ -191,7 +190,12 @@ const store_and_sort_data = function(data, ta_sol) {
   return sorted;
 }
 
+const default_medal = function () {
+  return $('<td class="medal"></td>');
+}
+
 const get_correct_medal = function(i) {
+  // Don't give awards to optimized glibc
   var medal = "" + (i + 1);
   if (i == 0) {
     medal = "🥇"
@@ -200,7 +204,7 @@ const get_correct_medal = function(i) {
   } else if (i == 2) {
     medal = "🥉"
   }
-  const medal_data = $('<td class="medal"></td>');
+  const medal_data = default_medal();
   medal_data.text(medal);
   return medal_data;
 }
@@ -260,18 +264,21 @@ const setup_body = function(data) {
 
   /* Compute and store all the rankings once */
   const sorted = store_and_sort_data(data, ta_sol);
-
+  var offset = 0;
   /* Actually Update the table */
   for (var i = 0; i < sorted.length; ++i) {
     const row = $("<tr></tr>");
     const student = sorted[i];
+    var medal;
     if (student['is_ta_solution']) {
       row.addClass('ta-result');
+      medal = default_medal();
     } else {
       row.addClass('student-result');
+      medal = get_correct_medal(offset);
+      offset += 1;
     }
 
-    const medal = get_correct_medal(i);
     row.append(medal);
     const name = get_formatted_name(student);
     row.append(name);
