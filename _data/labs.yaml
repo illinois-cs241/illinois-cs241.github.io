@@ -41,3 +41,10 @@
     url: "critical_concurrency"
     resources: true
     worksheet: true
+-
+    name: "Deadlocked Diners"
+    releaseDate: "Week 7"
+    dueDate: "Week 8"
+    url: "deadlocked_diners"
+    resources: true
+    worksheet: true
