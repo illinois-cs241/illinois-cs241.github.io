@@ -48,8 +48,8 @@ function formatMem(t) {
         unit = "GB";
       }
     }
-    t = t.toFixed(2);
   }
+  t = t.toFixed(2);
   return "" + t + " " + unit;
 };
 
@@ -67,15 +67,15 @@ function formatTime(t) {
         unit = "s";
       }
     }
-    t = t.toFixed(2);
   }
+  t = t.toFixed(2);
   return "" + t + " " + unit;
 };
 
 function formatted_info(title, max_memory, avg_memory, runtime) {
   /* Must escape title because of injection */
   const new_row = $('<div class="container-fluid"></div>');
-  const title_div = $('<div class="row"><div class="col-md-12" style="padding-left: 0px;"></div></div>');
+  const title_div = $('<div class="row"><div class="col-md-12" style="padding-left: 0px;bcc-removed:ECC91C;color:black;"></div></div>');
   title_div.text(title);
   new_row.append(title_div);
 
@@ -108,7 +108,7 @@ function test_score(student_test_case, ta_test_case) {
     return -1e15;
   }
   var runtime_fudge = 0.04;  // 40ms
-  var memory_fudge = 1;  // 1KB
+  var memory_fudge = 1;  // 1b
   var ta_run = ta_test_case.runtime + runtime_fudge;
   var st_run = student_test_case.runtime >= 0 ?
       (student_test_case.runtime + runtime_fudge) : Infinity;
@@ -192,6 +192,16 @@ const store_and_sort_data = function(data, ta_sol) {
 
   /* Get a sorted order for the students */
   const sorted = data.sort(function (st1, st2) {
+    if (st1.all_fail && !st2.all_fail) {
+      return 1;
+    } else if (!st1.all_fail && st2.all_fail) {
+      return -1;
+    } else if (!st1.grade_fail && st2.grade_fail) {
+      return -1;
+    } else if (st1.grade_fail && !st2.grade_fail) {
+      return 1;
+    }
+
     const st1_score = st1.normalized_score;
     const st2_score = st2.normalized_score;
     if (st1_score < st2_score) {
@@ -230,8 +240,15 @@ const get_formatted_name = function(student) {
   if (student.grade_fail) {
     name.text(student.nickname);
   } else {
-    const elem = formatted_info(student.nickname, student['total_max_memory'], 
-      student['total_avg_memory'], student['total_time']);
+    var elem;
+    if (student.all_fail){
+      elem = formatted_info(student.nickname, student['total_max_memory'], 
+        student['total_avg_memory'], student['total_time']-9001);
+    }
+    else {
+      elem = formatted_info(student.nickname, student['total_max_memory'], 
+        student['total_avg_memory'], student['total_time']);
+    }
     /* Add this class so students can see if they're
       Actually in the contest */
     name.addClass('test-passed');
