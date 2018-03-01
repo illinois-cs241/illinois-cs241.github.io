@@ -106,3 +106,7 @@ A good solution must have the following:
 * Must adhere to the rules of the scenario
 * Run with a single intern should not cause deadlock AND not burn cpu cycles
 * A valid solution should not know about the number of interns or or number of companies
+
+## QuizIz
+
+[ID Form](https://docs.google.com/forms/d/e/1FAIpQLSeCIq1wChZHjNA4qQOZU4f1NGk_kXNkAenOtH2aM8nl5u1zbg/viewform)
