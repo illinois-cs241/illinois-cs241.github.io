@@ -1,6 +1,11 @@
 "use strict";
 (function(){
 
+const tester_secret_slug = 'tester-secret';
+
+/**
+ * Returns the time in seconds rounded to the nearest 10 minutes
+ */
 function roundedTime() {
   const time = new Date();
   const minutes = time / 60;
@@ -8,10 +13,16 @@ function roundedTime() {
   return ret;
 };
 
+/**
+ * Capitalizes first letter of a string
+ */
 function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+/*
+ * Adds the headers for the malloc row
+ */
 function add_titles(test_names) {
   const pad_len = 50;
   const titles = test_names.map(function(name){
@@ -166,7 +177,6 @@ const get_test_names = function(ta_sol) {
 }
 
 const store_and_sort_data = function(data, ta_sol) {
-  const tester_secret_slug = 'tester-secret';
   const all_keys = ta_sol.test_cases.map(function (e) {
     return e.name;
   })
@@ -184,32 +194,48 @@ const store_and_sort_data = function(data, ta_sol) {
       return test.name !== tester_secret_slug && test.pts_earned !== test.total_pts;
     });
 
+    student.num_passed = student.test_cases.filter(function (test) {
+      return test.pts_earned !== test.total_pts;
+    }).length;
+
     student.all_fail = any_fail;
     student.grade_fail = grade_fail;
     student.grade_score = grade_score;
     student.normalized_score = rating < 0 ? 0 : rating;
   }
 
-  /* Get a sorted order for the students */
-  const sorted = data.sort(function (st1, st2) {
-    if (st1.all_fail && !st2.all_fail) {
-      return 1;
-    } else if (!st1.all_fail && st2.all_fail) {
-      return -1;
-    } else if (!st1.grade_fail && st2.grade_fail) {
-      return -1;
-    } else if (st1.grade_fail && !st2.grade_fail) {
-      return 1;
-    }
-
-    const st1_score = st1.normalized_score;
-    const st2_score = st2.normalized_score;
+  const score_comp = function(st1_score, st2_score) {
     if (st1_score < st2_score) {
       return 1;
     } else if (st1_score > st2_score) {
       return -1;
     }
     return 0;
+  }
+  /* Get a sorted order for the students */
+  const sorted = data.sort(function (st1, st2) {
+    if (st1.grade_fail && st2.grade_fail) {
+      return score_comp(st2.num_passed, st1.num_passed);
+    } else if (st1.grade_fail && !st2.grade_fail) {
+      return 1;
+    } else if (!st1.grade_fail && st2.grade_fail) {
+      return -1;
+    } else {
+      if (st1.all_fail && st2.all_fail) {
+        const st1_score = st1.grade_score;
+        const st2_score = st2.grade_score;
+
+        return score_comp(st1_score, st2_score);
+      } else if (!st1.all_fail && st2.all_fail) {
+        return -1;
+      } else if (st1.all_fail && !st2.all_fail) {
+        return 1;
+      }
+      const st1_score = st1.normalized_score;
+      const st2_score = st2.normalized_score;
+
+      return score_comp(st1_score, st2_score);
+    } 
   });
 
   return sorted;
