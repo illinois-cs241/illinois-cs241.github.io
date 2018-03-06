@@ -18,21 +18,21 @@
   -
     date: "February 13"
     content: "Minilectures"
-    slides: #"minilectures.pdf"
+    slides: "minilectures.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
   -
     date: "February 20"
-    content: #"Memory and Garbage Collection"
-    slides: #"memory.pdf"
+    content: "Memory and Garbage Collection"
+    slides: "memory.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
   -
     date: "February 27"
-    content: #"Linux Kernel"
+    content: "No Lecture!"
     slides: #"kernel.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/76567804-1eac-45ad-9ebb-7d39e69a0443?ec=true"
   -
     date: "March 6"
-    content: #"No Class"
+    content: #"Minilectures 2"
     slides: #"lock_free.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f49eb1bc-8d6d-44aa-ac98-4fc43d408651?ec=true"
   -
