@@ -18,7 +18,7 @@ title: Getting Caught Up
 
 [Piazza](https://piazza.com) is the way that we communicate announcements to the rest of the class. It should have deadlines, which you can also find on our course web page (here) under the Labs and MP tab. You can register with your illinois email and pick the classes you are apart of. Search for CS241 and also the advising piazza for all things CS.
 
-To get a sense of going on and where we are in the course, please read all the posts by instructors.
+To get a sense of going on and where we are in the course, please read **all** the posts by instructors.
 
 ## Assignments
 

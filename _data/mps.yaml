@@ -19,3 +19,8 @@
     releaseDate: "Week 6"
     dueDate: "Week 8"
     url: "malloc"
+-
+    name: "Password Cracker"
+    releaseDate: "Week 8"
+    dueDate: "Week 8"
+    url: "password_cracker"
