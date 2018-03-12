@@ -15,11 +15,7 @@ before_script:
 after_success:
     - $TRAVIS_BUILD_DIR/_scripts/after_success.sh
 deploy:
-    local_dir: _site
-    provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN 
-    target_branch: master
-    fqdn: cs241.cs.illinois.edu
+    provider: script
+    script: $TRAVIS_BUILD_DIR/_scripts/deploy.sh
     on:
         branch: develop
