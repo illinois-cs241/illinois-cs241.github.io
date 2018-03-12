@@ -15,10 +15,11 @@ before_script:
 after_success:
     - $TRAVIS_BUILD_DIR/_scripts/after_success.sh
 deploy:
-    provider: script
-    script: 
-        - echo "Starting"
-        - bash $TRAVIS_BUILD_DIR/_scripts/deploy.sh
-        - echo "Why"
+    local_dir: _site
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN 
+    target_branch: master
+    fqdn: cs241.cs.illinois.edu
     on:
         branch: develop
