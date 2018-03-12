@@ -15,8 +15,6 @@ before_script:
 after_success:
     - $TRAVIS_BUILD_DIR/_scripts/after_success.sh
 deploy:
-    edge:
-        branch: v1.8.47
     local_dir: _site
     provider: pages
     skip_cleanup: true
