@@ -20,7 +20,6 @@ deploy:
     skip_cleanup: true
     github_token: $GITHUB_TOKEN 
     target_branch: master
-    keep-history: true
     fqdn: cs241.cs.illinois.edu
     on:
         branch: develop
