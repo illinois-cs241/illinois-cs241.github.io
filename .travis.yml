@@ -16,6 +16,9 @@ after_success:
     - $TRAVIS_BUILD_DIR/_scripts/after_success.sh
 deploy:
     provider: script
-    script: $TRAVIS_BUILD_DIR/_scripts/deploy.sh
+    script: 
+        - echo "Starting"
+        - bash $TRAVIS_BUILD_DIR/_scripts/deploy.sh
+        - echo "Why"
     on:
         branch: develop
