@@ -154,7 +154,7 @@ Machine Problems are different. While they are a key learning experience MPs are
 
 If your absence is unplanned -- a sudden illness or have a sudden death in the family -- we will deal with your situation on a case-by-case basis via the course admin ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)).
 
-For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://www.odos.uiuc.edu/contact/) note stating that you contacted the Emergency Dean.
+For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://odos.illinois.edu/community-of-care/student-assistance-center/) note stating that you contacted the Emergency Dean.
 
 ## How to Succeed
 
