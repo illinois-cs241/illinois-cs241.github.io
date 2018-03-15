@@ -18,11 +18,11 @@ wikibook:
 
 :fork_and_knife: :bomb: :bangbang:
 
-If your code fork-bombs on _any_ autograde, then you will automatically fail this MP. Please make sure that your `fork` code is correct before committing your code for the nightly autograder.
+If your code fork-bombs on _any_ autograde, then you will automatically fail this lab. Please make sure that your `fork` code is correct before committing your code for the nightly autograder.
 
 To prevent you from fork bombing your own VM, we recommend looking into [`ulimit`](https://ss64.com/bash/ulimit.html). This will allow you to set a limit for how many times you can fork.
 
-Since a learning objective of this assignment is to learn how to use pipes, if you use `popen`, you will automatically fail this MP.
+Since a learning objective of this assignment is to learn how to use pipes, if you use `popen`, you will automatically fail this lab.
 
 ## UNIX Pipes
 
@@ -111,7 +111,7 @@ So, in the above example, `pied_piper` will first check if the input file, `inve
 
 Note that double quotes are used to create a single argument which may contain many spaces. So, in the above case, `argv[3]` in the main function would be the string `grep piano`. Note also that the arguments may contain escaped double quotes, which do not affect the scope of the arguments.
 
-In this MP, the argument parsing is done for you, so don't worry about implementing this, but keep it in mind when you are testing commands with double quotes in them.
+In this lab, the argument parsing is done for you, so don't worry about implementing this, but keep it in mind when you are testing commands with double quotes in them.
 
 If you're interested in how the parser works, it uses the `getopt` function to get the arguments specified by the flags `-i` and `-o`, then it uses `optind` to find the next argument, which is our first command.
 
@@ -124,7 +124,7 @@ The full usage is:
 
 ## Implementation
 
-In this MP, the boilerplate functionalities like file handling, argument parsing, and the main routine are handled for you. Your job is to implement the `pied_piper()` function in `pied_piper.c`, which does the real work—setting up redirection, and attempting resilience.
+In this lab, the boilerplate functionalities like file handling, argument parsing, and the main routine are handled for you. Your job is to implement the `pied_piper()` function in `pied_piper.c`, which does the real work—setting up redirection, and attempting resilience.
 
 Here are some pointers on how to proceed:
 
