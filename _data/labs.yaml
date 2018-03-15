@@ -55,3 +55,8 @@
     url: "ideal_indirection"
     resources: true
     worksheet: true
+-
+    name: "Pied Piper"
+    releaseDate: "Week 9"
+    dueDate: "Week 10"
+    url: "pied_piper"
