@@ -160,4 +160,4 @@ You have also been provided with a `fail_nth` program that fails most of the tim
 
 ## QuizIz Form
 
-Please submit the form [here!](https://docs.google.com/forms/d/1TXFUVxKGW2p_TsmYDAMmKqym0R5LX1YoeU/edit)
+Please submit the form [here!](https://docs.google.com/forms/d/e/1FAIpQLSeNQV7dQPo6zPOUfwN50I3dLnk_-YFllGDW_JUOtINMOHeZRg/viewform)
