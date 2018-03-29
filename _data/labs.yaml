@@ -6,8 +6,7 @@
     url: "know_your_tools"
     resources: true
     worksheet: false
--
-    name: "Perilous Pointers"
+- name: "Perilous Pointers"
     releaseDate: "Week 2"
     dueDate: "Week 3"
     url: "perilous_pointers"
@@ -60,3 +59,8 @@
     releaseDate: "Week 9"
     dueDate: "Week 10"
     url: "pied_piper"
+-
+    name: "Finding Filesystems"
+    releaseDate: "Week 10"
+    dueDate: "Week 11"
+    url: "finding_filesystems"

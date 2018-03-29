@@ -37,13 +37,13 @@
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f49eb1bc-8d6d-44aa-ac98-4fc43d408651?ec=true"
   -
     date: "March 13"
-    content: #"Lock Free Data Structures"
+    content: "Peer Mentoring"
     slides: #"lock_free.pdf"
     video:
   -
     date: "March 27"
-    content: #"No Class"
-    slides: #"tcp.pdf"
+    content: "Lock Free Datastructures"
+    slides: "lock_free.pdf"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/ad1d1a76-8365-4169-a229-c8c2065b37eb?ec=true"
   -
     date: "April 3"
