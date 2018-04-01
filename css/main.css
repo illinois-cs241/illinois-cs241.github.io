@@ -1,6 +1,6 @@
 body {
     padding-top: 50px;
-    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
     background-color: #F2F2F4;
     color: #2A2A3F;
     padding-bottom:50px;
@@ -481,4 +481,44 @@ div.highlighter-rouge, figure.highlighter-rouge {
 tbody tr:nth-child(odd) {
     background-color: #DDD;
     border-radius: 20px;
+}
+
+html.hacker, body.hacker, header.hacker, nav.hacker, :not(.card-staff) > * > div:not(.card-staff).hacker, table.hacker, pre.hacker, span.hacker, :not(.card-staff) > 
+    a.hacker, p.hacker, h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker
+ {
+    color: white !important;
+    font-family: monospace !important;
+    background-color: black !important;
+ }
+            
+h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker {
+    color: #20C20E !important;
+}
+ul.hacker {
+    list-style-type: square; 
+}
+img.hacker {
+    filter: drop-shadow(white 1px 1px 0px) drop-shadow(white 1px -1px 0px) drop-shadow(white -1px 1px 0px) drop-shadow(white -1px -1px 0px)); 
+}
+pre.hacker {
+    border-color: white;
+    border-radius: 0;
+}
+.toc.hacker {
+    border-left-width: 0;
+}
+.content .highlighter-rouge.hacker {
+    font-weight: bold;
+    background-color: black;
+}
+
+.pad.hacker {
+    padding: 0;
+}
+a.hacker {
+    color: #20C20E;
+}
+
+tbody tr:nth-child(odd).hacker {
+    background-color: inherit;
 }
