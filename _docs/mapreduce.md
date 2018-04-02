@@ -17,6 +17,10 @@ wikibook:
   - "Pipes, Part 2: Pipe programming secrets"
 ---
 
+## WARNING
+
+Since a learning objective of this assignment is to learn how to use pipes, if you use `popen`, you will automatically fail this MP.
+
 ## MapReduce
 
 In 2004, Google released a general framework for processing large data sets on clusters of computers.
