@@ -29,3 +29,8 @@
     releaseDate: "Week 9"
     dueDate: "Week 11"
     url: "parallel_make"
+-
+    name: "MapReduce"
+    releaseDate: "Week 11"
+    dueDate: "Week 12"
+    url: "mapreduce"
