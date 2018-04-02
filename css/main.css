@@ -522,3 +522,8 @@ a.hacker {
 tbody tr:nth-child(odd).hacker {
     background-color: inherit;
 }
+
+#tuxlink img.hacker {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+}

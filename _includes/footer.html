@@ -4,35 +4,7 @@
 <script src="/js/main.js?v={{ site.time }}"></script>
 
 <script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover({
-      trigger: 'manual',
-        container: $(this).attr('id'),
-        placement: 'top',
-        content: function () {
-            return '<div class="hover-hovercard"></div>';
-        }
-    }).on("mouseenter", function () {
-        var _this = this;
-        $(this).popover("show");
-        $(this).siblings(".popover").on("mouseleave", function () {
-            $(_this).popover('hide');
-        });
-    }).on("mouseleave", function () {
-        var _this = this;
-        setTimeout(function () {
-            if (!$(".popover:hover").length) {
-               $(_this).popover("hide")
-            }
-        }, 100);
-    });
-
-    $('[data-toggle="tooltip"]').tooltip();
-});
-
-</script>
-
-<script>$(function() { 
+$(document).ready(function() { 
     $("#tuxlink").prop("href", "javascript:;").click(function() { 
         if ("WebkitAppearance" in document.documentElement.style) { 
             var style = document.createElement("style"); 
@@ -43,10 +15,14 @@ $(document).ready(function(){
             sheet.insertRule("::-webkit-scrollbar-thumb {border-radius: 0; background-color: white; -webkit-box-shadow: none;}", 0); 
         } 
 
-        $("#tuxlink img").css("-ms-interpolation-mode", "nearest-neighbor")
-            .css("image-rendering", "pixelated")
-            .prop("src", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAJCAMAAAA4jZ0cAAAAM1BMVEX///8CAgQMDAwsLCw0NDSjbQCkbQC+vbzOkwDU1NTlrADqvADxtgD0vQD12wD+/vz+//yBSdYEAAAAAXRSTlMAQObYZgAAADFJREFUCB0FwQkCQDAQBLCsq6g1/v9aCVQBthUwX8BIgStZCpUvKXSSLs6eyd0Pdg5+JwkBVyC74QYAAAAASUVORK5CYII="); 
-        var continuous = true;
+        const hackerKey = 'hackerLocalKey';
+        const hackerOff = "off";
+        const hackerOn = "on";
+
+        if (window.localStorage.getItem(hackerKey) === null) {
+            window.localStorage.setItem(hackerKey, hackerOff);
+        }
+
         $("#tuxlink").unbind('click').click(function() { 
             const hackerClass = 'hacker';
             $('html, body, header, nav, table, pre, span, :not(.card-staff) > a, p, h1, h2, h3, h4, h5, h6').toggleClass(hackerClass);
@@ -57,18 +33,33 @@ $(document).ready(function(){
             $('.pad').toggleClass(hackerClass);
             $('a').toggleClass(hackerClass);
             $('tbody tr:nth-child(2n+1)').toggleClass(hackerClass);
-                return false; 
+            $("#tuxlink img").toggleClass(hackerClass);
+
+            const val = window.localStorage.getItem(hackerKey);
+            if (val === hackerOff) {
+                window.localStorage.setItem(hackerKey, hackerOn);
+            } else {
+                window.localStorage.setItem(hackerKey, hackerOff);
+            }
+            return false; 
         }); 
+        $("#tuxlink").click();
+        const stored = window.localStorage.getItem(hackerKey);
+        if (stored === hackerOn) {
+            console.log("Hello!")
+            $("#tuxlink").click();
+        } else {
+            console.log("Noo");
+        }
 
         return false; 
     }); 
-        $("#tuxlink").click();
-        $("#tuxlink").click();
     } 
     ); 
     </script>
 
 <script src="/js/analytics.js"></script>
+
 <footer class="">
 
 <div class="container-fluid">
