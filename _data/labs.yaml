@@ -66,3 +66,8 @@
     dueDate: "Week 11"
     url: "chatroom"
 -
+    name: "Savvy Scheduler"
+    releaseDate: "Week 11"
+    dueDate: "Week 12"
+    url: "savvy_scheduler"
+-
