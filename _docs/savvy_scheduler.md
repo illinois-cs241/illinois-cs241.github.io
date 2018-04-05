@@ -15,6 +15,10 @@ wikibook:
   - "Scheduling, Part 2: Scheduling Processes: Algorithms"
 ---
 
+## Quizziz form
+
+Please fill out the following Google form for lab credit: [https://docs.google.com/forms/d/e/1FAIpQLSddT8tB6pATutcjPRgT48sYZdtj3Z0L9RA9NAEy1EplLX9Jww/viewform](https://docs.google.com/forms/d/e/1FAIpQLSddT8tB6pATutcjPRgT48sYZdtj3Z0L9RA9NAEy1EplLX9Jww/viewform). Please also update last week's Google form response with your section by following the link sent to your emails.
+
 ## Introduction
 
 In this lab you'll be writing a scheduler. Rather than interacting directly with the operating system, we've whipped up a userspace threading library!
