@@ -83,7 +83,7 @@ In the event that our code becomes hard/impossible to test externally, we allow 
 
 ## Submission/Tournaround
 
-As soon as you are finished, [please submit the form](./https://docs.google.com/forms/d/e/1FAIpQLSedW7LgFMQ2uVgFtyDNuidSHultKVaC9gwsKs3rIwXEyPCFIQ/viewform?usp=sf_link) and we will try to grade your test ASAP. If we think your test is good, you can go ahead and select a third week for regrades. We will commit a file called `results.txt` to your directory with your status. If not you can edit and resubmit -- avoid spam because we are all humans. Excessive submissions will just be dropped like networking packets. In any event, we hope to have the results up by 1 week before classes officially end. The deadline for this is Reading Day at midnight, but note that the close it gets to the deadline the slower we will grade because this has to be hand graded.
+As soon as you are finished, [please submit the form](https://docs.google.com/forms/d/e/1FAIpQLSedW7LgFMQ2uVgFtyDNuidSHultKVaC9gwsKs3rIwXEyPCFIQ/viewform?usp=sf_link) and we will try to grade your test ASAP. If we think your test is good, you can go ahead and select a third week for regrades. We will commit a file called `results.txt` to your directory with your status. If not you can edit and resubmit -- avoid spam because we are all humans. Excessive submissions will just be dropped like networking packets. In any event, we hope to have the results up by 1 week before classes officially end. The deadline for this is Reading Day at midnight, but note that the close it gets to the deadline the slower we will grade because this has to be hand graded.
 
 ## Example Code Test README
 
