@@ -43,7 +43,7 @@ Make sure you also read the grading portion, as it is different than the standar
 
 **Note**: _do not use threads_ for this assignment. Any code that uses the `pthread` library automatically gets a zero.
 
-**NOte**: the references provided have **extra** printouts that are **not** required unless **EXPLICITLY** stated in this document.
+**Note**: the references provided have **extra** printouts that are **not** required unless **EXPLICITLY** stated in this document.
 
 ## Threads start wearing out
 
