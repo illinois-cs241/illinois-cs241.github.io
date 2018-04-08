@@ -34,3 +34,8 @@
     releaseDate: "Week 11"
     dueDate: "Week 12"
     url: "mapreduce"
+-
+    name: "Nonstop Networking"
+    releaseDate: "Week 12"
+    dueDate: "Week 15"
+    url: "networking"
