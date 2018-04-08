@@ -325,7 +325,7 @@ Consider the following tasks (in order), where a thread can run 100 iterations p
 
 Suppose there are 4 threads available and the program runs for 1 second.
 
-For version 1: The throughput is 2 since tasks 1, 3, and 4 will have completed, while 2 is still being worked on (and 5 is just being started).
+For version 1: The throughput is 3 since tasks 1, 3, and 4 will have completed, while 2 is still being worked on (and 5 is just being started).
 
 For version 2: The throughput is 1 since only the first task will have completed and all of the threads are busy working on task 2.
 
