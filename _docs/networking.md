@@ -336,3 +336,4 @@ Obtaining 50% or more of the points is a 100% on week 2, 45% yields a 90%, 40% a
 Part 3 is full server-client functionality. All tests will run, including the stress test. This is due Monday, April 30th, at 23:59.
 
 **Your final grade for this assignment is computed as total = max(part1, part3) + max(part2, part3) + part3.**
+**Note**: you must get more than a **ZERO** on part 1 or 2 to be able to replace it with part 3.
