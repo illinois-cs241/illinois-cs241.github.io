@@ -71,3 +71,9 @@
     dueDate: "Week 12"
     url: "savvy_scheduler"
 -
+    name: "Finding Filesystems"
+    releaseDate: "Week 12"
+    dueDate: "Week 13"
+    url: "finding_filesystems"
+    resources: true
+-
