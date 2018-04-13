@@ -71,8 +71,8 @@ This is the famous inode struct that you have been learning about! Here are a br
 - `mode` is a bitmask. The bottom 9 bits are read-write-execute for owner-group-others. Bits 11-10 are the type of the file. `(mode >> 9)` corresponds to a particular type. We have given you two functions, `is_file` and `is_directory`, that tell you whether or not the inode represents a directory or file. There are no other types in our filesystem.
 - `nlink` is the hard link count which is the number of directories that the file is linked to from (directories can't be hard linked).
 - `atim` is access time, which is the time of last access or the last time a file was `read(2)`. 
-- `mtim` is the last modification time, or in other words, the last time the file's metadata was changed.
-- `ctim` is the last change time, or in other words, the last time the file was changed with `write(2)`.
+- `mtim` is the last modification time, or in other words, the last time the file was changed with `write(2)`.
+- `ctim` is the last change time, or in other words, the last time the file's metadata was changed.
 - `size` is the size of the file in bytes
 - `direct` is an array where the `direct[i]` is the `i`th data block's offset from the `data_root`.
 - `indirect` is the offset number (`data_block_number`) of a data block, which contains `NUM_INDIRECT_INODES` number of `data_block_number`'s.
