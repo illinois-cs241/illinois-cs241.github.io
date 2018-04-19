@@ -1,3 +1,4 @@
+
 ---
 layout: doc
 title: "Mapping Memory"
@@ -10,11 +11,9 @@ submissions:
 learning_objectives:
   - Memory Mapped Files
   - Shared/Private Pages
-  - Kernel Memory Management
   - Virtual Memory
 wikibook:
   - "File System, Part 6: Memory mapped files and Shared memory"
----
 
 ## Quizizz
 
@@ -54,6 +53,14 @@ Before starting, you should go through all the provided header files and make su
 
 Good luck!
 
+# The Current Process
+
+Inside of `kernel.h`, you will find the global `struct process *current`. This
+is the currently running process. All system calls must rely on this pointer
+in order to retrieve the right context for searching through VMAs. The
+pointer is reset to a new process using 
+`void context_switch(struct process *)`, also in `kernel.h`. You do not have to
+worry about this, however.
 
 # Virtual Memory and Processes
 
@@ -64,14 +71,14 @@ struct process {
   uint32_t pid;
   struct vm_area *area_list;   // sorted linked list of all virtual memory areas
   page_directory *paging_directory;  // process global page directory 
-  vm_area *text_section;   // text segment region
-  vm_area *data_section;   // data segment region
-  vm_area *heap_section;   // heap segment region
-  vm_area *stack_section;  // stack segment region
+  vm_area *text_segment;   // text segment region
+  vm_area *data_segment;   // data segment region
+  vm_area *heap_segment;   // heap segment region
+  vm_area *stack_segment;  // stack segment region
 }
 ```
 
-As the process struct shows above, the stack, heap, text segment, and data segment have their own virtual memory areas. Every virtual memory area in a process is stored in the sorted linked list `area_list`. The virtual memory area struct in turn looks like this:
+As the process struct shows above, the stack, heap, text segment, and data segment have their own virtual memory areas. Every virtual memory area in a process is stored in the sorted linked list `area_list`. The list is sorted in terms of virtual address, so the text segment comes before the data segment, the heap segment before the stack segment, etc. The virtual memory area struct in turn looks like this:
 
 ```
 struct vm_area{
@@ -109,13 +116,13 @@ struct vm_area{
 
 Note that `area_prev` is a pointer to a pointer. It points to the `area_next` of the previous VMA. So essentially, the linked list looks like this:
 
-![vmaLinkedList](/images/vma_linked_list.png)
+![vma-linked-list](/images/vma-linked-list.png)
 
 We provide you with macros to handle the addition and deletion of a node from this linked list. These can be found in `list.h`. You are strongly encouraged to read the usage examples provided in the comments.
 
 Virtual memory also allows the kernel to map other resources to a region of a process' address space, like a memory-mapped file. The `file` pointer in the vm_area struct points to a `struct mapped_file`, if any. The `page_offset` will represent the page aligned offset within a file, i.e., the start of the region in a file which this VMA represents. The following illustration depicts this. 
 
-![vmaFileMapping](/images/file_offset_length.png)
+![vma-file-mapping](/images/file-offset-length)
 
 The `mapped_file` struct looks like this:
 
@@ -125,7 +132,7 @@ struct mapped_file{
   char *pathname;
   /* Linked list of all VMAs that have shared mappings to this file; */
   struct vm_area *shared_vma_list;
- _/* Reference count of all VMAs, shared and private, that map this file */
+  /* Reference count of all VMAs, shared and private, that map this file */
   uint32_t reference_count;
 };
 ```
@@ -139,7 +146,7 @@ We use Page Table Directories and Page Table Entries as they were used in Ideal 
 
 ## Physical Memory 
 
-![physicalMemory](/images/physical_memory.png)
+![physical-memory](/images/physical-memory.png)
 
 As seen in the figure above, physical memory (i.e RAM) is represented by an array of pages and page frames. The pages are represented as a struct as shown below, and are used as a way of storing meta-data for the corresponding page frame. For example, the `struct page` contains fields indicating whether a page frame is dirty, reserved for a page table or page directory, or corresponds to a page in a file on disk.
 
@@ -222,9 +229,23 @@ addr32 syscall_mmap(size_t length, int prot_flags, int flags,
 
 Unlike the real MMAP, we do not allow the user to specify where the new VMA is created (equivalent to setting `addr` to `NULL` in the true system call). We also take in a pathname rather than a file descriptor.
 
-MMAP by itself only sets up a VMA to _describe_ the mapping. Note that the new VMA should be placed as close as possible to the stack to prevent the heap from colliding with mapped memory regions (we assume the stack is of fixed size). The following illustration depicts this:
+MMAP by itself only sets up a VMA to _describe_ the mapping. The system call involves the following, at a high level:
+
+1. Make sure the arguments make sense. For example, `flags` cannot be `MAP_SHARED | MAP_PRIVATE`, for obvious reasons.
+2. Search through the linked list of VMAs between the heap and stack to find a large enough "gap" of virtual addresses to fit `length` bytes.  
+3. Create a new VMA using `struct vm_area *create_vm_area(struct process *, addr32 start_addr, addr32 end_addr)` and set all the proper protection flags and ownership flags.
+4. If the VMA isn't meant to be anonymous (i.e. `flags` does not contain `MAP_ANONYMOUS`), then use `struct mapped_file *obtain_mapped_file(char const *)` to get a handle for the file. Link together the VMA with the handle appropriately.
+5. Insert the VMA into the current process' `area_list` linked list at the proper location.
+6. Return the starting address of the new VMA.
+
+If an error occurs at any of these steps, you should clean up any resources you
+allocated so far (although this isn't tested) and return `MAP_FAILED`.
+
+Note that the new VMA should be placed as close as possible to the stack to prevent the heap from colliding with mapped memory regions (we assume the stack is of fixed size). The following illustration depicts this:
 
 ![physical-memory](images/mmap.png)
+
+## Page Faults
 
 The real data transfer occurs when a userspace application first attempts to access virtual memory mapped to a file, causing a page fault to occur. When a page fault occurs, the kernel finds out which VMA contains the virtual address that caused the fault. If none is found, then the kernel raises a segmentation fault. Otherwise, if it discovers that the `vm_area` has a shared mapping to a file, it first checks the page cache to see if this page in this file is already present in main memory. If not, it must allocate a fresh page frame, copy over file data from the file to this frame, add this new page to the page cache. In either case, it must modify the process page table to map the faulting virtual address to the correctly populated page frame. Much of the work of populating the page cache and the rest of main memory is therefore done by the page fault handler.
 
@@ -297,7 +318,7 @@ The general recipe is as follows:
 Note that, in order to swap out a page (in order to reuse the page frame for something else), we must find all PTEs that map to the page. This is essential because the processes using that frame must be "notified" that their virtual addresses no longer map to a valid frame in main memory. How can this be done? For private pages, we will rely on the `struct page->rmap` struct member, since there is only one PTE per private page. But for shared pages, we will employ a technique known as [object-based reverse-mapping](https://lwn.net/Articles/23732/).
 
 
-![physical-memory](/images/page_vma_mapping.png)
+![physical-memory](/images/reverse-mapping.png)
 
 
 In essense, a shared `page` struct holds a reference to a `mapped_file` struct, which in turn holds a linked list to all `vm_area` structs from all processes that having shared mappings to the file. When scanning through these VMAs, we can check to see if a given VMA actually maps to the given page. In particular, not every VMA that maps a file will map a given page in that file. If the VMA does indeed map the given page, we can compute the virtual address of that page in said VMA (which contains a reference to the process that owns it) and use it to obtain the right PTE from the process' page tables. Doing this for every VMA will give all the PTEs for all processes that need their Present and Dirty bits cleared.
