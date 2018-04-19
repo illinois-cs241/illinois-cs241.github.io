@@ -109,13 +109,13 @@ struct vm_area{
 
 Note that `area_prev` is a pointer to a pointer. It points to the `area_next` of the previous VMA. So essentially, the linked list looks like this:
 
-![vma-linked-list](/images/vma-linked-list.png)
+![vmaLinkedList](/images/vma_linked_list.png)
 
 We provide you with macros to handle the addition and deletion of a node from this linked list. These can be found in `list.h`. You are strongly encouraged to read the usage examples provided in the comments.
 
 Virtual memory also allows the kernel to map other resources to a region of a process' address space, like a memory-mapped file. The `file` pointer in the vm_area struct points to a `struct mapped_file`, if any. The `page_offset` will represent the page aligned offset within a file, i.e., the start of the region in a file which this VMA represents. The following illustration depicts this. 
 
-![vma-file-mapping](/images/file-offset-length)
+![vmaFileMapping](/images/file_offset_length.png)
 
 The `mapped_file` struct looks like this:
 
@@ -125,7 +125,7 @@ struct mapped_file{
   char *pathname;
   /* Linked list of all VMAs that have shared mappings to this file; */
   struct vm_area *shared_vma_list;
-  /* Reference count of all VMAs, shared and private, that map this file */
+ _/* Reference count of all VMAs, shared and private, that map this file */
   uint32_t reference_count;
 };
 ```
@@ -139,7 +139,7 @@ We use Page Table Directories and Page Table Entries as they were used in Ideal 
 
 ## Physical Memory 
 
-![physical-memory](/images/physical-memory.png)
+![physicalMemory](/images/physical_memory.png)
 
 As seen in the figure above, physical memory (i.e RAM) is represented by an array of pages and page frames. The pages are represented as a struct as shown below, and are used as a way of storing meta-data for the corresponding page frame. For example, the `struct page` contains fields indicating whether a page frame is dirty, reserved for a page table or page directory, or corresponds to a page in a file on disk.
 
@@ -297,7 +297,7 @@ The general recipe is as follows:
 Note that, in order to swap out a page (in order to reuse the page frame for something else), we must find all PTEs that map to the page. This is essential because the processes using that frame must be "notified" that their virtual addresses no longer map to a valid frame in main memory. How can this be done? For private pages, we will rely on the `struct page->rmap` struct member, since there is only one PTE per private page. But for shared pages, we will employ a technique known as [object-based reverse-mapping](https://lwn.net/Articles/23732/).
 
 
-![physical-memory](/images/reverse-mapping.png)
+![physical-memory](/images/page_vma_mapping.png)
 
 
 In essense, a shared `page` struct holds a reference to a `mapped_file` struct, which in turn holds a linked list to all `vm_area` structs from all processes that having shared mappings to the file. When scanning through these VMAs, we can check to see if a given VMA actually maps to the given page. In particular, not every VMA that maps a file will map a given page in that file. If the VMA does indeed map the given page, we can compute the virtual address of that page in said VMA (which contains a reference to the process that owns it) and use it to obtain the right PTE from the process' page tables. Doing this for every VMA will give all the PTEs for all processes that need their Present and Dirty bits cleared.
