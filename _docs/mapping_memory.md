@@ -1,4 +1,3 @@
-
 ---
 layout: doc
 title: "Mapping Memory"
@@ -11,9 +10,11 @@ submissions:
 learning_objectives:
   - Memory Mapped Files
   - Shared/Private Pages
+  - Kernel Memory Management
   - Virtual Memory
 wikibook:
   - "File System, Part 6: Memory mapped files and Shared memory"
+---
 
 ## Quizizz
 
