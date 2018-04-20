@@ -1,34 +1,34 @@
- ---
- layout: doc
- title: "Mapping Memory"
- submissions:
- - title: Entire Assignment
-   due_date: 4/25 11:59pm
-   graded_files:
-   - page_fault_helpers.c
-   - syscalls.c
- learning_objectives:
-   - Memory Mapped Files
-   - Shared/Private Pages
--  - Kernel Memory Management
-   - Virtual Memory
- wikibook:
-   - "File System, Part 6: Memory mapped files and Shared memory"
- ---
+---
+layout: doc
+title: "Mapping Memory"
+submissions:
+- title: Entire Assignment
+  due_date: 4/25 11:59pm
+  graded_files:
+  - page_fault_helpers.c
+  - syscalls.c
+learning_objectives:
+  - Memory Mapped Files
+  - Shared/Private Pages
+  - Kernel Memory Management
+  - Virtual Memory
+wikibook:
+  - "File System, Part 6: Memory mapped files and Shared memory"
+---
 
- ## Quizizz
+## Quizizz
 
- Please fill out the google form at this link [https://docs.google.com/forms/d/e/1FAIpQLSddx4mIZDyv7ECJPtzbagtqZ8rt-JY-FhSdnLH5bIK26OEPVA/viewform](https://docs.google.com/forms/d/e/1FAIpQLSddx4mIZDyv7ECJPtzbagtqZ8rt-JY-FhSdnLH5bIK26OEPVA/viewform) for lab attendance credit this week.
-
-
- ## Required Reading
-
- Read this in the wikibook before starting the lab.
-
- * [Introduction to Virtual Memory](https://github.com/angrave/SystemProgramming/wiki/Virtual-Memory%2C-Part-1%3A-Introduction-to-Virtual-Memory)
+Please fill out the google form at this link [https://docs.google.com/forms/d/e/1FAIpQLSddx4mIZDyv7ECJPtzbagtqZ8rt-JY-FhSdnLH5bIK26OEPVA/viewform](https://docs.google.com/forms/d/e/1FAIpQLSddx4mIZDyv7ECJPtzbagtqZ8rt-JY-FhSdnLH5bIK26OEPVA/viewform) for lab attendance credit this week.
 
 
- ## Overview
+## Required Reading
+
+Read this in the wikibook before starting the lab.
+
+* [Introduction to Virtual Memory](https://github.com/angrave/SystemProgramming/wiki/Virtual-Memory%2C-Part-1%3A-Introduction-to-Virtual-Memory)
+
+
+## Overview
 
 In this lab you will be implementing a simplified version of the memory management system used by an older Linux kernel. This lab relates to the same virtual memory simulator from `Ideal Indirection`, but with major modifications. You will be implementing some subset of the following functions:
 
@@ -77,7 +77,7 @@ The virtual address space of a process consists of several Virtual Memory Areas.
     vm_area *data_segment;   // data segment region
     vm_area *heap_segment;   // heap segment region
     vm_area *stack_segment;  // stack segment region
-  }
+ }
 ```
 
 As the process struct shows above, the stack, heap, text segment, and data segment have their own virtual memory areas. Every virtual memory area in a process is stored in the sorted linked list `area_list`. The list is sorted in terms of virtual address, so the text segment comes before the data segment, the heap segment before the stack segment, etc. The virtual memory area struct in turn looks like this:
@@ -116,13 +116,13 @@ As the process struct shows above, the stack, heap, text segment, and data segme
   }
 ```
 
- Note that `area_prev` is a pointer to a pointer. It points to the `area_next` of the previous VMA. So essentially, the linked list looks like this:
+Note that `area_prev` is a pointer to a pointer. It points to the `area_next` of the previous VMA. So essentially, the linked list looks like this:
 
 ![vmaLinkedList](/images/vma_linked_list.png)
 
- We provide you with macros to handle the addition and deletion of a node from this linked list. These can be found in `list.h`. You are strongly encouraged to read the usage examples provided in the comments.
+We provide you with macros to handle the addition and deletion of a node from this linked list. These can be found in `list.h`. You are strongly encouraged to read the usage examples provided in the comments.
 
- Virtual memory also allows the kernel to map other resources to a region of a process' address space, like a memory-mapped file. The `file` pointer in the vm_area struct points to a `struct mapped_file`, if any. The `page_offset` will represent the page aligned offset within a file, i.e., the start of the region in a file which this VMA represents. The following illustration depicts this.
+Virtual memory also allows the kernel to map other resources to a region of a process' address space, like a memory-mapped file. The `file` pointer in the vm_area struct points to a `struct mapped_file`, if any. The `page_offset` will represent the page aligned offset within a file, i.e., the start of the region in a file which this VMA represents. The following illustration depicts this.
 
 ![vmaFileMapping](/images/file_offset_length.png)
 
@@ -137,22 +137,22 @@ The `mapped_file` struct looks like this:
     /* Reference count of all VMAs, shared and private, that map this file */
     uint32_t reference_count;
  };
- ```
+```
 
- One file can be mapped by different VMAs across different processes. The `shared_vma_list` contains a list of all the shared (not private) VMAs that point to a file. This list is used to perform [object-based reverse-mapping](https://lwn.net/Articles/23732/), a space-inexpensive method of finding all page table entries that reference the same file-backed page frame. This will be discussed later.
+One file can be mapped by different VMAs across different processes. The `shared_vma_list` contains a list of all the shared (not private) VMAs that point to a file. This list is used to perform [object-based reverse-mapping](https://lwn.net/Articles/23732/), a space-inexpensive method of finding all page table entries that reference the same file-backed page frame. This will be discussed later.
 
 
- ## PDE and PTES
+## PDE and PTES
 
- We use Page Table Directories and Page Table Entries as they were used in Ideal Indirection. The fields in these structs that might be important for your implementation this lab are: `dirty`, `present`, `available`, and of course `base_addr`. Our infrastructure abstracts away page table and directory setup, traversal, and teardown, so your primary interest should be in the page table entries.
+We use Page Table Directories and Page Table Entries as they were used in Ideal Indirection. The fields in these structs that might be important for your implementation this lab are: `dirty`, `present`, `available`, and of course `base_addr`. Our infrastructure abstracts away page table and directory setup, traversal, and teardown, so your primary interest should be in the page table entries.
 
- ## Physical Memory
+## Physical Memory
 
 ![physicalMemory](/images/physical_memory.png)
 
- As seen in the figure above, physical memory (i.e RAM) is represented by an array of pages and page frames. The pages are represented as a struct as shown below, and are used as a way of storing meta-data for the corresponding page frame. For example, the `struct page` contains fields indicating whether a page frame is dirty, reserved for a page table or page directory, or corresponds to a page in a file on disk.
+As seen in the figure above, physical memory (i.e RAM) is represented by an array of pages and page frames. The pages are represented as a struct as shown below, and are used as a way of storing meta-data for the corresponding page frame. For example, the `struct page` contains fields indicating whether a page frame is dirty, reserved for a page table or page directory, or corresponds to a page in a file on disk.
 
- The struct page looks like this:
+The struct page looks like this:
 
 ```
   struct page {
@@ -189,48 +189,48 @@ The `mapped_file` struct looks like this:
 
 ```
 
- "But where is the physical address of the page frame represented by this struct stored?", you may ask. In the actual kernel, this can be computed in a straightforward way because of how the kernel's virtual address space is mapped to physical memory. In particular, the `n`th `struct page` corresponds to the `n*4096`th to `(n+1)*4096`th physical addresses. So simply by subtracting the `struct page` pointer by the address of the `mem_map` array, we get the value of `n` and the hence the corresponding page frame.
+"But where is the physical address of the page frame represented by this struct stored?", you may ask. In the actual kernel, this can be computed in a straightforward way because of how the kernel's virtual address space is mapped to physical memory. In particular, the `n`th `struct page` corresponds to the `n*4096`th to `(n+1)*4096`th physical addresses. So simply by subtracting the `struct page` pointer by the address of the `mem_map` array, we get the value of `n` and the hence the corresponding page frame.
 
- Due to the limitations of our simulation, we must rely on the "system pointer" abstraction to make sense of things. Physical memory is some small array in the simulator's much larger virtual address space, with "physical address 0" corresponding to the `0`th byte in the array. We provide the functions `uint32_t page_to_phys(struct page *)` and `struct page *phys_to_page(add32)` to abstract away the translation between physical addresses and `struct page` "system pointers". As in Ideal Indirection, `get_system_pointer` can be used to convert valid physical addresses to system pointers, though you should not need to use this.
+Due to the limitations of our simulation, we must rely on the "system pointer" abstraction to make sense of things. Physical memory is some small array in the simulator's much larger virtual address space, with "physical address 0" corresponding to the `0`th byte in the array. We provide the functions `uint32_t page_to_phys(struct page *)` and `struct page *phys_to_page(add32)` to abstract away the translation between physical addresses and `struct page` "system pointers". As in Ideal Indirection, `get_system_pointer` can be used to convert valid physical addresses to system pointers, though you should not need to use this.
 
- A "file backed page" is one which has a `mapping` field set to some `struct mapped_file`.  Pages which are not backed by a file are called "anonymous" pages. Pages can also be shared or private (but not both), so the `private` field identifies which category applies to a given page.
+A "file backed page" is one which has a `mapping` field set to some `struct mapped_file`.  Pages which are not backed by a file are called "anonymous" pages. Pages can also be shared or private (but not both), so the `private` field identifies which category applies to a given page.
 
- ## Page Cache
+## Page Cache
 
- The page cache is a data structure that exists to improve the speed of disk IO. Whenever a process attempts to access a page from a file at a given page offset, either through the `read`/`write` system calls or through page faults on mapped pages, the kernel first looks up this file-offset combination in the page cache to see if this page is already present in main memory. If the page is not present, then the kernel allocates a page frame, fills it completely with the file's contents at the proper offset, and puts it in the page cache.
+The page cache is a data structure that exists to improve the speed of disk IO. Whenever a process attempts to access a page from a file at a given page offset, either through the `read`/`write` system calls or through page faults on mapped pages, the kernel first looks up this file-offset combination in the page cache to see if this page is already present in main memory. If the page is not present, then the kernel allocates a page frame, fills it completely with the file's contents at the proper offset, and puts it in the page cache.
 
- Not only does this speed up IO enormously on files that are accessed often by different processes, but it also allows the `mmap` system call to locate resident page frames associated with shared, mapped files, and appropriately map process PTEs to these pages. Thus, processes with shared mappings to `mmap`'d' files actually share the same physical page frames! This is one of the many benefits of virtual memory.
+Not only does this speed up IO enormously on files that are accessed often by different processes, but it also allows the `mmap` system call to locate resident page frames associated with shared, mapped files, and appropriately map process PTEs to these pages. Thus, processes with shared mappings to `mmap`'d' files actually share the same physical page frames! This is one of the many benefits of virtual memory.
 
- The page cache itself is a hash table that maps pathnames and offsets to linked list hash buckets containing `page` structs of the same hash value.
- We have provided the `void page_cache_add(char const *pathname, addr32 offset, struct page *)` function to add a page to the page cache and `struct page *page_cache_get_page(char const *pathname, uint32_t offset)` function to get the actual matching `page` struct, if it is present in the page cache.
+The page cache itself is a hash table that maps pathnames and offsets to linked list hash buckets containing `page` structs of the same hash value.
+We have provided the `void page_cache_add(char const *pathname, addr32 offset, struct page *)` function to add a page to the page cache and `struct page *page_cache_get_page(char const *pathname, uint32_t offset)` function to get the actual matching `page` struct, if it is present in the page cache.
 
- ## sbrk
+## sbrk
 
- `int32_t syscall_sbrk(uint32_t shift){`
+`int32_t syscall_sbrk(uint32_t shift){`
 
- The sbrk system call shifts the program break (i.e. the end of the heap) by the given positive offset. As part of implementing this system call, check that the given offset is page-aligned. Note that the size of each page in the simulator (can be found in `types.h`) is 4096, which is `1 << 12`.
+The sbrk system call shifts the program break (i.e. the end of the heap) by the given positive offset. As part of implementing this system call, check that the given offset is page-aligned. Note that the size of each page in the simulator (can be found in `types.h`) is 4096, which is `1 << 12`.
 
- While implemnting `syscall_mmap`, also make sure that shifting the end of the heap doesn't lead to overlaps with newly mapped VMAs. If your MMAP implementation places all VMAs right next to the heap, you will fail this test.
+While implemnting `syscall_mmap`, also make sure that shifting the end of the heap doesn't lead to overlaps with newly mapped VMAs. If your MMAP implementation places all VMAs right next to the heap, you will fail this test.
 
- ## MMAP
+## MMAP
 
- We discussed how memory mapped files can be associated with a VMA (process-local book-keeping for virtual memory) and with page structs (global book-keeping for physical memory). In this lab one of the things you will implement is system call `mmap` which used to associate part of a file with a range of virtual addresses.
+We discussed how memory mapped files can be associated with a VMA (process-local book-keeping for virtual memory) and with page structs (global book-keeping for physical memory). In this lab one of the things you will implement is system call `mmap` which used to associate part of a file with a range of virtual addresses.
 
- The actual system call wrapper `mmap` has the following signature
+The actual system call wrapper `mmap` has the following signature
  ```
  void *mmap(void *addr, size_t length, int prot, int flags, int fd,
             off_t offset);
- ```
+```
 
  It attempts to associate `length` bytes of a file represented by `fd`, starting at page-aligned `offset` within the file, with `length` bytes of virtual memory, preferably starting at virtual address `addr`.
 
- Our version looks like this.
- ```
+Our version looks like this.
+```
  addr32 syscall_mmap(size_t length, int prot_flags, int flags,
                      char const *pathname, uint32_t offset);
- ```
+```
 
- Unlike the real MMAP, we do not allow the user to specify where the new VMA is created (equivalent to setting `addr` to `NULL` in the true system call). We also take in a pathname rather than a file descriptor.
+Unlike the real MMAP, we do not allow the user to specify where the new VMA is created (equivalent to setting `addr` to `NULL` in the true system call). We also take in a pathname rather than a file descriptor.
 
 MMAP by itself only sets up a VMA to _describe_ the mapping. The system call involves the following, at a high level:
 
@@ -254,7 +254,7 @@ The real data transfer occurs when a userspace application first attempts to acc
 
 So, as part of memory management, you might need to load and page out (to disk) pages. This handling is different for private, anonymous and shared file back pages. In addition to implementing MMAP, you will also need to implement some of these page fault handlers.
 
- ## Handling Faults
+## Handling Faults
 
 When handling a major fault, the kernel determines if the faulting page is shared or private before trying to restore its data. It then calls the respective handler code, simplified here to `enum FaultResult load_shared_page(struct vm_area *, addr32, struct page **out)`, `enum FaultResult load_private_file_page(struct vm_area *, addr32, struct page **out)`, and `enum FaultResult swap_in_private__page(struct vm_area *, addr32, struct page **out)` which are declared and described in `page_fault_helpers.h`.
 
@@ -336,7 +336,7 @@ pte *get_pte(process *proc, uint32_t virt_addr, bool allocate_page_table);
 The `allocate_page_table` parameter is used to transparently generate a page table for the virtual address if it doesn't already exist, to abstract away page table walk code. But for your purposes, you should never have to set parameter to true.
 
 
- ## Testing
+## Testing
 
 We’ve provided you with all the unit test cases in `mman_tests.c`. You can test other functionalities of your code by writing your own test cases in this file. Running `make` will generate a `./mman_tests` executable, and each test can be run as `./mman_tests-debug`. As usual, you also have the option of running `make debug` to make GDB and Valgrind work more nicely.
 
