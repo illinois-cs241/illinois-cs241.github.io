@@ -608,4 +608,4 @@ chapter 10.
 ## Alternative (with video)
 Please watch this [introductory video to linux kernels](https://www.youtube.com/watch?v=oHg5SJYRHA0) before you begin.
 
-And then, as an alternative you may take your answers to the [final review](https://subversion.ews.illinois.edu/svn/sp18-cs241/_shared/lecture_handouts/CS241-FinalExamPractice.pdf).   This will count for a regular lab grade (1/14 of your total lab grade). You will be graded for completion and a good faith attempt. An instructor will hand grade each question and use their best judgement for whether you gave each question a solid attempt. Note that this assignment is mainly to get you started for studying for the final and it is to your benefit to give it a solid attempt.
+There is no lab assignment, just do the review.
