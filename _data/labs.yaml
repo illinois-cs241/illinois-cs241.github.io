@@ -82,3 +82,8 @@
     dueDate: "Week 14"
     url: "mapping_memory"
     resources: true
+-
+    name: "Lovable Linux"
+    releaseDate: "Week 14"
+    dueDate: "Week 15"
+    url: "lovable_linux"
