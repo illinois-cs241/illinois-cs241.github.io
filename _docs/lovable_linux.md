@@ -608,4 +608,4 @@ chapter 10.
 ## Alternative (with video)
 Please watch this [introductory video to linux kernels](https://www.youtube.com/watch?v=oHg5SJYRHA0) before you begin.
 
-There is no lab assignment, just do the review.
+There is no lab assignment, just do the review. It will not be graded.
