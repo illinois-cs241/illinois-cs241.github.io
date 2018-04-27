@@ -5,7 +5,7 @@ title: "Course Staff Application"
 
 ## CS 241 Course Assistant Positions Available!
 
-Are you interested in becoming a course assistant for CS 241? If so, then you are welcome to apply for positions.
+Are you interested in becoming a course assistant for CS 241? If so, then you are welcome to apply for positions. Please pick two areas that interest you the most for right now.
 
 * Student-Facing (Labs, Office Hours)
 * Honors Section
@@ -82,6 +82,15 @@ Finally, with any good assignment comes excellent documentation that is clear, c
 We need a lot of code to support our code. Welcome to infrastructure, where the autograder is developed along with tools and scripts that the rest of the staff uses. We are going to be partnering with CS 225 and helping create a distributed autograder that is run and maintained across course staffs. This is a massive undertaking but will hopefully make the CS department more streamlined.
 
 We have other projects that we are taking off the ground next semester and aren't directly related to the above, but need help. Some of them (the wikibook project) we can tell you if you ask, some are still secret.
+
+
+### Skills Required
+* Programming Ability - Unlike just a pure C-programming, you will most likely need a variety of skills. A little bit of web development, a little bit of python/bash, etc. You also must have an aptitude for picking up skills as projects mature. In addition, we plan the software structures we build, and keep up with maintenance. Imagine this as a good combination of software engineer and project manager.
+* Self Directedness - Most of the work will be self directed. We will have a few meetings, but you will need to deliver a polished project by coming up with specifications, executing based on the best possible technologies and maintaining the project. You can receive help, but most of the work and success is on your own.
+* Working in a team - Although most of the work is self directed, a few projects involve extensive collaboration either synchronously or asynchronously with other course staffs. You'll need to make sure that most of your work is readable to people who have not looked at your code as well as explainable at a high level to people who are just trying to understand the project.
+
+### Expected Time Obligations
+* Varies by project
 
 <form action="https://form.jotform.com/81107073555150">
 <button type="submit" class="apply-button">
