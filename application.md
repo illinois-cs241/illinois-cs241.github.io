@@ -5,7 +5,7 @@ title: "Course Staff Application"
 
 ## CS 241 Course Assistant Positions Available!
 
-Are you interested in becoming a course assistant for CS 241? If so, then you are welcome to apply for positions. Please pick two areas that interest you the most for right now.
+Are you interested in becoming a course assistant for CS 241? If so, then you are welcome to apply for positions. Please pick at most two areas that interest you, but read through all the descriptions!
 
 * Student-Facing (Labs, Office Hours)
 * Honors Section
