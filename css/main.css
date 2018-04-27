@@ -527,3 +527,19 @@ tbody tr:nth-child(odd).hacker {
     -ms-interpolation-mode: nearest-neighbor;
     image-rendering: pixelated;
 }
+
+.apply-button {
+    border: none;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    font-size: 36px;
+    border-radius: 5px;
+    box-shadow: 5px 5px gray;
+    margin: 10px auto 10px auto;
+    display: block;
+    transition: background-color 0.5s ease;
+}
+
+.apply-button:hover {
+    background-color: #2C72AD;
+}
