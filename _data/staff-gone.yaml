@@ -14,6 +14,112 @@
   specialty: Puzzles
   semesters: Fall 2015, Spring 2016, Fall 2016, and Spring 2017
 -
+  name: G Carl Evans
+  netid: gcevans
+  class: ""
+  roles: Co-Captain and Lecturer
+  specialty: compilers and parallel
+  semesters: Spring 2017 and Fall 2017
+-
+  name: Peng Li
+  netid: peng24
+  class: 18
+  roles: Teaching Assistant
+  specialty: image processing
+  semesters: Fall 2016, Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Brian Kurek
+  netid: bkurek2
+  class: 19
+  roles: Lab/Office Hours Assistant
+  specialty: web development
+  semesters: Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Jonathan Wexler
+  netid: jwexler2
+  class: 19
+  roles: Lab/Office Hours Assistant and Honors Lead
+  specialty: procrastination
+  semesters: Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Kevin Hong
+  netid: khong18
+  class: 19
+  roles: Lab/Office Hours Assistant and Honors Mentor
+  specialty: statistics and machine learning
+  semesters: Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Navneeth Jayendran
+  netid: jayndrn2
+  class: 18
+  roles: Assignment Developer
+  specialty: ""
+  semesters: Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Bhawesh Chhetri
+  netid: bchhet2
+  class: ""
+  roles: Lab/Office Hours Assistant
+  specialty: ""
+  semesters: Fall 2017 and Spring 2018
+-
+  name: Christian Cygnus
+  netid: cygnus2
+  class: ""
+  roles: Lab/Office Hours Assistant and Assignment Developer
+  specialty: ""
+  semesters: Fall 2017 and Spring 2018
+-
+  name: Han Song Huang
+  netid: hhuang74
+  class: ""
+  roles: Lab/Office Hours Assistant and Assignment Developer
+  specialty: ""
+  semesters: Fall 2017 and Spring 2018
+-
+  name: Bhatt Mayank
+  netid: mayankb2
+  class: 19
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2016, Spring 2017, Spring 2018
+-
+  name: Chen Chen
+  netid: chen228
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2018
+-
+  name: Jayasi Mehar
+  netid: jmehar2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2018
+-
+  name: Raghav Narain
+  netid: rmnarai2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2018
+-
+  name: Boyin Zhang
+  netid: bzhang70
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2018
+-
+  name: Tommy Yu
+  netid: tjyu3
+  class: ""
+  roles: Frontend + Backend
+  specialty: ""
+  semesters: Spring 2018
+
+-
   class: 17
   name: "Alexander Wu"
   netid: awu14

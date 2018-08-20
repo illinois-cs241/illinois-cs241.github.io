@@ -5,185 +5,80 @@
     roles: "Captain and Lecturer"
     semesters: "Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018"
     specialty: "Systems and CS Education"
--
-    name: G Carl Evans
-    netid: gcevans
-    class: ""
-    roles: Co-Captain and Lecturer
-    specialty: compilers and parallel
-    semesters: Spring 2017 and Fall 2017
--
+
     name: CS241 Admin
     netid: cs241admin
     class: ""
     roles: "Graduate Assistant: Assists with course administration (e.g. exam sickness, DRES)"
     specialty: ""
-    semesters: all semesters
+    semesters: ""
 -
     name: Bhuvan Venkatesh
     netid: bvenkat2
     class: 19
     roles: Historian
     specialty: Reading
-    semesters: Fall 2016, Spring 2017, Fall 2017, and Spring 2018
--
-    name: Peng Li
-    netid: peng24
-    class: 18
-    roles: Teaching Assistant
-    specialty: image processing
-    semesters: Fall 2016, Spring 2017, Fall 2017, and Spring 2018
--
-    name: Brian Kurek
-    netid: bkurek2
-    class: 19
-    roles: Lab/Office Hours Assistant
-    specialty: web development
-    semesters: Spring 2017, Fall 2017, and Spring 2018
+    semesters: Fall 2016 - Fall 2018
 -
     name: Aneesh Durg
     netid: durg2
     class: 19
     roles: Lab/Office Hours Assistant, Assignment Developer, and Honors Mentor
     specialty: memes
-    semesters: Spring 2017, Fall 2017, and Spring 2018
--
-    name: Jonathan Wexler
-    netid: jwexler2
-    class: 19
-    roles: Lab/Office Hours Assistant and Honors Lead
-    specialty: procrastination
-    semesters: Spring 2017, Fall 2017, and Spring 2018
--
-    name: Kevin Hong
-    netid: khong18
-    class: 19
-    roles: Lab/Office Hours Assistant and Honors Mentor
-    specialty: statistics and machine learning
-    semesters: Spring 2017, Fall 2017, and Spring 2018
--
-    name: Navneeth Jayendran
-    netid: jayndrn2
-    class: 18
-    roles: Assignment Developer
-    specialty: ""
-    semesters: Spring 2017, Fall 2017, and Spring 2018
+    semesters: Spring 2017 - Fall 2018
 -
     name: Yasha Mostofi
     netid: mostofi2
     class: 18
     roles: Assignment Developer and Infrastructure
     specialty: beards
-    semesters: Spring 2017, Fall 2017, and Spring 2018
--
-    name: Bhawesh Chhetri
-    netid: bchhet2
-    class: ""
-    roles: Lab/Office Hours Assistant
-    specialty: ""
-    semesters: Fall 2017 and Spring 2018
--
-    name: Christian Cygnus
-    netid: cygnus2
-    class: ""
-    roles: Lab/Office Hours Assistant and Assignment Developer
-    specialty: ""
-    semesters: Fall 2017 and Spring 2018
--
-    name: Han Song Huang
-    netid: hhuang74
-    class: ""
-    roles: Lab/Office Hours Assistant and Assignment Developer
-    specialty: ""
-    semesters: Fall 2017 and Spring 2018
+    semesters: Spring 2017 - Fall 2018
 -
     name: Jing Rong Lim
     netid: jrlim3
     class: ""
     roles: Lab/Office Hours Assistant
     specialty: ""
-    semesters: Fall 2017 and Spring 2018
+    semesters: Fall 2017, Spring 2018, and Fall 2018
 -
     name: Nick Magerko
     netid: magerko2
     class: ""
     roles: Assignment Developer
     specialty: ""
-    semesters: Fall 2017 and Spring 2018
+    semesters: Fall 2017, Spring 2018, and Fall 2018
 -
     name: Steven Shang
     netid: shang9
     class: 19
-    roles: Lab/Office Hours Assistant and Assignment Developer
+    roles: Honors Lead 
     specialty: things
-    semesters: Fall 2017 and Spring 2018
--
-    name: Bhatt Mayank
-    netid: mayankb2
-    class: 19
-    roles: Teaching Assistant
-    specialty: ""
-    semesters: Fall 2016, Spring 2017, Spring 2018
+    semesters: Fall 2017, Spring 2018, and Fall 2018
 -
     name: Elaine Ang
     netid: ranang2
     class: ""
     roles: Teaching Assistant
     specialty: ""
-    semesters: Fall 2017 and Spring 2018
--
-    name: Chen Chen
-    netid: chen228
-    class: ""
-    roles: Teaching Assistant
-    specialty: ""
-    semesters: Spring 2018
--
-    name: Jayasi Mehar
-    netid: jmehar2
-    class: ""
-    roles: Teaching Assistant
-    specialty: ""
-    semesters: Spring 2018
--
-    name: Raghav Narain
-    netid: rmnarai2
-    class: ""
-    roles: Teaching Assistant
-    specialty: ""
-    semesters: Spring 2018
+    semesters: Fall 2017, Spring 2018, and Fall 2018
 -
     name: Sarah Schieferstein
     netid: schfrst2
     class: ""
     roles: Teaching Assistant
     specialty: ""
-    semesters: Spring 2018
--
-    name: Boyin Zhang
-    netid: bzhang70
-    class: ""
-    roles: Teaching Assistant
-    specialty: ""
-    semesters: Spring 2018
--
-    name: Tommy Yu
-    netid: tjyu3
-    class: ""
-    roles: Frontend + Backend
-    specialty: ""
-    semesters: Spring 2018
+    semesters: Spring 2018 and Fall 2018
 -
     name: Shreyas Patil
     netid: srpatil2
     class: ""
     roles: Lab/Office Hours Assistant, Assignment Developer, and Honors Mentor
     specialty: ""
-    semesters: Spring 2018
+    semesters: Spring 2018 and Fall 2018
 -
     name: Ankit Gohel
     netid: ankitng2
     class: ""
     roles: Frontend + Backend
     specialty: security and mobile dev
-    semesters: Spring 2018
+    semesters: Spring 2018 and Fall 2018
