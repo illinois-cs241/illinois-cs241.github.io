@@ -132,3 +132,46 @@
   roles: "Lab and Officer Hours Assistant"
   semesters: "Fall 2015, Spring 2016, and Fall 2016"
   specialty: "CS and Stat"
+-
+  name: Peng Li
+  netid: peng24
+  class: 18
+  roles: Teaching Assistant
+  specialty: most reliable person on staff
+  semesters: Fall 2016, Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Brian Kurek
+  netid: bkurek2
+  class: 19
+  roles: Lab/Office Hours Assistant
+  specialty: web development
+  semesters: Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Jonathan Wexler
+  netid: jwexler2
+  class: 19
+  roles: Lab/Office Hours Assistant and Honors Lead
+  specialty: procrastination
+  semesters: Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Kevin Hong
+  netid: khong18
+  class: 19
+  roles: Lab/Office Hours Assistant and Honors Mentor
+  specialty: statistics and machine learning
+  semesters: Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Navneeth Jayendran
+  netid: jayndrn2
+  class: 18
+  roles: Assignment Developer
+  specialty: ""
+  semesters: Spring 2017, Fall 2017, and Spring 2018
+-
+  name: Bhatt Mayank
+  netid: mayankb2
+  class: 19
+  roles: Teaching Assistant
+  specialty: "Networking"
+  semesters: Fall 2016, Spring 2017, Spring 2018
+

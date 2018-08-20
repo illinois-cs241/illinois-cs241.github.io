@@ -5,19 +5,19 @@
     roles: "Captain and Lecturer"
     semesters: "Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018"
     specialty: "Systems and CS Education"
-
+-
     name: CS241 Admin
     netid: cs241admin
     class: ""
     roles: "Graduate Assistant: Assists with course administration (e.g. exam sickness, DRES)"
-    specialty: ""
+    specialty: "Jack of All Trades"
     semesters: ""
 -
     name: Bhuvan Venkatesh
     netid: bvenkat2
     class: 19
     roles: Historian
-    specialty: Reading
+    specialty: reading
     semesters: Fall 2016 - Fall 2018
 -
     name: Aneesh Durg
@@ -38,7 +38,7 @@
     netid: jrlim3
     class: ""
     roles: Lab/Office Hours Assistant
-    specialty: ""
+    specialty: quizzes
     semesters: Fall 2017, Spring 2018, and Fall 2018
 -
     name: Nick Magerko
