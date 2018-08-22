@@ -16,7 +16,7 @@
         summary: "3. man,asprintf,free,assert"
         resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-3%3A-Common-Gotchas' target='_blank'>Wikibook C Gotchas</a>"
         color: "#F44336"
-    week: "8/27"
+    week: "8/27 - 8/31"
     announcement: >
        <ul>
         <li>
@@ -40,10 +40,10 @@
         summary: "5. fork and waitpid"
         resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-1%3A-Introduction'>Wikibook forking</a>"
         color: "#E91E63"
-    week: "9/3"
+    week: "9/3 - 9/7"
     announcement: >
       <ul>
-        <li>Quiz 1 (Wed-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+        <li>Quiz 1 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
       </ul>
   -
     schedule:
@@ -63,11 +63,10 @@
         summary: "8. Advanced Signals"
         resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki#10-signals'>Wikibook heap memory introduction</a>"
         color: "#9C27B0"
-    week: "9/10"
+    week: "9/10 - 9/14"
     announcement: >
-      <ul>
-        <li>Quiz 2: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul>
+      <!-- <ul>
+      </ul> -->
   -
     schedule:
       -
@@ -85,10 +84,11 @@
         summary: "Memory allocators part 2."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-2%3A-Implementing-a-Memory-Allocator'>Memory, Part 2</a>"
         color: "#9C27B0"
-    week: "9/17"
+    week: "9/17 - 9/21"
     announcement: >
-      <!-- <ul>
-      </ul> -->
+      <ul>
+        <li>Quiz 2 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+      </ul>
   -
     schedule:
       -
@@ -106,7 +106,7 @@
         summary: "Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-2%3A-Counting-Semaphores'>Synchronization, Part 2: Counting Semaphores</a>.<a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-3%3A-Working-with-Mutexes-And-Semaphores'>Synchronization, Part 3: Working with Mutexes And Semaphores</a>."
         color: "#2196F3"
-    week: "9/24"
+    week: "9/24 - 9/28"
     announcement: >
       <ul>
       <!--   <li>Lab: <a target='blank' href='./mini_valgrind'>Mini Valgrind</a> Due</li>
@@ -131,9 +131,9 @@
         summary: "Condition Variables. Implementing a semaphore using a Condition Variable."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-5%3A-Condition-Variables'>Condition Variables</a>."
         color: "#2196F3"
-    week: "10/1"
+    week: "10/1 - 10/5"
     announcement: >
-        Quiz 3: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
+        Quiz 3 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
   -
     schedule:
       -
@@ -151,7 +151,7 @@
         summary: "Introduction to Deadlock. Coffman conditions."
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions'>Deadlock</a>."
         color: "#00BCD4"
-    week: "10/8 - 3/2" 
+    week: "10/8 - 10/12" 
     announcement: >
       <!-- <ul>
         <li>Quiz 4: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
@@ -173,8 +173,11 @@
         summary: "Scheduling simulator. epoll"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-2%3A-Scheduling-Processes%3A-Algorithms'>Scheduling</a>."
         color: "#CDDC39"
-    week: "10/15" 
-    announcement:  "<!-- -->" 
+    week: "10/15 - 10/19" 
+    announcement:  >
+      <ul>
+        <li>Quiz 4 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+      </ul>     
   -
     schedule:
       -
@@ -192,7 +195,7 @@
         summary: "ext2/3/4 filesystem. inode"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-1%3A-Introduction'>Files</a>."
         color: "#FFC107"
-    week: "10/22"
+    week: "10/22- 10/26"
     announcement: >
       <!-- <ul>
         <li>Quiz 5: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
@@ -215,10 +218,11 @@
         summary: "Robust error handling. EINTR. Intro to TCP,UDP,IP"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/POSIX%2C-Part-1%3A-Error-handling'>Error handling</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-1%3A-Introduction'>Networking Introduction</a>"
         color: "#8BC34A"
-    week: "10/29"
+    week: "10/29 - 11/2"
     announcement: >
-      <!-- <ul>
-      </ul> -->
+      <ul>
+        <li>Quiz 5 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+      </ul>
   -
     schedule:
       -
@@ -236,7 +240,7 @@
         summary: "Socket Programming Gotchas. Intro to scheduling"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-4%3A-Building-a-simple-TCP-Server'>TCP Server</a>"
         color: "#8BC34A"
-    week: "11/5"
+    week: "11/5 - 11/9"
     announcement: >
       <!-- <ul>
         <li>Quiz 6: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
@@ -258,10 +262,11 @@
         summary: "RPC"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/RPC%2C-Part-1%3A-Introduction-to-Remote-Procedure-Calls'>RPC</a>."
         color: "#FFC107"
-    week: "11/12"
+    week: "11/12 - 11/16"
     announcement: >
-      <!-- <ul>
-      </ul> -->
+      <ul>
+        <li>Quiz 6 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+      </ul>
   -
     schedule:
       -
@@ -279,7 +284,7 @@
         summary: "Fall Break"
         resources: ""
         color: "#aaaaaa"
-    week: "11/19"
+    week: "11/19 - 11/23"
     announcement: "<!-- -->"
   -
     schedule:
@@ -298,7 +303,51 @@
         summary: "Virtual f/s"
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-5%3A-Virtual-file-systems'>VFS</a>."
         color: "#FFC107"
-    week: "11/26"
+    week: "11/26 - 11/30"
+    announcement: >
+      <ul>
+        <li>Quiz 7 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Special Topics 1"
+        summary: ""
+        resources: ""
+        color: "#C38A80"
+      -
+        title: "Special Topics 2"
+        summary: ""
+        resources: ""
+        color: "#C38A80"
+      -
+        title: "Special Topics 3 / Review"
+        summary: ""
+        resources: ""
+        color: "#C38A80"
+    week: "12/3 - 12/7"
+    announcement: >
+      <ul>
+        <li>Quiz 8 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
+      </ul>
+  -
+    schedule:
+      -
+        title: "Special Topics 4 / Review"
+        summary: ""
+        resources: ""
+        color: "#C38A80"
+      -
+        title: "No class"
+        summary: ""
+        resources: ""
+        color: "#808080"
+      -
+        title: "No class"
+        summary: ""
+        resources: ""
+        color: "#808080"
+    week: "12/10 - 12/14"
     announcement: >
       <!-- <ul>
         <li>Quiz 6: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>

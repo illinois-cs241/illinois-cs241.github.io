@@ -11,8 +11,8 @@ title: Getting Caught Up
 * Class Transcribe/Old Lecture Recordings: [http://classtranscribe.com/cs241](http://classtranscribe.com/cs241)
 * Shared Subversion: [https://subversion.ews.illinois.edu/svn/{{site.semester }}-{{ site.subject_code }}{{ site.course_number }}/_shared/](https://subversion.ews.illinois.edu/svn/{{site.semester }}-{{ site.subject_code }}{{ site.course_number }}/_shared/)
 * Grades: [https://chara.cs.illinois.edu/gb/](https://chara.cs.illinois.edu/gb/)
-* Lecture Videos: [https://recordings.engineering.illinois.edu:8443/ess/portal/section/2df91b3e-88f7-4554-8a2e-91a173f23332](https://recordings.engineering.illinois.edu:8443/ess/portal/section/2df91b3e-88f7-4554-8a2e-91a173f23332)
-* Quiz and Test Signup: [https://edu.cs.illinois.edu/testcenter/](https://edu.cs.illinois.edu/testcenter/)
+* Lecture Videos: [https://echo360.org](https://echo360.org)
+* CBTF Quiz and Test Signup: [https://edu.cs.illinois.edu/testcenter/](https://edu.cs.illinois.edu/testcenter/)
 
 ## Join Piazza!
 
@@ -22,9 +22,11 @@ To get a sense of going on and where we are in the course, please read **all** t
 
 ## Assignments
 
+*Headsup!: These instructions will be updated for Fall2018; we're replacing subversion with git*
+
 * Overdue assignment's deadlines will not be extended. **Though, It is in your best interest to read through the assignments that you missed in order to understand them (some of them will build of each other)**
 * Email cs241admin@illinois.edu and say that you have added late (give the date you added if you can remember it).
-* Email engrit-help@illinois.edu and tell them that added CS241 late. You will need SVN access and your own virtual machine. You should give them a bit of time. Once you have SVN you can access it at
+* Email engrit-help@illinois.edu and tell them that added CS241 late. You will need git access and your own virtual machine. You should give them a bit of time. Once you have SVN you can access it at
 `https://subversion.ews.illinois.edu/svn/{{site.semester }}-{{ site.subject_code }}{{ site.course_number }}/NETID/`.
 In that folder, you can read the [Know Your Tools](./know_your_tools.html) lab to get familiar with the VM, `ssh`, `svn`, and any other tools you will need to be successful in the course.
 * Ideally, we want (and most cases) require you to work on your assignment on your VM. Instructions on how to log in are on the Know Your Tools page. If you can't get your VM in time for an assignment to be do, you can do work on EWS -- just complete the steps below.

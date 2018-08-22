@@ -125,20 +125,19 @@ If you have accommodations identified by the [Division of Rehabilitation-Educati
 Any problem with testing in the CBTF **must** be reported to CBTF staff at the time the problem occurs. If you do not inform a proctor of a problem during the test then you **forfeit** all rights to redress.
 
 
-The rough schedule is below. The CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website).
+The Fall 2018 schedule as of August 22 is below. The complete and authoratative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website).
 
-The Spring 2018 schedule is -
 
-| Week | First day | Last day |
+| Quiz | First day | Last day |
 | -----|-----------|----------|
-|Week 2 (Quiz 1)|Wed, Jan 24|Fri, Jan 26|
-|Week 3 (Quiz 2)|Wed, Jan 31|Fri, Feb 2|
-|Week 6 (Quiz 3)|Wed, Feb 21|Fri, Feb 23|
-|Week 7 (Quiz 4)|Wed, Feb 28|Fri, Mar 2|
-|Week 11 (Quiz 5)|Wed, Mar 28|Fri, Mar 30|
-|Week 12 (Quiz 6)|Wed, Apr 4|Fri, Apr 6|
-|Week 13 (Quiz 7)|Wed, Apr 11|Fri, Apr 13|
-|Week 11 (Quiz 8)|Wed, Apr 25|Fri, Apr 27|
+|Quiz 1 (Week 2)|Tue, Sep 4|Fri, Sep 7|
+|Quiz 2 (Week 4)|Tue, Sep 18|Fri, Sep 21|
+|Quiz 3 (Week 6)|Tue, Oct 2|Fri, Oct 5|
+|Quiz 4 (Week 8)|Tue, Oct 16|Fri, Oct 19|
+|Quiz 5 (Week 10)|Tue, Oct 30|Fri, Nov 2|
+|Quiz 6 (Week 12)|Tue, Nov 13|Fri, Nov 16|
+|Quiz 7 (Week 14)|Tue, Nov 27|Fri, Nov 30|
+|Quiz 8 (Week 15)|Tue, Dec 4|Fri, Dec 7|
 
 The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT).
 
@@ -197,7 +196,7 @@ __EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!__
 
 This means you are not allowed to split the work with a partner, unlike other 2xx classes. You are, however, allowed to discuss the assignments at a very high level. If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% penalty in the course for each incident where you are found to have used material that is not yours.
 
-Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 20% penalty. You also may not publish our code anywhere publicly and you will receive the same penalty for sharing our code. If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides [subversion](https://subversion.ews.illinois.edu) and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
+Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating. If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment. For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 20% penalty. You also may not publish our code anywhere publicly and you will receive the same penalty for sharing our code. If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides your private course repository and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
 
 In the case of quizzes in the CBTF, it is a violation of our course policy to access or provide access to the quiz material outside your registered window. If you are found to have done so you will receive a zero on the quiz and a 10% penalty in the course. This includes seeking descriptions of the questions from students who have taken the quiz, as well as any other method that would give you access to the quiz outside your scheduled time. If there is prep material provided in lecture or on Piazza, you are welcome to share that material freely.
 

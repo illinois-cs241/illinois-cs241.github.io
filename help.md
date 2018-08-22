@@ -61,7 +61,7 @@ Note: We do not provide attendance misses for labs (this is not negotiable), esp
 
 ## Lawrence Angrave
 
-Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours Tuesdays 11:30-12:30. He's also able to answer quick questions before or after lecture. Note Lawrence also teaches the VR course that starts immediately after the second CS241 lecture.
+Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours Tuesdays 11:30-12:30. He's also able to answer quick questions before or after lecture.
 
 ## Carl Evans
 
