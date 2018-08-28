@@ -17,15 +17,18 @@ $ chmod +wr Makefile
 $ touch README.md
 $ touch regrade_test.c
 $ make clean # Don't commit object files
-$ svn add .
-$ svn ci -m "Committing initial regrade_test to svn"
+$ git add -A
+$ git commit -m "Committing initial regrade_test"
+$ git push origin master
 ```
 
 If you ever want to change the assignement that you are doing the regrade execute the following commands and set up the assignment as before.
 
 ```console
-$ svn -D regrade_test/
-$ svn ci -m "Deleting regrade tests"
+$ git rm -rf regrade_test
+$ git add -A
+$ git commit -m "Deleting regrade tests"
+$ git push origin master
 ```
 
 ## Creating the Grading Test
@@ -61,7 +64,7 @@ int main() {
 
 The test should
 
-* Return 0 on success and return anything else on failure. Any extra files/utilities to run should be inside the svn directory as well.
+* Return 0 on success and return anything else on failure. Any extra files/utilities to run should be inside the directory as well.
 * The test should also be deterministic. For example, testing a threading library's efficiency should ensure that the results match after a series of runs. 
 * The test should also have no memory leaks or tsan errors.
 * It should test any functions/executables that *you were required to implement*. Testing TA code will not count.
@@ -79,7 +82,7 @@ The test should
 
 ## Manual Testing
 
-In the event that our code becomes hard/impossible to test externally, we allow the option to do a manual test. Meaning that you have to provide a sequence of testing steps in your `README.md` and any expected output files committed to your svn. Please try to refrain from doing this because this increases the tournaround time for getting your test approved. In addition, you'll have to write ~3-4 paragraphsish (see below) justifying the test.
+In the event that our code becomes hard/impossible to test externally, we allow the option to do a manual test. Meaning that you have to provide a sequence of testing steps in your `README.md` and any expected output files committed to your github. Please try to refrain from doing this because this increases the tournaround time for getting your test approved. In addition, you'll have to write ~3-4 paragraphsish (see below) justifying the test.
 
 ## Submission/Tournaround
 
@@ -99,7 +102,7 @@ _Using a worst-fit allocation scheme, this would test for if you have both split
 Here is a "proposal" for testfile10 in parmake
 
 
-_In order to test this manually, make sure that you have the testfile10 in subversion. Then run the following command `./parmake -f testfile10 -j 4 > output.txt`. The test should output the stages in correct order as shown in `test.txt` meaning that `diff output.txt test.txt` should show no differences. The executable should also run in about 2.666 seconds. A failed implementation of parmake would have differences between the output and the test file or the test would take longer than 2.666 (by a much greater factor) to execute. The test should at maximum take 3 seconds to execute (or else it will be killed)._
+_In order to test this manually, make sure that you have the testfile10 in your folder. Then run the following command `./parmake -f testfile10 -j 4 > output.txt`. The test should output the stages in correct order as shown in `test.txt` meaning that `diff output.txt test.txt` should show no differences. The executable should also run in about 2.666 seconds. A failed implementation of parmake would have differences between the output and the test file or the test would take longer than 2.666 (by a much greater factor) to execute. The test should at maximum take 3 seconds to execute (or else it will be killed)._
 
 _The purpose is to test for parallelism. We segment the makefile into a number of stages. Rule d prints first because it has no other dependencies. Then there is a cascading effect that rule a1 is run then a2-4 are run (in any particular order). Then, the execution returns and finishes the A stage. B does a similar process of events. If the implementation does not check dependencies in the right way, then the stages output will be completely messed up. If the implementation does not parallelize correctly, the sleeps will be run sequentially meaning that the code should take much longer to execute than finishing sequentially._
 

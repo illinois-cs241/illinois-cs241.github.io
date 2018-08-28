@@ -5,36 +5,15 @@ learning_objectives:
   - Learning how to debug 241 Code
 ---
 
-## SVN
+## GIT
 
-The autograder has given you bad test cases! First let's step through this.
+What is `git`? Git is a version control system. What that means is git stores the entire history of a directory. We refer to the directory as a repository. So what do you need to know is a few things.
 
-This is an example log given when you run `svn log`
+The first thing is you need to go to [the repo creator url](https://edu.cs.illinois.edu/create-ghe-repo/cs241-fa18/) and make yourself a 241 github repository. If you haven't already signed into enterprise github, make sure to do so otherwise your repository won't be created for you.
 
-```console
-$ svn log
-------------------------------------------------------------------------
-r52475 | bvenkat2 | 2016-10-16 22:23:09 -0500 (Sun, 16 Oct 2016) | 1 line
+After that, that means your repository is created on the server. Git is a decentralized version control system, meaning that you'll need to get a repository onto your VM. We can do this with a clone. `git clone`
 
-Oh sh-
-------------------------------------------------------------------------
-r52470 | cs241svngrader | 2016-10-16 22:21:15 -0500 (Sun, 16 Oct 2016) | 1 line
 
-know_your_tools autograde at revision {2016-10-20} at time 2016-10-16 22:20:55.866453
-------------------------------------------------------------------------
-r50338 | bvenkat2 | 2016-10-13 01:05:29 -0500 (Thu, 13 Oct 2016) | 1 line
-
-know your tools deploy
-------------------------------------------------------------------------
-```
-
-**You don't need to do this for this lab**
-
-```console
-$ svn revert -r52470 #Or whatever revision number
-```
-
-Now we should be at a good stage, we know what is going wrong. What this did is take your repository all the way back to the time when the autograder ran the code. **If on later assignments you have done work after this, you should ideally not do this because it loses the changes after the autograder commit**. In order to check what code ran in this case, you can follow the below instructions.
 
 ## Viewing grade report
 
@@ -46,7 +25,7 @@ Now we should be at a good stage, we know what is going wrong. What this did is 
 4. Revision Number - The revision number that we autograded. This is a link that takes you to your code at autograde revision
 5. Test Cases - Test cases! Click the test cases for more information on why you failed that test case. If you passed, it will may also give you successful output.
 
-**Remember, before asking about an autograde, check the revision that we autograded**
+**Remember, before asking about an autograde, check the sha that we autograded**
 
 ## Make Commands
 

@@ -7,7 +7,7 @@
 
 # Site settings
 title: "CS 241: System Programming"
-email: gcevans@illinois.edu
+email: angrave@illinois.edu
 description: > # this means to ignore newlines until "baseurl:"
   Webpage for CS 241: System Programming at the University of Illinois Urbana-Champaign.
   All documentation and information about the course can be found here.
@@ -16,7 +16,7 @@ url: "http://illinois-cs241.github.io" # the base hostname & protocol for your s
 repository: illinois-cs241/illinois-cs241.github.io
 github_username: illinois-cs241
 # Settings for the course
-semester: "sp18"
+semester: "fa18"
 course_number: "241"
 subject_code: "cs"
 course_name: "System Programming"

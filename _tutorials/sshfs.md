@@ -7,7 +7,7 @@ title: SSHFS Workflow Tutorial
 
 SSHFS is a tool that allows you to mount any directory from a remote machine on your local machine, and consequently use your favorite text editor/IDE/code editing environment and still be able to compile and run your code on the remote machine.
 
-Using SSHFS means that you don't have to include a `svn ci -m "asdf"` and `svn up` in between every small change, ad your machine can cache the files so you don't have to deal with network lag. Essentially, SSHFS will allow you to directly edit any files that exist on a remote machine.
+Using SSHFS means that you don't have to include a `git commit -A -m "asdf"` and `git pull origin master` in between every small change, ad your machine can cache the files so you don't have to deal with network lag. Essentially, SSHFS will allow you to directly edit any files that exist on a remote machine.
 
 ## Installation
 

@@ -24,7 +24,7 @@ This department is scaling rapidly, which is great, since computer science is an
 
 We _will not_ accept "low effort questions":
 
-*   "My code doesn't work, can someone look at my subversion?"
+*   "My code doesn't work, can someone look at my github?"
 *   Questions that are already answered in a pinned post
 *   Questions that are already answered in the docs
 *   Questions that have already been answered many times before and can easily be found by searching
