@@ -22,7 +22,7 @@ git push origin master
 ```
 
 Your repository directory can be viewed from a web browser from the following URL: 
-[https://github-dev.cs.illinois.edu/{{ site.subject_code }}-{{ site.semester }}/NETID/{{ submit_dir }}](https://github-dev.cs.illinois.edu/{{ site.subject_code }}-{{ site.semester }}/NETID/{{ submit_dir }}) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your remote git copy.
+[https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{ site.semester }}/NETID/{{ submit_dir }}](https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{ site.semester }}/NETID/{{ submit_dir }}) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your remote git copy.
 
 ## Assignment Feedback
 
