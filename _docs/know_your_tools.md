@@ -57,6 +57,10 @@ git pull release master
 git push origin master
 ```
 
+## Graded Files
+
+One section we will have on the top of every assignment is a section called `graded_files` these are the files that we use to grade the assignment. `git` does not allow us to set the rest of the files to readonly to prevent changing them (header files, Makefile). You have to be careful to avoid changing these files. We are working on a system that prevents you from accidentally committing the changes, but there is no easy way to set permissions on your local copy.
+
 ## The Problem
 
 You are working for ShadyCorp Inc. Your boss commissioned your coworker to write a program. The program reads a file, overwrites it multiple times so that it is harder to recover on the hard disk, then encrypts the file, then writes it once to an output file.
