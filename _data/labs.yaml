@@ -1,1 +1,8 @@
 ---
+-
+    name: "Know Your Tools"
+    releaseDate: "Week 1"
+    dueDate: "Week 2"
+    url: "know_your_tools"
+    resources: true
+    worksheet: false
