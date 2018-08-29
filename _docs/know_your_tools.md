@@ -20,7 +20,7 @@ wikibook:
 
 ## HW0
 
-You have already been assigned a HW0 for the class. [Here is the HW0 submission link](https://goo.gl/forms/8yX0n9E5CTkSeg4v2). We'll spend the first part of class going over the various questions from HW0. Your grade for this lab is partly HW0 and partly the assignment below.
+You have already been assigned a HW0 for the class. [Here is the HW0 submission link](https://goo.gl/forms/8yX0n9E5CTkSeg4v2) -- beware the link does not save so be ready to submit when going through. We'll spend the first part of class going over the various questions from HW0. Your grade for this lab is partly HW0 and partly the assignment below.
 
 ## Development
 
