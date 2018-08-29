@@ -28,7 +28,7 @@ Read the [Development Guide](./development.html)!
 
 ## Git
 
-(Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.subject_code}}{{site.course_number}}-/{{site.semester}}/)
+(Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.subject_code}}{{site.course_number}}-{{site.semester}}/)
 
 **Once you are in your VM**, you'll need to set up some global defaults
 
@@ -40,7 +40,7 @@ git config --global user.email ${NETID}@example.com
 Then checkout your repository as follows
 
 ```console
-git clone https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-/{{site.semester }}/NETID.git
+git clone https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/NETID.git
 ```
 
 which will check out your entire git repo into a folder called 'NETID' into your current directory. Now change your directory into that folder:
@@ -52,7 +52,7 @@ cd NETID
 You've probably noticed the repository is empty! In order to grab the latest version of our assignment, complete the following steps.
 
 ```console
-git remote add release https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-/{{site.semester }}/_release.git
+git remote add release https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/_release.git
 git merge release master
 git commit -m "Added Assignment Know Your Tools"
 git push origin master

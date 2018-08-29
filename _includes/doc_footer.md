@@ -10,7 +10,7 @@ We will be using Subversion as our hand-in system this semester. Our grading sys
 To check out the provided code for <code class="highlighter-rouge">{{ filename }}</code> from the class repository, go to your cs241 directory (the one you checked out for "know your tools") and run:
 
 ```
-git pull origin master
+git pull release master
 ```
 
 If you run `ls` you will now see a `{{ submit_dir }}` folder, where you can find this assignment! To commit your changes (send them to us), type:
@@ -22,7 +22,7 @@ git push origin master
 ```
 
 Your repository directory can be viewed from a web browser from the following URL: 
-[https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{ site.semester }}/NETID/{{ submit_dir }}](https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{ site.semester }}/NETID/{{ submit_dir }}) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your remote git copy.
+[https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{ site.semester }}/NETID/tree/master/{{ submit_dir }}](https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{ site.semester }}/NETID/tree/master/{{ submit_dir }}) where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your remote git copy.
 
 ## Assignment Feedback
 
