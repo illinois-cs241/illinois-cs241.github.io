@@ -53,8 +53,7 @@ You've probably noticed the repository is empty! In order to grab the latest ver
 
 ```console
 git remote add release https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/_release.git
-git merge release master
-git commit -m "Added Assignment Know Your Tools"
+git pull release master
 git push origin master
 ```
 

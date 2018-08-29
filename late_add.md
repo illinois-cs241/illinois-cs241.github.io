@@ -40,8 +40,7 @@ Here are the terminal steps to update. Make sure you are in your git repository 
 git clone https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/${NETID}
 cd ${NETID}
 git remote add release https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/_release
-git merge release master
-git commit -m "Added assignment ${ASSIGNMENT}"
+git pull release master
 git push origin master
 cd ${ASSIGNMENT}
 ```
@@ -50,7 +49,7 @@ Then to submit your work.
 
 ```bash
 # Do work on the assignment
-$ git commit -A -m "my_submission"
+$ git commit -a -m "my_submission"
 $ git push origin master
 ```
 
