@@ -33,11 +33,11 @@ Read the [Development Guide](./development.html)!
 **Once you are in your VM**, you'll need to set up some global defaults
 
 ```console
-git config --global user.name "${FIRST_NAME} ${LAST_NAME}"
-git config --global user.email ${NETID}@example.com
+git config --global user.name "FIRST_NAME LAST_NAME"
+git config --global user.email NETID@example.com
 ```
 
-Then checkout your repository as follows
+Make sure to replace `FIRST_NAME` and `LAST_NAME` and `NETID` with your information. Then checkout your repository as follows
 
 ```console
 git clone https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/NETID.git
