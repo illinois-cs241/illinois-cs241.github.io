@@ -28,7 +28,7 @@ Read the [Development Guide](./development.html)!
 
 ## Git
 
-(Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.subject_code}}{{site.course_number}}-{{site.semester}}/)
+(Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.subject_code}}{{site.course_number}}-{{site.semester}}/). **DO NOT DO THE README TUTORIAL**
 
 **Once you are in your VM**, you'll need to set up some global defaults
 
