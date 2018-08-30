@@ -3,7 +3,7 @@
 
 Please read details on [Academic Integrity](/#academic-integrity) fully. These are shared by all assignments in CS 241.
 
-We will be using Subversion as our hand-in system this semester. Our grading system will checkout your most recent (pre-deadline) commit for grading. Therefore, to hand in your code, all you have to do is commit it to your Github repository.
+We will be using GitHub as our hand-in system this semester. Our grading system will checkout your most recent (pre-deadline) commit for grading. Therefore, to hand in your code, all you have to do is commit and push to your Github repository.
 
 {% assign filename = page.url | replace_first: '/', '' | replace: '/', '-'  | replace: '.html', '.md' %}
 {% assign submit_dir = page.git_dir | default: filename %}
