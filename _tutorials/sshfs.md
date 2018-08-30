@@ -29,7 +29,7 @@ Alternativey, if you have [Homebrew](http://brew.sh) installed, you can also ins
 
 ```
 brew cask install osxfuse           # installs osxfuse
-brew install homebrew/fuse/sshfs    # installs sshfs
+brew install sshfs                  # installs sshfs
 ```
 
 ### Windows
