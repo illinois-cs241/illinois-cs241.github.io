@@ -90,8 +90,7 @@ Then it writes to the file at <desination> the following
 	- A newline
 	- The last five lines (after wrapping)
 	- A newline
-	- The rest of the file
-
+	- The whole file
 ```
 
 Your boss at ShadyCorp is _very_ paranoid. To test that his program, he wrote a test suite himself. Your co-worker went home sick that day. Now, he hasn't been heard from in two weeks; you don't ask any questions. The boss sent you an email to fix the code that your co-worker gave you. Since you are the Boss' cousin, he gives you the test cases that you failed and promises to run the test cases every day (your mom is _very_ convincing).
@@ -105,7 +104,7 @@ The output of the file should be:
 <newline>
 <last 5 lines>
 <newline>
-<rest of file><newline>
+<the whole file><newline>
 ```
 
 Where `<newline> = '\n'`.
