@@ -155,6 +155,8 @@ If your absence is unplanned -- a sudden illness or have a sudden death in the f
 
 For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://odos.illinois.edu/community-of-care/student-assistance-center/) note stating that you contacted the Emergency Dean.
 
+Please note that we do also have two attendance drops from lab with no penalty.
+
 ## How to Succeed
 
 Is this course hard? Yes, but you are bright. You're taking computer science at UIUC. Schedule the time to do it. The two big changes from CS 225:
