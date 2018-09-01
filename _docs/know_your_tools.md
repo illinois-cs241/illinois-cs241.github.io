@@ -61,7 +61,7 @@ git push origin master
 
 One section we will have on the top of every assignment is a section called `graded_files` these are the files that we use to grade the assignment. `git` does not allow us to set the rest of the files to readonly to prevent changing them (header files, Makefile). You have to be careful to avoid changing these files. We are working on a system that prevents you from accidentally committing the changes, but there is no easy way to set permissions on your local copy.
 
-## The Problem
+## Background
 
 You are working for ShadyCorp Inc. Your boss commissioned your coworker to write a program. The program reads a file, overwrites it multiple times so that it is harder to recover on the hard disk, then encrypts the file, then writes it once to an output file.
 
@@ -110,11 +110,11 @@ The output of the file should be:
 Where `<newline> = '\n'`.
 A line is defined as zero or more characters terminated by a newline character.
 
-## No Such File
+## Problem 1: No Such File
 
 If the file does not exist, the program currently doesn't work. Instead of crashing, exit with a status `NO_FILE_RETURN_CODE` found in `secure_move.c`
 
-## Address Space
+## Problem 2: Address Space
 
 Due to the new [meltdown and spectre](https://meltdownattack.com/) vulnerabilities, your bosses are worried to no end about shadier corporations trying to get your data. There are some [software patches](https://launchpad.net/ubuntu/+source/linux/4.4.0-108.131) available to detect against variations of meltdown, the ones against the variation of spectre are few and far between. The security gurus have found was of detecting spectre attacks and can now track attacks against processes. They are able to get the address and all other parameters of the affected area, but they need to know what region of memory was read. For instance, if a c library function was read, then no big deal. But if one of the `file*` structs was read, ShadyCorp's shady dealings could be uncovered. As such, they want you to print out the following in **descending** order.
 
@@ -254,6 +254,10 @@ make release
     * Use valgrind!
     * Use GDB!
     * Run on the given files and see if the output is what you expect.
+    * Problem 1: See why the file is not shreded
+    * Problem 2: See why the program crashes on non-existant-file
+    * Problem 3: Are there any memory errors or leaks (check valgrind?)
+    * Problem 4: What does the address space look like?
 * `git commit -a -m "My Submission"` (commit your work to git).
 
 
