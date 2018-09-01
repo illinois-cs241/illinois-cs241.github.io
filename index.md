@@ -139,7 +139,7 @@ The Fall 2018 schedule as of August 22 is below. The complete and authoratative 
 |Quiz 7 (Week 14)|Tue, Nov 27|Fri, Nov 30|
 |Quiz 8 (Week 15)|Tue, Dec 4|Fri, Dec 7|
 
-The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT).
+The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT). The topics of a quiz can be seen at [The topics page](/quiz_topics).
 
 ## Coding Assignments
 
