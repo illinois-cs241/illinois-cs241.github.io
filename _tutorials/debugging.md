@@ -148,7 +148,7 @@ Consider the simple program (you may be able to spot the bug already)
 double convert_to_radians(int deg);
 
 int main(){
-	for(int deg = 0; deg < 360; ++deg){
+	for (int deg = 0; deg > 360; ++deg){
 		double radians = convert_to_radians(deg);
 		printf("%d. %f\n", deg, radians);
 	}
@@ -180,7 +180,7 @@ Want to take a look at the source?
 3	double convert_to_radians(int deg);
 4	
 5	int main(){
-6		for(int deg = 0; deg < 360; ++deg){
+6		for (int deg = 0; deg > 360; ++deg){
 7			double radians = convert_to_radians(deg);
 8			printf("%d. %f\n", deg, radians);
 9		}
