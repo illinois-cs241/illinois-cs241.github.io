@@ -1,2 +1,8 @@
 ---
----
+-
+    name: "Vector"
+    releaseDate: "Week 2"
+    dueDate: "Week 3"
+    url: "vector"
+    resources: true
+    worksheet: false
