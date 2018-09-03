@@ -3,7 +3,7 @@ layout: doc
 title: "Vector"
 submissions:
 - title: Entire Assignment
-  due_date: 02/10/2018 11:59pm
+  due_date: 09/10/2018 11:59pm
   graded_files:
   - vector.c
   - sstring.c
