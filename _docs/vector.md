@@ -64,7 +64,46 @@ Note: Remember that vector size (the number of actual objects held in the vector
 
 SString is a wrapper around c strings which makes dealing with strings easier
 with higher level functions. We have not specified the definition of the sstring
-struct, and left that up to you!
+struct, and left that up to you! Below are some brief descriptions of what each
+function should do.
+
+### `sstring *cstr_to_sstring(char *input)`
+
+This function should take in a c-string and return a pointer to a sstring on the
+heap.
+
+### `char *sstring_to_cstr(sstring *this)`
+
+This function should take in a sstring an return a pointer to a c-string on the
+heap.
+
+### `int sstring_append(sstring *this, sstring *addition)`
+
+This function should take in two sstrings, append the second to the first, and
+return the length of the first sstring after the append.
+
+### `vector *sstring_split(sstring *this, char delimiter)`
+
+This function should take an sstring and a character and split the sstring into
+a vector of c-strings on the delimeter.
+(e.g. `sstring_split(cstr_to_sstring("abcdeefg"), 'e') == [ "abcd", "", "fg" ]`)
+
+### `int sstring_substitute(sstring *this, size_t offset, char *target, char *substitution)`
+
+This function should substitute one occurance of `target` in `this` after
+`offset` bytes with `substitution`. If there are no occurances of `target` after
+`offset` bytes, return `-1`.  Otherwise return `0`.
+
+### `char *sstring_slice(sstring *this, int start, int end)`
+
+This function takes in a sstring, a start index and an end index. Return a
+c-string representing the bytes between start (inclusive) and end (exclusive).
+
+### `void sstring_destroy(sstring *this)`
+
+This function cleans up any allocated memory for a sstring.
+
+
 
 ## Managing memory
 
