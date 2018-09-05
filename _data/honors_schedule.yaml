@@ -1,72 +1,72 @@
 ---
 # Honors Schedule
   -
-    date: "January 23"
-    content: "Introduction and Project Brainstorming"
-    slides: "introduction.pdf"
+    date: "September 5"
+    content: "Introduction and C history"
+    slides: "https://docs.google.com/presentation/d/1wQlqAIBAufebr54JMV-6DxaxP9ev4Av1H5kGuS_ew7s/edit?usp=sharing"
     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true"
-  -
-    date: "January 30"
-    content: "Gitting Your Feet Wet"
-    slides: "gitting.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
-  -
-    date: "February 6"
-    content: "Security"
-    slides: "security.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
-  -
-    date: "February 13"
-    content: "Minilectures"
-    slides: "minilectures.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
-  -
-    date: "February 20"
-    content: "Memory and Garbage Collection"
-    slides: "memory.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
-  -
-    date: "February 27"
-    content: "No Lecture!"
-    slides: #"kernel.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/76567804-1eac-45ad-9ebb-7d39e69a0443?ec=true"
-  -
-    date: "March 6"
-    content: "Minilectures 2"
-    slides: "minilectues2.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f49eb1bc-8d6d-44aa-ac98-4fc43d408651?ec=true"
-  -
-    date: "March 13"
-    content: "Peer Mentoring"
-    slides: #"lock_free.pdf"
-    video:
-  -
-    date: "March 27"
-    content: "Lock Free Datastructures"
-    slides: "lock_free.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/ad1d1a76-8365-4169-a229-c8c2065b37eb?ec=true"
-  -
-    date: "April 3"
-    content: #"TCP"
-    slides: #"tcp.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/5de679c3-a1b2-4a4b-aa12-af0a28b4a539?ec=true"
-  -
-    date: "April 10"
-    content: #"Peer Mentoring"
-    slides:
-    video:
-  -
-    date: "April 17"
-    content: #"Special Guest Presentation!"
-    slides:
-    video:
-  -
-    date: "April 24"
-    content: #"No Class"
-    slides:
-    video:
-  -
-    date: "May 1"
-    content: #"Project Presentations"
-    slides:
-    video:
+#  -
+#    date: "January 30"
+#    content: "Gitting Your Feet Wet"
+#    slides: "gitting.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
+#  -
+#    date: "February 6"
+#    content: "Security"
+#    slides: "security.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
+#  -
+#    date: "February 13"
+#    content: "Minilectures"
+#    slides: "minilectures.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
+#  -
+#    date: "February 20"
+#    content: "Memory and Garbage Collection"
+#    slides: "memory.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
+#  -
+#    date: "February 27"
+#    content: "No Lecture!"
+#    slides: #"kernel.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/76567804-1eac-45ad-9ebb-7d39e69a0443?ec=true"
+#  -
+#    date: "March 6"
+#    content: "Minilectures 2"
+#    slides: "minilectues2.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f49eb1bc-8d6d-44aa-ac98-4fc43d408651?ec=true"
+#  -
+#    date: "March 13"
+#    content: "Peer Mentoring"
+#    slides: #"lock_free.pdf"
+#    video:
+#  -
+#    date: "March 27"
+#    content: "Lock Free Datastructures"
+#    slides: "lock_free.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/ad1d1a76-8365-4169-a229-c8c2065b37eb?ec=true"
+#  -
+#    date: "April 3"
+#    content: #"TCP"
+#    slides: #"tcp.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/5de679c3-a1b2-4a4b-aa12-af0a28b4a539?ec=true"
+#  -
+#    date: "April 10"
+#    content: #"Peer Mentoring"
+#    slides:
+#    video:
+#  -
+#    date: "April 17"
+#    content: #"Special Guest Presentation!"
+#    slides:
+#    video:
+#  -
+#    date: "April 24"
+#    content: #"No Class"
+#    slides:
+#    video:
+#  -
+#    date: "May 1"
+#    content: #"Project Presentations"
+#    slides:
+#    video:
