@@ -84,11 +84,10 @@ When you and your group start writing code, we expect you to use git and for eac
 
 | Name | NetID | Interests |
 |:-----|:------|:----------|
-| Aneesh Durg | durg2 | Computer vision, AI, Functional Programming |
-| Kevin Hong | khong18 | Concurrency, IPC, Statistics, Machine Learning |
-| Shreyas Patil | srpatil2 | Systems, Security, Android |
-| Steven Shang | shang9 | Distributed Systems, Cloud Computing |
-| Jonathan Wexler | jwexler2 | High Performance Computing, Parallelism, Networking |
+| Aneesh Durg | durg2 | Concurrency, Text-based UI, Functional Programming |
+| Steven Shang | shang9 | Cloud, Distributed Systems, Functional Programming |
+| Shreyas Patil | srpatil2 | Security, Android, Functional Programming |
+| Ophir Sneh | osneh2 | Security, ML, Functional Programming |
 
 ## Lectures and Videos
 
@@ -108,7 +107,7 @@ When you and your group start writing code, we expect you to use git and for eac
 	<td scope="row">{{lecture.date}}</td>
 	<td>{{lecture.content}}</td>
 	{% if lecture.slides %}
-	<td><a href="./resources/honors/{{lecture.slides}}"><img src="./images/lab_assets/animation.png"></a></td>
+	<td><a href="{{lecture.slides}}"><img src="./images/lab_assets/animation.png"></a></td>
 	{% else %}
 	<td>
 	</td>
@@ -128,7 +127,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
 
-http://piazza.com/illinois/spring2018/cs29641
+http://piazza.com/illinois/fall2018/cs29641
 
 ## Project Ideas?
 
