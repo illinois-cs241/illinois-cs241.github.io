@@ -4,4 +4,4 @@
     ignore = dirty
 [submodule "_docs"]
 	path = _docs
-	url = git@github.com:illinois-cs241/assignment-docs.git
+	url = https://github.com/illinois-cs241/assignment-docs.git
