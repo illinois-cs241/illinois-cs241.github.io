@@ -2,3 +2,6 @@
 	path = _wikibook
 	url = https://github.com/angrave/SystemProgramming.wiki.git
     ignore = dirty
+[submodule "_docs"]
+	path = _docs
+	url = git@github.com:illinois-cs241/assignment-docs.git
