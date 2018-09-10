@@ -38,6 +38,22 @@
                 {% endfor %}
               </div>
             {% endif %}
+            {% if page.ag_schedules %}
+              <div class="schedule-wrapper">
+                {% for schedule in page.ag_schedules %}
+                  <b>{{ schedule.title }}</b>
+                  <br/>
+                  
+                  <b>Autograder Times</b>
+                    <ul>
+                      {% for ag_date in schedule.schedule_dates %}
+                        <li>{{ ag_date}}</li>
+                      {% endfor %}
+                    </ul>
+
+                {% endfor %}
+              </div>
+            {% endif %}
           </div></div></div>
         </div></div>
       </div>
