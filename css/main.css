@@ -483,22 +483,22 @@ tbody tr:nth-child(odd) {
     border-radius: 20px;
 }
 
-html.hacker, body.hacker, header.hacker, nav.hacker, :not(.card-staff) > * > div:not(.card-staff).hacker, table.hacker, pre.hacker, span.hacker, :not(.card-staff) > 
+html.hacker, body.hacker, header.hacker, nav.hacker, :not(.card-staff) > * > div:not(.card-staff).hacker, table.hacker, pre.hacker, span.hacker, :not(.card-staff) >
     a.hacker, p.hacker, h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker
  {
     color: white !important;
     font-family: monospace !important;
     background-color: black !important;
  }
-            
+
 h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker {
     color: #20C20E !important;
 }
 ul.hacker {
-    list-style-type: square; 
+    list-style-type: square;
 }
 img.hacker {
-    filter: drop-shadow(white 1px 1px 0px) drop-shadow(white 1px -1px 0px) drop-shadow(white -1px 1px 0px) drop-shadow(white -1px -1px 0px)); 
+    filter: drop-shadow(white 1px 1px 0px) drop-shadow(white 1px -1px 0px) drop-shadow(white -1px 1px 0px) drop-shadow(white -1px -1px 0px));
 }
 pre.hacker {
     border-color: white;
@@ -521,6 +521,14 @@ a.hacker {
 
 tbody tr:nth-child(odd).hacker {
     background-color: inherit;
+}
+
+body.hacker .day, body.hacker .announcement-card {
+    background-color: #151515;
+}
+
+body.hacker .announcement {
+    color: white !important;
 }
 
 #tuxlink img.hacker {
