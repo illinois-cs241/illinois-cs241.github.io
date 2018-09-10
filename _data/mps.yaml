@@ -6,3 +6,10 @@
     url: "vector"
     resources: true
     worksheet: false
+-
+    name: "Extreme Edge Cases"
+    releaseDate: "Week 3"
+    dueDate: "Week 4"
+    url: "extreme_edge_cases"
+    resources: true
+    worksheet: false
