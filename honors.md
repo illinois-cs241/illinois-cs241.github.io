@@ -16,10 +16,10 @@ At the end of the semester, you will present your work to your peers. The presen
 
 ```
 Lecture Participation  : 15% (includes explorations)
-Project Proposal    : 5%
-Weekly Check-ins    : 25%
-Presentation        : 20%
-Final Project       : 35%
+Project Proposal       : 5%
+Weekly Check-ins       : 25%
+Presentation           : 20%
+Final Project          : 35%
 ```
 
 We publish the same grading thresholds as CS 241:

@@ -2,13 +2,13 @@
 # Honors Schedule
   -
     date: "September 5"
-    content: "Introduction and C history"
+    content: "Introduction & C History"
     slides: "https://docs.google.com/presentation/d/1wQlqAIBAufebr54JMV-6DxaxP9ev4Av1H5kGuS_ew7s/edit?usp=sharing"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true"
-#  -
-#    date: "January 30"
-#    content: "Gitting Your Feet Wet"
-#    slides: "gitting.pdf"
+#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true"
+  -
+    date: "September 12"
+    content: "Project & Team Formation"
+    slides: "https://docs.google.com/presentation/d/1ZKX55p6gdugf1is26GRNWLtkltIbXL_zcC4gY7qIMdI/edit?usp=sharing"
 #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
 #  -
 #    date: "February 6"
