@@ -84,9 +84,10 @@ When you and your group start writing code, we expect you to use git and for eac
 | Name | NetID | Interests |
 |:-----|:------|:----------|
 | Aneesh Durg | durg2 | Concurrency, Text-based UI, Functional Programming |
-| Steven Shang | shang9 | Cloud, Distributed Systems, Functional Programming |
-| Shreyas Patil | srpatil2 | Security, Android, Functional Programming |
+| Ishan Shah | ishanps2 | Systems & Networks, Mobile & Internet Computing, Functional Programming |
 | Ophir Sneh | osneh2 | Security, ML, Functional Programming |
+| Shreyas Patil | srpatil2 | Security, Android, Functional Programming |
+| Steven Shang | shang9 | Cloud, Distributed Systems, Functional Programming |
 
 ## Lectures and Videos
 
