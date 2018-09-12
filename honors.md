@@ -15,10 +15,9 @@ At the end of the semester, you will present your work to your peers. The presen
 ## Grading
 
 ```
-Lecture Attendance  : 15%
+Lecture Participation  : 15% (includes explorations)
 Project Proposal    : 5%
 Weekly Check-ins    : 25%
-
 Presentation        : 20%
 Final Project       : 35%
 ```
