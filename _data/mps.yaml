@@ -13,3 +13,10 @@
     url: "extreme_edge_cases"
     resources: true
     worksheet: false
+-
+    name: "Text Editor"
+    releaseDate: "Week 4"
+    dueDate: "Week 5"
+    url: "text_editor"
+    resources: true
+    worksheet: false
