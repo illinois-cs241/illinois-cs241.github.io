@@ -20,3 +20,10 @@
     url: "text_editor"
     resources: true
     worksheet: false
+-
+    name: "Shell"
+    releaseDate: "Week 5"
+    dueDate: "Week 6"
+    url: "shell"
+    resources: true
+    worksheet: false
