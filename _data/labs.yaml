@@ -28,3 +28,10 @@
     url: "mini_valgrind"
     resources: true
     worksheet: false
+-
+    name: "Teaching Threads"
+    releaseDate: "Week 5"
+    dueDate: "Week 6"
+    url: "teaching_threads"
+    resources: true
+    worksheet: false
