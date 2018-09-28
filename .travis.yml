@@ -7,10 +7,14 @@ branches:
         develop
 before_install:
     - sudo apt-get update
-    - sudo apt-get install python3 tidy pandoc oracle-java9-set-default
+    - sudo apt-get install python3 tidy
+    - export COMMITTER_EMAIL="$(git log -1 $TRAVIS_COMMIT --pretty="%cE")"
+    - export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
     - git config credential.helper "store --file=.git/credentials"; echo "https://${GITHUB_TOKEN}:@github.com" > .git/credentials 2>/dev/null
-    - git config --global user.email "bhuvan.venkatesh21@gmail.com"
-    - git config --global user.name "Bhuvan Venkatesh"
+    - git config --global user.email "${COMMITTER_EMAIL}"
+    - git config --global user.name "${AUTHOR_NAME}"
+    - git config --global submodule.recurse true
+    - git config --global submodule.fetchJobs 8
 before_script:
     - $TRAVIS_BUILD_DIR/_scripts/before_script.sh
 after_success:
@@ -21,6 +25,7 @@ deploy:
     skip_cleanup: true
     github_token: $GITHUB_TOKEN 
     target_branch: master
+    depth: 1
     fqdn: cs241.cs.illinois.edu
     on:
         branch: develop
