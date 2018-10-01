@@ -27,3 +27,10 @@
     url: "shell"
     resources: true
     worksheet: false
+-
+    name: "Malloc"
+    releaseDate: "Week 6"
+    dueDate: "Week 7"
+    url: "malloc"
+    resources: true
+    worksheet: false
