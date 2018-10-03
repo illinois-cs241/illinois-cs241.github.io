@@ -35,3 +35,10 @@
     url: "teaching_threads"
     resources: true
     worksheet: false
+-
+    name: "Critical Concurrency"
+    releaseDate: "Week 6"
+    dueDate: "Week 7"
+    url: "critical_concurrency"
+    resources: true
+    worksheet: false
