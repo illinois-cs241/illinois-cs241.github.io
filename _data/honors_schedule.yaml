@@ -15,15 +15,15 @@
     content: "Security"
     slides: "https://drive.google.com/file/d/1QkxuAv5Uea2I4iMjn5BpCxFiBrHPYb2U/view?usp=sharing"
 #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
-#  -
-#    date: "February 13"
-#    content: "Minilectures"
+  -
+    date: "September 26"
+    content: "Project Work Time"
 #    slides: "minilectures.pdf"
 #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
-#  -
-#    date: "February 20"
-#    content: "Memory and Garbage Collection"
-#    slides: "memory.pdf"
+  -
+    date: "October 3"
+    content: "Profiling"
+    slides: "https://docs.google.com/presentation/d/1ZKX55p6gdugf1is26GRNWLtkltIbXL_zcC4gY7qIMdI/edit?usp=sharing"
 #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
 #  -
 #    date: "February 27"
