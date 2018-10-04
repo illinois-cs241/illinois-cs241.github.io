@@ -5,21 +5,21 @@
     dueDate: "Week 2"
     url: "know_your_tools"
     resources: true
-    worksheet: false
+    worksheet: true
 -
     name: "Perilous Pointers"
     releaseDate: "Week 2"
     dueDate: "Week 3"
     url: "perilous_pointers"
     resources: true
-    worksheet: false
+    worksheet: true
 -
     name: "Utilities Unleashed"
     releaseDate: "Week 3"
     dueDate: "Week 4"
     url: "utilities_unleashed"
     resources: true
-    worksheet: false
+    worksheet: true
 
 -
     name: "Mini Valgrind"
@@ -27,18 +27,18 @@
     dueDate: "Week 5"
     url: "mini_valgrind"
     resources: true
-    worksheet: false
+    worksheet: true
 -
     name: "Teaching Threads"
     releaseDate: "Week 5"
     dueDate: "Week 6"
     url: "teaching_threads"
     resources: true
-    worksheet: false
+    worksheet: true
 -
     name: "Critical Concurrency"
     releaseDate: "Week 6"
     dueDate: "Week 7"
     url: "critical_concurrency"
     resources: true
-    worksheet: false
+    worksheet: true
