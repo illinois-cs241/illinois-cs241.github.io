@@ -316,8 +316,11 @@ const prepare_test_td = function(student, test_name) {
 }
 
 const setup_body = function(data) {
+  console.log(data);
   if (typeof data === "string") {
     data = JSON.parse(data);
+    console.log("Got data!")
+    console.log(data);
   }
 
   const ta_sol = find_ta_solution(data);
@@ -356,8 +359,9 @@ const setup_body = function(data) {
 
 
 $(document).ready(function() {
+  const base_url = 'http://pages.github-dev.cs.illinois.edu/cs241-fa18/_malloc_contest/ag_contest_json_clean.json';
   /* only force a cache update every 10 minutes */
-  const url = 'http://cs241grader.web.engr.illinois.edu/malloc/data/results.php?v=' + roundedTime();
+  const url = base_url + '?v=' + roundedTime();
   $.get(url)
     .done(setup_body)
     .fail(errfunc);
