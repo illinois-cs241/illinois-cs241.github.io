@@ -359,7 +359,7 @@ const setup_body = function(data) {
 
 
 $(document).ready(function() {
-  const base_url = 'http://pages.github-dev.cs.illinois.edu/cs241-fa18/_malloc_contest/ag_contest_json_clean.json';
+  const base_url = 'https://pages.github-dev.cs.illinois.edu/cs241-fa18/_malloc_contest/ag_contest_json_clean.json';
   /* only force a cache update every 10 minutes */
   const url = base_url + '?v=' + roundedTime();
   $.get(url)
