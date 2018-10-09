@@ -44,8 +44,8 @@
     worksheet: true
 -
     name: "Deadlocked Diners"
-    releaseDate: "Week 8"
-    dueDate: "Week 9"
+    releaseDate: "Week 7"
+    dueDate: "Week 8"
     url: "deadlocked_diners"
     resources: true
     worksheet: true
