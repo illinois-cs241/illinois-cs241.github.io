@@ -25,9 +25,10 @@
     content: "Profiling"
     slides: "https://docs.google.com/presentation/d/1ZKX55p6gdugf1is26GRNWLtkltIbXL_zcC4gY7qIMdI/edit?usp=sharing"
 #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
-#  -
-#    date: "February 27"
-#    content: "No Lecture!"
+  -
+    date: "October 10"
+    content: "No Lecture!"
+    slides: "lock_free.pdf"
 #    slides: #"kernel.pdf"
 #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/76567804-1eac-45ad-9ebb-7d39e69a0443?ec=true"
 #  -
