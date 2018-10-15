@@ -30,7 +30,14 @@
 -
     name: "Malloc"
     releaseDate: "Week 6"
-    dueDate: "Week 7"
+    dueDate: "Week 8"
     url: "malloc"
+    resources: true
+    worksheet: false
+-
+    name: "Password Cracker"
+    releaseDate: "Week 8"
+    dueDate: "Week 9"
+    url: "password_cracker"
     resources: true
     worksheet: false
