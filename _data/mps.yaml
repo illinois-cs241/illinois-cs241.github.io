@@ -41,7 +41,7 @@
     url: "password_cracker"
     resources: true
     worksheet: false
-    
+-
     name: "Parallel Make"
     releaseDate: "Week 9"
     dueDate: "Week 11"
