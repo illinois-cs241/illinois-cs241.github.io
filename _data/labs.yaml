@@ -56,3 +56,10 @@
     url: "ideal_indirection"
     resources: true
     worksheet: true
+-
+    name: "MapReduce"
+    releaseDate: "Week 9"
+    dueDate: "Week 10"
+    url: "mapreduce"
+    resources: true
+    worksheet: false
