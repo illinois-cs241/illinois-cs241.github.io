@@ -1,4 +1,5 @@
 #!/bin/bash
+
 for file in $TRAVIS_BUILD_DIR/_site/**/*html;
 	do
 	checklink -s -b --suppress-temp-redirects \
