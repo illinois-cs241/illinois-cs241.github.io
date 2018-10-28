@@ -204,10 +204,10 @@
   -
     schedule:
       -
-        title: "Files-2"
-        summary: "file meta data"
-        resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-2%3A-Files-are-inodes-%28everything-else-is-just-data...%29'>Files</a>."
-        color: "#FFC107"
+        title: "No lecture"
+        summary: "No lecture"
+        resources: ""
+        color: "#A8A8A8"
       -
         title: "Files-3"
         summary: "Permissions"
@@ -220,7 +220,7 @@
         color: "#8BC34A"
     week: "10/29 - 11/2"
     announcement: >
-      <ul>
+      <ul>"
         <li>Quiz 5 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
       </ul>
   -
