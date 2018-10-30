@@ -63,3 +63,10 @@
     url: "mapreduce"
     resources: true
     worksheet: false
+-
+    name: "Charming Chatroom"
+    releaseDate: "Week 10"
+    dueDate: "Week 11"
+    url: "charming_chatroom"
+    resources: true
+    worksheet: false
