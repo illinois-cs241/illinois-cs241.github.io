@@ -67,6 +67,6 @@
     name: "Charming Chatroom"
     releaseDate: "Week 10"
     dueDate: "Week 11"
-    url: "charming_chatroom"
+    url: "chatroom"
     resources: true
-    worksheet: false
+    worksheet: true
