@@ -48,4 +48,11 @@
     url: "parallel_make"
     resources: true
     worksheet: false
+-
+    name: "Finding Filesystems"
+    releaseDate: "Week 11"
+    dueDate: "Week 12"
+    url: "finding_filesystems"
+    resources: true
+    worksheet: false
 
