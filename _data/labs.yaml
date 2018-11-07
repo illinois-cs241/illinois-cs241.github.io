@@ -70,3 +70,10 @@
     url: "charming_chatroom"
     resources: true
     worksheet: true
+-
+    name: "Mad Mad Access Patterns"
+    releaseDate: "Week 11"
+    dueDate: "Week 12"
+    url: "mad_mad_access_patterns"
+    resources: true
+    worksheet: true
