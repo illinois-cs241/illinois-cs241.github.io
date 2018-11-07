@@ -41,19 +41,15 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
 
 ## How to write documentation
 
-### TLDR
-
-Just go to `_docs` and copy an existing doc and fill it out with the approriate markdown content.
-
 ### Where to create the file
 
 All documentation is stored in `_docs`.
 
-To create a new doc, all you need to do is create a new file in the `_docs` directory. How you name files in this folder is important. If you name the file "my_awesome_doc.md", then that page can be access at "https://illinois-cs241.github.io/my_awesome_doc.html". You should not use any other configuration to change the url of the file, but rather stick to the convention.
+To create a new doc, to create new documentation, go to the `assignment-docs` repository and make a new file. If you name the file "my_awesome_doc.md", then that page can be access at "/my_awesome_doc.html". You should not use any other configuration to change the url of the file, but rather stick to the convention.
 
 ### Content for this file
 
-Once you have created this file you can add all the markdown you please. Somethings to take note of is that javascript will run to make all the areas between `h2`/`##` tags into sections and add an entry to the table of content. The title of the section and the entry of in the table of content is exactly the text that comes after your `h2`/`##`. Also `h1`/`#` is reserved for the title which will automatically be added in. If you get stuck trying to format something with markdown, then you can just write html and it will get injected (but, then I will be disappointed in you).
+Once you have created this file you can add all the markdown you please. Somethings to take note of is that javascript will run to make all the areas between `h2`/`##` tags into sections and add an entry to the table of content. The title of the section and the entry of in the table of content is exactly the text that comes after your `h2`/`##`. Also `h1`/`#` is reserved for the title which will automatically be added in.
 
 ### Front Matter (configurations)
 
@@ -151,9 +147,3 @@ This can be done by [fencing with triple backticks](https://github.com/adam-p/ma
 
 All the information that gets displayed on `labs.html`, `mps.html`, `schedule.html`, and `staff.html` are stored in `_data` as `labs.json`,`mps.json`,`scheduleSP16.json`, and `staff.json` respectively. These are json files and should be intuitive to update.
 
-
-## Minifying Foundation and Material Design
-
-Foundation and Material Design are _Massive_ files. In order to compensate for this, There is a gulp task that runs that gets rid of uneeded CSS.
-
-The task currently needs to be modified because it does register the aria menus correctly for CSS so they'll have to be a custom phantom script that tracks the clicks. This is an issue and a todo. The code is currently committed.
