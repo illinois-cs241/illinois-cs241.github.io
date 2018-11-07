@@ -71,9 +71,9 @@
     resources: true
     worksheet: true
 -
-    name: "Mad Mad Access Patterns"
+    name: "Mad Mad Access Pattern"
     releaseDate: "Week 11"
     dueDate: "Week 12"
-    url: "mad_mad_access_patterns"
+    url: "mad_mad_access_pattern"
     resources: true
     worksheet: true
