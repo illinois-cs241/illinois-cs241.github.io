@@ -16,7 +16,7 @@ url: "http://illinois-cs241.github.io" # the base hostname & protocol for your s
 repository: illinois-cs241/illinois-cs241.github.io
 github_username: illinois-cs241
 # Settings for the course
-semester: "fa18"
+# semester is generated automagically
 course_number: "241"
 subject_code: "cs"
 course_name: "System Programming"
