@@ -6,6 +6,7 @@
     url: "know_your_tools"
     resources: true
     worksheet: true
+    visible: true
 -
     name: "Perilous Pointers"
     releaseDate: "Week 2"
@@ -13,6 +14,7 @@
     url: "perilous_pointers"
     resources: true
     worksheet: true
+    visible: true
 -
     name: "Utilities Unleashed"
     releaseDate: "Week 3"
@@ -20,7 +22,7 @@
     url: "utilities_unleashed"
     resources: true
     worksheet: true
-
+    visible: true
 -
     name: "Mini Valgrind"
     releaseDate: "Week 4"
@@ -28,6 +30,7 @@
     url: "mini_valgrind"
     resources: true
     worksheet: true
+    visible: true
 -
     name: "Teaching Threads"
     releaseDate: "Week 5"
@@ -35,6 +38,7 @@
     url: "teaching_threads"
     resources: true
     worksheet: true
+    visible: true
 -
     name: "Critical Concurrency"
     releaseDate: "Week 6"
@@ -42,6 +46,7 @@
     url: "critical_concurrency"
     resources: true
     worksheet: true
+    visible: true
 -
     name: "Deadlocked Diners"
     releaseDate: "Week 7"
@@ -49,6 +54,7 @@
     url: "deadlocked_diners"
     resources: true
     worksheet: true
+    visible: true
 -
     name: "Ideal Indirection"
     releaseDate: "Week 8"
@@ -56,6 +62,7 @@
     url: "ideal_indirection"
     resources: true
     worksheet: true
+    visible: true
 -
     name: "MapReduce"
     releaseDate: "Week 9"
@@ -63,6 +70,7 @@
     url: "mapreduce"
     resources: true
     worksheet: false
+    visible: true
 -
     name: "Charming Chatroom"
     releaseDate: "Week 10"
@@ -70,6 +78,7 @@
     url: "charming_chatroom"
     resources: true
     worksheet: true
+    visible: true
 -
     name: "Mad Mad Access Pattern"
     releaseDate: "Week 11"
@@ -77,3 +86,28 @@
     url: "mad_mad_access_pattern"
     resources: true
     worksheet: true
+    visible: true
+-
+    name: "Sophisticated Scheduler"
+    releaseDate: "Week 12"
+    dueDate: "Week 13"
+    url: "scheduler"
+    resources: true
+    worksheet: true
+    visible: false
+-
+    name: "Resplendent RPCs"
+    releaseDate: "Week 13"
+    dueDate: "Week 14"
+    url: "rpc"
+    resources: true
+    worksheet: true
+    visible: false
+-
+    name: "Super Linux Super Kernel"
+    releaseDate: "Week 14"
+    dueDate: "Week 15"
+    url: "rpc"
+    resources: true
+    worksheet: true
+    visible: false

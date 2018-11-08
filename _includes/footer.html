@@ -1,19 +1,26 @@
+<!-- Load jquery at the end so loading is fast -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+<!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Again bust cache on the main.js file -->
 <script src="/js/main.js?v={{ site.time }}"></script>
 
 <script>
-$(document).ready(function() { 
-    $("#tuxlink").prop("href", "javascript:;").click(function() { 
-        if ("WebkitAppearance" in document.documentElement.style) { 
-            var style = document.createElement("style"); 
-            style.setAttribute("id", "tuxstyle"); 
-            style.appendChild(document.createTextNode("")); 
-            document.head.appendChild(style); 
+$(document).ready(function() {
+    $("#tuxlink").prop("href", "javascript:;").click(function() {
+        if ("WebkitAppearance" in document.documentElement.style) {
+            var style = document.createElement("style");
+            style.setAttribute("id", "tuxstyle");
+            style.appendChild(document.createTextNode(""));
+            document.head.appendChild(style);
             var sheet = style.sheet;
-            sheet.insertRule("::-webkit-scrollbar-thumb {border-radius: 0; background-color: white; -webkit-box-shadow: none;}", 0); 
-        } 
+            // TODO: This causes the document to studder, Ideally this just turn on and off in css
+            sheet.insertRule("::-webkit-scrollbar-thumb {border-radius: 0; background-color: white; -webkit-box-shadow: none;}", 0);
+        }
+
+        // TODO Refactor all of this, it is just plain awful
 
         const hackerKey = 'hackerLocalKey';
         const hackerOff = "off";
@@ -23,7 +30,7 @@ $(document).ready(function() {
             window.localStorage.setItem(hackerKey, hackerOff);
         }
 
-        $("#tuxlink").unbind('click').click(function() { 
+        $("#tuxlink").unbind('click').click(function() {
             const hackerClass = 'hacker';
             $('html, body, header, nav, table, pre, span, :not(.card-staff) > a, p, h1, h2, h3, h4, h5, h6').toggleClass(hackerClass);
             $('ul, img, pre').toggleClass(hackerClass);
@@ -41,24 +48,20 @@ $(document).ready(function() {
             } else {
                 window.localStorage.setItem(hackerKey, hackerOff);
             }
-            return false; 
-        }); 
+            return false;
+        });
+        $("#tuxlink").click();
         $("#tuxlink").click();
         const stored = window.localStorage.getItem(hackerKey);
         if (stored === hackerOn) {
-            console.log("Hello!")
             $("#tuxlink").click();
-        } else {
-            console.log("Noo");
         }
 
-        return false; 
-    }); 
-    } 
-    ); 
+        return false;
+    });
+    }
+    );
     </script>
-
-<script src="/js/analytics.js"></script>
 
 <footer class="">
 
