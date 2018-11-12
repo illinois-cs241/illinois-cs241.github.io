@@ -70,4 +70,4 @@
     url: "networking_mp"
     resources: true
     worksheet: false
-    visible: false
+    visible: true
