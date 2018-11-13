@@ -88,13 +88,13 @@
     worksheet: true
     visible: true
 -
-    name: "Sophisticated Scheduler"
+    name: "Savvy Scheduler"
     releaseDate: "Week 12"
     dueDate: "Week 13"
     url: "scheduler"
     resources: true
     worksheet: true
-    visible: false
+    visible: true
 -
     name: "Resplendent RPCs"
     releaseDate: "Week 13"
