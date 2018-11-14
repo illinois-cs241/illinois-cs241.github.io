@@ -19,6 +19,7 @@ branches:
     only:
         develop
 before_install:
+    - python3 -m pip install -U pip
     - python3 -m pip install --user -r requirements.txt
     - bash _scripts/check_markdown.sh
     - export COMMITTER_EMAIL="$(git log -1 $TRAVIS_COMMIT --pretty="%cE")"
