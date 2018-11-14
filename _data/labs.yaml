@@ -91,7 +91,7 @@
     name: "Savvy Scheduler"
     releaseDate: "Week 12"
     dueDate: "Week 13"
-    url: "scheduler"
+    url: "savvy_scheduler"
     resources: true
     worksheet: true
     visible: true
