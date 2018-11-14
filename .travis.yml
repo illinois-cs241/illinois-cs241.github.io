@@ -11,6 +11,7 @@ addons:
             - hunspell
             - libhunspell-dev
             - hunspell-en-us
+            - python3-setuptools
             - python3-pip
 rvm:
     - 2.2
