@@ -19,7 +19,7 @@ title: Quiz Topics
 * sizeof x vs x*
 * Heap memory lifetime
 * Calls to heap allocation
-* Deferencing pointers
+* Dereferencing pointers
 * Address-of operator
 * Pointer arithmetic
 * String duplication

@@ -1,11 +1,16 @@
 #!/bin/bash
 
-set +e
+set -e
 trap exit INT;
-for file in *.md;
+MATCHES="0"
+for file in *md _docs/*md;
 do
-    echo $file
-    echo "======="
-    SUGGEST=1 pandoc -f markdown -t plain --filter _scripts/md_spell_check.py $file -o /dev/null;
-    echo ""
-   done;
+    OUTPUT=`SUGGEST=1 pandoc -f markdown -t plain --filter _scripts/md_spell_check.py $file -o /dev/null 2>&1`
+    if [ ! -z "$OUTPUT" ]; then
+        echo "$file"
+        echo "======="
+        echo "$OUTPUT";
+
+        echo
+    fi;
+done;
