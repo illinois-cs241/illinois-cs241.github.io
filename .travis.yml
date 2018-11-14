@@ -4,10 +4,11 @@ language: ruby
 cache: bundler
 addons:
     apt:
-        - pandoc
-        - hunspell
-        - libhunspell-dev
-        - hunspell-en-us
+        packages:
+            - pandoc
+            - hunspell
+            - libhunspell-dev
+            - hunspell-en-us
 rvm:
     - 2.2
 branches:
