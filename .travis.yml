@@ -1,7 +1,9 @@
 sudo: false
 dist: trusty
 language: ruby
-cache: bundler
+cache:
+    bundler: true
+    pip: true
 addons:
     apt:
         packages:
