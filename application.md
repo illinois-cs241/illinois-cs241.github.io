@@ -61,7 +61,7 @@ Machine Problems and Labs are the meat and cheese of any programming course. The
 
 Writing assignments involves coming up with a meaningful tasks where students can master the learning objectives. Writing these assignments involves a lot of time spent drafting on white boards and bouncing ideas around. As you are writing these assignments, you will have to ask yourself, "What am I trying to have the students learn?".
 
-Finally, with any good assignment comes excellent documentation that is clear, concise, contextual, and correct. Also, the documentation should mirror what we are looking for in the autograder. One huge shift you'll have to get used to is writing code for an assignment must be perfect or near-perfect. Instead of passing our ~30 test cases, you'll have to be resillient against 300 students edge cases.
+Finally, with any good assignment comes excellent documentation that is clear, concise, contextual, and correct. Also, the documentation should mirror what we are looking for in the autograder. One huge shift you'll have to get used to is writing code for an assignment must be perfect or near-perfect. Instead of passing our ~30 test cases, you'll have to be resilient against 300 students edge cases.
 
 ### Skills Required
 

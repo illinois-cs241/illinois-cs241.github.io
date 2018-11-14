@@ -120,12 +120,12 @@ This course uses the College of Engineering Computer-Based Testing Facility (CBT
 
 The policies of the CBTF are the policies of this course, and academic integrity infractions related to the CBTF are infractions in this course.
 
-If you have accommodations identified by the [Division of Rehabilitation-Education Services (DRES)](http://www.disability.illinois.edu/) for exams, please take your Letter of Accomodation (LOA) to the CBTF proctors in person before you make your first exam reservation. The proctors will advise you as to whether the CBTF provides your accommodations or whether you will need to make other arrangements with your instructor.
+If you have accommodations identified by the [Division of Rehabilitation-Education Services (DRES)](http://www.disability.illinois.edu/) for exams, please take your Letter of Accommodation (LOA) to the CBTF proctors in person before you make your first exam reservation. The proctors will advise you as to whether the CBTF provides your accommodations or whether you will need to make other arrangements with your instructor.
 
 Any problem with testing in the CBTF **must** be reported to CBTF staff at the time the problem occurs. If you do not inform a proctor of a problem during the test then you **forfeit** all rights to redress.
 
 
-The Fall 2018 schedule as of August 22 is below. The complete and authoratative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website).
+The Fall 2018 schedule as of August 22 is below. The complete and authoritative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website).
 
 
 | Quiz | First day | Last day |

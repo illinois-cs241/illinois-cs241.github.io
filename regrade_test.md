@@ -22,7 +22,7 @@ $ git commit -m "Committing initial regrade_test"
 $ git push origin master
 ```
 
-If you ever want to change the assignement that you are doing the regrade execute the following commands and set up the assignment as before.
+If you ever want to change the assignment that you are doing the regrade execute the following commands and set up the assignment as before.
 
 ```console
 $ git rm -rf regrade_test
@@ -76,15 +76,15 @@ The test should
 	* It can be an existing edge case, but you'll have to put a twist on it (try to combine multiple edge cases).
 * Wondering how we decide what is a good test? That is where `README.md` comes into play. 
 	* Include how to run your code in your `README.md`
-	* You have to justify why your test is good (by referencing the docs or a systems programming concept). You'll have to write about ~1-2 paragraphs-ish (see below) about why you think your test is good. There is no hard word count or limit, just be sure to provide a thorough justification.
+	* You have to justify why your test is good (by referencing the docs or a systems programming concept). You'll have to write about ~1-2 paragraphs (see below) about why you think your test is good. There is no hard word count or limit, just be sure to provide a thorough justification.
 	* Please err on the side of being verbose. We like to read :D.
 * If you try to "cheat" the system by taking one of our test cases and modifying it slightly or sharing test cases you'll lose this week and the other two possible weeks of autograding. If you give an honest attempt, you don't need to worry about it.
 
 ## Manual Testing
 
-In the event that our code becomes hard/impossible to test externally, we allow the option to do a manual test. Meaning that you have to provide a sequence of testing steps in your `README.md` and any expected output files committed to your github. Please try to refrain from doing this because this increases the tournaround time for getting your test approved. In addition, you'll have to write ~3-4 paragraphsish (see below) justifying the test.
+In the event that our code becomes hard/impossible to test externally, we allow the option to do a manual test. Meaning that you have to provide a sequence of testing steps in your `README.md` and any expected output files committed to your github. Please try to refrain from doing this because this increases the tournaround time for getting your test approved. In addition, you'll have to write ~3-4 paragraphs (see below) justifying the test.
 
-## Submission/Tournaround
+## Submission
 
 As soon as you are finished, [please submit the form](https://docs.google.com/forms/d/e/1FAIpQLSedW7LgFMQ2uVgFtyDNuidSHultKVaC9gwsKs3rIwXEyPCFIQ/viewform?usp=sf_link) and we will try to grade your test ASAP. If we think your test is good, you can go ahead and select a third week for regrades. We will commit a file called `results.txt` to your directory with your status. If not you can edit and resubmit -- avoid spam because we are all humans. Excessive submissions will just be dropped like networking packets. In any event, we hope to have the results up by 1 week before classes officially end. The deadline for this is 04/25 at midnight.
 
@@ -92,7 +92,7 @@ As soon as you are finished, [please submit the form](https://docs.google.com/fo
 
 Here is a "proposal" for tester 12 in malloc:
 
-_Tester 12 makes sure that you are splitting and coalescing your blocks. The first allocation allocates a large amount of memory. We first verify that the block of memory is a valid block of memory by verifying zeros, writing and verifying the write. After freeing the first allocation, we allocate half and a quarter of the space. If splitting is implemented correctly, then we should be able to read and write from the memory location and have it be seperate from the memory location that the quarter alloction takes up. We verify all the memory is zeroed out because that is calloc behavior. These memory regions should not overlap, so we check for that as well. We repeat this many times to make sure no new blocks are being created. We allow for wiggle room of the sizeof metadata struct which is why the blocks are not two allocations of SIZE/2._
+_Tester 12 makes sure that you are splitting and coalescing your blocks. The first allocation allocates a large amount of memory. We first verify that the block of memory is a valid block of memory by verifying zeros, writing and verifying the write. After freeing the first allocation, we allocate half and a quarter of the space. If splitting is implemented correctly, then we should be able to read and write from the memory location and have it be separate from the memory location that the quarter allocation takes up. We verify all the memory is zeroed out because that is calloc behavior. These memory regions should not overlap, so we check for that as well. We repeat this many times to make sure no new blocks are being created. We allow for wiggle room of the sizeof metadata struct which is why the blocks are not two allocations of SIZE/2._
 
 _Using a worst-fit allocation scheme, this would test for if you have both splitting and coalescing because if you have splitting without coalescing you would reach the memory limit. Coalescing without splitting would also have the same effect. Under a best-fit, the tests pass if splitting and coalescing are both implemented or both not implemented but fail if either one is and the other isn't. Using first fit, the tests pass if splitting and coalescing are both implemented or both not, but again fail if one is and the other is not._
 
@@ -108,7 +108,7 @@ _The purpose is to test for parallelism. We segment the makefile into a number o
 
 _The test then does a static diff against a makefile. If diff outputs anything, that means the dependencies were satisfied in the wrong order -- meaning we should give a message about rule dependencies not being satisfied. If the test runs too long, that means the dependencies are not handled correctly, or it is not parallelized -- meaning that we should give the appropriate message. There are also edge cases where rules are outputted twice or not at all -- that should be handled by diff as well._
 
-_Other interesting additions could be to make sure the program doesn't segfault and make sure that there is no race conditions or any other adverse output. If we check that the CPU time was much greater than the actual runtime, that means the solution was busywaiting and should penalize from that (although the purpose of the test is to test against paralellism, we could use it for busy waiting). Other notes like cycle error should also trigger a failure._
+_Other interesting additions could be to make sure the program doesn't segfault and make sure that there is no race conditions or any other adverse output. If we check that the CPU time was much greater than the actual runtime, that means the solution was busywaiting and should penalize from that (although the purpose of the test is to test against parallelism, we could use it for busy waiting). Other notes like cycle error should also trigger a failure._
 
 
 ## Questions?
