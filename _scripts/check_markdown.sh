@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+set -e
 trap exit INT;
 MATCHES="0"
 
