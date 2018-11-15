@@ -43,6 +43,9 @@ collections:
   docs:
     output: true
     permalink: /:path
+  pages:
+    output: true
+    permalink: /:path
   resources:
     output: true
     permalink: /resources/:path

@@ -1,0 +1,61 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+{% include header.html %}
+<div class="container-fluid schedule-container">
+  <div class="row">
+  <!-- Your content goes here -->
+  <div class="col-sm-12 col-xs-12">
+  <div class="container-fluid">
+  
+  <!-- div class = "row">
+     <div class = "col-lg-3 col-xs-12"><h2>Currently Under construction!</h2></div>
+  </div -->
+
+  <div class = "row">
+  	<div class = "col-lg-3 col-xs-12"><h2><a href="https://echo360.org/"> Recordings</a></h2></div>
+  	<div class = "col-lg-3 hidden-xs"><h2>Monday</h2></div>
+  	<div class = "col-lg-3 hidden-xs"><h2>Wednesday</h2></div>
+  	<div class = "col-lg-3 hidden-xs"><h2>Friday</h2></div>
+  </div>
+
+  {% for week in site.data.scheduleFA18 %}
+  <div class = "row">
+    <div class = "col-lg-3 announcement-card">
+      <h3 class="annoucement-title">#{{ forloop.index }}: <span class = "week">{{week.week}}</span> </h3>
+      <div class = "announcement" style = "color:#37474F">
+        {{week.announcement}}
+      </div>
+    </div>
+    {% for day in week.schedule %}
+      <div class="col-lg-3 ">
+      <div class="day container">
+        <div class="day-title row"  style = "background-color:{{day.color}}">
+          <div class="day-title-text col-md-12">
+            <h3 class="day-title-h3">{{day.title}}</h3>
+
+          </div>
+        </div>
+        <div class="day-summary row">
+          <div class="col-xs-10 offset-xs-1"> <p>{{day.summary}}</p> </div>
+          <div class="col-xs-1"></div>
+        </div>
+        <div class="day-resources row">
+          <div class="col-md-10 offset-md-1"> <p>{{day.resources}}</p> </div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
+  </div>
+  </div>
+</div>
+</div>
+{% include footer.html %}
+</body>
+</html>

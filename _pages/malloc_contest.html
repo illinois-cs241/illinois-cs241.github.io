@@ -1,0 +1,40 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+{% include header.html %}
+<div class="container-fluid" id="page">
+  <div class="row">
+  <div class="col-md-1 col-xs-1"></div>
+  <div class="col-md-10 col-xs-10">
+    <h1>Malloc Contest</h1>
+    <p></p>
+
+    <div class="wrapper hidden" id="error">
+      <div class="pad"><div class="card">
+      <div class="title"><h2>Error!</h2></div>
+      <p>Sorry! The contest server is down right now. 
+      Please check back in a bit</p>
+    </div>
+    </div></div>
+
+    <div class="wrapper" id="malloc-contest">
+      <div class="pad"><div class="card">
+      <div class="title"><h2></h2></div>
+    </div></div>
+
+    <div class="table-responsive malloc-div">
+      <table class="table table-fixed">
+        <thead id="malloc-head">
+        </thead>
+        <tbody id="malloc-body">
+        </tbody>
+      </table>
+    </div>
+    <link rel="stylesheet" href="/css/malloc.css?v={{ site.time }}">
+  {% include footer.html %}
+  <script type="text/javascript" src="/js/malloc.js?v={{ site.time }}"></script>
+</body>
+</html>
