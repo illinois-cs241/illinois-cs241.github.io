@@ -14,6 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://illinois-cs241.github.io" # the base hostname & protocol for your site
 repository: illinois-cs241/illinois-cs241.github.io
+docs_repository: illinois-cs241/assignment-docs
 github_username: illinois-cs241
 # Settings for the course
 # semester is generated automagically

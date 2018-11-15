@@ -30,7 +30,7 @@ before_install:
     - git config --global submodule.recurse true
     - git config --global submodule.fetchJobs 8
 before_script:
-    - $TRAVIS_BUILD_DIR/_scripts/before_script.sh
+    - echo Dummy Step
 after_success:
     - $TRAVIS_BUILD_DIR/_scripts/after_success.sh
 deploy:

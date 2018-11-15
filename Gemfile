@@ -5,3 +5,8 @@ gem 'rake'
 gem 'jekyll'
 gem 'pigments'
 gem 'htmlentities'
+
+group :test do
+  gem 'html-proofer'
+  gem 'rake'
+end

@@ -16,9 +16,9 @@
             <h1>
               {{ page.title }}
               {% if page.submissions %}
-                <a class="github-link hidden-xs" href="https://github.com/{{ site.repository | uri_escape }}/blob/develop/{{ page.path | uri_escape }}">Edit on Github</a>
+                <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page.path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
               {% elsif page.githuburl %}
-                <a class="github-link hidden-xs" href="https://github.com/{{ page.githuburl | uri_escape }}">Edit on Github</a>
+                <a class="github-link hidden-xs" href="https://github.com/{{ page.docs_repository | uri_escape }}">Edit on Github</a>
               {% endif %}
             </h1>
           </div>
