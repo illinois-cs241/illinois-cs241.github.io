@@ -7,7 +7,6 @@ echo "Working in $TMPDIR"
 cd $TMPDIR
 
 git init;
-git checkout master;
 
 echo "Copying"
 echo $(ls $TRAVIS_BUILD_DIR/_site/)
