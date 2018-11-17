@@ -39,11 +39,6 @@ before_deploy:
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/deploy_rsa
 - ssh-add /tmp/deploy_rsa
-# deploy:
-#   provider: script
-#   script: bash _scripts/deploy.sh
-#   on:
-#     branch: develop
 deploy:
     local_dir: _site
     provider: pages
