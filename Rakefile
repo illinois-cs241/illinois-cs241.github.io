@@ -1,6 +1,11 @@
 # Including only the changed build task
+require 'rake'
 require 'jekyll'
 require 'html-proofer'
+require 'nokogiri'
+require 'open-uri'
+require 'json'
+require 'optparse'
 
 is_travis = ENV['TRAVIS'] == 'true'
 
@@ -13,6 +18,48 @@ task :default do
   site = Jekyll::Site.new(config)
   Jekyll::Commands::Build.build site, config
   cp './.travis.yml', './_site/.travis.yml'
+end
+
+namespace :pre_build do
+  desc "Houses all pre build tasks"
+
+  sections = [1, 2, 3, 4]
+  base_uri = 'https://linux.die.net/man/'
+  cache_time = 30 #days
+
+  task :gen_man, [:file] do |t, args|
+    file = args[:file]
+    if file == nil
+      puts "Need to include a file"
+      next
+    end
+
+    # Man pages don't change that often
+    if File.exists?(file) and (File.mtime(file) <=> DateTime.now - cache_time) == 1
+      puts "Using cached file"
+      next
+    end
+    puts "Updating file"
+
+    urls = sections.map do |e| 
+      base_uri + e.to_s + '/'
+    end
+    output = Hash.new
+    urls.each do |url|
+      page = Nokogiri::HTML(open(url))
+      page.css('dt a').each do |link|
+        output[link.inner_html] = url+link['href']
+      end
+    end
+
+    file_opts = File::RDWR|File::CREAT
+    File.open(file, file_opts, 0644) do |f| 
+      f.truncate 0
+      f.write(JSON.fast_generate output)
+      puts "Successfully wrote #{file}"
+    end
+  end
+
 end
 
 task :test do
