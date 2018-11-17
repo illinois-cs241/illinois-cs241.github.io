@@ -39,8 +39,19 @@ before_deploy:
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/deploy_rsa
 - ssh-add /tmp/deploy_rsa
+# deploy:
+#   provider: script
+#   script: bash _scripts/deploy.sh
+#   on:
+#     branch: develop
 deploy:
-  provider: script
-  script: bash _scripts/deploy.sh
-  on:
-    branch: develop
+    local_dir: _site
+    provider: pages
+     skip_cleanup: true
+     github_token: $GITHUB_TOKEN 
+     target_branch: master
+     depth: 1
+     depth: 1
+     fqdn: cs241.cs.illinois.edu
+     on:
+         branch: develop
