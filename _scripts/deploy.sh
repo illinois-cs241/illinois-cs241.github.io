@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TMPDIR=`mktmp -d`
+TMPDIR=`mktemp -d`
 echo "Working in $TMPDIR"
 cd $TMPDIR
 
