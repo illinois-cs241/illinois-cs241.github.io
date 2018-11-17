@@ -15,10 +15,15 @@
             </div>
             <h1>
               {{ page.title }}
+                {% if page.path.nil? %}
+                {% assign page_path = '' %}
+                {% else %}
+                {% assign page_path = page.path %}
+                {% endif %}
               {% if page.submissions %}
-                <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page.path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
+                <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page_path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
               {% elsif page.githuburl %}
-                <a class="github-link hidden-xs" href="https://github.com/{{ page.docs_repository | uri_escape }}">Edit on Github</a>
+                <a class="github-link hidden-xs" href="https://github.com/{{ page.githuburl | uri_escape }}">Edit on Github</a>
               {% endif %}
             </h1>
           </div>
@@ -43,14 +48,12 @@
                 {% for schedule in page.ag_schedules %}
                   <b>{{ schedule.title }}</b>
                   <br/>
-                  
                   <b>Pre-deadline Runs</b>
                     <ul>
                       {% for ag_date in schedule.schedule_dates %}
                         <li>{{ ag_date}}</li>
                       {% endfor %}
                     </ul>
-
                 {% endfor %}
               </div>
             {% endif %}

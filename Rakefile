@@ -6,17 +6,24 @@ require 'nokogiri'
 require 'open-uri'
 require 'json'
 require 'optparse'
+require 'jemoji'
+require 'rake'
+require 'pigments'
+require 'htmlentities'
+
 
 is_travis = ENV['TRAVIS'] == 'true'
+main_json_file = '_data/man.json'
+wikibook_dir = '_wikibook'
 
-task :default do
-  system('_scripts/before_script.sh')
+multitask :default => [
+            "pre_build:gen_man",
+            "pre_build:cleanup_wiki"] do
   config = Jekyll.configuration({
     :source => './',
     :destination => './_site',
-    :safe => false,
     :timezone => 'America/Chicago',
-    :encoding => 'utf-8',
+    :cache_dir => ".jekyll-cache",
   })
   site = Jekyll::Site.new(config)
   Jekyll::Commands::Build.build site, config
@@ -33,8 +40,8 @@ namespace :pre_build do
   task :gen_man, [:file] do |t, args|
     file = args[:file]
     if file == nil
-      puts "Need to include a file"
-      next
+      file = main_json_file
+      puts "Using default file #{file}"
     end
 
     # Man pages don't change that often
@@ -63,6 +70,93 @@ namespace :pre_build do
     end
   end
 
+  def title_from_html(text)
+    file_no_ext = File.basename(text, '.md')
+    return file_no_ext.tr('-', ' ')
+  end
+
+
+  def link_patterns(file, pattern_map)
+    obj_file = Tempfile.new('')
+    f = File.open(file, 'r')
+    begin
+      contents = f.read
+      new_contents = pattern_map.reduce(contents) do |contents, (link, pattern)|
+        contents.gsub(pattern, link)
+      end
+      obj_file.write(new_contents)
+      obj_file.close
+      FileUtils.cp(obj_file.path, file)
+    ensure
+      obj_file.unlink
+      f.close
+    end
+  end
+
+  def prepend(file, string)
+    obj_file = Tempfile.new('')
+    f = File.open(file, 'r')
+    begin
+      obj_file.write(string)
+      obj_file.write(f.read)
+      obj_file.close
+      FileUtils.cp(obj_file.path, file)
+    ensure
+      obj_file.unlink
+      f.close
+    end
+  end
+
+  ghurl = "angrave/SystemProgramming/wiki"
+
+  task :cleanup_wiki, [:folder] do |t, args|
+    folder = args[:folder]
+    if folder.nil?
+      folder = wikibook_dir
+      puts "Using default Folder #{folder}"
+    end
+    Dir.chdir(folder) do
+      system 'git clean -f; git reset --hard HEAD'
+    end
+    bad_chars = '#,:"'
+    old_filenames = Dir.glob("#{folder}/*.md")
+    new_filenames = Marshal.load(Marshal.dump(old_filenames)).map do |filename|
+      filename.downcase().tr(bad_chars, '')
+    end
+    pattern_map = Hash.new
+    old_filenames.each do |file_name|
+      file_no_ext = File.basename(file_name, '.md')
+      title = title_from_html(file_name)
+      regex_escaped = Regexp.escape(title)
+      ext_name = File.extname(file_no_ext)
+      html_escaped = URI.escape(file_no_ext)
+      link = "<a class='wiki-link' href='./#{html_escaped}.html'>#{title}</a>"
+      pattern_map[link] = /(\[\[\s*${regex_escaped}\s*\]\])/
+    end
+
+    temp_file = Tempfile.new('')
+    temp_path = temp_file.path
+    old_filenames.zip(new_filenames).each do |from_f, to_f|
+      title = title_from_html(from_f)
+      # On certain systems ruby errors in weird ways if
+      # The files are the same case insensitive, so we
+      # go roundabout
+      begin
+      FileUtils.mv(from_f, to_f, :force => true)
+      rescue ArgumentError
+      puts "Case insensitivity issue"
+      FileUtils.mv(from_f, temp_path, :force => true)
+      FileUtils.mv(temp_path, to_f, :force => true)
+      end
+      link_patterns(to_f, pattern_map)
+      hyphens_added = title.tr(' ', '-')
+      ghurl_added = "#{ghurl}/#{hyphens_added}"
+      front_matter = "---\nlayout: doc\ntitle: \"#{title}\"\ngithuburl: \"#{ghurl_added}\"\n---\n\n"
+      prepend(to_f, front_matter)
+      puts "Added Template to #{to_f}"
+    end
+    temp_file.close
+  end
 end
 
 task :test do
