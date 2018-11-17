@@ -30,7 +30,7 @@ before_install:
     - git config --global submodule.recurse true
     - git config --global submodule.fetchJobs 8
 before_script:
-    - bash -c "rake pre_build:gen_man[_data/man.json]"
+    - bash -c "bundle exec rake pre_build:gen_man[_data/man.json]"
 after_success:
     - $TRAVIS_BUILD_DIR/_scripts/after_success.sh
 deploy:
