@@ -69,7 +69,6 @@ module Jekyll
             arr = ref.reverse.split('#', 2).map(&:reverse).reverse
             lhs = URI.unescape(arr[0]).downcase
             rhs = arr[1]
-            puts(lhs)
             title = lhs.gsub(/[#,:"]/, '').gsub(/ /, '-').downcase
             final = "/wikibook/#{File.basename(title, '.md')}.html"
             link['href'] = "#{final}\##{rhs}"

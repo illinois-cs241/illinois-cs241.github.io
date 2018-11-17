@@ -15,11 +15,7 @@
             </div>
             <h1>
               {{ page.title }}
-                {% if page.path.nil? %}
-                {% assign page_path = '' %}
-                {% else %}
-                {% assign page_path = page.path %}
-                {% endif %}
+
               {% if page.submissions %}
                 <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page_path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
               {% elsif page.githuburl %}

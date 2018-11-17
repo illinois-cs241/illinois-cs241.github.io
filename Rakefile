@@ -153,8 +153,8 @@ namespace :pre_build do
       ghurl_added = "#{ghurl}/#{hyphens_added}"
       front_matter = "---\nlayout: doc\ntitle: \"#{title}\"\ngithuburl: \"#{ghurl_added}\"\n---\n\n"
       prepend(to_f, front_matter)
-      puts "Added Template to #{to_f}"
     end
+    puts "Finished adding templates"
     temp_file.close
   end
 end
