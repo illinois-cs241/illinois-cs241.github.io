@@ -12,8 +12,11 @@ is_travis = ENV['TRAVIS'] == 'true'
 task :default do
   system('_scripts/before_script.sh')
   config = Jekyll.configuration({
-    'source' => './',
-    'destination' => './_site',
+    :source => './',
+    :destination => './_site',
+    :safe => false,
+    :timezone => 'America/Chicago',
+    :encoding => 'utf-8',
   })
   site = Jekyll::Site.new(config)
   Jekyll::Commands::Build.build site, config
