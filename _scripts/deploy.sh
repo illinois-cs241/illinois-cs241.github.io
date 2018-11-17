@@ -10,7 +10,7 @@ git init;
 git checkout master;
 
 echo "Copying"
-ls $TRAVIS_BUILD_DIR/_site/
+echo $(ls $TRAVIS_BUILD_DIR/_site/)
 cp -r $TRAVIS_BUILD_DIR/_site/* .
 
 echo "CNAME";
@@ -19,6 +19,6 @@ git add -A;
 git commit -m "Deploying from $(date -u +"%Y-%m-%dT%H:%M:%SZ")";
 git remote add origin git@github.com:${TRAVIS_REPO_SLUG}.git
 ls
-git status
+echo $(git status)
 cd ${TRAVIS_BUILD_DIR}
 #git push origin master --force;
