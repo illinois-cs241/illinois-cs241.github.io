@@ -21,6 +21,7 @@ github_username: illinois-cs241
 course_number: "241"
 subject_code: "cs"
 course_name: "System Programming"
+exclude: [.git, README.md, deploy_rsa.enc]
 navbar_items:
   - name: "Assignments"
     link: "assignments"
@@ -64,3 +65,4 @@ kramdown:
     syntax_highlighter: rouge
 plugins:
   - jemoji
+  - jekyll-include-cache

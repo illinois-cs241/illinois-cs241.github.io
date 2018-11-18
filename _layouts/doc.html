@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include head.html %}
+{% include_cached head.html %}
 <body>
-{% include header.html %}
+{% include_cached header.html %}
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 col-sm-1 col-xs-0"></div>
@@ -58,11 +58,10 @@
       </div>
       {{ content | toc }}
       <div id="content">
-        {% capture doc_header %}{% include doc_header.html %}{% endcapture %}
-        {{ doc_header | content_style }}
-        {{ content | content_style }}
-        {% capture doc_footer %}{% include doc_footer.md %}{% endcapture %}
-        {{ doc_footer | markdownify | content_style }}
+          {% style_cached doc_header.html %}
+          {{ content | content_style }}
+          {% capture doc_footer %}{% include_cached doc_footer.md %}{% endcapture %}
+          {{ doc_footer | markdownify | content_style }}
       </div>
       <div class="col-md-2 col-sm-1 col-xs-0"></div>
     </div>
@@ -71,6 +70,6 @@
     var github_repo = "{{ site.repository | escape }}";
     var github_path = "{{ page.path | escape }}";
   </script>
-  {% include footer.html %}
+  {% include_cached footer.html %}
 </body>
 </html>

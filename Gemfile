@@ -8,6 +8,7 @@ gem 'htmlentities'
 gem 'redcarpet'
 gem 'ffi-hunspell'
 gem 'parallel'
+gem 'jekyll-include-cache'
 
 group :test do
   gem 'html-proofer'
