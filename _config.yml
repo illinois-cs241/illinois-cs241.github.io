@@ -39,7 +39,6 @@ navbar_items:
     link: "search"
   - name: "Wikibook"
     link: "wikibook/home"
-plugins_dir: _plugins
 # Settings for docs collection
 collections:
   docs:
@@ -66,3 +65,4 @@ kramdown:
 plugins:
   - jemoji
   - jekyll-include-cache
+  - _plugins

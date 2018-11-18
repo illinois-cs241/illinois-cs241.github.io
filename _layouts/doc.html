@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include_cached head.html %}
+{% include head.html %}
 <body>
-{% include_cached header.html %}
+{% include header.html %}
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-2 col-sm-1 col-xs-0"></div>
@@ -17,7 +17,7 @@
               {{ page.title }}
 
               {% if page.submissions %}
-                <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page_path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
+                <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page.path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
               {% elsif page.githuburl %}
                 <a class="github-link hidden-xs" href="https://github.com/{{ page.githuburl | uri_escape }}">Edit on Github</a>
               {% endif %}
@@ -60,7 +60,7 @@
       <div id="content">
           {% style_cached doc_header.html %}
           {{ content | content_style }}
-          {% capture doc_footer %}{% include_cached doc_footer.md %}{% endcapture %}
+          {% capture doc_footer %}{% include doc_footer.md %}{% endcapture %}
           {{ doc_footer | markdownify | content_style }}
       </div>
       <div class="col-md-2 col-sm-1 col-xs-0"></div>
@@ -70,6 +70,6 @@
     var github_repo = "{{ site.repository | escape }}";
     var github_path = "{{ page.path | escape }}";
   </script>
-  {% include_cached footer.html %}
+  {% include footer.html %}
 </body>
 </html>

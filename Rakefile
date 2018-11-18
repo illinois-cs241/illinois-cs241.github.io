@@ -21,15 +21,17 @@ multitask default: [
   'pre_build:gen_man',
   'pre_build:cleanup_wiki'
 ] do
-  config = Jekyll.configuration(
-    source: './',
-    destination: './_site',
-    timezone: 'America/Chicago',
-    cache_dir: '.jekyll-cache'
-  )
+  config = Jekyll.configuration({
+    :source => './',
+    :destination => './_site',
+    :timezone => 'America/Chicago',
+    :cache_dir => '.jekyll-cache',
+    :safe => false,
+                                })
   site = Jekyll::Site.new(config)
   Jekyll::Commands::Build.build site, config
   cp './.travis.yml', './_site/.travis.yml'
+  cp './CNAME', './_site/CNAME'
 end
 
 namespace :pre_build do
@@ -117,7 +119,7 @@ namespace :pre_build do
       puts "Using default Folder #{folder}"
     end
     Dir.chdir(folder) do
-      system 'git clean -f; git reset --hard HEAD'
+      system 'git clean -fq; git reset --hard HEAD'
     end
     bad_chars = '#,:"'
     old_filenames = Dir.glob("#{folder}/*.md")
@@ -135,9 +137,9 @@ namespace :pre_build do
       pattern_map[link] = /(\[\[\s*${regex_escaped}\s*\]\])/
     end
 
-    temp_file = Tempfile.new('')
-    temp_path = temp_file.path
-    old_filenames.zip(new_filenames).each do |from_f, to_f|
+    zipped_array = old_filenames.zip(new_filenames)
+
+    Parallel.map(zipped_array, in_threads: Etc.nprocessors) do |from_f, to_f|
       title = title_from_html(from_f)
       # On certain systems ruby errors in weird ways if
       # The files are the same case insensitive, so we
@@ -145,9 +147,14 @@ namespace :pre_build do
       begin
         FileUtils.mv(from_f, to_f, force: true)
       rescue ArgumentError
-        puts 'Case insensitivity issue'
-        FileUtils.mv(from_f, temp_path, force: true)
-        FileUtils.mv(temp_path, to_f, force: true)
+        temp_file = Tempfile.new('')
+        temp_path = temp_file.path
+        begin
+          FileUtils.mv(from_f, temp_path)
+          FileUtils.mv(temp_path, to_f)
+        ensure
+          temp_file.close
+        end
       end
       link_patterns(to_f, pattern_map)
       hyphens_added = title.tr(' ', '-')
@@ -156,7 +163,6 @@ namespace :pre_build do
       prepend(to_f, front_matter)
     end
     puts 'Finished adding templates'
-    temp_file.close
   end
 end
 
