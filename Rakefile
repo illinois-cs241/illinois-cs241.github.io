@@ -17,65 +17,65 @@ is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
 wikibook_dir = '_wikibook'
 
-multitask :default => [
-            "pre_build:gen_man",
-            "pre_build:cleanup_wiki"] do
-  config = Jekyll.configuration({
-    :source => './',
-    :destination => './_site',
-    :timezone => 'America/Chicago',
-    :cache_dir => ".jekyll-cache",
-  })
+multitask default: [
+  'pre_build:gen_man',
+  'pre_build:cleanup_wiki'
+] do
+  config = Jekyll.configuration(
+    source: './',
+    destination: './_site',
+    timezone: 'America/Chicago',
+    cache_dir: '.jekyll-cache'
+  )
   site = Jekyll::Site.new(config)
   Jekyll::Commands::Build.build site, config
   cp './.travis.yml', './_site/.travis.yml'
 end
 
 namespace :pre_build do
-  desc "Houses all pre build tasks"
+  desc 'Houses all pre build tasks'
 
   sections = [1, 2, 3, 4]
   base_uri = 'https://linux.die.net/man/'
-  cache_time = 30 #days
+  cache_time = 30 # days
 
-  task :gen_man, [:file] do |t, args|
+  task :gen_man, [:file] do |_t, args|
     file = args[:file]
-    if file == nil
+    if file.nil?
       file = main_json_file
       puts "Using default file #{file}"
     end
 
     # Man pages don't change that often
-    if File.exists?(file) and (File.mtime(file) <=> DateTime.now - cache_time) == 1
-      puts "Using cached file"
+    if File.exist?(file) && ((File.mtime(file) <=> DateTime.now - cache_time) == 1)
+      puts 'Using cached file'
       next
     end
-    puts "Updating file"
+    puts 'Updating file'
 
-    urls = sections.map do |e| 
+    urls = sections.map do |e|
       base_uri + e.to_s + '/'
     end
-    output = Hash.new
+    output = {}
     urls.each do |url|
       page = Nokogiri::HTML(open(url))
       page.css('dt a').each do |link|
-        output[link.inner_html] = url+link['href']
+        output[link.inner_html] = url + link['href']
       end
     end
 
-    file_opts = File::RDWR|File::CREAT
-    File.open(file, file_opts, 0644) do |f| 
+    file_opts = File::RDWR | File::CREAT
+    File.open(file, file_opts, 0o644) do |f|
       f.truncate 0
-      f.write(JSON.fast_generate output)
+      f.write(JSON.fast_generate(output))
       puts "Successfully wrote #{file}"
     end
   end
 
   def title_from_html(text)
     file_no_ext = File.basename(text, '.md')
-    return file_no_ext.tr('-', ' ')
+    file_no_ext.tr('-', ' ')
   end
-
 
   def link_patterns(file, pattern_map)
     obj_file = Tempfile.new('')
@@ -108,9 +108,9 @@ namespace :pre_build do
     end
   end
 
-  ghurl = "angrave/SystemProgramming/wiki"
+  ghurl = 'angrave/SystemProgramming/wiki'
 
-  task :cleanup_wiki, [:folder] do |t, args|
+  task :cleanup_wiki, [:folder] do |_t, args|
     folder = args[:folder]
     if folder.nil?
       folder = wikibook_dir
@@ -122,9 +122,9 @@ namespace :pre_build do
     bad_chars = '#,:"'
     old_filenames = Dir.glob("#{folder}/*.md")
     new_filenames = Marshal.load(Marshal.dump(old_filenames)).map do |filename|
-      filename.downcase().tr(bad_chars, '')
+      filename.downcase.tr(bad_chars, '')
     end
-    pattern_map = Hash.new
+    pattern_map = {}
     old_filenames.each do |file_name|
       file_no_ext = File.basename(file_name, '.md')
       title = title_from_html(file_name)
@@ -143,11 +143,11 @@ namespace :pre_build do
       # The files are the same case insensitive, so we
       # go roundabout
       begin
-      FileUtils.mv(from_f, to_f, :force => true)
+        FileUtils.mv(from_f, to_f, force: true)
       rescue ArgumentError
-      puts "Case insensitivity issue"
-      FileUtils.mv(from_f, temp_path, :force => true)
-      FileUtils.mv(temp_path, to_f, :force => true)
+        puts 'Case insensitivity issue'
+        FileUtils.mv(from_f, temp_path, force: true)
+        FileUtils.mv(temp_path, to_f, force: true)
       end
       link_patterns(to_f, pattern_map)
       hyphens_added = title.tr(' ', '-')
@@ -155,39 +155,38 @@ namespace :pre_build do
       front_matter = "---\nlayout: doc\ntitle: \"#{title}\"\ngithuburl: \"#{ghurl_added}\"\n---\n\n"
       prepend(to_f, front_matter)
     end
-    puts "Finished adding templates"
+    puts 'Finished adding templates'
     temp_file.close
   end
 end
 
 task :test_html do
-  Dir.mktmpdir {|dir|
-    to_copy = Dir.glob("_site/*html")
-    to_copy += ["_site/images", "_site/js", "_site/css", "_site/resources"]
+  Dir.mktmpdir do |dir|
+    to_copy = Dir.glob('_site/*html')
+    to_copy += ['_site/images', '_site/js', '_site/css', '_site/resources']
     FileUtils.cp_r(to_copy, dir)
     options = {
-      :assume_extension => true,
-      :allow_hash_href => true,
-      :href_ignore => [
-        "#",
+      assume_extension: true,
+      allow_hash_href: true,
+      href_ignore: [
+        '#',
         '?'
       ],
-      :http_status_ignore => [0],
-      :url_ignore => [/https:\/\/github.com\/angrave\/SystemProgramming\/wiki\//, /wikibook/],
-      :parallel => { :in_processes => 3},
+      http_status_ignore: [0],
+      url_ignore: [/https:\/\/github.com\/angrave\/SystemProgramming\/wiki\//, /wikibook/],
+      parallel: { in_processes: 3 }
     }
     HTMLProofer.check_directory(dir, options).run
-  }
+  end
 end
 
 task :spell_check do
   md_files = Dir.glob('*.md')
   md_files += Dir.glob('_docs/*.md')
 
-  open_dictionaries() do |dicts|
+  open_dictionaries do |dicts|
     Parallel.map(md_files, in_threads: Etc.nprocessors) do |md_file|
       check_spelling(md_file, dicts)
     end
   end
 end
-

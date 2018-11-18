@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'jemoji'
-gem 'rake'
-gem 'jekyll'
-gem 'pigments'
-gem 'htmlentities'
-gem 'redcarpet'
 gem 'ffi-hunspell'
-gem 'parallel'
+gem 'htmlentities'
+gem 'jekyll'
 gem 'jekyll-include-cache'
+gem 'jemoji'
+gem 'parallel'
+gem 'pigments'
+gem 'rake'
+gem 'redcarpet'
 
 group :test do
   gem 'html-proofer'

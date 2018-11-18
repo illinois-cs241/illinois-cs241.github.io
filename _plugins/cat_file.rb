@@ -1,12 +1,11 @@
 require 'jekyll'
 require_relative 'content_style'
-require "digest/md5"
-
+require 'digest/md5'
 
 class CatStyle < Jekyll::Tags::IncludeTag
   def render(context)
     content = super
-    return style_content(content)
+    style_content(content)
   end
 end
 

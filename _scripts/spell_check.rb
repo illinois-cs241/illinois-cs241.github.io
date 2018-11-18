@@ -1,4 +1,3 @@
-# coding: utf-8
 require 'redcarpet'
 require 'redcarpet/render_strip'
 require 'ffi/hunspell'
@@ -17,19 +16,19 @@ module Redcarpet
         text
       end
 
-      def block_code(code, language)
+      def block_code(code, _language)
         code
       end
 
-      def codespan(code, language)
-        ""
+      def codespan(_code, _language)
+        ''
       end
 
       def codespan(code)
         block_code(code, nil)
       end
 
-      def header(title, level)
+      def header(title, _level)
         title
       end
 
@@ -42,47 +41,48 @@ module Redcarpet
       end
 
       def linebreak
-        ""
+        ''
       end
 
       def paragraph(text)
         text
       end
 
-      def list(content, list_type)
+      def list(content, _list_type)
         content
       end
 
-      def list_item(content, list_type)
+      def list_item(content, _list_type)
         content
       end
+
       # Other methods where we don't return only a specific argument
-      def link(link, title, content)
-        "#{content}"
+      def link(_link, _title, content)
+        content.to_s
       end
 
-      def image(link, title, content)
-        content &&= content + " "
-        "#{content}"
+      def image(_link, _title, content)
+        content &&= content + ' '
+        content.to_s
       end
 
       def paragraph(text)
         text + "\n"
       end
 
-      def header(text, header_level)
+      def header(text, _header_level)
         text + "\n"
       end
 
-      def table(header, body)
-        "#{body}"
+      def table(_header, body)
+        body.to_s
       end
 
       def table_row(content)
         content + "\n"
       end
 
-      def table_cell(content, alignment)
+      def table_cell(content, _alignment)
         content + "\t"
       end
     end
@@ -97,8 +97,12 @@ end
 
 def load_man_pages
   man_file = '_data/man.json'
-  hash = (JSON.load File.new(man_file)).keys rescue []
-  return Set.new hash
+  hash = begin
+           (JSON.load File.new(man_file)).keys
+         rescue StandardError
+           []
+         end
+  Set.new hash
 end
 
 def check_spelling(md_file, dicts)
@@ -109,19 +113,19 @@ def check_spelling(md_file, dicts)
   yaml_delimiter = '---'
   if content.start_with?(yaml_delimiter)
     next_idx = content.index(yaml_delimiter, yaml_delimiter.length)
-    if not next_idx.nil?
-      content = content[next_idx+yaml_delimiter.length..-1]
-    end
+    content = content[next_idx + yaml_delimiter.length..-1] unless next_idx.nil?
   end
   words = markdown.render(content) # Get rid of front matter
-            .gsub(
-         "\n", ' ').gsub(
-    %r{(```.*```| # No more code blocks
-      \(|\) # Ditch the parens
-      |\|.*\| # Ditch tables
-      |,| # Ditch commas
-      "|\?|\!|;|>|<|--|:|-|
-      &lt|&gt|[|]|_|\#)}x, ' ').split(/(\s|\/)/)
+                  .tr(
+                    "\n", ' '
+                  ).gsub(
+                    /(```.*```| # No more code blocks
+                      \(|\) # Ditch the parens
+                      |\|.*\| # Ditch tables
+                      |,| # Ditch commas
+                      "|\?|\!|;|>|<|--|:|-|
+                      &lt|&gt|[|]|_|\#)/x, ' '
+                    ).split(/(\s|\/)/)
 
   exceptions = %r{(\/|\d+%|
              [A-Za-z0-9]+@[A-Za-z0-9]|
@@ -130,35 +134,28 @@ def check_spelling(md_file, dicts)
              Ctrl|ctrl)}x
   manual_suffix = /('s|'|’s|'ing|'ed)$/
   words.each do |word|
-    if word =~ exceptions || man_set.include?(word)
-      next
-    end
-    if word =~ manual_suffix
-      word.sub!(manual_suffix, '')
-    end
+    next if word =~ exceptions || man_set.include?(word)
+
+    word.sub!(manual_suffix, '') if word =~ manual_suffix
     passes = dicts.any? do |dict|
       dict.check?(word)
     end
 
-    if not passes
-      downcased = word.downcase
-    end
+    downcased = word.downcase unless passes
 
     passes = dicts.any? do |dict|
       dict.check?(downcased)
     end
-    if not passes
-      puts "#{md_file}: #{word}"
-    end
+    puts "#{md_file}: #{word}" unless passes
   end
 end
 
-def open_dictionaries()
-  hunspell_ubuntu_prefix = File.join(Dir.home, ".hunspell_default")
+def open_dictionaries
+  hunspell_ubuntu_prefix = File.join(Dir.home, '.hunspell_default')
   FileUtils.mkdir_p hunspell_ubuntu_prefix
   dictionary_suffix = '.dic'
   custom_dic_basename = 'en_US_custom'
-  custom_dic = Tempfile.new([custom_dic_basename, dictionary_suffix], tmpdir=hunspell_ubuntu_prefix)
+  custom_dic = Tempfile.new([custom_dic_basename, dictionary_suffix], tmpdir = hunspell_ubuntu_prefix)
   base = File.basename(custom_dic.path, dictionary_suffix)
   custom_aff = File.join(hunspell_ubuntu_prefix, base + '.aff')
   begin

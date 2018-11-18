@@ -11,7 +11,7 @@ function roundedTime() {
   const minutes = time / 60;
   const ret = minutes - (minutes % 10);
   return ret;
-};
+}
 
 /**
  * Capitalizes first letter of a string
@@ -62,7 +62,7 @@ function formatMem(t) {
   }
   t = t.toFixed(2);
   return "" + t + " " + unit;
-};
+}
 
 function formatTime(t) {
   t *= 1e9;
@@ -81,7 +81,7 @@ function formatTime(t) {
   }
   t = t.toFixed(2);
   return "" + t + " " + unit;
-};
+}
 
 function formatted_info(title, max_memory, avg_memory, runtime) {
   /* Must escape title because of injection */

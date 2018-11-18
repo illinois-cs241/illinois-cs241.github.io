@@ -1,5 +1,9 @@
 # Webpage for CS 241
 
+[![Build Status](https://travis-ci.org/illinois-cs241/illinois-cs241.github.io.svg?branch=develop)](https://travis-ci.org/illinois-cs241/illinois-cs241.github.io)
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/6730d6ec5cacd5197398/maintainability)](https://codeclimate.com/github/illinois-cs241/illinois-cs241.github.io/maintainability)
+
 ## Jekyll and Github Pages
 
 This website is made with [Jekyll](https://jekyllrb.com/) and [Github Pages](https://help.github.com/articles/what-are-github-pages/).
