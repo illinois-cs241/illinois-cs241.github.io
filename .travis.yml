@@ -11,16 +11,17 @@ addons:
     - hunspell-en-us
 rvm:
 - 2.4.1
+git:
+  depth: 1
 branches:
   only: develop
 before_install:
-- bash _scripts/check_markdown.sh
 - git config --global submodule.recurse true
 - git config --global submodule.fetchJobs 8
 before_script:
 - echo Dummy
 after_success:
-- echo Dummy
+- bash _scripts/check_markdown.sh
 before_deploy:
 - export COMMITTER_EMAIL="$(git log -1 $TRAVIS_COMMIT --pretty='%cE')"
 - export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty='%aN')"
