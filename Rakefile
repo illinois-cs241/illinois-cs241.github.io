@@ -10,7 +10,8 @@ require 'jemoji'
 require 'rake'
 require 'pigments'
 require 'htmlentities'
-
+require_relative '_scripts/spell_check.rb'
+require 'etc'
 
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
@@ -159,7 +160,7 @@ namespace :pre_build do
   end
 end
 
-task :test do
+task :test_html do
   Dir.mktmpdir {|dir|
     to_copy = Dir.glob("_site/*html")
     to_copy += ["_site/images", "_site/js", "_site/css", "_site/resources"]
@@ -178,3 +179,15 @@ task :test do
     HTMLProofer.check_directory(dir, options).run
   }
 end
+
+task :spell_check do
+  md_files = Dir.glob('*.md')
+  md_files += Dir.glob('_docs/*.md')
+
+  open_dictionaries() do |dicts|
+    Parallel.map(md_files, in_threads: Etc.nprocessors) do |md_file|
+      check_spelling(md_file, dicts)
+    end
+  end
+end
+

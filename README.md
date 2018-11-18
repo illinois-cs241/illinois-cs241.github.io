@@ -114,7 +114,7 @@ To the sidebar of the docs.
 learning_objectives:
   - Multithread Programming and its performance gains
   - Using a thread safe datastructure
-  - Using synchronization primatives
+  - Using synchronization primitives
 ```
 
 Will automatically add a section labeled "Learning Objectives" to the top of the docs with the appropriate bullet points.

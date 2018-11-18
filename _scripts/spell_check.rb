@@ -102,7 +102,6 @@ def load_man_pages
 end
 
 def check_spelling(md_file, dicts)
-  has_printed = false
   man_set = load_man_pages
   markdown = Redcarpet::Markdown.new(Redcarpet::Render::BareMinimum)
   f = File.open(md_file)
@@ -149,21 +148,12 @@ def check_spelling(md_file, dicts)
       dict.check?(downcased)
     end
     if not passes
-      if not has_printed
-        puts md_file
-        puts "==========="
-        has_printed = true
-      end
-      puts word
+      puts "#{md_file}: #{word}"
     end
-  end
-  if has_printed
-    puts ""
   end
 end
 
-def main(options)
-  md_file = options[:file]
+def open_dictionaries()
   hunspell_ubuntu_prefix = File.join(Dir.home, ".hunspell_default")
   FileUtils.mkdir_p hunspell_ubuntu_prefix
   dictionary_suffix = '.dic'
@@ -176,7 +166,7 @@ def main(options)
     custom_dic.close
     FFI::Hunspell.dict('en_US') do |us_dict|
       FFI::Hunspell.dict(base) do |custom|
-        check_spelling(md_file, [us_dict, custom])
+        yield([us_dict, custom])
       end
     end
   ensure
@@ -184,17 +174,3 @@ def main(options)
     system "rm #{custom_aff}"
   end
 end
-
-options = {}
-OptionParser.new do |opts|
-  opts.banner = "Usage: spell_check.rb file"
-
-  opts.on("-f", "--file FILE", "File", String) do |f|
-    options[:file] = f
-  end
-end.parse!
-
-if options[:file].nil? or not File.file?(options[:file])
-  raise OptionParser::ParseError.new("Valid file needs to be given")
-end
-main(options)
