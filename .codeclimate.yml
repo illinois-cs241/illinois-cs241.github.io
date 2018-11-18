@@ -3,5 +3,3 @@ plugins:
     enabled: true
   sass-lint:
     enabled: true
-  eslint:
-    enabled: true
