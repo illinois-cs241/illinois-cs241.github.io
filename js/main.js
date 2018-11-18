@@ -51,14 +51,13 @@ var speechUtteranceChunker = function (utt, settings, callback) {
     if (settings.modifier) {
         settings.modifier(newUtt);
     }
-    console.log(newUtt); //IMPORTANT!! Do not remove: Logging the object out fixes some onend firing issues.
     //placing the speak invocation inside a callback fixes ordering and onend issues.
     setTimeout(function () {
         speechSynthesis.speak(newUtt);
     }, 0);
 };
 var speaking = false;
-function speak(){
+const speak = function(){
     if(!('speechSynthesis' in window)){
         return;
     }
@@ -66,33 +65,37 @@ function speak(){
         speaking = false;
         return;
     }
-    const cards = $('.card').clone();
-    const mapped = []
+    const cards = document.querySelectorAll('.card');
+    const mapped = [];
+    const removeSelector = function(node, selector) {
+        const elems = node.querySelectorAll(selector);
+        console.log(elems);
+        while (elems[0]) {
+            elems[0].parentNode.removeChild(elems[0]);
+        }
+    };
     for(let i = 0; i < cards.length; ++i){
-    	let temp = $(cards[i]);
-    	temp.find('code').remove();
-    	temp.find('h2').remove();
-        mapped.push(temp.text().replace(/\n*/i, '')
-            .replace('#', ' ')
-            .split(new RegExp('[;,.?]', 'g')));
+        const copy = cards[i].cloneNode(true);
+        removeSelector(copy, 'code');
+        removeSelector(copy, 'h2');
+        mapped.push(copy.textContent.replace(/\n*/i, '')
+                    .replace('#', ' ')
+                    .split(new RegExp('[;,.?]', 'g')));
     }
-    console.log(mapped);
     const sentences = [].concat.apply([], mapped);
-    console.log(sentences);
     let scope = function(cards, i){
         if(i == cards.length || !speaking){
             return;
         }
-        
         const msg = new SpeechSynthesisUtterance(cards[i]);
         var voiceArr = speechSynthesis.getVoices();
         msg.voice = voiceArr[2];
         speechUtteranceChunker(msg, {
             chunkLength: 500
         }, function () {
-            scope(cards, i+1)
+            scope(cards, i+1);
         });
-    }
+    };
     speaking = true;
     scope(sentences, 0);
-}
+};
