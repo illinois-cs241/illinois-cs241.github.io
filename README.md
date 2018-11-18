@@ -71,7 +71,7 @@ submissions:
 learning_objectives:
   - Multithread Programming and its performance gains
   - Using a thread safe datastructure
-  - Using synchronization primatives
+  - Using synchronization primitives
 wikibook:
   - "Pthreads, Part 1: Introduction"
   - "Pthreads, Part 2: Usage in Practice"

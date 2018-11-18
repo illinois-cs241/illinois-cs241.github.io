@@ -1,32 +1,20 @@
 sudo: false
-dist: xenial
+dist: trusty
 language: ruby
 cache:
   bundler: true
-  pip: true
 addons:
   apt:
     packages:
-    - pandoc
     - hunspell
     - libhunspell-dev
     - hunspell-en-us
-    - python3-setuptools
-    - python3-pip
 rvm:
-- 2.5.3
+- 2.4.7
 branches:
   only: develop
 before_install:
-- python3 -m pip install -U pip
-- python3 -m pip install --user -r requirements.txt
 - bash _scripts/check_markdown.sh
-- export COMMITTER_EMAIL="$(git log -1 $TRAVIS_COMMIT --pretty="%cE")"
-- export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty="%aN")"
-- git config credential.helper "store --file=.git/credentials"; echo "https://${GITHUB_TOKEN}:@github.com"
-  > .git/credentials 2>/dev/null
-- git config --global user.email "${COMMITTER_EMAIL}"
-- git config --global user.name "${AUTHOR_NAME}"
 - git config --global submodule.recurse true
 - git config --global submodule.fetchJobs 8
 before_script:
@@ -34,6 +22,10 @@ before_script:
 after_success:
 - echo Dummy
 before_deploy:
+- export COMMITTER_EMAIL="$(git log -1 $TRAVIS_COMMIT --pretty='%cE')"
+- export AUTHOR_NAME="$(git log -1 $TRAVIS_COMMIT --pretty='%aN')"
+- git config --global user.email "${COMMITTER_EMAIL}"
+- git config --global user.name "${AUTHOR_NAME}"
 - openssl aes-256-cbc -K $encrypted_b0cfc79abf17_key -iv $encrypted_b0cfc79abf17_iv
   -in deploy_rsa.enc -out /tmp/deploy_rsa -d
 - eval "$(ssh-agent -s)"

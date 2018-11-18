@@ -1,2 +1,0 @@
-panflute==1.10.6
-hunspell==0.5.5
