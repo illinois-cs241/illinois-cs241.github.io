@@ -7,6 +7,7 @@ gem 'pigments'
 gem 'htmlentities'
 gem 'redcarpet'
 gem 'ffi-hunspell'
+gem 'redcarpet'
 
 group :test do
   gem 'html-proofer'
