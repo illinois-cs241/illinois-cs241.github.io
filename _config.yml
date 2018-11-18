@@ -62,7 +62,5 @@ kramdown:
     input: GFM
     hard_wrap: false
     syntax_highlighter: rouge
-plugins:
-  - jemoji
-  - jekyll-include-cache
+plugins_dir:
   - _plugins
