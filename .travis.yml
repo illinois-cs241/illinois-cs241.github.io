@@ -10,7 +10,7 @@ addons:
     - libhunspell-dev
     - hunspell-en-us
 rvm:
-- 2.2.7
+- 2.4.1
 branches:
   only: develop
 before_install:
