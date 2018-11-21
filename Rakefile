@@ -17,22 +17,30 @@ is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
 wikibook_dir = '_wikibook'
 
+$config = Jekyll.configuration({
+:source => './',
+:destination => './_site',
+:timezone => 'America/Chicago',
+:safe => false,
+})
+
 multitask default: [
   'pre_build:gen_man',
   'pre_build:cleanup_wiki'
 ] do
-  config = Jekyll.configuration({
-    :source => './',
-    :destination => './_site',
-    :timezone => 'America/Chicago',
-    :cache_dir => '.jekyll-cache',
-    :safe => false,
-                                })
-  site = Jekyll::Site.new(config)
-  Jekyll::Commands::Build.build site, config
+  site = Jekyll::Site.new($config)
+  Jekyll::Commands::Build.build site, $config
   cp './.travis.yml', './_site/.travis.yml'
   cp './CNAME', './_site/CNAME'
 end
+
+multitask serve: [
+  'default',
+] do
+  site = Jekyll::Site.new($config)
+  Jekyll::Commands::Serve.process $config
+end
+
 
 namespace :pre_build do
   desc 'Houses all pre build tasks'
@@ -80,20 +88,22 @@ namespace :pre_build do
   end
 
   def link_patterns(file, pattern_map)
-    obj_file = Tempfile.new('')
     f = File.open(file, 'r')
-    begin
-      contents = f.read
-      new_contents = pattern_map.reduce(contents) do |contents, (link, pattern)|
-        contents.gsub(pattern, link)
-      end
-      obj_file.write(new_contents)
-      obj_file.close
-      FileUtils.cp(obj_file.path, file)
-    ensure
-      obj_file.unlink
-      f.close
+    contents = f.read
+    f.close
+    new_contents = contents
+    pattern_map.each do |link, pattern|
+       new_contents = new_contents.gsub(pattern, link)
     end
+
+    f = File.open(file, File::RDWR)
+    f.seek(0)
+    f.write(new_contents)
+    if file == '_wikibook/home.md'
+    	f.seek(0)
+	p f.read
+    end
+    f.close
   end
 
   def prepend(file, string)
@@ -127,19 +137,21 @@ namespace :pre_build do
       filename.downcase.tr(bad_chars, '')
     end
     pattern_map = {}
-    old_filenames.each do |file_name|
-      file_no_ext = File.basename(file_name, '.md')
-      title = title_from_html(file_name)
-      regex_escaped = Regexp.escape(title)
-      ext_name = File.extname(file_no_ext)
-      html_escaped = URI.escape(file_no_ext)
-      link = "<a class='wiki-link' href='./#{html_escaped}.html'>#{title}</a>"
-      pattern_map[link] = /(\[\[\s*${regex_escaped}\s*\]\])/
-    end
-
     zipped_array = old_filenames.zip(new_filenames)
 
-    Parallel.map(zipped_array, in_threads: Etc.nprocessors) do |from_f, to_f|
+    zipped_array.each do |file_name, new_file|
+      file_no_ext = File.basename(file_name, '.md')
+      title = title_from_html(file_name)
+      regex_escaped = Regexp.quote(title)
+      ext_name = File.extname(file_no_ext)
+      html_escaped = URI.escape(File.basename(new_file, '.md'))
+      link = "<a class='wiki-link' href='./#{html_escaped}.html'>#{title}</a>"
+      pat = /(\[\[\s*#{regex_escaped}\s*\]\])/
+      pattern_map[link] = pat
+    end
+
+
+    zipped_array.each do |from_f, to_f|
       title = title_from_html(from_f)
       # On certain systems ruby errors in weird ways if
       # The files are the same case insensitive, so we
