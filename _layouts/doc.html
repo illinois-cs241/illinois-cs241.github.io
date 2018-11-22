@@ -56,7 +56,9 @@
           </div></div></div>
         </div></div>
       </div>
+      {% if page.toc != false %}
       {{ content | toc }}
+      {% endif %}
       <div id="content">
           {% style_cached doc_header.html %}
           {{ content | content_style }}

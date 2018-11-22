@@ -12,6 +12,7 @@ require 'pigments'
 require 'htmlentities'
 require_relative '_scripts/spell_check.rb'
 require 'etc'
+require 'yaml'
 
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
@@ -26,7 +27,8 @@ $config = Jekyll.configuration({
 
 multitask default: [
   'pre_build:gen_man',
-  'pre_build:cleanup_wiki'
+  'pre_build:cleanup_wiki',
+  'pre_build:gen_wikibook_project',
 ] do
   site = Jekyll::Site.new($config)
   Jekyll::Commands::Build.build site, $config
@@ -99,10 +101,6 @@ namespace :pre_build do
     f = File.open(file, File::RDWR)
     f.seek(0)
     f.write(new_contents)
-    if file == '_wikibook/home.md'
-    	f.seek(0)
-	p f.read
-    end
     f.close
   end
 
@@ -112,11 +110,11 @@ namespace :pre_build do
     begin
       obj_file.write(string)
       obj_file.write(f.read)
+      f.close
       obj_file.close
       FileUtils.cp(obj_file.path, file)
     ensure
       obj_file.unlink
-      f.close
     end
   end
 
@@ -128,9 +126,9 @@ namespace :pre_build do
       folder = wikibook_dir
       puts "Using default Folder #{folder}"
     end
-    Dir.chdir(folder) do
-      system 'git clean -fq; git reset --hard HEAD'
-    end
+
+    system "cd #{folder} && git clean -fq && git reset --hard HEAD"
+
     bad_chars = '#,:"'
     old_filenames = Dir.glob("#{folder}/*.md")
     new_filenames = Marshal.load(Marshal.dump(old_filenames)).map do |filename|
@@ -175,6 +173,28 @@ namespace :pre_build do
       prepend(to_f, front_matter)
     end
     puts 'Finished adding templates'
+  end
+
+  wikibook_project_dir = "_wikibook_project"
+  task :gen_wikibook_project, [:folder] do |_t, args|
+    folder = args[:folder]
+    if folder.nil?
+      folder = wikibook_project_dir
+      puts "Using default Folder #{folder}"
+    end
+
+    system "cd #{wikibook_project_dir} && git clean -fq && git reset --hard HEAD"
+
+    Dir.glob("#{wikibook_project_dir}/*md").each do |file|
+      page_title = File.basename(file, '.md')
+      meta = {
+        'layout' => 'doc',
+        'title' => page_title,
+        'toc' => false,
+      }
+      prepend(file, "#{meta.to_yaml}\n---\n\n")
+    end
+    FileUtils.mv("#{wikibook_project_dir}/Home.md", "#{wikibook_project_dir}/Index.md")
   end
 end
 

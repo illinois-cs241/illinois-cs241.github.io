@@ -21,7 +21,7 @@ github_username: illinois-cs241
 course_number: "241"
 subject_code: "cs"
 course_name: "System Programming"
-exclude: [.git, README.md, deploy_rsa.enc, vendor, bundle]
+exclude: [.git, README.md, deploy_rsa.enc, vendor, bundle, wp_repo]
 navbar_items:
   - name: "Assignments"
     link: "assignments"
@@ -39,6 +39,8 @@ navbar_items:
     link: "search"
   - name: "Wikibook"
     link: "wikibook/home"
+  - name: "Wikibook Project"
+    link: "wikibook_project/index"
 # Settings for docs collection
 collections:
   docs:
@@ -53,6 +55,9 @@ collections:
   wikibook:
     output: true
     permalink: /wikibook/:path
+  wikibook_project:
+    output: true
+    permalink: /wikibook_project/:path
   tutorials:
     output: true
     permalink: /:path

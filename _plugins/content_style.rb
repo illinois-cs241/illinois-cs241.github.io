@@ -91,7 +91,6 @@ end
 def style_cards(page)
   # Wrap the entire card in padding
   page.css('.card').wrap('<div class="pad" />')
-
   # Take each non-title attribute and stick it in
   # The content piece
   page.css('.card').each do |card|
@@ -138,6 +137,11 @@ def style_content(text)
   # We need an outermost element to do this
   page = Nokogiri::HTML::DocumentFragment.parse "<div class='wrapper'>"
   page.at('.//div').inner_html = text
+  # Remove all h1's in the body
+  page.css('h1').each do |h1|
+    h1.remove
+  end
+
   page.at('.//div').auto_section
 
   # Page is sectioned
@@ -145,6 +149,7 @@ def style_content(text)
   title_text_class = 'title-text'
   add_class_to_elem(page, 'h2', title_text_class)
   add_class_to_elem(page, 'h3', title_text_class)
+
   # Wrap the h2s in the title attribute
   page.css('h2').wrap("<div class='title'/>")
   # Anchors!
