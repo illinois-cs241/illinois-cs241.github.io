@@ -40,7 +40,7 @@ navbar_items:
   - name: "Wikibook"
     link: "wikibook/home"
   - name: "Wikibook Project"
-    link: "wikibook_project/index"
+    link: "wikibook_project/Index"
 # Settings for docs collection
 collections:
   docs:
