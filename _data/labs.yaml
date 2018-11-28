@@ -99,7 +99,7 @@
     name: "Resplendent RPCs"
     releaseDate: "Week 13"
     dueDate: "Week 14"
-    url: "rpc"
+    url: "resplendent_rpcs"
     resources: false
     worksheet: false
     visible: true
