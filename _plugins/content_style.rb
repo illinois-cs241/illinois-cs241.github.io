@@ -110,7 +110,7 @@ end
 def style_code(page)
   # Style all the code
   html_decoder = HTMLEntities.new
-  page.css('.language-C').each_with_index do |div, i|
+  page.css('.language-C, .language-c').each_with_index do |div, i|
     id_target = "code-copy-#{i}"
     copy = Nokogiri::XML::Node.new('a', page)
     copy['class'] = 'code-copy'
@@ -126,9 +126,13 @@ def style_code(page)
     # Before anything style the div
     formatter = Rouge::Formatters::HTML.new
     lexer = Rouge::Lexers::C.new
-    div.inner_html = formatter.format(lexer.lex(html_decoder.decode(div.inner_html)))
-    div.children.before(copy)
-    div.add_child(textarea)
+    code = Nokogiri::XML(formatter.format(lexer.lex(html_decoder.decode(div.inner_html))))
+    code.css('pre').each do |pre|
+      pre.name = 'div'
+    end
+    div.inner_html = code.to_html
+    #div.children.before(copy)
+    #div.add_child(textarea)
   end
 end
 
@@ -178,6 +182,25 @@ module Jekyll
       style_content(text)
     end
   end
+
+  module SLIDE_STYLE
+    def slide_style(text, title,sup_title)
+      text = '<h1></h1>' + text
+      text.gsub!(/<vertical\s*\/>/, '<h2></h2>')
+      text.gsub!(/<horizontal\s*\/>/, '<h1></h1>')
+      page = Nokogiri::HTML::DocumentFragment.parse "<div class='slides'>"
+      page.at('.//div').inner_html = text
+      page.at('.//div').auto_section(wrap='<section>')
+      str = "<section>
+      <h1 class='title'>#{title}</h1>
+      <h2 class='author'>#{sup_title}</h2>
+</section>"
+      page.at('.//div').first_element_child.before(str)
+      style_code(page)
+      page.to_html
+    end
+  end
 end
 
 Liquid::Template.register_filter(Jekyll::CONTENT_STYLE)
+Liquid::Template.register_filter(Jekyll::SLIDE_STYLE)
