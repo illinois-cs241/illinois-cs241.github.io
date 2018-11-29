@@ -107,7 +107,7 @@ def style_cards(page)
   end
 end
 
-def style_code(page)
+def style_code(page, pre_to_div=false)
   # Style all the code
   html_decoder = HTMLEntities.new
   page.css('.language-C, .language-c').each_with_index do |div, i|
@@ -127,8 +127,11 @@ def style_code(page)
     formatter = Rouge::Formatters::HTML.new
     lexer = Rouge::Lexers::C.new
     code = Nokogiri::XML(formatter.format(lexer.lex(html_decoder.decode(div.inner_html))))
-    code.css('pre').each do |pre|
-      pre.name = 'div'
+
+    if pre_to_div
+      code.css('pre').each do |pre|
+        pre.name = 'div'
+      end
     end
     div.inner_html = code.to_html
     #div.children.before(copy)
@@ -196,7 +199,7 @@ module Jekyll
       <h2 class='author'>#{sup_title}</h2>
 </section>"
       page.at('.//div').first_element_child.before(str)
-      style_code(page)
+      style_code(page, pre_to_div=true)
       page.to_html
     end
   end
