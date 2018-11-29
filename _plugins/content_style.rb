@@ -126,7 +126,7 @@ def style_code(page, pre_to_div=false)
     # Before anything style the div
     formatter = Rouge::Formatters::HTML.new
     lexer = Rouge::Lexers::C.new
-    formatted = formatter.format(lexer.lex(html_decoder.decode(div.inner_html)))
+    #formatted = formatter.format(lexer.lex(html_decoder.decode(div.inner_html)))
     #p formatted
     #code = Nokogiri::XML("<span>#{formatted}</span>")
 
@@ -135,7 +135,7 @@ def style_code(page, pre_to_div=false)
     #    pre.name = 'div'
     #  end
     #end
-    div.inner_html = formatted
+    #div.inner_html = formatted
     #div.children.before(copy)
     #div.add_child(textarea)
   end
