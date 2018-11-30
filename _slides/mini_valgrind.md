@@ -1,24 +1,20 @@
-% CS 241
-% Memory
-
-# Question 1
-## Placement Strategies
-
-# Question 2
-## Malloc: Step by Step
-
-# Lab Time!
-
+---
+layout: slide
+title: Memory
+author: Bhuvan
 ---
 
 ## Why am I doing this lab?
+
 * Learn how Valgrind works
 * Learn memory layout and how malloc/free works
 * How does free know how many bytes it has to free?
 
-# Memory Offsets \ in C
+<horizontal />
 
----
+## Memory Offsets \ in C
+
+<vertical />
 
 ```C
 typedef struct{
@@ -37,7 +33,7 @@ int main(){
 }
 ```
 
----
+<vertical />
 
 ```console
 $ gcc main.c -o stack
@@ -52,13 +48,15 @@ $ ./stack
 * Your compiler calculates offsets from the base address of your contact (in this case, `fred`)
 * It knows that the first element is at offset 0, the second element is at offset +4, the third element is at offset +8, and so on
 
-# Cool, So What does this have to do with Malloc?
+<horizontal />
 
----
+## Cool, So What does this have to do with Malloc?
+
+<vertical />
 
 malloc does the same thing, but on the heap
 
----
+<vertical />
 
 ```C
 typedef struct{
@@ -78,7 +76,7 @@ int main(){
 }
 ```
 
----
+<vertical />
 
 ```console
 $ gcc malloc-main.c -o malloc-main
@@ -89,7 +87,9 @@ $ ./malloc-main
 	Contact nst location:	0x1bcd018
 ```
 
-# Right But What Does this have to do with _our_ Malloc?
+<horizontal />
+
+## Right But What Does this have to do with _our_ Malloc?
 
 * As you'll encounter in this lab, one way of keeping track of memory is via metadata tags
 * To accomplish this, we allocate more memory than the user requests
@@ -111,20 +111,24 @@ Information about the current block of memory:
 
 Understanding how to do this will be useful when you implement malloc!
 
-# The Big Picture
+<horizontal />
 
----
+## The Big Picture
+
+<vertical />
 
 ![](/resources/slides/memory/val1.png)
 
----
+<vertical />
 
 ![](/resources/slides/memory/val2.png)
 
 
-# Hints
+<horizontal />
 
----
+## Hints
+
+<vertical />
 
 * `meta_data * head` : head for linked-list
 * `total_memory_requested`: keep track of bytes used
@@ -138,4 +142,6 @@ Understanding how to do this will be useful when you implement malloc!
 * Technically yeah, but gcc and clang treats it as a `char*`
 * In short, don't do it because the standard doesn't guarantee it
 
-# Questions?
+<horizontal />
+
+## Questions?

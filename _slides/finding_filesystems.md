@@ -1,5 +1,8 @@
-% CS 241
-% File Systems
+---
+layout: slide
+title: File Systems
+author: Bhuvan
+---
 
 ## What do filesystems look like?
 
@@ -44,4 +47,3 @@ typedef struct {
 
 There are a few intricacies with dealing with the inodes.
 
-# Author: Bhuvan

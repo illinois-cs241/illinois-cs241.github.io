@@ -1,9 +1,12 @@
-% CS 241
-% Lab 2
-
-# Worksheet Time!
-
 ---
+layout: slide
+title: Memory
+author: Bhuvan
+---
+
+## Worksheet Time!
+
+<vertical />
 
 ## Question 1
 
@@ -73,15 +76,17 @@ int print_error(int err_num){
 ```
 
 
-# Lab Time!
+<horizontal />
 
----
+## Lab Time!
+
+<vertical />
 
 ## Using pointers
 
 Where can a pointer point to?
 
----
+<vertical />
 
 Heap
 
@@ -97,7 +102,7 @@ Text
 
 A pointer that stores the address of a function's code
 
----
+<vertical />
 
 With this, we can pass a function as an argument
 
@@ -107,13 +112,13 @@ E.g., sorting an array of arbitrary objects could use a function pointer as the 
 
 ## Part 1
 
----
+<vertical />
 
 You will be debugging several functions that all use pointers incorrectly
 
 ## Part 2
 
-----
+<vertical />-
 
 We've given you a set of functions as tools
 
@@ -121,7 +126,7 @@ Your job is to use these tools in the right order to print "Illinois"
 
 ## Part 3
 
-----
+<vertical />-
 
 You will be implementing map and reduce. You can think of map as apply a function to a list of values. Reduce takes a bunch of values and combines them into one values. The intuition for these can be seen as below.
 
@@ -131,9 +136,11 @@ reduce([1, 2, 3], sum) = 6
 ```
 
 
-# Hints about the MP
+<horizontal />
 
----
+## Hints about the MP
+
+<vertical />
 
 ## What is this NULL-terminated array?
 
@@ -156,4 +163,6 @@ arr[len] = NULL; // NULL = 0, meaning we have a valid element
 
 * **Not so useful: `strtok`**
 
-# Questions?
+<horizontal />
+
+## Questions?

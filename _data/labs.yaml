@@ -68,7 +68,7 @@
     releaseDate: "Week 9"
     dueDate: "Week 10"
     url: "mapreduce"
-    resources: true
+    resources: false
     worksheet: false
     visible: true
 -

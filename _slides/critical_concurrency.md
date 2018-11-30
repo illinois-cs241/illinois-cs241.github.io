@@ -1,27 +1,30 @@
-% CS 241
-% Synchronization
-
-# Sema-More
-
 ---
+layout: slide
+title: Synchronization
+author: Bhuvan
+---
+
+## Sema-More
+
+<vertical />
 
 This is the idea of a mutex: keep the other person out while you do your thing.
 
 ![](/resources/slides/synch/rest.gif)
 
----
+<vertical />
 
 This is a semaphore:
 
 ![](/resources/slides/synch/semaphore.gif)
 
----
+<vertical />
 
 Just kidding, this is a real semaphore:
 
 ![](/resources/slides/synch/sema.gif)
 
----
+<vertical />
 
 ```C
 pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
@@ -53,9 +56,11 @@ int main() {
 }
 ```
 
-# Semamore Outline
+<horizontal />
 
----
+## Semamore Outline
+
+<vertical />
 
 ## Struct
 
@@ -67,7 +72,7 @@ typedef struct {
 } Semamore;
 ```
 
----
+<vertical />
 
 * When `max_value` is reached
 	* All thread trying to post should be blocked
@@ -76,7 +81,9 @@ typedef struct {
 	* All thread trying to wait should be blocked
 	* Where/how do you notify these blocked thread when a thread increases the semamore's value above 0?
 
-# Remember to not burn CPU
+<horizontal />
+
+## Remember to not burn CPU
 
 ## Spurious Wakeups?
 
@@ -88,15 +95,17 @@ if(!condition)
 What is wrong with the code above?
 
 
-# Not-So-Broken Barriers
+<horizontal />
 
----
+## Not-So-Broken Barriers
+
+<vertical />
 
 What does a barrier look like? Glad you asked.
 
 ![](/resources/slides/synch/barrier.gif)
 
----
+<vertical />
 
 ```C
 void * entry_point(void *arg)
@@ -122,30 +131,34 @@ void * entry_point(void *arg)
 }
 ```
 
----
+<vertical />
 
 Please read the wikibook about this!
 
-# Thread-Safe Queues
+<horizontal />
 
----
+## Thread-Safe Queues
+
+<vertical />
 
 ![](/resources/slides/synch/buffer_anim.gif)
 
----
+<vertical />
 
 Remember CS 125/225! Appending to the head of a linked list, other edge cases, etc...
 
-# Reminders
+<horizontal />
 
----
+## Reminders
+
+<vertical />
 
 * Use a while loop to check the condition when using `cond_wait`.
 * A thread might be awoken even the condition for waking up is not reached.
 * Google spurious wakeups: https://goo.gl/TEJVOl
 * Write a correctly working queue first before making it thread-safe
 
----
+<vertical />
 
 * `PTHREAD_MUTEX_INITIALIZER` only works for static initialization
 * Use `pthread_mutex_init(&mtex, NULL)` in other cases
@@ -153,11 +166,15 @@ Remember CS 125/225! Appending to the head of a linked list, other edge cases, e
 * Consider one thread that starts working really late
 * Semamore is not a real term!
 
-# Questions?
+<horizontal />
 
-# Credit Where Credit is Due
+## Questions?
 
----
+<horizontal />
+
+## Credit Where Credit is Due
+
+<vertical />
 
 Credit to https://habrahabr.ru/post/277669/ for most of these animations!
 

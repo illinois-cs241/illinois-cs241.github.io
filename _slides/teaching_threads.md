@@ -1,26 +1,35 @@
-% CS241
-% Threads, Concurrency, and Synchronization (oh my!)
+---
+layout: slide
+title: "Threads, Concurrency, and Synchronization"
+author: "Bhuvan"
+---
 
 ## Fixing Non-Reentrant Code
 
----
+<vertical />
 
 ## Splitting the Work up
 
-# Teaching Threads
+<horizontal />
+
+## Teaching Threads
 
 ## Learning Objectives
 
 * Using pthreads to speed up code
 * Common patterns in multithreaded programs
 
-# So what is reduce?
+<horizontal />
 
----
+## So what is reduce?
 
-![](/resources/slides/intro_threads/map_funny.png)
+<vertical />
 
-# What does it look like in code?
+<img src="/resources/slides/intro_threads/map_funny.png" height="500px" alt="Funny Mapreduce Explanation" >
+
+<horizontal />
+
+## What does it look like in code?
 
 ## Example
 
@@ -44,7 +53,9 @@ int main(){
 }
 ```
 
-# Pthreads? What are thooooose?
+<horizontal />
+
+## Pthreads? What are thooooose?
 
 Pthreads are short for POSIX-threads. They are a standardized way of doing multithreading on POSIX-compliant systems. A thread is short for thread of execution, meaning that the thread and execute instructions independently of other threads. You covered a lot in lecture here is a bit more in depth
 
@@ -57,7 +68,7 @@ int pthread_create(pthread_t *thread,
                     void *arg);
 ```
 
----
+<vertical />
 
 * `thread` somwhere to write the id of the thread
 * `attr` options that you set during pthread, for the most part you don't need to worry about it
@@ -70,7 +81,7 @@ int pthread_create(pthread_t *thread,
 int pthread_join(pthread_t thread, void **retval);
 ```
 
----
+<vertical />
 
 * `thread` the **value** of the thread **not a pointer to it*
 * `retval` where should I put the resulting value
@@ -100,13 +111,15 @@ int main(){
 }
 ```
 
-# Some advanced stuff
+<horizontal />
 
----
+## Some advanced stuff
+
+<vertical />
 
 ![](/resources/slides/intro_threads/thread2.png)
 
----
+<vertical />
 
 You can guess what happens in pthread_kill
 This may be a bit advanced, but the general gist is that they let you leverage parallelism
@@ -121,4 +134,6 @@ We want you to start a thread for each of the elements, do the computation and a
 
 You have been going through mutexes and other synchronization primitives in lecture, but the most efficient data structure uses no synchronization. This means that so long as no other thread touches the exact samepiece of memory that another thread is touching -- there is no race condition. We are then using threads to their full potential of parallelism.
 
-# Questions?
+<horizontal />
+
+## Questions?

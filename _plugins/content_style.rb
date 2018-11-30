@@ -107,7 +107,7 @@ def style_cards(page)
   end
 end
 
-def style_code(page, pre_to_div=false)
+def style_code(page)
   # Style all the code
   html_decoder = HTMLEntities.new
   page.css('.language-C, .language-c').each_with_index do |div, i|
@@ -126,16 +126,13 @@ def style_code(page, pre_to_div=false)
     # Before anything style the div
     formatter = Rouge::Formatters::HTML.new
     lexer = Rouge::Lexers::C.new
-    #formatted = formatter.format(lexer.lex(html_decoder.decode(div.inner_html)))
-    #p formatted
-    #code = Nokogiri::XML("<span>#{formatted}</span>")
+    formatted = formatter.format(lexer.lex(html_decoder.decode(div.inner_html)))
+    code = Nokogiri::XML("<span>#{formatted}</span>")
 
-    #if pre_to_div
-    #  code.css('pre').each do |pre|
-    #    pre.name = 'div'
-    #  end
-    #end
-    #div.inner_html = formatted
+    code.css('pre').each do |pre|
+      pre.name = 'div'
+    end
+    div.inner_html = formatted
     #div.children.before(copy)
     #div.add_child(textarea)
   end
@@ -175,7 +172,6 @@ def style_content(text)
   page.css('.content').wrap('<div class="container-fluid" />')
   page.css('.content').wrap('<div class="row" />')
 
-  style_code page
   add_man_links page
 
   page.to_html
@@ -201,7 +197,7 @@ module Jekyll
       <h2 class='author'>#{sup_title}</h2>
 </section>"
       page.at('.//div').first_element_child.before(str)
-      style_code(page, pre_to_div=true)
+      style_code(page)
       page.to_html
     end
   end

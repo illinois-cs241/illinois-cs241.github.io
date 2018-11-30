@@ -1,7 +1,10 @@
-% CS 241
-% Networking
+---
+layout: slide
+title: Networking
+author: Bhuvan
+---
 
-# TCP/UDP
+## TCP/UDP
 
 ![](http://ithare.com/wp-content/uploads/BB_part41_v1a.png)
 
@@ -22,7 +25,9 @@
 
 ![](https://www.bestvpnserver.com/wp-content/uploads/2013/09/UDP_vs_TCP.jpg)
 
-# The 4 Calls
+<horizontal />
+
+## The 4 Calls
 
 ## Socket
 
@@ -48,7 +53,9 @@
 
 Make sure to check errors for *every* call, networking can fail at any point.
 
-# The Gotchas
+<horizontal />
+
+## The Gotchas
 
 ## Network Order
 
@@ -62,7 +69,7 @@ Make sure to set socket options to reuse to enable effective debugging of the se
 
 Most server applications are interupted through a signal, but you shouldn't do all of the cleanup in the signal handler because not every function is signal handler safe (think back to CS233). That means the often pattern we see is like below.
 
----
+<vertical />
 
 ```
 int is_running = 1;
@@ -80,7 +87,9 @@ int main(){
 
 Try to modularize your functions so that everything is not in the main method. This is ideally because we **need** to tell the system that we are done using shared resources like sockets, and we need to determine when a socket goes "out of scope" -- we don't have RAII like in C++ so we have to determine that ourselves.
 
-# Nice to Knows
+<horizontal />
+
+## Nice to Knows
 
 ## Latency
 
@@ -134,4 +143,3 @@ int main(int argc, char** argv) {
 }
 ```
 
-# Authors: Steve & Bhuvan

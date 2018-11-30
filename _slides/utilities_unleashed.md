@@ -1,31 +1,32 @@
-% CS241
-% Lab 3 - Processes
-
-# Processes!
-
 ---
+layout: slide
+title: Processes
+author: "Steve and Bhuvan"
+---
+
+## Processes!
 
 ## Address Space
-
----
 
 ![](/resources/slides/fork/address_space.png)
 
 ## What is Copied Over?
 
----
+<vertical />
 
 ## Forkbomb
 
----
+<vertical />
 
 ## Process Flowchart
 
----
+<vertical />
 
-# Utilities Unleashed
+<horizontal />
 
-# What are you going to learn?
+## Utilities Unleashed
+
+## What are you going to learn?
 
 * What the fork-exec-wait pattern is.
 * Why we use it.
@@ -53,21 +54,23 @@ if(pid == -1){
 	* Search for the executable either in the current directory or in the **p**ath
 	* Use the parent's environment variables or use an **e**nvironment setting
 
----
+<vertical />
 
 * Here are the list `exec`
 	* `execl( path, arg, … )`,execute the file in current directory
 	* `execlp( file, arg, … )`, executes a file only searching in the path
 	* `execle( path, arg, …, envp[])`, execute the file in path + environment settings
 
----
+<vertical />
 
 * Pass an array of string as arguments
 	* `execv( path, argv[])`, execute the file in current directory
 	* `execvp( file, argv[])`, execute the file in the path only
 	* `execvpe( file, argv[]), envp[])` // environment setting
 
-# time
+<horizontal />
+
+## time
 * `./time <command> <args> ...`
 * Try measuring the time of running `sleep 2`
 * Should use fork-exec scheme.
@@ -87,6 +90,8 @@ if(pid == -1){
 * `int clock_gettime(clockid_t, timespec *)`;
 	* `clockid_t`: should use CLOCK_MONOTONIC in this lab
 * return 0 when success, -1 otherwise
+
+<horizontal />
 
 ## env
 
@@ -112,4 +117,3 @@ if(pid == -1){
 * Be familiar with: return array of strings, clear an array \
 	 of strings-> camelCasers
 
-# Authors: Steve & Bhuvan

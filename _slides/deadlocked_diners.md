@@ -1,11 +1,16 @@
-% CS241
-% Dining Philosophers
-
-# Worksheet
-
-# The Dining Philosopher Problem
-
 ---
+layout: slide
+title: Dining Philosophers
+authors: "Steve and Bhuvan"
+---
+
+## Worksheet
+
+<horizontal />
+
+## The Dining Philosopher Problem
+
+<vertical />
 
 ![](/resources/slides/dining/traffic.gif)
 
@@ -21,7 +26,9 @@
 
 [Read a Ron Swanson Version Here](http://adit.io/posts/2013-05-11-The-Dining-Philosophers-Problem-With-Ron-Swanson.html)
 
-# Failed Solutions
+<horizontal />
+
+## Failed Solutions
 
 ## Please Don't
 
@@ -76,11 +83,15 @@ void * PhilPhunction(void *p) {
 }
 ```
 
-# Stuff that Works (In order of speed)
+<horizontal />
 
-# Arbitrator
+## Stuff that Works (In order of speed)
 
----
+<horizontal />
+
+## Arbitrator
+
+<vertical />
 
 Have one authority (mutex in the case of c). Have each philosopher grab that authority and only when they have the authority can they pick up their forks and eat. They eat, put the arbitrator and the forks down and move on to the next philosopher (can be random or sequential).
 
@@ -90,9 +101,11 @@ Have one authority (mutex in the case of c). Have each philosopher grab that aut
 * Only one thread running at a time essentially
 * This is python's GIL in a nutshell
 
-# Leave the table (Stallings)
+<horizontal />
 
----
+## Leave the table (Stallings)
+
+<vertical />
 
 Reduce the case of the dining philosophers to a case of n-chopsticks and p-philosophers. Reduce the number of philosophers currently allowed at the table to n-1. Have them eat. Cycle out the philosophers.
 
@@ -102,9 +115,11 @@ Reduce the case of the dining philosophers to a case of n-chopsticks and p-philo
 * Needs way of keeping the philosophers at bay (SIGSTOP for linux kernel)
 * Needs some cycling algorithm
 
-# Partial Ordering (Dijkstra)
+<horizontal />
 
----
+## Partial Ordering (Dijkstra)
+
+<vertical />
 
 Order the chopsticks 1..n. For each philosopher have them pick up the lower number chopstick. Then, only if they can pick up the lower chopstick, pick up the higher chopstick. Why does this work?
 
@@ -114,13 +129,15 @@ Order the chopsticks 1..n. For each philosopher have them pick up the lower numb
 * Doesn't livelock but often leads one thread working at a time for large applications (databases)
 * But good for dining philosophers!
 
-# Clean/Dirty (Chandra/Misra)
+<horizontal />
 
----
+## Clean/Dirty (Chandra/Misra)
+
+<vertical />
 
 If you want reeealllllllly fast (Given a lot of philosophers).
 
-# Questions?
+<horizontal />
 
-# Authors: Steve and Bhuvan
+## Questions?
 

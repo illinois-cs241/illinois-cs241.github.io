@@ -50,8 +50,19 @@
      .reveal pre {
          box-shadow: none;
      }
-     .reveal pre code.language-C {
-         overflow-y: hidden;
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
      }
     </style>
     <!--[if lt IE 9]>
@@ -80,6 +91,7 @@
              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/zoom-js/zoom.js', async: true },
              { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/plugin/notes/notes.js', async: true },
              { src: '/js/reveal.js/menu/menu.js', async: true},
+             { src: '/js/reveal.js/chalkboard/chalkboard.js', async: true},
          ]
      });
 

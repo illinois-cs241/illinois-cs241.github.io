@@ -1,7 +1,6 @@
 ---
 layout: slide
 title: "Welcome to CS 241"
-sup_title: "Lab 1 - Know Your Tools"
 authors: "Steve & Bhuvan"
 ---
 
@@ -86,8 +85,6 @@ All of you have probably heard of sudo before. It is short for super-user do. Th
 <horizontal />
 
 ## Sample Questions
-
-<vertical />
 
 ## Question 1
 

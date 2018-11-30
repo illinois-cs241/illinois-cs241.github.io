@@ -1,7 +1,6 @@
 ---
 layout: slide
-title: "Remote Procedure Call"
-sup_title: "Lab 13 - Remote Procedure Calls"
+title: "Remote Procedure Calls"
 authors: "Ishan & Bhuvan"
 ---
 
@@ -14,7 +13,7 @@ Remote procedure calls are a way to execute a procedure (ex. function) that exis
 <table class="reveal" >
 <tr>
 <td>
-POST /sayHello HTTP/1.1
+POST /say HTTP/1.1
 HOST: api.example.com
 Content-Type: application/json
 
@@ -37,7 +36,7 @@ sayHello("Racey McRacerson");          |
 <table class="reveal" >
 <tr>
 <td>
-POST /sayHello HTTP/1.1
+POST /say HTTP/1.1
 HOST: api.example.com
 Content-Type: application/json
 
@@ -60,6 +59,8 @@ clientContact(request.data);
 <vertical />
 
 ![](/images/udp_communication.png)
+
+<horizontal />
 
 ## DNS Resolution
 
