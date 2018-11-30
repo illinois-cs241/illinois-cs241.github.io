@@ -10,19 +10,19 @@ author: Bhuvan
 
 This is the idea of a mutex: keep the other person out while you do your thing.
 
-![](/resources/slides/synch/rest.gif)
+![](/images/slides/synch/rest.gif)
 
 <vertical />
 
 This is a semaphore:
 
-![](/resources/slides/synch/semaphore.gif)
+![](/images/slides/synch/semaphore.gif)
 
 <vertical />
 
 Just kidding, this is a real semaphore:
 
-![](/resources/slides/synch/sema.gif)
+![](/images/slides/synch/sema.gif)
 
 <vertical />
 
@@ -103,7 +103,7 @@ What is wrong with the code above?
 
 What does a barrier look like? Glad you asked.
 
-![](/resources/slides/synch/barrier.gif)
+![](/images/slides/synch/barrier.gif)
 
 <vertical />
 
@@ -141,7 +141,7 @@ Please read the wikibook about this!
 
 <vertical />
 
-![](/resources/slides/synch/buffer_anim.gif)
+![](/images/slides/synch/buffer_anim.gif)
 
 <vertical />
 

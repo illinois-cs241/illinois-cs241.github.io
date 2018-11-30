@@ -117,11 +117,11 @@ Understanding how to do this will be useful when you implement malloc!
 
 <vertical />
 
-![](/resources/slides/memory/val1.png)
+![](/images/slides/memory/val1.png)
 
 <vertical />
 
-![](/resources/slides/memory/val2.png)
+![](/images/slides/memory/val2.png)
 
 
 <horizontal />

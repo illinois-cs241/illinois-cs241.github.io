@@ -25,7 +25,7 @@ author: "Bhuvan"
 
 <vertical />
 
-<img src="/resources/slides/intro_threads/map_funny.png" height="500px" alt="Funny Mapreduce Explanation" >
+<img src="/images/slides/intro_threads/map_funny.png" height="500px" alt="Funny Mapreduce Explanation" >
 
 <horizontal />
 
@@ -117,7 +117,7 @@ int main(){
 
 <vertical />
 
-![](/resources/slides/intro_threads/thread2.png)
+![](/images/slides/intro_threads/thread2.png)
 
 <vertical />
 
@@ -128,7 +128,7 @@ This may be a bit advanced, but the general gist is that they let you leverage p
 
 We want you to start a thread for each of the elements, do the computation and alter the array. Dividing up the work it should look something like the following
 
-![](/resources/slides/intro_threads/array.gif)
+![](/images/slides/intro_threads/array.gif)
 
 ## Wait a minute don't we need mutexes and stuff?
 

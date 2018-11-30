@@ -8,11 +8,11 @@ author: Bhuvan
 
 <vertical />
 
-![](/resources/slides/virtual/mmu_pic.png)
+![](/images/slides/virtual/mmu_pic.png)
 
 <vertical />
 
-![](/resources/slides/virtual/indirection.gif)
+![](/images/slides/virtual/indirection.gif)
 
 <horizontal />
 
@@ -36,7 +36,7 @@ For a 64 bit machine, 2^64 / 2^12 = 2^52, which is roughly 10^15 pages.
 
 <vertical />
 
-![](/resources/slides/virtual/division.gif)
+![](/images/slides/virtual/division.gif)
 
 <horizontal />
 
@@ -48,11 +48,11 @@ For a 64 bit machine, 2^64 / 2^12 = 2^52, which is roughly 10^15 pages.
 
 <vertical />
 
-![](/resources/slides/virtual/mmu_pic.png)
+![](/images/slides/virtual/mmu_pic.png)
 
 <vertical />
 
-![](/resources/slides/virtual/tlb.gif)
+![](/images/slides/virtual/tlb.gif)
 
 <horizontal />
 
@@ -60,4 +60,4 @@ For a 64 bit machine, 2^64 / 2^12 = 2^52, which is roughly 10^15 pages.
 
 <vertical />
 
-![](/resources/slides/virtual/byte-extend.png)
+![](/images/slides/virtual/byte-extend.png)
