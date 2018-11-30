@@ -100,7 +100,7 @@
     releaseDate: "Week 13"
     dueDate: "Week 14"
     url: "resplendent_rpcs"
-    resources: false
+    resources: true
     worksheet: false
     visible: true
 -
