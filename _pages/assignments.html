@@ -37,7 +37,7 @@
     		              </tr>
     		          </thead>
     		          <tbody>
-                      {% for mp in site.data.mps %}
+                      {% for mp in site.data.assignments['mps'] %}
                       {% if mp.visible != true %}
                       {% continue %}
                       {% endif %}
@@ -66,7 +66,7 @@
     		    </tr>
     		  </thead>
     		  <tbody>
-            {% for lab in site.data.labs %}
+            {% for lab in site.data.assignments['labs'] %}
               {% if lab.visible != true %}
               {% continue %}
               {% endif %}

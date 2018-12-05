@@ -13,10 +13,13 @@
             <div class="speaker-wrapper">
               <button onclick="speak()" class="speaker" alt="Read Page"></button>
             </div>
+            {% assign split_url = page.url | split: '/' %}
+            {% assign name_no_md = split_url[-1] | replace: '.html','' %}
+            {% assign assign_data = site.assign_by_url[name_no_md] %}
             <h1>
               {{ page.title }}
 
-              {% if page.submissions %}
+              {% if assign_data.submissions %}
                 <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page.path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
               {% elsif page.githuburl %}
                 <a class="github-link hidden-xs" href="https://github.com/{{ page.githuburl | uri_escape }}">Edit on Github</a>
@@ -24,9 +27,9 @@
             </h1>
           </div>
           <div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
-            {% if page.submissions %}
+            {% if assign_data.submissions %}
               <div class="submission-wrapper">
-                {% for submission in page.submissions %}
+                {% for submission in assign_data.submissions %}
                   <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
                   {% if submission.graded_files %}
                     <b>Graded files:</b>
@@ -39,9 +42,9 @@
                 {% endfor %}
               </div>
             {% endif %}
-            {% if page.ag_schedules %}
+            {% if assign_data.ag_schedules %}
               <div class="schedule-wrapper">
-                {% for schedule in page.ag_schedules %}
+                {% for schedule in assign_data.ag_schedules %}
                   <b>{{ schedule.title }}</b>
                   <br/>
                   <b>Pre-deadline Runs</b>
