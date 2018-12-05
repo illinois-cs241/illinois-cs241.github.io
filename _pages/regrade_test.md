@@ -86,7 +86,7 @@ In the event that our code becomes hard/impossible to test externally, we allow 
 
 ## Submission
 
-As soon as you are finished, please submit the form listed on piazza and we will try to grade your test ASAP. If we think your test is good, you can go ahead and select a third week for regrades. We will commit a file called `results.txt` to your directory with your status. If not you can edit and resubmit -- avoid spam because we are all humans. Excessive submissions will just be dropped like networking packets. In any event, we hope to have the results up by 1 week before classes officially end. The deadline for this is 12/12 at 11:59pm.
+As soon as you are finished, please submit the form listed on piazza and we will try to grade your test ASAP. If we think your test is good, you can go ahead and select a third week for regrades. We will commit a file called `results.txt` to your directory with your status. If not you can edit and resubmit -- avoid spam because we are all humans. Excessive submissions will just be dropped like networking packets. In any event, we hope to have the results up by 1 week before classes officially end.
 
 ## Example Code Test README
 
