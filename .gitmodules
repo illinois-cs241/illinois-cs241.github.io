@@ -12,4 +12,4 @@
 	url = https://github.com/illinois-cs241/wikibook-project.wiki.git
 [submodule "_data/semester_config"]
 	path = _data/semester_config
-	url = git@github.com:illinois-cs241/semester-config.git
+	url = https://github.com/illinois-cs241/semester-config.git 
