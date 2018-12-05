@@ -107,7 +107,7 @@
     name: "Super Linux Super Kernel"
     releaseDate: "Week 14"
     dueDate: "Week 15"
-    url: "rpc"
+    url: "lovable_linux"
     resources: true
     worksheet: true
-    visible: false
+    visible: true
