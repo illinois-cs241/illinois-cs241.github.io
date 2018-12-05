@@ -61,11 +61,11 @@
     content: "Fall Break (no class)"
     slides:
     video:
-#  -
-#    date: "April 24"
-#    content: #"No Class"
-#    slides:
-#    video:
+  -
+    date: "December 5"
+    content: "Netfilter Kernel Module"
+    slides: "https://docs.google.com/presentation/d/1Gzs-fBlUQSwb-lXVEr2x6a1UlOSePXazjngzsF05S78/edit?usp=sharing"
+    video:
 #  -
 #    date: "May 1"
 #    content: #"Project Presentations"
