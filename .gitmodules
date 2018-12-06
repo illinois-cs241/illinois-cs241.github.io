@@ -10,6 +10,8 @@
 [submodule "_wikibook_project"]
 	path = _wikibook_project
 	url = https://github.com/illinois-cs241/wikibook-project.wiki.git
+	shallow = true
 [submodule "_data/semester_config"]
 	path = _data/semester_config
 	url = https://github.com/illinois-cs241/semester-config.git 
+	shallow = true
