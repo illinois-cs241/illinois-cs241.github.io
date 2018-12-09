@@ -6,24 +6,24 @@ author: Bhuvan
 
 ## TCP/UDP
 
-![](http://ithare.com/wp-content/uploads/BB_part41_v1a.png)
+![TCP vs UDP](http://ithare.com/wp-content/uploads/BB_part41_v1a.png)
 
 ## TCP
 
-![](http://ithare.com/wp-content/uploads/BB_part43_v3.png)
+![TCP Rabbit](http://ithare.com/wp-content/uploads/BB_part43_v3.png)
 
 ## ACK-Dance
 
-![](https://upload.wikimedia.org/wikipedia/commons/8/8c/Tcp_normal.png)
+![SYN SYN-ACK ACK](https://upload.wikimedia.org/wikipedia/commons/8/8c/Tcp_normal.png)
 
 ## Packet Size
 
-![](http://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif)
+![Size of Packet](http://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif)
 
 
 ## Diff
 
-![](https://www.bestvpnserver.com/wp-content/uploads/2013/09/UDP_vs_TCP.jpg)
+![Drfferences](https://www.bestvpnserver.com/wp-content/uploads/2013/09/UDP_vs_TCP.jpg)
 
 <horizontal />
 
@@ -31,23 +31,23 @@ author: Bhuvan
 
 ## Socket
 
-![](https://openclipart.org/image/2400px/svg_to_png/212249/rodentia-icons_preferences-system-network.png)
+![socket](https://openclipart.org/image/2400px/svg_to_png/212249/rodentia-icons_preferences-system-network.png)
 
 ## Bind
 
-![](http://995642590.r.lightningbase-cdn.com/wp-content/uploads/2015/12/2015-12-15-Double-Bind-425x282px.jpg)
+![bind](http://995642590.r.lightningbase-cdn.com/wp-content/uploads/2015/12/2015-12-15-Double-Bind-425x282px.jpg)
 
 ## Listen
 
-![](http://calvaryfullerton.org/RichBlog/wp-content/uploads/2015/04/Listen.jpg)
+![listen](http://calvaryfullerton.org/RichBlog/wp-content/uploads/2015/04/Listen.jpg)
 
 ## Accept
 
-![](http://pad2.whstatic.com/images/thumb/4/42/Accept-a-Diploma-Step-4-Version-2.jpg/aid346607-728px-Accept-a-Diploma-Step-4-Version-2.jpg)
+![accept](http://pad2.whstatic.com/images/thumb/4/42/Accept-a-Diploma-Step-4-Version-2.jpg/aid346607-728px-Accept-a-Diploma-Step-4-Version-2.jpg)
 
 ## Connect
 
-![](http://www.linkedintraining.net/wp-content/uploads/connecting-people.jpg)
+![connect](http://www.linkedintraining.net/wp-content/uploads/connecting-people.jpg)
 
 ## Important
 
@@ -59,7 +59,7 @@ Make sure to check errors for *every* call, networking can fail at any point.
 
 ## Network Order
 
-![](http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png)
+![Byte Ordering](http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png)
 
 ## Sock Options
 
@@ -93,11 +93,11 @@ Try to modularize your functions so that everything is not in the main method. T
 
 ## Latency
 
-![](http://i.imgur.com/k0t1e.png)
+![Latency numbers you should know](http://i.imgur.com/k0t1e.png)
 
 ## Dropped Packets
 
-![](https://www.isa.org/uploadedImages/Content/Standards_and_Publications/ISA_Publications/InTech_Magazine/2014/Sep-Oct/SO-2014-System-Int-figure1.jpg)
+![Why packets get dropped](https://www.isa.org/uploadedImages/Content/Standards_and_Publications/ISA_Publications/InTech_Magazine/2014/Sep-Oct/SO-2014-System-Int-figure1.jpg)
 
 ## UDP Example
 

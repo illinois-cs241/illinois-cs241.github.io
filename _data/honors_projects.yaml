@@ -74,7 +74,6 @@
     -
       name: "High Frequency Sports Gambling"
       description: "Analyzes and places bets on sports games in real-time"
-      link_url: "https://github.com/zbrusso2/cs296-41"
       link_title: GitHub
     -
       name: "TCP Network Encryption"

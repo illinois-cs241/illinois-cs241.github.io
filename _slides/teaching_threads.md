@@ -117,7 +117,7 @@ int main(){
 
 <vertical />
 
-![](/images/slides/intro_threads/thread2.png)
+![Threads](/images/slides/intro_threads/thread2.png)
 
 <vertical />
 
@@ -128,7 +128,7 @@ This may be a bit advanced, but the general gist is that they let you leverage p
 
 We want you to start a thread for each of the elements, do the computation and alter the array. Dividing up the work it should look something like the following
 
-![](/images/slides/intro_threads/array.gif)
+![Thread array division](/images/slides/intro_threads/array.gif)
 
 ## Wait a minute don't we need mutexes and stuff?
 

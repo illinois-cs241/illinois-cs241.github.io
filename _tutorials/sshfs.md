@@ -34,7 +34,7 @@ brew install sshfs                  # installs sshfs
 
 ### Windows
 
-For Windows, you can either install it in the Ubuntu subsystem using apt-get, or download the [win-sshfs](https://win-sshfs.googlecode.com/files/win-sshfs-0.0.1.5-setup.exe) package.
+For Windows, you can either install it in the Ubuntu subsystem using apt-get, or download the win-sshfs package.
 
 ## Using SSHFS
 

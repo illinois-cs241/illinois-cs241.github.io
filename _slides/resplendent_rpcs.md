@@ -58,7 +58,7 @@ clientContact(request.data);
 
 <vertical />
 
-![](/images/udp_communication.png)
+![UDP Communication](/images/udp_communication.png)
 
 <horizontal />
 
@@ -66,7 +66,7 @@ clientContact(request.data);
 
 <vertical />
 
-![](/images/dns.png)
+![DNS Resolution](/images/dns.png)
 
 ## UDP Code
 

@@ -12,15 +12,15 @@ author: Bhuvan
 
 ## What our file system looks like
 
-![](/images/slides/filesystem/map.png)
+![File System](/images/slides/filesystem/map.png)
 
 ## Traditional NTFS file systems
 
-![](/images/slides/filesystem/ntfs.png)
+![NTFS File System](/images/slides/filesystem/ntfs.png)
 
 ## Typical file systems nowadays
 
-![](/images/slides/filesystem/inode_with_signatures.jpg)
+![Now Files](/images/slides/filesystem/inode_with_signatures.jpg)
 
 ## Inode
 
@@ -41,7 +41,7 @@ typedef struct {
 
 ## Indirect Blocks
 
-![](/images/slides/filesystem/IndirectBlocks1.png)
+![Indirect Blocks](/images/slides/filesystem/IndirectBlocks1.png)
 
 ## Read the docs!
 

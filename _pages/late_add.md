@@ -8,7 +8,7 @@ title: Getting Caught Up
 * Piazza: [https://piazza.com](https://piazza.com)
 * Linux in Browser: [https://cs-education.github.io/sys/#playground](https://cs-education.github.io/sys/#playground)
 * Wikibook: [https://github.com/angrave/SystemProgramming/wiki](https://github.com/angrave/SystemProgramming/wiki)
-* Class Transcribe/Old Lecture Recordings: [http://classtranscribe.com/cs241](http://classtranscribe.com/cs241)
+* Class Transcribe/Old Lecture Recordings: [http://classtranscribe.com](http://classtranscribe.com)
 * Shared Github: [https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/_release](https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/_release)
 * Grades: Compass
 * Lecture Videos: [https://echo360.org](https://echo360.org)

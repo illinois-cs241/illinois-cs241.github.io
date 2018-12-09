@@ -201,7 +201,7 @@ end
 task :test_html do
   Dir.mktmpdir do |dir|
     to_copy = Dir.glob('_site/*html')
-    to_copy += ['_site/images', '_site/js', '_site/css', '_site/resources']
+    to_copy += ['images', './images', '_site/js', '_site/css', '_site/resources', '_site/slides/']
     FileUtils.cp_r(to_copy, dir)
     options = {
       assume_extension: true,

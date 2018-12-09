@@ -1,17 +1,20 @@
 [submodule "_wikibook"]
 	path = _wikibook
 	url = https://github.com/angrave/SystemProgramming.wiki.git
-    ignore = dirty
+	ignore = dirty
 	shallow = true
 [submodule "_docs"]
 	path = _docs
 	url = https://github.com/illinois-cs241/assignment-docs.git
+	ignore = dirty
 	shallow = true
 [submodule "_wikibook_project"]
 	path = _wikibook_project
 	url = https://github.com/illinois-cs241/wikibook-project.wiki.git
+	ignore = dirty
 	shallow = true
 [submodule "_data/semester_config"]
 	path = _data/semester_config
 	url = https://github.com/illinois-cs241/semester-config.git 
+	ignore = dirty
 	shallow = true

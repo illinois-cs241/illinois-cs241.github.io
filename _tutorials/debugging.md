@@ -30,7 +30,7 @@ $ git push origin master
 
 Now to explain git well, you need to understand that git for our purposes will look like a linked list.
 
-![Git linked list commits](./images/git_history.png)
+![Git linked list commits](/images/git_history.png)
 
 You will always be at the head of master, and you will do the edit-add-commit-push loop. We have a separate branch on github that we push feedback to under `_feedback` which you can view on github website. The markdown file will have information on the test cases and results (like standard out).
 

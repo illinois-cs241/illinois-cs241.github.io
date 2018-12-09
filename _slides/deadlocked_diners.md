@@ -12,15 +12,15 @@ authors: "Steve and Bhuvan"
 
 <vertical />
 
-![](/images/slides/dining/traffic.gif)
+![Traffic Jam](/images/slides/dining/traffic.gif)
 
 ## Bad Solutions are Everywhere
 
-![](/images/slides/dining/dining.gif)
+![Deadlock Dining](/images/slides/dining/dining.gif)
 
 ## Who's a good Dining Philosopher
 
-![](/images/slides/dining/dogdining.gif)
+![Dog Philosopher](/images/slides/dining/dogdining.gif)
 
 ## A Good Overview
 

@@ -10,13 +10,13 @@ author: Bhuvan
 
 Binary Trees!
 
-![](https://2.bp.blogspot.com/-SKDmvFFeO4k/V_0pb7xvuSI/AAAAAAAABTo/UlEmSIX29Qg3eZBFcHaq3SETawISEYewwCLcB/s1600/deserialized-binary-tree.png)
+![Binary Tree](https://2.bp.blogspot.com/-SKDmvFFeO4k/V_0pb7xvuSI/AAAAAAAABTo/UlEmSIX29Qg3eZBFcHaq3SETawISEYewwCLcB/s1600/deserialized-binary-tree.png)
 
 <vertical />
 
 This is how we store them in arrays!
 
-![](http://d2vlcm61l7u1fs.cloudfront.net/media%2F858%2F858e0ee4-80a8-4837-8e97-c1925cdbb231%2FphppObXfG.png)
+![Serializing Them In Arrays](http://d2vlcm61l7u1fs.cloudfront.net/media%2F858%2F858e0ee4-80a8-4837-8e97-c1925cdbb231%2FphppObXfG.png)
 
 ## Our Old Friend: Pointer Arithmetic
 
@@ -37,11 +37,11 @@ typedef struct {
 
 ## Fseek Juggle
 
-![](http://forum.falinux.com/_clibimages/073_fseek.png)
+![Fseek Map](http://forum.falinux.com/_clibimages/073_fseek.png)
 
 ## More Juggling
 
-![](http://image.slidesharecdn.com/14-fiileio-130524022237-phpapp01/95/14-fiile-io-31-638.jpg)
+![More File IO](http://image.slidesharecdn.com/14-fiileio-130524022237-phpapp01/95/14-fiile-io-31-638.jpg)
 
 Where is the end pointer?
 
@@ -59,7 +59,7 @@ mmap is a really cool function call. it uses memory mapped IO to emulate writing
 
 ## Remember This?
 
-![](http://www.tldp.org/LDP/tlk/mm/vm.gif)
+![Virtual Memory Pics](http://www.tldp.org/LDP/tlk/mm/vm.gif)
 
 Now, the pages can be tied to file pages.
 
@@ -70,7 +70,7 @@ Now, the pages can be tied to file pages.
 
 ## MMAP read-many
 
-![](http://www.linuxidc.com/upload/2011_08/110819060295692.gif)
+![MMAP Read a lot](http://www.linuxidc.com/upload/2011_08/110819060295692.gif)
 
 ## MMAP
 
