@@ -59,6 +59,7 @@ Specifically, we need to fix an operating system and a programming language. We 
 **If you added late, check [this page](./late_add.html) to get caught up.**
 
 An introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
+We also have the second iteration the [Wikibook Project](https://github.com/illinois-cs241/wikibook-project) That provides html, pdf, and wiki versions.
 
 Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
 [mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
@@ -72,7 +73,7 @@ Copyright 2007 by Pearson Custom Publishing
 ISBN 0-536-48928-9
 ```
 
-We also have some general guides to development in this class:
+## Tutorials
 
 * [Debugging Tutorial](./debugging.html)
 * [Development Tutorial](./development.html)
@@ -104,7 +105,7 @@ We publish the following thresholds:
 
 All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week.
 
-For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Sickness, vacation, sleep, _whatever_; we don't care. we don’t care. Exceptions in rare circumstances can been arranged with the course administrator ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)), or Director of Undergrad studies.
+For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet.
 
 At the end of the semester there will be a last chance regrade option for two weeks of machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops. **You must attend your lab section**. If you submit a [test case for an assignment](./regrade_test) that accurately matches the assignment _description_ not the documentation along with a justification for why, then you may get one more week of machine problem regrade -- this is up to the course staff's discretion.
 
@@ -151,18 +152,14 @@ Machine Problems are different. While they are a key learning experience MPs are
 
 ## Absences
 
-If your absence is unplanned -- a sudden illness or have a sudden death in the family -- we will deal with your situation on a case-by-case basis via the course admin ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)).
-
-For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://odos.illinois.edu/community-of-care/student-assistance-center/) note stating that you contacted the Emergency Dean.
-
-Please note: we offer two lab attendance drops at the end of the semester with no penalty.
+If you are in an exceptional situation -- i.e. family emergency, sickness, please email ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)) and we will deal with your situation on a case-by-case basis via the course admin ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)). For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://odos.illinois.edu/community-of-care/student-assistance-center/) note stating that you contacted the Emergency Dean.
 
 ## How to Succeed
 
 Is this course hard? Yes, but you are bright. You're taking computer science at UIUC. Schedule the time to do it. The two big changes from CS 225:
 
-* Your code is now much smaller than the complexity of the system around it.
-* No, we will not debug your code for you.
+1. Your code is now much smaller than the complexity of the system around it.
+2. No, we will not debug your code for you.
 
 With lecture content, one lab, one MP, and one Quiz/Midterm every week or two, it can get easy to fall behind.
 
@@ -200,23 +197,22 @@ In the cases of labs, you are allowed to collaborate with others in the class. A
 __EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!__
 
 This means you are not allowed to split the work with a partner.
- You are, however, allowed to discuss the assignments at a very high level.
- If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% penalty in the course for each incident where you are found to have used material that is not yours.
+You are, however, allowed to discuss the assignments at a very high level.
+You can even share testing scripts!
+If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% penalty in the course for each incident where you are found to have used material that is not yours.
 
 
 Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating.
- If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment.
- For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 20% penalty.
- You also may not publish our code anywhere publicly and you will receive the same penalty for sharing our code.
- If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides your private course repository and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
-
+If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment.
+For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 20% penalty.
+You also may not publish our code anywhere publicly and you will receive the same penalty for sharing our code.
+If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides your private course repository and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
 
 In the case of quizzes in the CBTF, it is a violation of our course policy to access or provide access to the quiz material outside your registered window.
- Cheating at CBTF may also result in immediate failure of the course and further action by the college of engineering.
- If you are found to have done so you will receive a zero on the quiz and a 10% penalty in the course.
- This includes seeking descriptions of the questions from students who have taken the quiz, as well as any other method that would give you access to the quiz outside your scheduled time.
- If there is prep material provided in lecture or on Piazza, you are welcome to share that material freely.
-
+Cheating at CBTF may also result in immediate failure of the course and further action by the college of engineering.
+If you are found to have done so you will receive a zero on the quiz and a 10% penalty in the course.
+This includes seeking descriptions of the questions from students who have taken the quiz, as well as any other method that would give you access to the quiz outside your scheduled time.
+If there is prep material provided in lecture or on Piazza, you are welcome to share that material freely.
 
 We want you to get the most out your education, and cheating not only affects your peers, but also your level of knowledge and ability.
 
