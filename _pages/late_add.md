@@ -28,7 +28,7 @@ To get a sense of going on and where we are in the course, please read **all** t
 
 `https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/NETID`.
 
-In that folder, you can read the [Know Your Tools](./know_your_tools.html) lab to get familiar with the VM, `ssh`, `git`, and any other tools you will need to be successful in the course.
+In that folder, you can read the [Know Your Tools]({% link _docs/know_your_tools.md %}) lab to get familiar with the VM, `ssh`, `git`, and any other tools you will need to be successful in the course.
 * Ideally, we want (and most cases) require you to work on your assignment on your VM. Instructions on how to log in are on the Know Your Tools page. If you can't get your VM in time for an assignment to be do, you can do work on EWS -- just complete the steps below.
 * The only non-programming assignment in the first few weeks is [Homework 0](https://github.com/angrave/SystemProgramming/wiki/HW0) if the assignment's deadline has not passed, submit the form on the know your tools page as soon as possible!
 * We will not extend deadlines for programming assignments. Here are the steps to be able to start working on your assignments that are not past due. To check if an assignment's deadline has passed, check piazza or the lab and MP page. **If the Assignment has not been deployed to your git (you don't see a folder), complete the following steps**
@@ -55,7 +55,7 @@ $ git push origin master
 
 ## Catching up on Material
 
-Make sure you visit the course [Wiki Book](https://github.com/angrave/SystemProgramming/wiki) and read over the chapters relating to our [lecture schedule](./schedule.html#currentWeek) from when you joined.
+Make sure you visit the course [Wiki Book](https://github.com/angrave/SystemProgramming/wiki) and read over the chapters relating to our [lecture schedule]({% link _pages/schedule.html%}#currentWeek) from when you joined.
 
 If you are looking for the lecture handouts, they are in the _shared folder above. Feel free to ask about any material you don't understand on Piazza or Lab sections. There is a lot to go through in this course, so falling behind is not ideal.
 

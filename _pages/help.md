@@ -7,7 +7,7 @@ title: Getting Help
 
 We hold peer tutoring sessions in the basement of Siebel in the computer labs. You can join by adding yourself onto the [Queue](https://edu.cs.illinois.edu/queue/) (the schedule can be found below).
 
-Please note that this is not CS 225, so [we](./staff_hall_of_fame.html) will not do your assignments. This is one of the last classes you will take before being thrown into 400-level courses, where the assignments are much harder, help is much more limited, and hand holding is negative.
+Please note that this is not CS 225, so [we]({% link _pages/staff_hall_of_fame.html %}) will not do your assignments. This is one of the last classes you will take before being thrown into 400-level courses, where the assignments are much harder, help is much more limited, and hand holding is negative.
 
 > Give a student the answer and you feed them for a day; teach a student to find their own answers and you feed them for a lifetime.
 

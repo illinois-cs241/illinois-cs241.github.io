@@ -22,21 +22,13 @@ Presentation           : 20%
 Final Project          : 35%
 ```
 
-We publish the same grading thresholds as CS 241:
-
-|   Points   |  Minimum Grade  |
-|:-----------|:----------------|
-| [92 - 100] | A-              |
-| [82 - 92)  | B-              |
-| [72 - 82)  | C-              |
-
-Your project will be graded in a holistic manner against other projects in the class. Note that this does not imply only a handful of projects can receive an A; education is not a zero-sum game. Historically, grades have been assigned with a generous curve.
+We publish the same grading thresholds as the regular section of CS 241. Your project will be graded in a holistic manner against other projects in the class. Note that this does not imply only a handful of projects can receive an A; education is not a zero-sum game. Historically, grades have been assigned with a generous curve.
 
 ## Absences
 
 We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop two lecture attendance grades, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
 
-If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or have a sudden death in the family, please refer to the [CS 241 absence policy](./index.html#absences).
+If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or have a sudden death in the family, please refer to the [CS 241 absence policy]({% link _pages/index.md %}#absences).
 
 ## Project
 
@@ -131,7 +123,7 @@ http://piazza.com/illinois/fall2018/cs29641
 
 ## Project Ideas?
 
-Come check out what past students have created in the [past project page](./past_projects.html).
+Come check out what past students have created in the [past project page]({% link _pages/past_projects.html %}).
 
 If not here are some project ideas
 

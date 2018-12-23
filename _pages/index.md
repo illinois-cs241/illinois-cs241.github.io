@@ -13,9 +13,7 @@ Oh, and did we mention the challenge of concurrency and solving asynchronous pro
 
 ## Formal Course Description
 
-This course is an introduction to System Programming. System Programming refers to writing code that prioritizes operating system support for programmers.
-
-A computer needs an operating system to manage its resources and provide support for common functions, such as accessing peripherals. There are two categories of "customers" that an operating system must support.
+This course is an introduction to System Programming. System Programming refers to writing code that prioritizes operating system support for programmers. A computer needs an operating system to manage its resources and provide support for common functions, such as accessing peripherals. There are two categories of "customers" that an operating system must support.
 
 The first category is the community of users. We have all used computers, and you may recognize operating systems' functions such as creating folders (directories) and moving files around. These are examples of operating system support for users. User support is not the objective of this course.
 
@@ -23,19 +21,13 @@ The second category of users is programmers. This course addresses this category
 
 The operating system presents common interfaces for programmers to perform these functions. It also provides useful abstractions such as "tasks" (also called processes), "threads", and "semaphores". You can make the computer multi-task by creating new tasks or new threads. You can make these tasks coordinate and synchronize by using semaphores. You can tell the computer the order in which you want tasks to be executed by using a scheduling policy. Finally, you can manage computer memory by calling on the function for memory management.
 
-## Skills Earned
-
-By the end of this course, you should be proficient at writing programs that take full advantage of operating system support.
-
-Specifically, we need to fix an operating system and a programming language. We chose the C language running on a Linux/UNIX operating system, which implements the POSIX standard interface. This pairing of C and UNIX/Linux is used heavily by software that must provide high performance and low-level control of the program's execution. By the end of the course, you should be proficient with this environment and should be able to write non-trivial pieces of software from web server code to your own multiplayer Internet games.
-
-## Learning Goals
+## Learning Goals/Skills
 
 * Identify the basic components of an operating system, describe their purpose, and explain how they function.
 * Write, compile, debug, and execute C programs that correctly use system interfaces provided by UNIX or a UNIX-like operating system.
 * Be familiar with important UNIX system calls and invoke them correctly from within C programs.
 * Describe the difference between programs, processes, and threads.
-* Write a memory allocator or [malloc](./malloc_hall_of_fame.html).
+* Write a memory allocator or [malloc]({% link _pages/malloc_hall_of_fame.html %}).
 * Explain the meaning and purpose of process control blocks and other mechanisms that the operating system uses to implement the process and thread abstractions.
 * Write, compile, debug, and execute C programs that create, manage and terminate processes and threads on UNIX.
 * Define concurrency and explain the problems that may arise because of concurrent execution of multiple processes or threads. Explain how these problems can be avoided. Write code that avoids these problems.
@@ -53,15 +45,14 @@ Specifically, we need to fix an operating system and a programming language. We 
 * Write, compile, debug, and execute C programs that make use of memory management functions.
 * Describe the protocols (such as TCP and IP) and interfaces (such as sockets) used for communication among different computers.
 * Write distributed applications that communicate across a network.
+* By the end of this course, you should be proficient at writing programs that take full advantage of operating system support.
 
 ## Resources
 
-**If you added late, check [this page](./late_add.html) to get caught up.**
+**If you added late, check [this page]({% link _pages/late_add.md %}) to get caught up.**
 
 An introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
-We also have the second iteration the [Wikibook Project](https://github.com/illinois-cs241/wikibook-project) That provides html, pdf, and wiki versions.
-
-Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
+We also have the second iteration the [Wikibook Project](https://github.com/illinois-cs241/wikibook-project) That provides html, pdf, and wiki versions. Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
 [mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
 No formal textbook is required, but if you really want to buy some books, we recommend the following custom book Angrave put together in 2007:
@@ -75,11 +66,11 @@ ISBN 0-536-48928-9
 
 ## Tutorials
 
-* [Debugging Tutorial](./debugging.html)
-* [Development Tutorial](./development.html)
-* [Emacs Tutorial](./emacs.html)
-* [SSHFS Workflow Tutorial](./sshfs.html)
-* [Shell Tutorial](./shell_fu.html)
+* [Debugging Tutorial]({% link _tutorials/debugging.md %})
+* [Development Tutorial]({% link _tutorials/development.md %})
+* [Emacs Tutorial]({% link _tutorials/emacs.md %})
+* [SSHFS Workflow Tutorial]({% link _tutorials/sshfs.md %})
+* [Shell Tutorial]({% link _tutorials/shell_fu.md %})
 
 ## Grading
 
@@ -103,15 +94,11 @@ We publish the following thresholds:
 | [82 - 92)  | B-              |
 | [72 - 82)  | C-              |
 
-All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week.
-
-For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet.
-
-At the end of the semester there will be a last chance regrade option for two weeks of machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops. **You must attend your lab section**. If you submit a [test case for an assignment](./regrade_test) that accurately matches the assignment _description_ not the documentation along with a justification for why, then you may get one more week of machine problem regrade -- this is up to the course staff's discretion.
+All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week. For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet. At the end of the semester there will be a last chance regrade option for two weeks of machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops.
 
 The 3-hour handwritten final exam is comprehensive and will test all CS 241 topics, including programming topics covered in the MP and Labs. Do not book your flights until the exam date is known. Early exams will not be offered. Conflict final exams will be offered if you have three exams in a 24 hour period, or you have an exam in another, smaller enrollment course at the same time.
 
-Grading issues should be raised with your TA during section or by email. Missing scores need to be reported on or before the next section.
+Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being reported.
 
 ## Exams
 
@@ -140,7 +127,7 @@ The Fall 2018 schedule as of August 22 is below. The complete and authoritative 
 |Quiz 7 (Week 14)|Tue, Nov 27|Fri, Nov 30|
 |Quiz 8 (Week 15)|Tue, Dec 4|Fri, Dec 7|
 
-The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT). The topics of a quiz can be seen at [The topics page](/quiz_topics).
+The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT). The topics of a quiz can be seen at [The topics page]({% link _pages/quiz_topics.md %}).
 
 ## Coding Assignments
 

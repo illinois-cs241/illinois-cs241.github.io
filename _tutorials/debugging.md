@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: "Debugging Guide"
+title: "The Autograder Failed Me!"
 learning_objectives:
   - Learning how to debug 241 Code
 ---
@@ -228,3 +228,89 @@ These are just the most basic things that you can do with the tools. We highly r
 
 * [CppCon 2015: Greg Law "Give me 15 minutes & I'll change your view of GDB"](https://www.youtube.com/watch?v=PorfLSr3DDI)
 * [GDB](https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
+
+## The Tracers: `strace` `ltrace`
+
+These may not be installed on your system already so to install feel free to do so
+
+```
+sudo apt install strace ltrace
+```
+
+### ltrace
+
+Debugging with ltrace can be as simple as figuring out what was the return call of the last library call that failed.
+
+```c
+int main() {
+    FILE *fp = fopen("I don't exist", "r");
+    fprintf(fp, "a");
+    fclose(fp);
+    return 0;
+}
+```
+
+```console
+> ltrace ./a.out
+ __libc_start_main(0x8048454, 1, 0xbfc19db4, 0x80484c0, 0x8048530 <unfinished ...>
+ fopen("I don't exist", "r")                          = 0x0
+ fwrite("Invalid Write\n", 1, 14, 0x0 <unfinished ...>
+ --- SIGSEGV (Segmentation fault) ---
+ +++ killed by SIGSEGV +++
+```
+
+Unfortunately ltrace can't be used to inject faults.
+
+### strace
+
+Debugging with strace is amazing. A basic usage is just run strace with a program, and it'll get you a complete list of system call parameters.
+
+```console
+> strace head README.md
+execve("/usr/bin/head", ["head", "README.md"], 0x7ffff28c8fa8 /* 60 vars */) = 0
+brk(NULL)                               = 0x7ffff5719000
+access("/etc/ld.so.nohwcap", F_OK)      = -1 ENOENT (No such file or directory)
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=32804, ...}) = 0
+...
+```
+
+Man but those system calls aren't what I want. Is there a way to get only the ones I want? Yes! Use `trace=` with a command delimited list of syscalls
+
+```
+> strace -e trace=read,write head README.md
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260\34\2\0\0\0\0\0"..., 832) = 832
+read(3, "# Locale name alias data base.\n#"..., 4096) = 2995
+read(3, "", 4096)                       = 0
+read(3, "# C Datastructures\n\n[![Build Sta"..., 8192) = 1250
+write(1, "# C Datastructures\n", 19# C Datastructures
+```
+
+I want to trace a file though, can I do that?
+
+```console
+> strace -e trace=read,write -P README.md head README.md
+strace: Requested path 'README.md' resolved into '/mnt/c/Users/bhuvy/personal/libds/README.md'
+read(3, "# C Datastructures\n\n[![Build Sta"..., 8192) = 1250
+```
+
+What if I want to injection some faults? Well you are going to need strace version > 4.15 which isn't automagically installed. You are going to have to install it from source
+
+[Source Link](https://strace.io/files/)
+
+
+```console
+> sudo apt install gcc-multilib
+> cd `mktemp -d`
+> wget <most recent version>
+> tar xf <tar>
+> cd strace_dir
+> ./configure
+> make -j8
+> sudo make install
+```
+
+Now that you have the latest and greatest version of strace
+
+You can do fault injection

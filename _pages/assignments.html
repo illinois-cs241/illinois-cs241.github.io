@@ -42,7 +42,7 @@
                       {% continue %}
                       {% endif %}
                       <tr>
-                          <th scope="row"><a href="./{{mp.url}}.html">{{mp.name}}</a></th>
+			      <th scope="row"><a href="/assignments/{{mp.url}}.html">{{mp.name}}</a></th>
       		    	          <td>{{mp.releaseDate}}</td>
       		    	          <td>{{mp.dueDate}}</td>
                       </tr>
@@ -71,7 +71,7 @@
               {% continue %}
               {% endif %}
               <tr>
-                <th scope="row"><a href="./{{lab.url}}.html">{{lab.name}}</a></th>
+                <th scope="row"><a href="/assignments/{{lab.url}}.html">{{lab.name}}</a></th>
       		    	<td>{{lab.releaseDate}}</td>
                 <td>{{lab.dueDate}}</td>
                 {% if lab.resources %}

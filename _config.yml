@@ -45,7 +45,7 @@ navbar_items:
 collections:
   docs:
     output: true
-    permalink: /:path
+    permalink: /assignments/:path
   pages:
     output: true
     permalink: /:path
@@ -60,7 +60,7 @@ collections:
     permalink: /wikibook_project/:path
   tutorials:
     output: true
-    permalink: /:path
+    permalink: /tutorials/:path
   slides:
     output: true
     permalink: /slides/:path
