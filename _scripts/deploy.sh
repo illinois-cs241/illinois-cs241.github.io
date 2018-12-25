@@ -10,6 +10,7 @@ git init;
 
 echo "Copying"
 cp -r $TRAVIS_BUILD_DIR/_site/* .
+touch .nojekyll
 
 git add -A;
 git commit -m "Deploying from $(date -u +"%Y-%m-%dT%H:%M:%SZ")";

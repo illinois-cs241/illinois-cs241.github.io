@@ -35,7 +35,6 @@ multitask default: [
   Jekyll::Commands::Build.build site, $config
   cp './.travis.yml', './_site/.travis.yml'
   cp './CNAME', './_site/CNAME'
-  FileUtils.touch('./_site/.nojekyll')
 end
 
 multitask serve: [
