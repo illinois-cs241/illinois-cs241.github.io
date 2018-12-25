@@ -21,7 +21,7 @@ github_username: illinois-cs241
 course_number: "241"
 subject_code: "cs"
 course_name: "System Programming"
-exclude: [.git, README.md, deploy_rsa.enc, vendor, bundle, wp_repo]
+exclude: ['.git', 'README.md', 'deploy_rsa.enc', 'vendor', 'bundle', 'wp_repo', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', '_docs/deploy_rsa.enc', '_docs/deploy.sh', '_docs/retry.sh', '_docs/cleanup.sh']
 navbar_items:
   - name: "Assignments"
     link: "assignments"

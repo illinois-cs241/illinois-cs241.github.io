@@ -13,6 +13,7 @@ require 'htmlentities'
 require_relative '_scripts/spell_check.rb'
 require 'etc'
 require 'yaml'
+require 'fileutils'
 
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
@@ -34,6 +35,7 @@ multitask default: [
   Jekyll::Commands::Build.build site, $config
   cp './.travis.yml', './_site/.travis.yml'
   cp './CNAME', './_site/CNAME'
+  FileUtils.touch('./_site/.nojekyll')
 end
 
 multitask serve: [
