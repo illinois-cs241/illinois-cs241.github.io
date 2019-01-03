@@ -28,7 +28,6 @@ $config = Jekyll.configuration({
 
 multitask default: [
   'pre_build:gen_man',
-  'pre_build:cleanup_wiki',
   'pre_build:gen_wikibook_project',
 ] do
   site = Jekyll::Site.new($config)
@@ -117,63 +116,6 @@ namespace :pre_build do
     ensure
       obj_file.unlink
     end
-  end
-
-  ghurl = 'angrave/SystemProgramming/wiki'
-
-  task :cleanup_wiki, [:folder] do |_t, args|
-    folder = args[:folder]
-    if folder.nil?
-      folder = wikibook_dir
-      puts "Using default Folder #{folder}"
-    end
-
-    system "cd #{folder} && git clean -fq && git reset --hard HEAD"
-
-    bad_chars = '#,:"'
-    old_filenames = Dir.glob("#{folder}/*.md")
-    new_filenames = Marshal.load(Marshal.dump(old_filenames)).map do |filename|
-      filename.downcase.tr(bad_chars, '')
-    end
-    pattern_map = {}
-    zipped_array = old_filenames.zip(new_filenames)
-
-    zipped_array.each do |file_name, new_file|
-      file_no_ext = File.basename(file_name, '.md')
-      title = title_from_html(file_name)
-      regex_escaped = Regexp.quote(title)
-      ext_name = File.extname(file_no_ext)
-      html_escaped = URI.escape(File.basename(new_file, '.md'))
-      link = "<a class='wiki-link' href='./#{html_escaped}.html'>#{title}</a>"
-      pat = /(\[\[\s*#{regex_escaped}\s*\]\])/
-      pattern_map[link] = pat
-    end
-
-
-    zipped_array.each do |from_f, to_f|
-      title = title_from_html(from_f)
-      # On certain systems ruby errors in weird ways if
-      # The files are the same case insensitive, so we
-      # go roundabout
-      begin
-        FileUtils.mv(from_f, to_f, force: true)
-      rescue ArgumentError
-        temp_file = Tempfile.new('')
-        temp_path = temp_file.path
-        begin
-          FileUtils.mv(from_f, temp_path)
-          FileUtils.mv(temp_path, to_f)
-        ensure
-          temp_file.close
-        end
-      end
-      link_patterns(to_f, pattern_map)
-      hyphens_added = title.tr(' ', '-')
-      ghurl_added = "#{ghurl}/#{hyphens_added}"
-      front_matter = "---\nlayout: doc\ntitle: \"#{title}\"\ngithuburl: \"#{ghurl_added}\"\n---\n\n"
-      prepend(to_f, front_matter)
-    end
-    puts 'Finished adding templates'
   end
 
   wikibook_project_dir = "_wikibook_project"

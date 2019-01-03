@@ -37,10 +37,8 @@ navbar_items:
     link: "staff"
   - name: "Search"
     link: "search"
-  - name: "Wikibook"
-    link: "wikibook/home"
   - name: "Wikibook Project"
-    link: "wikibook_project/Index"
+    link: "wikibook/Index"
 # Settings for docs collection
 collections:
   docs:
@@ -52,12 +50,9 @@ collections:
   resources:
     output: true
     permalink: /resources/:path
-  wikibook:
-    output: true
-    permalink: /wikibook/:path
   wikibook_project:
     output: true
-    permalink: /wikibook_project/:path
+    permalink: /wikibook/:path
   tutorials:
     output: true
     permalink: /tutorials/:path
