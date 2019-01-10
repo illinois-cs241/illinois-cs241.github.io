@@ -10,4 +10,4 @@
 	shallow = true
 [submodule "_wikibook_project"]
 	path = _wikibook_project
-	url = https://github.com/illinois-cs241/wikibook-project.wiki.git
+	url = https://github.com/illinois-cs241/coursebook.wiki.git
