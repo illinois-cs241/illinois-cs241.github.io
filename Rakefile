@@ -17,7 +17,7 @@ require 'fileutils'
 
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
-wikibook_dir = '_wikibook'
+coursebook_dir = '_coursebook'
 
 $config = Jekyll.configuration({
 :source => './',
@@ -28,7 +28,7 @@ $config = Jekyll.configuration({
 
 multitask default: [
   'pre_build:gen_man',
-  'pre_build:gen_wikibook_project',
+  'pre_build:gen_coursebook',
 ] do
   site = Jekyll::Site.new($config)
   Jekyll::Commands::Build.build site, $config
@@ -118,17 +118,17 @@ namespace :pre_build do
     end
   end
 
-  wikibook_project_dir = "_wikibook_project"
-  task :gen_wikibook_project, [:folder] do |_t, args|
+  coursebook_dir = "_coursebook"
+  task :gen_coursebook, [:folder] do |_t, args|
     folder = args[:folder]
     if folder.nil?
-      folder = wikibook_project_dir
+      folder = coursebook_dir
       puts "Using default Folder #{folder}"
     end
 
-    system "cd #{wikibook_project_dir} && git clean -fq && git reset --hard HEAD"
+    system "cd #{coursebook_dir} && git clean -fq && git reset --hard HEAD"
 
-    Dir.glob("#{wikibook_project_dir}/*md").each do |file|
+    Dir.glob("#{coursebook_dir}/*md").each do |file|
       page_title = File.basename(file, '.md')
       meta = {
         'layout' => 'doc',
@@ -137,7 +137,7 @@ namespace :pre_build do
       }
       prepend(file, "#{meta.to_yaml}\n---\n\n")
     end
-    FileUtils.mv("#{wikibook_project_dir}/Home.md", "#{wikibook_project_dir}/Index.md")
+    FileUtils.mv("#{coursebook_dir}/Home.md", "#{coursebook_dir}/Index.md")
   end
 end
 
@@ -154,7 +154,7 @@ task :test_html do
         '?'
       ],
       http_status_ignore: [0],
-      url_ignore: [/https:\/\/github.com\/angrave\/SystemProgramming\/wiki\//, /wikibook/],
+      url_ignore: [/https:\/\/github.com\/angrave\/SystemProgramming\/wiki\//, /coursebook/],
       parallel: { in_processes: 3 }
     }
     HTMLProofer.check_directory(dir, options).run

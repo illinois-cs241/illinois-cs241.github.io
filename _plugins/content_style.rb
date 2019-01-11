@@ -62,21 +62,6 @@ def add_man_links(page)
   end
 end
 
-def resolve_wikibook_links(page)
-  page.css('a').each do |link|
-    ref = link['href']
-    next unless ref.index(BASE) == 0
-
-    substr = ref[BASE.length..-1]
-    arr = ref.reverse.split('#', 2).map(&:reverse).reverse
-    lhs = URI.unescape(arr[0]).downcase
-    rhs = arr[1]
-    title = lhs.gsub(/[#,:"]/, '').tr(' ', '-').downcase
-    final = "/wikibook/#{File.basename(title, '.md')}.html"
-    link['href'] = "#{final}\##{rhs}"
-  end
-end
-
 def add_anchors(page, title_text_class)
   page.css('.title').each do |card|
     h2 = card.css('h2').first
@@ -162,7 +147,6 @@ def style_content(text)
   add_anchors(page, title_text_class)
 
   add_class_to_elem(page, 'a', 'fancy-link wiki-link')
-  resolve_wikibook_links page
 
   style_cards page
   # Style all tables

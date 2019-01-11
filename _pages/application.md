@@ -81,7 +81,7 @@ Finally, with any good assignment comes excellent documentation that is clear, c
 
 We need a lot of code to support our code. Welcome to infrastructure, where the autograder is developed along with tools and scripts that the rest of the staff uses. We are going to be partnering with CS 225 and helping create a distributed autograder that is run and maintained across course staffs. This is a massive undertaking but will hopefully make the CS department more streamlined.
 
-We have other projects that we are taking off the ground next semester and aren't directly related to the above, but need help. Some of them (the wikibook project) we can tell you if you ask, some are still secret.
+We have other projects that we are taking off the ground next semester and aren't directly related to the above, but need help.
 
 
 ### Skills Required

@@ -133,7 +133,7 @@ void * entry_point(void *arg)
 
 <vertical />
 
-Please read the wikibook about this!
+Please read the coursebook about this!
 
 <horizontal />
 
