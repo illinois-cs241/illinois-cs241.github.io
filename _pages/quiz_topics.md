@@ -3,11 +3,13 @@ layout: doc
 title: Quiz Topics
 ---
 
-## Quiz 1 (Week 2)
+## Heads up: Quizzes days may change from week to week.
 
-#### Start: Tue, Sep 4
+## Quiz 1 (~Week 2)
 
-#### End: Fri, Sep 7
+#### Start: See CBTF
+
+#### End:  See CBTF
 
 #### Topics
 
@@ -35,11 +37,11 @@ title: Quiz Topics
 * Buffering of stdout
 
 
-## Quiz 2 (Week 4)
+## Quiz 2 (~Week 4)
 
-#### Start: Tue, Sep 18
+#### Start: TBA
 
-#### End: Fri, Sep 21
+#### End: TBA
 
 #### Topics
 C (As above with)
@@ -60,18 +62,18 @@ C (As above with)
 
 ## Quiz 3 (Week 6)
 
-#### Start: Tue, Oct 2
+#### Start: TBA
 
-#### End: Fri, Oct 5
+#### End: TBA
 
 
 This quiz asks you about processes (fork, waitpid, waitpid macros, getpid/getppid, exec, and basic use of signals).
 
 ## Quiz 4 (Week 8)
 
-#### Start: Tue, Oct 16
+#### Start: TBA
 
-#### End: Fri, Oct 19
+#### End: TBA
 
 #### Topics
 
@@ -88,9 +90,9 @@ This quiz asks you about processes (fork, waitpid, waitpid macros, getpid/getppi
 
 ## Quiz 5 (Week 10)
 
-#### Start: Tue, Oct 30
+#### Start: TBA
 
-#### End: Fri, Nov 2
+#### End: TBA
 
 #### Topics
 
@@ -100,9 +102,9 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 
 ## Quiz 6 (Week 12)
 
-#### Start: Tue, Nov 13
+#### Start: TBA
 
-#### End: Fri, Nov 16
+#### End: TBA
 
 #### Topics
 
@@ -120,9 +122,9 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 
 ## Quiz 7 (Week 14)
 
-#### Start: Tue, Nov 27
+#### Start: TBA
 
-#### End: Fri, Nov 30
+#### End: TBA
 
 #### Topics
 
@@ -140,9 +142,9 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 
 ## Quiz 8 (Week 15)
 
-#### Start: Tue, Dec 4
+#### Start: TBA
 
-#### End: Fri, Dec 7
+#### End: TBA
 
 #### Topics
 
