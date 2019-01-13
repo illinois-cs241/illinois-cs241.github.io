@@ -38,7 +38,7 @@ navbar_items:
   - name: "Search"
     link: "search"
   - name: "Coursebook"
-    link: "coursebook/Index"
+    link: "coursebook/index"
 # Settings for docs collection
 collections:
   docs:

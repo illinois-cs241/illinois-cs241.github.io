@@ -137,7 +137,7 @@ namespace :pre_build do
       }
       prepend(file, "#{meta.to_yaml}\n---\n\n")
     end
-    FileUtils.mv("#{coursebook_dir}/Home.md", "#{coursebook_dir}/Index.md")
+    FileUtils.mv("#{coursebook_dir}/Home.md", "#{coursebook_dir}/index.md")
   end
 end
 
