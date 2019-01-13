@@ -7,20 +7,28 @@
 {% include header.html %}
 <div class="container-fluid schedule-container">
   <div class="row">
-      <h2>Lectures are Monday, Wednesday, Friday 8am ECEB 1002</h2>
-      <p>Fall 2018 video lectures are available at <a href="https://classtranscribe.com">ClassTranscribe</a></p>
-      <p>Lecture handouts and demos are available at <a href=https://github-dev.cs.illinois.edu/angrave/cs241-lectures">github-dev.cs.illinois.edu/angrave/cs241-lectures</a></p>
+      <h2>Lectures are Monday, Wednesday, Friday 8am ECEB 1002. Classes start Jan 14 8am.</h2>
   <!-- Your content goes here -->
   <div class="col-sm-12 col-xs-12">
   <div class="container-fluid">
   
   <div class = "row">
-  	<div class = "col-lg-3 col-xs-12"><h2><a href="https://echo360.org/"> Recordings</a></h2></div>
+     <div class = "col-lg-3 col-xs-12">Fall 2018 video lectures are available at <a href="https://classtranscribe.com">ClassTranscribe</a></div>
+     <div class = "col-lg-3 col-xs-12">Lecture handouts and demos are available at 
+          <a href=https://github-dev.cs.illinois.edu/angrave/cs241-lectures">github-dev.cs.illinois.edu/angrave/cs241-lectures</a></div>
+      <!-- div class = "col-lg-3 col-xs-12"><h2><a href="https://echo360.org/"> Recordings</a></h2></div -->
   	<div class = "col-lg-3 hidden-xs"><h2>Monday</h2></div>
   	<div class = "col-lg-3 hidden-xs"><h2>Wednesday</h2></div>
   	<div class = "col-lg-3 hidden-xs"><h2>Friday</h2></div>
   </div>
-
+  
+  <div class = "row">
+       <div class = "col-lg-3 col-xs-12">SP2019 schedule be released here. Here's the similar Fa2018 schedule</div>
+  	<div class = "col-lg-3 hidden-xs"><h2>Monday</h2></div>
+  	<div class = "col-lg-3 hidden-xs"><h2>Wednesday</h2></div>
+  	<div class = "col-lg-3 hidden-xs"><h2>Friday</h2></div>
+  </div>
+  
   {% for week in site.data.schedule %}
   <div class = "row">
     <div class = "col-lg-3 announcement-card">
