@@ -55,7 +55,7 @@ An introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikiboo
 We also have the second iteration the [Coursebook](https://github.com/illinois-cs241/coursebook/wiki) That provides html, pdf, and wiki versions. Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
 [mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
-No formal textbook is required, but if you really want to buy some books, we recommend the following custom book Angrave put together in 2007:
+No formal textbook is required, but if you really want to buy a physical book, we recommend the following custom book Angrave put together in 2007:
 
 ```
 Introduction to Systems Concepts and Systems Programming
@@ -113,19 +113,12 @@ If you have accommodations identified by the [Division of Rehabilitation-Educati
 Any problem with testing in the CBTF **must** be reported to CBTF staff at the time the problem occurs. If you do not inform a proctor of a problem during the test then you **forfeit** all rights to redress.
 
 
-The Fall 2018 schedule as of August 22 is below. The complete and authoritative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website).
+The complete and authoritative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website). Be careful: *start and end dates may change from week to week*
 
 
 | Quiz | First day | Last day |
 | -----|-----------|----------|
-|Quiz 1 (Week 2)|Tue, Sep 4|Fri, Sep 7|
-|Quiz 2 (Week 4)|Tue, Sep 18|Fri, Sep 21|
-|Quiz 3 (Week 6)|Tue, Oct 2|Fri, Oct 5|
-|Quiz 4 (Week 8)|Tue, Oct 16|Fri, Oct 19|
-|Quiz 5 (Week 10)|Tue, Oct 30|Fri, Nov 2|
-|Quiz 6 (Week 12)|Tue, Nov 13|Fri, Nov 16|
-|Quiz 7 (Week 14)|Tue, Nov 27|Fri, Nov 30|
-|Quiz 8 (Week 15)|Tue, Dec 4|Fri, Dec 7|
+
 
 The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT). The topics of a quiz can be seen at [The topics page]({% link _pages/quiz_topics.md %}).
 
@@ -202,4 +195,8 @@ This includes seeking descriptions of the questions from students who have taken
 If there is prep material provided in lecture or on Piazza, you are welcome to share that material freely.
 
 We want you to get the most out your education, and cheating not only affects your peers, but also your level of knowledge and ability.
+
+## Diversity Statement
+
+UIUC is committed to equal opportunity for all persons, regardless of race, ethnicity, religion, sex, gender identity or expression, creed, age, ancestry, national origin, handicap, sexual orientation, political affiliation, marital status, developmental disability, or arrest or conviction record. We value diversity in all of its definitions, including who we are, how we think, and what we do. We cultivate an accessible, inclusive, and equitable culture where everyone can pursue their passions and reach their potential in an intellectually stimulating and respectful environment. We will continue to create an inclusive campus culture where different perspectives are respected and individuals feel valued.
 
