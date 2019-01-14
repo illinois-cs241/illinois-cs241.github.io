@@ -129,7 +129,13 @@ namespace :pre_build do
     system "cd #{coursebook_dir} && git clean -fq && git reset --hard HEAD"
 
     Dir.glob("#{coursebook_dir}/*md").each do |file|
-      page_title = File.basename(file, '.md')
+      file_contents = File.read(file)
+      matches = file_contents.match(/(.*)\n={3,}/)
+      if matches
+        page_title = matches.captures[0]
+      else
+        page_title = File.basename(file, '.md')
+      end
       meta = {
         'layout' => 'doc',
         'title' => page_title,
