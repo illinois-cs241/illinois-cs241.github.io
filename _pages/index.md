@@ -165,6 +165,8 @@ If you have a question about your personal autograder results after the final au
 * These questions should be for "I have exhaustive test cases for _X_, so how am I failing _Y_?"
 * Please mention your NetID in the post, so we can look up your code if needed.
 
+**NOTE:** If your Git author is not correctly set to your netid@illinois.edu, _your code will not be graded_. There are **no** exceptions. If you aren't sure if its set correctly, please make a private Piazza post with your net ID and someone will happily help.
+
 ## Academic Integrity
 
 CS 241 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously, and all cases of cheating will be brought to the University, your department, and your college. You should understand how [academic integrity](https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code) applies to Computer Science courses.
