@@ -130,6 +130,8 @@ Labs are primarily teaching exercises designed either to prepare you for the mac
 
 Machine Problems are different. While they are a key learning experience MPs are also a key assessment of your skills. These are solo exercises and you must work alone. For MPs, you may not share code in any way. This includes show, share, email, or debug each others code. You may have high level discussions with each other on the ideas in the assignments but that is it. You are responsible for keeping the code for you machine problems private this includes not letting people view your code. You may not publish your code on any open website.
 
+No late submissions will be accepted.
+
 ## Absences
 
 If you are in an exceptional situation -- i.e. family emergency, sickness, please email ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)) and we will deal with your situation on a case-by-case basis via the course admin ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)). For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://odos.illinois.edu/community-of-care/student-assistance-center/) note stating that you contacted the Emergency Dean.
