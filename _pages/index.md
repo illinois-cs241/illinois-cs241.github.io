@@ -115,9 +115,18 @@ Any problem with testing in the CBTF **must** be reported to CBTF staff at the t
 
 The complete and authoritative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website). Be careful: *start and end dates may change from week to week*
 
+The *preliminary schedule* that we have received is below. The true CBTF schedule at [https://cbtf.engr.illinois.edu/](CBTF website) is the final say. Note We have requested the first quiz to extend an extra day because Jan 21 is Martin Luther King day, but have not received confirmation.
 
 | Quiz | First day | Last day |
 | -----|-----------|----------|
+| Quiz 1 | Mon, Jan 21	| Wed, Jan 23 |
+| Quiz 2 | Mon, Jan 28	| Wed, Jan 30 |
+| Quiz 3 | Mon, Feb 11	| Wed, Feb 13 |
+| Quiz 4 | Mon, Feb 25	| Wed, Feb 27 |
+| Quiz 5 | Mon, Mar 11	| Wed, Mar 13 |
+| Quiz 6 | Mon, Apr 1	| Wed, Apr 3  |
+| Quiz 7 | Mon, Apr 15	| Wed, Apr 17 |
+| Quiz 8 | Mon, Apr 29	| Wed, May 1  |
 
 
 The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT). The topics of a quiz can be seen at [The topics page]({% link _pages/quiz_topics.md %}).
