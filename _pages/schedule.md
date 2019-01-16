@@ -32,10 +32,10 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
      
 ### Distance future
 
-Mon 01/28. CBTF Quiz 2
-Mon 02/11. CBTF Quiz 3
-Mon 02/25. CBTF Quiz 4
-Mon 03/11. CBTF Quiz 5
-Mon 04/1.  CBTF Quiz 6
-Mon 04/15. CBTF Quiz 7
-Mon 04/29  CBTF Quiz 8
+* Mon 01/28. CBTF Quiz 2
+* Mon 02/11. CBTF Quiz 3
+* Mon 02/25. CBTF Quiz 4
+* Mon 03/11. CBTF Quiz 5
+* Mon 04/1.  CBTF Quiz 6
+* Mon 04/15. CBTF Quiz 7
+* Mon 04/29  CBTF Quiz 8

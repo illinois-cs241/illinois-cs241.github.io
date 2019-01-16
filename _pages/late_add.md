@@ -55,7 +55,7 @@ $ git push origin master
 
 ## Catching up on Material
 
-Make sure you visit the course [Wiki Book](https://github.com/angrave/SystemProgramming/wiki) and read over the chapters relating to our [lecture schedule]({% link _pages/schedule.html%}#currentWeek) from when you joined.
+Make sure you visit the course [Wiki Book](https://github.com/angrave/SystemProgramming/wiki) and read over the chapters relating to our [lecture schedule]({% link _pages/schedule.md%}#currentWeek) from when you joined.
 
 If you are looking for the lecture handouts, they are in the _shared folder above. Feel free to ask about any material you don't understand on Piazza or Lab sections. There is a lot to go through in this course, so falling behind is not ideal.
 
