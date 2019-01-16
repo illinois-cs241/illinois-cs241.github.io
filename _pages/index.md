@@ -113,13 +113,13 @@ If you have accommodations identified by the [Division of Rehabilitation-Educati
 Any problem with testing in the CBTF **must** be reported to CBTF staff at the time the problem occurs. If you do not inform a proctor of a problem during the test then you **forfeit** all rights to redress.
 
 
-The complete and authoritative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website). Be careful: *start and end dates may change from week to week*
+The complete and authoritative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website). Be careful: *start and end dates change from week to week*
 
-The *preliminary schedule* that we have received is below. The true CBTF schedule at [https://cbtf.engr.illinois.edu/](CBTF website) is the final say. Note We have requested the first quiz to extend an extra day because Jan 21 is Martin Luther King day, but have not received confirmation.
+Note the first quiz runs a day late because Jan 21 is Martin Luther King day.
 
 | Quiz | First day | Last day |
 | -----|-----------|----------|
-| Quiz 1 | Mon, Jan 21	| Wed, Jan 23 |
+| Quiz 1 | Tue, Jan 22	| *Thu*, Jan 24 |
 | Quiz 2 | Mon, Jan 28	| Wed, Jan 30 |
 | Quiz 3 | Mon, Feb 11	| Wed, Feb 13 |
 | Quiz 4 | Mon, Feb 25	| Wed, Feb 27 |
