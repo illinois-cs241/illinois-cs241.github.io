@@ -3,7 +3,7 @@
   name: "Lawrence Angrave"
   netid: angrave
   roles: "Captain and Lecturer"
-  semesters: "Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018"
+  semesters: "Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Spring 2019"
   specialty: "Systems and CS Education"
 -
   name: CS241 Admin
@@ -18,95 +18,158 @@
   class: 19
   roles: Historian
   specialty: reading
-  semesters: Fall 2016 - Fall 2018
+  semesters: Fall 2016 - Spring 2019
 -
   name: Aneesh Durg
   netid: durg2
   class: 19
   roles: Lab/Office Hours Assistant, Assignment Developer, and Honors Mentor
   specialty: memes
-  semesters: Spring 2017 - Fall 2018
+  semesters: Spring 2017 - Spring 2019
 -
   name: Yasha Mostofi
   netid: mostofi2
-  class: 18
+  class: 19
   roles: Assignment Developer and Infrastructure
   specialty: beards
-  semesters: Spring 2017 - Fall 2018
+  semesters: Spring 2017 - Spring 2019
 -
   name: Jing Rong Lim
   netid: jrlim3
   class: ""
   roles: Lab/Office Hours Assistant
   specialty: quizzes
-  semesters: Fall 2017, Spring 2018, and Fall 2018
+  semesters: Fall 2017 - Spring 2019
 -
   name: Nick Magerko
   netid: magerko2
   class: ""
   roles: Assignment Developer
   specialty: ""
-  semesters: Fall 2017, Spring 2018, and Fall 2018
+  semesters: Fall 2017 - Spring 2019
 -
   name: Steven Shang
   netid: shang9
   class: 19
   roles: Honors Lead 
   specialty: things
-  semesters: Fall 2017, Spring 2018, and Fall 2018
--
-  name: Elaine Ang
-  netid: ranang2
-  class: ""
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2017, Spring 2018, and Fall 2018
--
-  name: Sarah Schieferstein
-  netid: schfrst2
-  class: ""
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Spring 2018 and Fall 2018
+  semesters: Fall 2017 - Spring 2019
 -
   name: Shreyas Patil
   netid: srpatil2
   class: ""
   roles: Lab/Office Hours Assistant, Assignment Developer, and Honors Mentor
   specialty: ""
-  semesters: Spring 2018 and Fall 2018
+  semesters: Spring 2018, Fall 2018, and Spring 2019
 -
   name: Ankit Gohel
   netid: ankitng2
   class: ""
   roles: Frontend + Backend
   specialty: security and mobile dev
-  semesters: Spring 2018 and Fall 2018
+  semesters: Spring 2018, Fall 2018, and Spring 2019
 -
   name: Ayush Ranjan
   netid: ayushr2
   class: ""
   roles: Lab/Office Hours Assistant, Infrastructure
   specialty: ""
-  semesters: Fall 2018
+  semesters: Fall 2018 and Spring 2019
 -
   name: Andy Lee
   netid: andy2
   class: ""
   roles: Lab/Office Hours Assistant, Infrastructure
   specialty: ""
-  semesters: Fall 2018
+  semesters: Fall 2018 and Spring 2019
 -
   name: Arnav Sankaran
   netid: arnavs3
   class: ""
   roles: Assignment Development, Infrastructure
   specialty: ""
-  semesters: Fall 2018 
+  semesters: Fall 2018 and Spring 2019 
 -
   name: Ophir Sneh
   netid: osneh2
   class: ""
   roles: Assignment Development, Front End
   specialty: ""
-  semesters: Fall 2018 
+  semesters: Fall 2018 and Spring 2019 
+-
+  name: Ann Rajan
+  netid: amrajan2
+  class: ""
+  roles: Assignment Development, Front End
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Rohin Bhasin
+  netid: rohinb2
+  class: ""
+  roles: Assignment Development, Front End
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Hung Woei Neoh
+  netid: hneoh2
+  class: ""
+  roles: Assignment Development, Front End
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Rod Lin
+  netid: zl38
+  class: ""
+  roles: Assignment Development, Infrastructure
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Pradyumna Shome
+  netid: pshome2
+  class: ""
+  roles: Assignment Development, Front End
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Rafi Long
+  netid: rjlong2
+  class: ""
+  roles: Assignment Development, Front End
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Dane Kozak
+  netid: dkozak3
+  class: ""
+  roles: Assignment Development, Front End
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Sultan Durrani
+  netid: sultand2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Ishan Shah
+  netid: ishanps2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: Ram Gupta
+  netid: rgupta31
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2019
+-
+  name: William Sentosa
+  netid: sentosa2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2019
