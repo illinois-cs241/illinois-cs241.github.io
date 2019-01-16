@@ -30,7 +30,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Mon 01/21. Martin Luther King Day. No meetings. No CBTF.
 * Tues 01/22 - Thu 01/24. Quiz 1 at CBTF
      
-### Distance future
+### Distant future
 
 * Mon 01/28. CBTF Quiz 2
 * Mon 02/11. CBTF Quiz 3
