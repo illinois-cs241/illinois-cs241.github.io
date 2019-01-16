@@ -3,13 +3,17 @@ layout: doc
 title: Quiz Topics
 ---
 
-## Heads up: Quizzes days may change from week to week.
+## Use CBTF website for to book a slot.
 
-## Quiz 1 (~Week 2)
+* Slots are in limited supply! Book yours today!  [https://cbtf.engr.illinois.edu/](CBTF website)
+* Miss your slot? Visit CBTF as soon as possible. 
+* Need DRES accomodations? Please visit the CBTF website for more informaiton.
 
-#### Start: See CBTF
+## Quiz 1 (Week 2)
 
-#### End:  See CBTF
+#### Mon, Jan 21 to Thu, Jan 24
+
+#### This is the only quiz that includes Thursday
 
 #### Topics
 
@@ -37,11 +41,8 @@ title: Quiz Topics
 * Buffering of stdout
 
 
-## Quiz 2 (~Week 4)
-
-#### Start: TBA
-
-#### End: TBA
+## Quiz 2 (Week 3)
+#### Mon, Jan 28 to Wed, Jan 30
 
 #### Topics
 C (As above with)
@@ -60,20 +61,15 @@ C (As above with)
 * How to use the WAIT exit status macros WIFEXITED etc.
 
 
-## Quiz 3 (Week 6)
+## Quiz 3 (Week 5)
 
-#### Start: TBA
-
-#### End: TBA
-
+#### Mon, Feb 11 to Wed, Feb 13
 
 This quiz asks you about processes (fork, waitpid, waitpid macros, getpid/getppid, exec, and basic use of signals).
 
-## Quiz 4 (Week 8)
+## Quiz 4 (Week 7)
 
-#### Start: TBA
-
-#### End: TBA
+#### Mon, Feb 25 to Wed, Feb 27
 
 #### Topics
 
@@ -88,11 +84,10 @@ This quiz asks you about processes (fork, waitpid, waitpid macros, getpid/getppi
 * Producer Consumer
 * Ring buffer
 
-## Quiz 5 (Week 10)
+## Quiz 5 (Week 9)
 
-#### Start: TBA
+#### Mon, Mar 11  to Wed, Mar 13
 
-#### End: TBA
 
 #### Topics
 
@@ -102,9 +97,7 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 
 ## Quiz 6 (Week 12)
 
-#### Start: TBA
-
-#### End: TBA
+#### Mon, Apr 1 to Wed, Apr 3
 
 #### Topics
 
@@ -122,9 +115,7 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 
 ## Quiz 7 (Week 14)
 
-#### Start: TBA
-
-#### End: TBA
+#### Mon, Apr 15 to Wed, Apr 17
 
 #### Topics
 
@@ -140,11 +131,9 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 * Purpose and properties of getaddrinfo
 * Reading and writing to pipes (including blocking, SIGPIPE and detecting when no more bytes can be read)
 
-## Quiz 8 (Week 15)
+## Quiz 8 (Week 16)
 
-#### Start: TBA
-
-#### End: TBA
+#### Mon, Apr 29 to	Wed, May 1
 
 #### Topics
 
