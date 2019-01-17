@@ -11,7 +11,6 @@ authors: "Steve & Bhuvan"
 * Most labs will begin with a worksheet
 * 15-20 minutes in, your TA may go over it with the class
 * You should work on your lab assignment for the rest of class time
-* You get credit by making an honest effort on the worksheet
 * Email the GA (cs241admin@illinois.edu) if you need an exemption
 
 ## Lab Attendance
