@@ -22,9 +22,6 @@ authors: "Steve & Bhuvan"
 ## Different Lab Sections
 
 * Due to seating limitations, you are required to go to the lab section you signed up for
-* If you wish to go to any other lab section, you may get permission from the TA of another section to go to their section, provided:
-    * you will be working on your laptop in the room, or
-    * there is seating available where registered students get priority.
 
 <vertical />
 
