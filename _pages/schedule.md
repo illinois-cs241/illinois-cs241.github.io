@@ -21,14 +21,16 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Thu 01/17. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
-* Fri 01/16. Online Lecture 3 (not yet available). No lecture or meeting in ECEB1002.
+* Fri 01/18. Online Lecture 3 (available 1/18 on classtranscribe). No physical lecture or meeting in ECEB1002.
 
 * [Sign up](https://cbtf.engr.illinois.edu/) this week your 50 minute slot for next week's CBTF [Quiz 1]({% link _pages/quiz_topics.md %})
+
+* Weekend target: Finish HW0. Finish Chapters 2 (Background) and 3 (C Programming Language). This will ensure you are ready for the first quiz (see the quiz page for topics)
 
 ### Heads-up Week 2
 
 * Mon 01/21. Martin Luther King Day. No meetings. No CBTF.
-* Tues 01/22 - Thu 01/24. Quiz 1 at CBTF
+* Tues 01/22 - Thu 01/24. Quiz 1 at CBTF (see the quiz page for details)
      
 ### Distant future
 
