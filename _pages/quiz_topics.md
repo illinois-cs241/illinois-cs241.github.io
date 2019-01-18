@@ -3,7 +3,7 @@ layout: doc
 title: Quiz Topics
 ---
 
-## Use CBTF website for to book a slot.
+## Use the CBTF website to book a slot.
 
 * Slots are in limited supply! Book yours today!  [https://cbtf.engr.illinois.edu/](CBTF website)
 * Miss your slot? Visit CBTF as soon as possible. 
