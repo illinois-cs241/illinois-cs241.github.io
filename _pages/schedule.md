@@ -21,7 +21,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Thu 01/17. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
-* Fri 01/18. Online Lecture 3 (available 1/18 on classtranscribe). No physical lecture or meeting in ECEB1002.
+* Fri 01/18. Lecture 3 "A Day At The C side"" (available 1/18 on classtranscribe). No physical lecture or meeting in ECEB1002.
 
 * [Sign up](https://cbtf.engr.illinois.edu/) this week your 50 minute slot for next week's CBTF [Quiz 1]({% link _pages/quiz_topics.md %})
 
@@ -30,8 +30,16 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 ### Heads-up Week 2
 
 * Mon 01/21. Martin Luther King Day. No meetings. No CBTF.
+
 * Tues 01/22 - Thu 01/24. Quiz 1 at CBTF (see the quiz page for details)
-     
+
+* Wed 01/23. Online Lecture 4 "Reading data and text"
+* Wed 01/23. Angrave World's-Largest-Office Hours? ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Thur 01/24. Labs
+
+* Fri 01/25. Online Lecture 5 "Exec, Fork, and environment variables"
+
 ### Distant future
 
 * Mon 01/28. CBTF Quiz 2
