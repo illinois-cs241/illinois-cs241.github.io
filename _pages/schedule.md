@@ -34,7 +34,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Tues 01/22 - Thu 01/24. Quiz 1 at CBTF (see the quiz page for details)
 
 * Wed 01/23. Online Lecture 4 "Reading data and text"
-* Wed 01/23. Angrave World's-Largest-Office Hours? ECEB1002 8am-9am, then ECEB Atrium until 9:30
+* Wed 01/23. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
 
 * Thur 01/24. Labs
 
