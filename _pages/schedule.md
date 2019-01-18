@@ -35,6 +35,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Wed 01/23. Online Lecture 4 "Reading data and text"
 * Wed 01/23. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+* HW0 due 2019-01-23 23:59. Lab Assignment due 2019-01-23 23:59
 
 * Thur 01/24. Labs
 
