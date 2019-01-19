@@ -25,6 +25,13 @@ Then nagivate to the root of the repostory and install
 bundle install
 ```
 
+Finally, your repository has the submodules needed
+
+```
+git submodule init
+git submodule update --recursive
+```
+
 ## Running
 
 To build the site it is as simple as
@@ -83,6 +90,7 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
 - `static`: holds other static content, like PDFs
 - `_config.yml`: global site configuration
 - `_pages` Keeps stray pages
+- `_coursebook` Markdown directory with all the coursebook material
 
 ## How to write documentation
 
