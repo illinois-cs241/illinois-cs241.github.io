@@ -39,6 +39,12 @@ If you want to build and serve a simple web server, run
 bundle exec rake serve
 ```
 
+If you want to run a spell check do
+
+```
+bundle exec rake spell_check
+```
+
 ## Jekyll and Github Pages
 
 This website is made with [Jekyll](https://jekyllrb.com/) and [Github Pages](https://help.github.com/articles/what-are-github-pages/).
@@ -77,13 +83,6 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
 - `static`: holds other static content, like PDFs
 - `_config.yml`: global site configuration
 - `_pages` Keeps stray pages
-  - `404.html`: 404 error page
-  - `help.md`: markdown for help page
-  - `index.md`: syllabus page
-  - `labs.html`: lab schedule page
-  - `mps.html`: mp schedule page
-  - `schedule.html`: lecture schedule page
-  - `staff.html`: listing of staff
 
 ## How to write documentation
 
@@ -94,90 +93,6 @@ All documentation is stored in `assignment-docs` repository. To make any changes
 ### Content for this file
 
 Once you have created this file you can add all the markdown you please. Somethings to take note of is that javascript will run to make all the areas between `h2`/`##` tags into sections and add an entry to the table of content. The title of the section and the entry of in the table of content is exactly the text that comes after your `h2`/`##`. Also `h1`/`#` is reserved for the title which will automatically be added in.
-
-### Front Matter (configurations)
-
-After you are done writing content you need to add front matter to the top of the file. Front matter allows Jekyll to know things like "which template should be used to generate this page", "what is the title of this page?", and "should this page be accessible through a custom link?". To put it simply just add the following:
-
-```
----
-layout: doc
-title: "Password Cracker"
-submissions:
-- title: Part 1
-  due_date: 10/17 11:59pm
-  graded_files:
-  - cracker1.c
-- title: Part 2
-  due_date: 10/24 11:59pm
-  graded_files:
-  - cracker2.c
-learning_objectives:
-  - Multithread Programming and its performance gains
-  - Using a thread safe datastructure
-  - Using synchronization primitives
-wikibook:
-  - "Pthreads, Part 1: Introduction"
-  - "Pthreads, Part 2: Usage in Practice"
-  - "Synchronization, Part 1: Mutex Locks"
-  - "Synchronization, Part 2: Counting Semaphores"
-  - "Synchronization, Part 3: Working with Mutexes And Semaphores"
-  - "Synchronization, Part 4: The Critical Section Problem"
-  - "Synchronization, Part 5: Condition Variables"
-  - "Synchronization, Part 6: Implementing a barrier"
----
-```
-
-`layout: doc` will tell jekyll to use `_layouts/doc.html` as the layout.
-
-`title: "Password Cracker"` will tell jekyll that the title is "Password Cracker" and add that in an `h1` tag.
-
-```
-submissions:
-- title: Part 1
-  due_date: 10/17 11:59pm
-  graded_files:
-  - cracker1.c
-- title: Part 2
-  due_date: 10/24 11:59pm
-  graded_files:
-  - cracker2.c
-```
-Is a list of submissions. This will add:
-
-```
-Part 1 due 10/17 11:59pm
-  cracker1.c
-Part 2 due 10/24 11:59pm
-  cracker2.c
-```
-
-To the sidebar of the docs.
-
-```
-learning_objectives:
-  - Multithread Programming and its performance gains
-  - Using a thread safe datastructure
-  - Using synchronization primitives
-```
-
-Will automatically add a section labeled "Learning Objectives" to the top of the docs with the appropriate bullet points.
-
-```
-wikibook:
-  - "Pthreads, Part 1: Introduction"
-  - "Pthreads, Part 2: Usage in Practice"
-  - "Synchronization, Part 1: Mutex Locks"
-  - "Synchronization, Part 2: Counting Semaphores"
-  - "Synchronization, Part 3: Working with Mutexes And Semaphores"
-  - "Synchronization, Part 4: The Critical Section Problem"
-  - "Synchronization, Part 5: Condition Variables"
-  - "Synchronization, Part 6: Implementing a barrier"
-```
-
-Will automatically add a section labeled "Suggested Readings" to the top of the docs. Note that these are the titles of the pages of the wikibook and must be wrapped in quotes to escape the ":". This will also automatically generate the links to the wikibook (and only wikibook). If you want to link to something outside of the wikibook, then you will need to create another section for that.
-
-If you do not want students to be able to access this page (say you are beta testing), then put them in `_drafts` and you can preview the site with `--drafts`, when you build with Jekyll.
 
 ### Syntax Highlighting
 Also you might want to add syntax highlighting.
