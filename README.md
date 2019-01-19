@@ -5,6 +5,40 @@
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/status.svg)](https://depfu.com)
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/overview.svg)](https://depfu.com/github/illinois-cs241/illinois-cs241.github.io?project_id=6331)
 
+## Installing
+
+First make sure you have ruby >= 2.4. We recommend using `rvm`
+
+```
+rvm use 2.4.5
+```
+
+After, we recommend bundler to install all the dependencies
+
+```
+sudo gem install bundler
+```
+
+Then nagivate to the root of the repostory and install
+
+```
+bundle install
+```
+
+## Running
+
+To build the site it is as simple as
+
+```
+bundle exec rake
+```
+
+If you want to build and serve a simple web server, run
+
+```
+bundle exec rake serve
+```
+
 ## Jekyll and Github Pages
 
 This website is made with [Jekyll](https://jekyllrb.com/) and [Github Pages](https://help.github.com/articles/what-are-github-pages/).
