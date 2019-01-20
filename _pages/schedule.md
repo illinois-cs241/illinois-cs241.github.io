@@ -34,12 +34,240 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Tues 01/22 - Thu 01/24. Quiz 1 at CBTF (see the quiz page for details)
 
 * Wed 01/23. Online Lecture 4 "Reading data and text"
+
 * Wed 01/23. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
-* HW0 due 2019-01-23 23:59. Lab Assignment due 2019-01-23 23:59
+
+* HW0 due {{ site.assign_by_url['lockpicking_lab'].submissions[0].due_date }}. Lab Assignment due {{ site.assign_by_url['lockpicking_lab'].submissions[1].due_date }}
 
 * Thur 01/24. Labs
 
 * Fri 01/25. Online Lecture 5 "Exec, Fork, and environment variables"
+
+{% if false %}
+
+### Heads-up Week 3
+
+* Mon 01/28. Online Lecture
+
+* Mon 01/28. MP Assignment Due {{ site.assign_by_url['extreme_edge_cases'].submissions[0].due_date }}
+
+* Mon 01/28 - Wed 01/30. Quiz 2 at CBTF
+
+* Wed 01/30. Online Lecture
+
+* Wed 01/30. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 01/30. Lab Assignment due {{ site.assign_by_url['perilous_pointers'].submissions[0].due_date }}
+
+* Thur 01/31. Labs
+
+* Fri 02/01. Online Lecture
+
+### Heads-up Week 4
+
+* Mon 02/04. Online Lecture
+
+* Mon 02/04. MP Assignment Due {{ site.assign_by_url['vector'].submissions[0].due_date }}
+
+* Wed 02/06. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 02/06. Lab Assignment due {{ site.assign_by_url['utilities_unleashed'].submissions[0].due_date }}
+
+* Thur 02/07. Labs
+
+* Fri 02/08. Online Lecture
+
+### Heads-up Week 5
+
+* Mon 02/11. Online Lecture
+
+* Mon 02/11. MP Assignment Due {{ site.assign_by_url['shell'].submissions[0].due_date }}
+
+* Mon 02/11 - Wed 02/06. CBTF Quiz 3
+
+* Wed 02/06. Online Lecture
+
+* Wed 02/13. Online Lecture
+
+* Wed 02/13. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 02/13. Lab Assignment due {{ site.assign_by_url['mini_valgrind'].submissions[0].due_date }}
+
+* Thur 02/14. Labs
+
+* Fri 02/15. Online Lecture
+
+### Heads-up Week 6
+
+* Mon 02/18. Online Lecture
+
+* Mon 02/18. MP Assignment Due {{ site.assign_by_url['shell'].submissions[1].due_date }}
+
+* Wed 02/20. Online Lecture
+
+* Wed 02/20. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 02/20. Lab Assignment due {{ site.assign_by_url['teaching_threads'].submissions[0].due_date }}
+
+* Thur 02/21. Labs
+
+* Fri 02/22. Online Lecture
+
+### Heads-up Week 7
+
+* Mon 02/25. Online Lecture
+
+* Mon 02/25. MP Assignment Due {{ site.assign_by_url['malloc'].submissions[0].due_date }}
+
+* Mon 02/25 - Wed 02/07. CBTF Quiz 4
+
+* Wed 02/27. Online Lecture
+
+* Wed 02/27. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 02/27. Lab Assignment due {{ site.assign_by_url['critical_concurrency'].submissions[0].due_date }}
+
+* Thur 02/28. Labs
+
+* Fri 03/01. Online Lecture
+
+### Heads-up Week 8
+
+* Mon 03/04. Online Lecture
+
+* Mon 03/04. MP Assignment Due {{ site.assign_by_url['malloc'].submissions[1].due_date }}
+
+* Wed 03/06. Online Lecture
+
+* Wed 03/06. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 03/06. Lab Assignment due {{ site.assign_by_url['deadlocked_diners'].submissions[0].due_date }}
+
+* Thur 03/07. Labs
+
+* Fri 03/08. Online Lecture
+
+
+### Heads-up Week 9
+
+* Mon 03/11. Online Lecture
+
+* Mon 03/11. MP Assignment Due {{ site.assign_by_url['password_cracker'].submissions[0].due_date }}
+
+* Mon 03/11 - Mon 03/13. CBTF Quiz 5
+
+* Wed 03/13. Online Lecture
+
+* Wed 03/13. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 03/13. Lab Assignment due {{ site.assign_by_url['ideal_indirection'].submissions[0].due_date }}
+
+* Thur 03/14. Labs
+
+* Fri 03/15. Online Lecture
+
+### Heads-up Week 10
+
+* Mon 03/25. Online Lecture
+
+* Mon 03/25. MP Assignment Due {{ site.assign_by_url['parallel_make'].submissions[0].due_date }}
+
+* Wed 03/27. Online Lecture
+
+* Wed 03/27. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 03/27. Lab Assignment due {{ site.assign_by_url['mapreduce'].submissions[0].due_date }}
+
+* Thur 03/28. Labs
+
+* Fri 03/29. Online Lecture
+
+### Heads-up Week 11
+
+* Mon 04/01. Online Lecture
+
+* Mon 04/01. MP Assignment Due {{ site.assign_by_url['parallel_make'].submissions[1].due_date }}
+
+* Mon 04/01 - Wed 04/03.  CBTF Quiz 6
+
+* Wed 04/03. Online Lecture
+
+* Wed 04/03. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 04/03. Lab Assignment due {{ site.assign_by_url['charming_chatroom'].submissions[0].due_date }}
+
+* Thur 04/04. Labs
+
+* Fri 04/05. Online Lecture
+
+### Heads-up Week 12
+
+* Mon 04/08. Online Lecture
+
+* Mon 04/08. MP Assignment Due {{ site.assign_by_url['finding_filesystems'].submissions[0].due_date }}
+
+* Wed 04/10. Online Lecture
+
+* Wed 04/10. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 04/10. Lab Assignment due {{ site.assign_by_url['mad_mad_access_pattern'].submissions[0].due_date }}
+
+* Thur 04/11. Labs
+
+* Fri 04/12. Online Lecture
+
+
+### Heads-up Week 13
+
+* Mon 04/15. Online Lecture
+
+* Mon 04/15. MP Assignment Due {{ site.assign_by_url['networking_mp'].submissions[0].due_date }}
+
+* Mon 04/15 - Wed 04/17. CBTF Quiz 7
+
+* Wed 04/17. Online Lecture
+
+* Wed 04/17. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 04/17. Lab Assignment due {{ site.assign_by_url['savvy_scheduler'].submissions[0].due_date }}
+
+* Thur 04/18. Labs
+
+* Fri 04/19. Online Lecture
+
+### Heads-up Week 14
+
+* Mon 04/22. Online Lecture
+
+* Mon 04/22. MP Assignment Due {{ site.assign_by_url['networking_mp'].submissions[1].due_date }}
+
+* Wed 04/24. Online Lecture
+
+* Wed 04/24. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 04/24. Lab Assignment due {{ site.assign_by_url['resplendent_rpcs'].submissions[0].due_date }}
+
+* Thur 04/25. Labs
+
+* Fri 04/26. Online Lecture
+
+### Heads-up Week 15
+
+* Mon 04/29. Online Lecture
+
+* Mon 04/29. MP Assignment Due {{ site.assign_by_url['networking_mp'].submissions[2].due_date }}
+
+* Mon 04/29 - 05/01. CBTF Quiz 8
+
+* Wed 04/31. Online Lecture
+
+* Wed 04/31. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+
+* Wed 04/31. Lab Assignment due {{ site.assign_by_url['lovable_linux'].submissions[0].due_date }}
+
+* Wed 04/31. Regrades are due
+
+{% endif %}
 
 ### Distant future
 
