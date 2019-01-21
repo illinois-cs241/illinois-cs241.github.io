@@ -6,7 +6,7 @@ title: Honors
 
 Couldn't get enough systems programming from CS 241? Welcome to the honors section! This course is recommended for those who want to expand their systems knowledge with additional lectures and a semester long project in systems programming.
 
-There will be lectures throughout the semester, usually every week or every other week, given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241.
+There will be lectures throughout the semester, usually every week or every other week, given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241. On some weeks, we will have in class labs instead of traditional lectures.
 
 You are also required to propose and complete a project of your own. Your project should be related to systems programming and it should clearly demonstrate and build upon concepts learned in regular [and/or honors] CS 241 lectures. Once your project has been approved by course staff, you will be assigned a mentor who you will check in with weekly for progress reports and code review.
 
@@ -29,9 +29,9 @@ We publish the same grading thresholds as the regular section of CS 241. Your pr
 
 ## Absences
 
-We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop two lecture attendance grades, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
+We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop two lecture/lab attendance grades, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
 
-If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or have a sudden death in the family, please refer to the [CS 241 absence policy]({% link _pages/index.md %}#absences).
+If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or other personal emergencies, please refer to the [CS 241 absence policy]({% link _pages/index.md %}#absences).
 
 ## Project
 
@@ -50,7 +50,7 @@ After the first few weeks of the course, you will be required to submit a projec
 * Projected project milestones (What will you do in the first month? Second month? etc.)
 * Challenges you expect will arise in working on this project
 
-Project proposals should be submitted as a private post on Piazza, and are due **Friday, February 2nd**
+Project proposals should be submitted as a private post on Piazza by the due date (we will specify the due date in lecture and on Piazza).
 
 The exact grading requirements of each project vary. You and your mentor will decide on a reasonable scope for your project at the beginning of the semester, though this target may move as appropriate throughout the semester.
 
@@ -62,7 +62,7 @@ You should be sure to touch on what your project is, what interesting systems pr
 
 You should have some sort of visual presentation (Powerpoint, Google Slides, LaTeX beamer, etc.) to accompany your talk. Feel free to include screenshots of your project or pre-recorded demo videos. To avoid losing time to technical difficulties, live project demonstrations are not allowed; you must pre-record any demonstration you plan to give.
 
-To ensure everyone has adequate time to present, we will pre-load all presentations on the computer connected in 3403. **Please email your presentation to course staff by 5pm on the day you are presenting** so that we have adequate time to prepare this.
+**Please email your presentation to course staff by 5pm on the day you are presenting** so that we have adequate time to load presentations onto one machine to reduce the overhead of switching presenting groups.
 
 Remember that you do not have to have completed your project by the time you present. However, you should make sure you briefly cover any remaining work you plan to do.
 
@@ -122,7 +122,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
 
-http://piazza.com/illinois/fall2018/cs29641
+[http://piazza.com/illinois/spring2019/cs29641](http://piazza.com/illinois/spring2019/cs29641)
 
 ## Project Ideas?
 
