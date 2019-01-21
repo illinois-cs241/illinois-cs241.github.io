@@ -15,11 +15,14 @@ At the end of the semester, you will present your work to your peers. The presen
 ## Grading
 
 ```
-Lecture Participation  : 15% (includes explorations)
-Project Proposal       : 5%
-Weekly Check-ins       : 25%
-Presentation           : 20%
-Final Project          : 35%
+Labs                        : 15%
+Lecture Participation       : 15%
+Final Project               : 70%
+- Project Proposal/Planning : 5%
+- Midterm                   : 10%
+- Weekly Check-ins          : 10%
+- Final Presentation        : 15%
+- Final Deliverables        : 30%
 ```
 
 We publish the same grading thresholds as the regular section of CS 241. Your project will be graded in a holistic manner against other projects in the class. Note that this does not imply only a handful of projects can receive an A; education is not a zero-sum game. Historically, grades have been assigned with a generous curve.
