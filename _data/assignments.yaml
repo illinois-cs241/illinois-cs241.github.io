@@ -1,1 +1,515 @@
-semester_config/assignments.yaml
+---
+labs:
+  -
+      name: "Luscious Locks"
+      releaseDate: "Week 1"
+      dueDate: "Week 2"
+      url: "lockpicking_lab"
+      submissions:
+        - title: HW0
+          due_date: 2019-01-23 23:59
+          graded_files:
+          - hw0.md
+        - title: Lab Assignment
+          due_date: 2019-01-23 23:59
+          graded_files:
+          - submission.txt
+      resources: true
+      worksheet: true
+      visible: true
+  -
+      name: "Perilous Pointers"
+      releaseDate: "Week 2"
+      dueDate: "Week 3"
+      url: "perilous_pointers"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-01-30 23:59
+          graded_files:
+          - part1-functions.c
+          - part2-main.c
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "Utilities Unleashed"
+      releaseDate: "Week 3"
+      dueDate: "Week 4"
+      url: "utilities_unleashed"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-02-06 23:59
+          graded_files:
+          - env.c
+          - time.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-02-01 20:00
+            - 2019-02-04 20:00
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "Mini Valgrind"
+      releaseDate: "Week 4"
+      dueDate: "Week 5"
+      url: "mini_valgrind"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-02-13 23:59
+          graded_files:
+          - mini_valgrind.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-02-08 20:00
+            - 2019-02-12 20:00
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "Teaching Threads"
+      releaseDate: "Week 5"
+      dueDate: "Week 6"
+      url: "teaching_threads"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-02-20 23:59
+          graded_files:
+          - par_reduce.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-02-15 20:00
+            - 2019-02-19 20:00
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "Critical Concurrency"
+      releaseDate: "Week 6"
+      dueDate: "Week 7"
+      url: "critical_concurrency"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-02-27 23:59
+          graded_files:
+          - barrier.c
+          - queue.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-02-22 20:00
+            - 2019-02-26 20:00
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "Deadlocked Diners"
+      releaseDate: "Week 7"
+      dueDate: "Week 8"
+      url: "deadlocked_diners"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-03-06 23:59
+          graded_files:
+          - good_company.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-03-01 20:00
+            - 2019-03-04 20:00
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "Ideal Indirection"
+      releaseDate: "Week 8"
+      dueDate: "Week 9"
+      url: "ideal_indirection"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-03-13 23:59
+          graded_files:
+          - mmu.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-03-08 20:00
+            - 2019-03-11 20:00
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "MapReduce"
+      releaseDate: "Week 9"
+      dueDate: "Week 10"
+      url: "mapreduce"
+      submissions:
+        - title: MapReduce
+          due_date: 2019-03-27 23:59
+          graded_files:
+          - mapreduce.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-03-15 20:00
+            - 2019-03-25 20:00
+      resources: false
+      worksheet: false
+      visible: false
+  -
+      name: "Charming Chatroom"
+      releaseDate: "Week 10"
+      dueDate: "Week 11"
+      url: "charming_chatroom"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-04-03 23:59
+          graded_files:
+          - client.c
+          - server.c
+          - utils.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-03-29 20:00
+            - 2019-04-01 20:00
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "Mad Mad Access Pattern"
+      releaseDate: "Week 11"
+      dueDate: "Week 12"
+      url: "mad_mad_access_pattern"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-04-10 23:59
+          graded_files:
+          - lookup1.c
+          - lookup2.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-04-05 20:00
+            - 2019-04-08 20:00
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Savvy Scheduler"
+      releaseDate: "Week 12"
+      dueDate: "Week 13"
+      url: "savvy_scheduler"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-04-17 23:59
+          graded_files:
+          - libscheduler.c
+      ag_schedules:
+        - title: AG Schedule
+            - 2019-04-12 20:00
+            - 2019-04-15 20:00
+      resources: true
+      worksheet: true
+      visible: false
+  -
+      name: "Resplendent RPCs"
+      releaseDate: "Week 13"
+      dueDate: "Week 14"
+      url: "resplendent_rpcs"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-04-24 23:59
+          graded_files:
+          - dns_query_svc_impl.c
+          - dns_query_clnt_impl.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-04-19 20:00
+            - 2019-04-21 20:00
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Lovable Linux"
+      releaseDate: "Week 14"
+      dueDate: "Week 15"
+      url: "lovable_linux"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-05-01 23:59
+          graded_files:
+          - kernel.c
+      resources: false
+      worksheet: false
+      visible: false
+mps:
+  -
+      name: "Extreme Edge Cases"
+      releaseDate: "Week 2"
+      dueDate: "Week 3"
+      url: "extreme_edge_cases"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-01-21 23:59
+          graded_files:
+          - camelCaser.c
+          - camelCaser_tests.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-01-16 20:00
+            - 2019-01-18 20:00
+            - 2019-01-20 20:00
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Vector"
+      releaseDate: "Week 3"
+      dueDate: "Week 4"
+      url: "vector"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-01-28 23:59
+          graded_files:
+          - vector.c
+          - sstring.c
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Text Editor"
+      releaseDate: "Week 4"
+      dueDate: "Week 5"
+      url: "text_editor"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-02-04 23:59
+          graded_files:
+          - editor.c
+          - document.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-01-29 20:00
+            - 2019-02-01 20:00
+            - 2019-02-03 20:00
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Shell"
+      releaseDate: "Week 5"
+      dueDate: "Week 6"
+      url: "shell"
+      submissions:
+        - title: Part 1
+          due_date: 2019-02-11 23:59
+          graded_files:
+          - shell.c
+        - title: Part 2
+          due_date: 2019-02-18 23:59
+          graded_files:
+          - shell.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-02-04 20:00
+            - 2019-02-06 20:00
+            - 2019-02-07 20:00
+            - 2019-02-08 20:00
+            - 2019-02-11 12:00
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Malloc"
+      releaseDate: "Week 6"
+      dueDate: "Week 8"
+      url: "malloc"
+      submissions:
+        - title: Part 1 # 18
+          due_date: 2019-02-25 23:59
+          graded_files:
+          - alloc.c
+        - title: Part 2
+          due_date: 2019-03-04 23:59
+          graded_files:
+          - alloc.c
+      ag_schedules:
+        - title: AG Schedule Part 1
+          schedule_dates:
+            - 2019-02-19 20:00
+            - 2019-02-20 20:00
+            - 2019-02-21 20:00
+            - 2019-02-22 20:00
+            - 2019-02-25 12:00
+        - title: AG Schedule Part 2
+          schedule_dates:
+            - 2019-02-26 20:00
+            - 2019-02-27 20:00
+            - 2019-02-28 20:00
+            - 2019-02-29 20:00
+            - 2019-03-01 12:00
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Password Cracker"
+      releaseDate: "Week 8"
+      dueDate: "Week 9"
+      url: "password_cracker"
+      submissions:
+        - title: Version 1 and 2
+          due_date: 2019-03-11 23:59
+          graded_files:
+          - cracker1.c
+          - cracker2.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-03-04 20:00
+            - 2019-03-06 20:00
+            - 2019-03-08 20:00
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Parallel Make"
+      releaseDate: "Week 9"
+      dueDate: "Week 11"
+      url: "parallel_make"
+      submissions:
+        - title: Part 1
+          due_date: 2019-03-25 23:59
+          graded_files:
+          - parmake.c
+        - title: Part 2
+          due_date: 2019-04-01 23:59
+          graded_files:
+          - parmake.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-03-12 20:00
+            - 2019-03-13 20:00
+            - 2019-03-14 20:00
+            - 2019-03-15 20:00
+            - 2019-03-25 12:00
+            - 2019-03-26 20:00
+            - 2019-03-27 20:00
+            - 2019-03-28 20:00
+            - 2019-03-29 20:00
+            - 2019-04-01 12:00
+      resources: true
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Finding Filesystems"
+      releaseDate: "Week 11"
+      dueDate: "Week 12"
+      url: "finding_filesystems"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-04-08 23:59
+          graded_files:
+          - minixfs.c
+      ag_schedules:
+        - title: AG Schedule
+          schedule_dates:
+            - 2019-04-02 20:00
+            - 2019-04-03 20:00
+            - 2019-04-04 20:00
+            - 2019-04-05 20:00
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Nonstop Networking"
+      releaseDate: "Week 12"
+      dueDate: "Week 15"
+      url: "networking_mp"
+      submissions:
+        - title: Part 1 The Client
+          due_date: 2019-04-15 23:59
+          graded_files:
+          - client.c
+          - common.c
+          - common.h
+        - title: Part 2 The Server Part 1
+          due_date: 2019-04-22 23:59
+          graded_files:
+          - client.c
+          - server.c
+          - common.c
+          - common.h
+        - title: Part 3 The Server Part 2
+          due_date: 2019-04-29 23:59
+          graded_files:
+          - client.c
+          - server.c
+          - common.c
+          - common.h
+      ag_schedules:
+        - title: Part 1 AG Schedule
+          schedule_dates:
+            - 2019-04-09 20:00
+            - 2019-04-10 20:00
+            - 2019-04-11 20:00
+            - 2019-04-12 20:00
+        - title: Part 2 AG Schedule
+          schedule_dates:
+            - 2019-04-16 20:00
+            - 2019-04-17 20:00
+            - 2019-04-18 20:00
+            - 2019-04-19 20:00
+        - title: Part 3 AG Schedule
+          schedule_dates:
+            - 2019-04-23 20:00
+            - 2019-04-24 20:00
+            - 2019-04-25 20:00
+            - 2019-04-26 20:00
+      resources: true
+      worksheet: false
+      visible: false
+honors:
+  -
+      name: "Advanced C"
+      url: "advanced_c"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-10-01 23:59
+          graded_files:
+          - dictionary.c
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Pugnacious Profilers"
+      url: "pugnacious_profilers"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-10-22 23:59
+          graded_files:
+          - orderbook.c
+          - orderbook.h
+      resources: true
+      worksheet: false
+      visible: false
+  -
+      name: "Decentralized Network"
+      url: "dangerous_decentalization"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2019-11-14 23:59
+          graded_files:
+          - src/
+      resources: true
+      worksheet: false
+      visible: false

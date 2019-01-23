@@ -3,11 +3,6 @@
 	url = https://github.com/illinois-cs241/assignment-docs.git
 	ignore = dirty
 	shallow = true
-[submodule "_data/semester_config"]
-	path = _data/semester_config
-	url = https://github.com/illinois-cs241/semester-config.git 
-	ignore = dirty
-	shallow = true
 [submodule "_wikibook_project"]
 	path = _coursebook
 	url = https://github.com/illinois-cs241/coursebook.wiki.git
