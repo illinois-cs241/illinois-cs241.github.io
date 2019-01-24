@@ -30,7 +30,7 @@ labs:
           - part2-main.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Utilities Unleashed"
       releaseDate: "Week 3"
