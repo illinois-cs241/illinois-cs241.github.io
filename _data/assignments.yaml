@@ -275,7 +275,7 @@ mps:
           - sstring.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Shell"
       releaseDate: "Week 5"
