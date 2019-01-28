@@ -15,7 +15,7 @@ Highlights: Read the course book background. Work on Homework 0. Sign up Quiz 1 
 
 * Mon 01/14. Lecture 1. We met in person at ECEB1002 8am for the first _and only_ Monday lecture.
 
-* Wed 01/16. Lecture 2 (available online). "See C Crash" 14 minivideos at [classtranscribe.com](https://classtranscribe.com). 
+* Wed 01/16. Lecture 2 (available online). "See C Crash" 14 minivideos at [classtranscribe.ncsa.illinois.edu](https://classtranscribe.ncsa.illinois.edu). 
 Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave/cs241-lectures
 * Wed 01/16. Angrave's Optional review section/Office Hours in ECEB1002 8am - 9am; Additional Angrave office hours 9-9:30 ECEB atrium.
 
