@@ -27,7 +27,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Weekend target: Finish HW0. Finish Chapters 2 (Background) and 3 (C Programming Language). This will ensure you are ready for the first quiz (see the quiz page for topics)
 
-### Heads-up Week 2
+### Week 2
 
 * Mon 01/21. Martin Luther King Day. No meetings. No CBTF.
 
@@ -43,9 +43,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 01/25. Online Lecture 5 "Exec, Fork, and environment variables"
 
-{% if false %}
-
-### Heads-up Week 3
+### Week 3
 
 * Mon 01/28. Online Lecture
 
@@ -76,6 +74,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Thur 02/07. Labs
 
 * Fri 02/08. Online Lecture
+
+{% if false %}
 
 ### Heads-up Week 5
 
