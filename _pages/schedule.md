@@ -49,11 +49,11 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 01/28. MP Assignment Due {{ site.assign_by_url['extreme_edge_cases'].submissions[0].due_date }}
 
-* Mon 01/28 - Wed 01/30. Quiz 2 at CBTF
+* Mon 01/28 - Fri 02/1 (Not Wednesday). Quiz 2 at CBTF. *Extended to Friday due to weather*
 
 * Wed 01/30. Online Lecture
 
-* Wed 01/30. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+* Wed 01/30. *Angrave's ECEB office hours cancelled due to Martian climate*
 
 * Wed 01/30. Lab Assignment due {{ site.assign_by_url['perilous_pointers'].submissions[0].due_date }}
 
@@ -269,7 +269,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 {% endif %}
 
-### Distant future
+### CBTF Quiz summary. These are usually available Monday - Wednesday. 
 
 * Mon 01/28. CBTF Quiz 2
 * Mon 02/11. CBTF Quiz 3
