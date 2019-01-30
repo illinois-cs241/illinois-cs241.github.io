@@ -5,10 +5,10 @@
     content: "Introduction & Advanced Tools"
     slides: "https://docs.google.com/presentation/d/1GVFebIaA-yADk5sPn0cgW1LCiGEj3YeSMB6mT9yM2HE/edit?usp=sharing"
 #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true"
-#   -
-#     date: "September 12"
-#     content: "Project & Team Formation"
-#     slides: "https://docs.google.com/presentation/d/1ZKX55p6gdugf1is26GRNWLtkltIbXL_zcC4gY7qIMdI/edit?usp=sharing"
+   -
+     date: "January 30"
+     content: "[lab] Terrifying TODO lists"
+     slides: "http://cs241.cs.illinois.edu/assignments/terrifying_todo_lists.html"
 # #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
 #   -
 #     date: "September 19"
