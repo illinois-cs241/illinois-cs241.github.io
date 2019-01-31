@@ -42,14 +42,9 @@ labs:
           graded_files:
           - env.c
           - time.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-02-01 20:00
-            - 2019-02-04 20:00
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Mini Valgrind"
       releaseDate: "Week 4"
