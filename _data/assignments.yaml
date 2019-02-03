@@ -273,7 +273,7 @@ mps:
       visible: true
   -
       name: "Shell"
-      releaseDate: "Week 5"
+      releaseDate: "Week 4"
       dueDate: "Week 6"
       url: "shell"
       submissions:
