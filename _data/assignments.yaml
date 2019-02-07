@@ -55,14 +55,9 @@ labs:
           due_date: 2019-02-13 23:59
           graded_files:
           - mini_valgrind.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-02-08 20:00
-            - 2019-02-12 20:00
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Teaching Threads"
       releaseDate: "Week 5"
