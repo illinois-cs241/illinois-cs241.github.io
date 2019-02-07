@@ -9,11 +9,11 @@
      date: "January 30"
      content: "[lab] Terrifying TODO lists"
      slides: "http://cs241.cs.illinois.edu/assignments/terrifying_todo_lists.html"
-# #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
-#   -
-#     date: "September 19"
-#     content: "Security"
-#     slides: "https://drive.google.com/file/d/1QkxuAv5Uea2I4iMjn5BpCxFiBrHPYb2U/view?usp=sharing"
+ #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
+   -
+     date: "February 06"
+     content: "Profiling"
+     slides: "https://docs.google.com/presentation/d/1NudsZn6OxdeotUJIOytyB7uSclWfW0__aJX6gd6Z1ww/edit?usp=sharing"
 # #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
 #   -
 #     date: "September 26"
