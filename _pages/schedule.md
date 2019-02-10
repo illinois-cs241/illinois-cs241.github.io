@@ -79,7 +79,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Week 5
 
-* Week's Reading: Malloc
+* Week's Reading: Malloc and Signals
 
 * Mon 02/11. Online Lecture
 
