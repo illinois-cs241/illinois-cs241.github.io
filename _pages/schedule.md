@@ -63,6 +63,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Week 4
 
+* Week's Reading: Processes
+
 * Mon 02/04. Online Lecture
 
 * Mon 02/04. MP Assignment Due {{ site.assign_by_url['vector'].submissions[0].due_date }}
@@ -77,13 +79,13 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Week 5
 
+* Week's Reading: Malloc
+
 * Mon 02/11. Online Lecture
 
 * Mon 02/11. MP Assignment Due {{ site.assign_by_url['shell'].submissions[0].due_date }}
 
 * Mon 02/11 - Wed 02/06. CBTF Quiz 3
-
-* Wed 02/06. Online Lecture
 
 * Wed 02/13. Online Lecture
 
@@ -97,13 +99,15 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 6
 
+* Week's Reading: Threads
+
 * Mon 02/18. Online Lecture
 
 * Mon 02/18. MP Assignment Due {{ site.assign_by_url['shell'].submissions[1].due_date }}
 
 * Wed 02/20. Online Lecture
 
-* Wed 02/20. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+* Wed 02/20. Angrave Office Hours (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
 
 * Wed 02/20. Lab Assignment due {{ site.assign_by_url['teaching_threads'].submissions[0].due_date }}
 
@@ -114,6 +118,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 {% if false %}
 
 ### Heads-up Week 7
+
+* Week's Readings: Synchronization
 
 * Mon 02/25. Online Lecture
 
@@ -133,6 +139,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 8
 
+* Week's Readings: Deadlock
+
 * Mon 03/04. Online Lecture
 
 * Mon 03/04. MP Assignment Due {{ site.assign_by_url['malloc'].submissions[1].due_date }}
@@ -149,6 +157,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 
 ### Heads-up Week 9
+
+* Week's Readings: Interprocess Communication
 
 * Mon 03/11. Online Lecture
 
@@ -168,6 +178,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 10
 
+* Week's Readings: Filesystems? (Need to confirm)
+
 * Mon 03/25. Online Lecture
 
 * Mon 03/25. MP Assignment Due {{ site.assign_by_url['parallel_make'].submissions[0].due_date }}
@@ -183,6 +195,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Fri 03/29. Online Lecture
 
 ### Heads-up Week 11
+
+* Week's Readings: Networking
 
 * Mon 04/01. Online Lecture
 
@@ -202,6 +216,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 12
 
+* Week's Readings: Scheduling
+
 * Mon 04/08. Online Lecture
 
 * Mon 04/08. MP Assignment Due {{ site.assign_by_url['finding_filesystems'].submissions[0].due_date }}
@@ -218,6 +234,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 
 ### Heads-up Week 13
+
+* Week's Readings: Scheduling
 
 * Mon 04/15. Online Lecture
 
@@ -237,6 +255,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 14
 
+* Week's Readings: Review!
+
 * Mon 04/22. Online Lecture
 
 * Mon 04/22. MP Assignment Due {{ site.assign_by_url['networking_mp'].submissions[1].due_date }}
@@ -252,6 +272,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Fri 04/26. Online Lecture
 
 ### Heads-up Week 15
+
+* Week's Readings: Review!
 
 * Mon 04/29. Online Lecture
 
