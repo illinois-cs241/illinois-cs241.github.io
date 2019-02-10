@@ -61,7 +61,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 02/01. Online Lecture
 
-### Heads-up Week 4
+### Week 4
 
 * Mon 02/04. Online Lecture
 
@@ -75,9 +75,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 02/08. Online Lecture
 
-{% if false %}
-
-### Heads-up Week 5
+### Week 5
 
 * Mon 02/11. Online Lecture
 
@@ -112,6 +110,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Thur 02/21. Labs
 
 * Fri 02/22. Online Lecture
+
+{% if false %}
 
 ### Heads-up Week 7
 
