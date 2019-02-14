@@ -35,8 +35,6 @@ navbar_items:
     link: "honors"
   - name: "The Crew"
     link: "staff"
-  - name: "Search"
-    link: "search"
   - name: "Coursebook"
     link: "coursebook/index"
 # Settings for docs collection
