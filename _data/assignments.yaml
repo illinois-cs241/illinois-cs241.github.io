@@ -82,6 +82,7 @@ labs:
           graded_files:
           - barrier.c
           - queue.c
+          - semamore.c
       ag_schedules:
         - title: AG Schedule
           schedule_dates:
@@ -89,7 +90,7 @@ labs:
             - 2019-02-26 20:00
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Deadlocked Diners"
       releaseDate: "Week 7"
