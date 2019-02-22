@@ -24,4 +24,5 @@ cd ${TRAVIS_BUILD_DIR}
 
 # Part 2, copy to a grader
 
-rsync -Pav -e "ssh -i /tmp/dual_deploy_key" _site $DEPLOY_GRADER_USER@$DEPLOY_GRADER_HOST:$DEPLOY_GRADER_PATH
+mv _site web
+rsync -Pav -e "ssh -i /tmp/dual_deploy_key" web $DEPLOY_GRADER_USER@$DEPLOY_GRADER_HOST:/
