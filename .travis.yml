@@ -20,12 +20,9 @@ before_install:
 before_deploy:
 - bundle exec rake spell_check
 - openssl aes-256-cbc -K $encrypted_b0cfc79abf17_key -iv $encrypted_b0cfc79abf17_iv
-  -in deploy_github.enc -out /tmp/deploy_rsa -d
-- openssl aes-256-cbc -K $encrypted_b0cfc79abf17_key -iv $encrypted_b0cfc79abf17_iv
-  -in deploy_grader.enc -out /tmp/deploy_grader -d
+  -in dual_deploy_key.enc -out /tmp/dual_deploy_key -d
 - eval "$(ssh-agent -s)"
-- chmod 600 /tmp/deploy_rsa
-- chmod 600 /tmp/deploy_grader
+- chmod 600 /tmp/dual_deploy_key
 deploy:
   provider: script
   script: bash _scripts/deploy.sh
