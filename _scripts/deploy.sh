@@ -26,4 +26,4 @@ cd ${TRAVIS_BUILD_DIR}
 set -x;
 
 mv _site web
-rsync -Pav -e web $DEPLOY_GRADER_USER@$DEPLOY_GRADER_HOST:/
+rsync -Pav web $DEPLOY_GRADER_USER@$DEPLOY_GRADER_HOST:/
