@@ -1,77 +1,77 @@
 ---
 # Honors Schedule
-  -
-    date: "September 5"
-    content: "Introduction & C History"
-    slides: "https://docs.google.com/presentation/d/1wQlqAIBAufebr54JMV-6DxaxP9ev4Av1H5kGuS_ew7s/edit?usp=sharing"
+   -
+     date: "January 23"
+     content: "Introduction & Advanced Tools"
+     slides: "https://docs.google.com/presentation/d/1GVFebIaA-yADk5sPn0cgW1LCiGEj3YeSMB6mT9yM2HE/edit?usp=sharing"
 #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/1674d408-ed77-418b-bb26-e7806b61ca4a?ec=true"
-  -
-    date: "September 12"
-    content: "Project & Team Formation"
-    slides: "https://docs.google.com/presentation/d/1ZKX55p6gdugf1is26GRNWLtkltIbXL_zcC4gY7qIMdI/edit?usp=sharing"
-#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
-  -
-    date: "September 19"
-    content: "Security"
-    slides: "https://drive.google.com/file/d/1QkxuAv5Uea2I4iMjn5BpCxFiBrHPYb2U/view?usp=sharing"
-#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
-  -
-    date: "September 26"
-    content: "Project Work Time"
-#    slides: "minilectures.pdf"
-#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
-  -
-    date: "October 3"
-    content: "Profiling"
-    slides: "https://docs.google.com/presentation/d/1ZKX55p6gdugf1is26GRNWLtkltIbXL_zcC4gY7qIMdI/edit?usp=sharing"
-#    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
-  -
-    date: "October 10"
-    content: "No Lecture!"
-    slides: "lock_free.pdf"
-    slides: #"kernel.pdf" video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/76567804-1eac-45ad-9ebb-7d39e69a0443?ec=true"
-  -
-    date: "October 17"
-    content: "Distributed Systems"
-    slides: "https://docs.google.com/presentation/d/1FAM85U3lhNI2auUTJd0nY_sub_e--rQkDQBWUGAAAm8/edit?usp=sharing"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f49eb1bc-8d6d-44aa-ac98-4fc43d408651?ec=true"
-  -
-    date: "October 24"
-    content: "Peer Mentoring"
-    slides: #"lock_free.pdf"
-    video:
-  -
-    date: "October 31"
-    content: "TCP Networking"
-    slides: "tcp.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/ad1d1a76-8365-4169-a229-c8c2065b37eb?ec=true"
-  -
-    date: "November 7"
-    content: "Midterm presentations"
-    slides: #"tcp.pdf"
-    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/5de679c3-a1b2-4a4b-aa12-af0a28b4a539?ec=true"
-  -
-    date: "November 14"
-    content: "Containerization"
-    slides: "https://docs.google.com/presentation/d/1hdWiRMKjwg1VkNN3NxO2YswCv4FwhyjeQC6Lej153dM/edit?usp=sharing"
-    video:
-  -
-    date: "November 21"
-    content: "Fall Break (no class)"
-    slides:
-    video:
-  -
-    date: "November 28"
-    content: "Spectre/Meltdown, Blockchain"
-    slides: "https://drive.google.com/drive/folders/1sz6u_2Ug7pKmBt5amTqiN3DBM3DrMHCI?usp=sharing"
-    video:
-  -
-    date: "December 5"
-    content: "Netfilter Kernel Module"
-    slides: "https://docs.google.com/presentation/d/1Gzs-fBlUQSwb-lXVEr2x6a1UlOSePXazjngzsF05S78/edit?usp=sharing"
-    video:
-  -
-    date: "December 12"
-    content: #"Project Presentations"
-    slides:
-    video:
+   -
+     date: "January 30"
+     content: "[lab] Terrifying TODO lists"
+     slides: "http://cs241.cs.illinois.edu/assignments/terrifying_todo_lists.html"
+ #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e07904b2-e3e1-4e55-b9e1-4a5084bf99ca?ec=true"
+   -
+     date: "February 06"
+     content: "Profiling"
+     slides: "https://docs.google.com/presentation/d/1NudsZn6OxdeotUJIOytyB7uSclWfW0__aJX6gd6Z1ww/edit?usp=sharing"
+# #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
+#   -
+#     date: "September 26"
+#     content: "Project Work Time"
+# #    slides: "minilectures.pdf"
+# #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
+#   -
+#     date: "October 3"
+#     content: "Profiling"
+#     slides: "https://docs.google.com/presentation/d/1ZKX55p6gdugf1is26GRNWLtkltIbXL_zcC4gY7qIMdI/edit?usp=sharing"
+# #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
+#   -
+#     date: "October 10"
+#     content: "No Lecture!"
+#     slides: "lock_free.pdf"
+#     slides: #"kernel.pdf" video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/76567804-1eac-45ad-9ebb-7d39e69a0443?ec=true"
+#   -
+#     date: "October 17"
+#     content: "Distributed Systems"
+#     slides: "https://docs.google.com/presentation/d/1FAM85U3lhNI2auUTJd0nY_sub_e--rQkDQBWUGAAAm8/edit?usp=sharing"
+#     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f49eb1bc-8d6d-44aa-ac98-4fc43d408651?ec=true"
+#   -
+#     date: "October 24"
+#     content: "Peer Mentoring"
+#     slides: #"lock_free.pdf"
+#     video:
+#   -
+#     date: "October 31"
+#     content: "TCP Networking"
+#     slides: "tcp.pdf"
+#     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/ad1d1a76-8365-4169-a229-c8c2065b37eb?ec=true"
+#   -
+#     date: "November 7"
+#     content: "Midterm presentations"
+#     slides: #"tcp.pdf"
+#     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/5de679c3-a1b2-4a4b-aa12-af0a28b4a539?ec=true"
+#   -
+#     date: "November 14"
+#     content: "Containerization"
+#     slides: "https://docs.google.com/presentation/d/1hdWiRMKjwg1VkNN3NxO2YswCv4FwhyjeQC6Lej153dM/edit?usp=sharing"
+#     video:
+#   -
+#     date: "November 21"
+#     content: "Fall Break (no class)"
+#     slides:
+#     video:
+#   -
+#     date: "November 28"
+#     content: "Spectre/Meltdown, Blockchain"
+#     slides: "https://drive.google.com/drive/folders/1sz6u_2Ug7pKmBt5amTqiN3DBM3DrMHCI?usp=sharing"
+#     video:
+#   -
+#     date: "December 5"
+#     content: "Netfilter Kernel Module"
+#     slides: "https://docs.google.com/presentation/d/1Gzs-fBlUQSwb-lXVEr2x6a1UlOSePXazjngzsF05S78/edit?usp=sharing"
+#     video:
+#   -
+#     date: "December 12"
+#     content: #"Project Presentations"
+#     slides:
+#     video:

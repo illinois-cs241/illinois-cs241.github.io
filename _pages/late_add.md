@@ -8,11 +8,11 @@ title: Getting Caught Up
 * Piazza: [https://piazza.com](https://piazza.com)
 * Linux in Browser: [https://cs-education.github.io/sys/#playground](https://cs-education.github.io/sys/#playground)
 * Coursebook: [https://github.com/illinois-cs241/coursebook/wiki](https://github.com/illinois-cs241/coursebook/wiki)
-* Class Transcribe/Old Lecture Recordings: [http://classtranscribe.com](http://classtranscribe.com)
+* Class Transcribe/Lecture Recordings: [https://classtranscribe.ncsa.illinois.edu](https://classtranscribe.ncsa.illinois.edu)
 * Shared Github: [https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/_release](https://github-dev.cs.illinois.edu/{{ site.subject_code }}{{site.course_number}}-{{site.semester }}/_release)
-* Grades: Compass
-* Lecture Videos: [https://echo360.org](https://echo360.org)
 * CBTF Quiz and Test Signup: [https://edu.cs.illinois.edu/testcenter/](https://edu.cs.illinois.edu/testcenter/)
+
+Previous semester lecture videos are on [https://echo360.org](https://echo360.org) and [https://classtranscribe.ncsa.illinois.edu](https://classtranscribe.ncsa.illinois.edu) 
 
 ## Join Piazza!
 

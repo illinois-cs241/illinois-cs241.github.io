@@ -15,7 +15,7 @@ Highlights: Read the course book background. Work on Homework 0. Sign up Quiz 1 
 
 * Mon 01/14. Lecture 1. We met in person at ECEB1002 8am for the first _and only_ Monday lecture.
 
-* Wed 01/16. Lecture 2 (available online). "See C Crash" 14 minivideos at [classtranscribe.com](https://classtranscribe.com). 
+* Wed 01/16. Lecture 2 (available online). "See C Crash" 14 minivideos at [classtranscribe.ncsa.illinois.edu](https://classtranscribe.ncsa.illinois.edu). 
 Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave/cs241-lectures
 * Wed 01/16. Angrave's Optional review section/Office Hours in ECEB1002 8am - 9am; Additional Angrave office hours 9-9:30 ECEB atrium.
 
@@ -27,7 +27,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Weekend target: Finish HW0. Finish Chapters 2 (Background) and 3 (C Programming Language). This will ensure you are ready for the first quiz (see the quiz page for topics)
 
-### Heads-up Week 2
+### Week 2
 
 * Mon 01/21. Martin Luther King Day. No meetings. No CBTF.
 
@@ -43,19 +43,17 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 01/25. Online Lecture 5 "Exec, Fork, and environment variables"
 
-{% if false %}
-
-### Heads-up Week 3
+### Week 3
 
 * Mon 01/28. Online Lecture
 
 * Mon 01/28. MP Assignment Due {{ site.assign_by_url['extreme_edge_cases'].submissions[0].due_date }}
 
-* Mon 01/28 - Wed 01/30. Quiz 2 at CBTF
+* Mon 01/28 - Fri 02/1 (Not Wednesday). Quiz 2 at CBTF. *Extended to Friday due to weather*
 
 * Wed 01/30. Online Lecture
 
-* Wed 01/30. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+* Wed 01/30. *Angrave's ECEB office hours cancelled due to Martian climate*
 
 * Wed 01/30. Lab Assignment due {{ site.assign_by_url['perilous_pointers'].submissions[0].due_date }}
 
@@ -63,7 +61,9 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 02/01. Online Lecture
 
-### Heads-up Week 4
+### Week 4
+
+* Week's Reading: Processes
 
 * Mon 02/04. Online Lecture
 
@@ -77,15 +77,15 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 02/08. Online Lecture
 
-### Heads-up Week 5
+### Week 5
+
+* Week's Reading: Malloc and Signals
 
 * Mon 02/11. Online Lecture
 
 * Mon 02/11. MP Assignment Due {{ site.assign_by_url['shell'].submissions[0].due_date }}
 
 * Mon 02/11 - Wed 02/06. CBTF Quiz 3
-
-* Wed 02/06. Online Lecture
 
 * Wed 02/13. Online Lecture
 
@@ -97,7 +97,9 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 02/15. Online Lecture
 
-### Heads-up Week 6
+### Week 6
+
+* Week's Reading: Threads
 
 * Mon 02/18. Online Lecture
 
@@ -105,7 +107,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Wed 02/20. Online Lecture
 
-* Wed 02/20. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+* Wed 02/20. Angrave Office Hours (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
 
 * Wed 02/20. Lab Assignment due {{ site.assign_by_url['teaching_threads'].submissions[0].due_date }}
 
@@ -114,6 +116,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Fri 02/22. Online Lecture
 
 ### Heads-up Week 7
+
+* Week's Readings: Synchronization
 
 * Mon 02/25. Online Lecture
 
@@ -133,6 +137,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 8
 
+* Week's Readings: Deadlock
+
 * Mon 03/04. Online Lecture
 
 * Mon 03/04. MP Assignment Due {{ site.assign_by_url['malloc'].submissions[1].due_date }}
@@ -147,8 +153,11 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 03/08. Online Lecture
 
+{% if false %}
 
 ### Heads-up Week 9
+
+* Week's Readings: Interprocess Communication
 
 * Mon 03/11. Online Lecture
 
@@ -168,6 +177,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 10
 
+* Week's Readings: Filesystems? (Need to confirm)
+
 * Mon 03/25. Online Lecture
 
 * Mon 03/25. MP Assignment Due {{ site.assign_by_url['parallel_make'].submissions[0].due_date }}
@@ -183,6 +194,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Fri 03/29. Online Lecture
 
 ### Heads-up Week 11
+
+* Week's Readings: Networking
 
 * Mon 04/01. Online Lecture
 
@@ -202,6 +215,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 12
 
+* Week's Readings: Scheduling
+
 * Mon 04/08. Online Lecture
 
 * Mon 04/08. MP Assignment Due {{ site.assign_by_url['finding_filesystems'].submissions[0].due_date }}
@@ -218,6 +233,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 
 ### Heads-up Week 13
+
+* Week's Readings: Scheduling
 
 * Mon 04/15. Online Lecture
 
@@ -237,6 +254,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 14
 
+* Week's Readings: Review!
+
 * Mon 04/22. Online Lecture
 
 * Mon 04/22. MP Assignment Due {{ site.assign_by_url['networking_mp'].submissions[1].due_date }}
@@ -252,6 +271,8 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Fri 04/26. Online Lecture
 
 ### Heads-up Week 15
+
+* Week's Readings: Review!
 
 * Mon 04/29. Online Lecture
 
@@ -269,7 +290,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 {% endif %}
 
-### Distant future
+### CBTF Quiz summary. These are usually available Monday - Wednesday. 
 
 * Mon 01/28. CBTF Quiz 2
 * Mon 02/11. CBTF Quiz 3

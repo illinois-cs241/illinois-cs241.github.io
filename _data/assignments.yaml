@@ -30,7 +30,7 @@ labs:
           - part2-main.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Utilities Unleashed"
       releaseDate: "Week 3"
@@ -42,14 +42,9 @@ labs:
           graded_files:
           - env.c
           - time.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-02-01 20:00
-            - 2019-02-04 20:00
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Mini Valgrind"
       releaseDate: "Week 4"
@@ -60,14 +55,9 @@ labs:
           due_date: 2019-02-13 23:59
           graded_files:
           - mini_valgrind.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-02-08 20:00
-            - 2019-02-12 20:00
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Teaching Threads"
       releaseDate: "Week 5"
@@ -78,14 +68,9 @@ labs:
           due_date: 2019-02-20 23:59
           graded_files:
           - par_reduce.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-02-15 20:00
-            - 2019-02-19 20:00
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Critical Concurrency"
       releaseDate: "Week 6"
@@ -97,14 +82,10 @@ labs:
           graded_files:
           - barrier.c
           - queue.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-02-22 20:00
-            - 2019-02-26 20:00
+          - semamore.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Deadlocked Diners"
       releaseDate: "Week 7"
@@ -255,19 +236,13 @@ mps:
       url: "extreme_edge_cases"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-01-21 23:59
+          due_date: 2019-01-28 23:59
           graded_files:
           - camelCaser.c
           - camelCaser_tests.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-01-16 20:00
-            - 2019-01-18 20:00
-            - 2019-01-20 20:00
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Vector"
       releaseDate: "Week 3"
@@ -275,36 +250,16 @@ mps:
       url: "vector"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-01-28 23:59
+          due_date: 2019-02-04 23:59
           graded_files:
           - vector.c
           - sstring.c
       resources: true
       worksheet: false
-      visible: false
-  -
-      name: "Text Editor"
-      releaseDate: "Week 4"
-      dueDate: "Week 5"
-      url: "text_editor"
-      submissions:
-        - title: Entire Assignment
-          due_date: 2019-02-04 23:59
-          graded_files:
-          - editor.c
-          - document.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-01-29 20:00
-            - 2019-02-01 20:00
-            - 2019-02-03 20:00
-      resources: true
-      worksheet: false
-      visible: false
+      visible: true
   -
       name: "Shell"
-      releaseDate: "Week 5"
+      releaseDate: "Week 4"
       dueDate: "Week 6"
       url: "shell"
       submissions:
@@ -316,17 +271,9 @@ mps:
           due_date: 2019-02-18 23:59
           graded_files:
           - shell.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-02-04 20:00
-            - 2019-02-06 20:00
-            - 2019-02-07 20:00
-            - 2019-02-08 20:00
-            - 2019-02-11 12:00
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Malloc"
       releaseDate: "Week 6"
@@ -341,24 +288,9 @@ mps:
           due_date: 2019-03-04 23:59
           graded_files:
           - alloc.c
-      ag_schedules:
-        - title: AG Schedule Part 1
-          schedule_dates:
-            - 2019-02-19 20:00
-            - 2019-02-20 20:00
-            - 2019-02-21 20:00
-            - 2019-02-22 20:00
-            - 2019-02-25 12:00
-        - title: AG Schedule Part 2
-          schedule_dates:
-            - 2019-02-26 20:00
-            - 2019-02-27 20:00
-            - 2019-02-28 20:00
-            - 2019-02-29 20:00
-            - 2019-03-01 12:00
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Password Cracker"
       releaseDate: "Week 8"
@@ -370,12 +302,6 @@ mps:
           graded_files:
           - cracker1.c
           - cracker2.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-03-04 20:00
-            - 2019-03-06 20:00
-            - 2019-03-08 20:00
       resources: true
       worksheet: false
       visible: false
@@ -393,20 +319,6 @@ mps:
           due_date: 2019-04-01 23:59
           graded_files:
           - parmake.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-03-12 20:00
-            - 2019-03-13 20:00
-            - 2019-03-14 20:00
-            - 2019-03-15 20:00
-            - 2019-03-25 12:00
-            - 2019-03-26 20:00
-            - 2019-03-27 20:00
-            - 2019-03-28 20:00
-            - 2019-03-29 20:00
-            - 2019-04-01 12:00
-      resources: true
       resources: true
       worksheet: false
       visible: false
@@ -420,13 +332,6 @@ mps:
           due_date: 2019-04-08 23:59
           graded_files:
           - minixfs.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-04-02 20:00
-            - 2019-04-03 20:00
-            - 2019-04-04 20:00
-            - 2019-04-05 20:00
       resources: true
       worksheet: false
       visible: false

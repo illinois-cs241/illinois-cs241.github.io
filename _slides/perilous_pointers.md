@@ -124,18 +124,6 @@ We've given you a set of functions as tools
 
 Your job is to use these tools in the right order to print "Illinois"
 
-## Part 3
-
-<vertical />-
-
-You will be implementing map and reduce. You can think of map as apply a function to a list of values. Reduce takes a bunch of values and combines them into one values. The intuition for these can be seen as below.
-
-```
-map([1, 2, 3], double) = [2, 4, 6]
-reduce([1, 2, 3], sum) = 6  
-```
-
-
 <horizontal />
 
 ## Hints about the MP
