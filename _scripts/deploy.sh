@@ -23,6 +23,7 @@ git push origin master --force;
 cd ${TRAVIS_BUILD_DIR}
 
 # Part 2, copy to a grader
+set -x;
 
 mv _site web
-rsync -Pav -e "ssh -i /tmp/dual_deploy_key" web $DEPLOY_GRADER_USER@$DEPLOY_GRADER_HOST:/
+rsync -Pav -e web $DEPLOY_GRADER_USER@$DEPLOY_GRADER_HOST:/
