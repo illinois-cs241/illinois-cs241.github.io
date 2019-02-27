@@ -115,7 +115,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 02/22. Online Lecture
 
-### Heads-up Week 7
+### Week 7
 
 * Week's Readings: Synchronization
 
