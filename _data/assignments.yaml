@@ -87,23 +87,18 @@ labs:
       worksheet: true
       visible: true
   -
-      name: "Deadlocked Diners"
+      name: "Deadlock Demolition"
       releaseDate: "Week 7"
       dueDate: "Week 8"
-      url: "deadlocked_diners"
+      url: "deadlock_demolition"
       submissions:
         - title: Entire Assignment
           due_date: 2019-03-06 23:59
           graded_files:
-          - good_company.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-03-01 20:00
-            - 2019-03-04 20:00
-      resources: true
-      worksheet: true
-      visible: false
+          - libdrm.c
+      resources: false
+      worksheet: false
+      visible: true
   -
       name: "Ideal Indirection"
       releaseDate: "Week 8"
