@@ -96,7 +96,7 @@ labs:
           due_date: 2019-03-06 23:59
           graded_files:
           - libdrm.c
-      resources: false
+      resources: true
       worksheet: false
       visible: true
   -

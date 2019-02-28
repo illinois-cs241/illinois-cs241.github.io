@@ -1,20 +1,22 @@
 ---
 layout: slide
 title: Dining Philosophers
-authors: "Steve and Bhuvan"
+authors: "Steve, Bhuvan, Aneesh"
 ---
 
 ## Worksheet
 
 <horizontal />
 
-## The Dining Philosopher Problem
+## Deadlock
 
 <vertical />
 
 ![Traffic Jam](/images/slides/dining/traffic.gif)
 
-## Bad Solutions are Everywhere
+## Dining philosophers
+
+A good example of deadlock is the dining philosophers problem
 
 ![Deadlock Dining](/images/slides/dining/dining.gif)
 
@@ -28,64 +30,26 @@ authors: "Steve and Bhuvan"
 
 <horizontal />
 
-## Failed Solutions
+## What is deadlock?
 
-## Please Don't
-
-```C
-void * PhilPhunction(void *p) {
-    Philosopher *phil = (Philosopher*)p;
-    int failed;
-    int tries_left;
-    pthread_mutex_t *fork_lft = phil->fork_lft;
-    pthread_mutex_t *fork_rgt = phil->fork_rgt;
-
-    while (running) {
-        pthread_mutex_lock(fork_lft);
-        pthread_mutex_lock(fork_rgt);
-        usleep( 1+ rand() % 8);
-
-    }
-    return NULL;
-}
-```
-
-## Better but may livelock
-
-```C
-void * PhilPhunction(void *p) {
-    Philosopher *phil = (Philosopher*)p;
-    int failed;
-    int tries_left;
-    pthread_mutex_t *fork_lft = phil->fork_lft;
-    pthread_mutex_t *fork_rgt = phil->fork_rgt;
-    int tries_left;
-    while (running) {
-        tries_left = 3
-        do {
-            failed = pthread_mutex_lock( fork_lft);
-            failed = (tries_left>0)? pthread_mutex_trylock( fork_rgt )
-                                    : pthread_mutex_lock(fork_rgt);
-
-            if (failed) {
-                pthread_mutex_unlock( fork_lft);
-                tries_left--;
-            }
-        } while(failed && running);
-
-        if (!failed) {
-            usleep( 1+ rand() % 8); //eat
-            pthread_mutex_unlock(fork_rgt);
-            pthread_mutex_unlock(fork_lft);
-        }
-    }
-    return NULL;
-}
-```
+From wikipedia:
+> In an operating system, a deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. If a process is unable to change its state indefinitely because the resources requested by it are being used by another waiting process, then the system is said to be in a deadlock.
 
 <horizontal />
 
-## Stuff that Works (In order of speed)
+## Resource allocation graph
+
+We can model resource allocation by having resources and processes as verticies
+and have edges to show ownership of a resource. A cycle in the (undirected)
+resource allocation graph implies that we have deadlock.
+
+## Example RAG
+
+![Deadlock RAG](/images/slides/dining/rag.gif)
+
+<horizontal />
+
+## Solutions to the dining philsophers problem
 
 <horizontal />
 
