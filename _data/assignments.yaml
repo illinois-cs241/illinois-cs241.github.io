@@ -299,7 +299,7 @@ mps:
           - cracker2.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Parallel Make"
       releaseDate: "Week 9"
