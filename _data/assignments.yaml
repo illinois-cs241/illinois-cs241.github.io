@@ -109,11 +109,6 @@ labs:
           due_date: 2019-03-13 23:59
           graded_files:
           - mmu.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-03-08 20:00
-            - 2019-03-11 20:00
       resources: true
       worksheet: true
       visible: true
@@ -127,11 +122,6 @@ labs:
           due_date: 2019-03-27 23:59
           graded_files:
           - mapreduce.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-03-15 20:00
-            - 2019-03-25 20:00
       resources: false
       worksheet: false
       visible: false
@@ -147,11 +137,6 @@ labs:
           - client.c
           - server.c
           - utils.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-03-29 20:00
-            - 2019-04-01 20:00
       resources: true
       worksheet: true
       visible: false
@@ -166,11 +151,6 @@ labs:
           graded_files:
           - lookup1.c
           - lookup2.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-04-05 20:00
-            - 2019-04-08 20:00
       resources: true
       worksheet: false
       visible: false
@@ -184,10 +164,6 @@ labs:
           due_date: 2019-04-17 23:59
           graded_files:
           - libscheduler.c
-      ag_schedules:
-        - title: AG Schedule
-            - 2019-04-12 20:00
-            - 2019-04-15 20:00
       resources: true
       worksheet: true
       visible: false
@@ -202,11 +178,6 @@ labs:
           graded_files:
           - dns_query_svc_impl.c
           - dns_query_clnt_impl.c
-      ag_schedules:
-        - title: AG Schedule
-          schedule_dates:
-            - 2019-04-19 20:00
-            - 2019-04-21 20:00
       resources: true
       worksheet: false
       visible: false
