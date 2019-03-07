@@ -116,7 +116,7 @@ labs:
             - 2019-03-11 20:00
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "MapReduce"
       releaseDate: "Week 9"
