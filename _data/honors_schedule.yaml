@@ -17,7 +17,7 @@
 # #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/97b2563f-8d10-4ad9-97c3-3aa6a019dddd?ec=true"
    -
      date: "February 13"
-     content: "Profiling Lab"
+     content: "[lab] Pugnacious Profilers"
      slides: "http://cs241.cs.illinois.edu/assignments/pugnacious_profilers.html"
  #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c022532f-ca6f-48f4-8081-8f44c92a572a?ec=true"
    -
@@ -27,7 +27,7 @@
  #    video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/63277618-f281-45d6-ad6a-44cedaa3e5c5?ec=true"
    -
      date: "February 27"
-     content: "Security Lab"
+     content: "[lab] Melt King's Secret"
      slides: "http://cs241.cs.illinois.edu/assignments/meltdown.html"
    -
      date: "March 06"
