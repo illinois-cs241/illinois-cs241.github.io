@@ -26,4 +26,4 @@ cd ${TRAVIS_BUILD_DIR}
 set -x;
 
 mv _site web
-rsync -rav -e "ssh -vvv -i /tmp/dual_deploy_key" web/ $DEPLOY_GRADER_USER@$DEPLOY_GRADER_IP:/
+#rsync -rav -e "ssh -vvv -i /tmp/dual_deploy_key" web/ $DEPLOY_GRADER_USER@$DEPLOY_GRADER_IP:/
