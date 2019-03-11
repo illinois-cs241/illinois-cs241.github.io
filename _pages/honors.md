@@ -2,6 +2,7 @@
 layout: doc
 title: Honors
 ---
+
 ## Syllabus
 
 Couldn't get enough systems programming from CS 241? Welcome to the honors section! This course is recommended for those who want to expand their systems knowledge with additional lectures and a semester long project in systems programming.
