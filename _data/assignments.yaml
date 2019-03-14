@@ -124,7 +124,7 @@ labs:
           - mapreduce.c
       resources: false
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Charming Chatroom"
       releaseDate: "Week 10"
