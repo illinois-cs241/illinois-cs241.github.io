@@ -70,7 +70,7 @@ ISBN 0-536-48928-9
 * [Development Tutorial]({% link _tutorials/development.md %})
 * [Emacs Tutorial]({% link _tutorials/emacs.md %})
 * [SSHFS Workflow Tutorial]({% link _tutorials/sshfs.md %})
-* [Shell Tutorial]({% link _tutorials/shell_fu.md %})
+* [Shell Tutorial]({% link _coursebook/Appendix.md %}#shell)
 
 ## Grading
 
