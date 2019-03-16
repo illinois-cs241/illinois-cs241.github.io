@@ -10,9 +10,6 @@
       <div class="wrapper">
         <div class="pad"><div class="card">
           <div class="title">
-            <div class="speaker-wrapper">
-              <button onclick="speak()" class="speaker" alt="Read Page"></button>
-            </div>
             {% assign split_url = page.url | split: '/' %}
             {% assign name_no_md = split_url[-1] | replace: '.html','' %}
             {% assign assign_data = site.assign_by_url[name_no_md] %}
