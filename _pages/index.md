@@ -66,7 +66,7 @@ ISBN 0-536-48928-9
 
 ## Tutorials
 
-* [Debugging Tutorial]({% link _tutorials/debugging.md %})
+* [Debugging Tutorial]({% link _coursebook/Background.md %}#debugging-and-environments)
 * [Development Tutorial]({% link _tutorials/development.md %})
 * [Emacs Tutorial]({% link _tutorials/emacs.md %})
 * [SSHFS Workflow Tutorial]({% link _tutorials/sshfs.md %})
