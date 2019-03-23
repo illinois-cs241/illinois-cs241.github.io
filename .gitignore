@@ -7,3 +7,4 @@ Gemfile.lock
 ._*
 .#*
 _coursebook/*
+_docs/*

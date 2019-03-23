@@ -1,5 +1,0 @@
-[submodule "_docs"]
-	path = _docs
-	url = https://github.com/illinois-cs241/assignment-docs.git
-	ignore = dirty
-	shallow = true

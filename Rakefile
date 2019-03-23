@@ -19,6 +19,8 @@ is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
 coursebook_dir = '_coursebook'
 coursebook_url = 'https://github.com/illinois-cs241/coursebook.wiki.git'
+docs_folder = '_docs'
+docs_url = 'https://github.com/illinois-cs241/assignment-docs.git'
 
 $config = Jekyll.configuration({
 :source => './',
@@ -29,6 +31,7 @@ $config = Jekyll.configuration({
 
 multitask default: [
   'pre_build:gen_man',
+  'pre_build:gen_docs',
   'pre_build:gen_coursebook',
 ] do
   site = Jekyll::Site.new($config)
@@ -119,6 +122,17 @@ namespace :pre_build do
     end
   end
 
+  task :gen_docs do
+    folder = docs_folder
+
+    if not Dir.exist?(folder)
+        puts "Cloning docs"
+        system "git clone #{docs_url} #{folder}"
+    end
+   
+    system "cd #{folder} && git clean -fq && git reset --hard HEAD"
+  end
+
   task :gen_coursebook, [:folder] do |_t, args|
     folder = args[:folder]
     if folder.nil?
@@ -131,9 +145,9 @@ namespace :pre_build do
         system "git clone #{coursebook_url} #{folder}"
     end
 
-    system "cd #{coursebook_dir} && git clean -fq && git reset --hard HEAD"
+    system "cd #{folder} && git clean -fq && git reset --hard HEAD"
 
-    Dir.glob("#{coursebook_dir}/*md").each do |file|
+    Dir.glob("#{folder}/*md").each do |file|
       file_contents = File.read(file)
       matches = file_contents.match(/(.*)\n={3,}/)
       if matches
