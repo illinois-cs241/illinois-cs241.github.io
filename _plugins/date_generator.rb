@@ -1,3 +1,4 @@
+# Autogenerates the semester variable so sites auto-update
 module Jekyll
   class SemesterGenerator < Generator
     def generate(site)

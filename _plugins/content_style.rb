@@ -8,9 +8,11 @@ require 'rouge'
 require 'htmlentities'
 require 'json'
 
+# Where we keep all the man page metadata
 $man_filename = '_data/man.json'
+
+# The data loaded up
 $data_hash = JSON.parse(File.read($man_filename))
-BASE = 'https://github.com/angrave/SystemProgramming/wiki/'
 
 # This is a piece of code that I got from the internet
 # No need to understand
@@ -39,6 +41,18 @@ class Nokogiri::XML::Node
   end
 end
 
+
+##
+# Adds a class to a css selector given a page
+#
+# == Parameters:
+# page::
+#   Nokogiri page
+# css_selector::
+#   Valid css selector
+# classname::
+#   Name of class you want appended
+#
 def add_class_to_elem(page, css_selector, classname)
   elems = page.css(css_selector)
   unless elems.nil?
@@ -52,9 +66,20 @@ def add_class_to_elem(page, css_selector, classname)
   end
 end
 
+##
+# Takes all the backtick man page links like `fork`
+# And turns them into links
+#
+# == Parameters:
+# page::
+#   Nokogiri page
+#
 def add_man_links(page)
   page.css('code.highlighter-rouge').each do |code|
+    # Needed for reasons
     next unless code.parent.name != 'a'
+
+    # Grab if possible, then put the link in
     uri = $data_hash[code.inner_html]
     unless uri.nil?
       code.inner_html = "<a href=#{uri} class='fancy-link'>#{code.inner_html}</a>"
@@ -62,9 +87,22 @@ def add_man_links(page)
   end
 end
 
+##
+# Adds the `#` Anchor tags after ever h2
+#
+# == Parameters:
+# page::
+#   Nokogiri page
+# title_text_class::
+#   Class to add to all of the links in addition to anchor.
+#
 def add_anchors(page, title_text_class)
   page.css('.title').each do |card|
+    # Find the first h2
+    # There should only be one.
     h2 = card.css('h2').first
+
+    # Create the new anchor and add into the h2
     anchor = Nokogiri::XML::Node.new('a', page)
     anchor['class'] = 'anchor ' + title_text_class
     anchor['href'] = '#' + h2['id']
@@ -73,13 +111,23 @@ def add_anchors(page, title_text_class)
   end
 end
 
+##
+# Takes each of the cards and wraps them in various divs
+#
+# == Parameters:
+# page::
+#   Nokogiri page
+#
 def style_cards(page)
   # Wrap the entire card in padding
   page.css('.card').wrap('<div class="pad" />')
+
   # Take each non-title attribute and stick it in
   # The content piece
   page.css('.card').each do |card|
     ps = card.css('> :not(.title)')
+
+    # Create a new node as to not mess with the original dom
     new_div = Nokogiri::XML::Node.new('div', page)
     new_div['class'] = 'content col-sm-11 .col-sm-offset-1'
     ps.each do |p|
@@ -92,10 +140,21 @@ def style_cards(page)
   end
 end
 
+##
+# Styles each of the code blocks in a page by wrapping keywords
+# in colorful spans
+#
+# == Parameters:
+# page::
+#   Nokogiri page
+#
 def style_code(page)
   # Style all the code
   html_decoder = HTMLEntities.new
   page.css('.language-C, .language-c').each_with_index do |div, i|
+    
+    # This is to create a copyable version of the code
+    # The link has been disabled but the startup code is still ehre
     id_target = "code-copy-#{i}"
     copy = Nokogiri::XML::Node.new('a', page)
     copy['class'] = 'code-copy'
@@ -108,31 +167,51 @@ def style_code(page)
     textarea['class'] = 'code-copy-textarea'
     textarea['value'] = div.inner_html
 
-    # Before anything style the div
+    # Now we style the div.
+    # We don't want the JS to do the styling on the front end
+    # So what we do is parse the code on the inside, wrap each keyword
+    # In a span corresponding to the syntax highlighting
+    # And wrap that entire thing into a span
     formatter = Rouge::Formatters::HTML.new
     lexer = Rouge::Lexers::C.new
     formatted = formatter.format(lexer.lex(html_decoder.decode(div.inner_html)))
     code = Nokogiri::XML("<span>#{formatted}</span>")
 
+    # Change all the pre's to divs because browsers don't like pre
     code.css('pre').each do |pre|
       pre.name = 'div'
     end
+
+    # Put in the formatted code.
     div.inner_html = formatted
-    #div.children.before(copy)
-    #div.add_child(textarea)
   end
 end
 
+##
+# Takes the raw HTML jekyll produces and converts into our format
+#
+# == Parameters:
+# text::
+#   The document fragment from jekyll
+#
+# == Returns:
+# html::
+#   Formatted html
+#
 def style_content(text)
+
   # Wrap everything into a card using the above method
   # We need an outermost element to do this
+  # We need a fragment too because this isn't a full html doc
   page = Nokogiri::HTML::DocumentFragment.parse "<div class='wrapper'>"
   page.at('.//div').inner_html = text
-  # Remove all h1's in the body
+
+  # Remove all h1's in the body, they shouldn't be there
   page.css('h1').each do |h1|
     h1.remove
   end
 
+  # wrap each section h2 of the divs
   page.at('.//div').auto_section
 
   # Page is sectioned
@@ -143,9 +222,10 @@ def style_content(text)
 
   # Wrap the h2s in the title attribute
   page.css('h2').wrap("<div class='title'/>")
-  # Anchors!
+
   add_anchors(page, title_text_class)
 
+  # Put in the links that grow in
   add_class_to_elem(page, 'a', 'fancy-link wiki-link')
 
   style_cards page
@@ -162,6 +242,7 @@ def style_content(text)
 end
 
 module Jekyll
+  # This styles the layout: doc templates
   module CONTENT_STYLE
     def content_style(text)
       style_content(text)
@@ -169,10 +250,15 @@ module Jekyll
   end
 
   module SLIDE_STYLE
+    # This styles the layout: slide templates
     def slide_style(text, title,sup_title)
       text = '<h1></h1>' + text
+
+      # Provide some manual control to move vertically and horizontally
       text.gsub!(/<vertical\s*\/>/, '<h2></h2>')
       text.gsub!(/<horizontal\s*\/>/, '<h1></h1>')
+
+      # Wrap everything in slides once again
       page = Nokogiri::HTML::DocumentFragment.parse "<div class='slides'>"
       page.at('.//div').inner_html = text
       page.at('.//div').auto_section(wrap='<section>')
