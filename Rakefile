@@ -18,6 +18,7 @@ require 'fileutils'
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
 coursebook_dir = '_coursebook'
+coursebook_url = 'https://github.com/illinois-cs241/coursebook.wiki.git'
 
 $config = Jekyll.configuration({
 :source => './',
@@ -118,12 +119,16 @@ namespace :pre_build do
     end
   end
 
-  coursebook_dir = "_coursebook"
   task :gen_coursebook, [:folder] do |_t, args|
     folder = args[:folder]
     if folder.nil?
       folder = coursebook_dir
       puts "Using default Folder #{folder}"
+    end
+
+    if not Dir.exist?(folder)
+        puts "Cloning coursebook"
+        system "git clone #{coursebook_url} #{folder}"
     end
 
     system "cd #{coursebook_dir} && git clean -fq && git reset --hard HEAD"

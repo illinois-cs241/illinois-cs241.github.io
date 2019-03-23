@@ -3,6 +3,3 @@
 	url = https://github.com/illinois-cs241/assignment-docs.git
 	ignore = dirty
 	shallow = true
-[submodule "_wikibook_project"]
-	path = _coursebook
-	url = https://github.com/illinois-cs241/coursebook.wiki.git
