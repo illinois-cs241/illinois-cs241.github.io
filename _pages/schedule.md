@@ -135,7 +135,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 03/01. Online Lecture
 
-### Heads-up Week 8
+### Week 8
 
 * Week's Readings: Deadlock
 
@@ -153,9 +153,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 03/08. Online Lecture
 
-{% if false %}
-
-### Heads-up Week 9
+### Week 9
 
 * Week's Readings: Interprocess Communication
 
@@ -175,9 +173,10 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Fri 03/15. Online Lecture
 
+
 ### Heads-up Week 10
 
-* Week's Readings: Filesystems? (Need to confirm)
+* Week's Readings: Scheduling and Filesystems
 
 * Mon 03/25. Online Lecture
 
@@ -215,7 +214,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 12
 
-* Week's Readings: Scheduling
+* Week's Readings: Signals
 
 * Mon 04/08. Online Lecture
 
@@ -234,7 +233,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 13
 
-* Week's Readings: Scheduling
+* Week's Readings: Review!
 
 * Mon 04/15. Online Lecture
 
@@ -287,8 +286,6 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 * Wed 04/31. Lab Assignment due {{ site.assign_by_url['lovable_linux'].submissions[0].due_date }}
 
 * Wed 04/31. Regrades are due
-
-{% endif %}
 
 ### CBTF Quiz summary. These are usually available Monday - Wednesday. 
 
