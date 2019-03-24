@@ -176,7 +176,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 10
 
-* Week's Readings: Scheduling and Filesystems
+* Week's Readings: Scheduling
 
 * Mon 03/25. Online Lecture
 
@@ -214,7 +214,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 12
 
-* Week's Readings: Signals
+* Week's Readings: Filesystems
 
 * Mon 04/08. Online Lecture
 
@@ -233,7 +233,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Heads-up Week 13
 
-* Week's Readings: Review!
+* Week's Readings: Signals
 
 * Mon 04/15. Online Lecture
 
