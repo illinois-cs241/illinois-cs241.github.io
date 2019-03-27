@@ -40,10 +40,10 @@
      slides: #"lock_free.pdf"
 #     video:
    -
-#     date: "October 31"
-#     content: "TCP Networking"
-#     slides: "tcp.pdf"
-#     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/ad1d1a76-8365-4169-a229-c8c2065b37eb?ec=true"
+     date: "March 29"
+     content: "[lab] Notorious Netfilter"
+     slides: "http://cs241.cs.illinois.edu/assignments/notorious_netfilter.html"
+     video: "https://docs.google.com/presentation/d/1EX5mKLrgvwiv8O2CoVmj8IuZr3jN28XO8xjCWgnD2qU/edit?usp=sharing"
 #   -
 #     date: "November 7"
 #     content: "Midterm presentations"
