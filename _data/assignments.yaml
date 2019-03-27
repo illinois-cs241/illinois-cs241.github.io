@@ -139,7 +139,7 @@ labs:
           - utils.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Mad Mad Access Pattern"
       releaseDate: "Week 11"
