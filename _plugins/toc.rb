@@ -23,7 +23,7 @@ module Jekyll
 
       # Set up the list for the TOC
       list = Nokogiri::XML::Node.new('ul', page)
-      list['class'] = 'toc'
+      list['class'] = 'toc hacker'
 
       # Add each h2 element to the TOC
       page.css('h2').each do |h2|
@@ -31,7 +31,7 @@ module Jekyll
         id = h2['id']
         new_link['id'] = 'toc_' + id
         new_link['href'] = '#' + id
-        new_link['class'] = 'fancy-link'
+        new_link['class'] = 'fancy-link hacker'
         new_link.inner_html = h2.inner_html
         li = Nokogiri::XML::Node.new('li', page)
         li << new_link
