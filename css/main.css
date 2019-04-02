@@ -1,7 +1,7 @@
 body {
     padding-top: 50px;
     font-family: Roboto,Helvetica,Arial,sans-serif;
-    background-color: #000;
+    background-color: #F2F2F4;
     color: #2A2A3F;
     padding-bottom:50px;
 }
@@ -14,8 +14,8 @@ body {
 
 .navbar {
     background-color: #2C72AD;
-    border-color: #000;
-    border-bottom: 0px;
+    border-color: #2C72AD;
+    border: 0px;
     border-top:none;
     box-shadow:none;
 }
@@ -187,8 +187,7 @@ ul.toc {
 }
 
 h1, h2, h3 {
-    /* color: #2C72AD; */
-    color: #32CD32;
+    color: #2C72AD;
 }
 
 .announcement-card {
@@ -310,8 +309,7 @@ img:not(.emoji) {
 
 .fancy-link:hover:after {
     width: 100%;
-    color: #32CD32 !important;
-    /*background: #337ab7;*/
+    background: #337ab7;
 }
 
 .container-fluid {
@@ -398,19 +396,20 @@ pre.highlight {
 }
 
 .highlighter-rouge {
-    background-color: #555;
+    background-color: #DFDFDF;
     color: #151515;
     border-radius: 5px;
     padding-top: 4px;
 }
 
 .highlight {
-    background-color: #555;
+    background-color: #151515;
     border: 0px;
     color: #F2F2F4;
 }
 
 div.highlighter-rouge, figure.highlighter-rouge {
+    background-color: #151515;
     color: #D7D7D7;
     padding-bottom: 1.5em;
     margin-bottom: 0.65em;
@@ -484,11 +483,7 @@ tbody tr:nth-child(odd) {
     border-radius: 20px;
 }
 
-tbody tr:nth-child(odd).hacker {
-    background-color: inherit;
-}
-
-html.hacker, body.hacker, .parent-container, nav, header.hacker, nav.hacker, :not(.card-staff) > * > div:not(.card-staff).hacker, table.hacker, pre.hacker, span.hacker, :not(.card-staff) > 
+html.hacker, body.hacker, header.hacker, nav.hacker, :not(.card-staff) > * > div:not(.card-staff).hacker, table.hacker, pre.hacker, span.hacker, :not(.card-staff) >
     a.hacker, p.hacker, h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker
  {
     color: white !important;
@@ -500,10 +495,10 @@ h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker {
     color: #20C20E !important;
 }
 ul.hacker {
-    list-style-type: square; 
+    list-style-type: square;
 }
 img.hacker {
-    background-color: white;
+    filter: drop-shadow(white 1px 1px 0px) drop-shadow(white 1px -1px 0px) drop-shadow(white -1px 1px 0px) drop-shadow(white -1px -1px 0px));
 }
 pre.hacker {
     border-color: white;
@@ -528,16 +523,17 @@ tbody tr:nth-child(odd).hacker {
     background-color: inherit;
 }
 
-.parent-container .day, .parent-container .announcement-card {
+body.hacker .day, body.hacker .announcement-card {
     background-color: #151515;
 }
 
-.parent-container .announcement {
+body.hacker .announcement {
     color: white !important;
 }
 
-a.fancy-link, a.anchor {
-    color: #32CD32 !important;
+#tuxlink img.hacker {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
 }
 
 .apply-button {
@@ -555,4 +551,3 @@ a.fancy-link, a.anchor {
 .apply-button:hover {
     background-color: #2C72AD;
 }
-

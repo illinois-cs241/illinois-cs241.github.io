@@ -187,13 +187,6 @@ def style_code(page)
   end
 end
 
-def april_fools(page)
-  classes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'a', 'p', 'table', 'span', 'pre', ':not(.card-staff)', 'body', 'html', 'ul', 'img', '.toc', '.highlighter-rouge', '.pad', 'div.highlighter-rouge', 'div.pad']
-  classes.each do |css_sel|
-    add_class_to_elem(page, css_sel, 'hacker')
-  end
-end
-
 ##
 # Takes the raw HTML jekyll produces and converts into our format
 #
@@ -238,14 +231,12 @@ def style_content(text)
   style_cards page
   # Style all tables
   add_class_to_elem(page, 'table', 'table')
- 
+
   # Wrap each of the contents in rows
   page.css('.content').wrap('<div class="container-fluid" />')
   page.css('.content').wrap('<div class="row" />')
 
   add_man_links page
-
-  april_fools page
 
   page.to_html
 end
