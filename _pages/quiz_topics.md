@@ -111,7 +111,8 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 * Creating pipes
 * Using fseek and ftell
 * page tables (page offsets, dirty bit,TLB)
-* and a little bit of scheduling (starvation, minimum wait time, best scheduler for interactive tasks).
+
+(Multiple Choice only. Scheduling will not be on this quiz)
 
 ## Quiz 7 (Week 14)
 
@@ -131,10 +132,16 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 * Purpose and properties of getaddrinfo
 * Reading and writing to pipes (including blocking, SIGPIPE and detecting when no more bytes can be read)
 
+(Multiple Choice only)
+
 ## Quiz 8 (Week 16)
 
 #### Mon, Apr 29 to	Wed, May 1
 
 #### Topics
 
+* Security
+* Scheduling
 * Review of everything!
+
+(Multiple Choice only)
