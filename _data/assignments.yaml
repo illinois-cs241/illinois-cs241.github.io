@@ -153,7 +153,7 @@ labs:
           - lookup2.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Savvy Scheduler"
       releaseDate: "Week 12"
