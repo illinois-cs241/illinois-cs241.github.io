@@ -27,5 +27,5 @@ Malloc Contest: [https://sp19-cs241-grd-02.cs.illinois.edu/malloc/](https://sp19
 
 ## Exams and grades
 
-Grade Viewer: [https://sp19-cs241-grd-08.cs.illinois.edu/](https://sp19-cs241-grd-08.cs.illinois.edu/)  
+Grade Viewer: [https://sp19-cs241-grd-02.cs.illinois.edu/grades](https://sp19-cs241-grd-02.cs.illinois.edu/grades)  
 Quiz topics: [http://cs241.cs.illinois.edu/quiz_topics.html](http://cs241.cs.illinois.edu/quiz_topics.html)
