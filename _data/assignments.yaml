@@ -327,28 +327,9 @@ mps:
           - server.c
           - common.c
           - common.h
-      ag_schedules:
-        - title: Part 1 AG Schedule
-          schedule_dates:
-            - 2019-04-09 20:00
-            - 2019-04-10 20:00
-            - 2019-04-11 20:00
-            - 2019-04-12 20:00
-        - title: Part 2 AG Schedule
-          schedule_dates:
-            - 2019-04-16 20:00
-            - 2019-04-17 20:00
-            - 2019-04-18 20:00
-            - 2019-04-19 20:00
-        - title: Part 3 AG Schedule
-          schedule_dates:
-            - 2019-04-23 20:00
-            - 2019-04-24 20:00
-            - 2019-04-25 20:00
-            - 2019-04-26 20:00
       resources: true
       worksheet: false
-      visible: false
+      visible: true
 honors:
   -
       name: "Advanced C"
