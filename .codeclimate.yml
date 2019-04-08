@@ -1,7 +1,0 @@
-plugins:
-  rubocop:
-    enabled: true
-  sass-lint:
-    enabled: true
-  markdownlint:
-    enabled: true
