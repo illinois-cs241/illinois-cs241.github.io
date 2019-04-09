@@ -14,6 +14,8 @@ require_relative '_scripts/spell_check.rb'
 require 'etc'
 require 'yaml'
 require 'fileutils'
+require 'nokogiri'
+require 'json'
 
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
@@ -21,13 +23,41 @@ coursebook_dir = '_coursebook'
 coursebook_url = 'https://github.com/illinois-cs241/coursebook.wiki.git'
 docs_folder = '_docs'
 docs_url = 'https://github.com/illinois-cs241/assignment-docs.git'
+DEST_DIR = './_site'
+SEARCH_FILE = 'search_data.json'
 
 $config = Jekyll.configuration({
 :source => './',
-:destination => './_site',
+:destination => DEST_DIR,
 :timezone => 'America/Chicago',
 :safe => false,
 })
+
+def gen_search_json(site)
+  docs = []
+  site.collections.each do |key, col|
+    col.docs.each do |doca|
+      doc = Nokogiri::HTML(doca.content)
+      doc.search('.//a').remove
+      doc.search('.//pre').remove
+      s = doc.xpath('//text()').to_s
+      s.gsub!(".", ". ")
+      s.gsub!(/\s[Tt]he\s/, " ")
+      s.gsub!(/\s[Bb]e\s/, " ")
+      s.gsub!(/\s[Tt]o\s/, " ")
+      s.gsub!(/\s[Aa]nd\s/, " ")
+      s.squeeze!(" ")
+      s.delete!("\n")
+      doc_hash = Hash.new
+      doc_hash[:title] = doca.data['title']
+      doc_hash[:content] = s
+      doc_hash[:url] = doca.url
+      docs << doc_hash
+    end
+  end
+
+  File.write(DEST_DIR + '/' + SEARCH_FILE, docs.to_json)
+end
 
 multitask default: [
   'pre_build:gen_man',
@@ -36,6 +66,9 @@ multitask default: [
 ] do
   site = Jekyll::Site.new($config)
   Jekyll::Commands::Build.build site, $config
+
+  gen_search_json site
+
   cp './.travis.yml', './_site/.travis.yml'
   cp './CNAME', './_site/CNAME'
 end
