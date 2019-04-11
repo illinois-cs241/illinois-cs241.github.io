@@ -1,6 +1,6 @@
 ---
 layout: slide
-title: "Savvy Scheduluer"
+title: "Savvy Scheduler"
 authors: "Pradyumna Shome"
 ---
 
