@@ -43,28 +43,28 @@
      date: "March 29"
      content: "[lab] Notorious Netfilter"
      slides: "http://cs241.cs.illinois.edu/assignments/notorious_netfilter.html"
-     video: "https://docs.google.com/presentation/d/1EX5mKLrgvwiv8O2CoVmj8IuZr3jN28XO8xjCWgnD2qU/edit?usp=sharing"
-#   -
-#     date: "November 7"
-#     content: "Midterm presentations"
-#     slides: #"tcp.pdf"
-#     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/5de679c3-a1b2-4a4b-aa12-af0a28b4a539?ec=true"
-#   -
-#     date: "November 14"
-#     content: "Containerization"
-#     slides: "https://docs.google.com/presentation/d/1hdWiRMKjwg1VkNN3NxO2YswCv4FwhyjeQC6Lej153dM/edit?usp=sharing"
-#     video:
-#   -
-#     date: "November 21"
-#     content: "Fall Break (no class)"
-#     slides:
-#     video:
-#   -
-#     date: "November 28"
-#     content: "Spectre/Meltdown, Blockchain"
-#     slides: "https://drive.google.com/drive/folders/1sz6u_2Ug7pKmBt5amTqiN3DBM3DrMHCI?usp=sharing"
-#     video:
-#   -
+     video: #"https://docs.google.com/presentation/d/1EX5mKLrgvwiv8O2CoVmj8IuZr3jN28XO8xjCWgnD2qU/edit?usp=sharing"
+   -
+     date: "April 10"
+     content: "Containerization/Virtualization"
+     slides: "https://docs.google.com/presentation/d/1ffwNFBH4K4dIGtoIZGit2VlYlprpN0vF-vGtf-SL_Ig/edit?usp=sharing"
+     video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/5de679c3-a1b2-4a4b-aa12-af0a28b4a539?ec=true"
+   -
+     date: "April 17"
+     content: "Catastrophic Containers"
+     slides: #"https://docs.google.com/presentation/d/1hdWiRMKjwg1VkNN3NxO2YswCv4FwhyjeQC6Lej153dM/edit?usp=sharing"
+     video:
+   -
+     date: "April 24"
+     content: "Catastrophic Containers (contd.)"
+     slides:
+     video:
+   -
+     date: "May 1"
+     content: "Final Presentations"
+     slides: #"https://drive.google.com/drive/folders/1sz6u_2Ug7pKmBt5amTqiN3DBM3DrMHCI?usp=sharing"
+     video:
+   -
 #     date: "December 5"
 #     content: "Netfilter Kernel Module"
 #     slides: "https://docs.google.com/presentation/d/1Gzs-fBlUQSwb-lXVEr2x6a1UlOSePXazjngzsF05S78/edit?usp=sharing"
