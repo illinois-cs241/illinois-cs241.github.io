@@ -4,9 +4,9 @@ title: "Savvy Scheduler"
 authors: "Pradyumna Shome"
 ---
 
-# Savvy Scheduler
+## Savvy Scheduler
 
-</horizontal>
+<horizontal/>
 
 ## Scheduling
 
@@ -46,12 +46,13 @@ A process is placed on the ready queue when it is able to use a CPU. Some exampl
 
 * A process was blocked waiting for a [`**read**`](https://linux.die.net/man/3/read) from storage or socket to complete and data is now available.
 * A new process has been created and is ready to start.
+
+<vertical />
+
+## Other situations
+
 * A process thread was blocked on a synchronization primitive (condition variable, semaphore, `mutex` lock) but is now able to continue.
 * A process is blocked waiting for a system call to complete but a signal has been delivered and the signal handler needs to run.
-
-## Which schedulers suffer from starvation?
-
-* Example: Shortest Job First with continuous stream of short processes
 
 <horizontal />
 
@@ -62,6 +63,12 @@ A process is placed on the ready queue when it is able to use a CPU. Some exampl
 * First Come First Served
 * Round Robin
   * Quanta = 500ms (for example)
+  
+<vertical />
+
+## Which schedulers suffer from starvation?
+
+* Example: Shortest Job First with continuous stream of short processes
 
 <horizontal />
 
