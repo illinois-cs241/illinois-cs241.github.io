@@ -1,119 +1,60 @@
----
-layout: slide
-title: Savvy Scheduler
-author: "Pradyumna"
----
+|  |  |  | \---                      |
+|--|--|--|---------------------------|
+|  |  |  | layout: slide             |
+|  |  |  | title: Savvy Scheduler    |
+|  |  |  | author: "Pradyumna Shome" |
+|  |  |  | \---                      |
 
-## Processes!
+Operating systems must choose what processes to run.
 
-## Address Space
+* Must efficiently select which process must be run on a system’s CPU cores
 
-![Proc Address Space](/images/slides/fork/address_space.png)
+## Key Terms
 
-## What is Copied Over?
+* Arrival Time
+* Start Time
+* End Time
+* Response time
+* Turnaround time
+* Wait time
 
-<vertical />
+## Convoy Effect
 
-## Forkbomb
+Convoy of processes following a CPU-intensive processes, with potentially smaller resource requirements.
 
-<vertical />
+Affects IO-intensive operations.
 
-## Process Flowchart
+## What is pre-emption?
 
-<vertical />
+When a more preferable (multiple criteria) process is ready, the CPU can suspend the current process (think `SIGSTOP`), and can switch in the new process. Later, the process that was pre-empted can be scheduled (`SIGCONT`)
 
-<horizontal />
+Without pre-emption processes will run until they are unable to utilize the CPU any further!
 
-## Utilities Unleashed
+## Why might a process (or thread) be placed on the ready queue?
 
-## What are you going to learn?
+A process is placed on the ready queue when it is able to use a CPU. Some examples include:
 
-* What the fork-exec-wait pattern is.
-* Why we use it.
-* String Manipulation.
+* A process was blocked waiting for a [`**read**`](https://linux.die.net/man/3/read) from storage or socket to complete and data is now available.
+* A new process has been created and is ready to start.
+* A process thread was blocked on a synchronization primitive (condition variable, semaphore, `mutex `lock) but is now able to continue.
+* A process is blocked waiting for a system call to complete but a signal has been delivered and the signal handler needs to run.
 
-## All Fork-Exec-Wait Code
+## Which schedulers suffer from starvation?
 
-```C
-pid_t pid = fork();
-if(pid == -1){
-	//fork failed
-}else if(pid == 0){
-	//I am the child
-	exec(...)
-}else{
-	//I Am the parent
-	wait(pid);
-}
-```
+* Example: Shortest Job First with continuous stream of short processes
 
-## Exec Family
+## Common Scheduling Algorithms
 
-* There are three modifiers/mnemonic
-	* Either past a **l**ist or arg**v** (null terminated array) of arguments
-	* Search for the executable either in the current directory or in the **p**ath
-	* Use the parent's environment variables or use an **e**nvironment setting
+* Shortest Job First
+* Priority queue
+* First Come First Served
+* Round Robin
+  * Quanta = 500ms (for example)
 
-<vertical />
+## Measures of efficiency
 
-* Here are the list `exec`
-	* `execl( path, arg, … )`,execute the file in current directory
-	* `execlp( file, arg, … )`, executes a file only searching in the path
-	* `execle( path, arg, …, envp[])`, execute the file in path + environment settings
+Lowest average turnaround time
 
-<vertical />
+Lowest wait time
 
-* Pass an array of string as arguments
-	* `execv( path, argv[])`, execute the file in current directory
-	* `execvp( file, argv[])`, execute the file in the path only
-	* `execvpe( file, argv[]), envp[])` // environment setting
-
-<horizontal />
-
-## time
-* `./time <command> <args> ...`
-* Try measuring the time of running `sleep 2`
-* Should use fork-exec scheme.
-* Should take care of programs do not terminate successfully.
-* Command line arguments are not limited two one.
-* Use the format.h functions to print out time/etc.
-
-## time Workflow
-
-![Workflow for time](/images/slides/fork/time_workflow.png)
-
-## Helper Functions
-* `struct timespec`
-	* `time_t tv_sec`;
-	* `long tv_nsec`;
-	* `tv_sec = 10`, `tv_nsec = 992300000` -> `10.9923 sec`
-* `int clock_gettime(clockid_t, timespec *)`;
-	* `clockid_t`: should use CLOCK_MONOTONIC in this lab
-* return 0 when success, -1 otherwise
-
-<horizontal />
-
-## env
-
-* `./env [-n #] [key=val1,val2,...] [key2=val1,val2,...] ... -- cmd [args] ..`
-* `./env -n 4 TZ=EST5EDT,CST6CDT,MST7MDT,PST8PDT -- date` - execute date under environment TZ=EST5EDT,
-	then TZ=CST6CDT, then TZ=MST7MDT, and finally TZ=PST8PDT
-* `./env -n 4 TEMP=EST5EDT,CST6CDT,MST7MDT,PST8PDT TZ=%TEMP -- date` - why is this the same as above?
-
-## env Workflow
-
-![Environment Workflow](/images/slides/fork/env_workflow.png)
-
-## Helper Functions
-
-* `int setenv(const char* name, const char* value,` \
-	`int overwrite)`
-* `char *getenv(const char *name)`
-* Write a split function that can split string based on `,`
-* Write a function that can find all `%notation` in a string
-* Extend that function so that you can replace variables \
-	with environment variables
-* Use getenv to get environment variables
-* Be familiar with: return array of strings, clear an array \
-	 of strings-> camelCasers
-
+Latency
