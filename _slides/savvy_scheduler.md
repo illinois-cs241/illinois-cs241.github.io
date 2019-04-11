@@ -1,9 +1,10 @@
-|  |  |  | \---                      |
-|--|--|--|---------------------------|
-|  |  |  | layout: slide             |
-|  |  |  | title: Savvy Scheduler    |
-|  |  |  | author: "Pradyumna Shome" |
-|  |  |  | \---                      |
+---
+layout: slide
+title: "Savvy Scheduluer"
+authors: "Pradyumna Shome"
+---
+
+# Savvy Scheduler
 
 Operating systems must choose what processes to run.
 
@@ -53,8 +54,8 @@ A process is placed on the ready queue when it is able to use a CPU. Some exampl
 
 ## Measures of efficiency
 
-Lowest average turnaround time
+* Lowest average turnaround time
 
-Lowest wait time
+* Lowest wait time
 
-Latency
+* Latency
