@@ -47,8 +47,6 @@ A process is placed on the ready queue when it is able to use a CPU. Some exampl
 * A process was blocked waiting for a [`**read**`](https://linux.die.net/man/3/read) from storage or socket to complete and data is now available.
 * A new process has been created and is ready to start.
 
-<vertical />
-
 ## Other situations
 
 * A process thread was blocked on a synchronization primitive (condition variable, semaphore, `mutex` lock) but is now able to continue.
@@ -62,9 +60,7 @@ A process is placed on the ready queue when it is able to use a CPU. Some exampl
 * Priority queue
 * First Come First Served
 * Round Robin
-  * Quanta = 500ms (for example)
-  
-<vertical />
+  * Quantum = 500ms (for example)
 
 ## Which schedulers suffer from starvation?
 
