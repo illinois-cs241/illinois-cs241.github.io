@@ -166,7 +166,7 @@ labs:
           - libscheduler.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Resplendent RPCs"
       releaseDate: "Week 13"
