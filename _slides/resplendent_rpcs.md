@@ -80,8 +80,6 @@ int optval = 1;
 setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT, &optval, sizeof(optval));
 ```
 
-<vertical />
-
 ```C
 struct sockaddr_in addr;
 memset(&addr, 0, sizeof(addr));
@@ -89,8 +87,6 @@ addr.sin_family = AF_INET;
 addr.sin_port = htons((uint16_t)port);
 struct hostent *serv = gethostbyname(hostname);
 ```
-
-<vertical />
 
 ```C
 // Timeouts for resending acks and whatnot
