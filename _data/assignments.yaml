@@ -180,7 +180,7 @@ labs:
           - dns_query_clnt_impl.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Lovable Linux"
       releaseDate: "Week 14"
