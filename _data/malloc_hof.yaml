@@ -1,4 +1,16 @@
 - 
+  semester: Spring 2019
+  scores:
+    - 
+      score: 111.13
+      nickname: 'Being and nothingness'
+    - 
+      score: 107.58
+      nickname: 'gbezhanishvili2'
+    - 
+      score: 106.97
+      nickname: '42'
+- 
   semester: Spring 2018
   scores:
     - 

@@ -51,13 +51,14 @@
      video: #"https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/5de679c3-a1b2-4a4b-aa12-af0a28b4a539?ec=true"
    -
      date: "April 17"
-     content: "Catastrophic Containers"
-     slides: #"https://docs.google.com/presentation/d/1hdWiRMKjwg1VkNN3NxO2YswCv4FwhyjeQC6Lej153dM/edit?usp=sharing"
+     content: "[lab] Catastrophic Containers"
+     slides: "http://cs241.cs.illinois.edu/assignments/catastrophic_containers.html"
+     # slides: #"https://docs.google.com/presentation/d/1hdWiRMKjwg1VkNN3NxO2YswCv4FwhyjeQC6Lej153dM/edit?usp=sharing"
      video:
    -
      date: "April 24"
-     content: "Catastrophic Containers (contd.)"
-     slides:
+     content: "[lab] Catastrophic Containers (contd.)"
+     slides: "https://docs.google.com/presentation/d/1Z0YkrReX_wWUGons5-zfP6zu8rNlqxAmgPe-proQ3TQ/edit?usp=sharing"
      video:
    -
      date: "May 1"
