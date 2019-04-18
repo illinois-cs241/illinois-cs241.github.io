@@ -70,7 +70,7 @@ clientContact(request.data);
 
 ## UDP Code
 
-```c
+```C
 int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 if (sockfd < 0) {
 perror("socket");
@@ -82,7 +82,7 @@ setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT, &optval, sizeof(optval));
 
 <vertical />
 
-```c
+```C
 struct sockaddr_in addr;
 memset(&addr, 0, sizeof(addr));
 addr.sin_family = AF_INET;
@@ -92,7 +92,7 @@ struct hostent *serv = gethostbyname(hostname);
 
 <vertical />
 
-```c
+```C
 // Timeouts for resending acks and whatnot
 struct timeval tv;
 tv.tv_sec = 0;
