@@ -249,13 +249,13 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Thur 04/18. Labs
 
-* Fri 04/19. No lecture
+* Fri 04/19. No lecture (in lieu of CBTF time)
 
 ### Heads-up Week 14
 
 * Week's Readings: Review!
 
-* Mon 04/22. Online Lecture
+* Mon 04/22. No lecture (in lieu of CBTF time)
 
 * Mon 04/22. MP Assignment Due {{ site.assign_by_url['networking_mp'].submissions[1].due_date }}
 
