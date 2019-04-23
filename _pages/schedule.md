@@ -249,7 +249,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Thur 04/18. Labs
 
-* Fri 04/19. Online Lecture
+* Fri 04/19. No lecture
 
 ### Heads-up Week 14
 
