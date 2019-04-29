@@ -79,12 +79,12 @@ h2 {
 }
 
 .staff-div {
-    width: 250px;
-    height: 250px;
+    width: 30vh;
+    height: 30vh;
     overflow: hidden;
     background-size: cover;
     padding:0px;
-    border-radius:5px;
+    border-radius: 1vh;
 }
 
 .staff-row {
@@ -95,9 +95,9 @@ h2 {
     position: absolute;
     bottom: 0px;
     background: rgba(0, 0, 0, 0.35);
-    color:white;
+    color: white;
     text-align: center;
-    font-size:28px;
+    font-size: 1.75em;
     padding-top: 5px;
 }
 
