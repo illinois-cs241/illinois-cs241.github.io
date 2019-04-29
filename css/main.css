@@ -1,12 +1,13 @@
 :root {
-  --color-primary: #158c1e;
+  --color-primary: #07c142;
+  --color-secondary: #0072d2;
 }
 
 body {
     padding-top: 50px;
     font-family: Roboto,Helvetica,Arial,sans-serif;
     background-color: #F2F2F4;
-    color: #2A2A3F;
+    color: var(--color-secondary);
     padding-bottom:50px;
 }
 
