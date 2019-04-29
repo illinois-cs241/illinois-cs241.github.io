@@ -1,3 +1,7 @@
+::root {
+  --color-primary: #158c1e;
+}
+
 body {
     padding-top: 50px;
     font-family: Roboto,Helvetica,Arial,sans-serif;
@@ -13,11 +17,12 @@ body {
 }
 
 .navbar {
-    background-color: #2C72AD;
+    background-color: var(--color-primary);
     border-color: #2C72AD;
     border: 0px;
     border-top:none;
     box-shadow:none;
+    font-weight: bold;
 }
 
 .navbar-default .navbar-brand {
