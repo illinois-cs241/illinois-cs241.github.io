@@ -279,13 +279,13 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 04/29 - 05/01. CBTF Quiz 8
 
-* Wed 04/31. Online Lecture
+* Wed 05/01. Online Lecture
 
-* Wed 04/31. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+* Wed 05/01. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
 
-* Wed 04/31. Lab Assignment due {{ site.assign_by_url['lovable_linux'].submissions[0].due_date }}
+* Wed 05/01. Lab Assignment due {{ site.assign_by_url['lovable_linux'].submissions[0].due_date }}
 
-* Wed 04/31. Regrades are due
+* Wed 05/01. Regrades are due
 
 ### CBTF Quiz summary. These are usually available Monday - Wednesday. 
 
