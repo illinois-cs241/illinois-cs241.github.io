@@ -92,7 +92,7 @@ We have other projects that we are taking off the ground next semester and aren'
 ### Expected Time Obligations
 * Varies by project
 
-<form action="https://form.jotform.com/91148675795170">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSdXYjlNnRh--KKKsO3E-sBC8P2y1aO6Ehg_MneikQxzLlCDaA/viewform">
 <button type="submit" class="apply-button">
 	Apply
 </button>
