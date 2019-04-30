@@ -1,8 +1,14 @@
+:root {
+  --color-primary: #07c142;
+  --color-secondary: #0072d2;
+  --color-text: black;
+}
+
 body {
     padding-top: 50px;
     font-family: Roboto,Helvetica,Arial,sans-serif;
     background-color: #F2F2F4;
-    color: #2A2A3F;
+    color: var(--color-text);
     padding-bottom:50px;
 }
 
@@ -13,11 +19,12 @@ body {
 }
 
 .navbar {
-    background-color: #2C72AD;
+    background-color: var(--color-primary);
     border-color: #2C72AD;
     border: 0px;
     border-top:none;
     box-shadow:none;
+    font-weight: bold;
 }
 
 .navbar-default .navbar-brand {
@@ -72,12 +79,12 @@ h2 {
 }
 
 .staff-div {
-    width: 250px;
-    height: 250px;
+    width: 30vh;
+    height: 30vh;
     overflow: hidden;
     background-size: cover;
     padding:0px;
-    border-radius:5px;
+    border-radius: 1vh;
 }
 
 .staff-row {
@@ -88,9 +95,9 @@ h2 {
     position: absolute;
     bottom: 0px;
     background: rgba(0, 0, 0, 0.35);
-    color:white;
+    color: white;
     text-align: center;
-    font-size:28px;
+    font-size: 1.75em;
     padding-top: 5px;
 }
 
@@ -187,7 +194,7 @@ ul.toc {
 }
 
 h1, h2, h3 {
-    color: #2C72AD;
+    color: var(--color-secondary);
 }
 
 .announcement-card {
