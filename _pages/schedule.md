@@ -255,7 +255,7 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Week's Readings: Review!
 
-* Mon 04/22. No lecture (in lieu of CBTF time)
+* Mon 04/22. No lecture (in lieu of CBTF time)g
 
 * Mon 04/22. MP Assignment Due {{ site.assign_by_url['networking_mp'].submissions[1].due_date }}
 
@@ -279,9 +279,9 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 04/29 - 05/01. CBTF Quiz 8
 
-* Wed 05/01. Online Lecture
+* Wed 05/01. Last Lecture in ECEB 1002 8am.
 
-* Wed 05/01. Angrave World's-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30
+* Wed 05/01. Office HOurs ECEB Atrium 9:00 until 9:30
 
 * Wed 05/01. Lab Assignment due {{ site.assign_by_url['lovable_linux'].submissions[0].due_date }}
 
