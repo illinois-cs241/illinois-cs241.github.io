@@ -37,7 +37,6 @@ The operating system presents common interfaces for programmers to perform these
 * Describe operating system scheduling and use UNIX interfaces to set and modify scheduling policy parameters.
 * Define UNIX signals and signal handlers, and describe their use.
 * Write, compile, debug, and execute C programs with processes and threads that interact by invoking and catching signals.
-* Describe, configure, and use operating system timers and clocks.
 * Describe the concepts of I/O devices, files, directories.
 * Explain the internal implementation of files systems and operating system I/O.
 * Write, compile, debug, and execute C programs that use files and I/O on UNIX.
@@ -45,7 +44,11 @@ The operating system presents common interfaces for programmers to perform these
 * Write, compile, debug, and execute C programs that make use of memory management functions.
 * Describe the protocols (such as TCP and IP) and interfaces (such as sockets) used for communication among different computers.
 * Write distributed applications that communicate across a network.
+* Understands and uses system security mechanisms to build secure programs.
 * By the end of this course, you should be proficient at writing programs that take full advantage of operating system support.
+* Can analyze how a specific security error (e.g. buffer overflow, file access control, page access control) impacts the Confidentiality, Integrity and/or Availability of data or service.
+* Can identify multiple development practices (e.g. design reviews, code reviews, testing) as important practices to build secure programs.
+* Can briefly describe well-known security case studies (e.g. network protocol implementation errors, CPU side channel attacks) and how they comprise the Confidentiality, Integrity and/or Availability of data or service.
 
 ## Resources
 
