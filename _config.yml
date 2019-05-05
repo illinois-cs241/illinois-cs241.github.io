@@ -14,7 +14,23 @@ github_username: illinois-cs241
 course_number: "241"
 subject_code: "cs"
 course_name: "System Programming"
-exclude: ['.git', 'README.md', 'deploy_rsa.enc', 'vendor', 'bundle', 'wp_repo', 'Gemfile', 'Gemfile.lock', 'LICENSE', 'Rakefile', '_docs/deploy_rsa.enc', '_docs/deploy.sh', '_docs/retry.sh', '_docs/cleanup.sh']
+exclude:
+  [
+    ".git",
+    "README.md",
+    "deploy_rsa.enc",
+    "vendor",
+    "bundle",
+    "wp_repo",
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE",
+    "Rakefile",
+    "_docs/deploy_rsa.enc",
+    "_docs/deploy.sh",
+    "_docs/retry.sh",
+    "_docs/cleanup.sh",
+  ]
 navbar_items:
   - name: "Assignments"
     link: "assignments"
@@ -26,8 +42,11 @@ navbar_items:
     link: "schedule"
   - name: "Honors"
     link: "honors"
-  - name: "The Crew"
+  - name: "Staff"
     link: "staff"
+    sublinks:
+      - name: "Staff Hall of Fame"
+        link: "staff_hall_of_fame"
   - name: "Coursebook"
     link: "coursebook/index"
   - name: "Links"
@@ -55,14 +74,14 @@ collections:
 # Build settings
 markdown: kramdown
 kramdown:
-    input: GFM
-    hard_wrap: false
-    syntax_highlighter: rouge
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
 reveal:
-  css_url: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css'
-  css_theme_url: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css'
-  css_syntax_url: '/css/reveal-code-style.css'
-  lib_head_url: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js'
-  reveal_js_url: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js'
+  css_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"
+  css_theme_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css"
+  css_syntax_url: "/css/reveal-code-style.css"
+  lib_head_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"
+  reveal_js_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"
 plugins_dir:
   - _plugins

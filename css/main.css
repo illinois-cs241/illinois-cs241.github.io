@@ -1,6 +1,7 @@
 :root {
-  --color-primary: #07c142;
-  --color-secondary: #0072d2;
+  --color-primary: #00bb28;
+  /* --color-secondary: #0072d2; */
+  --color-secondary: #2f5fffdc;
   --color-text: black;
 }
 
@@ -557,4 +558,37 @@ body.hacker .announcement {
 
 .apply-button:hover {
     background-color: #2C72AD;
+}
+
+/* The dropdown container */
+li.navbar-sublink {
+  float: left;
+  overflow: hidden;
+}
+
+/* Add a background color to navbar links (and sublinks) on hover */
+li.navbar-link:hover, li.navbar-sublink:hover {
+    background-color: var(--color-secondary);
+}
+
+li.navbar-link:hover a, li.navbar-sublink:hover {
+    color: var(--color-primary);
+}
+
+.sublink-container {
+    display: none;
+    position: absolute;
+    min-width: 8vw;
+    background-color: var(--color-primary);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar-link:hover .sublink-container {
+    display: block;
+}
+
+.navbar-link {
+    text-align: center;
 }

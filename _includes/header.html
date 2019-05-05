@@ -24,8 +24,16 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             {% for item in site.navbar_items %}
-            <li>
-                <a class="navbar-link" href="/{{ item.link }}.html">{{ item.name }}</a>
+            <li class="navbar-link">
+                <a href="/{{ item.link }}.html">{{ item.name }}</a>
+                <!-- Generate sublinks-->
+                <ul class="nav navbar-nav sublink-container">
+                    {% for sublink in item.sublinks %}
+                        <li class="navbar-sublink">
+                            <a href="/{{ sublink.link }}.html">{{ sublink.name }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
             </li>
             {% endfor %}
           </ul>
