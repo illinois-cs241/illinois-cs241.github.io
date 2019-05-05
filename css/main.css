@@ -1,6 +1,5 @@
 :root {
-  --color-primary: #00bb28;
-  /* --color-secondary: #0072d2; */
+  --color-primary:#13bb36;
   --color-secondary: #2f5fffdc;
   --color-text: black;
 }
@@ -25,11 +24,11 @@ body {
     border: 0px;
     border-top:none;
     box-shadow:none;
-    font-weight: bold;
 }
 
 .navbar-default .navbar-brand {
     color: #F2F2F4 !important;
+    font-weight: bold;
 }
 
 .navbar-default .navbar-nav>li>a {
