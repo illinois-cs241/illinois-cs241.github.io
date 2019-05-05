@@ -1,6 +1,6 @@
-[submodule "coursebook"]
-	path = _coursebook
-	url = https://github.com/illinois-cs241/coursebook
 [submodule "docs"]
 	path = _docs
 	url = https://github.com/illinois-cs241/assignment-docs
+[submodule "coursebook"]
+	path = _coursebook
+	url = https://github.com/illinois-cs241/coursebook
