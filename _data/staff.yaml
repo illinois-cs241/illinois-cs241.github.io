@@ -6,7 +6,7 @@
   semesters: "Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Spring 2019"
   specialty: "Systems and CS Education"
 -
-  name: CS241 Admin
+  name: "CS 241 Admin"
   netid: cs241admin
   class: ""
   roles: "Graduate Assistant: Assists with course administration (e.g. exam sickness, DRES)"
@@ -115,7 +115,7 @@
   netid: hneoh2
   class: ""
   roles: Assignment Development, Front End
-  specialty: ""
+  specialty: "Piazza"
   semesters: Spring 2019
 -
   name: Rod Lin
@@ -127,10 +127,10 @@
 -
   name: Pradyumna Shome
   netid: pshome2
-  class: ""
-  roles: Assignment Development, Front End
-  specialty: ""
-  semesters: Spring 2019
+  class: 21
+  roles: Lab / Office Hours Assistant, Assignment Development Lead
+  specialty: "Education + Computer Security"
+  semesters: Spring 2019 - Present
 -
   name: Rafi Long
   netid: rjlong2
