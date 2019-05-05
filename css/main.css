@@ -6,7 +6,7 @@
 
 body {
     padding-top: 50px;
-    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-family: Ubuntu, Helvetica, Arial, sans-serif;
     background-color: #F2F2F4;
     color: var(--color-text);
     padding-bottom:50px;
@@ -588,7 +588,7 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
     display: block;
 }
 
-.navbar-link {
+.navbar-link, .navbar-sublink {
     text-align: center;
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu', sans-serif;
 }
