@@ -76,12 +76,12 @@
                 <td>{{lab.dueDate}}</td>
                 {% if lab.resources %}
                   {% if lab.slides == nil or lab.slides != false %}
-                    <td><a href="/slides/{{lab.url}}.html" class="fancy-link wiki-link"><img src="./images/lab_assets/animation.png" alt='Slides'></a></td>
+                    <td><a href="/slides/{{lab.url}}.html" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt='Slides'></a></td>
                   {% else %}
                     <td></td>
                   {% endif %}
                   {% if lab.worksheet == nil or lab.worksheet != false %}
-                    <td><a href="/resources/handouts/{{lab.url}}.pdf" class="fancy-link wiki-link"><img src="./images/lab_assets/file-document.png" alt='Handout'></a></td>
+                    <td><a href="/resources/handouts/{{lab.url}}.pdf" class="fancy-link wiki-link"><img src="./images/lab-icons/file-document.png" alt='Handout'></a></td>
                   {% else %}
                     <td></td>
                   {% endif %}
