@@ -60,6 +60,10 @@ h2 {
     margin-top: -20px;
 }
 
+.navbar-nav, .navbar-nav > ul {
+    margin: 0;
+}
+
 @media (max-width: 767px) {
     h1 {
         font-size: 36px;
@@ -561,8 +565,9 @@ body.hacker .announcement {
 
 /* The dropdown container */
 li.navbar-sublink {
-  float: left;
-  overflow: hidden;
+    float: left;
+    overflow: hidden;
+    width: 100%;
 }
 
 /* Add a background color to navbar links (and sublinks) on hover */
