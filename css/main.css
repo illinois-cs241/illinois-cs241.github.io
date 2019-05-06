@@ -590,4 +590,5 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
 
 .navbar-link, .navbar-sublink {
     text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
