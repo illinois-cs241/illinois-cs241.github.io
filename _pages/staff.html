@@ -12,7 +12,7 @@
   <!-- A bit janky: assumes zero or one instructors. Why can't Jekyll have stable sort??? :( -->
   {% assign team = site.data.staff | sort: 'netid' | sort: 'instructor', 'last' %}
   {% assign instructor = team | first %}
-  {% assign sorted_team = team | shift | sort: 'netid' | unshift: instructor %}
+  {% assign sorted_team = team | shift | sort: 'name' | unshift: instructor %}
   {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/'" %}
   <div class="container">
   {% for member in sorted_team %}
@@ -27,7 +27,7 @@
           id="{{member.netid}}"
           data-toggle="tooltip"
           data-placement="bottom"
-          title="{{ member.roles }} {% if member.specialty != '' %} interested in {{ member.specialty }}{% endif %} and has been on staff for {{ member.semesters }}"
+          title="{{ member.roles }} {% if member.specialty != '' %}interested in {{ member.specialty }}{% endif %} and has been on staff for {{ member.semesters }}"
           style="background-image: url({{ photo }});">
           <div class="container">
           <div class="row">
