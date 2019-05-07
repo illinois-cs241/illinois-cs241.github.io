@@ -1,7 +1,9 @@
 :root {
   --color-primary: #2c72ad;
-  --color-secondary: #2f5fffdc;
+  --color-secondary: rgb(53, 144, 219);
+  --color-emphasis: rgb(0, 129, 214);
   --color-text: black;
+  --color-translucent: hsla(0, 0%, 0%, 0.3);
 }
 
 body {
@@ -9,7 +11,7 @@ body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
     background-color: #F2F2F4;
     color: var(--color-text);
-    padding-bottom:50px;
+    padding-bottom: 50px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -20,7 +22,7 @@ body {
 
 .navbar {
     background-color: var(--color-primary);
-    border-color: #2C72AD;
+    border-color: var(--color-secondary);
     border: 0px;
     border-top:none;
     box-shadow:none;
@@ -72,33 +74,6 @@ h2 {
     p,li {
         font-size: 12px;
     }
-}
-
-.staff {
-  width: 100%;
-}
-
-.staff-div {
-    width: 30vh;
-    height: 30vh;
-    overflow: hidden;
-    background-size: cover;
-    padding:0px;
-    border-radius: 1vh;
-}
-
-.staff-row {
-    margin-top: 40px;
-}
-
-.staff-name {
-    position: absolute;
-    bottom: 0px;
-    background: rgba(0, 0, 0, 0.35);
-    color: white;
-    text-align: center;
-    font-size: 1.75em;
-    padding-top: 5px;
 }
 
  /* Popover */
@@ -298,7 +273,7 @@ img:not(.emoji) {
 
 .fancy-link {
     text-decoration: none !important;
-    color: #337ab7;
+    color: var(--color-emphasis);
     display: inline-block;
     position: relative;
     padding-bottom: 0px;
@@ -316,14 +291,7 @@ img:not(.emoji) {
 
 .fancy-link:hover:after {
     width: 100%;
-    background: #337ab7;
-}
-
-.container-fluid {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+    background: var(--color-emphasis);
 }
 
 .navbar-toggle {
@@ -590,4 +558,55 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
 
 .navbar-link, .navbar-sublink {
     text-align: center;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 4vw;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+
+.staff {
+    width: 100%;
+}
+
+.staff-container {
+    margin: 2vh;
+}
+
+.staff-container div.staff-image {
+    width: 22vh;
+    height: 22vh;
+    overflow: hidden;
+    background-size: cover;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.staff-container:hover div.staff-image {
+    box-shadow:0 4px 12px 0 var(--color-translucent), 0 6px 20px 0 var(--color-translucent);
+}
+
+.staff-name {
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1em;
+    padding-top: 2vh;
+    color: var(--color-emphasis);
+}
+
+.heading {
+    text-align: center;
+}
+
+section.center {
+    text-align: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 0;
+    padding-top: 0;
 }
