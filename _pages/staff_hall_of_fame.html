@@ -14,7 +14,7 @@
 
     <p><i>If I have seen farther than others, it is by standing on the shoulders of giants</i> -- Isaac Newton</p>
   <!-- A bit janky: assumes zero or one instructors. Why can't Jekyll have stable sort??? :( -->
-  {% assign team = site.data.staff-emeritus | sort: 'netid' %}
+  {% assign team = site.data.staff-emeritus | sort: 'name' %}
   {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/retired/'" %}
   <div class="container">
   {% for member in team %}
@@ -27,7 +27,7 @@
       id="{{member.netid}}"
       data-toggle="tooltip"
       data-placement="bottom"
-      title="{{ member.roles }} {% if member.specialty != '' %} interested in {{ member.specialty }}{% endif %} and has been on staff for {{ member.semesters }}"
+      title="{{ member.roles }} {% if member.specialty != '' %}interested in {{ member.specialty }}{% endif %} and has been on staff for {{ member.semesters }}"
       style="background-image: url(/images/staffPhotos/retired/{{ member.netid }}.jpg);">
       <div class="container">
       <div class="row">
