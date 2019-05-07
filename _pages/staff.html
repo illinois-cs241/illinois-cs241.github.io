@@ -22,7 +22,7 @@
     {% endif %}
     {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
     {% assign photo = photofile.path | default: "/images/staffPhotos/default.jpg" %}
-    <a href="mailto:{{member.netid}}@illinois.edu?Subject=CS241%20Student" alt="Mail Student">
+    <a href="mailto:{{member.netid}}@illinois.edu?Subject=CS%20241%20Student" alt="Mail Student">
       <div class="col-md-3 col-sm-12 col-xs-12 staff-div"
           id="{{member.netid}}"
           data-toggle="tooltip"
