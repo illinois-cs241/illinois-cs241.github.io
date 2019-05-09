@@ -1,9 +1,9 @@
 :root {
   --color-primary:#00b400;
   --color-secondary: rgb(53, 144, 219);
-  --color-secondary-emphasis: rgb(28, 125, 204);
+  --color-secondary-emphasis: rgb(0, 129, 214);
   --color-text: black;
-  --color-translucent: hsla(0, 0%, 0%, 0.5);
+  --color-translucent: hsla(0, 0%, 0%, 0.3);
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
     background-color: #F2F2F4;
     color: var(--color-text);
-    padding-bottom:50px;
+    padding-bottom: 50px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -569,9 +569,10 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
 .gallery {
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin: auto;
     padding: 4vw;
     flex-wrap: wrap;
+    width: 90vw;
 }
 
 .staff {
@@ -580,26 +581,29 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
 
 .staff-container {
     margin: 2vh;
-    border: solid var(--color-translucent) 0.5px;
 }
 
 .staff-container div.staff-image {
-    width: 30vh;
-    height: 30vh;
+    width: 22vh;
+    height: 22vh;
     overflow: hidden;
     background-size: cover;
     padding: 0;
+    border-radius: 50%;
+}
+
+.staff-container:hover div.staff-image {
+    box-shadow:0 4px 12px 0 var(--color-translucent), 0 6px 20px 0 var(--color-translucent);
 }
 
 .staff-name {
     bottom: 0px;
-    background-color: rgba(255, 255, 255, 0.397);
-    color: var(--color-secondary);
     width: 100%;
     text-align: center;
-    font-size: 1.5em;
     font-weight: 100;
-    padding-top: 5px;
+    padding-top: 2vh;
+    font-size: 1.2em;
+    color: var(--color-secondary-emphasis);
 }
 
 .heading {
