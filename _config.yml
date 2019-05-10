@@ -32,33 +32,33 @@ exclude:
     "_docs/cleanup.sh",
   ]
 navbar_items:
-  - name: "Assignments"
-    link: "/assignments.html"
+  - name: "Staff"
+    link: "/staff.html"
     sublinks:
-      - name: "Grade Viewer"
-        link: "https://sp19-cs241-grd-02.cs.illinois.edu/grades"
-      - name: "Broadway On-Demand Autograder"
-        link: "https://sp19-cs241-grd-02.cs.illinois.edu/on-demand/"
-  - name: "Quizzes"
-    link: "/quiz_topics.html"
-  - name: "Help!"
-    link: "/help.html"
+        - name: "Staff Hall of Fame"
+          link: "/staff_hall_of_fame.html"
+  - name: "Syllabus"
+    link: "/syllabus.html"
   - name: "Schedule"
     link: "/schedule.html"
     sublinks:
       - name: "Lectures"
         link: "https://classtranscribe.illinois.edu/"
+  - name: "Assignments"
+    link: "/assignments.html"
+  - name: "Quizzes"
+    link: "/quiz_topics.html"
+  - name: "Grades"
+    link: "https://sp19-cs241-grd-02.cs.illinois.edu/grades"
+  - name: "Resources"
+    link: "/resources.html"
+    sublinks:
+      - name: "Peer Tutoring"
+        link: "/peer_tutoring.html"
+      - name: "Coursebook"
+        link: "/coursebook/index.html"
   - name: "Honors"
     link: "/honors.html"
-  - name: "Staff"
-    link: "/staff.html"
-    sublinks:
-      - name: "Staff Hall of Fame"
-        link: "/staff_hall_of_fame.html"
-  - name: "Coursebook"
-    link: "/coursebook/index.html"
-  - name: "Links"
-    link: "/links.html"
 # Settings for docs collection
 collections:
   docs:
