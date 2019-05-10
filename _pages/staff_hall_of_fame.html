@@ -17,14 +17,13 @@ title: Staff Hall of Fame
                 <i>If I have seen farther than others, it is by standing on the shoulders of giants</i> -- Isaac Newton
             </p>
         </section>
-        <!-- A bit janky: assumes zero or one instructors. Why can't Jekyll have stable sort??? :( -->
         {% assign team = site.data.staff-emeritus | sort: 'name' %}
         {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/retired/'" %}
-        <section class="gallery">
+        <section class="flexbox">
             {% for member in team %}
                 {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
                 {% assign photo = photofile.path | default: "/images/staffPhotos/default.jpg" %}
-                <section class="staff-container">
+                <section class="flexbox-item">
                     <a href="mailto:{{member.netid}}@illinois.edu?Subject=CS%20241%20Student" alt="Mail Student">
                         <div class="col-md-3 col-sm-12 col-xs-12 staff-image"
                                     id="{{member.netid}}"
