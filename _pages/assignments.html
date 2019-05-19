@@ -1,115 +1,112 @@
----
+--- 
 ---
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+
 <body>
     <style>
-     @media only screen and (max-width: 768px) {
-         .col-xs-12 .table {
-             margin-left: 0px;
-         }
-     }
-
-     h1 {
-         margin-bottom: 0px;
-         padding-bottom: 10px;
-     }
+        @media only screen and (max-width: 768px) {
+            .col-xs-12 .table {
+                margin-left: 0px;
+            }
+        }
+        
+        h1 {
+            margin-bottom: 0px;
+            padding-bottom: 10px;
+        }
     </style>
-{% include header.html %}
-<div class="container-fluid">
-  <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-1 col-1 col-xs-0"></div>
-  	<div class="col-md-10 col-10 col-xs-12">
-      <h1>Assignments</h1>
-      <section class="infrastructure-links">
-        <p>
-          <a href="https://sp19-cs241-grd-02.cs.illinois.edu/on-demand/" class="btn btn-success" role="button">Broadway On-Demand Autograder</a>
-        </p>
-        <p>
-          <a href="https://sp19-cs241-grd-02.cs.illinois.edu/malloc/" class="btn btn-warning" role="button">Malloc Contest</a>
-        </p>
-      </section>
-      <div class="row">
+    {% include header.html %}
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1 col-1 col-xs-0"></div>
+                <div class="col-md-10 col-10 col-xs-12">
+                    <h1>Assignments</h1>
+                    <section class="infrastructure-links">
+                        <p>
+                            <a href="{{ site.data.constants.grade_viewer_link }}" class="btn btn-success" role="button">Broadway On-Demand Autograder</a>
+                        </p>
+                        <p>
+                            <a href="{{ site.data.constants.malloc_contest_link }}" class="btn btn-warning" role="button">Malloc Contest</a>
+                        </p>
+                    </section>
+                    <div class="row">
 
-      <div class="col-md-5 col-5 col-xs-12">
-          <div class="table-responsive">
-              <h3>MPs</h3>
-              <table width="100%" class="table" style="width:90%">
-    		          <thead>
-    		              <tr>
-    		                  <th>MP</th>
-    		                  <th>Release Date</th>
-    		                  <th>End Date</th>
-    		              </tr>
-    		          </thead>
-    		          <tbody>
-                      {% for mp in site.data.assignments['mps'] %}
-                      {% if mp.visible != true %}
-                      {% continue %}
-                      {% endif %}
-                      <tr>
-			      <th scope="row"><a href="/assignments/{{mp.url}}.html">{{mp.name}}</a></th>
-      		    	          <td>{{mp.releaseDate}}</td>
-      		    	          <td>{{mp.dueDate}}</td>
-                      </tr>
-                      {% endfor %}
-    		          </tbody>
-    		      </table>
-          </div>
-      </div>
-     <div class="col-md-7 col-7 col-xs-12">
+                        <div class="col-md-5 col-5 col-xs-12">
+                            <div class="table-responsive">
+                                <h3>MPs</h3>
+                                <table width="100%" class="table" style="width:90%">
+                                    <thead>
+                                        <tr>
+                                            <th>MP</th>
+                                            <th>Release Date</th>
+                                            <th>End Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for mp in site.data.assignments['mps'] %} {% if mp.visible != true %} {% continue %} {% endif %}
+                                        <tr>
+                                            <th scope="row"><a href="/assignments/{{mp.url}}.html">{{mp.name}}</a></th>
+                                            <td>{{mp.releaseDate}}</td>
+                                            <td>{{mp.dueDate}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-7 col-xs-12">
 
-      <div class="table-responsive">
-          <h3>Labs</h3>
-          <table class="table" style="width:90%">
-    		  <thead>
-    		    <tr>
-    		      <th>Lab</th>
-    		      <th>Release Date</th>
-              <th>Due Date</th>
-              <th>Slides</th>
-              <th>Handout</th>
-    		    </tr>
-    		  </thead>
-    		  <tbody>
-            {% for lab in site.data.assignments['labs'] %}
-              {% if lab.visible != true %}
-              {% continue %}
-              {% endif %}
-              <tr>
-                <th scope="row"><a href="/assignments/{{lab.url}}.html">{{lab.name}}</a></th>
-      		    	<td>{{lab.releaseDate}}</td>
-                <td>{{lab.dueDate}}</td>
-                {% if lab.resources %}
-                  {% if lab.slides == nil or lab.slides != false %}
-                    <td><a href="/slides/{{lab.url}}.html" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt='Slides'></a></td>
-                  {% else %}
-                    <td></td>
-                  {% endif %}
-                  {% if lab.worksheet == nil or lab.worksheet != false %}
-                    <td><a href="/resources/handouts/{{lab.url}}.pdf" class="fancy-link wiki-link"><img src="./images/lab-icons/file-document.png" alt='Handout'></a></td>
-                  {% else %}
-                    <td></td>
-                  {% endif %}
-                {% else %}
-                  <td class="mdl-data-table__cell--non-numeric">
-                  </td>
-                  <td class="mdl-data-table__cell--non-numeric">
-                  </td>
-                {% endif %}
-              </tr>
-            {% endfor %}
-    		  </tbody>
-    		</table>
+                            <div class="table-responsive">
+                                <h3>Labs</h3>
+                                <table class="table" style="width:90%">
+                                    <thead>
+                                        <tr>
+                                            <th>Lab</th>
+                                            <th>Release Date</th>
+                                            <th>Due Date</th>
+                                            <th>Slides</th>
+                                            <th>Handout</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for lab in site.data.assignments['labs'] %} {% if lab.visible != true %} {% continue %} {% endif %}
+                                        <tr>
+                                            <th scope="row"><a href="/assignments/{{lab.url}}.html">{{lab.name}}</a></th>
+                                            <td>{{lab.releaseDate}}</td>
+                                            <td>{{lab.dueDate}}</td>
+                                            {% if lab.resources %} {% if lab.slides == nil or lab.slides != false %}
+                                            <td>
+                                                <a href="/slides/{{lab.url}}.html" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt='Slides'></a>
+                                            </td>
+                                            {% else %}
+                                            <td></td>
+                                            {% endif %} {% if lab.worksheet == nil or lab.worksheet != false %}
+                                            <td>
+                                                <a href="/resources/handouts/{{lab.url}}.pdf" class="fancy-link wiki-link"><img src="./images/lab-icons/file-document.png" alt='Handout'></a>
+                                            </td>
+                                            {% else %}
+                                            <td></td>
+                                            {% endif %} {% else %}
+                                            <td class="mdl-data-table__cell--non-numeric">
+                                            </td>
+                                            <td class="mdl-data-table__cell--non-numeric">
+                                            </td>
+                                            {% endif %}
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-1 col-xs-0"></div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
-    <div class="col-md-3 col-1 col-xs-0"></div>
-</div>
-</div>
-</div>
-{% include footer.html %}
+        {% include footer.html %}
 </body>
+
 </html>

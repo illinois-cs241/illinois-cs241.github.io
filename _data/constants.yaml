@@ -1,0 +1,18 @@
+# Settings for the course
+# semester is generated automagically
+course_number: "241"
+department_code: "cs"
+course_name: "System Programming"
+
+# Class info
+semester: sp19
+instructor: Lawrence Angrave (angrave@illinois.edu)
+location: Electrical and Computer Engineering Building 1002
+timings: MWF 8am-8.50am
+
+# Infrastructure links
+grade_viewer_link: "https://sp19-cs241-grd-02.cs.illinois.edu/grades/"
+broadway_on_demand_link: "https://sp19-cs241-grd-02.cs.illinois.edu/on-demand/"
+malloc_contest_link: "https://sp19-cs241-grd-02.cs.illinois.edu/malloc/"
+piazza_link: "https://piazza.com/illinois/spring2019/cs241/"
+lecture_videos_link: "https://classtranscribe.illinois.edu/"

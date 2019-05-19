@@ -44,15 +44,15 @@ title: Home
                         Time and Location
                     </h2>
                     <p>
-                        <strong>Instructor: </strong>Lawrence Angrave (angrave)
+                        <strong>Instructor: </strong>{{ site.data.constants.instructor }}
                     </p>
                     <p>
-                        <strong>Lecture: </strong>MWF 8am-8.50am
+                        <strong>Lecture: </strong> {{ site.data.constants.timings }}
                     </p>
                     <p>
                     </p>
                     <p>
-                        <strong>Location: </strong>ECEB 1002
+                        <strong>Location: </strong> {{ site.data.constants.location }}
                     </p>
                 </section>
                 <section class="flexbox-item">
@@ -65,13 +65,13 @@ title: Home
                     </p>
                     <p>
                         <a
-                        href="https://piazza.com/illinois/spring2019/cs241"
+                        href="{{ site.data.constants.piazza_link }}"
                         class="btn btn-primary"
                         role="button"
                         >Piazza</a>
                         </p>
                         <p>
-                            Please read our <a href="http://localhost:4000/resources.html#piazza-search-first-dont-post">Piazza policy, before posting.</a>
+                            Please read our <a href="/resources#piazza-search-first-dont-post">Piazza policy, before posting.</a>
                         </p>
                 </section>
                 <section class="flexbox-item">
