@@ -1,5 +1,3 @@
-{% include_relative_once constants.yaml %}
-
 # Navigation bar links
 navbar_items:
   - name: "Assignments"
@@ -9,13 +7,13 @@ navbar_items:
     link: "/quiz_topics.html"
 
   - name: "Grades"
-    link: {{ site.data.constants.grade_viewer_link }}
+    link: "/grades.html"
 
   - name: "Schedule"
     link: "/schedule.html"
     sublinks:
       - name: "Lectures"
-        link: {{ site.data.constants.lecture_videos_link }} 
+        link: "/lectures.html"
 
   - name: "Syllabus"
     link: "/syllabus.html"
