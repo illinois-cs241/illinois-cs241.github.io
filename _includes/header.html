@@ -19,23 +19,26 @@
       </button>
 
       <!-- Full title on laptop -->
-      <a class="navbar-brand navbar-link normal" href="/"
-        >CS 241: System Programming</a
-      >
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 241: System Programming</span> 
+      </a>
+
       <!-- Smaller on mobile-->
-      <a class="navbar-brand navbar-link small" href="/">CS 241</a>
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 241</span>
+      </a>
     </div>
 
     <!-- Finally generate what is in the navbar -->
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         {% for item in site.data.navigation_bar.navbar_items %}
-        <li class="navbar-link">
+        <li class="navbar-item">
           <a href="{{ item.link }}">{{ item.name }}</a>
           <!-- Generate sublinks-->
-          <ul class="nav navbar-nav sublink-container">
+          <ul class="nav navbar-nav subitem-container">
             {% for sublink in item.sublinks %}
-            <li class="navbar-sublink">
+            <li class="navbar-subitem">
               <a href="{{ sublink.link }}">{{ sublink.name }}</a>
             </li>
             {% endfor %}

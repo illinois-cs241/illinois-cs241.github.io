@@ -1,8 +1,9 @@
 :root {
     --color-primary: #2c72ad;
-    --color-secondary: rgb(0, 0, 0);
+    --color-secondary: rgb(0, 140, 255);
     --color-secondary-emphasis: rgb(0, 129, 214);
     --color-text: black;
+    --color-navbar-text: #F2F2F4;
     --color-translucent: hsla(0, 0%, 0%, 0.3);
     --color-pale-white: rgb(245, 245, 245);
 }
@@ -31,17 +32,21 @@ body {
 }
 
 .navbar-default .navbar-brand {
-    color: #F2F2F4 !important;
+    color: var(--color-navbar-text);
     font-weight: bold;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #F2F2F4 !important;
+    color: var(--color-navbar-text);
 }
 
 .navbar-collapse {
     border-top:0px !important;
     box-shadow:none;
+}
+
+.navbar-brand:hover {
+    color: var(--color-navbar-text) !important;
 }
 
 .github-link {
@@ -306,7 +311,7 @@ img:not(.emoji) {
 
 .fancy-link {
     text-decoration: none !important;
-    color: #337ab7;
+    color: var(--color-primary);
     display: inline-block;
     position: relative;
     padding-bottom: 0px;
@@ -324,7 +329,7 @@ img:not(.emoji) {
 
 .fancy-link:hover:after {
     width: 100%;
-    background: #337ab7;
+    background: var(--color-secondary-emphasis);
 }
 
 .container-fluid {
@@ -564,42 +569,44 @@ body.hacker .announcement {
 }
 
 .apply-button:hover {
-    background-color: #2C72AD;
+    background-color: var(--color-primary);
 }
 
 /* The dropdown container */
-li.navbar-sublink {
+li.navbar-subitem {
     float: left;
     overflow: hidden;
     width: 100%;
 }
 
+.navbar-item, .navbar-subitem {
+    color: var(--color-navbar-text);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
 /* Add a background color to navbar links (and sublinks) on hover */
-li.navbar-link:hover, li.navbar-sublink:hover {
-    background-color: var(--color-secondary);
+li.navbar-item:hover, li.navbar-subitem:hover{
+    background-color: white;
 }
 
-li.navbar-link:hover a, li.navbar-sublink:hover {
-    color: var(--color-primary);
+li.navbar-item:hover > a, li.navbar-subitem:hover > a {
+    color: var(--color-primary) !important;
 }
 
-.sublink-container {
+.subitem-container {
     display: none;
     position: absolute;
     min-width: 8vw;
     background-color: var(--color-primary);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px var(--color-translucent);
     z-index: 1;
     width: 100%;
 }
 
-.navbar-link:hover .sublink-container {
+/* Makes the dropdown visible on items which have subitems */
+.navbar-item:hover .subitem-container {
     display: block;
-}
-
-.navbar-link, .navbar-sublink {
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
 }
 
 .staff {
@@ -632,7 +639,7 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
     text-align: center;
     font-family: Roboto, Helvetica, sans-serif;
     font-size: 2em;
-    margin: 1em;
+    padding: 1em;
     padding: 0;
 }
 
@@ -699,8 +706,8 @@ img.logo {
 
 @media (max-width: 480px) {
     .flexbox-item div.staff-image {
-        width: 22vh;
-        height: 22vh;
+        width: 18vh;
+        height: 18vh;
     }
     img.logo {
         width: 10vw;
@@ -715,4 +722,16 @@ img.logo {
     margin: auto;
     text-align: center;
     display: block;
+}
+
+.latest-mp {
+    background-color: rgba(16, 213, 147, 0.85);
+}
+
+.latest-lab {
+    background-color: rgba(255, 102, 42, 0.85);
+}
+
+.latest-assignments section.flexbox-item {
+    border-radius: 4%;
 }
