@@ -1,15 +1,16 @@
 :root {
-  --color-primary: #2c72ad;
-  --color-secondary: rgb(53, 144, 219);
-  --color-emphasis: rgb(0, 129, 214);
-  --color-text: black;
+  --color-primary: hsl(207, 59%, 43%);
+  --color-secondary: hsl(207, 70%, 53%);
+  --color-emphasis: hsl(204, 100%, 42%);
+  --color-text: hsl(0, 0%, 0%);
   --color-translucent: hsla(0, 0%, 0%, 0.3);
+  --color-pale-white: hsla(240, 8%, 95%);
 }
 
 body {
     padding-top: 50px;
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    background-color: #F2F2F4;
+    background-color: var(--color-pale-white);
     color: var(--color-text);
     padding-bottom: 50px;
 }
@@ -29,12 +30,12 @@ body {
 }
 
 .navbar-default .navbar-brand {
-    color: #F2F2F4 !important;
+    color: var(--color-pale-white) !important;
     font-weight: bold;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #F2F2F4 !important;
+    color: var(--color-pale-white) !important;
 }
 
 .navbar-collapse {
@@ -125,16 +126,16 @@ table {
     height:300px;
     margin-bottom:20px;
     width:100%;
-    background-color: #FFFFFF;
+    background-color: hsl(0, 0%, 100%);
     border-radius:3px; /* Has to be equal to the title border */
 }
 
 .day h1 {
-    color: #F2F2F4;
+    color: hsl(240, 8%, 95%);
 }
 
 .day-summary, .day-resources {
-    color: black;
+    color: hsl(0, 0%, 0%);
 }
 
 .day-resources {
@@ -173,7 +174,7 @@ h1, h2, h3 {
 }
 
 .announcement-card {
-    background-color: #FFFFFF;
+    background-color: var(--color-pale-white);
     border-radius: 5px;
 }
 
@@ -182,7 +183,7 @@ h1, h2, h3 {
 }
 
 .day-title-h3 {
-    color: #F2F2F4;
+    color: var(--color-pale-white);
 }
 
 img:not(.emoji) {
@@ -201,7 +202,7 @@ img:not(.emoji) {
     border-radius: 50%;
 }
 .loader {
-    color: #ffffff;
+    color: var(--color-pale-white);
     font-size: 11px;
     text-indent: -99999em;
     margin: 55px auto;
@@ -299,7 +300,7 @@ img:not(.emoji) {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #F2F2F4;
+    background-color: var(--color-pale-white);
 }
 
 
@@ -332,20 +333,20 @@ img:not(.emoji) {
 /***************** Code Copying ***************/
 
 pre {
-    color: #F2F2F4;
-    background-color: #151515;
+    color: var(--color-pale-white);
+    background-color: var(--color-text)
     border: inherit;
 }
 
 code {
-    color: #F2F2F4;
+    color: var(--color-pale-white);
 }
 
 .code-copy {
     float: right;
     right: 0px;
     display: none;
-    background-color:black;
+    background-color:var(--color-text);
     padding: 5px 5px 5px 5px;
     border-radius: 3px;
     cursor: pointer;
@@ -564,9 +565,9 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
     display: flex;
     justify-content: center;
     margin: auto;
-    padding: 4vw;
+    padding: 5vw;
     flex-wrap: wrap;
-    width: 90vw;
+    width: 100vw;
 }
 
 .staff {
@@ -578,8 +579,8 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
 }
 
 .staff-container div.staff-image {
-    width: 22vh;
-    height: 22vh;
+    width: 24vh;
+    height: 24vh;
     overflow: hidden;
     background-size: cover;
     padding: 0;
@@ -594,8 +595,8 @@ li.navbar-link:hover a, li.navbar-sublink:hover {
     bottom: 0px;
     width: 100%;
     text-align: center;
-    font-size: 1.1em;
-    padding-top: 2vh;
+    font-size: 1.5em;
+    padding-top: 1vh;
     color: var(--color-emphasis);
 }
 
@@ -609,4 +610,15 @@ section.center {
     padding-right: 3vw;
     padding-bottom: 0;
     padding-top: 0;
+}
+
+/* For phones */
+@media only screen and (max-width: 480px) {
+    .staff-container div.staff-image {
+        width: 20vh;
+        height: 20vh;
+    }
+    .staff-name {
+        font-size: 1.25em;
+    }
 }
