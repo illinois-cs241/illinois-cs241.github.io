@@ -41,6 +41,13 @@ class Nokogiri::XML::Node
   end
 end
 
+def append_class_node(elem, classname)
+      if !elem['class'].nil?
+        elem['class'] << " #{classname}"
+      else
+        elem['class'] = classname
+      end
+end
 
 ##
 # Adds a class to a css selector given a page
@@ -57,11 +64,7 @@ def add_class_to_elem(page, css_selector, classname)
   elems = page.css(css_selector)
   unless elems.nil?
     elems.each do |elem|
-      if !elem['class'].nil?
-        elem['class'] << " #{classname}"
-      else
-        elem['class'] = classname
-      end
+        append_class_node(elem, classname)
     end
   end
 end
@@ -109,6 +112,14 @@ def add_anchors(page, title_text_class)
     anchor.inner_html = '#'
     h2 << anchor.to_html
   end
+
+  page.css('h3').each do |h3|
+    anchor = Nokogiri::XML::Node.new('a', page)
+    anchor['class'] = 'anchor ' + title_text_class
+    anchor['href'] = '#' + h3['id']
+    anchor.inner_html = '#'
+  end
+
 end
 
 ##
@@ -187,6 +198,18 @@ def style_code(page)
   end
 end
 
+def add_cls_to_img_paragraphs(page)
+    page.css('p').each do |p|
+    if p.children.length == 0
+        next
+    end
+
+    if p.children[0].name == 'img'
+        append_class_node(p, 'img-paragraph')
+    end
+    end
+end
+
 ##
 # Takes the raw HTML jekyll produces and converts into our format
 #
@@ -237,6 +260,8 @@ def style_content(text)
   page.css('.content').wrap('<div class="row" />')
 
   add_man_links page
+
+  add_cls_to_img_paragraphs(page)
 
   page.to_html
 end

@@ -217,7 +217,7 @@ img:not(.emoji) {
     max-width: 100%;
 }
 
-p:has(> img) {
+.img-paragraph {
     display: grid;
 }
 
