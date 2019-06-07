@@ -217,6 +217,10 @@ img:not(.emoji) {
     max-width: 100%;
 }
 
+p:has(> img) {
+    display: grid;
+}
+
 /* Loader */
 
 .hidden {
