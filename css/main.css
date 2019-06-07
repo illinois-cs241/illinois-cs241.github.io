@@ -211,7 +211,10 @@ h1, h2, h3 {
 }
 
 img:not(.emoji) {
-    width: 100%;
+    max-height: 80vh;
+    display: inline-block;
+    margin: auto;
+    max-width: 100%;
 }
 
 /* Loader */
