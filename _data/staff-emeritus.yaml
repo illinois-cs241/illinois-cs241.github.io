@@ -237,3 +237,31 @@
   roles: Teaching Assistant
   specialty: "Malloc, Shell, Parallel Make, MapReduce"
   semesters: 2009 - 2013
+- 
+  name: Graham Carl Evans
+  netid: gcevans
+  class: 16
+  roles: Professor
+  specialty: "Networking"
+  semesters: Spring 2017 - Fall 2017
+-
+  name: Jake Bailey
+  netid: jbbaile2
+  class: 18
+  roles: Course Assistant
+  specialty: "Honors and Piazza"
+  semesters: Spring 2015 - Fall 2015
+-
+  name: Johnny Chang
+  netid: jychang3
+  class: 17
+  roles: Course Assistant
+  specialty: "Assignment Development"
+  semesters: Fall 2015
+-
+  name: Ed Karrels
+  netid: edk
+  class: 97
+  roles: Teaching Assistant
+  specialty: "Map Reduce"
+  Semesters: Fall 2015
