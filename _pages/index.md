@@ -167,6 +167,21 @@ You walk into the investor meeting ready to show your demo. You ship your code r
 
 Forgot to commit or your committed code that does not compile? Zero. The basic headline is that you're not in Kansas anymore (to quote Dorothy). Don't leave it until the last minute.
 
+There are two kind of AG runs:
+
+* Pre-deadline runs: **You are responsible for starting these.** Our team has worked really hard to improve our grading system and make it more reliable and flexible. Now you can schedule your AG pre-deadline runs yourself using the on-demand grading system! Please see the Links page for the link to the web app. You have to log in with your Github Enterprise account. Assignments will become visible on the web app as we release them. You will get one AG run a day which you can trigger at your disposal. Please be careful in using these. No need to wait for hours at night to see your results anymore! **The AG runs do not roll over.** So you should be developing and working on your assignments everyday to make the best out of this system. Once you click "Grade Now", it will start your AG run on our grading machines. You can expect to see the results in your repo in the `_feedback` branch in a few minutes. In rare circumstances, the grading process might fail (in case your code makes our docker containers crash). In that case, no result will show up for you. You can make a private Piazza post and we will deal with this on a per-student basis. These runs are only for feedback purposes and have **no effect on your grade**.
+* Deadline runs: These will be triggered by us and the grades you get on these will be counted towards your final grades. The results will show up in the `_feedback` branch as usual.
+
+Labs:
+     Releases on Thursday.
+     Pre-deadline runs: Everyday from Saturday to Wednesday (you will get to start these!)
+     Deadline AG run on Wednesday at 11:59 pm
+
+MPs:
+     Releases on Monday
+     Pre-deadline runs: Everyday from Wednesday to Monday (you will get to start these!)
+     Deadline run on Monday at 11:59 pm
+
 We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected on a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM, which is near-identical to the grading machine. We will attempt to give you some partial credit if your code passes the tests.
 
 If you have a question about your personal autograder results after the final autograde run, then feel free to make a private Piazza post titled "&lt;assignment name&gt; Autograde Question" with the folders/tags/labels `autograder` and `<assignment name>` selected.
@@ -176,8 +191,6 @@ If you have a question about your personal autograder results after the final au
 * We will not tell you the details of specific tests, beyond what the test description already says.
 * These questions should be for "I have exhaustive test cases for _X_, so how am I failing _Y_?"
 * Please mention your NetID in the post, so we can look up your code if needed.
-
-**NOTE:** If your Git author is not correctly set to your netid@illinois.edu, _your code will not be graded_. There are **no** exceptions. If you aren't sure if its set correctly, please make a private Piazza post with your net ID and someone will happily help.
 
 ## Academic Integrity
 
