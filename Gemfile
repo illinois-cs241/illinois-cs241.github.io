@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'ffi-hunspell'
 gem 'htmlentities'
-gem 'jekyll'
+gem 'jekyll', '4.0.0'
 gem 'parallel'
 gem 'pigments'
 gem 'rake'
