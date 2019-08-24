@@ -174,12 +174,12 @@ There are two kind of AG runs:
 
 Labs:
      Releases on Thursday.
-     Pre-deadline runs: Everyday from Saturday to Wednesday (you will get to start these!)
+     Pre-deadline runs: Everyday from Friday to Wednesday (you will get to start these!)
      Deadline AG run on Wednesday at 11:59 pm
 
 MPs:
      Releases on Monday
-     Pre-deadline runs: Everyday from Wednesday to Monday (you will get to start these!)
+     Pre-deadline runs: Everyday from Tuesday to Monday (you will get to start these!)
      Deadline run on Monday at 11:59 pm
 
 We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected on a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM, which is near-identical to the grading machine. We will attempt to give you some partial credit if your code passes the tests.
