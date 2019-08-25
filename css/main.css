@@ -224,7 +224,14 @@ h1, h2, h3 {
 }
 
 img:not(.emoji) {
-    width: 100%;
+    max-height: 80vh;
+    display: inline-block;
+    margin: auto;
+    max-width: 100%;
+}
+
+.img-paragraph {
+    display: grid;
 }
 
 /* Loader */
@@ -517,9 +524,7 @@ h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker {
 ul.hacker {
     list-style-type: square;
 }
-img.hacker {
-    filter: drop-shadow(white 1px 1px 0px) drop-shadow(white 1px -1px 0px) drop-shadow(white -1px 1px 0px) drop-shadow(white -1px -1px 0px));
-}
+
 pre.hacker {
     border-color: white;
     border-radius: 0;

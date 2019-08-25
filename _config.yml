@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   "Webpage for CS 241: System Programming at the University of Illinois at Urbana-Champaign.
   All documentation and information about the course can be found here."
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://illinois-cs241.github.io" # the base hostname & protocol for your site
+url: "http://cs241.cs.illinois.edu" # the base hostname & protocol for your site
 repository: illinois-cs241/illinois-cs241.github.io
 docs_repository: illinois-cs241/assignment-docs
 github_username: illinois-cs241
@@ -62,3 +62,6 @@ reveal:
   reveal_js_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"
 plugins_dir:
   - _plugins
+plugins:
+  - jekyll-sitemap   # Search engine optimization
+  - jekyll-assets
