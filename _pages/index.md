@@ -178,7 +178,7 @@ Labs:
      Deadline AG run on Wednesday at 11:59 pm
 
 MPs:
-     Releases on Monday
+     Released on Mondays (for multi-week MPs, the entire assignment is released at once) 
      Pre-deadline runs: Everyday from Tuesday to Monday (you will get to start these!)
      Deadline run on Monday at 11:59 pm
 
