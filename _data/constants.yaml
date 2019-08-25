@@ -17,6 +17,7 @@ broadway_on_demand_link: ""
 #"https://sp19-cs241-grd-02.cs.illinois.edu/on-demand/"
 malloc_contest_link: ""
 #"https://sp19-cs241-grd-02.cs.illinois.edu/malloc/"
-piazza_link: ""
-#"https://piazza.com/illinois/spring2019/cs241/"
+piazza_link: "https://piazza.com/illinois/fall2019/cs241/"
+# FA19 also https://piazza.com/class/justn5cxbk31ab
+
 lecture_videos_link: "https://classtranscribe.illinois.edu/"
