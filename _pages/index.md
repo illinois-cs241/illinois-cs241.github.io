@@ -174,7 +174,7 @@ There are two kinds of autograder runs:
 
 Labs:
      Released every Thursday.
-     Pre-deadline runs: Everyday from Friday to Wednesday (you will get to start these!)
+     Pre-deadline runs: Available every day from Friday to Wednesday (you will get to start these!)
      Deadline AG run on Wednesday at 11:59 pm
 
 MPs:
