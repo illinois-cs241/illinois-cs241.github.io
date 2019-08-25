@@ -62,9 +62,9 @@ We publish the following thresholds:
 
 |   Points   |  Minimum Grade  |
 |------------|-----------------|
-| [92 - 100] | A-              |
-| [82 - 92)  | B-              |
-| [72 - 82)  | C-              |
+| [90 - 100] | A-              |
+| [80 - 90)  | B-              |
+| [70 - 02)  | C-              |
 
 All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week. For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet. At the end of the semester there will be a last chance regrade option for two weeks of machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops.
 
@@ -91,14 +91,14 @@ Note the first quiz runs a day late because Jan 21 is Martin Luther King day.
 
 | Quiz | First day | Last day |
 | -----|-----------|----------|
-| Quiz 1 | Tue, Jan 22	| *Thu*, Jan 24 |
-| Quiz 2 | Mon, Jan 28	| Wed, Jan 30 |
-| Quiz 3 | Mon, Feb 11	| Wed, Feb 13 |
-| Quiz 4 | Mon, Feb 25	| Wed, Feb 27 |
-| Quiz 5 | Mon, Mar 11	| Wed, Mar 13 |
-| Quiz 6 | Mon, Apr 1	| Wed, Apr 3  |
-| Quiz 7 | Mon, Apr 15	| Wed, Apr 17 |
-| Quiz 8 | Mon, Apr 29	| Wed, May 1  |
+| Quiz 1 | TBA 	| TBA |
+| Quiz 2 | 	|  |
+| Quiz 3 | 	|  |
+| Quiz 4 | 	|  |
+| Quiz 5 |  |  |
+| Quiz 6 |  |  |
+| Quiz 7 |  |  |
+| Quiz 8 |  |  | 
 
 
 The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT). The topics of a quiz can be seen at [The topics page]({% link _pages/quiz_topics.md %}).
