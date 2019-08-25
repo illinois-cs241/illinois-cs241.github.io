@@ -64,7 +64,7 @@ We publish the following thresholds:
 |------------|-----------------|
 | [90 - 100] | A-              |
 | [80 - 90)  | B-              |
-| [70 - 02)  | C-              |
+| [70 - 80)  | C-              |
 
 All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week. For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet. At the end of the semester there will be a last chance regrade option for two weeks of machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops.
 
