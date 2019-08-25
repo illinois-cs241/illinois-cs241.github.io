@@ -179,7 +179,7 @@ Labs:
 
 MPs:
      Released on Mondays (for multi-week MPs, the entire assignment is released at once) 
-     Pre-deadline runs: Everyday from Tuesday to Monday (you will get to start these!)
+     Pre-deadline runs: Available every day from Tuesday to Monday (you will get to start these!)
      Deadline run on Monday at 11:59 pm
 
 We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected on a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM, which is near-identical to the grading machine. We will attempt to give you some partial credit if your code passes the tests.
