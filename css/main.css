@@ -357,7 +357,7 @@ img:not(.emoji) {
 
 pre {
     color: var(--color-pale-white);
-    background-color: var(--color-text)
+    background-color: var(--color-text);
     border: inherit;
 }
 
