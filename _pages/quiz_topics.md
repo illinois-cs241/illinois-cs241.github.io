@@ -9,11 +9,7 @@ title: Quiz Topics
 * Miss your slot? Visit CBTF as soon as possible. 
 * Need DRES accomodations? Please visit the CBTF website for more informaiton.
 
-## Quiz 1 (Week 2)
-
-#### Mon, Jan 21 to Thu, Jan 24
-
-#### This is the only quiz that includes Thursday
+## Quiz 1
 
 #### Topics
 
@@ -41,12 +37,11 @@ title: Quiz Topics
 * Buffering of stdout
 
 
-## Quiz 2 (Week 3)
-#### Mon, Jan 28 to Wed, Jan 30
+## Quiz 2
 
 #### Topics
-C (As above with)
 
+C (As above with)
 
 * Correct use of fork, exec and waitpid
 * Using exec with a path
@@ -61,15 +56,11 @@ C (As above with)
 * How to use the WAIT exit status macros WIFEXITED etc.
 
 
-## Quiz 3 (Week 5)
-
-#### Mon, Feb 11 to Wed, Feb 13
+## Quiz 3
 
 This quiz asks you about processes (fork, waitpid, waitpid macros, getpid/getppid, exec, and basic use of signals).
 
-## Quiz 4 (Week 7)
-
-#### Mon, Feb 25 to Wed, Feb 27
+## Quiz 4
 
 #### Topics
 
@@ -84,20 +75,14 @@ This quiz asks you about processes (fork, waitpid, waitpid macros, getpid/getppi
 * Producer Consumer
 * Ring buffer
 
-## Quiz 5 (Week 9)
-
-#### Mon, Mar 11  to Wed, Mar 13
-
+## Quiz 5
 
 #### Topics
-
 
 The quiz is about malloc and correctly working with pointers and linked lists in C. You'll be implementing a simple placement algorithm (e.g. Best/First/Worst-fit) for a memory pool. A memory pool is just a large piece of contiguous memory that you want to use for all future requests.
 
 
-## Quiz 6 (Week 12)
-
-#### Mon, Apr 1 to Wed, Apr 3
+## Quiz 6
 
 #### Topics
 
@@ -114,9 +99,7 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 
 (Multiple Choice only. Scheduling will not be on this quiz)
 
-## Quiz 7 (Week 14)
-
-#### Mon, Apr 15 to Wed, Apr 17
+## Quiz 7
 
 #### Topics
 
@@ -134,9 +117,7 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 
 (Multiple Choice only)
 
-## Quiz 8 (Week 16)
-
-#### Mon, Apr 29 to	Wed, May 1
+## Quiz 8 (under review)
 
 #### Topics
 
@@ -144,4 +125,5 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 * Scheduling
 * Review of everything!
 
-(Multiple Choice only)
+(Multiple Choice only).
+ Don't panic  - There are currently only 7 CBTF slots - This quiz currently does not have a slot scheduled at CBTF. We may combine this quiz with quiz 7.
