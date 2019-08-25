@@ -1,19 +1,18 @@
 :root {
-    --color-primary: #2c72ad;
-    --color-secondary: rgb(0, 140, 255);
-    --color-secondary-emphasis: rgb(0, 129, 214);
-    --color-text: black;
-    --color-navbar-text: #F2F2F4;
-    --color-translucent: hsla(0, 0%, 0%, 0.3);
-    --color-pale-white: rgb(245, 245, 245);
+  --color-primary: hsl(207, 59%, 43%);
+  --color-secondary: hsl(207, 70%, 53%);
+  --color-emphasis: hsl(204, 100%, 42%);
+  --color-text: hsl(0, 0%, 0%);
+  --color-translucent: hsla(0, 0%, 0%, 0.3);
+  --color-pale-white: hsla(240, 8%, 95%);
 }
 
 body {
     padding-top: 50px;
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    background-color: #F2F2F4;
+    background-color: var(--color-pale-white);
     color: var(--color-text);
-    padding-bottom:50px;
+    padding-bottom: 50px;
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -24,7 +23,7 @@ body {
 
 .navbar {
     background-color: var(--color-primary);
-    border-color: #2C72AD;
+    border-color: var(--color-secondary);
     border: 0px;
     border-top:none;
     box-shadow:none;
@@ -32,12 +31,12 @@ body {
 }
 
 .navbar-default .navbar-brand {
-    color: var(--color-navbar-text);
+    color: var(--color-pale-white) !important;
     font-weight: bold;
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: var(--color-navbar-text);
+    color: var(--color-pale-white) !important;
 }
 
 .navbar-collapse {
@@ -85,33 +84,6 @@ h2 {
     p,li {
         font-size: 12px;
     }
-}
-
-.staff {
-  width: 100%;
-}
-
-.staff-div {
-    width: 30vh;
-    height: 30vh;
-    overflow: hidden;
-    background-size: cover;
-    padding:0px;
-    border-radius: 1vh;
-}
-
-.staff-row {
-    margin-top: 40px;
-}
-
-.staff-name {
-    position: absolute;
-    bottom: 0px;
-    background: rgba(0, 0, 0, 0.35);
-    color: white;
-    text-align: center;
-    font-size: 1.75em;
-    padding-top: 5px;
 }
 
  /* Popover */
@@ -163,16 +135,16 @@ table {
     height:300px;
     margin-bottom:20px;
     width:100%;
-    background-color: #FFFFFF;
+    background-color: hsl(0, 0%, 100%);
     border-radius:3px; /* Has to be equal to the title border */
 }
 
 .day h1 {
-    color: #F2F2F4;
+    color: hsl(240, 8%, 95%);
 }
 
 .day-summary, .day-resources {
-    color: black;
+    color: hsl(0, 0%, 0%);
 }
 
 .day-resources {
@@ -211,7 +183,7 @@ h1, h2, h3 {
 }
 
 .announcement-card {
-    background-color: #FFFFFF;
+    background-color: var(--color-pale-white);
     border-radius: 5px;
 }
 
@@ -220,7 +192,7 @@ h1, h2, h3 {
 }
 
 .day-title-h3 {
-    color: #F2F2F4;
+    color: var(--color-pale-white);
 }
 
 img:not(.emoji) {
@@ -246,7 +218,7 @@ img:not(.emoji) {
     border-radius: 50%;
 }
 .loader {
-    color: #ffffff;
+    color: var(--color-pale-white);
     font-size: 11px;
     text-indent: -99999em;
     margin: 55px auto;
@@ -318,7 +290,7 @@ img:not(.emoji) {
 
 .fancy-link {
     text-decoration: none !important;
-    color: var(--color-primary);
+    color: var(--color-emphasis);
     display: inline-block;
     position: relative;
     padding-bottom: 0px;
@@ -336,7 +308,7 @@ img:not(.emoji) {
 
 .fancy-link:hover:after {
     width: 100%;
-    background: var(--color-secondary-emphasis);
+    background: var(--color-emphasis);
 }
 
 .container-fluid {
@@ -351,7 +323,7 @@ img:not(.emoji) {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #F2F2F4;
+    background-color: var(--color-pale-white);
 }
 
 
@@ -384,20 +356,20 @@ img:not(.emoji) {
 /***************** Code Copying ***************/
 
 pre {
-    color: #F2F2F4;
-    background-color: #151515;
+    color: var(--color-pale-white);
+    background-color: var(--color-text)
     border: inherit;
 }
 
 code {
-    color: #F2F2F4;
+    color: var(--color-pale-white);
 }
 
 .code-copy {
     float: right;
     right: 0px;
     display: none;
-    background-color:black;
+    background-color:var(--color-text);
     padding: 5px 5px 5px 5px;
     border-radius: 3px;
     cursor: pointer;
@@ -728,6 +700,67 @@ img.logo {
     text-align: center;
     display: block;
 }
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 5vw;
+    flex-wrap: wrap;
+    width: 100vw;
+}
+
+.staff {
+    width: 100%;
+}
+
+.staff-container {
+    margin: 2vh;
+}
+
+.staff-container div.staff-image {
+    width: 24vh;
+    height: 24vh;
+    overflow: hidden;
+    background-size: cover;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.staff-container:hover div.staff-image {
+    box-shadow:0 4px 12px 0 var(--color-translucent), 0 6px 20px 0 var(--color-translucent);
+}
+
+.staff-name {
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 1vh;
+    color: var(--color-emphasis);
+}
+
+.heading {
+    text-align: center;
+}
+
+section.center {
+    text-align: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+/* For phones */
+@media only screen and (max-width: 480px) {
+    .staff-container div.staff-image {
+        width: 20vh;
+        height: 20vh;
+    }
+    .staff-name {
+        font-size: 1.25em;
+    }
 
 .latest-mp {
     background-color: rgba(16, 213, 147, 0.85);
