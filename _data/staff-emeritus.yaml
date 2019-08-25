@@ -143,21 +143,21 @@
   name: Brian Kurek
   netid: bkurek2
   class: 19
-  roles: Lab/Office Hours Assistant
+  roles: Lab / Office Hours Assistant
   specialty: web development
   semesters: Spring 2017, Fall 2017, and Spring 2018
 -
   name: Jonathan Wexler
   netid: jwexler2
   class: 19
-  roles: Lab/Office Hours Assistant and Honors Lead
+  roles: Lab / Office Hours Assistant and Honors Lead
   specialty: procrastination
   semesters: Spring 2017, Fall 2017, and Spring 2018
 -
   name: Kevin Hong
   netid: khong18
   class: 19
-  roles: Lab/Office Hours Assistant and Honors Mentor
+  roles: Lab / Office Hours Assistant and Honors Mentor
   specialty: statistics and machine learning
   semesters: Spring 2017, Fall 2017, and Spring 2018
 -
@@ -174,4 +174,94 @@
   roles: Teaching Assistant
   specialty: "Networking"
   semesters: Fall 2016, Spring 2017, Spring 2018
-
+-
+  name: Aneesh Durg
+  netid: durg2
+  class: 19
+  roles: Lab / Office Hours Assistant, Assignment Developer, and Honors Mentor
+  specialty: memes
+  semesters: Spring 2017 - Spring 2019
+-
+  name: Yasha Mostofi
+  netid: mostofi2
+  class: 19
+  roles: Assignment Developer and Infrastructure
+  specialty: beards
+  semesters: Spring 2017 - Spring 2019
+-
+  name: Jing Rong Lim
+  netid: jrlim3
+  class: 19
+  roles: Lab / Office Hours Assistant and Review
+  specialty: Educational materials
+  semesters: Fall 2017 - Spring 2019
+-
+  name: Nick Magerko
+  netid: magerko2
+  class: 19
+  roles: Lab / Office Hours Assistant and Assignment Developer
+  specialty: ""
+  semesters: Fall 2017 - Spring 2019
+-
+  name: Steven Shang
+  netid: shang9
+  class: 19
+  roles: Honors Lead 
+  specialty: things
+  semesters: Fall 2017 - Spring 2019
+-
+  name: Shreyas Patil
+  netid: srpatil2
+  class: 19
+  roles: Infrastructure, Office Hours, and Honors Mentor
+  specialty: ""
+  semesters: Spring 2018 - Spring 2019
+-
+  name: Ankit Gohel
+  netid: ankitng2
+  class: 19
+  roles: Frontend + Backend
+  specialty: security and mobile dev
+  semesters: Spring 2018 - Spring 2019
+-
+  name: Ishan Shah
+  netid: ishanps2
+  class: 20
+  roles: Honors Mentor and Teaching Assistant
+  specialty: ""
+  semesters: Fall 2018 - Spring 2019
+-
+  name: Wade Fagen-Ulmschneider
+  netid: waf
+  class: 13
+  roles: Teaching Assistant
+  specialty: "Malloc, Shell, Parallel Make, MapReduce"
+  semesters: 2009 - 2013
+- 
+  name: Graham Carl Evans
+  netid: gcevans
+  class: 16
+  roles: Professor
+  specialty: "Networking"
+  semesters: Spring 2017 - Fall 2017
+-
+  name: Jake Bailey
+  netid: jbbaile2
+  class: 18
+  roles: Course Assistant
+  specialty: "Honors and Piazza"
+  semesters: Spring 2015 - Fall 2015
+-
+  name: Johnny Chang
+  netid: jychang3
+  class: 17
+  roles: Course Assistant
+  specialty: "Assignment Development"
+  semesters: Fall 2015
+-
+  name: Ed Karrels
+  netid: edk
+  class: 97
+  roles: Teaching Assistant
+  specialty: "Map Reduce"
+  Semesters: Fall 2015

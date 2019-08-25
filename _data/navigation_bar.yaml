@@ -1,0 +1,36 @@
+# Navigation bar links
+navbar_items:
+  - name: "Assignments"
+    link: "/assignments.html"
+
+  - name: "Quizzes"
+    link: "/quiz_topics.html"
+
+  - name: "Grades"
+    link: "/grades.html"
+
+  - name: "Schedule"
+    link: "/schedule.html"
+    sublinks:
+      - name: "Lectures"
+        link: "/lectures.html"
+
+  - name: "Syllabus"
+    link: "/syllabus.html"
+
+  - name: "Staff"
+    link: "/staff.html"
+    sublinks:
+        - name: "Staff Hall of Fame"
+          link: "/staff_hall_of_fame.html"
+
+  - name: "Resources"
+    link: "/resources.html"
+    sublinks:
+      - name: "Peer Tutoring"
+        link: "/peer_tutoring.html"
+      - name: "Coursebook"
+        link: "/coursebook/index.html"
+
+  - name: "Honors"
+    link: "/honors.html"

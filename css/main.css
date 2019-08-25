@@ -27,6 +27,7 @@ body {
     border: 0px;
     border-top:none;
     box-shadow:none;
+    margin-bottom: 0;
 }
 
 .navbar-default .navbar-brand {
@@ -41,6 +42,10 @@ body {
 .navbar-collapse {
     border-top:0px !important;
     box-shadow:none;
+}
+
+.navbar-brand:hover {
+    color: var(--color-navbar-text) !important;
 }
 
 .github-link {
@@ -61,6 +66,10 @@ h1 {
 h2 {
     padding-top: 50px;
     margin-top: -20px;
+}
+
+.navbar-nav, .navbar-nav > ul {
+    margin: 0;
 }
 
 @media (max-width: 767px) {
@@ -187,7 +196,14 @@ h1, h2, h3 {
 }
 
 img:not(.emoji) {
-    width: 100%;
+    max-height: 80vh;
+    display: inline-block;
+    margin: auto;
+    max-width: 100%;
+}
+
+.img-paragraph {
+    display: grid;
 }
 
 /* Loader */
@@ -293,6 +309,13 @@ img:not(.emoji) {
 .fancy-link:hover:after {
     width: 100%;
     background: var(--color-emphasis);
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .navbar-toggle {
@@ -473,9 +496,7 @@ h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker {
 ul.hacker {
     list-style-type: square;
 }
-img.hacker {
-    filter: drop-shadow(white 1px 1px 0px) drop-shadow(white 1px -1px 0px) drop-shadow(white -1px 1px 0px) drop-shadow(white -1px -1px 0px));
-}
+
 pre.hacker {
     border-color: white;
     border-radius: 0;
@@ -525,40 +546,159 @@ body.hacker .announcement {
 }
 
 .apply-button:hover {
-    background-color: #2C72AD;
+    background-color: var(--color-primary);
 }
 
 /* The dropdown container */
-li.navbar-sublink {
-  float: left;
-  overflow: hidden;
+li.navbar-subitem {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+}
+
+.navbar-item, .navbar-subitem {
+    color: var(--color-navbar-text);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Add a background color to navbar links (and sublinks) on hover */
-li.navbar-link:hover, li.navbar-sublink:hover {
-    background-color: var(--color-secondary);
+li.navbar-item:hover, li.navbar-subitem:hover{
+    background-color: white;
 }
 
-li.navbar-link:hover a, li.navbar-sublink:hover {
-    color: var(--color-primary);
+li.navbar-item:hover > a, li.navbar-subitem:hover > a {
+    color: var(--color-primary) !important;
 }
 
-.sublink-container {
+.subitem-container {
     display: none;
     position: absolute;
     min-width: 8vw;
     background-color: var(--color-primary);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px var(--color-translucent);
     z-index: 1;
     width: 100%;
 }
 
-.navbar-link:hover .sublink-container {
+/* Makes the dropdown visible on items which have subitems */
+.navbar-item:hover .subitem-container {
     display: block;
 }
 
-.navbar-link, .navbar-sublink {
+.staff {
+    width: 100%;
+}
+
+.flexbox-item div.staff-image {
+    width: 18vh;
+    height: 18vh;
+    overflow: hidden;
+    background-size: cover;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.flexbox-item:hover div.staff-image {
+    box-shadow:0 4px 12px 0 var(--color-translucent), 0 6px 20px 0 var(--color-translucent);
+}
+
+.staff-name {
+    bottom: 0px;
+    width: 100%;
     text-align: center;
+    font-weight: 100;
+    padding-top: 2vh;
+    color: var(--color-secondary-emphasis);
+}
+
+.heading {
+    text-align: center;
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 2em;
+    padding: 1em;
+    padding: 0;
+}
+
+section.center {
+    text-align: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+main {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.card-body {
+    background-color: var(--color-pale-white);
+    padding: 2vh;
+    display: block;
+}
+
+.card-body.course-heading {
+    background-color: rgba(72, 105, 255, 0.945);
+}
+
+.card-body.card-body.course-heading h1 {
+    color: white;
+}
+
+.card-body.course-description {
+
+}
+
+.card-body.course-information {
+    background-color: white;
+}
+
+h2 {
+    font-weight: 200;
+}
+
+section.flexbox {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+    width: 90vw;
+}
+
+.flexbox-item {
+    display: inline-block;
+    padding: 2vh;
+    margin: 2vh;
+}
+
+img.logo {
+    width: 2vw;
+    height: 3vw;
+    margin: 2vh;
+}
+
+@media (max-width: 480px) {
+    .flexbox-item div.staff-image {
+        width: 18vh;
+        height: 18vh;
+    }
+    img.logo {
+        width: 10vw;
+        height: 8vh;
+    }
+    .staff-name {
+        font-size: 0.75em;
+    }
+}
+
+.infrastructure-links {
+    margin: auto;
+    text-align: center;
+    display: block;
 }
 
 .gallery {
@@ -621,4 +761,15 @@ section.center {
     .staff-name {
         font-size: 1.25em;
     }
+
+.latest-mp {
+    background-color: rgba(16, 213, 147, 0.85);
+}
+
+.latest-lab {
+    background-color: rgba(255, 102, 42, 0.85);
+}
+
+.latest-assignments section.flexbox-item {
+    border-radius: 4%;
 }
