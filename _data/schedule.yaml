@@ -41,10 +41,7 @@
         resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-1%3A-Introduction'>Wikibook forking</a>"
         color: "#E91E63"
     week: "9/3 - 9/7"
-    announcement: >
-      <ul>
-        <li>Quiz 1 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul>
+    announcement: ""
   -
     schedule:
 
@@ -64,9 +61,7 @@
         resources: "See the <a target='blank' href='https://github.com/angrave/SystemProgramming/wiki#10-signals'>Wikibook heap memory introduction</a>"
         color: "#9C27B0"
     week: "9/10 - 9/14"
-    announcement: >
-      <!-- <ul>
-      </ul> -->
+    announcement: ""
   -
     schedule:
       -
@@ -85,10 +80,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-2%3A-Implementing-a-Memory-Allocator'>Memory, Part 2</a>"
         color: "#9C27B0"
     week: "9/17 - 9/21"
-    announcement: >
-      <ul>
-        <li>Quiz 2 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul>
+    announcement: ""
   -
     schedule:
       -
@@ -132,8 +124,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-5%3A-Condition-Variables'>Condition Variables</a>."
         color: "#2196F3"
     week: "10/1 - 10/5"
-    announcement: >
-        Quiz 3 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a>
+    announcement: ""
   -
     schedule:
       -
@@ -174,10 +165,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-2%3A-Scheduling-Processes%3A-Algorithms'>Scheduling</a>."
         color: "#CDDC39"
     week: "10/15 - 10/19" 
-    announcement:  >
-      <ul>
-        <li>Quiz 4 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul>     
+    announcement:  ""   
   -
     schedule:
       -
@@ -196,10 +184,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-1%3A-Introduction'>Files</a>."
         color: "#FFC107"
     week: "10/22- 10/26"
-    announcement: >
-      <!-- <ul>
-        <li>Quiz 5: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul> -->
+    announcement: ""
 
   -
     schedule:
@@ -219,10 +204,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/POSIX%2C-Part-1%3A-Error-handling'>Error handling</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-1%3A-Introduction'>Networking Introduction</a>"
         color: "#8BC34A"
     week: "10/29 - 11/2"
-    announcement: >
-      <ul>"
-        <li>Quiz 5 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul>
+    announcement: ""
   -
     schedule:
       -
@@ -241,10 +223,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-4%3A-Building-a-simple-TCP-Server'>TCP Server</a>"
         color: "#8BC34A"
     week: "11/5 - 11/9"
-    announcement: >
-      <!-- <ul>
-        <li>Quiz 6: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul> -->
+    announcement: ""
   -
     schedule:
       -
@@ -263,10 +242,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/RPC%2C-Part-1%3A-Introduction-to-Remote-Procedure-Calls'>RPC</a>."
         color: "#FFC107"
     week: "11/12 - 11/16"
-    announcement: >
-      <ul>
-        <li>Quiz 6 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul>
+    announcement: ""
   -
     schedule:
       -
@@ -304,10 +280,7 @@
         resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-5%3A-Virtual-file-systems'>VFS</a>."
         color: "#FFC107"
     week: "11/26 - 11/30"
-    announcement: >
-      <ul>
-        <li>Quiz 7 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul>
+    announcement: ""
   -
     schedule:
       -
@@ -326,10 +299,7 @@
         resources: ""
         color: "#C38A80"
     week: "12/3 - 12/7"
-    announcement: >
-      <ul>
-        <li>Quiz 8 (Tues-Fri): <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul>
+    announcement: ""
   -
     schedule:
       -
@@ -348,7 +318,4 @@
         resources: ""
         color: "#808080"
     week: "12/10 - 12/14"
-    announcement: >
-      <!-- <ul>
-        <li>Quiz 6: <a target='blank' href='https://cbtf.engr.illinois.edu/'>Sign up!</a></li>
-      </ul> -->
+    announcement: ""
