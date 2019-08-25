@@ -84,21 +84,20 @@ If you have accommodations identified by the [Division of Rehabilitation-Educati
 
 Any problem with testing in the CBTF **must** be reported to CBTF staff at the time the problem occurs. If you do not inform a proctor of a problem during the test then you **forfeit** all rights to redress.
 
-
 The complete and authoritative CBTF detailed schedule is available at the [https://cbtf.engr.illinois.edu/](CBTF website). Be careful: *start and end dates change from week to week*
-
-Note the first quiz runs a day late because Jan 21 is Martin Luther King day.
 
 | Quiz | First day | Last day |
 | -----|-----------|----------|
-| Quiz 1 | TBA 	| TBA |
-| Quiz 2 | 	|  |
-| Quiz 3 | 	|  |
-| Quiz 4 | 	|  |
-| Quiz 5 |  |  |
-| Quiz 6 |  |  |
-| Quiz 7 |  |  |
-| Quiz 8 |  |  | 
+| Quiz 1 | Fri, Sep 6 	| Mon, Sep 9 |
+| Quiz 2 | Fri, Sep 13	| Mon, Sep 16 |
+| Quiz 3 | Fri, Sep 27	| Mon, Sep 30 |
+| Quiz 4 | Fri, Oct 11	| Mon, Oct 14 |
+| Quiz 5 | Fri, Oct 25  | Mon, Oct 28 |
+| Quiz 6 | Fri, Nov 8   | Mon, Nov 11 |
+| Quiz 7 | *Mon*, Dec 2 | Wed, Dec 4  |
+
+Protip 1: CBTF is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time. 
+Protip 2: If you miss your slot, visit the CBTF in person as soon as possible to see if it can be re-scheduled.
 
 
 The final exam will be scantron and paper-based and during the finals exam period. The date and time will be published by the university when the exam schedule has been finalized. Check [the final exam schedule](https://courses.illinois.edu/schedule/DEFAULT/DEFAULT). The topics of a quiz can be seen at [The topics page]({% link _pages/quiz_topics.md %}).
