@@ -167,7 +167,7 @@ You walk into the investor meeting ready to show your demo. You ship your code r
 
 Forgot to commit or your committed code that does not compile? Zero. The basic headline is that you're not in Kansas anymore (to quote Dorothy). Don't leave it until the last minute.
 
-There are two kind of AG runs:
+There are two kinds of autograder runs:
 
 * Pre-deadline runs: **You are responsible for starting these.** Our team has worked really hard to improve our grading system and make it more reliable and flexible. Now you can schedule your AG pre-deadline runs yourself using the on-demand grading system! Please see the Links page for the link to the web app. You have to log in with your Github Enterprise account. Assignments will become visible on the web app as we release them. You will get one AG run a day which you can trigger at your disposal. Please be careful in using these. No need to wait for hours at night to see your results anymore! **The AG runs do not roll over.** So you should be developing and working on your assignments everyday to make the best out of this system. Once you click "Grade Now", it will start your AG run on our grading machines. You can expect to see the results in your repo in the `_feedback` branch in a few minutes. In rare circumstances, the grading process might fail (in case your code makes our docker containers crash). In that case, no result will show up for you. You can make a private Piazza post and we will deal with this on a per-student basis. These runs are only for feedback purposes and have **no effect on your grade**.
 * Deadline runs: These will be triggered by us and the grades you get on these will be counted towards your final grades. The results will show up in the `_feedback` branch as usual.
