@@ -32,7 +32,7 @@ We publish the same grading thresholds as the regular section of CS 241. Your pr
 
 We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop two lecture/lab attendance grades, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
 
-If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or other personal emergencies, please refer to the [CS 241 absence policy]({% link _pages/index.md %}#absences).
+If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or other personal emergencies, please refer to the [CS 241 absence policy]({% link _pages/index.html %}#absences).
 
 ## Project
 
@@ -94,7 +94,6 @@ When you and your group start writing code, we expect you to use git and for eac
 	  <th>Date</th>
 	  <th>Lecture Content</th>
 	  <th>Slides</th>
-	  <!--<th>Recording</th>-->
 	</tr>
   </thead>
   <tbody>
@@ -103,17 +102,11 @@ When you and your group start writing code, we expect you to use git and for eac
 	<td scope="row">{{lecture.date}}</td>
 	<td>{{lecture.content}}</td>
 	{% if lecture.slides %}
-	<td><a href="{{lecture.slides}}"><img src="./images/lab_assets/animation.png" alt='Slides'></a></td>
+	<td><a href="{{lecture.slides}}"><img src="./images/lab-icons/animation.png" alt='Slides'></a></td>
 	{% else %}
 	<td>
 	</td>
 	{% endif %}
-	<!--{% if lecture.video %}
-	<td><a href="{{lecture.video}}"><img src="./images/lab_assets/video.png" alt='Video'></a></td>
-	{% else %}
-	<td>
-	</td>
-	{% endif %}-->
   </tr>
 {% endfor %}
   </tbody>

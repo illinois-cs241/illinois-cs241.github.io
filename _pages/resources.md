@@ -1,22 +1,46 @@
 ---
 layout: doc
-title: Getting Help
+title: Resources
 ---
 
-## Peer Tutoring
+# Resources
 
-We hold peer tutoring sessions in the basement of Siebel in the computer labs. You can join by adding yourself onto the [Queue](https://edu.cs.illinois.edu/queue/) (the schedule can be found below).
+**If you added late, check [this page]({% link _pages/late_add.md %}) to get caught up.**
 
-Please note that this is not CS 225, so [we]({% link _pages/staff_hall_of_fame.html %}) will not do your assignments. This is one of the last classes you will take before being thrown into 400-level courses, where the assignments are much harder, help is much more limited, and hand holding is negative.
+An introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
+We also have the second iteration the [Coursebook](https://github.com/illinois-cs241/coursebook/wiki) That provides html, pdf, and wiki versions. Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
+[mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
-> Give a student the answer and you feed them for a day; teach a student to find their own answers and you feed them for a lifetime.
+No formal textbook is required, but if you really want to buy a physical book, we recommend the following custom book Angrave put together in 2007:
 
-These peer tutoring sessions will focus on diagnosing misconceptions and holes in your understanding of the problem. This is a fairly conceptual class where your understanding of the problem will directly impact how you can implement a solution. If you have made it this far into the CS curriculum simply be compiling lecture notes and documentation to code, then you are going to have to make some serious changes in your work ethics. Be prepared to be asked to explain what you think your program is doing. Odds are that what you think your code is doing is not equivalent to what it is doing.
+```
+Introduction to Systems Concepts and Systems Programming
+University of Illinois Custom Edition
+Copyright 2007 by Pearson Custom Publishing
+ISBN 0-536-48928-9
+```
 
-This department is scaling rapidly, which is great, since computer science is an incredible field of knowledge that will take our civilization to new frontiers. Unfortunately, the number of people on course staff does not scale as fast. This means that we can not sit next to you for 45 minutes to read 800 lines of your code; this is peer tutoring and not a dinner date. We will wear stopwatches and [round robin](https://en.wikipedia.org/wiki/Round-robin_scheduling) between the students on the queue.
+## Tutorials
 
-<iframe src="https://calendar.google.com/calendar/embed?src=illinois.edu_rtpfqbnbvd071rcps8oougljis%40group.calendar.google.com&ctz=America%2FChicago&mode=WEEK&wkst=2&color=%232952A3&bgcolor=%23FFFFFF" style="border: 0" width="800" height="600" frameborder="0" scrolling="no" style=" border-width:0 " width="100%" height="800px" frameborder="0" scrolling="no"></iframe>
+* [Debugging Tutorial]({% link _coursebook/Background.md %}#debugging-and-environments)
+* [Development Tutorial]({% link _tutorials/development.md %})
+* [Emacs Tutorial]({% link _tutorials/emacs.md %})
+* [SSHFS Workflow Tutorial]({% link _tutorials/sshfs.md %})
+* [Shell Tutorial]({% link _coursebook/Appendix.md %}#shell)
 
+
+## How to Succeed
+
+Is this course hard? Yes, but you are bright. You're taking computer science at UIUC. Schedule the time to do it. The two big changes from CS 225:
+
+1. Your code is now much smaller than the complexity of the system around it.
+2. No, we will not debug your code for you.
+
+With lecture content, one lab, one MP, and one Quiz/Midterm every week or two, it can get easy to fall behind.
+
+How to fail: some students do not take the time to learn how to debug and reason about system code and then end up complaining that office hours is too busy before deadlines. If you can't write correct solutions, you need to learn _exactly_ how C works, the _details_ of the system calls you are using, learn _better debugging_ skills and _reason_ behind synchronization. Only then can you spot and fix mistakes. Hard? Yes. Impossible? No.
+
+There are no shortcuts to mastery, but we can help you get there. We recommend the [Feynman technique](https://www.youtube.com/watch?v=tkm0TNFzIeg) to learning. Remember, simply recognizing some text in a past exam or in the coursebook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes, this requires effort. Start the assignments early; expect to get stuck. Write code _slowly_; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending "time on task" with these materials.
 
 ## Piazza: Search First. Don't Post.
 
@@ -61,8 +85,8 @@ Note: We do not provide attendance misses for labs (this is not negotiable), esp
 
 ## Lawrence Angrave
 
-Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours Tuesdays 11:30-12:30. He's also able to answer quick questions before or after lecture.
+Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours are on Tuesdays 11:30-12:30. He's also able to answer quick questions before or after lecture.
 
-## Carl Evans
+## Graham Carl Evans
 
-Carl Evans has also taught this course. His office is on the third floor of Siebel 3209.
+Graham Carl Evans has also taught this course. His office is on the third floor of Siebel 3209.
