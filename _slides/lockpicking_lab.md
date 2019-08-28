@@ -20,7 +20,7 @@ authors: "Steve & Bhuvan"
 
 ## Different Lab Sections
 
-* Due to seating limitations, you are required to go to the lab section you signed up for
+* Due to seating limitations, you are required to go to the lab section you signed up for.
 
 <vertical />
 
@@ -32,7 +32,7 @@ You must email the TA in charge of your assigned lab and the TA for the lab to w
 
 ## What is it?
 
-A virtual machine is simply a computer that is running ontop of another computer emulation system. The computer emulation underneath can be an operating system like Ubuntu that has an application like VmWare workstation to emulate the VM. 
+A virtual machine is simply a computer that is running on top of another computer emulation system. The computer emulation underneath can be an operating system like Ubuntu that has an application like VmWare workstation to emulate the VM. 
 
 ## Bare Metal
 
@@ -41,23 +41,24 @@ You can also have what is called a bare-metal VM where you install a minimum set
 <vertical />
 
 ```bash
-ssh **NETID**@sp18-cs241-**xxx**.cs.illinois.edu
+ssh **NETID**@fa19-cs241-**xxx**.cs.illinois.edu
 ```
+where `xxx` is the VM number assigned to you.
 
 ## VM Use
 
-We will only help you with your assignments on your VM, all other platforms are unsupported. You have been warned.
+We will only help you with your assignments on your VM. All other platforms are unsupported. You have been warned.
 
 ## Note
 
-You are going to need to be on the campus network for this to work. If you want to make it work at home, make sure to log in to the campus VPN first before ssh'ing. See the development guide for details.
+You are going to need to be on the campus network for this to work. If you want to make it work at home, make sure to log in to the campus VPN first before ssh'ing. See the [development guide](http://cs241.cs.illinois.edu/tutorials/development) for details.
 
 ## Late Adds
 
-If you added in the past 24 hours you should be getting an email soon about your VM from there you can get working. If you cannot find the assignments, they are available in the release folder:
+If you added in the past 24 hours, you should be getting an email soon about accessing your VM. If you cannot find the assignments, they are available in the release folder:
 
 ```
-https://github-dev.cs.illinois.edu/{{ site.semester }}-cs241/_release/
+https://github-dev.cs.illinois.edu/cs241-{{ site.semester }}/_release/
 ```
 
 <horizontal />
