@@ -65,8 +65,6 @@ https://github-dev.cs.illinois.edu/cs241-{{ site.semester }}/_release/
 
 ## Utils
 
-<vertical />
-
 ## What is ssh
 
 SSH is short for secure shell (secure sh). SSH is a network protocol that leverages public key cryptography in order to connect to another computer. In the basic version, two key pairs are generated for communication. In the more advanced cases, the keys are only used for another key exchange.
@@ -77,7 +75,7 @@ All of you have probably heard of sudo before. It is short for super-user do. Th
 
 ## What is git
 
-`git` is a version control system that means that it keep track of changes in code and whenever you commit, it pushes said changes
+`git` is a version control system. That means it keeps track of changes in code, allows you to group changes into a commit, and provides tools to manipulate commits.
 
 <horizontal />
 
