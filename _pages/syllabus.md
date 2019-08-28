@@ -124,7 +124,7 @@ There are two kinds of autograder runs:
 * Deadline runs: These will be triggered by us and the grades you get on these will be counted towards your final grades. The results will show up in the `_feedback` branch as usual.
 
 Labs:
-- Released every Thursday.
+- Released every Wednesday
 - Pre-deadline runs: Available every day from Friday to Wednesday (you will get to start these!)
 - Deadline AG run on Wednesday at 11:59 pm
 
