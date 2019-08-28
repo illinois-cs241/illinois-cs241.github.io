@@ -3,7 +3,7 @@
   name: Lawrence Angrave
   netid: angrave
   roles: Captain and Lecturer
-  semesters: "Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Spring 2019"
+  semesters: "Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Fall 2019"
   specialty: "Systems and CS Education"
 -
   name: CS 241 Admin
@@ -16,90 +16,153 @@
   name: Ayush Ranjan
   netid: ayushr2
   class: ""
-  roles: Lab / Office Hours Assistant, Infrastructure
+  roles: Lab / Office Hours Assistant, Infrastructure Lead
   specialty: ""
-  semesters: Fall 2018 and Spring 2019
+  semesters: Fall 2018 - Fall 2019
 -
   name: Andy Lee
   netid: andy2
   class: ""
   roles: Lab / Office Hours Assistant, Infrastructure
   specialty: ""
-  semesters: Fall 2018 and Spring 2019
+  semesters: Fall 2018 - Fall 2019
 -
   name: Arnav Sankaran
   netid: arnavs3
   class: ""
   roles: Assignment Development, Infrastructure
   specialty: ""
-  semesters: Fall 2018 and Spring 2019 
+  semesters: Fall 2018 - Fall 2019 
 -
   name: Ophir Sneh
   netid: osneh2
   class: ""
   roles: Assignment Development, Front End
   specialty: ""
-  semesters: Fall 2018 and Spring 2019 
+  semesters: Fall 2018 - Fall 2019 
 -
   name: Ann Rajan
   netid: amrajan2
   class: ""
   roles: Assignment Development, Front End
   specialty: ""
-  semesters: Fall 2018 - Spring 2019
+  semesters: Fall 2018 - Fall 2019
 -
   name: Rohin Bhasin
   netid: rohinb2
   class: ""
   roles: Assignment Development, Front End
   specialty: ""
-  semesters: Spring 2019
+  semesters: Spring 2019 - Fall 2019
 -
   name: Hung Woei Neoh
   netid: hneoh2
   class: ""
   roles: Assignment Development Lead, Front End
   specialty: "Piazza"
-  semesters: Spring 2019
+  semesters: Spring 2019 - Fall 2019
 -
   name: Rod Lin
   netid: zl38
   class: ""
-  roles: Assignment Development, Infrastructure
+  roles: Infrastructure Lead, Assignment Development
   specialty: ""
-  semesters: Spring 2019
+  semesters: Spring 2019 - Fall 2019
 -
   name: Pradyumna Shome
   netid: pshome2
   class: 21
   roles: Lab / Office Hours Assistant, Assignment Development Lead
-  specialty: education and computer security
-  semesters: Spring 2019
+  specialty: Computer Security, Machine Learning, and Systems
+  semesters: Spring 2019 - Fall 2019
 -
   name: Rafi Long
   netid: rjlong2
   class: ""
   roles: Assignment Development, Front End
   specialty: ""
-  semesters: Spring 2019
+  semesters: Spring 2019 - Fall 2019
 -
   name: Dane Kozak
   netid: dkozak3
   class: ""
   roles: Assignment Development, Front End
   specialty: ""
-  semesters: Spring 2019
--
-  name: Sultan Durrani
-  netid: sultand2
-  class: ""
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2018 - Spring 2019
+  semesters: Spring 2019 - Fall 2019
 -
   name: William Sentosa
   netid: sentosa2
   class: ""
   roles: Teaching Assistant
   specialty: ""
-  semesters: Spring 2019
+  semesters: Spring 2019 - Fall 2019
+-
+  name: Aarya Chandhok
+  netid: aaryac2
+  class: ""
+  roles: Lab / Office Hours Assistant, Assignment Development Lead
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Anant Kandikuppa
+  netid: anantk3
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Aniket Shirke
+  netid: anikets
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Beitong Tian
+  netid: beitong2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Javed Mohamed
+  netid: javedm2
+  class: ""
+  roles: Lab / Office Hours Assistant, Honors Mentor
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Maciej Krzysiak
+  netid: mkrzys2
+  class: ""
+  roles: Lab / Office Hours Assistant, Assignment Development
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Noor Michael
+  netid: nsm2
+  class: ""
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Ryan Johnson
+  netid: rsj2
+  class: ""
+  roles: Lab / Office Hours Assistant, Assignment Development
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Samiksha Pal
+  netid: sspal2
+  class: ""
+  roles: Lab / Office Hours Assistant, Assignment Development
+  specialty: ""
+  semesters: Fall 2019
+-
+  name: Spencer Gilbert
+  netid: smg4
+  class: ""
+  roles: Lab / Office Hours Assistant, Assignment Development
+  specialty: ""
+  semesters: Fall 2019
