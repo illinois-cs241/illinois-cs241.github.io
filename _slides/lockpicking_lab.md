@@ -65,8 +65,6 @@ https://github-dev.cs.illinois.edu/cs241-{{ site.semester }}/_release/
 
 ## Utils
 
-<vertical />
-
 ## What is ssh
 
 SSH is short for secure shell (secure sh). SSH is a network protocol that leverages public key cryptography in order to connect to another computer. In the basic version, two key pairs are generated for communication. In the more advanced cases, the keys are only used for another key exchange.
