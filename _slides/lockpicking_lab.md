@@ -75,7 +75,7 @@ All of you have probably heard of sudo before. It is short for super-user do. Th
 
 ## What is git
 
-`git` is a version control system that means that it keep track of changes in code and whenever you commit, it pushes said changes
+`git` is a version control system. That means it keeps track of changes in code, allows you to group changes into a commit, and provides tools to manipulate commits.
 
 <horizontal />
 
