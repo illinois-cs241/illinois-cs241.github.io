@@ -115,7 +115,7 @@ void selection_sort(int* a, size_t len){
 short mystery_bits(short input){
 	short max_set = ~0;
 	short masked = input & (0xFF00 ^ max_set);
-	short shifted = masked << 16;
+	short shifted = masked << 8;
 	short ret = (shifted | 0xCC);
 	return ret;
 }
