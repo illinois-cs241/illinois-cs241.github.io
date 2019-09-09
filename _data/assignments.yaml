@@ -216,13 +216,13 @@ mps:
       url: "vector"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-02-04 23:59
+          due_date: 2019-09-09 23:59
           graded_files:
           - vector.c
           - sstring.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Shell"
       releaseDate: "Week 4"
