@@ -216,7 +216,7 @@ mps:
       url: "vector"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-09-09 23:59
+          due_date: 2019-09-16 23:59
           graded_files:
           - vector.c
           - sstring.c
