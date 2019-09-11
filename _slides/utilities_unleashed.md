@@ -8,7 +8,7 @@ author: "Steve and Bhuvan"
 
 ## Address Space
 
-![Proc Address Space](/images/slides/fork/address_space.png)
+![Proc Address Space](/images/assignment-docs/lab/slides/fork/address_space.png)
 
 ## What is Copied Over?
 
@@ -80,7 +80,7 @@ if(pid == -1){
 
 ## time Workflow
 
-![Workflow for time](/images/slides/fork/time_workflow.png)
+![Workflow for time](/images/assignment-docs/lab/slides/fork/time_workflow.png)
 
 ## Helper Functions
 * `struct timespec`
@@ -102,7 +102,7 @@ if(pid == -1){
 
 ## env Workflow
 
-![Environment Workflow](/images/slides/fork/env_workflow.png)
+![Environment Workflow](/images/assignment-docs/lab/slides/fork/env_workflow.png)
 
 ## Helper Functions
 
