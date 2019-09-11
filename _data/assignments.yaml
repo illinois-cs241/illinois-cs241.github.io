@@ -38,13 +38,13 @@ labs:
       url: "utilities_unleashed"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-02-06 23:59
+          due_date: 2019-09-18 23:59
           graded_files:
           - env.c
           - time.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Mini Valgrind"
       releaseDate: "Week 4"
