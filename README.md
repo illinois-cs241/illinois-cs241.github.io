@@ -102,7 +102,7 @@ All documentation is stored in `assignment-docs` repository. To make any changes
 Once you have created this file you can add all the markdown you please. Somethings to take note of is that javascript will run to make all the areas between `h2`/`##` tags into sections and add an entry to the table of content. The title of the section and the entry of in the table of content is exactly the text that comes after your `h2`/`##`. Also `h1`/`#` is reserved for the title which will automatically be added in.
 
 ### Syntax Highlighting
-Also you might want to add syntax highlighting.
+You might want to add syntax highlighting.
 
 This can be done by [fencing with triple backticks](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet/e48fe59238600be6e1ec9e4add21c513cbac86d0#code):
 
