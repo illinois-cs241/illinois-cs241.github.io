@@ -117,11 +117,11 @@ Understanding how to do this will be useful when you implement malloc!
 
 <vertical />
 
-![Map one](/images/slides/memory/val1.png)
+![Map one](/images/assignment-docs/lab/slides/memory/val1.png)
 
 <vertical />
 
-![Map two](/images/slides/memory/val2.png)
+![Map two](/images/assignment-docs/lab/slides/memory/val2.png)
 
 
 <horizontal />
