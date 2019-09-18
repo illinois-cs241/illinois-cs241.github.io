@@ -46,18 +46,18 @@ labs:
       worksheet: true
       visible: true
   -
-      name: "Mini Valgrind"
+      name: "Mini Memcheck"
       releaseDate: "Week 4"
       dueDate: "Week 5"
-      url: "mini_valgrind"
+      url: "mini_memcheck"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-02-13 23:59
+          due_date: 2019-09-25 23:59
           graded_files:
-          - mini_valgrind.c
+          - mini_memcheck.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Teaching Threads"
       releaseDate: "Week 5"
