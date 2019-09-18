@@ -7,7 +7,7 @@ title: Honors
 
 Couldn't get enough systems programming from CS 241? Welcome to the honors section! This course is recommended for those who want to expand their systems knowledge with additional lectures and a semester long project in systems programming.
 
-There will be lectures throughout the semester, usually every week or every other week, given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241. On some weeks, we will have in class labs instead of traditional lectures.
+There will be lectures throughout the semester, usually every week or every other week, given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 241. On some weeks, we will have lecture activities to complement the lectures.
 
 You are also required to propose and complete a project of your own. Your project should be related to systems programming and it should clearly demonstrate and build upon concepts learned in regular [and/or honors] CS 241 lectures. Once your project has been approved by course staff, you will be assigned a mentor who you will check in with weekly for progress reports and code review.
 
@@ -16,12 +16,12 @@ At the end of the semester, you will present your work to your peers. The presen
 ## Grading
 
 ```
-Labs                        : 15%
-Lecture Participation       : 15%
-Final Project               : 70%
+Lecture Attendance          : 20%
+Lecture Activities          : 5%
+Final Project               : 75%
 - Project Proposal/Planning : 5%
 - Midterm                   : 10%
-- Weekly Check-ins          : 10%
+- Weekly Check-ins          : 15%
 - Final Presentation        : 15%
 - Final Deliverables        : 30%
 ```
@@ -30,7 +30,7 @@ We publish the same grading thresholds as the regular section of CS 241. Your pr
 
 ## Absences
 
-We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop two lecture/lab attendance grades, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
+We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop one lecture attendance grade, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.
 
 If you have a required conflict (e.g. an exam in another class), please notify course staff **ahead of time** and we will excuse your absence. If you have a sudden illness or other personal emergencies, please refer to the [CS 241 absence policy]({% link _pages/index.html %}#absences).
 
@@ -79,13 +79,13 @@ When you and your group start writing code, we expect you to use git and for eac
 
 | Name | NetID | Interests |
 |:-----|:------|:----------|
-| Aneesh Durg | durg2 | Concurrency, Text-based UI, Functional Programming |
-| Ishan Shah | ishanps2 | Systems & Networks, Mobile & Internet Computing, Functional Programming |
-| Ophir Sneh | osneh2 | Security, ML, Functional Programming |
-| Shreyas Patil | srpatil2 | Security, Android, Functional Programming |
-| Steven Shang | shang9 | Cloud, Distributed Systems, Functional Programming |
+| Ophir Sneh | osneh2 | Security, Distributed Systems, Machine Learning |
+| Jav Mohamed | javedm2 | Functional Programming, Formal Methods, Security |
+| Aniket Shirke | anikets | Networks, Mobile Computing |
+| Anant Kandikuppa | anantk3 | Distributed Systems, Security |
+| Rohin Bhasin | rohinb2 | Security, Distributed Systems, Networking |
 
-## Lectures and Videos
+## Lectures
 
 <!-- Desktop Table -->
 <table width = "100%" class="table">
@@ -116,7 +116,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
 
-[http://piazza.com/illinois/spring2019/cs29641](http://piazza.com/illinois/spring2019/cs29641)
+[https://piazza.com/class/jzwzocunoa25u4](https://piazza.com/class/jzwzocunoa25u4)
 
 ## Project Ideas?
 
