@@ -29,7 +29,47 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Week 2
 
-* To be announced
+* Mon 9/2. Mp Extreme Edge Cases assigned.
+
+* Wed 9/4. Lab Luscious Locks due.
+
+* Thu 9/5. Lab Perilous Pointers assigned.
+
+### Week 3
+
+* Mon 9/9. Mp Extreme Edge Cases due. Mp Vector assigned.
+
+* Wed 9/11. Lab Perilois Pointers due.
+
+* Thu 9/12. Lab Utilities Unleashed assigned.
+
+* Quiz 2 running from Fri 9/13 through Mon 9/16
+
+### Week 4
+
+* Mon 9/16. Mp Vector due. Mp Shell Part 1 and 2 assigned.
+
+* Wed 9/18. Lab Utilities Unleashed due.
+
+* Thu 9/19. Lab Mini Memcheck assigned.
+
+### Week 5
+
+* Mon 9/23. Mp Shell Part 1 due.
+
+* Wed 9/25. Lab Mini Memcheck due.
+
+* Thu 9/26. Lab Teaching Threads assigned.
+
+* Quiz 3 running from Fri 9/27 through Mon 9/30
+
+### Week 6
+
+* Mon 9/30. Mp Shell Part 2 due.
+
+* Wed 10/2. Lab Teaching Threads due.
+
+* Thu 10/3. Lab Critical Concurrency assigned.
 
 
 ### CBTF Quiz summary. These are usually available Friday - Monday. 
