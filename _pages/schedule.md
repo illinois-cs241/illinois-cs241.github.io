@@ -29,47 +29,57 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Week 2
 
-* Mon 9/2. Mp Extreme Edge Cases assigned.
+* Mon 9/2. Labor Day. Mp Extreme Edge Cases assigned.
 
-* Wed 9/4. Lab Luscious Locks due.
+* Wed 9/4. Lecture 4 "Scanf, Getline". Lab Luscious Locks due.
 
 * Thu 9/5. Lab Perilous Pointers assigned.
 
+* Fri 9/6. Lecture 5 "Exec, Fork, Environ".
+
 ### Week 3
 
-* Mon 9/9. Mp Extreme Edge Cases due. Mp Vector assigned.
+* Mon 9/9. Lecture 6 "Fork, Exec, Wait". Mp Extreme Edge Cases due. Mp Vector assigned.
 
-* Wed 9/11. Lab Perilois Pointers due.
+* Wed 9/11. Lecture 7 "Signals". Lab Perilois Pointers due.
 
 * Thu 9/12. Lab Utilities Unleashed assigned.
+
+* Fri 9/13. Lecture 8 "Heap".
 
 * Quiz 2 running from Fri 9/13 through Mon 9/16
 
 ### Week 4
 
-* Mon 9/16. Mp Vector due. Mp Shell Part 1 and 2 assigned.
+* Mon 9/16. Lecture 9 "Allocator". Mp Vector due. Mp Shell Part 1 and 2 assigned.
 
-* Wed 9/18. Lab Utilities Unleashed due.
+* Wed 9/18. Lecture 10 "Allocator - Part 2". Lab Utilities Unleashed due.
 
 * Thu 9/19. Lab Mini Memcheck assigned.
 
+* Fri 9/20. Lecture 11 "Threads".
+
 ### Week 5
 
-* Mon 9/23. Mp Shell Part 1 due.
+* Mon 9/23. Lecture 12 "Threads and Memory". Mp Shell Part 1 due.
 
-* Wed 9/25. Lab Mini Memcheck due.
+* Wed 9/25. Lecture 13 "Pthreads". Lab Mini Memcheck due.
 
 * Thu 9/26. Lab Teaching Threads assigned.
+
+* Fri 9/27. Lecture 14 "Pthreads and Locks".
 
 * Quiz 3 running from Fri 9/27 through Mon 9/30
 
 ### Week 6
 
-* Mon 9/30. Mp Shell Part 2 due.
+* Mon 9/30. Lecture 15 "Condition Variables". Mp Shell Part 2 due.
 
-* Wed 10/2. Lab Teaching Threads due.
+* Wed 10/2. Lecture 16 "Counting Semaphores". Lab Teaching Threads due.
 
 * Thu 10/3. Lab Critical Concurrency assigned.
+
+* Fri 10/4. Lecture 17 "Producer/Consumer Barriers V2".
 
 
 ### CBTF Quiz summary. These are usually available Friday - Monday. 
