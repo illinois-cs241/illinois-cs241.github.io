@@ -31,9 +31,9 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 9/2. Labor Day. Mp Extreme Edge Cases assigned.
 
-* Wed 9/4. Lecture 4 "Scanf, Getline". Lab Luscious Locks due.
+* Wed 9/4. Lecture 4 "Scanf, Getline". Lab Luscious Locks due. Lab Perilous Pointers assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
-* Thu 9/5. Lab Perilous Pointers assigned.
+* Thu 9/5. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
 * Fri 9/6. Lecture 5 "Exec, Fork, Environ".
 
@@ -41,9 +41,9 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 9/9. Lecture 6 "Fork, Exec, Wait". Mp Extreme Edge Cases due. Mp Vector assigned.
 
-* Wed 9/11. Lecture 7 "Signals". Lab Perilois Pointers due.
+* Wed 9/11. Lecture 7 "Signals". Lab Perilous Pointers due. Lab Utilities Unleashed assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
-* Thu 9/12. Lab Utilities Unleashed assigned.
+* Thu 9/12. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
 * Fri 9/13. Lecture 8 "Heap".
 
@@ -53,9 +53,9 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 9/16. Lecture 9 "Allocator". Mp Vector due. Mp Shell Part 1 and 2 assigned.
 
-* Wed 9/18. Lecture 10 "Allocator - Part 2". Lab Utilities Unleashed due.
+* Wed 9/18. Lecture 10 "Allocator - Part 2". Lab Utilities Unleashed due. Lab Mini Memcheck assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
-* Thu 9/19. Lab Mini Memcheck assigned.
+* Thu 9/19. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
 * Fri 9/20. Lecture 11 "Threads".
 
@@ -63,9 +63,9 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 9/23. Lecture 12 "Threads and Memory". Mp Shell Part 1 due.
 
-* Wed 9/25. Lecture 13 "Pthreads". Lab Mini Memcheck due.
+* Wed 9/25. Lecture 13 "Pthreads". Lab Mini Memcheck due. Lab Teaching Threads assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
-* Thu 9/26. Lab Teaching Threads assigned.
+* Thu 9/26. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
 * Fri 9/27. Lecture 14 "Pthreads and Locks".
 
@@ -75,9 +75,9 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 9/30. Lecture 15 "Condition Variables". Mp Shell Part 2 due.
 
-* Wed 10/2. Lecture 16 "Counting Semaphores". Lab Teaching Threads due.
+* Wed 10/2. Lecture 16 "Counting Semaphores". Lab Teaching Threads due. Lab Critical Concurrency assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
-* Thu 10/3. Lab Critical Concurrency assigned.
+* Thu 10/3. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
 * Fri 10/4. Lecture 17 "Producer/Consumer Barriers V2".
 
