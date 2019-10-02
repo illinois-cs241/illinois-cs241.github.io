@@ -10,19 +10,19 @@ author: Bhuvan
 
 This is the idea of a mutex: keep the other person out while you do your thing.
 
-![Bathroom mutex](/images/slides/synch/rest.gif)
+![Bathroom mutex](/images/assignment-docs/lab/slides/synch/rest.gif)
 
 <vertical />
 
 This is a semaphore:
 
-![Fake Semaphore](/images/slides/synch/semaphore.gif)
+![Fake Semaphore](/images/assignment-docs/lab/slides/synch/semaphore.gif)
 
 <vertical />
 
 Just kidding, this is a real semaphore:
 
-![Programming Semaphore](/images/slides/synch/sema.gif)
+![Programming Semaphore](/images/assignment-docs/lab/slides/synch/sema.gif)
 
 <vertical />
 
@@ -103,7 +103,7 @@ What is wrong with the code above?
 
 What does a barrier look like? Glad you asked.
 
-![Pthread Barrier](/images/slides/synch/barrier.gif)
+![Pthread Barrier](/images/assignment-docs/lab/slides/synch/barrier.gif)
 
 <vertical />
 
@@ -141,7 +141,7 @@ Please read the coursebook about this!
 
 <vertical />
 
-![Buffer animation](/images/slides/synch/buffer_anim.gif)
+![Buffer animation](/images/assignment-docs/lab/slides/synch/buffer_anim.gif)
 
 <vertical />
 
