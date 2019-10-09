@@ -98,7 +98,7 @@ labs:
           - libdrm.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Ideal Indirection"
       releaseDate: "Week 8"
