@@ -4,10 +4,6 @@ title: Dining Philosophers
 authors: "Steve, Bhuvan, Aneesh"
 ---
 
-## Worksheet
-
-<horizontal />
-
 ## Deadlock
 
 <vertical />
@@ -39,8 +35,8 @@ From wikipedia:
 
 ## Resource allocation graph
 
-We can model resource allocation by having resources and processes as verticies
-and have edges to show ownership of a resource. A cycle in the (undirected)
+We can model resource allocation by having resources and processes represented as vertices
+and use edges to show ownership of a resource. A cycle in the (undirected)
 resource allocation graph implies that we have deadlock.
 
 ## Example RAG
