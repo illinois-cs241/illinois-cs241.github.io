@@ -12,17 +12,17 @@ authors: "Steve, Bhuvan, Aneesh"
 
 <vertical />
 
-![Traffic Jam](/images/slides/dining/traffic.gif)
+![Traffic Jam](/images/assignment-docs/lab/slides/dining/traffic.gif)
 
 ## Dining philosophers
 
 A good example of deadlock is the dining philosophers problem
 
-![Deadlock Dining](/images/slides/dining/dining.gif)
+![Deadlock Dining](/images/assignment-docs/lab/slides/dining/dining.gif)
 
 ## Who's a good Dining Philosopher
 
-![Dog Philosopher](/images/slides/dining/dogdining.gif)
+![Dog Philosopher](/images/assignment-docs/lab/slides/dining/dogdining.gif)
 
 ## A Good Overview
 
@@ -45,7 +45,7 @@ resource allocation graph implies that we have deadlock.
 
 ## Example RAG
 
-![Deadlock RAG](/images/slides/dining/rag.gif)
+![Deadlock RAG](/images/assignment-docs/lab/slides/dining/rag.gif)
 
 <horizontal />
 
