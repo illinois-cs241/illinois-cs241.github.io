@@ -93,12 +93,12 @@ labs:
       url: "deadlock_demolition"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-03-06 23:59
+          due_date: 2019-10-16 23:59
           graded_files:
           - libdrm.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Ideal Indirection"
       releaseDate: "Week 8"
