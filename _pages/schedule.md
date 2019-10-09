@@ -73,13 +73,35 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Week 6
 
-* Mon 9/30. Lecture 15 "Condition Variables". Mp Shell Part 2 due.
+* Mon 9/30. Lecture 15 "Condition Variables". Mp Shell Part 2 due. Mp Malloc Part 1 and 2 assigned.
 
 * Wed 10/2. Lecture 16 "Counting Semaphores". Lab Teaching Threads due. Lab Critical Concurrency assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
 * Thu 10/3. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
 * Fri 10/4. Lecture 17 "Producer/Consumer Barriers V2".
+
+### Week 7
+
+* Mon 10/7. Lecture 18 "Reader/Writer Deadlock". Mp Malloc Part 1 due.
+
+* Wed 10/9. Lecture 19 "Reader/Writer Deadlock Part 2". Lab Critical Concurrency due. Lab Deadlock Demolition assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
+
+* Thu 10/10. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
+
+* Fri 10/11. Lecture 20 "Dining Philosophers".
+
+* Quiz 4 running from Fri 10/11 through Mon 10/14
+
+### Week 8
+
+* Mon 10/14. Lecture 21 "Page Tables and IPC". Mp Malloc Part 2 due. Mp Password Cracker assigned.
+
+* Wed 10/16. Lecture 22 "Pipes and Seeks". Lab Deadlock Demolition due. Lab Ideal Indirection assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
+
+* Thu 10/17. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
+
+* Fri 10/18. Lecture 23 "C Files - Pipes and Seeks".
 
 
 ### CBTF Quiz summary. These are usually available Friday - Monday. 
