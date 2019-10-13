@@ -95,13 +95,13 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 ### Week 8
 
-* Mon 10/14. Lecture 21 "Page Tables and IPC". Mp Malloc Part 2 due. Mp Password Cracker assigned.
+* Mon 10/14. No Lecture. Mp Malloc Part 2 due. Mp Password Cracker assigned.
 
-* Wed 10/16. Lecture 22 "Pipes and Seeks". Lab Deadlock Demolition due. Lab Ideal Indirection assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
+* Wed 10/16. Lecture 21 "Page Tables and IPC". Lab Deadlock Demolition due. Lab Ideal Indirection assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
 * Thu 10/17. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
-* Fri 10/18. Lecture 23 "C Files - Pipes and Seeks".
+* Fri 10/18. Lecture 22 "Pipes and Seeks".
 
 
 ### CBTF Quiz summary. These are usually available Friday - Monday. 
