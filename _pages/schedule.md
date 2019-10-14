@@ -9,6 +9,8 @@ title: Schedule
 
 The general structure of the course has MP assignments due on Mondays at 11:59 PM and Lab assignments due on Wednesdays at 11:59 PM. These repeat weekly - some MPs are multi-week but have checkpoints weekly.
 
+The handouts for the lectures, as well as all demo source code, can be obtained [here](https://github-dev.cs.illinois.edu/angrave/cs241-lectures).
+
 ### Week 1
 
 Highlights: Read the course book background. Work on Homework 0. Sign up Quiz 1 slot (when available). Watch online lectures 2 and 3 when they are published. First lab on Thursday.
@@ -85,11 +87,11 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 10/7. Lecture 18 "Reader/Writer Deadlock". Mp Malloc Part 1 due.
 
-* Wed 10/9. Lecture 19 "Reader/Writer Deadlock Part 2". Lab Critical Concurrency due. Lab Deadlock Demolition assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
+* Wed 10/9. Lecture 18.5 "Catchup". Lab Critical Concurrency due. Lab Deadlock Demolition assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
 * Thu 10/10. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
-* Fri 10/11. Lecture 20 "Dining Philosophers".
+* Fri 10/11. Lecture 19 "Reader/Writer Deadlock Part 2".
 
 * Quiz 4 running from Fri 10/11 through Mon 10/14
 
@@ -97,11 +99,11 @@ Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave
 
 * Mon 10/14. No Lecture. Mp Malloc Part 2 due. Mp Password Cracker assigned.
 
-* Wed 10/16. Lecture 21 "Page Tables and IPC". Lab Deadlock Demolition due. Lab Ideal Indirection assigned. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
+* Wed 10/16. Lecture 20 "Dining Philosophers Problem". Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241)
 
 * Thu 10/17. Lab sections in Siebel Basement SC0218/SC0222. [Schedule](https://courses.illinois.edu/schedule/2019/spring/CS/241).
 
-* Fri 10/18. Lecture 22 "Pipes and Seeks".
+* Fri 10/18. Lecture 21 "Page Tables and IPC".
 
 
 ### CBTF Quiz summary. These are usually available Friday - Monday. 
