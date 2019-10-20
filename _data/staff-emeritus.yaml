@@ -48,13 +48,13 @@
   roles: "Assignment Development"
   semesters: "Fall 2015, Spring 2016, and Fall 2016"
   specialty: "Game Engines"
--
-  name: Erica Lee
-  netid: nlee16
-  class: 17
-  roles: Assignment Development Lead
-  specialty: ""
-  semesters: Fall 2016 and Spring 2017
+# -
+#   name: Erica Lee
+#   netid: nlee16
+#   class: 17
+#   roles: Assignment Development Lead
+#   specialty: ""
+#   semesters: Fall 2016 and Spring 2017
 -
   class: 16
   name: "Maddie Lin"
