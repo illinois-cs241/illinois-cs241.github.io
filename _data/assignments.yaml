@@ -101,17 +101,17 @@ labs:
       visible: true
   -
       name: "Ideal Indirection"
-      releaseDate: "Week 8"
-      dueDate: "Week 9"
+      releaseDate: "Week 9"
+      dueDate: "Week 10"
       url: "ideal_indirection"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-03-13 23:59
+          due_date: 2019-10-30 23:59
           graded_files:
           - mmu.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "MapReduce"
       releaseDate: "Week 9"
