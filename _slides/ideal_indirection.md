@@ -52,7 +52,7 @@ For a 64 bit machine, 2^64 / 2^12 = 2^52, which is roughly 10^15 pages.
 
 <vertical />
 
-![TLB](/images/slides/virtual/tlb.gif)
+![TLB](/images/assignment-docs/lab/slides/virtual/tlb.gif)
 
 <horizontal />
 
