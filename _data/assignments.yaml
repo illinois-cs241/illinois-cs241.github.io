@@ -127,19 +127,19 @@ labs:
       visible: true
   -
       name: "Charming Chatroom"
-      releaseDate: "Week 10"
-      dueDate: "Week 11"
+      releaseDate: "Week 11"
+      dueDate: "Week 12"
       url: "charming_chatroom"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-04-03 23:59
+          due_date: 2019-11-13 23:59
           graded_files:
           - client.c
           - server.c
           - utils.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Mad Mad Access Pattern"
       releaseDate: "Week 11"
