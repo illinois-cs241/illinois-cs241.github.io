@@ -3,7 +3,22 @@ layout: doc
 title: Quiz Topics
 ---
 
-## Use the CBTF website to book a slot.
+## CBTF Quiz Schedule. These are usually available Friday - Monday. 
+
+| Quiz | First day | Last day |
+| -----|-----------|----------|
+| Quiz 1 | Fri, Sep 6 	| Mon, Sep 9 |
+| Quiz 2 | Fri, Sep 13	| Mon, Sep 16 |
+| Quiz 3 | Fri, Sep 27	| Mon, Sep 30 |
+| Quiz 4 | Fri, Oct 11	| Mon, Oct 14 |
+| Quiz 5 | Fri, Oct 25  | Mon, Oct 28 |
+| Quiz 6 | Fri, Nov 8   | Mon, Nov 11 |
+| Quiz 7 | *Mon*, Dec 2 | Wed, Dec 4  |
+
+Protip 1: CBTF is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time. 
+Protip 2: If you miss your slot, visit the CBTF in person as soon as possible to see if it can be re-scheduled.
+
+### Use the CBTF website to book a slot.
 
 * Slots are in limited supply! Book yours today!  [https://cbtf.engr.illinois.edu/](CBTF website)
 * Miss your slot? Visit CBTF as soon as possible. 
