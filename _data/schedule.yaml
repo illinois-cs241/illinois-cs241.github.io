@@ -19,7 +19,7 @@
   resources: ""
   color: "#808080"
 -
-  title: "C Crash Course 3"
+  title: "A day at the C side: C Crash Course 3"
   summary: "4. getenv, scanf, getline, fork "
   resources: "See the <a target='blank'  href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-2%3A-Text-Input-And-Output'>Wikibook Input and Output</a>"
   color: "#F44336"
@@ -64,7 +64,7 @@
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Pthreads%2C-Part-1%3A-Introduction'>Intro to Threads</a>"
   color: "#673AB7"
 -
-  title: "Threads and mutex locks"
+  title: "Threads, memory and mutex locks"
   summary: "Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas."
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Synchronization%2C-Part-1%3A-Mutex-Locks'>Synchronization, Part 1: Mutex Locks</a>"
   color: "#673AB7"
@@ -104,9 +104,14 @@
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Deadlock%2C-Part-2%3A-Deadlock-Conditions'>Deadlock</a>."
   color: "#00BCD4"
 -
-  title: "Page tables"
+  title: "Page tables and IPC"
   summary: "Virtual memory"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Virtual-Memory%2C-Part-1%3A-Introduction-to-Virtual-Memory'>Virtual Memory</a>."
+  color: "#009688"
+-
+  title: "Pipes and seeking"
+  summary: "Moving data using pipes, seekable streams, named pipes, behavior with fork"
+  resources: ""
   color: "#009688"
 -
   title: "Scheduling"
@@ -129,8 +134,13 @@
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Files%2C-Part-1%3A-Working-with-files'>Files</a>"
   color: "#4CAF50"
 -
+  title: "Errno. Networking Intro"
+  summary: "Robust error handling. EINTR. Intro to TCP,UDP,IP"
+  resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/POSIX%2C-Part-1%3A-Error-handling'>Error handling</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-1%3A-Introduction'>Networking Introduction</a>"
+  color: "#8BC34A"
+-
   title: "Files-1"
-  summary: "ext2/3/4 filesystem. inode"
+  summary: "ext2/3/4 filesystem, index nodes (inodes), superbocks, ZFS / BtrFS"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-1%3A-Introduction'>Files</a>."
   color: "#FFC107"
 -
@@ -140,14 +150,19 @@
   color: "#A8A8A8"
 -
   title: "Files-3"
-  summary: "Permissions"
+  summary: "Symbolic links, hard links, directory searching, intro to permissions"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-3%3A-Permissions'>Permissions</a>."
   color: "#FFC107"
 -
-  title: "Errno. Networking Intro"
-  summary: "Robust error handling. EINTR. Intro to TCP,UDP,IP"
-  resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/POSIX%2C-Part-1%3A-Error-handling'>Error handling</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-1%3A-Introduction'>Networking Introduction</a>"
-  color: "#8BC34A"
+  title: "Files-4"
+  summary: "File permissions, directories, file globbing, intro to RAID"
+  resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-3%3A-Permissions'>Permissions</a>."
+  color: "#FFC107"
+-
+  title: "Files-5"
+  summary: "Redundant Array of Inexpensive Disks (RAID), the various RAID levels"
+  resources: ""
+  color: "#FFC107"
 -
   title: "TCP"
   summary: "TCP/IP Header. IPv4 exhaustion. A web client"
@@ -169,20 +184,30 @@
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-6%3A-Creating-a-UDP-server'>UDP</a>."
   color: "#FFC107"
 -
-  title: "UDP"
-  summary: "UDP"
-  resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-6%3A-Creating-a-UDP-server'>UDP</a>."
-  color: "#FFC107"
--
   title: "RPC"
   summary: "RPC"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/RPC%2C-Part-1%3A-Introduction-to-Remote-Procedure-Calls'>RPC</a>."
   color: "#FFC107"
 -
-  title: "Network Review"
-  summary: "Overview"
-  resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#8-networking'>Networking</a>"
-  color: "#8BC34A"
+  title: "Protocols"
+  summary: "TCP handshakes, QUIC, HTTP/1.1"
+  resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/RPC%2C-Part-1%3A-Introduction-to-Remote-Procedure-Calls'>RPC</a>."
+  color: "#FFC107"
+-
+  title: "No lecture"
+  summary: "Fall Break - Piazza responses limited"
+  resources: ""
+  color: "#aaaaaa"
+-
+  title: "No lecture"
+  summary: "Fall Break - Piazza responses limited"
+  resources: ""
+  color: "#aaaaaa"
+-
+  title: "No lecture"
+  summary: "Fall Break - Piazza responses limited"
+  resources: ""
+  color: "#aaaaaa"
 -
   title: "Mmap"
   summary: "Memory mapped files"
@@ -190,51 +215,31 @@
   color: "#FFC107"
 -
   title: "VFS"
-  summary: "Virtual f/s"
+  summary: "Virtual filesystems"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-5%3A-Virtual-file-systems'>VFS</a>."
   color: "#FFC107"
 -
-  title: "No lecture; Piazza responses limited"
-  summary: "Fall Break"
-  resources: ""
-  color: "#aaaaaa"
--
-  title: "No lecture; Piazza responses limited"
-  summary: "Fall Break"
-  resources: ""
-  color: "#aaaaaa"
--
-  title: "No lecture; Piazza responses limited"
-  summary: "Fall Break"
-  resources: ""
-  color: "#aaaaaa"
--
-  title: "Special Topics 1"
-  summary: ""
+  title: "Web servers and scheduling"
+  summary: "Intro to select, poll, and epoll"
   resources: ""
   color: "#C38A80"
 -
-  title: "Special Topics 2"
-  summary: ""
-  resources: ""
+  title: "Network Review"
+  summary: "Overview"
+  resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki#8-networking'>Networking</a>"
+  color: "#8BC34A"
+-
+  title: "Advanced signals"
+  summary: "Signal sets, checking pending signals, sigaction vs. signal"
+  resources: "See <a href='http://cs241.cs.illinois.edu/coursebook/Signals'>Signals</a> from the coursebook."
   color: "#C38A80"
 -
-  title: "Special Topics 3 / Review"
+  title: "Security and System Programming"
   summary: ""
-  resources: ""
+  resources: "See <a href='http://cs241.cs.illinois.edu/coursebook/Security'>Security</a> chapter of coursebook."
   color: "#C38A80"
 -
-  title: "Special Topics 4 / Review"
+  title: "Finals review"
   summary: ""
-  resources: ""
-  color: "#C38A80"
--
-  title: "No class"
-  summary: ""
-  resources: ""
-  color: "#808080"
--
-  title: "No class"
-  summary: ""
-  resources: ""
-  color: "#808080"
+  resources: "See finals schedule in the <a href='https://courses.illinois.edu/schedule/2019/fall/CS/241'>Course Explorer</a>"
+  color: "#3446EB"
