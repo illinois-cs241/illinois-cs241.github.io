@@ -136,6 +136,11 @@
   color: "#009688"
   number: 22
 -
+  title: "Pipes and seeking"
+  summary: "Moving data using pipes, seekable streams, named pipes, behavior with fork"
+  resources: ""
+  color: "#009688"
+-
   title: "Scheduling"
   summary: "Scheduling examples"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-1%3A-Scheduling-Processes'>Scheduling</a>"
@@ -166,6 +171,11 @@
   color: "#8BC34A"
   number: 27
 -
+  title: "Errno. Networking Intro"
+  summary: "Robust error handling. EINTR. Intro to TCP,UDP,IP"
+  resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/POSIX%2C-Part-1%3A-Error-handling'>Error handling</a> and <a href='https://github.com/angrave/SystemProgramming/wiki/Networking%2C-Part-1%3A-Introduction'>Networking Introduction</a>"
+  color: "#8BC34A"
+-
   title: "Files-1"
   summary: "ext2/3/4 filesystem, index nodes (inodes), superbocks, ZFS / BtrFS"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-1%3A-Introduction'>Files</a>."
@@ -187,13 +197,19 @@
   summary: "File permissions, directories, file globbing, intro to RAID"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/File-System%2C-Part-3%3A-Permissions'>Permissions</a>."
   color: "#FFC107"
+<<<<<<< HEAD
   number: 32
+=======
+>>>>>>> develop
 -
   title: "Files-5"
   summary: "Redundant Array of Inexpensive Disks (RAID), the various RAID levels"
   resources: ""
   color: "#FFC107"
+<<<<<<< HEAD
   number: 33
+=======
+>>>>>>> develop
 -
   title: "TCP"
   summary: "TCP/IP Header. IPv4 exhaustion. A web client"
