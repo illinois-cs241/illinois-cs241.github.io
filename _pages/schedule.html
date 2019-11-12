@@ -52,11 +52,17 @@
                                 </div>
                                 {% assign starting_day_offset = week_number | times: days %}
                                 {% for day in site.data.schedule limit: days offset: starting_day_offset %}
+                                    {% assign lecture_number = starting_day_offset | plus: forloop.index %}
                                     <div class="col-lg-3 ">
                                         <div class="day container">
                                             <div class="day-title row" style="background-color: {{ day.color }}">
                                                 <div class="day-title-text col-md-12">
-                                                    <h3 class="day-title-h3">{{day.title}}</h3>
+                                                    <h3 class="day-title-h3">
+                                                        {% if day.number != null %}
+                                                            {{ day.number }}. 
+                                                        {% endif %}
+                                                        {{day.title}}
+                                                    </h3>
                                                 </div>
                                             </div>
                                             <div class="day-summary row">
