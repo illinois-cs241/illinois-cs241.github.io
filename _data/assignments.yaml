@@ -142,18 +142,18 @@ labs:
       visible: true
   -
       name: "Mad Mad Access Pattern"
-      releaseDate: "Week 11"
-      dueDate: "Week 12"
+      releaseDate: "Week 12"
+      dueDate: "Week 13"
       url: "mad_mad_access_pattern"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-04-10 23:59
+          due_date: 2019-11-20 23:59
           graded_files:
           - lookup1.c
           - lookup2.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Savvy Scheduler"
       releaseDate: "Week 12"
