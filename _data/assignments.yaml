@@ -156,17 +156,17 @@ labs:
       visible: true
   -
       name: "Savvy Scheduler"
-      releaseDate: "Week 12"
-      dueDate: "Week 13"
+      releaseDate: "Week 13"
+      dueDate: "Week 14"
       url: "savvy_scheduler"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-04-17 23:59
+          due_date: 2019-12-04 23:59
           graded_files:
           - libscheduler.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Resplendent RPCs"
       releaseDate: "Week 13"
