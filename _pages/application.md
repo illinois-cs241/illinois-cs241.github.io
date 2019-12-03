@@ -19,7 +19,7 @@ For now, please pick one secondary role, and up to 2 primary roles that sound mo
 - Web and Coursebook Development
 
 All positions require dedicated people who have a passion for teaching system programming. Those who submit a promising application will be offered an interview. We also want to be completely transparent about what we look in our applicants. 
-We are not simply looking for A+ students. A good grade is neither necessary nor sufficient to be a good course assistant. Finally, we expect everyone on course staff to contribute regularly to Piazza, to help answer student questions. You _must_ have a primary role to be accepted, but secondary roles are optional.
+We are not simply looking for A+ students. A good grade is neither necessary nor sufficient to be a good course assistant. We expect everyone on course staff to contribute regularly to Piazza, to help answer student questions. You _must_ have a primary role to be considered, but secondary roles are optional. The reason we have secondary roles is so each member on staff has a few main responsibilities, and can operate knowing that other aspects of the course are being managed by people specifically tasked to do so. This lets each area of course staff get individual attention which enables visible improvements from semester-to-semester.
 
 Things we look for in our application:
 
@@ -109,21 +109,21 @@ We have other projects that we are taking off the ground next semester and aren'
 ## Data Analytics and Research
 You will be doing exploratory data analysis, creating visualizations, and mining patterns from all of the data we collect as course staff. This roles is very open-ended, but you will get direction from senior staff members. Past projects have involved creating network visualizations for lab assignment partners, generating lab partners, graphing performance on assignments over time, studying factors that lead to student success in the course (such as commit timestamps, VM logins etc.). You will have the opportunity to work with Prof. Lawrence Angrave on research projects, which will look great on a graduate school application.
 
-## Skills Required
+### Skills Required
 * Programming skills - Python, R, MATLAB/Octave, Scala, and JavaScript are the dominant programming languages in data analysis and machine learning today. Experience with data analysis packages, such as pandas, matplotlib, numpy, d3.js etc. is a bonus!
 * Statistics - Knowledge of basic statistics is invaluable especially if you are attempting to create a model, or estimate a distribution.
 * Research experience - Past research experience, especially if it involved quantitative analysis will be extremely relevant for the tasks you will be performing.
 
-## Expected Time Obligations
+### Expected Time Obligations
 * Varies by project
 
 ## Web and Coursebook Development
 For people interested in web development and technical writing. This will involve updating content on our website on a regular basis, contributing content to and maintaining our coursebook. 
 Our web app suite including grade viewer, Broadway-on-Demand, and lab attendance platform. You will be adding features or fixing issues with these, as part of your role.
-## Skills Required
+### Skills Required
 * Programming skills - Proficiency in HTML, CSS, JS is required. Proficiency in LaTeX is recommended to be able to effectively work on our coursebook. Our web apps are built with Flask for Python, and the Bootstrap framework, with MongoDB used for data persistence. 
 
-## Expected Time Obligations
+### Expected Time Obligations
 * Varies by project
 
 <form action="https://docs.google.com/forms/d/e/1FAIpQLSe-zWx0lRFsM2tINqBu8ZmYmDFJS_2Tp3bgZGrxQt4TlptaZQ/viewform?usp=sf_link">
