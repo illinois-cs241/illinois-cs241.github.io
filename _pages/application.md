@@ -106,17 +106,6 @@ We have other projects that we are taking off the ground next semester and aren'
 ### Expected Time Obligations
 * Varies by project
 
-## Data Analytics
-You will be doing exploratory data analysis, creating visualizations, and mining patterns from all of the data we collect as course staff. This roles is very open-ended, but you will get direction from senior staff members. Past projects have involved creating network visualizations for lab assignment partners, generating lab partners, graphing performance on assignments over time, studying factors that lead to student success in the course (such as commit timestamps, VM logins etc.). You will have the opportunity to work with Prof. Lawrence Angrave on research projects, which will look great on a graduate school application.
-
-## Skills Required
-* Programming skills - Python, R, MATLAB/Octave, Scala, and JavaScript are the dominant programming languages in data analysis and machine learning today. Experience with data analysis packages, such as pandas, matplotlib, numpy, d3.js etc. is a bonus!
-* Statistics - Knowledge of basic statistics is invaluable especially if you are attempting to create a model, or estimate a distribution.
-* Research experience - Past research experience, especially if it involved quantitative analysis will be extremely relevant for the tasks you will be performing.
-
-## Expected Time Obligations
-* Varies by project
-
 ## Secondary Roles
 
 ## Data Analytics and Research
@@ -139,7 +128,7 @@ Our web app suite including grade viewer, Broadway-on-Demand, and lab attendance
 ## Expected Time Obligations
 * Varies by project
 
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSdXYjlNnRh--KKKsO3E-sBC8P2y1aO6Ehg_MneikQxzLlCDaA/viewform">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSe-zWx0lRFsM2tINqBu8ZmYmDFJS_2Tp3bgZGrxQt4TlptaZQ/viewform?usp=sf_link">
     <button type="submit" class="apply-button">
         Apply
     </button>
