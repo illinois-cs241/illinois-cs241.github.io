@@ -3,8 +3,6 @@ layout: doc
 title: "Course Staff Application"
 ---
 
-# CS 241 Course Staff Application
-
 Are you interested in becoming a course assistant for CS 241? If so, then you are welcome to apply for positions. Although we have specialized roles, there is always plenty of work to do and course staff often work on areas they did not start out doing.
 For now, please pick one secondary role, and up to 2 primary roles that sound most interesting to you, but do read through all the descriptions!
 
