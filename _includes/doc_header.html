@@ -1,0 +1,14 @@
+{% if page.learning_objectives %}
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for {{ page.title }} are: <br/>
+    <ul class="mdl-list">
+      {% for objective in page.learning_objectives %}
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">{{ objective }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </p>
+{% endif %}
+

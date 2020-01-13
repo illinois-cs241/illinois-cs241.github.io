@@ -1,0 +1,89 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "reveal.js-menu",
+        "scope": null,
+        "escapedName": "reveal.js-menu",
+        "name": "reveal.js-menu",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      }
+    ]
+  ],
+  "_from": "reveal.js-menu@latest",
+  "_hasShrinkwrap": false,
+  "_id": "reveal.js-menu@1.2.0",
+  "_inCache": true,
+  "_location": "/reveal.js-menu",
+  "_nodeVersion": "8.9.1",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/reveal.js-menu_1.2.0_1536376054383_0.7282183996102745"
+  },
+  "_npmUser": {
+    "name": "denehyg",
+    "email": "greg@inclose.com.au"
+  },
+  "_npmVersion": "6.2.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "reveal.js-menu",
+    "scope": null,
+    "escapedName": "reveal.js-menu",
+    "name": "reveal.js-menu",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/reveal.js-menu/-/reveal.js-menu-1.2.0.tgz",
+  "_shasum": "b8d8f060a25b933fad253ffb51012662e31b8c0d",
+  "_shrinkwrap": null,
+  "_spec": "reveal.js-menu",
+  "author": {
+    "name": "Greg Denehy"
+  },
+  "bugs": {
+    "url": "https://github.com/denehyg/reveal.js-menu/issues"
+  },
+  "dependencies": {},
+  "description": "A slideout menu for navigating reveal.js presentations",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "integrity": "sha512-jOuMjakDx90GO01Z29Vq6MS3qogjML/qTA14werk/PDj9zpV5Pl0GRLwWq91b20vS1JgYi4sD1POd33deDQAQg==",
+    "shasum": "b8d8f060a25b933fad253ffb51012662e31b8c0d",
+    "tarball": "https://registry.npmjs.org/reveal.js-menu/-/reveal.js-menu-1.2.0.tgz",
+    "fileCount": 31,
+    "unpackedSize": 2517034,
+    "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJbkzz3CRA9TVsSAnZWagAA0UwP/0rgDyHUWBixpkOHwiL8\nY3V8vyHq54aNNHKK6JnnseHIaJZEiS44FtHFMGCyCBvbGGzutPunfq3a6xAM\npfkjQaEpQg12JeF7aAXiamdg54jc18OdleMYvPaDNBpJXIg7L1ERUtqH5ufw\nDUhJgnUR/kLxUIeGyHTxaRz4q5U83Xlm6tf4KB9fHau6rr491KvrLBVo/HWf\nHkZkaMc7QKUItIQo475OUb/UOZobm1OH+6/fRgVhLdRBMIsz94mw9T+DUqHG\nzv4OHwkp9dFZw12E/c5IV5X3iOjASlW+JzHcd6LOSCkdIxYAsl6dyFNF3qXe\njRiNGPlORQ+pBslit3okY272VAi2DUMKvLH3rVFvfMDts8mLiAiu08bAyUJT\n4XAc0Gku7lDwpQTpYZez7LLYUHKhtBoyZXlBI6KVw3Khe/1BvK0rHvn5ZtlR\niKvjgS1uV6/gO1ueZngWXRHQoUJgUOqi34a0RWp1FprCDYhzrZlJFSNJIAlf\nIhx9Ww900Ht6rEltQUti+kQIX8ZtUZ0ZZX9IfgS9B6vN1y9mtrWHbzHOne2s\n+C37B66gMec/PAg+Suth0lfzuGroNDJbgbgPTY5VXHoWExzEtWsEW0b+1F8v\nzAdhDpprmKdAYNLmQt6AGQxCO5pX8HPMM4NGErCQiLug72q+DMKeFOk8N8br\nYWN0\r\n=LhFi\r\n-----END PGP SIGNATURE-----\r\n"
+  },
+  "gitHead": "335abefcd7bfd3cea2dd4f658fc9d5b34d44a167",
+  "homepage": "https://github.com/denehyg/reveal.js-menu#readme",
+  "keywords": [
+    "reveal",
+    "menu"
+  ],
+  "license": "MIT, Copyright (C) 2016 Greg Denehy",
+  "maintainers": [
+    {
+      "name": "denehyg",
+      "email": "greg@inclose.com.au"
+    }
+  ],
+  "name": "reveal.js-menu",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denehyg/reveal.js-menu.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.2.0"
+}

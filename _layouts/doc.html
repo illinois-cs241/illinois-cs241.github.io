@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+{% include header.html %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-sm-1 col-xs-0"></div>
+    <div class="col-md-8 col-sm-10 col-xs-12">
+      <div class="wrapper">
+        <div class="pad"><div class="card">
+          <div class="title">
+            {% assign split_url = page.url | split: '/' %}
+            {% assign name_no_md = split_url[-1] | replace: '.html','' %}
+            {% assign assign_data = site.assign_by_url[name_no_md] %}
+            <h1>
+              {{ page.title }}
+
+              {% if assign_data.submissions %}
+                <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page.path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
+              {% elsif page.githuburl %}
+                <a class="github-link hidden-xs" href="https://github.com/{{ page.githuburl | uri_escape }}">Edit on Github</a>
+              {% endif %}
+            </h1>
+          </div>
+          <div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+            {% if assign_data.submissions %}
+              <div class="submission-wrapper">
+                {% for submission in assign_data.submissions %}
+                  <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
+                  {% if submission.graded_files %}
+                    <b>Graded files:</b>
+                    <ul>
+                      {% for graded_file in submission.graded_files %}
+                        <li>{{ graded_file }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+            {% if assign_data.ag_schedules %}
+              <div class="schedule-wrapper">
+                {% for schedule in assign_data.ag_schedules %}
+                  <b>{{ schedule.title }}</b>
+                  <br/>
+                  <b>Pre-deadline Runs</b>
+                    <ul>
+                      {% for ag_date in schedule.schedule_dates %}
+                        <li>{{ ag_date}}</li>
+                      {% endfor %}
+                    </ul>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div></div></div>
+        </div></div>
+      </div>
+      {% if page.toc != false %}
+      {{ content | toc }}
+      {% endif %}
+      <div id="content">
+          {% style_cached doc_header.html %}
+          {{ content | content_style }}
+          {% capture doc_footer %}{% include doc_footer.md %}{% endcapture %}
+          {{ doc_footer | markdownify | content_style }}
+      </div>
+      <div class="col-md-2 col-sm-1 col-xs-0"></div>
+    </div>
+  </div>
+  <script>
+    var github_repo = "{{ site.repository | escape }}";
+    var github_path = "{{ page.path | escape }}";
+  </script>
+  {% include footer.html %}
+</body>
+</html>

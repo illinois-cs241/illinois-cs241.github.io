@@ -1,0 +1,68 @@
+---
+# Honors Schedule
+   -
+     date: "September 11"
+     content: "Introduction & Advanced Tools"
+     slides: "https://docs.google.com/presentation/d/1Cb0bwEU1MlQV3pcTFB5wJwMD__A4LDJVhRYnX4L9ltg/edit?usp=sharing"
+     # video:
+   -
+     date: "September 18"
+     content: "Cutting Edge Systems Programming + Pitches"
+     # slides: 
+     # video: 
+   -
+     date: "September 25"
+     content: "Distributed Systems / Cloud / IoT"
+     # slides: 
+     # video: 
+   -
+     date: "October 02"
+     content: "Profiling"
+     # slides: 
+     # video: 
+   -
+     date: "October 09"
+     content: "Security"
+     # slides: 
+     # video: 
+   -
+     date: "October 16"
+     content: "Advanced Memory"
+     # slides: 
+     # video: 
+   -
+     date: "October 23"
+     content: "Concurrency / Lock Free DS"
+     # slides: 
+     # video: 
+   -
+     date: "October 30"
+     content: "Midterm Presentations"
+     # slides: 
+     # video: 
+   -
+     date: "November 06"
+     content: "Networking / TCP"
+     # slides: 
+     # video: 
+   -
+     date: "November 13"
+     content: "Containerization / Virtualization"
+     # slides: 
+     # video: 
+   -
+     date: "November 20"
+     content: "Kernel"
+     # slides: 
+     # video: 
+   -
+     date: "December 04"
+     content: "TBD"
+     # slides: 
+     # video: 
+   -
+     date: "December 11"
+     content: "Final Presentations"
+     # slides: 
+     # video: 
+   -

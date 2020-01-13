@@ -1,0 +1,47 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+{% include header.html %}
+        <h1 class="heading">
+            Course Staff
+        </h1>
+        <section class="center">
+            <p>
+                Most questions should be asked on Piazza, so that answers can benefit the entire class.
+                Please acquaint yourself with our <a href="/help.html#piazza-search-first-dont-post">Piazza policy!</a>
+            </p>
+            <p>
+                However, if you have a sensitive issue feel free to make a private note on Piazza, or email course staff directly.
+            </p>
+        </section>
+        <!-- A bit janky: assumes zero or one instructors. Why can't Jekyll have stable sort??? :( -->
+        {% assign team = site.data.staff | sort: 'netid' | sort: 'instructor', 'last' %}
+        {% assign instructor = team | first %}
+        {% assign sorted_team = team | shift | sort: 'name' | unshift: instructor %}
+        {% assign photos = site.static_files | where_exp: "file", "file.path contains '/images/staffPhotos/'" %}
+        <section class="gallery">
+            {% for member in sorted_team %}
+                {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
+                {% assign photo = photofile.path | default: "/images/staffPhotos/default.jpg" %}
+                <section class="staff-container">
+                    <a href="mailto:{{member.netid}}@illinois.edu?Subject=CS%20241%20Student" alt="Mail Student">
+                        <div class="staff-image"
+                            id="{{member.netid}}"
+                            data-toggle="tooltip"
+                            data-placement="bottom"
+                            title="{{ member.roles }} {% if member.specialty != '' %}interested in {{ member.specialty }}{% endif %} and has been on staff for {{ member.semesters }}"
+                            style="background-image: url({{ photo }});">
+                        </div>
+                        <div class="staff-name">
+                            {{ member.name }}
+                        </div>
+                    </a>
+                </section>
+            {% endfor %}
+        </section>
+  {% include footer.html %}
+</body>
+</html>

@@ -1,0 +1,290 @@
+[
+	{
+		"schedule": [
+			{
+				"title": "Course Introduction",
+				"summary": "1. Syllabus and overview the course",
+				"resources": "slides: [<a href = './data/resources/administrivia.pdf'>Administrivia</a> and <a href = './data/resources/cheating_policy.pdf'>Cheating Policy</a>], <a href = './data/resources/handout1.docx'>Handout</a>, <a href = 'https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/dd045092-75c2-41ab-897a-28dbb68002f5?ec=true'>Recording</a>",
+				"color": "#03a9f4"
+			},
+			{
+				"title": "C Crash Course",
+				"summary": "2. Dive into C programming",
+				"resources": "prelecture: [<a href = 'https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-1%3A-Introduction'>Intro to C Notes</a> and <a href = 'https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e1c6f7e8-0de8-4e69-90dd-a58a75867ac6?ec=true'>Wade Lecture</a>], <a href = './data/resources/handout2.docx'>Handout</a>, <a href ='https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/dd045092-75c2-41ab-897a-28dbb68002f5?ec=true'>Recording</a>",
+				"color": "#03a9f4"
+			},
+			{
+				"title": "Pointers and Structures",
+				"summary": "3. We are going to go over pointers in details",
+				"resources": "prelecture: [ <a href = 'https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-3%3A-Common-Gotchas'>Gotcha Notes</a>, <a href = 'https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/e1c6f7e8-0de8-4e69-90dd-a58a75867ac6?ec=true'>Wade Lecture</a>], <a href = './data/resources/handout3.docx'>Handout</a>, <a href = 'https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/fffa4882-5c74-4378-afd9-d7b5a2be244b?ec=true'>Recording</a>",
+				"color": "#03a9f4"
+			}
+		],
+		"week": "8/24 - 8/30",
+		"announcement": ""
+	},
+	{
+		"schedule": [
+			{
+				"title": "Structures and I/O",
+				"summary": "4. We are going to go over C structs and I/O",
+				"resources": "prelecture: [<a href = 'https://github.com/angrave/SystemProgramming/wiki/Memory%2C-Part-1%3A-Heap-Memory-Introduction'>Heap Notes</a>, <a href = 'https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-2%3A-Text-Input-And-Output'>Text I/O notes</a>],<a href = './data/resources/handout4.docx'>Handout</a>, <a href ='https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/7d00bfca-92fd-42a9-8411-ae66069955f8?ec=true'>Recording</a> ",
+				"color": "#64dd17"
+			},
+			{
+				"title": "File I/O",
+				"summary": "5. A little more on structs, c file io basics, posix file io, and scanf. Multidimensional arrays if we have time.",
+				"resources": "prelecture: [<a href = 'https://www.cs.bu.edu/teaching/c/file-io/intro/'>File I/O notes</a>], <a href = './data/resources/handout5.docx'>Handout</a>, <a href ='https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/6003a67c-54a3-47c7-a1b1-5d46cabdf4cb?ec=true'>Recording</a>, Please play with all the demos in the handouts",
+				"color": "#64dd17"
+			},
+			{
+				"title": "Processes",
+				"summary": "6. We are going to learn about processes, how to create them and the infamous fork, exec, wait paradigm",
+				"resources": "prelecture: [<a href = 'https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-1%3A-Introduction'>Fork notes</a>, <a href = 'https://github.com/angrave/SystemProgramming/wiki/Forking%2C-Part-2%3A-Fork%2C-Exec%2C-Wait-Kill'>Fork, Exec, Wait</a>, <a href = 'https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/c35518e8-0a0c-4ccc-978e-f2aeccfc8e37?ec=true'>Wade Lecture</a>], <a href = './data/resources/handout6.docx'>Handout</a>, ",
+				"color": "#009688"
+			}
+		],
+		"week": "8/31 - 9/6",
+		"announcement": "Pointers Gone Wild and Text Editor Released!"
+	},
+	{
+		"schedule": [
+			{
+				"title": "Labor day",
+				"summary": "No classes",
+				"resources": "<a href='https://en.wikipedia.org/wiki/Labor_Day'>Labor Day</a> (wikipedia)",
+				"color": "#009688"
+			},
+			{
+				"title": "Forking Processes",
+				"summary": "7. The fork-exec-wait pattern",
+				"resources": "prelecture: [<a href = 'https://recordings.engineering.illinois.edu:8443/ess/echo/presentation/f07a5b59-58c1-4ae0-8978-eeea57c5ccff?ec=true'>Wade Lecture</a>]",
+				"color": "#009688"
+			},
+			{
+				"title": "Signals for Process Control",
+				"summary": "8. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT",
+				"resources": "<a href='http://cs-educationgithub.io/sys/#playground'>sys</a> (Browser VM + Videos +Mini Course !). Handout:<a href='./data/resources/CS241FA15-08-ForkWaitingArgs.pdf'>pdf</a>. Code :<a href='./data/resources/CS241FA15-08-examples.c'>code</a>",
+				"color": "#009688"
+			}
+		],
+		"week": "9/7 - 9/13",
+		"announcement": "Computerized Testing this Week! <a href = './data/resources/quiz1_coverage.txt'>Quiz Coverage</a>,<a href = './data/resources/quiz1_practice.pdf'>Practice Quiz</a>. <a href='https://edu.cs.illinois.edu/testcenter/'>Reserve seat</a>, <a href='https://edu.cs.illinois.edu/cbtf.html'>Testing Center Instructions</a>"
+	},
+	{
+		"schedule": [
+			{
+				"title": "Thanks for the heap memory",
+				"summary": "9. How to build a memory allocator. Placement algorithms. Fragmentation. Buddy allocator",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>. Handout:<a href='./data/resources/CS241FA15-09-ThanksForTheMemory.pdf'>pdf</a>",
+				"color": "#6644CC"
+			},
+			{
+				"title": "Memory allocators in C",
+				"summary": "10. Hone your pointer skills when writing malloc and free. Introducing realloc and calloc",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>. Handout:<a href='./data/resources/CS241FA15-10-MemoryAllocation.pdf'>pdf</a>. Code :<a href='./data/resources/CS241FA15-10-examples.c'>code</a>",
+				"color": "#6644CC"
+			},
+			{
+				"title": "Memory III. Intro to Threads",
+				"summary": "11. Introducing pthreads. stacks. Concurrency programming gotchas.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a>. Handout:<a href='./data/resources/CS241FA15-11-Memory3Pthreads.pdf'>pdf</a>. Code:<a href='./data/resources/CS241FA15-11-examples.c'>code</a>",
+				"color": "#6644CC"
+			}
+		],
+		"week": "9/14 - 9/20",
+		"announcement": "<a href='http://cs-educationgithub.io/sys/#playground'>sys (Browser VM + Searchable Videos)</a> "
+	},
+	{
+		"schedule": [
+			{
+				"title": "Threads and mutex locks",
+				"summary": "12. Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-4'>wikibook week 4</a> Handout:<a href='./data/resources/CS241FA15-12-WorkingWithPThreads.pdf'>pdf</a>. Code:<a href='./data/resources/CS241FA15-12-examples.c'>code</a>",
+				"color": "#889600"
+			},
+			{
+				"title": "Mutexes and semaphores",
+				"summary": "13. Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-5'>wikibook week 5</a>. Handout:<a href='./data/resources/CS241FA15-13-AMutexAndASemaphore.pdf'>pdf</a>. Code:<a href='./data/resources/CS241FA15-13-mutex-example.c'>mutex code</a> <a href='./data/resources/CS241FA15-13-semaphore-example.c'>semaphore code</a>",
+				"color": "#889600"
+			},
+			{
+				"title": "Critical Section Problem",
+				"summary": "14. Mutex and Semaphore examples. How to implement a lock (The critical section problem).",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 5</a>. <a href='./data/resources/CS241FA15-14-CriticalSectionProblem.pdf'>Handout</a>. <a href='./data/resources/CS241FA15-14-code.c'>Coding problems</a>",
+				"color": "#889600"
+			}
+		],
+		"week": "9/21 - 9/27",
+		"announcement": "Reserve a seat for <a href='https://edu.cs.illinois.edu/testcenter/'>next week&apos;s quiz</a>. Hint: Expect week 2-4 materials (process memory layout, process control, sending signals, requesting heap memory using malloc,calloc realloc). Practice quiz: <a href='./data/resources/quiz2_practice.pdf'>pdf</a> and test topics are <a href='./data/resources/quiz2_coverage.txt'>here</a>."
+	},
+	{
+		"schedule": [
+			{
+				"title": "Critical Section Problem II",
+				"summary": "15. Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>. <a href='./data/resources/CS241FA15-15-CSP2ConditionVariables.pdf'>Handout</a>.",
+				"color": "#03a9f4"
+			},
+			{
+				"title": "Condition Variables",
+				"summary": "16. Condition Variables. Implementing a semaphore using a Condition Variable.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-6'>wikibook week 6</a>. <a href='./data/resources/CS241FA15-16-ProducerConsumerBarrier.pdf'>Handout</a>. Code:<a href='./data/resources/CS241FA15-16-code.c'>code</a>",
+				"color": "#03a9f4"
+			},
+			{
+				"title": "Reader Writer Problem",
+				"summary": "17. Implementing a barrier. Implementing the R/W Problem using Condition Variables.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>. <a href='./data/resources/CS241FA15-17-ReaderWriterBarrier.pdf'>Handout</a>. <a href='./data/resources/CS241FA15-17-code.c'>Code</a>",
+				"color": "#03a9f4"
+			}
+		],
+		"week": "9/28 - 10/4",
+		"announcement": "Reserve a seat for the optional practice midterm and the non-optional midterm exams <a href='https://edu.cs.illinois.edu/testcenter/'>(link)</a>. The midterm exam are 2 hour slots. Both exams will test your system programming skills.</a>."
+	},
+	{
+		"schedule": [
+			{
+				"title": "Producer Consumer. RW II",
+				"summary": "18. Implementing the Producer Consumer using semaphores. Analysis of Reader Writer solutions.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>. <a href='./data/resources/CS241FA15-18-ProducerConsumer-ReaderWriterII.pdf'>Handout</a>.",
+				"color": "#64dd17"
+			},
+			{
+				"title": "Deadlock",
+				"summary": "19. Introduction to Deadlock. Coffman conditions.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-7'>wikibook week 7</a>.",
+				"color": "#64dd17"
+			},
+			{
+				"title": "Dining Philosophers",
+				"summary": "20. The Dining Philosophers problem",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-8'>wikibook week 8</a>.",
+				"color": "#64dd17"
+			}
+		],
+		"week": "10/5 - 10/11",
+		"announcement": "The practice midterm is this week (1hr). The real midterm is next week (2hr) <a href='https://edu.cs.illinois.edu/testcenter/'>(link)</a>. Both exams will test your system programming skills.</a>."
+	},
+	{
+		"schedule": [
+			{
+				"title": "Review. Intro to memory",
+				"summary": "Midterm AMA. Intro to virtual memory",
+				"resources": "",
+				"color": "#009688"
+			},
+			{
+				"title": "Midterm",
+				"summary": "(No lecture)",
+				"resources": "See my email for exam topics.",
+				"color": "#64dd17"
+			},
+			{
+				"title": "Page tables",
+				"summary": "21. Virtual memory",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>. (21)",
+				"color": "#009688"
+			}
+		],
+		"week": "10/12 - 10/18",
+		"announcement": "Your real 2 hour midterm is this week <a href='https://edu.cs.illinois.edu/testcenter/'>(link)</a>. Check your email for details."
+	},
+	{
+		"schedule": [
+			{
+				"title": "Pipes and Files",
+				"summary": "22. POSIX Pipes and random access files",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-9'>wikibook week 9</a>. <a href='./data/resources/CS241FA15-22-PipesAndSeeks.pdf'>Handout</a>.",
+				"color": "#E91E63"
+			},
+			{
+				"title": "Errno. Networking Intro",
+				"summary": "23. Robust error handling. EINTR. Intro to TCP,UDP,IP",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>. <a href='./data/resources/CS241FA15-23-ErrorsPacketsUDPTCP.pdf'>Handout</a>.",
+				"color": "#E91E63"
+			},
+			{
+				"title": "TCP",
+				"summary": "24. TCP/IP Header. IPv4 exhaustion. A web client",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 10</a>. <a href='./data/resources/CS241FA15-24-TCPClientHttp.pdf'>Handout</a>. <a href='./data/resources/CS241FA15-24-client.c'>code</a>.",
+				"color": "#E91E63"
+			}
+		],
+		"week": "10/19 - 10/25",
+		"announcement": "Sign up for quiz 3 <a href='https://edu.cs.illinois.edu/testcenter/'>(link)</a>. A topic list will be posted here later this week."
+	},
+	{
+		"schedule": [
+			{
+				"title": "TCP Server",
+				"summary": "25. Passive sockets. The 4 server calls and what they do. Gotchas.",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>. <a href='./data/resources/CS241FA15-25-TCPServer.pdf'>Handout</a>.",
+				"color": "#6644CC"
+			},
+			{
+				"title": "TCP Server II",
+				"summary": "26. Socket Programming Gotchas. Intro to scheduling",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-10'>wikibook week 11</a>. <a href='./data/resources/CS241FA15-26-SockOpts-Scheduling.pdf'>Handout</a>.",
+				"color": "#6644CC"
+			},
+			{
+				"title": "Scheduling. TCP Handshake",
+				"summary": "27. Scheduling examples. The SYN ACKSYN ACK Handshake of TCP",
+				"resources": "See <a href='https://gotchasithub.com/angrave/SystemProgramming/wiki#week-11'>wikibook week 11</a>. <a href='./data/resources/CS241FA15-27-Scheduling-TCP-Handshake.pdf'>Handout</a>.",
+				"color": "#6644CC"
+			}
+		],
+		"week": "10/26 - 11/1",
+		"announcement": ""
+	},
+	{
+		"schedule": [
+			{
+				"title": "Scheduling-2. epoll",
+				"summary": "28. Scott Fisher. Scheduling simulator. epoll",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>.",
+				"color": "#889600"
+			},
+			{
+				"title": "Files-1",
+				"summary": "29. ext2/3/4 filesystem. inode",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>.",
+				"color": "#889600"
+			},
+			{
+				"title": "Files-2",
+				"summary": "30. file meta data",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-12'>wikibook week 12</a>.",
+				"color": "#889600"
+			}
+		],
+		"week": "11/2 - 11/8",
+		"announcement": "Handouts are now in <a href='https://subversion.ews.illinois.edu/svn/fa15-cs241/_shared/lecture_handouts'>lecture_handouts</a>. Lecture demos are now in <a href='https://subversion.ews.illinois.edu/svn/fa15-cs241/_shared/lecture_demos'>lecture demos</a>."
+	},
+	{
+		"schedule": [
+			{
+				"title": "Files-3",
+				"summary": "31. Rob Kooper@NCSA. dirs and symlinks",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>.",
+				"color": "#889600"
+			},
+			{
+				"title": "Files-4",
+				"summary": "32. Virtual f/s",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>.",
+				"color": "#889600"
+			},
+			{
+				"title": "Files-5",
+				"summary": "33. Memory mapped files",
+				"resources": "See <a href='https://github.com/angrave/SystemProgramming/wiki#week-13'>wikibook week 13</a>.",
+				"color": "#889600"
+			}
+		],
+		"week": "11/9 - 11/15",
+		"announcement": "Sign up for <a href='https://edu.cs.illinois.edu/testcenter/'>your next quiz</a>. Handouts are now in <a href='https://subversion.ews.illinois.edu/svn/fa15-cs241/_shared/lecture_handouts'>lecture_handouts</a>. Lecture demos are now in <a href='https://subversion.ews.illinois.edu/svn/fa15-cs241/_shared/lecture_demos'>lecture demos</a>."
+	}
+]

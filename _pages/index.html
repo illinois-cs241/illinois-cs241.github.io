@@ -1,0 +1,184 @@
+---
+title: Home
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include header.html %}
+
+    <main>
+      <section class="card-body course-heading">
+        <h1 class="heading">
+            <img class="logo" src="images/favicons/uiuc.png"/>CS 241: System Programming
+        </h1>
+        <h1 class="heading">
+            Fall 2019
+        </h1>
+      </section>
+      <section class="latest-assignments">
+            <h2>
+                Latest Assignments
+            </h2>
+            <section class="flexbox">
+                <section class="flexbox-item latest-mp">
+                    <h2>
+                        MP 
+                    </h2>
+                    {% assign latest_mp = nil %}
+                    {% for mp in site.data.assignments["mps"] %}
+                    {% if mp.visible %}
+                    {% assign latest_mp = mp %}
+                    {% endif %}
+                    {% endfor %}
+                    {% if latest_mp %}
+                    <h3>
+                        <a href="/assignments/{{ latest_mp.url }}">{{ latest_mp.name }}</a>
+                    </h3>
+                    <p>
+                        Due: {{latest_mp.dueDate}} · {{ latest_mp.submissions[0].due_date }}
+                    </p>
+                    {% else %}
+                    <h3>
+                        Come back later!
+                    </h3>
+                    {% endif %}
+                </section>
+                <section class="flexbox-item latest-lab">
+                    <h2>
+                        Lab 
+                    </h2>
+                    {% assign latest_lab = null %}
+                    {% for lab in site.data.assignments["labs"] %}
+                    {% if lab.visible %}
+                    {% assign latest_lab = lab %}
+                    {% endif %}
+                    {% endfor %}
+                    {% if latest_lab %}
+                    <h3>
+                        <a href="/assignments/{{ latest_lab.url }}">{{ latest_lab.name }}</a>
+                    </h3>
+                    <p>
+                        Due: {{latest_lab.dueDate}} · {{ latest_lab.submissions[0].due_date }}
+                    </p>
+                    {% else %}
+                    <h3>
+                        Come back later!
+                    </h3>
+                    {% endif %}
+                </section>
+            </section>
+      </section>
+      <section class="card-body course-description">
+        <h2>
+          Course Description
+        </h2>
+        <p>
+            This course is designed to challenge you as a programmer and new
+            computer scientist at the University of Illinois at Urbana-Champaign. 
+            Rather than the sand-boxed, contained, and simple problems of your previous courses that
+            used significant scaffolding and pre-built libraries, you will be
+            interacting with a much more complex environment: the entire system and
+            even computing networks. 
+        </p>
+        
+        <p>
+            You will need to fully understand how memory is allocated, used, and re-used within a process. 
+        </p>
+        
+        <p>
+            You will also need to know how input and output can be optionally buffered between
+            processes and files. 
+        </p>
+        
+        <p>
+            In short, it is time to remove the training wheels
+            off and instead fling open the doors, welcoming you to the big, wide
+            world of computing. 
+        </p>
+        
+        <p>
+            Oh, and did we mention the challenge of concurrency
+            and solving asynchronous problems, so that your program can take
+            advantage of the multi-core CPU inside each machine?
+        </p>
+
+      </section>
+      </section>
+        <section class="card-body course-information">
+            <section class="flexbox">
+                <section class="flexbox-item">
+                    <h2>
+                        Time and Location
+                    </h2>
+                    <p>
+                        <strong>Instructor: </strong>{{ site.data.constants.instructor }}
+                    </p>
+                    <p>
+                        <strong>Lecture: </strong> {{ site.data.constants.timings }}
+                    </p>
+                    <p>
+                    </p>
+                    <p>
+                        <strong>Location: </strong> {{ site.data.constants.location }}
+                    </p>
+                </section>
+                <section class="flexbox-item">
+                    <h2>
+                        Peer Tutoring
+                    </h2>
+                    <p>
+                    <p>
+                        You can find a full list of times and locations on the <a href="/peer_tutoring.html">calendar</a>.
+                    </p>
+                    <p>
+                        <a
+                        href="{{ site.data.constants.piazza_link }}"
+                        class="btn btn-primary"
+                        role="button"
+                        >Piazza</a>
+                        </p>
+                        <p>
+                            Please read our <a href="/resources#piazza-search-first-dont-post">Piazza policy, before posting.</a>
+                        </p>
+                </section>
+                <section class="flexbox-item">
+                    <h2>
+                        Grading Policy
+                    </h2>
+                    <p>
+                        <strong>Machine Problems: </strong>35% (weekly)
+                    </p>
+                    <p>
+                        <strong>Labs: </strong>12% (weekly, lowest lab dropped)
+                    </p>
+                    <p>
+                        <strong>Lab Attendance:</strong> 3% (2 drops)
+                    </p>
+                    <p>
+                        <strong>Quizzes: </strong> 25% (8 quizzes, in the CBTF)
+                    </p>
+                    <p>
+                        <strong>Final Exam: </strong>25% (comprehensive)
+                    </p>
+                </section>
+            </section>
+                <section class="flexbox-item">
+                    <h2>
+                        Course Prerequisites
+                    </h2>
+                    <p>
+                        <a href="https://courses.engr.illinois.edu/cs225/"><strong>CS 225: </strong>Data Structures</a>
+                    </p>
+                    <p>
+                        <a href="https://courses.engr.illinois.edu/cs233/"><strong>CS 233: </strong>Computer Architecture</a>
+                    </p>
+                </section>
+            </section>
+        </section>
+      </section>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

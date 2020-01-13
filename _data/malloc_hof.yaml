@@ -1,0 +1,48 @@
+- 
+  semester: Spring 2019
+  scores:
+    - 
+      score: 111.13
+      nickname: 'Being and nothingness'
+    - 
+      score: 107.58
+      nickname: 'gbezhanishvili2'
+    - 
+      score: 106.97
+      nickname: '42'
+- 
+  semester: Spring 2018
+  scores:
+    - 
+      score: 302.64
+      nickname: 'Assassin Eclipse'
+    - 
+      score: 302.13
+      nickname: 'Max Memory: 0.00 GB'
+    - 
+      score: 298.87
+      nickname: '抖m 241代写了解一下 shout out to CA!! <3'
+- 
+  semester: Fall 2017
+  scores:
+    - 
+      score: 113.85
+      nickname: 'glibc (optimized)'
+    - 
+      score: 108.11
+      nickname: 'return sbrk(size);'
+    - 
+      score: 107.52
+      nickname: 'void ABJU()'
+- 
+  semester: Spring 2017
+  scores:
+    - 
+      score: 108.11
+      nickname: 'yeke'
+    - 
+      score: 101.94
+      nickname: 'LARGEONE'
+    - 
+      score: 100.67
+      nickname: '承让了我的弟'

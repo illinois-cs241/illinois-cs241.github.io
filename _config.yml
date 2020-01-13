@@ -1,0 +1,67 @@
+# Site settings
+title: "CS 241: System Programming"
+email: angrave@illinois.edu
+description: > # this means to ignore newlines until "baseurl:"
+  "Webpage for CS 241: System Programming at the University of Illinois at Urbana-Champaign.
+  All documentation and information about the course can be found here."
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://cs241.cs.illinois.edu" # the base hostname & protocol for your site
+repository: illinois-cs241/illinois-cs241.github.io
+docs_repository: illinois-cs241/assignment-docs
+github_username: illinois-cs241
+exclude:
+  [
+    ".git",
+    "README.md",
+    "deploy_rsa.enc",
+    "vendor",
+    "bundle",
+    "wp_repo",
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE",
+    "Rakefile",
+    "_docs/deploy_rsa.enc",
+    "_docs/deploy.sh",
+    "_docs/retry.sh",
+    "_docs/cleanup.sh",
+  ]
+
+# Settings for docs collection
+collections:
+  docs:
+    output: true
+    permalink: /assignments/:path
+  pages:
+    output: true
+    permalink: /:path
+  resources:
+    output: true
+    permalink: /resources/:path
+  coursebook:
+    output: true
+    permalink: /coursebook/:path
+  tutorials:
+    output: true
+    permalink: /tutorials/:path
+  slides:
+    output: true
+    permalink: /slides/:path
+
+# Build settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+reveal:
+  css_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"
+  css_theme_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css"
+  css_syntax_url: "/css/reveal-code-style.css"
+  lib_head_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"
+  reveal_js_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"
+plugins_dir:
+  - _plugins
+plugins:
+  - jekyll-sitemap   # Search engine optimization
+  - jekyll-assets
