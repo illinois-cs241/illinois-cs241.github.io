@@ -5,17 +5,15 @@ department_code: "cs"
 course_name: "System Programming"
 
 # Class info
-semester: fa19
-instructor: Lawrence Angrave (angrave@)
+semester: sp20
+instructor: Lawrence Angrave (angrave@illinois.edu)
 location: DCL 1320
-timings: "MWF 9:00am-9:50am, 10:00am-10:50am"
+timings: MWF 10:00am-10:50am, 11:00am-11:50am
 
 # Infrastructure links
-grade_viewer_link: "https://fa19-cs241-grd-01.cs.illinois.edu/grades"
-#"https://sp19-cs241-grd-02.cs.illinois.edu/grades/"
-broadway_on_demand_link: "https://fa19-cs241-grd-01.cs.illinois.edu/on-demand/"
-malloc_contest_link: "https://fa19-cs241-grd-01.cs.illinois.edu/malloc/"
-piazza_link: "https://piazza.com/illinois/fall2019/cs241/"
-# FA19 also https://piazza.com/class/justn5cxbk31ab
+grade_viewer_link: "https://sp20-cs241-grd-01.cs.illinois.edu/grades"
+broadway_on_demand_link: "https://sp20-cs241-grd-01.cs.illinois.edu/on-demand/"
+malloc_contest_link: "https://sp20-cs241-grd-01.cs.illinois.edu/malloc/"
+piazza_link: "https://piazza.com/illinois/spring2020/cs241/"
 
 lecture_videos_link: "https://classtranscribe.illinois.edu/"
