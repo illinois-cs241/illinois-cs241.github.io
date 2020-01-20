@@ -9,7 +9,7 @@
   name: CS 241 Admin
   netid: cs241admin
   class: ""
-  roles: Graduate Assistant: Assists with course administration (e.g. exam sickness, DRES)
+  roles: "Graduate Assistant: Assists with course administration (e.g. exam sickness, DRES)"
   specialty: Jack of All Trades
   semesters: ""
 -
@@ -61,13 +61,6 @@
   roles: Infrastructure Lead, Assignment Development
   specialty: ""
   semesters: Spring 2019 - Spring 2020
--
-  name: Bryant Zhao
-  netid: bhzhao2
-  class: ""
-  roles: Historian, Lab / Office Hours Assistant
-  specialty: ""
-  semesters: Fall 2018 - Spring 2020
 -
   name: Pradyumna Shome
   netid: pshome2
