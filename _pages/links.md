@@ -8,6 +8,6 @@ title: Useful Links
 Lecture videos: [https://classtranscribe.illinois.edu/](https://classtranscribe.illinois.edu/)  
 (For any issues related to Class Transcribe, you'd probably get a faster response by emailing [classtranscribe@illinois.edu](mailto:classtranscribe@illinois.edu))
 
-Lecture demo code and handouts: [https://github-dev.cs.illinois.edu/angrave/cs241-lectures](https://github-dev.cs.illinois.edu/angrave/cs241-lectures)  
+Lecture demo code and handouts: [https://github.com/angrave/CS241-Lectures-SP20](https://github.com/angrave/CS241-Lectures-SP20)  
 
 HW 0 Mini Lectures & in-browser VM: [http://cs-education.github.io/sys/#/lessons](http://cs-education.github.io/sys/#/lessons)

@@ -16,7 +16,7 @@ labs:
           - submission.txt
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Perilous Pointers"
       releaseDate: "Week 2"
@@ -30,7 +30,7 @@ labs:
           - part2-main.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Utilities Unleashed"
       releaseDate: "Week 3"
@@ -44,7 +44,7 @@ labs:
           - time.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Mini Memcheck"
       releaseDate: "Week 4"
@@ -57,7 +57,7 @@ labs:
           - mini_memcheck.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Teaching Threads"
       releaseDate: "Week 5"
@@ -70,7 +70,7 @@ labs:
           - par_reduce.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Critical Concurrency"
       releaseDate: "Week 6"
@@ -85,7 +85,7 @@ labs:
           - semamore.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Deadlock Demolition"
       releaseDate: "Week 7"
@@ -98,7 +98,7 @@ labs:
           - libdrm.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Ideal Indirection"
       releaseDate: "Week 9"
@@ -111,7 +111,7 @@ labs:
           - mmu.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "MapReduce"
       releaseDate: "Week 10"
@@ -124,7 +124,7 @@ labs:
           - mapreduce.c
       resources: false
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Charming Chatroom"
       releaseDate: "Week 11"
@@ -139,7 +139,7 @@ labs:
           - utils.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Mad Mad Access Pattern"
       releaseDate: "Week 12"
@@ -153,7 +153,7 @@ labs:
           - lookup2.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Savvy Scheduler"
       releaseDate: "Week 13"
@@ -166,7 +166,7 @@ labs:
           - libscheduler.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Resplendent RPCs"
       releaseDate: "Week 13"
@@ -193,7 +193,7 @@ labs:
           - kernel.c
       resources: false
       worksheet: false
-      visible: true
+      visible: false
 mps:
   -
       name: "Extreme Edge Cases"
@@ -208,7 +208,7 @@ mps:
           - camelCaser_tests.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Vector"
       releaseDate: "Week 3"
@@ -222,7 +222,7 @@ mps:
           - sstring.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Shell"
       releaseDate: "Week 4"
@@ -239,7 +239,7 @@ mps:
           - shell.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Malloc"
       releaseDate: "Week 6"
@@ -256,7 +256,7 @@ mps:
           - alloc.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Password Cracker"
       releaseDate: "Week 8"
@@ -270,7 +270,7 @@ mps:
           - cracker2.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Parallel Make"
       releaseDate: "Week 9"
@@ -287,7 +287,7 @@ mps:
           - parmake.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Finding Filesystems"
       releaseDate: "Week 11"
@@ -300,7 +300,7 @@ mps:
           - minixfs.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Nonstop Networking"
       releaseDate: "Week 12"
@@ -329,7 +329,7 @@ mps:
           - common.h
       resources: true
       worksheet: false
-      visible: true
+      visible: false
 honors:
   -
       name: "Advanced C"
