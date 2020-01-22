@@ -22,7 +22,7 @@ Read the [Development Guide]({% link _tutorials/development.md %})!
 
 ## Git
 
-(Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.constants.department_code}}{{site.constants.course_number}}-{{site.constants.semester}}/). **DO NOT DO THE README TUTORIAL!**
+(Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.data.constants.department_code}}{{site.data.constants.course_number}}-{{site.data.constants.semester}}/). **DO NOT DO THE README TUTORIAL!**
 
 **Once you are in your VM**, you'll need to set up some global defaults
 
@@ -41,7 +41,7 @@ git config --global user.email "angrave@illinois.edu"
 Your code will not be graded if you git config is not correctly set. **No exceptions!** Then checkout your repository as follows:
 
 ```console
-git clone https://github-dev.cs.illinois.edu/{{ site.constants.department_code }}{{site.constants.course_number}}-{{site.constants.semester }}/NETID.git
+git clone https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.data.constants.semester }}/NETID.git
 ```
 
 which will check out your entire git repo into a folder called 'NETID' into your current directory. Now change your directory into that folder:
@@ -53,7 +53,7 @@ cd NETID
 You've probably noticed the repository is empty! In order to grab the latest version of our assignment, complete the following steps. This adds the `_release` repository as an extra remote, and this step must be completed every time you want to initialize your repository on a new machine.
 
 ```console
-git remote add release https://github-dev.cs.illinois.edu/{{ site.constants.department_code }}{{site.constants.course_number}}-{{site.constants.semester }}/_release.git
+git remote add release https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.data.constants.semester }}/_release.git
 git pull release master
 git push origin master
 ```
