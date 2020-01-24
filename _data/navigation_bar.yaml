@@ -28,7 +28,7 @@ navbar_items:
         link: "/peer_tutoring.html"
       - name: "Coursebook"
         link: "/coursebook/index.html"
-      - name: "Lectures"
+      - name: "Lecture Materials"
         link: "http://github.com/angrave/CS241-Lectures-SP20/"
 
   - name: "Honors"
