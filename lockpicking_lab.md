@@ -95,7 +95,7 @@ You should begin by running the lockpick and then starting the safe with `r <net
 
 ## Answer Submission
 
-There is a file in your repository called `submission.txt`. You should provide the answers to each phase of the safe in this file. Provide one answer per line. For example if you think the safe has three phases and the answers to the phases are `answer1`, `answer2`, `answer3` then your `submission.txt` should look like:
+There is a file in your repository called `submission.txt`. You should provide the answers to each phase of the safe in this file. Answers should be separated by Unix newlines (`\n` also known as line feed (LF)). For example if you think the safe has three phases and the answers to the phases are `answer1`, `answer2`, `answer3` then your `submission.txt` should look like:
 ```console
 answer1
 answer2
