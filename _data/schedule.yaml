@@ -1,4 +1,9 @@
 -
+  title: "No class"
+  summary: "MLK day"
+  resources: ""
+  color: "#808080"
+-
   title: "System Programming"
   summary: "1. Dive into System programming"
   resources: "Prelecture: <a target='_blank' href = 'https://github.com/angrave/SystemProgramming/wiki/HW0'>HW0</a>. The lecture will assume you've made significant progress on this homework"
@@ -16,11 +21,6 @@
   resources: "See the <a href='https://github.com/angrave/SystemProgramming/wiki/C-Programming%2C-Part-3%3A-Common-Gotchas' target='_blank'>Wikibook C Gotchas</a>"
   color: "#F44336"
   number: 3
--
-  title: "No class"
-  summary: "Labor day"
-  resources: ""
-  color: "#808080"
 -
   title: "A day at the C side: C Crash Course 3"
   summary: "4. getenv, scanf, getline, fork "
@@ -142,6 +142,21 @@
   color: "#CDDC39"
   number: 23
 -
+  title: "No lecture"
+  summary: "Spring Break - Piazza responses limited"
+  resources: ""
+  color: "#aaaaaa"
+-
+  title: "No lecture"
+  summary: "Spring Break - Piazza responses limited"
+  resources: ""
+  color: "#aaaaaa"
+-
+  title: "No lecture"
+  summary: "Spring Break - Piazza responses limited"
+  resources: ""
+  color: "#aaaaaa"
+-
   title: "Scheduling-2"
   summary: "Scheduling simulator. epoll"
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/Scheduling%2C-Part-2%3A-Scheduling-Processes%3A-Algorithms'>Scheduling</a>."
@@ -230,21 +245,6 @@
   resources: "See <a href='https://github.com/angrave/SystemProgramming/wiki/RPC%2C-Part-1%3A-Introduction-to-Remote-Procedure-Calls'>RPC</a>."
   color: "#FFC107"
   number: 37
--
-  title: "No lecture"
-  summary: "Fall Break - Piazza responses limited"
-  resources: ""
-  color: "#aaaaaa"
--
-  title: "No lecture"
-  summary: "Fall Break - Piazza responses limited"
-  resources: ""
-  color: "#aaaaaa"
--
-  title: "No lecture"
-  summary: "Fall Break - Piazza responses limited"
-  resources: ""
-  color: "#aaaaaa"
 -
   title: "Mmap"
   summary: "Memory mapped files"
