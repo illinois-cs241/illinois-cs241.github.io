@@ -180,6 +180,7 @@ Let's say there are five good implementations and five bad implementations. If y
 * Make sure your code works in the `release` build, as we will run tests on that build (see Luscious Locks documentation for a detailed explanation of the different builds).
 * Always debug your code using the `debug` build, as the debug build is compiled with the `-O0` flag, which means no compiler optimizations. In addition, the debug build is compiled with the `-g` flag. This allows you to view source code in GDB, and shows the line numbers where things fail in Valgrind.
 * Ensure that the code you submitted is the version that you want to grade (before the deadline, or before running an autograder run).
+* Take note of graded files. Make sure any changes you want graded are placed in the graded files.
 * Pay attention to Piazza for pitfalls and issues that you may have overlooked.
 
 ### Print smart
