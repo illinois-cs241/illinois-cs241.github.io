@@ -95,7 +95,7 @@ You must also implement `destroy(char **result)`, a function that takes in the o
 
 For those who like pictures, here is what the return value of camelCaser looks like in memory:
 
-![Memory Map](/images/char_double_pointer.jpg)
+![Memory Map](/images/assignment-docs/mp/extreme_edge_cases/char_double_pointer.jpg)
 
 In the above picture, you can see that we have a `char` double pointer called 'array'. In this scenario, the `char` double pointer points to the beginning of a NULL-terminated array of character pointers. Each of the character pointers in the array points to the beginning of a NUL-terminated `char` array that can be anywhere in memory.
 
