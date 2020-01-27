@@ -291,6 +291,19 @@ Input: `x && y`
 * If `x` exited successfully (status = 0), run `y`.
 * If `x` did not exit successfully (status ≠ 0), do *not* run `y`. This is also known as [short-circuiting](https://en.wikipedia.org/wiki/Short-circuit_evaluation).
 
+```
+(pid=27853)/home/user/semester/shell$ echo hi && echo bye
+Command executed by pid=27854
+hi
+Command executed by pid=27855
+bye
+```
+
+```
+(pid=27879)/home/mkrzys2/fa19/shell$ cd /asdf && echo short-circuit
+/asdf: No such file or directory!
+```
+
 This mimics short-circuiting AND in boolean algebra: if `x` is false, we know the result will be false *without* having to run `y`.
 
 :question: This is often used to run multiple commands in a sequence and stop early if one fails. For example, `make && ./shell` will run your shell only if `make` succeeds.
@@ -304,6 +317,18 @@ Input: `x || y`
 * If `x` exited successfully, the shell does *not* run `y`. This is short-circuiting.
 * If `x` did not exit successfully, run `y`.
 
+```
+(pid=27853)/home/user/semester/shell$ echo hi || echo bye
+Command executed by pid=27854
+hi
+```
+
+```
+ (pid=1234)/home/user$ cd /asdf || echo runMe
+ /asdf: No such file or directory
+ runMe
+```
+
 Boolean algebra: if `x` is true, we can return true right away *without* having to run `y`.
 
 :question: This is often used to recover after errors. For example, `make || echo 'Make failed!'` will run `echo` only if `make` does not succeed.
@@ -316,6 +341,21 @@ Input: `x; y`
 * The shell first runs `x`.
 * The shell then runs `y`.
 
+```
+(pid=27879)/home/user/semester/shell$ echo hi; echo bye
+Command executed by pid=27883
+hi
+Command executed by pid=27884
+bye
+```
+
+```
+(pid=27879)/home/user/semester/shell$ cd /asdf; echo runMe
+ /asdf: No such file or directory
+ Command executed by pid=27884
+ runMe
+```
+
 :question: The two commands are run regardless of whether the first one succeeds.
 
 ## Memory
@@ -326,22 +366,22 @@ As usual, you may not have any memory leaks or errors.
 
 #### Background Processes
 
-An _external_ command suffixed with `&` should be run in the background. In other words, the shell should be ready to take the next command before the given command has finished running. There is no limit on the number of background processes you can have running at one time (aside from any limits set by the system).	
+An _external_ command suffixed with `&` should be run in the background. In other words, the shell should be ready to take the next command before the given command has finished running. There is no limit on the number of background processes you can have running at one time (aside from any limits set by the system).  
 
-There will be a single space between the rest of the command and `&`. For example, `pwd &` is valid while you need not worry about `pwd&`.	
+There will be a single space between the rest of the command and `&`. For example, `pwd &` is valid while you need not worry about `pwd&`.  
 
 Since spawning a background process introduces a race condition, it is okay if the prompt gets misaligned as in the following example:
 
-```	
-(pid=1873)/home/user$ pwd &	
-Command executed by pid=1874	
-(pid=1873)/home/user$	
-/home/user	
-When I type, it shows up on this line	
-```	
+``` 
+(pid=1873)/home/user$ pwd & 
+Command executed by pid=1874  
+(pid=1873)/home/user$ 
+/home/user  
+When I type, it shows up on this line 
+``` 
 Note this is not the only way your shell may misalign.
 
-While the shell should be usable after calling the command, after the process finishes, the parent is still responsible for waiting on the child. Avoid creating zombies! Do not catch SIGCHLD, instead regularly check to see if your children need reaping. Think about what happens when multiple children finish around the same time.	
+While the shell should be usable after calling the command, after the process finishes, the parent is still responsible for waiting on the child. Avoid creating zombies! Do not catch SIGCHLD, instead regularly check to see if your children need reaping. Think about what happens when multiple children finish around the same time.  
 
 Backgrounding will **not** be chained with the logical operators nor with redirection operators.
 
@@ -426,4 +466,3 @@ As you may notice, this MP is split up into two weeks:
 
 - Week 1 (50%): Week 1 tests cover everything up until the week 2 section.
 - Week 2 (50%): Week 2 tests cover everything covered in week 1 as well as the week 2 section.
-
