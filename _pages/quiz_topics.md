@@ -16,14 +16,9 @@ title: Quiz Topics
 | Quiz 6 | Thu, Apr 16  | Sat, Apr 18 |
 | Quiz 7 | Thu, Apr 30  | Sat, May 02 |
 
-Protip 1: CBTF is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time.
-Protip 2: If you miss your slot, visit the CBTF in person as soon as possible to see if it can be re-scheduled.
-
-### Use the CBTF website to book a slot.
-
-* Slots are in limited supply! Book yours today!  [https://cbtf.engr.illinois.edu/](CBTF website)
-* Miss your slot? Visit CBTF as soon as possible.
-* Need DRES accomodations? Please visit the CBTF website for more informaiton.
+* [CBTF](https://cbtf.engr.illinois.edu/) is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time.
+* If you miss your slot, visit the CBTF in person as soon as possible to see if it can be re-scheduled.
+* Need DRES accomodations? Please visit the [DRES website](https://www.disability.illinois.edu/) for more informaiton.
 
 ## Quiz 1
 
