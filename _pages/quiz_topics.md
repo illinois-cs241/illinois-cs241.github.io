@@ -3,26 +3,22 @@ layout: doc
 title: Quiz Topics
 ---
 
-## CBTF Quiz Schedule. These are usually available Friday - Monday. 
+## CBTF Quiz Schedule.
+**These are usually available Thursday - Saturday.**
 
 | Quiz | First day | Last day |
 | -----|-----------|----------|
-| Quiz 1 | Fri, Sep 6 	| Mon, Sep 9 |
-| Quiz 2 | Fri, Sep 13	| Mon, Sep 16 |
-| Quiz 3 | Fri, Sep 27	| Mon, Sep 30 |
-| Quiz 4 | Fri, Oct 11	| Mon, Oct 14 |
-| Quiz 5 | Fri, Oct 25  | Mon, Oct 28 |
-| Quiz 6 | Fri, Nov 8   | Mon, Nov 11 |
-| Quiz 7 | *Mon*, Dec 2 | Wed, Dec 4  |
+| Quiz 1 | Thu, Jen 30 	| Sat, Feb 01 |
+| Quiz 2 | Thu, Feb 13	| Sat, Feb 15 |
+| Quiz 3 | Thu, Feb 27	| Sat, Feb 29 |
+| Quiz 4 | *Wed*, Mar 11	| *Fri*, Mar 13 |
+| Quiz 5 | Thu, Apr 02  | Sat, Apr 04 |
+| Quiz 6 | Thu, Apr 16  | Sat, Apr 18 |
+| Quiz 7 | Thu, Apr 30  | Sat, May 02 |
 
-Protip 1: CBTF is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time. 
-Protip 2: If you miss your slot, visit the CBTF in person as soon as possible to see if it can be re-scheduled.
-
-### Use the CBTF website to book a slot.
-
-* Slots are in limited supply! Book yours today!  [https://cbtf.engr.illinois.edu/](CBTF website)
-* Miss your slot? Visit CBTF as soon as possible. 
-* Need DRES accomodations? Please visit the CBTF website for more informaiton.
+* [CBTF](https://cbtf.engr.illinois.edu/) is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time.
+* If you miss your slot, visit the CBTF in person as soon as possible to see if it can be re-scheduled.
+* Need DRES accomodations? Please visit the [DRES website](https://www.disability.illinois.edu/) for more informaiton.
 
 ## Quiz 1
 
@@ -129,16 +125,8 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 * Correct setting up addrinfo hints struct for a TCP server or client
 * Purpose and properties of getaddrinfo
 * Reading and writing to pipes (including blocking, SIGPIPE and detecting when no more bytes can be read)
-
-(Multiple Choice only)
-
-## Quiz 8 (under review)
-
-#### Topics
-
 * Security
 * Scheduling
 * Review of everything!
 
-(Multiple Choice only).
- Don't panic  - There are currently only 7 CBTF slots - This quiz currently does not have a slot scheduled at CBTF. We may combine this quiz with quiz 7.
+(Multiple Choice only)
