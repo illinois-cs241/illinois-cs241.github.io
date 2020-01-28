@@ -188,12 +188,12 @@ Many assignments in this course will read your output and grade them. This means
 ```
 //You may want to consider using the #define directive for this, especially if you're using this in multiple files
 void log(char *message) {
-    #ifdef DDEBUG
+    #ifdef DEBUG
     fprintf(stderr, "%s\n", message);
     #endif
 }
 ```
-The `DDEBUG` flag is a flag passed in to the compiler when compiling the `debug` build of an assignment (please report to staff if an assignment's `debug` build does not have the `-g` or `-DDEBUG` flags). The `#ifdef` statement is a preprocessor directive which includes a code snippet into the executable if the flag is enabled during compilation. Therefore, statements in `#ifdef DDEBUG` blocks do not appear in `release` builds of assignments. This will prevent you from impacting the performance of `release` builds (if you need these logging prints in `release` builds, remove the `#ifdef` directive). Furthermore, this logging functions prints to `stderr`. We typically do not check what's in `stderr`, so feel free to use that output stream to dump your logging messages.
+The `DEBUG` macro is enabled in the `debug` build by passing the flag `-DDEBUG` to the compiler when compiling the `debug` build of an assignment (please report to staff if an assignment's `debug` build does not have the `-g` or `-DDEBUG` flags). The `#ifdef` statement is a preprocessor directive which includes a code snippet into the executable if the macro is enabled during compilation. Therefore, statements in `#ifdef DEBUG` blocks do not appear in `release` builds of assignments. This will prevent you from impacting the performance of `release` builds (if you need these logging prints in `release` builds, remove the `#ifdef` directive). Furthermore, this logging functions prints to `stderr`. We typically do not check what's in `stderr`, so feel free to use that output stream to dump your logging messages.
 
 ### `errno` knows what's up
 
