@@ -76,7 +76,7 @@ Here is a formal description of how your camelCaser should behave:
 *   A word `w` is camelCased if and only if:
     *   it is the first word and every letter is lowercased.
     *   it is any word after the first word, its first letter is uppercased and every subsequent letter in the word is lowercased.
-*   Punctuation marks, whitespace, and letters are defined by `ispunct()`, `isspace()`, and `isalpha()` respectively.
+*   Punctuation marks, whitespace, and letters are defined by `ispunct`, `isspace`, and `isalpha` respectively.
     *   These are functions in the C standard library, so you can `man ispunct` for more information.
     *   If `input_s` has ANY non-{punctuation, letter, whitespace} characters, they go straight into `output_s` without any modifications. **ALL** ASCII characters are valid input. Your camelCaser does not need to handle all of Unicode.
 *   `camel_caser` returns an array of `output_s` for every `input_s` in the input string,  terminated by a NULL pointer.
@@ -175,7 +175,7 @@ Let's say there are five good implementations and five bad implementations. If y
 * Work incrementally. Add in a function or two, then test to make sure it works before moving on.
 * Test extensively. Be the most evil user you can be, and try various nasty (but valid) inputs to see if your code handles them or not.
 * Good function/variable naming and well placed comments save lives.
-* For every `malloc()` you call, make sure there is a corresponding `free()` somewhere.
+* For every `malloc` you call, make sure there is a corresponding `free` somewhere.
 * Pay attention to the small details (such as function return values, side effects, etc). C is a language where every detail matters.
 * Make sure your code works in the `release` build, as we will run tests on that build (see Luscious Locks documentation for a detailed explanation of the different builds).
 * Always debug your code using the `debug` build, as the debug build is compiled with the `-O0` flag, which means no compiler optimizations. In addition, the debug build is compiled with the `-g` flag. This allows you to view source code in GDB, and shows the line numbers where things fail in Valgrind.
@@ -193,7 +193,7 @@ void log(char *message) {
     #endif
 }
 ```
-The `DEBUG` macro is enabled in the `debug` build by passing the flag `-DDEBUG` to the compiler when compiling the `debug` build of an assignment (please report to staff if an assignment's `debug` build does not have the `-g` or `-DDEBUG` flags). The `#ifdef` statement is a preprocessor directive which includes a code snippet into the executable if the macro is enabled during compilation. Therefore, statements in `#ifdef DEBUG` blocks do not appear in `release` builds of assignments. This will prevent you from impacting the performance of `release` builds (if you need these logging prints in `release` builds, remove the `#ifdef` directive). Furthermore, this logging functions prints to `stderr`. We typically do not check what's in `stderr`, so feel free to use that output stream to dump your logging messages.
+The `DEBUG` macro is enabled in the `debug` build by passing the flag `-DDEBUG` to the compiler when compiling the `debug` build of an assignment (please report to staff if an assignment's `debug` build does not have the `-g` or `-DDEBUG` flags). The `#ifdef` statement is a preprocessor directive which includes a code snippet into the executable if the macro is enabled during compilation. Therefore, statements in `#ifdef DEBUG` blocks do not appear in `release` builds of assignments. This will prevent you from impacting the performance of `release` builds (if you need these logging prints in `release` builds, remove the `#ifdef` directive). Furthermore, this logging function prints to `stderr`. We typically do not check what's in `stderr`, so feel free to use that output stream to dump your logging messages.
 
 ### `errno` knows what's up
 
