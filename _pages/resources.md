@@ -27,6 +27,7 @@ ISBN 0-536-48928-9
 * [Emacs Tutorial]({% link _tutorials/emacs.md %})
 * [SSHFS Workflow Tutorial]({% link _tutorials/sshfs.md %})
 * [Shell Tutorial]({% link _coursebook/Appendix.md %}#shell)
+* [VS Code Tutorial]({% link _tutorials/vscode.md %})
 
 
 ## How to Succeed
