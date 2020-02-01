@@ -28,9 +28,11 @@
                         <p>
                             <a href="{{ site.data.constants.broadway_on_demand_link }}" class="btn btn-success" role="button">Broadway On-Demand Autograder</a>
                         </p>
-                        <p>
-                            <a href="{{ site.data.constants.malloc_contest_link }}" class="btn btn-warning" role="button">Malloc Contest</a>
-                        </p>
+                        {% for mp in site.data.assignments['mps'] %}{% if mp.name != "Malloc" or mp.visible != true %} {% continue %} {% endif %}
+                            <p>
+                                <a href="{{ site.data.constants.malloc_contest_link }}" class="btn btn-warning" role="button">Malloc Contest</a>
+                            </p>
+                        {% endfor %}
                     </section>
                     <div class="row">
 
