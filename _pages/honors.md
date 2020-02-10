@@ -81,9 +81,9 @@ When you and your group start writing code, we expect you to use git and for eac
 |:-----|:------|:----------|
 | Ophir Sneh | osneh2 | Security, Distributed Systems, Machine Learning |
 | Jav Mohamed | javedm2 | Functional Programming, Formal Methods, Security |
-| Aniket Shirke | anikets | Networks, Mobile Computing |
 | Anant Kandikuppa | anantk3 | Distributed Systems, Security |
-| Rohin Bhasin | rohinb2 | Security, Distributed Systems, Networking |
+| Dillon Hammond | dillonh2 | Embedded, Kernel, Communication Protocols |
+| Bryant Zhao | bhzhao2 | Systems, Security |
 
 ## Lectures
 
