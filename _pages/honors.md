@@ -17,11 +17,11 @@ At the end of the semester, you will present your work to your peers. The presen
 
 ```
 Lecture Attendance          : 20%
-Lecture Activities          : 5%
-Final Project               : 75%
+Mini Assignments            : 7%
+Semester Project            : 73%
 - Project Proposal/Planning : 5%
-- Midterm                   : 10%
-- Weekly Check-ins          : 15%
+- Midterm Presentation      : 10%
+- Weekly Check-ins          : 13%
 - Final Presentation        : 15%
 - Final Deliverables        : 30%
 ```
@@ -81,9 +81,9 @@ When you and your group start writing code, we expect you to use git and for eac
 |:-----|:------|:----------|
 | Ophir Sneh | osneh2 | Security, Distributed Systems, Machine Learning |
 | Jav Mohamed | javedm2 | Functional Programming, Formal Methods, Security |
-| Aniket Shirke | anikets | Networks, Mobile Computing |
 | Anant Kandikuppa | anantk3 | Distributed Systems, Security |
-| Rohin Bhasin | rohinb2 | Security, Distributed Systems, Networking |
+| Dillon Hammond | dillonh2 | Embedded, Kernel, Communication Protocols |
+| Bryant Zhao | bhzhao2 | Systems, Security |
 
 ## Lectures
 
@@ -116,7 +116,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
 
-[https://piazza.com/class/jzwzocunoa25u4](https://piazza.com/class/jzwzocunoa25u4)
+[https://piazza.com/class/k66qd01pyyk2bb](https://piazza.com/class/k66qd01pyyk2bb)
 
 ## Project Ideas?
 

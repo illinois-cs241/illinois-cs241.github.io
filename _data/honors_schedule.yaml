@@ -1,67 +1,72 @@
 ---
 # Honors Schedule
    -
-     date: "September 11"
+     date: "February 5"
      content: "Introduction & Advanced Tools"
-     slides: "https://docs.google.com/presentation/d/1Cb0bwEU1MlQV3pcTFB5wJwMD__A4LDJVhRYnX4L9ltg/edit?usp=sharing"
+     slides: "https://docs.google.com/presentation/d/1NxQxYPzWE5_JVSduIJWod6BKGFVU1g3cIfG3TZWGfic/edit?usp=sharing"
      # video:
    -
-     date: "September 18"
+     date: "February 12"
      content: "Cutting Edge Systems Programming + Pitches"
      # slides: 
      # video: 
    -
-     date: "September 25"
-     content: "Distributed Systems / Cloud / IoT"
-     # slides: 
-     # video: 
-   -
-     date: "October 02"
-     content: "Profiling"
-     # slides: 
-     # video: 
-   -
-     date: "October 09"
+     date: "February 19"
      content: "Security"
      # slides: 
      # video: 
    -
-     date: "October 16"
+     date: "February 26"
+     content: "Distributed Systems / Cloud / IoT"
+     # slides: 
+     # video: 
+   -
+     date: "March 4"
      content: "Advanced Memory"
      # slides: 
      # video: 
    -
-     date: "October 23"
-     content: "Concurrency / Lock Free DS"
+     date: "March 11"
+     content: "Kernel Programming"
      # slides: 
      # video: 
    -
-     date: "October 30"
+     date: "March 18"
+     content: "Spring Break"
+     # slides: 
+     # video: 
+   -
+     date: "March 25"
      content: "Midterm Presentations"
      # slides: 
      # video: 
    -
-     date: "November 06"
+     date: "April 1"
+     content: "Concurrency / Lock Free Data Structures"
+     # slides: 
+     # video: 
+   -
+     date: "April 8"
+     content: "Embedded Programming"
+     # slides: 
+     # video: 
+   -
+     date: "April 15"
      content: "Networking / TCP"
      # slides: 
      # video: 
    -
-     date: "November 13"
+     date: "April 22"
      content: "Containerization / Virtualization"
      # slides: 
      # video: 
    -
-     date: "November 20"
-     content: "Kernel"
-     # slides: 
-     # video: 
-   -
-     date: "December 04"
+     date: "April 29"
      content: "TBD"
      # slides: 
      # video: 
    -
-     date: "December 11"
+     date: "May 6"
      content: "Final Presentations"
      # slides: 
      # video: 
