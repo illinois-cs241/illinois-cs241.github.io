@@ -116,7 +116,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
 
-[https://piazza.com/class/jzwzocunoa25u4](https://piazza.com/class/jzwzocunoa25u4)
+[https://piazza.com/class/k66qd01pyyk2bb](https://piazza.com/class/k66qd01pyyk2bb)
 
 ## Project Ideas?
 
