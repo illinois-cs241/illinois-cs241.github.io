@@ -54,7 +54,7 @@ Since a learning objective of this assignment is to use the fork-exec-wait patte
 
 ### Output Formatting
 
-Since this MP **requires** your shell and the programs you launch to print a variety of things like output messages and error messages, we have provided you with our own highly customized formatting library. You should not be printing out to` stdout` and `stderr` at all; instead, all output and errors should be printed using the functions provided in `format.h`. In `format.h` you can find documentation about what each function does, and you should use them whenever appropriate.
+Since this MP **requires** your shell and the programs you launch to print a variety of things like output messages and error messages, we have provided you with our own highly customized formatting library. You should not be printing out to `stdout` and `stderr` at all; instead, all output and errors should be printed using the functions provided in `format.h`. In `format.h` you can find documentation about what each function does, and you should use them whenever appropriate.
 
 If you place print statements in your debugging code, please remember to remove them before autograding, or use the `#define DEBUG` block to place your print statements.
 
@@ -397,9 +397,9 @@ hi
 ```
 
 ```
- (pid=1234)/home/user$ cd /asdf || echo runMe
- /asdf: No such file or directory
- runMe
+(pid=1234)/home/user$ cd /asdf || echo runMe
+/asdf: No such file or directory
+runMe
 ```
 
 Boolean algebra: if `x` is true, we can return true right away *without* having to run `y`.
@@ -425,9 +425,9 @@ bye
 
 ```
 (pid=27879)/home/user/semester/shell$ cd /asdf; echo runMe
- /asdf: No such file or directory
- Command executed by pid=27884
- runMe
+/asdf: No such file or directory
+Command executed by pid=27884
+runMe
 ```
 
 :question: The two commands are run regardless of whether the first one succeeds.
