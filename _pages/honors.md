@@ -17,11 +17,11 @@ At the end of the semester, you will present your work to your peers. The presen
 
 ```
 Lecture Attendance          : 20%
-Lecture Activities          : 5%
-Final Project               : 75%
+Mini Assignments            : 7%
+Semester Project            : 73%
 - Project Proposal/Planning : 5%
-- Midterm                   : 10%
-- Weekly Check-ins          : 15%
+- Midterm Presentation      : 10%
+- Weekly Check-ins          : 13%
 - Final Presentation        : 15%
 - Final Deliverables        : 30%
 ```
