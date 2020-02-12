@@ -46,10 +46,10 @@ labs:
       worksheet: true
       visible: true
   -
-      name: "Mini Valgrind"
+      name: "Mini Memcheck"
       releaseDate: "Week 4"
       dueDate: "Week 5"
-      url: "mini_valgrind"
+      url: "mini_memcheck"
       submissions:
         - title: Entire Assignment
           due_date: 2020-02-19 23:59
