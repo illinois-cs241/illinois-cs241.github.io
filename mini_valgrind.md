@@ -22,7 +22,7 @@ The main concept of this lab is that we can track each block of memory using som
 
 Here's an illustration:
 
-![meta_data_linked_list](/images/mini_valgrind.jpg)
+![meta_data_linked_list](/images/assignment-docs/lab/mini_valgrind/mini_valgrind.jpg)
 
 When the program is about to exit, we can look at this metadata list to see what the user hasn't freed. These are your memory leaks.
 
