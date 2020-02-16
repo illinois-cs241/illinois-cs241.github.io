@@ -7,7 +7,5 @@ Gemfile.lock
 ._*
 .#*
 _coursebook/*
-_docs/*
 _coursebook
-_docs
 .jekyll-cache

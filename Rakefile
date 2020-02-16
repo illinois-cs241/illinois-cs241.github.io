@@ -21,8 +21,6 @@ is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
 coursebook_dir = '_coursebook'
 coursebook_url = 'https://github.com/illinois-cs241/coursebook.wiki.git'
-docs_folder = '_docs'
-docs_url = 'https://github.com/illinois-cs241/assignment-docs.git'
 DEST_DIR = './_site'
 SEARCH_FILE = 'search_data.json'
 
@@ -61,7 +59,6 @@ end
 
 multitask default: [
   'pre_build:gen_man',
-  'pre_build:gen_docs',
   'pre_build:gen_coursebook',
 ] do
   site = Jekyll::Site.new($config)
@@ -153,17 +150,6 @@ namespace :pre_build do
     ensure
       obj_file.unlink
     end
-  end
-
-  task :gen_docs do
-    folder = docs_folder
-
-    if not Dir.exist?(folder)
-        puts "Cloning docs"
-        system "git clone #{docs_url} #{folder}"
-    end
-   
-    system "cd #{folder} && git clean -fq && git reset --hard HEAD"
   end
 
   task :gen_coursebook, [:folder] do |_t, args|
