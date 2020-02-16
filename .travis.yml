@@ -18,8 +18,7 @@ branches:
   only: develop
 before_deploy:
 - bundle exec rake spell_check
-- openssl aes-256-cbc -K $encrypted_b0cfc79abf17_key -iv $encrypted_b0cfc79abf17_iv
-  -in dual_deploy_key.enc -out /tmp/dual_deploy_key -d
+- gpg --passphrase $pradyumna_gpg_passphrase --output /tmp/dual_deploy_key --decrypt pradyumna-dual-deploy.enc 
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/dual_deploy_key
 deploy:
