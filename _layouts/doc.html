@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
-<body>
+<body data-spy="scroll" data-target="#overview">
 {% include header.html %}
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-2 col-sm-1 col-xs-0"></div>
-    <div class="col-md-8 col-sm-10 col-xs-12">
+  <div class="row" style="display: flex; justify-content: stretch;">
+    <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+      <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+    </div>
+    <div class="col-sm-9 col-xs-12">
       <div class="wrapper">
         <div class="pad"><div class="card">
           <div class="title">
@@ -39,26 +41,9 @@
                 {% endfor %}
               </div>
             {% endif %}
-            {% if assign_data.ag_schedules %}
-              <div class="schedule-wrapper">
-                {% for schedule in assign_data.ag_schedules %}
-                  <b>{{ schedule.title }}</b>
-                  <br/>
-                  <b>Pre-deadline Runs</b>
-                    <ul>
-                      {% for ag_date in schedule.schedule_dates %}
-                        <li>{{ ag_date}}</li>
-                      {% endfor %}
-                    </ul>
-                {% endfor %}
-              </div>
-            {% endif %}
           </div></div></div>
         </div></div>
       </div>
-      {% if page.toc != false %}
-      {{ content | toc }}
-      {% endif %}
       <div id="content">
           {% style_cached doc_header.html %}
           {{ content | content_style }}
@@ -68,10 +53,12 @@
       <div class="col-md-2 col-sm-1 col-xs-0"></div>
     </div>
   </div>
-  <script>
+
+  </div>
+  {% include footer.html %}
+  <script type="application/javascript">
     var github_repo = "{{ site.repository | escape }}";
     var github_path = "{{ page.path | escape }}";
   </script>
-  {% include footer.html %}
 </body>
 </html>
