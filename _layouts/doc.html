@@ -44,6 +44,11 @@
           </div></div></div>
         </div></div>
       </div>
+      <div class="hidden-sm hidden-md hidden-lg">
+        {% if page.toc != false %}
+        {{ content | toc }}
+        {% endif %}
+      </div>
       <div id="content">
           {% style_cached doc_header.html %}
           {{ content | content_style }}

@@ -6,12 +6,6 @@
 /* modified from https://github.com/twbs/bootstrap/blob/94b4076dd2efba9af71f0b18d4ee4b163aa9e0dd/docs/assets/css/src/docs.css#L548-L601 */
 
 /* All levels of nav */
-nav[data-toggle="toc"] .nav {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
 nav[data-toggle="toc"] .nav > li > a {
   display: block;
   padding: 4px 20px;
@@ -62,5 +56,13 @@ nav[data-toggle="toc"] .nav .nav > li > .active:focus {
 }
 
 nav[data-toggle="toc"] .nav-link.active + ul {
-  display: block;
+  display: flex;
+}
+
+nav[data-toggle="toc"] .nav,
+nav[data-toggle="toc"] > li,
+nav[data-toggle="toc"] > lu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
