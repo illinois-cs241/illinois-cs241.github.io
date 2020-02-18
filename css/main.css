@@ -8,25 +8,15 @@
 }
 
 body {
-    padding-top: 50px;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--color-pale-white);
     color: var(--color-text);
     padding-bottom: 50px;
+    position: relative;
 }
 
 .sticky-top {
   position: sticky;
-  top: calc(50px + 1rem);
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-    body {
-        padding-top: 100px;
-    }
-   .sticky-top {
-       top: calc(100px + 1rem);
-   }
 }
 
 .navbar {
@@ -72,8 +62,7 @@ h1 {
 }
 
 h2 {
-    padding-top: 50px;
-    margin-top: -20px;
+    margin-top: 2rem;
 }
 
 .navbar-nav, .navbar-nav > ul {
