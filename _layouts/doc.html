@@ -17,12 +17,6 @@
             {% assign assign_data = site.assign_by_url[name_no_md] %}
             <h1>
               {{ page.title }}
-
-              {% if assign_data.submissions %}
-                <a class="github-link hidden-xs" href="https://github.com/{{ site.docs_repository | uri_escape }}/blob/master/{{ page.path | uri_escape | replace: '_docs',''}}">Edit on Github</a>
-              {% elsif page.githuburl %}
-                <a class="github-link hidden-xs" href="https://github.com/{{ page.githuburl | uri_escape }}">Edit on Github</a>
-              {% endif %}
             </h1>
           </div>
           <div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
