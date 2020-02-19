@@ -109,7 +109,7 @@ def add_anchors(page, title_text_class)
     anchor = Nokogiri::XML::Node.new('a', page)
     anchor['class'] = 'anchor ' + title_text_class
     anchor['href'] = '#' + h2['id']
-    anchor.inner_html = '#'
+    anchor.inner_html = ' #'
     h2 << anchor.to_html
   end
 
@@ -117,7 +117,7 @@ def add_anchors(page, title_text_class)
     anchor = Nokogiri::XML::Node.new('a', page)
     anchor['class'] = 'anchor ' + title_text_class
     anchor['href'] = '#' + h3['id']
-    anchor.inner_html = '#'
+    anchor.inner_html = ' #'
   end
 
 end
@@ -163,7 +163,7 @@ def style_code(page)
   # Style all the code
   html_decoder = HTMLEntities.new
   page.css('.language-C, .language-c').each_with_index do |div, i|
-    
+
     # This is to create a copyable version of the code
     # The link has been disabled but the startup code is still ehre
     id_target = "code-copy-#{i}"
