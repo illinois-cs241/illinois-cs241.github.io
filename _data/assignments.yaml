@@ -256,7 +256,7 @@ mps:
           - alloc.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Password Cracker"
       releaseDate: "Week 8"
