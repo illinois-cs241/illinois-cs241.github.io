@@ -106,7 +106,10 @@ Please re-read this section *multiple* times before starting:
 * Each execution must be done with `fork`, `exec,` and `wait`.
 * The last variable/value(s) pairing is followed by a `--`.
 * *Everything* following the `--` is the command and any arguments that will be executed by env.
-* Invalid input should result in the usage being printed. It is your job to enforce correct usage! You shouldn't ignore bad usage.
+* Invalid input should result in the usage being printed. Invalid usage includes:
+  - Cannot find `--` in arguments
+  - Cannot find `=` in an variable argument
+  - Cannot find `cmd` after `--`
 
 This is the canonical example and a practical use case:
 
