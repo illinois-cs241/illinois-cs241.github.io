@@ -78,7 +78,7 @@ labs:
       url: "critical_concurrency"
       submissions:
         - title: Entire Assignment
-          due_date: 2010-03-04 23:59
+          due_date: 2020-03-04 23:59
           graded_files:
           - barrier.c
           - queue.c
