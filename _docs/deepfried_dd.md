@@ -60,14 +60,14 @@ $ kill -n SIGUSR1 <pid of dd> # send SIGUSR1 to dd
 
 Use the functions provided in `format.h` to print these reports.
 
-:bangbang: WARNING: printf (among other functions) is not safe to call in a signal handler, since it is not reentrant. Ensure your signal handler does not call these functions, **including** any function in format.h, and instead indicates to your program to print this status report elsewhere.
+:bangbang: WARNING: `printf` (among other functions) is not safe to call in a signal handler, since it is not reentrant. Ensure your signal handler does not call these functions, **including** any function in `format.h`, and instead indicates to your program to print this status report elsewhere.
 
 ### Errors
 
 If the input or output file given to your `dd` is invalid, use the functions in `format.h` to print the corresponding error and exit with return code `1`.
 
 ## Testing
-Though it is helpful to write tests that call any functions you write in dd.c, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your dd executable in a bash script, and use diff/md5sum along with spot checks to ensure correct functionality. For example, the following script would print nothing if your dd implementation is correct:
+Though it is helpful to write tests that call any functions you write in `dd.c`, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your `dd`  executable in a bash script, and use diff/md5sum along with spot checks to ensure correct functionality. For example, the following script would print nothing if your dd implementation is correct:
 
 ```
 == my_test.sh ==
