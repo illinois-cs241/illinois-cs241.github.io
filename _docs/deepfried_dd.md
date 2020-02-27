@@ -33,8 +33,8 @@ You must implement the following arguments from the real `dd`. Since it is $CURR
 * `-o <file>`: output file (defaults to stdout)
 * `-b <size>`: block size, the number of bytes copied at a time (defaults to 512)
 * `-c <count>`: total number of **blocks** copied (defaults to the entire file)
-* `p <count>`: number of blocks to skip at the start of the input file (defaults to 0)
-* `k <count>`: number of blocks to skip at the start of the output file (defaults to 0)
+* `-p <count>`: number of blocks to skip at the start of the input file (defaults to 0)
+* `-k <count>`: number of blocks to skip at the start of the output file (defaults to 0)
   * The [documentation](https://pubs.opengroup.org/onlinepubs/009695399/functions/fopen.html) on the `mode` parameter of `fopen` may be useful here.
 
 Your code will be compiled into an executable and run via the command line.
