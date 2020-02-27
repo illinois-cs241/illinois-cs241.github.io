@@ -43,6 +43,7 @@ Your code will be compiled into an executable and run via the command line.
 
 You must print a status report after dd finishes, similar to the real dd. An example is below:
 ```
+$ ./dd [...parameters]
 1182465+1 records in
 1182465+1 records out
 605422080 bytes copied, 4.354 s, 139034.891 kB/s
@@ -62,12 +63,41 @@ Use the functions provided in `format.h` to print these reports.
 
 :bangbang: WARNING: `printf` (among other functions) is not safe to call in a signal handler, since it is not reentrant. Ensure your signal handler does not call these functions, **including** any function in `format.h`, and instead indicates to your program to print this status report elsewhere.
 
+### Example Usage
+
+The following command should copy 32 blocks of size 4 kB  (a total of 128 kB) from `input.dat` to `output.dat`, skipping 2 blocks from the start of `input.dat` and 10 blocks from the start of `output.dat`
+
+```
+$ ./dd -i input.dat -o output.dat -b 4096 -c 32 -p 2 -k 10
+32+0 records in
+32+0 records out
+131072 bytes copied, 0.000 s, 919441.220 kB/s
+```
+
+This command should dump the output of `echo "Hello, World!"` into a file called `output.dat`:
+
+```
+$ echo "Hello World" | ./dd -o output.dat
+0+1 records in
+0+1 records out
+12 bytes copied, 0.000 s, 1861.039 kB/s
+```
+
+This command should write about 2 GB of random data (from `/dev/urandom`) into a file called `random.bin`, in chunks of 1024 bytes:
+
+```
+$ ./dd -i /dev/urandom -o random.bin -b 1000 -c 200000
+200000+0 records in
+200000+0 records out
+200000000 bytes copied, 1.459 s, 137094.439 kB/s
+```
+
 ### Errors
 
 If the input or output file given to your `dd` is invalid, use the functions in `format.h` to print the corresponding error and exit with return code `1`.
 
 ## Testing
-Though it is helpful to write tests that call any functions you write in `dd.c`, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your `dd`  executable in a bash script, and use diff/md5sum along with spot checks to ensure correct functionality. For example, the following script would print nothing if your dd implementation is correct:
+Though it is helpful to write tests that call any functions you write in `dd.c`, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your `dd`  executable in a bash script, and use `diff`/`md5sum` along with spot checks to ensure correct functionality. For example, the following script would print nothing if your dd implementation is correct:
 
 ```
 == my_test.sh ==
