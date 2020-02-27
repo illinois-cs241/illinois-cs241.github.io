@@ -1,0 +1,84 @@
+---
+layout: doc
+title: "Deepfried dd"
+learning_objectives:
+  - Working with files
+  - fseek() and fread()
+wikibook:
+  - "Files, Part 1: Working with files"
+---
+
+## Introduction
+
+`dd` is a command-line utility used to copy data to and from files. Since Linux treats many external devices (including USB drives) as files, this makes `dd` very powerful. For example, the tool can be used to create a backup image of your hard drive and store it as a file which can be uploaded to cloud storage. `dd` could also be used to directly clone one drive to another, write a bootable iso image to a USB drive, and much more. 
+
+For example, the following command would write an .img file (`if`) to a USB drive represented as /dev/disk4 (`of`), in chunks of 4 MB blocks (`bs`).
+
+```
+dd if=/path/to/bootable.img of=/dev/disk4 bs=4M
+```
+
+See the man pages for dd [here](http://man7.org/linux/man-pages/man1/dd.1.html), and example usage [here](https://linoxide.com/linux-command/linux-dd-command-create-1gb-file/). We suggest you get a feel of `dd` by using it to copy a file from one folder to another. Be careful, however! dd can easily be used to (accidentally or on purpose) to corrupt and entirely wipe disk drives and partitions, so make sure you know exactly what a `dd` command is going to do before running it! We recommend you make a testing folder on your VM and only use `dd` with paths pointing to that folder, so there's virtually no chance of overwriting something you don't want to.
+
+Note that Linux will automatically prevent you (usually) from writing to physical devices unless you run `dd` as root (i.e. via sudo).
+
+## Implementing dd
+For this assignment, you will be implementing the `dd` utility in C. Your `dd` implementation will copy data from an input file to an output file in a manner specified by its arguments.
+
+### Arguments
+
+You must implement the following arguments from the real dd. Since it is $CURRENT_YEAR, we won't be using `dd`'s style of arguments (`if=file`, etc), and instead use the standard style (`-i file`, etc).
+
+* `-i <file>`: input file (defaults to stdin)
+* `-o <file>`: output file (defaults to stdout)
+* `-b <size>`: block size, the number of bytes copied at a time (defaults to 512)
+* `-c <count>`: total number of **blocks** copied (defaults to the entire file)
+* `p <count>`: number of blocks to skip at the start of the input file (defaults to 0)
+* `k <count>`: number of blocks to skip at the start of the output file (defaults to 0)
+  * The [documentation](https://pubs.opengroup.org/onlinepubs/009695399/functions/fopen.html) on the `mode` parameter of `fopen` may be useful here.
+
+Your code will be compiled into an executable and run via the command line.
+
+### Status Report
+
+You must print a status report after dd finishes, similar to the real dd. An example is below:
+```
+1182465+1 records in
+1182465+1 records out
+605422080 bytes copied, 4.354 s, 139034.891 kB/s
+```
+
+In addition, your dd should be able to give a “live” status report. You should catch SIGUSR1 and print a status report when the signal is triggered:
+
+```
+$ ./dd -i my_file.txt -o my_file2.txt & # start as a background process
+$ kill -n SIGUSR1 <pid of dd> # send SIGUSR1 to dd
+1182465+0 records in
+1182465+0 records out
+605422080 bytes copied, 4.354 s, 139034.891 kB/s
+```
+
+Use the functions provided in `format.h` to print these reports.
+
+:bangbang: WARNING: printf (among other functions) is not safe to call in a signal handler, since they are not reentrant. Ensure your signal handler does not call these functions, **including** any function in format.h, and instead indicates to your program to print this status report elsewhere.
+
+### Errors
+
+If the input or output file given to your `dd` is invalid, use the functions in `format.h` to print the corresponding error and exit with return code `1`.
+
+## Testing
+Though it is helpful to write tests that call any functions you write in dd.c, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your dd executable in a bash script, and use diff/md5sum along with spot checks to ensure correct functionality. For example, the following script would print nothing if your dd implementation is correct:
+
+```
+== my_test.sh ==
+# create a random 32 MB file using the real dd
+dd if=/dev/urandom of=test_file.img bs=4M count=8
+# copy to my_test_file using my own implementation of dd
+./dd -i test_file.img -o my_test_file.img
+# print the differences between the two files, if any
+diff test_file.img my_test_file.img
+== my_test.sh ==
+```
+
+## Grading
+Your code will be auto-graded on all of the parameters listed above. We will also be testing your status reports, both while dd is running (via `SIGUSR1`) and after it completes.
