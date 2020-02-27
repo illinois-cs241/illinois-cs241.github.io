@@ -39,7 +39,7 @@ You must implement the following arguments from the real dd. Since it is $CURREN
 
 Your code will be compiled into an executable and run via the command line.
 
-### Status Report
+### Status Reports
 
 You must print a status report after dd finishes, similar to the real dd. An example is below:
 ```
@@ -60,7 +60,7 @@ $ kill -n SIGUSR1 <pid of dd> # send SIGUSR1 to dd
 
 Use the functions provided in `format.h` to print these reports.
 
-:bangbang: WARNING: printf (among other functions) is not safe to call in a signal handler, since they are not reentrant. Ensure your signal handler does not call these functions, **including** any function in format.h, and instead indicates to your program to print this status report elsewhere.
+:bangbang: WARNING: printf (among other functions) is not safe to call in a signal handler, since it is not reentrant. Ensure your signal handler does not call these functions, **including** any function in format.h, and instead indicates to your program to print this status report elsewhere.
 
 ### Errors
 
