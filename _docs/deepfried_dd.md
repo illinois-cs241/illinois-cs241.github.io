@@ -27,7 +27,7 @@ For this assignment, you will be implementing the `dd` utility in C. Your `dd` i
 
 ### Arguments
 
-You must implement the following arguments from the real dd. Since it is $CURRENT_YEAR, we won't be using `dd`'s style of arguments (`if=file`, etc), and instead use the standard style (`-i file`, etc).
+You must implement the following arguments from the real `dd`. Since it is $CURRENT_YEAR, we won't be using `dd`'s style of arguments (`if=file`, etc), and instead use the standard style (`-i file`, etc).
 
 * `-i <file>`: input file (defaults to stdin)
 * `-o <file>`: output file (defaults to stdout)
