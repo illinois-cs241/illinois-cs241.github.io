@@ -65,8 +65,6 @@ so that a `barrier_t` using these functions is a working reusable barrier.
 
 Your task is to build a thread safe queue, that also may or may not be bounded, by implementing the functions in queue.c. The maxSize of the queue can be set to either a positive number or a non-positive number. If positive, your queue will block if the user tries to push when the queue is full. If not positive, your queue should never block upon a push (the queue does not have a max size). If your queue is empty then you should block on a pull. You should make use of the node struct to store and retrieve information. In the end, your queue implementation should be able to handle concurrent calls from multiple threads. `queue_create` and `queue_destroy` will not be called by multiple threads.
 
-The queue is completely independent of the data that the user feeds it. The queue should make use of the constructors and destructors provided by the user to handle data.
-
 Your goal is to implement the functions
 
 * `queue* queue_create (ssize_t max_size);`
