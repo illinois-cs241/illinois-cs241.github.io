@@ -89,16 +89,16 @@ labs:
   -
       name: "Deadlock Demolition"
       releaseDate: "Week 7"
-      dueDate: "Week 9"
+      dueDate: "Week 8"
       url: "deadlock_demolition"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-10-23 23:59
+          due_date: 2020-03-11 23:59
           graded_files:
           - libdrm.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Ideal Indirection"
       releaseDate: "Week 9"
