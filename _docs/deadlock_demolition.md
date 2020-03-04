@@ -61,7 +61,7 @@ When a thread calls `drm_post()`:
 * Check to see if the vertex is in the graph. If it is not, return without unlocking the `drm_t`.
 * Otherwise, if an edge from the drm to the thread exists, remove the edge and unlock the `drm_t`.
 
-### drm_wait()
+### `drm_wait()`
 
 When a thread calls `drm_wait()`:
 * Add the thread to the Resource Allocation Graph if not already present. Hint: what unique identifier can you use for each thread?
