@@ -84,6 +84,7 @@ You should test your drm library thoroughly. We've given you a `libdrm_tester.c`
 * You will want to write test cases where there is no deadlock, to ensure your drm behaves like a normal `pthread_mutex_t`.
 * You will also want to write test cases where there is deadlock. Perhaps a different synchronization primitive you've learned in class can assist you to artificially create deterministic deadlocks...
 * Consider logging important events inside of your functions.
+* Ensure that your return values are correct.
 * Note that you will have still reachable memory in your Resource Allocation Graph upon program termination. That is expected behavior, and still reachable memory is not considered a memory leak.
 
 ### Edge Cases and Undefined Behavior
