@@ -31,11 +31,13 @@ You must implement the following arguments from the real `dd`. Since it is $CURR
 
 * `-i <file>`: input file (defaults to stdin)
 * `-o <file>`: output file (defaults to stdout)
+  * You should create this file if does not already exist.
 * `-b <size>`: block size, the number of bytes copied at a time (defaults to 512)
 * `-c <count>`: total number of **blocks** copied (defaults to the entire file)
 * `-p <count>`: number of blocks to skip at the start of the input file (defaults to 0)
 * `-k <count>`: number of blocks to skip at the start of the output file (defaults to 0)
   * The [documentation](https://pubs.opengroup.org/onlinepubs/009695399/functions/fopen.html) on the `mode` parameter of `fopen` may be useful here.
+* For any other arguments, you should exit with code 1. `getopt` will automatically print an error message for you.
 
 Your code will be compiled into an executable and run via the command line.
 
