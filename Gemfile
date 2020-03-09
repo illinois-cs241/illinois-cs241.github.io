@@ -15,7 +15,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.6"
   gem 'jekyll-assets', :git => 'https://github.com/jekyll/jekyll-assets.git'
   gem 'jekyll-sitemap', '~> 1.3.1'
-  gem 'sprockets', '=4.0.0.beta8'
+  gem 'sprockets', '=4.0.0'
   gem "image_optim"
   gem "image_optim_pack" # Optional
 end
