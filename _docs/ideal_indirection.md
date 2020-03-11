@@ -160,7 +160,7 @@ This means you have to translate a simulated virtual address into a simulated ph
 
 The following illustration demonstrates how to translate from a virtual address to a physical address:
 
-![Virtual Address Translation](/images/virtual_address_translation.png)
+![Virtual Address Translation](/images/assignment-docs/lab/ideal_indirection/virtual_address_translation.png)
 
 This image is saying that you are to take the top 10 bits of the provided virtual address to index an entry in the page directory of the process.
 That entry should contain the base address of a page table.
