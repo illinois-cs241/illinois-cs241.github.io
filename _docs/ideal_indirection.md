@@ -54,7 +54,7 @@ These metadata bits and flags are explained in detail in `page_table.h`. The act
 
 For illustrative purposes a Page Table Entry looks like the following:
 
-![Page Table Entry](/images/assignments-docs/lab/ideal_indirection/page_table_entry.png) 
+![Page Table Entry](/images/assignment-docs/lab/ideal_indirection/page_table_entry.png) 
 
 In our simulation, each entry is represented as a struct with bit fields whose syntax you can learn about in a [tutorial](http://www.tutorialspoint.com/cprogramming/c_bit_fields.htm).
 The bit fields basically allows us to squeeze multiple flags into a single 32 bit integer.
