@@ -125,23 +125,24 @@ You'll start up one instance of splitter for each mapper, using a pipe to send `
 
 Command line:
 
-`./mapreduce <input_file> <output_file> <mapper_executable> <reducer_executable> <mapper_count>`
+`$ ./mapreduce <input_file> <output_file> <mapper_executable> <reducer_executable> <mapper_count>`
 
-Sample Usage
-
+Sample Usage:
 
 `$ ./mapreduce test.in test.out ./my_mapper ./my_reducer 3`
 
 
 Your program will:
 
-* Split the input file into <mapper_count> parts and pipe the contents into <mapper_count> different mapper processes (use splitter).
+* Split the input file into \<mapper_count\> parts and pipe the contents into \<mapper_count\> different mapper processes (use splitter).
+* Pipe the output of the mapper processes into the reduce process
 * Write the output of the reducer process to the output file.
+* Parallelize these tasks to achieve speedup
 
 
 **Remember to close all the unused file descriptors!**
 
-This too can be done in the Unix shell:
+MapReduce can also be achieved in the Unix shell:
 
 ```
     $ (./splitter inputfile 3 0 | my_mapper ; \
@@ -154,21 +155,25 @@ This too can be done in the Unix shell:
 * Different types of mapper and reducer tasks
 * Both mapper and and reducer generating accurate output to stdout file descriptor independently
 * Splitter being used correctly to generate equally sized input data for each mapper
-* All mappers being run in parallel resulting in at least 2x performance speedup for the pi executable
+* Correctly logging output, including printing non-zero return codes (see `core/utils.h` for helper functions!)
+* All mappers being run in parallel, resulting in at least **2x performance speedup for the pi executable when parallelizing with 4 mappers**
 * **No memory leaks and memory errors** when running the application
 
 In addition, see the comments we've placed in the `main` method for more specific instructions!
 
-### Things that will **no**t be tested for:
+### Things that will **not** be tested for:
 * Illegal inputs for either the mapper or reducer (Input data in a format other than as described above)
 * Invalid mapper or reducer code (mappers or reducers that do not work)
 * Key Value pairs that are larger than a pipe buffer of 4096 bytes.
+
+### Restricted Functions
+Since a learning objective of this assignment is to use the fork-exec-wait pattern and to learn interprocess communication, if you use `popen`, `system`, or related functions you will automatically fail this lab.
 
 
 ##  Building and Running
 
 ### Building
-This lab has a very complicated `Makefile`, but, it defines all the normal targets.
+This lab has a very complicated `Makefile`, but it defines all the normal targets.
 
 ```
 make # builds provided code and student code in release mode
@@ -205,13 +210,10 @@ These each be used anywhere we specify `my_reducer` in these docs.
 
 For example, if you wanted to count the occurrences of each word in Alice in Wonderland, you can run and of the following
 
-`./mr1 data/alice.txt test.out ./mapper_wordcount ./reducer_sum 4`
+`$ ./mr1 data/alice.txt test.out ./mapper_wordcount ./reducer_sum 4`
 
 ### Record Setting Pi Code
 As well as the simple mapper/reducer pairs, we also have also included some really cool pi computation code (see [this](http://www.karrels.org/pi/) for more info).
 For instructions on how to use the pi code, see the file `pi/README.txt`.
 Note that we do not currently compile this with an NVIDIA compiler, so you will
 not be able to use the CUDA version of this code (which we have not tested) unless you fiddle with the `Makefile`.
-
-### Restricted Functions
-Since a learning objective of this assignment is to use the fork-exec-wait pattern and to learn interprocess communication, if you use `popen`, `system`, or related functions you will automatically fail this MP.
