@@ -134,7 +134,7 @@ Sample Usage:
 
 Your program will:
 
-* Split the input file into \<mapper_count\> parts and pipe the contents into \<mapper_count\> different mapper processes (use splitter).
+* Split the input file into `<mapper_count>` parts and pipe the contents into `<mapper_count>` different mapper processes (use splitter).
 * Pipe the output of the mapper processes into the reducer process
 * Write the output of the reducer process to the output file.
 * Parallelize these tasks to achieve speedup
