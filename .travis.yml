@@ -11,7 +11,7 @@ addons:
     - libhunspell-dev
     - hunspell-en-us
 rvm:
-- 2.5.3
+- 2.6
 git:
   depth: 1
 branches:

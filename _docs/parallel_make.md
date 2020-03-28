@@ -53,7 +53,7 @@ Here is an example Makefile:
 
 The following graph represents the above Makefile. Note that 'a' and 'b' form a cycle (-> 'b' -> 'a' ->). 
 
-![Makefile Graph](../images/ColorfulDeadlock.svg)
+![Makefile Graph](../images/assignment-docs/mp/parallel_make/ColorfulDeadlock.svg)
 
 Some more resources on RAGs & Deadlock: [Wikipedia](https://en.wikipedia.org/wiki/Deadlock), [Coursebook](http://cs241.cs.illinois.edu/coursebook/Deadlock#resource-allocation-graphs).
 
@@ -240,7 +240,7 @@ You can use `system()` to run the commands associated with each rule. There are 
 
 For your convenience these rules are captured in the following flow chart:
 
-![Flow Chart](../images/parmake_flowchart.svg)
+![Flow Chart](../images/assignment-docs/mp/parallel_make/parmake_flowchart.svg)
 
 ## Parallelize! (Part 2 Only)
 

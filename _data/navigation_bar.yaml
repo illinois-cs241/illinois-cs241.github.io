@@ -29,7 +29,7 @@ navbar_items:
       - name: "Coursebook"
         link: "/coursebook/index.html"
       - name: "Lecture Materials"
-        link: "http://github.com/angrave/CS241-Lectures-SP20/"
+        link: "https://github-dev.cs.illinois.edu/angrave/cs241-lectures"
 
   - name: "Honors"
     link: "/honors.html"
