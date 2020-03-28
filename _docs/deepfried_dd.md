@@ -25,21 +25,31 @@ Note that Linux will automatically prevent you (usually) from writing to physica
 ## Implementing dd
 For this assignment, you will be implementing the `dd` utility in C. Your `dd` implementation will copy data from an input file to an output file in a manner specified by its arguments.
 
+### Background: Blocks
+
+Though "blocks" are a fundamental filesystem concept, this assignment does not rely on heavy filesystems knowledge. For the purposes of this assignment, a *block* is simply a single unit of data. For example, if we run `./dd -i input_file -o output_file -b 128`, we are telling `dd` to copy `input_file` to `output_file`, 128 bytes at a time. Your code should write the first 128 bytes of `input_file` to `output_file`, then the next 128, and so on and so forth in a loop until the `input_file` is exhausted (as opposed to copying the entire file in one go). The arguments of `dd` along with more example usage can be found below.
+
 ### Arguments
 
-You must implement the following arguments from the real `dd`. Since it is $CURRENT_YEAR, we won't be using `dd`'s style of arguments (`if=file`, etc), and instead use the standard style (`-i file`, etc).
+You must implement the following arguments from the real `dd`. Since it is $CURRENT_YEAR, we won't be using `dd`'s style of arguments (`if=file`, etc), and instead use the standard style (`-i file`, etc). You **should** use `getopt` to parse these arguments, just as you did in the Shell MP.
 
 * `-i <file>`: input file (defaults to stdin)
 * `-o <file>`: output file (defaults to stdout)
   * You should create this file if does not already exist.
 * `-b <size>`: block size, the number of bytes copied at a time (defaults to 512)
-* `-c <count>`: total number of **blocks** copied (defaults to the entire file)
+* `-c <count>`: total number of blocks copied (defaults to the entire file)
 * `-p <count>`: number of blocks to skip at the start of the input file (defaults to 0)
 * `-k <count>`: number of blocks to skip at the start of the output file (defaults to 0)
   * The [documentation](https://pubs.opengroup.org/onlinepubs/009695399/functions/fopen.html) on the `mode` parameter of `fopen` may be useful here.
 * For any other arguments, you should exit with code 1. `getopt` will automatically print an error message for you.
 
 Your code will be compiled into an executable and run via the command line.
+
+:bangbang: WARNING: Note that some of these arguments refer to **blocks**, not **bytes**.
+
+### Reading from `stdin`
+
+If implemented optimally, there is no need to specially handle the case where the input file defaults to `stdin`, instead of a "real" file. Keep in mind that you **don't** need to know the size of the entire input file in order to copy the full thing: [`feof`](https://linux.die.net/man/3/feof) is a useful function. When copying from `stdin`, `dd` should write bytes until the user enters Control+D (i.e. end of file) into their terminal. You can see this functionality by running the real `dd`: simply run `dd of=my_file` in your terminal, write some text, and press Control+D. `my_file` will then contain the text you typed into the terminal.
 
 ### Status Reports
 
@@ -109,8 +119,9 @@ dd if=/dev/urandom of=test_file.img bs=4M count=8
 ./dd -i test_file.img -o my_test_file.img
 # print the differences between the two files, if any
 diff test_file.img my_test_file.img
-== my_test.sh ==
 ```
+
+We included a script `generate_data.sh` to automatically generate a few files of different sizes in the `test_files` directory. You can run it by entering `sh generate_data.sh` inside the assignment directory on your VM.
 
 ## Grading
 Your code will be auto-graded on all of the parameters listed above. We will also be testing your status reports, both while dd is running (via `SIGUSR1`) and after it completes.
