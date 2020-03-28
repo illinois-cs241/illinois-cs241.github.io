@@ -71,7 +71,7 @@ $ kill -n SIGUSR1 <pid of dd> # send SIGUSR1 to dd
 605422080 bytes copied, 4.354 s, 139034.891 kB/s
 ```
 
-Use the functions provided in `format.h` to print these reports.
+Use the functions provided in `format.h` to print these reports. You should use `clock_gettime` to time the execution of `dd`.
 
 :bangbang: WARNING: `printf` (among other functions) is not safe to call in a signal handler, since it is not reentrant. Ensure your signal handler does not call these functions, **including** any function in `format.h`, and instead indicates to your program to print this status report elsewhere.
 
