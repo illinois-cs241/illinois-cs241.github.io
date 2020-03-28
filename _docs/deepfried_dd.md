@@ -95,7 +95,7 @@ $ echo "Hello World" | ./dd -o output.dat
 12 bytes copied, 0.000 s, 1861.039 kB/s
 ```
 
-This command should write about 2 GB of random data (from `/dev/urandom`) into a file called `random.bin`, in chunks of 1024 bytes:
+This command should write about 2 GB of random data (from `/dev/urandom`) into a file called `random.bin`, in chunks of 1000 bytes:
 
 ```
 $ ./dd -i /dev/urandom -o random.bin -b 1000 -c 200000
@@ -109,10 +109,9 @@ $ ./dd -i /dev/urandom -o random.bin -b 1000 -c 200000
 If the input or output file given to your `dd` is invalid, use the functions in `format.h` to print the corresponding error and exit with return code `1`.
 
 ## Testing
-Though it is helpful to write tests that call any functions you write in `dd.c`, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your `dd`  executable in a bash script, and use `diff`/`md5sum` along with spot checks to ensure correct functionality. For example, the following script would print nothing if your dd implementation is correct:
+Though it is helpful to write tests that call any functions you write in `dd.c`, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your `dd`  executable in a bash script, and use `diff`/`md5sum` along with spot checks to ensure correct functionality. For example, the following shell script would print nothing if your dd implementation is correct:
 
 ```
-== my_test.sh ==
 # create a random 32 MB file using the real dd
 dd if=/dev/urandom of=test_file.img bs=4M count=8
 # copy to my_test_file using my own implementation of dd
