@@ -123,4 +123,7 @@ diff test_file.img my_test_file.img
 We included a script `generate_data.sh` to automatically generate a few files of different sizes in the `test_files` directory. You can run it by entering `sh generate_data.sh` inside the assignment directory on your VM.
 
 ## Grading
+
 Your code will be auto-graded on all of the parameters listed above. We will also be testing your status reports, both while dd is running (via `SIGUSR1`) and after it completes.
+
+:bangbang: WARNING: You will fail the assignment if you use simply use `system`, `exec`, or similar to run the real `dd`.
