@@ -51,7 +51,7 @@ Here is an example Makefile:
     c:
     	echo C
 
-The following graph represents the above Makefile. Note that 'a' and 'b' form a cycle (-> 'b' -> 'a' ->). 
+The following graph represents the above Makefile. Note that 'a' and 'b' form a cycle (-> 'b' -> 'a' ->).
 
 ![Makefile Graph](../images/assignment-docs/mp/parallel_make/ColorfulDeadlock.svg)
 
@@ -120,7 +120,7 @@ The parser will return a graph containing 5 vertices, once each for rule 'a', 'b
 
 Those curious of the implementation can view the source in `parser.c` although this is not necessary.
 
-We have provided an implementation of a thread safe queue, a vector, a set, a dictionary, and a graph. This is the same queue from luscious locks and the same vector you've used in prior assignments. The set, graph, and dictionary are new data structures from the CS 241 provided library. 
+We have provided an implementation of a thread safe queue, a vector, a set, a dictionary, and a graph. This is the same queue from luscious locks and the same vector you've used in prior assignments. The set, graph, and dictionary are new data structures from the CS 241 provided library.
 You can view the header information in `includes/`.
 
 ## Graph Data Structure
@@ -130,13 +130,13 @@ Since a Makefile is a representation of a dependency graph, our parser returns a
 rule_t * rule = (rule_t *)graph_get_vertex_value(dependency_graph, target)
 ```
 
-where `target` is a string labelling a rule. To get a list of all targets, use 
+where `target` is a string labelling a rule. To get a list of all targets, use
 
 ```
 vector *targets = graph_vertices(dependency_graph)
 ```
 
-To get a list of all the dependencies of a rule with a given target, use 
+To get a list of all the dependencies of a rule with a given target, use
 
 ```
 vector *dependencies = graph_neighbors(dependency_graph, target)
@@ -147,7 +147,7 @@ The graph returned from the `parmake` parser will contain all the vertices and e
 See `rule.h` for a description of the `rule_t` API. And read `parser.h` for more usage details on the dependency graph.
 
 **USAGE WARNINGS**:
-* Any vectors returned from graph functions must be destroyed manually to prevent memory leaks. Destroying these vectors will not destroy anything in the actual graph. 
+* Any vectors returned from graph functions must be destroyed manually to prevent memory leaks. Destroying these vectors will not destroy anything in the actual graph.
 
 * Destroying the graph or removing vertices from the graph will completely destroy all associated targets (i.e. rule labels), rules, and edges. So copy anything you need for later use before removal or destruction.
 * You should not add new vertices to the graph. If you choose to do this using `graph_set_vertex()`, keep in mind that both the key and value must be *strings*, since the graph's value copy constructor transforms strings to new `rule_t` structs. Read `parser.c` in order to understand the dependency graph's memory management scheme.
@@ -228,7 +228,7 @@ take_backup :
 
 *   The rule is the name of a file on disk, and it depends on another file with a NEWER change time than the change time of the file which corresponds to the name of the rule. To determine whether a file is NEWER, you should use stat and difftime to determine if it is newer. The differences in time will have a granularity of 1 second.
 
-If neither of these is true, then the rule is already satisfied and does not need its commands executed. Otherwise, the rule is unsatisfied and available to be run.
+If neither of these is true, then the rule is already satisfied and does not need its commands executed. Otherwise, the rule is unsatisfied and available to be run. Once a rule is satisfied, it shouldn't be run again.
 
 ### Running the commands
 
@@ -311,13 +311,13 @@ You can use the real GNU `make` to check your implementation. However, it differ
 * `make` kills the program immediately after a rule fails. Run `make` with the flag `-k` (for keep going) to continue satisfying rules that aren't doomed to fail.
 * `make` requires every dependency to either be explicitly declared in the Makefile or present as a file on the disk. To get `parmake` and `make` to work the same way, define every rule explicitly.
 * `make` spits out error messages when commands fail, even when the flag `-k` is used. `parmake` will not do this.
-    
+
 
 Example "good" Makefile:
 
     #testfile
-    
-    a: maybefile b c 
+
+    a: maybefile b c
     	echo "a"
     b:
     	cat / # always fails
@@ -354,4 +354,3 @@ Here is the grading breakdown:
 	- concurrently run all rules whose dependencies have been satisfied, subject to the thread limit
 	- avoid deadlock, data races, livelock, and busy-waiting
 	- create performant code that doesn't incur excessive overhead (e.g > 10 ms per rule)
-
