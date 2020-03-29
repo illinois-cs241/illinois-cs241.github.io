@@ -124,6 +124,8 @@ We included a script `generate_data.sh` to automatically generate a few files of
 
 ## Grading
 
-Your code will be auto-graded on all of the parameters listed above. We will also be testing your status reports, both while dd is running (via `SIGUSR1`) and after it completes.
+Your code will be auto-graded on all of the parameters listed above. We will also be testing your status reports, both while dd is running (via `SIGUSR1`) and after it completes. Note that a handful of tests depend on various aspects of your progress report working.
 
-:bangbang: WARNING: You will fail the assignment if you use simply use `system`, `exec`, or similar to run the real `dd`.
+:bangbang: WARNING: **Make sure** to remove all print statements from your code (except calls to functions in format.h) before running the autograder!
+
+:bangbang: WARNING: You will fail the assignment if you use use `system`, `exec`, or similar.
