@@ -6,10 +6,10 @@
 
 ## Installing
 
-First make sure you have ruby >= 2.4. We recommend using `rvm`
+First make sure you have ruby >= 2.6. We recommend using `rvm`
 
 ```
-rvm use 2.4.5
+rvm use 2.6.0
 ```
 
 After, we recommend bundler to install all the dependencies
