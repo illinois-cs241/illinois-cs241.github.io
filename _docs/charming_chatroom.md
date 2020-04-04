@@ -44,7 +44,7 @@ Implement the provided function to use a TCP IPv4 connection and connect to the 
 
 **Notice** the writing and reading to the server use `write_all_to_socket()` and `read_all_from_socket()`.  You will have to implement these functions to handle the failures of read/write calls, but more on that later.
 
-The figure below gives you an idea about how the client side architecture looks like: ![Alt](/images/ClientArch.png "Title")
+The figure below gives you an idea about how the client side architecture looks like: ![Alt](../images/assignment-docs/lab/charming_chatroom/ClientArch.png)
 
 So to sum up, your job in the client program is:
 
@@ -65,7 +65,7 @@ So to sum up, your job in the client program is:
 * port - The port number to accept connections on.
 
 Similar to `client.c`, a lot of the functionality in `server.c` has been implemented for you.  Your job is to set up the server to use TCP IPv4 with reusable ports and gracefully close the server when `SIGINT` is received.
- The figure below illustrates how a message propagates through the system: ![Alt](/images/MessageBroadcast.png "Title")
+ The figure below illustrates how a message propagates through the system: ![Alt](../images/assignment-docs/lab/charming_chatroom/MessageBroadcast.png)
 
 To sum up, you have to:
 
@@ -75,7 +75,7 @@ To sum up, you have to:
 
 Here is the overall client-server architecture:
 
-![Alt](/images/OverallArchitecture.png "Title")
+![Alt](../images/assignment-docs/lab/charming_chatroom/OverallArchitecture.png)
 
 ## Read/Write Failures
 

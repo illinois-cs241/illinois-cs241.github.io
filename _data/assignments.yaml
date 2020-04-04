@@ -132,14 +132,14 @@ labs:
       url: "charming_chatroom"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-11-13 23:59
+          due_date: 2020-04-08 23:59
           graded_files:
           - client.c
           - server.c
           - utils.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Mad Mad Access Pattern"
       releaseDate: "Week 12"
