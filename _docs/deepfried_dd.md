@@ -8,6 +8,10 @@ wikibook:
   - "Files, Part 1: Working with files"
 ---
 
+## Lore
+
+The year is 3072. Other than being the sum of two consecutive powers of two, nothing was particularly special about this year. That is, until you came across an ancient laptop washed up on the sides of Boneyard Creek. Opening the laptop, you were delighted to find the block I and CS 125 stickers still firmly attached to the keyboard. Of course, you'd heard the stories. Before humanity had found a way to implant knowledge in each other via electromagnetic gimmicks, so-called "students" used to attend "classes" where "professors" disperesed their knowledge in oral and visual form. CS 125 had been such a class - oh, the wonder it must have been! The stickers alone, ancient relics of a past society, went for millions of dollars these days. Looking around to make sure no one else had laid eyes upon your lottery ticket, you hurried away to your apartment to have a closer look at the laptop. After some research on how ancient laptops were powered (turns out quantum resonance charging wasn't discovered until 2048!), you quickly splice together a compatible laptop "charger" that would make any fire marshall wince, and finally hit the one thousand year old power button. After a few moments, you see a password prompt. Thinking for a moment on anything that could unite two CS @ Illinois nerds across a millenium, you smile and enter "imaginebeinganECEmajor". Almost unsurprisingly, the laptop unlocks. And inside it, you find something even more enticing than the CS 125 sticker - four years worth of ancient homework assignments, practice exams, and even the infamous MPs of old. Almost eight hours pass before you look at the clock again, having quenched your insatiable curiosity for the ways of ancient societies. How did such a primitive world build such advanced exercises for their school children? And what was "PraireLearn"? Thousands of questions go through your head, but before you can answer you realize what you must do first: make a backup of this quaint laptop's disks, so you can meticulously dissect its contents later on your own computer without threat of burning an entire building down. Luckily, you have a USB-C flash drive you purchased from a museum gift store, but how do you go about making a copy of the laptop's entire disk? There's no tool you could possibly download, since surely the networking stack won't be able to connect with any modern network. Luckily, you notice that the laptop has a C IDE already installed. Somehow, C survived all the way from the 1980s to the present day. Almost gleefully, you realize you'll have to code a C utility on this ancient relic of a laptop in order to make an image of the drive - just like the CS students of old would have done. You put on your hacking gloves, and get to work.
+
 ## Introduction
 
 `dd` is a command-line utility used to copy data to and from files. Since Linux treats many external devices (including USB drives) as files, this makes `dd` very powerful. For example, the tool can be used to create a backup image of your hard drive and store it as a file which can be uploaded to cloud storage. `dd` could also be used to directly clone one drive to another, write a bootable iso image to a USB drive, and much more. 
@@ -27,7 +31,7 @@ For this assignment, you will be implementing the `dd` utility in C. Your `dd` i
 
 ### Background: Blocks
 
-Though "blocks" are a fundamental filesystem concept, this assignment does not rely on heavy filesystems knowledge. For the purposes of this assignment, a *block* is simply a single unit of data. For example, if we run `./dd -i input_file -o output_file -b 128`, we are telling `dd` to copy `input_file` to `output_file`, 128 bytes at a time. Your code should write the first 128 bytes of `input_file` to `output_file`, then the next 128, and so on and so forth in a loop until the `input_file` is exhausted (as opposed to copying the entire file in one go). The arguments of `dd` along with more example usage can be found below.
+A block is simply a unit measuring the number of bytes that are read or written at one time. For example, modern hard drives have a sector (block) size of 4 kB - reads or writes to the disk can only address 4 kB portions at a time. If you write a 64 kB file to the disk, it will be broken down into 16 writes of 4 kB each. Because `dd` is a file manipulation tool, it supports reading/writing with a configurable block size. For example, if we run `./dd -i input_file -o output_file -b 128`, we are telling `dd` to copy `input_file` to `output_file`, 128 bytes at a time. Your code should write the first 128 bytes of `input_file` to `output_file`, then the next 128, and so on and so forth in a loop until the `input_file` is exhausted (as opposed to copying the entire file in one go). The arguments of `dd` along with more example usage can be found below.
 
 ### Arguments
 
@@ -37,9 +41,9 @@ You must implement the following arguments from the real `dd`. Since it is $CURR
 * `-o <file>`: output file (defaults to stdout)
   * You should create this file if does not already exist.
 * `-b <size>`: block size, the number of bytes copied at a time (defaults to 512)
-* `-c <count>`: total number of blocks copied (defaults to the entire file)
-* `-p <count>`: number of blocks to skip at the start of the input file (defaults to 0)
-* `-k <count>`: number of blocks to skip at the start of the output file (defaults to 0)
+* `-c <count>`: total number of **blocks** copied (defaults to the entire file)
+* `-p <count>`: number of **blocks** to skip at the start of the input file (defaults to 0)
+* `-k <count>`: number of **blocks** to skip at the start of the output file (defaults to 0)
   * The [documentation](https://pubs.opengroup.org/onlinepubs/009695399/functions/fopen.html) on the `mode` parameter of `fopen` may be useful here.
 * For any other arguments, you should exit with code 1. `getopt` will automatically print an error message for you.
 
