@@ -195,7 +195,7 @@ The number of bytes written by calling `make_string_from_dirent` will be equal t
 
 ## Virtual Filesystem
 
-In order to quickly get meta-information about the filesystem, we're going to implement a virtual filesystem. Virtual filesystems are filesystems that present file-like objects, but don't provide access to data in the traditional sense that you would expect from a filesystem. Some examples are `procfs` (usually mounted at `/proc`) that gives a user information about running processes, and also has some special files that can control various system parameters or provide debugging information about a running machine, or `devfs` (usually mounted at `/dev`) that provides information about devices and presents some virtual devices such as '`dev/zero`, `/dev/random` and `/dev/null` which have special actions when being read or written to.
+In order to quickly get meta-information about the filesystem, we're going to implement a virtual filesystem. Virtual filesystems are filesystems that present file-like objects, but don't provide access to data in the traditional sense that you would expect from a filesystem. Some examples are `procfs` (usually mounted at `/proc`) that gives a user information about running processes, and also has some special files that can control various system parameters or provide debugging information about a running machine, or `devfs` (usually mounted at `/dev`) that provides information about devices and presents some virtual devices such as `dev/zero`, `/dev/random` and `/dev/null` which have special actions when being read or written to.
 
 The virtual filesystem we will be baking into our mininxfs implementation will live at `/virtual` with respect to the root of your minix filesystem. There will be at least one file inside, `info`. You do not need to implement writing to `/virtual/info`, but do need to support read. When read from, `/virtual/info` will return a string with the following format:
 
@@ -244,7 +244,8 @@ So that's what really is going on under the hood?
 
 You can also use the /goodies directory in `minixfs_test.c`. Here's an example:
 
-```    char * buffer = calloc(1, 13);
+```    
+char * buffer = calloc(1, 13);
 file_system *fs = open_fs("test.fs");
 off_t off = 0;
 char buf[13];
@@ -252,7 +253,7 @@ ssize_t bytes_read = minixfs_read(fs, "/goodies/hello.txt", buf, 13, &off);
 char *expected[13];
 //open /goodies/hello.txt with open() or fopen() and read the contents way you normally would
 assert(!strcmp(buf, expected));
-close_fs(&fs);```
+close_fs(&fs);
 ```
 
 Want something fun?
