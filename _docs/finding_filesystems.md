@@ -69,14 +69,14 @@ The superblock stores information like the size of the filesystem, the number of
 
 ```
 typedef struct {
-  uid_t uid; 
-  gid_t gid; 
-  uint16_t mode; 
-  uint32_t nlink; 
+  uid_t uid;
+  gid_t gid;
+  uint16_t mode;
+  uint32_t nlink;
   struct timespec atim;
   struct timespec mtim;
   struct timespec ctim;
-  uint64_t size; 
+  uint64_t size;
   data_block_number direct[NUM_DIRECT_INODES];
   data_block_number indirect;
 } inode;
@@ -88,7 +88,7 @@ This is the famous inode struct that you have been learning about! Here are a br
 - `gid` is the ID of the inode group (does not have to include the owner).
 - `mode` is a bitmask. The bottom 9 bits are read-write-execute for owner-group-others. Bits 11-10 are the type of the file. `(mode >> 9)` corresponds to a particular type. We have given you two functions, `is_file` and `is_directory`, that tell you whether or not the inode represents a directory or file. There are no other types in our filesystem.
 - `nlink` is the hard link count which is the number of directories that the file is linked to from (directories can't be hard linked).
-- `atim` is access time, which is the time of last access or the last time a file was `read(2)`. 
+- `atim` is access time, which is the time of last access or the last time a file was `read(2)`.
 - `mtim` is the last modification time, or in other words, the last time the file was changed with `write(2)`.
 - `ctim` is the last change time, or in other words, the last time the file's metadata was changed.
 - `size` is the size of the file in bytes
@@ -110,7 +110,7 @@ Data blocks are currently defined to be 16 kilobytes. Nothing fancy here.
 
 You do not to modify or read any of the code in `fakefs_src/`.
 
-To make this MP possible, we've developed our own userspace filesystem interface which we're calling fakefs. Normally, filesystems are a piece of code which you load into your kernel and must provide a few things. It needs a constructor, destructor, callbacks for all system calls involving files and file descriptors within your filesystem. However, writing kernel code is a bit more cumbersome than writing normal code since you need additional security checks among other things, and can even lead to instability in your operating system. To avoid this, there are various ways to implment a filesystem in userspace. The most common (and preferred) method is to use a library called FUSE (Filesystems in USErspace). FUSE allows you to implement your file operations in userspace, but still interacts with the kernel to provide it's functionality. While this allows you to mount the filesystem and use it like any other filesystem, there are a few reasons why we chose not to use it for this MP. A major reason is that if a FUSE callback crashes while it is mounted, it renders the mounted partition unusable and in some cases, you won't be able to even unmount the partition without rebooting the machine. To prevent making this MP annoying and tedious, we've made our own way of implementing filesystems in userspace by `hooking` filesystem operations. 
+To make this MP possible, we've developed our own userspace filesystem interface which we're calling fakefs. Normally, filesystems are a piece of code which you load into your kernel and must provide a few things. It needs a constructor, destructor, callbacks for all system calls involving files and file descriptors within your filesystem. However, writing kernel code is a bit more cumbersome than writing normal code since you need additional security checks among other things, and can even lead to instability in your operating system. To avoid this, there are various ways to implment a filesystem in userspace. The most common (and preferred) method is to use a library called FUSE (Filesystems in USErspace). FUSE allows you to implement your file operations in userspace, but still interacts with the kernel to provide it's functionality. While this allows you to mount the filesystem and use it like any other filesystem, there are a few reasons why we chose not to use it for this MP. A major reason is that if a FUSE callback crashes while it is mounted, it renders the mounted partition unusable and in some cases, you won't be able to even unmount the partition without rebooting the machine. To prevent making this MP annoying and tedious, we've made our own way of implementing filesystems in userspace by `hooking` filesystem operations.
 
 If you take a look at `fakefs_src/fakefs.c` you'll see that we've overridden most of `glibc`'s filesystem operations. Note that this only hooks functions from code or programs that were either written in `C` or in something that compiles to `C`. Running a program written in assembly will not be affected by these hooks.
 
@@ -195,7 +195,7 @@ The number of bytes written by calling `make_string_from_dirent` will be equal t
 
 ## Virtual Filesystem
 
-In order to quickly get meta-information about the filesystem, we're going to implement a virtual filesystem. Virtual filesystems are filesystems that present file-like objects, but don't provide access to data in the traditional sense that you would expect from a filesystem. Some examples are `procfs` (usually mounted at `/proc`) that gives a user information about running processes, and also has some special files that can control various system parameters or provide debugging information about a running machine, or `devfs` (usually mounted at `/dev`) that provides information about devices and presents some virtual devices such as '`dev/zero`, `/dev/random` and /dev/null` which have special actions when being read or written to.
+In order to quickly get meta-information about the filesystem, we're going to implement a virtual filesystem. Virtual filesystems are filesystems that present file-like objects, but don't provide access to data in the traditional sense that you would expect from a filesystem. Some examples are `procfs` (usually mounted at `/proc`) that gives a user information about running processes, and also has some special files that can control various system parameters or provide debugging information about a running machine, or `devfs` (usually mounted at `/dev`) that provides information about devices and presents some virtual devices such as '`dev/zero`, `/dev/random` and `/dev/null` which have special actions when being read or written to.
 
 The virtual filesystem we will be baking into our mininxfs implementation will live at `/virtual` with respect to the root of your minix filesystem. There will be at least one file inside, `info`. You do not need to implement writing to `/virtual/info`, but do need to support read. When read from, `/virtual/info` will return a string with the following format:
 
@@ -258,7 +258,6 @@ close_fs(&fs);```
 Want something fun?
 
 ```
-
 $ ./fakefs test.fs cat test.fs/goodies/dog.png > dog.png
 $ xdg-open dog.png
 
@@ -266,7 +265,7 @@ $ xdg-open dog.png
 
 You can store anything on filesystems. See what we hid around the testfs filesystem for you...
 
-You can also test by generating your own filesystems. Simply run ./fakefs mkfs _filename_ to generate a filesystem with the filename _filename_. If you've implemented the write functionality, you can use commands like ./fakefs cp _file1_ _filename_/ to copy files over. programs like `mkdir` should work as well. 
+You can also test by generating your own filesystems. Simply run ./fakefs mkfs _filename_ to generate a filesystem with the filename _filename_. If you've implemented the write functionality, you can use commands like ./fakefs cp _file1_ _filename_/ to copy files over. programs like `mkdir` should work as well.
 
 ## Other Edge Cases
 
