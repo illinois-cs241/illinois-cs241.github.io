@@ -9,8 +9,6 @@ title: Deepfried_DD
 * You might recognize 'dd if=/dev/zero of=/dev/null'
 * Allows a few dozen different parameters
 
-<vertical />
-
 ## Notable dd parameters
 
 * `if=FILE`: read from FILE instead of stdin
@@ -31,13 +29,11 @@ title: Deepfried_DD
 * `-p <count>`: number of **blocks** to skip at the start of the input file (defaults to 0)
 * `-k <count>`: number of **blocks** to skip at the start of the output file (defaults to 0)
 
-<vertical />
-
-## `getopt()` will save your time
+## Use `getopt()`
 
 * getopt parses function arguments passed through the command line. 
-* Specify and handle all special case funtion parameters.
-[getopt](https://linux.die.net/man/3/getopt)(argc, argv, "i:o:b:c:p:k:")
+* Specify and handle all special case function parameters.
+`getopt(argc, argv, "i:o:b:c:p:k:")`
 
 <horizontal />
 
