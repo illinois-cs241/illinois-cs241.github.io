@@ -39,12 +39,12 @@
      date: "March 25"
      content: "Midterm Presentations"
      # slides: 
-     # video: 
+     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
    -
      date: "April 1"
      content: "Concurrency / Lock Free Data Structures"
-     # slides: 
-     # video: 
+     slides: "https://drive.google.com/file/d/1MtSLT1ElnH00wrcrHMzmThta6ycIcCkm/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
    -
      date: "April 8"
      content: "Embedded Programming"
