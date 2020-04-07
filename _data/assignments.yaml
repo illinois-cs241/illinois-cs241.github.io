@@ -155,6 +155,19 @@ labs:
       worksheet: false
       visible: false
   -
+      name: "Deepfried dd"
+      releaseDate: "Week 12"
+      dueDate: "Week 13"
+      url: "deepfried_dd"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2020-04-15 23:59
+          graded_files:
+          - dd.c
+      resources: true
+      worksheet: false
+      visible: true
+  -
       name: "Savvy Scheduler"
       releaseDate: "Week 13"
       dueDate: "Week 14"
