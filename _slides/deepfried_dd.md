@@ -6,8 +6,8 @@ title: Deepfried_DD
 ## The Real dd
 
 * dd is a command-line utility used to convert and copy files (highly configurable)
-* You might recognize 'dd if=/dev/zero of=/dev/null'
-* The real `dd` performs block level I/O, as opposed to filesystem-level I/O for increased performance
+* You might recognize `dd if=/dev/zero of=/dev/null`
+* The real `dd` performs block level I/O, as opposed to filesystem-level I/O, for increased performance
 * As a result, if misused, it can corrupt your hard disk/SSD (be very careful running this as root)
 * You will be implementing this tool using file-level I/O (`fread`, `fwrite`, etc.)
 
@@ -21,12 +21,12 @@ title: Deepfried_DD
 
 ## Notable dd parameters
 
-* `if=FILE`: read from FILE instead of stdin
-* `of=FILE`: write to FILE instead of stdout
-* `bs=BYTES`: read and write up to BYTES bytes at a time (default: 512);
+* `if=FILE`: read from `FILE` instead of `stdin`
+* `of=FILE`: write to `FILE` instead of `stdout`
+* `bs=BYTES`: `bs` is the block size; read and write up to `BYTES` bytes at a time (default: 512);
 * `count=N`: copy only N input blocks
-* `seek=N`: skip N obs-sized blocks at start of output
-* `skip=N`: skip N ibs-sized blocks at start of input
+* `seek=N`: skip `N` obs-sized blocks at start of output
+* `skip=N`: skip `N` ibs-sized blocks at start of input
 
 <horizontal/>
 
