@@ -9,6 +9,23 @@ title: Deepfried_DD
 * You might recognize 'dd if=/dev/zero of=/dev/null'
 * Allows a few dozen different parameters
 
+## Applications of `dd` (1/2)
+
+* Data transfer
+* Modification of files in-place
+* Wiping disks for security (e.g. prior to recycling hardware)
+  - Contents of a file are not necessarily overwritten on deletion
+  
+## Applications of `dd` (2/2)
+
+* Generating files with random data (will be useful for testing file transfer in upcoming Networking MP)
+* "Flashing" / installing custom ROMs (enhanced version of vanilla OS) on Android devices
+
+Note: 
+* The real `dd` performs block level I/O, as opposed to filesystem-level I/O for increased performance
+* As a result, if misused, can easily corrupt your hard disk/SSD (be very careful running this as root)
+* In this lab, we will be implementing this tool using file-level I/O (`fread`, `fwrite`, etc.)
+
 ## Notable dd parameters
 
 * `if=FILE`: read from FILE instead of stdin
@@ -18,7 +35,7 @@ title: Deepfried_DD
 * `seek=N`: skip N obs-sized blocks at start of output
 * `skip=N`: skip N ibs-sized blocks at start of input
 
-<horizontal />
+<horizontal/>
 
 ## What our dd will look like
 
@@ -39,6 +56,9 @@ title: Deepfried_DD
 
 ## Blocks
 
-A block is a unit measuring the number of bytes that are read or written at one time. For example, modern hard drives have a sector (block) size of 4 kB - reads or writes to the disk can only address 4 kB portions at a time. If you write a 64 kB file to the disk, it will be broken down into 16 writes of 4 kB each
+* A block is a unit measuring the number of bytes that are read or written at one time. 
+* Hard drives / SSDs have a sector (block) size of 4 kB
+* This means read/write operations to the disk can only address 4 kB portions at a time. 
+* If you write a 64 kB file to the disk, it will be broken down into 16 writes of 4 kB each
 
 `./dd -i input_file -o output_file -b 256` -> specifies a block size of 256 bytes
