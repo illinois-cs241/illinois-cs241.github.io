@@ -5,26 +5,19 @@ title: Deepfried_DD
 
 ## The Real dd
 
-* dd is a command-line utility used to convert and copy files.
+* dd is a command-line utility used to convert and copy files (highly configurable)
 * You might recognize 'dd if=/dev/zero of=/dev/null'
-* Allows a few dozen different parameters
-
-## Applications of `dd` (1/2)
-
-* Data transfer
-* Modification of files in-place
-* Wiping disks for security (e.g. prior to recycling hardware)
-  - Contents of a file are not necessarily overwritten on deletion
-  
-## Applications of `dd` (2/2)
-
-* Generating files with random data (will be useful for testing file transfer in upcoming Networking MP)
-* "Flashing" / installing custom ROMs (enhanced version of vanilla OS) on Android devices
-
-Note: 
 * The real `dd` performs block level I/O, as opposed to filesystem-level I/O for increased performance
-* As a result, if misused, can easily corrupt your hard disk/SSD (be very careful running this as root)
-* In this lab, we will be implementing this tool using file-level I/O (`fread`, `fwrite`, etc.)
+* As a result, if misused, it can corrupt your hard disk/SSD (be very careful running this as root)
+* You will be implementing this tool using file-level I/O (`fread`, `fwrite`, etc.)
+
+## Applications of `dd`
+
+* Data transfer, and in-place modification of files
+* Wiping disks for security (e.g. prior to recycling hardware)
+  - Contents of a file are not necessarily overwritten on regular deletion
+* Generating files with random data (will be useful for testing in upcoming Networking MP)
+* "Flashing" / installing custom ROMs (enhanced versions of vanilla OS) on Android devices
 
 ## Notable dd parameters
 
