@@ -219,7 +219,7 @@ One way to reason about connections in a nonblocking server is to visualize each
 
 A suggested flowchart for the server automata:
 
-![Server Flowchart](./images/networking_server_flowchart.png)
+![Server Flowchart](./images/assignment-docs/mp/nonstop_networking/networking_server_flowchart.png)
 
 ### Maintaining persistent connection state
 
