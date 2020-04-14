@@ -110,7 +110,7 @@ $ ./dd -i /dev/urandom -o random.bin -b 1000 -c 200000
 
 ### Errors
 
-If the input or output file given to your `dd` is invalid, use the functions in `format.h` to print the corresponding error and exit with return code `1`.
+If the input or output file given to your `dd` is invalid, use the functions in `format.h` to print the corresponding error and exit with return code `1`. Any other invalid inputs (e.g. negative block sizes) are considered undefined behavior.
 
 ## Testing
 Though it is helpful to write tests that call any functions you write in `dd.c`, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your `dd`  executable in a bash script, and use `diff`/`md5sum` along with spot checks to ensure correct functionality. For example, the following shell script would print nothing if your dd implementation is correct:
