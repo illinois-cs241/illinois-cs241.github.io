@@ -132,4 +132,4 @@ Your code will be auto-graded on all of the parameters listed above. We will als
 
 :bangbang: WARNING: **Make sure** to remove all print statements from your code (except calls to functions in format.h) before running the autograder!
 
-:bangbang: WARNING: You will fail the assignment if you use use `system`, `exec`, or similar.
+:bangbang: WARNING: You will fail the assignment if you use use `fork`, `system`, `exec`, or similar.
