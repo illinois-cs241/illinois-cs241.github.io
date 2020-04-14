@@ -55,6 +55,8 @@ Your code will be compiled into an executable and run via the command line.
 
 If implemented optimally, there is no need to specially handle the case where the input file defaults to `stdin`, instead of a "real" file. Keep in mind that you **don't** need to know the size of the entire input file in order to copy the full thing: [`feof`](https://linux.die.net/man/3/feof) is a useful function. When copying from `stdin`, `dd` should write bytes until the user enters Control+D (i.e. end of file) into their terminal. You can see this functionality by running the real `dd`: simply run `dd of=my_file` in your terminal, write some text, and press Control+D. `my_file` will then contain the text you typed into the terminal.
 
+**Note that `fseek` is not meant to be used on streams such as stdin and stdout! As such, we will not be testing the -p or -k functionality when the input or output files are set to stdin or stdout respectively.**
+
 ### Status Reports
 
 You must print a status report after dd finishes, similar to the real dd. An example is below:
