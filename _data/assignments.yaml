@@ -334,7 +334,7 @@ mps:
           - common.c
           - common.h
         - title: Part 3 The Server Part 2
-          due_date: 2019-05-04 23:59
+          due_date: 2020-05-04 23:59
           graded_files:
           - client.c
           - server.c
