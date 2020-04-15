@@ -141,20 +141,6 @@ labs:
       worksheet: true
       visible: true
   -
-      name: "Mad Mad Access Pattern"
-      releaseDate: "Week 12"
-      dueDate: "Week 13"
-      url: "mad_mad_access_pattern"
-      submissions:
-        - title: Entire Assignment
-          due_date: 2020-04-22 23:59
-          graded_files:
-          - lookup1.c
-          - lookup2.c
-      resources: true
-      worksheet: false
-      visible: true
-  -
       name: "Deepfried dd"
       releaseDate: "Week 12"
       dueDate: "Week 13"
@@ -168,40 +154,40 @@ labs:
       worksheet: false
       visible: true
   -
-      name: "Savvy Scheduler"
+      name: "Mad Mad Access Pattern"
       releaseDate: "Week 13"
       dueDate: "Week 14"
+      url: "mad_mad_access_pattern"
+      submissions:
+        - title: Entire Assignment
+          due_date: 2020-04-22 23:59
+          graded_files:
+          - lookup1.c
+          - lookup2.c
+      resources: true
+      worksheet: false
+      visible: true
+  -
+      name: "Savvy Scheduler"
+      releaseDate: "Week 14"
+      dueDate: "Week 15"
       url: "savvy_scheduler"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-12-04 23:59
+          due_date: 2020-04-29 23:59
           graded_files:
           - libscheduler.c
       resources: true
       worksheet: true
       visible: false
   -
-      name: "Resplendent RPCs"
-      releaseDate: "Week 13"
-      dueDate: "Week 14"
-      url: "resplendent_rpcs"
-      submissions:
-        - title: Entire Assignment
-          due_date: 2019-04-24 23:59
-          graded_files:
-          - dns_query_svc_impl.c
-          - dns_query_clnt_impl.c
-      resources: true
-      worksheet: false
-      visible: false
-  -
       name: "Lovable Linux"
-      releaseDate: "Week 14"
-      dueDate: "Week 15"
+      releaseDate: "Week 15"
+      dueDate: "Week 16"
       url: "lovable_linux"
       submissions:
         - title: Entire Assignment
-          due_date: 2019-12-11 23:59
+          due_date: 2020-05-06 23:59
           graded_files:
           - kernel.c
       resources: false
