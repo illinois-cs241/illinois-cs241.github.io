@@ -48,13 +48,13 @@
    -
      date: "April 8"
      content: "Embedded Programming"
-     # slides: 
-     # video: 
+     slides: "https://drive.google.com/open?id=1s75RppHNT7NVec6AGiTsH1YNr1rEuApj"
+     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
    -
      date: "April 15"
      content: "Networking / TCP"
-     # slides: 
-     # video: 
+     slides: "https://drive.google.com/open?id=1sWWjPgIloC1EENGpLrB-V4XnpC-Bcci"
+     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
    -
      date: "April 22"
      content: "Containerization / Virtualization"
