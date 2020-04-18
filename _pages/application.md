@@ -18,7 +18,7 @@ For now, please pick one secondary role, and up to 2 primary roles that sound mo
 - Data Analytics and Research
 - Web and Coursebook Development
 
-All positions require dedicated people who have a passion for teaching system programming. Those who submit a promising application will be offered an interview. We also want to be completely transparent about what we look in our applicants. 
+All positions require dedicated people who have a passion for teaching system programming. Those who submit a promising application will be offered an interview. We also want to be completely transparent about what we look in our applicants.
 We are not simply looking for A+ students. A good grade is neither necessary nor sufficient to be a good course assistant. We expect everyone on course staff to contribute regularly to Piazza, to help answer student questions. You _must_ have a primary role to be considered, but secondary roles are optional. The reason we have secondary roles is so each member on staff has a few main responsibilities, and can operate knowing that other aspects of the course are being managed by people specifically tasked to do so. This lets each area of course staff get individual attention which enables visible improvements from semester-to-semester.
 
 Things we look for in our application:
@@ -60,7 +60,7 @@ If you have a deep passion for systems and want to instill that passion in the c
 
 * Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page. Meetings also serve as a means for more experienced course staff members to give less experienced course staff members advice.
 * Mentoring Meetings (1 hr / section / week) - Student meetings are to make sure that students are keeping up with their projects, and to help unblock them from issues. You wll have 1-3 sections per week.
-* Honors Section (3-4 hrs / week) - The honors section has weekly one-hour meetings, and you will be expected to have two or three one-hour meetings with your assigned groups. The meeting will primarily cover what happened this past week and prepare for the next week. 
+* Honors Section (3-4 hrs / week) - The honors section has weekly one-hour meetings, and you will be expected to have two or three one-hour meetings with your assigned groups. The meeting will primarily cover what happened this past week and prepare for the next week.
 * Lecture Development (5-10 hrs / week per lecture week) - You will be helping out prepare and deliver part of a lecture to honors students. This lecture needs to be well-documented, well-researched, and expertly given. Not every Honors CA will be helping out with the lecture every week, but the weeks you choose to teach spike the time spent on development.
 
 ### Skills
@@ -90,7 +90,7 @@ Finally, with any good assignment comes excellent documentation that is clear, c
 * Development and Testing (varies) - You will need to develop meaningful assignments, and doing so takes a lot of effort. Even after the team has written documentation and a TA solution, you will need to test the provided code thoroughly. This is to ensure the assignment is solid and understandable, and hopefully catch any potential bugs.
 * Addressing Student Concerns (varies) - It would be a miracle for an assignment to be deployed without a problem, but the chances of this happening is slim to none. The team will have to accommodate for bugs in the provided code and ambiguity in documentation. This is also an important time to take student feedback so that the team can improve the assignment for future semesters.
 
-## Infrastructure 
+## Infrastructure
 
 We need a lot of code to support our code. Welcome to infrastructure, where the autograder is developed along with tools and scripts that the rest of the staff uses. You will be working on challenging problems in the domain of distributed systems by working on our course's very own Broadway-on-Demand auto-grader. We are always looking to add more features, and make this tool easier to use for students and staff.
 
@@ -118,15 +118,15 @@ You will be doing exploratory data analysis, creating visualizations, and mining
 * Varies by project
 
 ## Web and Coursebook Development
-For people interested in web development and technical writing. This will involve updating content on our website on a regular basis, contributing content to and maintaining our coursebook. 
+For people interested in web development and technical writing. This will involve updating content on our website on a regular basis, contributing content to and maintaining our coursebook.
 Our web app suite including grade viewer, Broadway-on-Demand, and lab attendance platform. You will be adding features or fixing issues with these, as part of your role.
 ### Skills Required
-* Programming skills - Proficiency in HTML, CSS, JS is required. Proficiency in LaTeX is recommended to be able to effectively work on our coursebook. Our web apps are built with Flask for Python, and the Bootstrap framework, with MongoDB used for data persistence. 
+* Programming skills - Proficiency in HTML, CSS, JS is required. Proficiency in LaTeX is recommended to be able to effectively work on our coursebook. Our web apps are built with Flask for Python, and the Bootstrap framework, with MongoDB used for data persistence.
 
 ### Expected Time Obligations
 * Varies by project
 
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSe-zWx0lRFsM2tINqBu8ZmYmDFJS_2Tp3bgZGrxQt4TlptaZQ/viewform?usp=sf_link">
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfIAbibDcTTLHbjuad0Z8a8vO8Z11b6VY8-jbP_Yho3I_wWrQ/viewform?usp=sf_link">
     <button type="submit" class="apply-button">
         Apply
     </button>
