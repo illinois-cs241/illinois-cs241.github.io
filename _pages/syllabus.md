@@ -66,11 +66,14 @@ We publish the following thresholds:
 | [80 - 90)  | B-              |
 | [70 - 80)  | C-              |
 
-All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week. For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet. At the end of the semester there will be a last chance regrade option for two weeks of machine problem grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops.
+All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week. For grading, we will drop your lowest quiz score, lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet.
 
 The 3-hour handwritten final exam is comprehensive and will test all CS 241 topics, including programming topics covered in the MP and Labs. Do not book your flights until the exam date is known. Early exams will not be offered. Conflict final exams will be offered if you have three exams in a 24 hour period, or you have an exam in another, smaller enrollment course at the same time.
 
 Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being reported.
+
+### Regrades
+At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops. Please note that the score for each regrade will be capped at 90%.
 
 ## Exams
 
@@ -96,7 +99,7 @@ The complete and authoritative CBTF detailed schedule is available at the [https
 | Quiz 6 | Fri, Nov 8   | Mon, Nov 11 |
 | Quiz 7 | *Mon*, Dec 2 | Wed, Dec 4  |
 
-Protip 1: CBTF is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time. 
+Protip 1: CBTF is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time.
 Protip 2: If you miss your slot, visit the CBTF in person as soon as possible to see if it can be re-scheduled.
 
 
