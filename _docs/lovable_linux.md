@@ -2,8 +2,8 @@
 layout: doc
 title: "Lovable Linux"
 learning_objectives:
-  - Building Character
-  - Proving a Point
+    - Building Character
+    - Proving a Point
 ---
 
 ## ECE 391 vs. CS 241
@@ -16,7 +16,7 @@ Normally a 391 student is given 6 weeks and 3 partners to finish this assignment
 
 ## Introduction
 
-*Read the Whole document before you begin*, or you may miss points on some requirements (for example, the
+_Read the Whole document before you begin_, or you may miss points on some requirements (for example, the
 bug log).
 
 In this machine problem, you will work in teams to develop the core of an operating system. We will provide you with
@@ -85,7 +85,7 @@ unused pages to not present as well. In this layout everything in Kernel
 the first 4MB, that isn’t the page for video memory, should be
 marked not present.
 
-![Page Initialization](./images/391/initialize_paging.png)
+![Page Initialization](/images/assignment-docs/lab/lovable_linux/initialize_paging.png)
 
 Make sure that you align your pages (page directory and page 8 MB
 tables) on 4 kB boundaries. To align things in x86:
@@ -172,7 +172,6 @@ executables; as your code reads from the filesystem image, its output might not 
 individual executables. For the handin, you must have some test/wrapper code that given a filename, a buffer, and a
 buffer length, will read data from the given file into the buffer.
 
-
 ## System Calls and Tasks
 
 ### Support System Calls
@@ -254,6 +253,7 @@ that you created.
 For the final due date, the following functionality must be implemented:
 
 ### Multiple Terminals and Active Tasks
+
 As you may already know, it is possible to switch between different terminals in Linux using the ALT+Function-Key
 combination. You will need to add a similar feature by running several instances of the shell executable. You must
 support three terminals, each associated with a different instance of shell. As an example, pressing ALT+F2 while
@@ -270,6 +270,7 @@ on the state before the interrupt. Each process should have its own kernel stack
 either type of transition.
 
 ### Scheduling
+
 Until this point, task switching has been done by either executing a new task or by halting an existing one and returning
 to the parent task. By adding a scheduler, your OS will actively preempt a task in order to switch to the next one. Your
 OS scheduler should keep track of all tasks and schedule a timer interrupt every 10 to 50 milliseconds in order to
@@ -285,6 +286,7 @@ output. Eventually, when the user makes the task’s terminal active again, your
 backing store into the video memory and re-map the virtual addresses to point to the video memory’s physical address.
 
 ### Handin
+
 For this final handin, we expect you to demonstrate that multiple terminals work by switching between active terminals.
 We will execute a program on one screen, switch to another screen, start another program, and then expect to be able to
 switch back and forth to see the programs running. For scheduling, we expect that programs running in the background
@@ -293,13 +295,15 @@ continue despite not actually being displayed on the screen.
 
 ## Bells and Whistle
 
-The following is *OPTIONAL* and is only for fun:
+The following is _OPTIONAL_ and is only for fun:
 
 ### Signals
+
 Add support for delivery of five different signals to a task. Appendix F details the specifications and implementation
 details to make this work.
 
 ### Dynamic Memory Allocation
+
 Create a dynamic memory allocator (such as malloc). This can be done by simply keeping track of where free pages
 are using some method, then creating a malloc system call that adds a new page to the program’s page table or page
 directory.
@@ -307,6 +311,7 @@ Remember that implementing dynamic memory will not get you any extra credit if y
 the functionality. For example, writing a short user program or some kind of kernel-level functionality.
 
 ### Other Ideas
+
 Go wild, find something interesting to add to your operating system and explain it. We will consider the difficulty of
 any addition when determining whether and how much extra credit is merited. For example, don’t expect a huge grade
 increase for adding color support for text.
@@ -314,12 +319,13 @@ increase for adding color support for text.
 ## Appendix A: The File System
 
 ### File System Utilities
+
 The figure below shows the structure and contents of the file system. The file system memory is divided into 4 kB
 blocks. The first block is called the boot block, and holds both file system statistics and the directory entries. Both
 the statistics and each directory entry occupy 64B, so the file system can hold up to 63 files. The first directory entry
 always refers to the directory itself, and is named ".", so it can really hold only 62 files.
 
-![Filesystem Layout](./images/391/fs_layout.png)
+![Filesystem Layout](/images/assignment-docs/lab/lovable_linux/fs_layout.png)
 
 Each directory entry gives a name (up to 32 characters, zero-padded, but not necessarily including a terminal EOS
 or O-byte), a file type, and an index node number for the file. File types are 0 for a file giving user-level access to
@@ -354,19 +360,19 @@ identify the open file.
 This array should store a structure containing:
 
 1. The file operations jump table associated with the correct file type. This jump table should contain entries
-for open, read, write, and close to perform type specific actions for each operation. open is used for
-performing type specific initialization. For example, if we just open’d the RTC, the jump table pointer in this
-structure should store the RTC’s file operations table.
+   for open, read, write, and close to perform type specific actions for each operation. open is used for
+   performing type specific initialization. For example, if we just open’d the RTC, the jump table pointer in this
+   structure should store the RTC’s file operations table.
 
 2. The inode number for this file. This is only valid for data files, and should be 0 for directories and the RTC
-device file.
+   device file.
 
 3. A "file position" member that keeps track of where the user is currently reading from in the file. Every read
-system call should update this member.
+   system call should update this member.
 
 4. A "flags" member for, among other things, marking this file descriptor as "in-use."
 
-![File Descriptor Table](./images/391/file_description_table.png)
+![File Descriptor Table](/images/assignment-docs/lab/lovable_linux/file_description_table.png)
 
 When a process is started, the kernel should automatically open stdin and stdout, which correspond to file descriptors O and 1, respectively. stdin is a read-only file which corresponds to keyboard input. stdout is a write-only
 file corresponding to terminal output. “Opening” these files consists of storing appropriate jump tables in these two
@@ -375,6 +381,7 @@ the file array is dynamically associated with the file being `open`'d whenever t
 the array is full).
 
 ## Appendix B: The System Calls
+
 You must support ten system calls, numbered 1 through 10. As with Linux, they are invoked using `int 0x80`, and
 use a similar calling convention. In particular, the call number is placed in EAX, the first argument in EBX, then
 ECX, and finally EDX. No call uses more than three arguments, although you should protect all of the registers from
@@ -464,13 +471,14 @@ interrupts, if only briefly, to update screen data when printing (keyboard input
 interrupt handler).
 
 ## Appendix C: Memory Map and Task Specification
+
 When processing the execute system call, your kernel must create a virtual address space for the new process.
 This will involve setting up a new Page Directory with entries corresponding to the figure shown on the right.
 The virtual memory map for each task is show in the figure.
 The kernel is loaded at physical address 0x400000 (4 MB), 128MB and also mapped at virtual address 4 MB.
 A global page directory entry with its Supervisor bit set should be set up to map the kernel to virtual address ox400000 (4 MB). This ensures that the kernel, which is linked to run with its starting address at 4 MB, will continue to work even after paging is turned on.
 
-![Memory Mapping](./images/391/memory_map.png)
+![Memory Mapping](/images/assignment-docs/lab/lovable_linux/memory_map.png)
 
 To make physical memory management easy, you may assume there is at least 16 MB of physical memory on the system.
 Then, use the following (static) strategy: the first user-level program (the shell) should be loaded at physical 8 MB, and the second user-level program, when it is executed by the shell, should be loaded at physical 12 MB. The program image itself is linked to execute at virtual address 0x08048000.
@@ -481,6 +489,7 @@ Both the kernel mapping and the user-level program mapping are critical; memory 
 The layout of executable files in the file system is simple: the entire file stored in the file system is the image of the program to be executed. In this file, a header that occupies the first 40 bytes gives information for loading and starting the program. The first 4 bytes of the file represent a “magic number” that identifies the file as an executable. These bytes are, respectively, 0: 0x7f; 1: 0x45; 2: 0x4c; 3: 0x46. If the magic number is not present, the execute system call should fail. The other important bit of information that you need to execute programs is the entry point into the program, i.e., the virtual address of the first instruction that should be executed. This information is stored as a 4-byte unsigned integer in bytes 24-27 of the executable, and the value of it falls somewhere near 0x08048000 for all programs we have provided to you. When processing the execute system call, your code should make a note of the entry point, and then copy the entire file to memory starting at virtual address 0x08048000. It then must jump to the entry point of the program to begin execution. The details of how to jump to this entry point are explained in the next section.
 
 ## Appendix D: System Calls, Exceptions, and Interrupts
+
 Recall that when a hardware interrupt is asserted or a hardware exception is detected, a specific number is associated
 with the exception or interrupt to differentiate between different types of exceptions, or different hardware devices (for
 example, differentiating between the keyboard interrupt, the network card interrupt, and a divide-by-zero exception).
@@ -509,9 +518,10 @@ segment descriptor. When the x86 sees that a new CS is specified, it will perfor
 for the IDT entry will run in the new privilege level. This way, the system call interface is accessible to user space but
 the code executes in the kernel.
 
-![Interrupt Gate](./images/391/interrupt_gate.png)
+![Interrupt Gate](/images/assignment-docs/lab/lovable_linux/interrupt_gate.png)
 
 ## Appendix E: Stack Switching and the TSS
+
 The last detail of user space to kernel transitions on system calls, interrupts, or exceptions is stack switching. The stack
 switch is taken care of by the x86 hardware. The x86 processor supports the notion of a task; this hardware support is
 encapsulated in a Task State Segment, or TSS. You will not use the full x86 hardware support for tasks in this project,
@@ -525,16 +535,16 @@ just before you switch to that process and start executing its user-level code, 
 its new kernel-mode stack pointer. This way, when a privilege switch is needed, the correct stack will be set up by the
 x86 processor.
 
-
 ## Appendix F: Signals
+
 For extra credit, your OS can provide an infrastructure for user-level signals, similar to Linux. The table details the
 signals that will be supported.
 
 | Signal Name | Signal Number | Default Action |
-|:-----------:|:-------------:|:--------------:|
-|   DIV_ZERO  |       0       |  Kill The Task |
-|   SEGFAULT  |       1       |  Kill The Task |
-|  INTERRUPT  |       2       |  Kill The Task |
+| :---------: | :-----------: | :------------: |
+|  DIV_ZERO   |       0       | Kill The Task  |
+|  SEGFAULT   |       1       | Kill The Task  |
+|  INTERRUPT  |       2       | Kill The Task  |
 |    ALARM    |       3       |     Ignore     |
 |    USER1    |       4       |     Ignore     |
 
@@ -559,14 +569,14 @@ mechanism similar to what Linux uses:
 1. Mask all other signals.
 
 2. Set up the signal handler’s stack frame. You’ll need the current value of the user-level ESP register to find the
-user’s current stack location. The signal handler stack frame goes directly above this on the stack.
-The signal handler stack frame is shown in Figure 1. Setting up the signal handler stack frame involves: copying
-a return address and a signal number parameter to the user-level stack, copying the process’s hardware context
-(see Figure 2) from the point when the program was interrupted for the signal, and copying a small amount of
-assembly linkage to the user-level stack that calls `sigreturn` when the signal handler is finished.
+   user’s current stack location. The signal handler stack frame goes directly above this on the stack.
+   The signal handler stack frame is shown in Figure 1. Setting up the signal handler stack frame involves: copying
+   a return address and a signal number parameter to the user-level stack, copying the process’s hardware context
+   (see Figure 2) from the point when the program was interrupted for the signal, and copying a small amount of
+   assembly linkage to the user-level stack that calls `sigreturn` when the signal handler is finished.
 
 3. Finally, execute (in user space) the handler specified in the signal descriptor. No other information needs to be
-passed to the signal handler (no `siginfo_t` structure like the modern Linux signals).
+   passed to the signal handler (no `siginfo_t` structure like the modern Linux signals).
 
 When the user-level signal handler returns, it will use the return address you have copied on its stack, which will jump
 to the assembly linkage (also on the stack). This assembly linkage should make the `sigreturn` system call (using the
@@ -584,7 +594,7 @@ to user space. Be sure you don’t clobber the user’s EAX value from its hardw
 From `sigreturn` - have `sigreturn` return the hardware context’s EAX value so that you won’t have to special-case
 the return from `sigreturn`.
 
-![Signals Figures](./images/391/signals_figures.png)
+![Signals Figures](/images/assignment-docs/lab/lovable_linux/signals_figures.png)
 
 Shown in Figure 2 is a slightly-modified version of the struct pt_regs structure that Linux uses for its hardware
 context; this modified structure is what you should use in this MP. The “Error Code / Dummy” field has been added to
@@ -601,6 +611,7 @@ pending signals, masked signals, and handler actions / addresses for each signal
 chapter 10.
 
 ## Alternative (with video)
+
 Please watch this [introductory video to linux kernels](https://www.youtube.com/watch?v=oHg5SJYRHA0) before you begin.
 
 There is no lab assignment, just do the review. It will be graded for completion.
