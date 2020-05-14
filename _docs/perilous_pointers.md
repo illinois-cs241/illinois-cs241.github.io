@@ -49,7 +49,7 @@ Hello World!
 == seven() ==
 0.000000 0.100000 0.200000 0.300000 0.400000 0.500000 0.600000 0.700000 0.800000 0.900000
 == eight() ==
-0 10 40 90 160 250 360 490 640 810
+0 10 40 90 160 250 360 490 640 810 
 == nine() ==
 orange and blue!
 ORANGE and blue!
@@ -59,17 +59,17 @@ orange and blue!
 The radius of the circle is: 17.500000.
 The radius of the circle is: 10.000000.
 == clear_bits() ==
-170
-0
-171
-0
-20
-0
-== little finite automatons
-5
-4
-6
-7
+cleared_value: 170
+cleared_value: 0
+cleared_value: 171
+cleared_value: 0
+cleared_value: 20
+cleared_value: 0
+== little finite automata ==
+final state: 5
+final state: 4
+final state: 6
+final state: 7
 ```
 
 Note that you can just diff with ```part1-expected-output```.
