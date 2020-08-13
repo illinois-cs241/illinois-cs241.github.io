@@ -44,7 +44,7 @@
         {% endif %}
       </div>
       <div id="content">
-          {% doc_header.html %}
+          {% include doc_header.html %}
           {{ content | content_style }}
           {% capture doc_footer %}{% include doc_footer.md %}{% endcapture %}
           {{ doc_footer | markdownify | content_style }}
