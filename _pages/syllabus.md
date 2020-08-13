@@ -186,3 +186,11 @@ We want you to get the most out your education, and cheating not only affects yo
 ## Diversity Statement
 
 UIUC is committed to equal opportunity for all persons, regardless of race, ethnicity, religion, sex, gender identity or expression, creed, age, ancestry, national origin, handicap, sexual orientation, political affiliation, marital status, developmental disability, or arrest or conviction record. We value diversity in all of its definitions, including who we are, how we think, and what we do. We cultivate an accessible, inclusive, and equitable culture where everyone can pursue their passions and reach their potential in an intellectually stimulating and respectful environment. We will continue to create an inclusive campus culture where different perspectives are respected and individuals feel valued.
+
+## Mental Health Statement
+
+Diminished mental health, including significant stress, mood changes, excessive worry, substance/alcohol abuse, or problems with eating and/or sleeping can interfere with optimal academic performance, social development, and emotional wellbeing. The University of Illinois offers a variety of confidential services including individual and group counseling, crisis intervention, psychiatric services, and specialized screenings at no additional cost. If you or someone you know experiences any of the above mental health concerns, it is strongly encouraged to contact or visit any of the University’s resources provided below. Getting help is a smart and courageous thing to do -- for yourself and for those who care about you.
+
+[Counseling Center](https://www.counselingcenter.illinois.edu/): <a href="tel:+12173333704">+1 (217) 333-3704</a>, 610 East John Street Champaign, IL 61820
+
+[McKinley Health Center](https://mckinley.illinois.edu/): <a href="tel:+12173332700">+1 (217) 333-2700</a>, 1109 South Lincoln Avenue, Urbana, Illinois 61801
