@@ -13,6 +13,7 @@ group :jekyll_plugins do
   gem 'jemoji'
   gem 'sassc', '~> 2.1.0'
   gem "jekyll-feed", "~> 0.6"
+  gem 'jekyll-assets', :git => 'https://github.com/jekyll/jekyll-assets.git'
   gem 'jekyll-sitemap', '~> 1.3.1'
   gem 'sprockets', '=4.0.0'
   gem "image_optim"
