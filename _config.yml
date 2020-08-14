@@ -64,4 +64,3 @@ plugins_dir:
   - _plugins
 plugins:
   - jekyll-sitemap   # Search engine optimization
-  - jekyll-assets
