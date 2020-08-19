@@ -15,7 +15,7 @@ group :jekyll_plugins do
   gem 'sassc', '~> 2.1.0'
   gem "jekyll-feed"
   gem 'jekyll-sitemap'
-  gem 'sprockets', '=4.0.0'
+  gem 'sprockets', '=4.0.2'
   gem "image_optim"
   gem "image_optim_pack" # Optional
 end
