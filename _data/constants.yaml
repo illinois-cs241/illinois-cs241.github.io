@@ -5,7 +5,7 @@ department_code: "cs"
 course_name: "System Programming"
 
 # Class info
-semester: sp20
+semester: fa20
 instructor: Lawrence Angrave (angrave@illinois.edu)
 location: DCL 1320
 timings: MWF 10:00am-10:50am, 11:00am-11:50am

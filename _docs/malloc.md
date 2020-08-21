@@ -204,7 +204,7 @@ So, let's work out some scenarios:
 
 ## Contest
 
-**View the malloc contest [here](https://sp20-cs241-grd-01.cs.illinois.edu/malloc/)!**
+**View the malloc contest [here]({{ site.data.constants.malloc_contest_link }})!**
 
 The malloc contest pits your memory allocator implementation against your fellow students. There are a few things to know:
 
