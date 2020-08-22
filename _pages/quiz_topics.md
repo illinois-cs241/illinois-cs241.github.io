@@ -4,20 +4,8 @@ title: Quiz Topics
 ---
 
 ## CBTF Quiz Schedule.
-**These are usually available Thursday - Saturday.**
-
-| Quiz | First day | Last day |
-| -----|-----------|----------|
-| Quiz 1 | Thu, Jen 30 	| Sat, Feb 01 |
-| Quiz 2 | Thu, Feb 13	| Sat, Feb 15 |
-| Quiz 3 | Thu, Feb 27	| Sat, Feb 29 |
-| Quiz 4 | *Wed*, Mar 11	| *Fri*, Mar 13 |
-| Quiz 5 | Thu, Apr 02  | Sat, Apr 04 |
-| Quiz 6 | Thu, Apr 16  | Sat, Apr 18 |
-| Quiz 7 | Thu, Apr 30  | Sat, May 02 |
-
-* [CBTF](https://cbtf.engr.illinois.edu/) is used by many courses. *Seats may not be available on the later days* - so sign up early to reserve your preferreed day and time.
-* If you miss your slot, visit the CBTF in person as soon as possible to see if it can be re-scheduled.
+* The schedule will be published here in week 2 of the course.
+* These will be available on [PrairieLearn](https://prairielearn.engr.illinois.edu/)
 * Need DRES accomodations? Please visit the [DRES website](https://www.disability.illinois.edu/) for more informaiton.
 
 ## Quiz 1
