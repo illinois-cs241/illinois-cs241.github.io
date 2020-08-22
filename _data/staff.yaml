@@ -12,171 +12,147 @@
   specialty: Jack of All Trades
   semesters: ""
 -
-  name: Ayush Ranjan
-  netid: ayushr2
-  roles: Lab / Office Hours Assistant, Infrastructure Lead
-  specialty: ""
-  semesters: Fall 2018 - Spring 2020
--
-  name: Andy Lee
-  netid: andy2
-  roles: Lab / Office Hours Assistant, Infrastructure, A.D., Analytics
-  specialty: ""
-  semesters: Fall 2018 - Spring 2020
--
-  name: Arnav Sankaran
-  netid: arnavs3
-  roles: Assignment Development, Infrastructure
-  specialty: ""
-  semesters: Fall 2018 - Spring 2020
--
-  name: Ophir Sneh
-  netid: osneh2
-  roles: Honors Lead, Assignment Development, Front End
-  specialty: ""
-  semesters: Fall 2018 - Spring 2020
--
-  name: Ann Rajan
-  netid: amrajan2
-  roles: Assignment Development, Front End
-  specialty: ""
-  semesters: Fall 2018 - Spring 2020
--
-  name: Hung Woei Neoh
-  netid: hneoh2
-  roles: Assignment Development, Front End
-  specialty: Anime, Math and Piazza
-  semesters: Spring 2019 - Spring 2020
--
-  name: Rod Lin
-  netid: zl38
-  roles: Infrastructure Lead, Assignment Development
-  specialty: ""
-  semesters: Spring 2019 - Spring 2020
--
   name: Pradyumna Shome
   netid: pshome2
   class: 21
-  roles: Lab / Office Hours Assistant, Assignment Development Lead
-  specialty: Computer Security, Machine Learning, and Systems
-  semesters: Spring 2019 - Spring 2020
+  roles: Lab / Office Hours Assistant, Assignment Development
+  specialty: Security, Privacy, Systems, and CS education
+  semesters: Spring 2019 - Fall 2020
 -
   name: Rafi Long
   netid: rjlong2
   roles: Assignment Development, Front End
   specialty: ""
-  semesters: Spring 2019 - Spring 2020
+  semesters: Spring 2019 - Fall 2020
 -
   name: Aarya Chandhok
   netid: aaryac2
   roles: Lab / Office Hours Assistant, Assignment Development
   specialty: ""
-  semesters: Fall 2019 - Spring 2020
+  semesters: Fall 2019 - Fall 2020
 -
   name: Anant Kandikuppa
   netid: anantk3
   roles: Teaching Assistant
   specialty: ""
-  semesters: Fall 2019 - Spring 2020
--
-  name: Beitong Tian
-  netid: beitong2
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2019 - Spring 2020
--
-  name: Javed Mohamed
-  netid: javedm2
-  roles: Lab / Office Hours Assistant, Honors Mentor
-  specialty: ""
-  semesters: Fall 2019 - Spring 2020
+  semesters: Fall 2019 - Fall 2020
 -
   name: Maciej Krzysiak
   netid: mkrzys2
-  roles: Lab / Office Hours Assistant, Assignment Development Lead
+  roles: Lab / Office Hours Assistant, Assignment Development
   specialty: ""
-  semesters: Fall 2019 - Spring 2020
--
-  name: Noor Michael
-  netid: nsm2
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2019 - Spring 2020
--
-  name: Aaron Green
-  netid: aarongg2
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Spring 2020
--
-  name: Harrison Ding
-  netid: hding13
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Spring 2020
+  semesters: Fall 2019 - Fall 2020
 -
   name: Ryan Johnson
   netid: rsj2
-  roles: Lab / Office Hours Assistant, Assignment Development
+  roles: Lab / Office Hours Assistant, Infrastructure
   specialty: ""
-  semesters: Fall 2019 - Spring 2020
+  semesters: Fall 2019 - Fall 2020
 -
   name: Samiksha Pal
   netid: sspal2
   roles: Lab / Office Hours Assistant, Assignment Development
   specialty: ""
-  semesters: Fall 2019 - Spring 2020
+  semesters: Fall 2019 - Fall 2020
 -
   name: Spencer Gilbert
   netid: smg4
   roles: Lab / Office Hours Assistant, Assignment Development
   specialty: ""
-  semesters: Fall 2019 - Spring 2020
+  semesters: Fall 2019 - Fall 2020
 -
   name: Aditya Mansharamani
   netid: adityam5
-  roles: Lab / Office Hours Assistant
+  roles: Lab / Office Hours Assistant, Assignment Development Lead
   specialty: ""
-  semesters: Spring 2020
+  semesters: Spring 2020 - Fall 2020
 -
   name: Dillon Hammond
   netid: dillonh2
-  roles: Lab / Office Hours Assistant, Honors
+  roles: Lab / Office Hours Assistant, Honors Lead
   specialty: ""
-  semesters: Spring 2020
+  semesters: Spring 2020 - Fall 2020
 -
   name: Eric Zhang
   netid: ericsz2
-  roles: Lab / Office Hours Assistant, Infrastructure
+  roles: Lab / Office Hours Assistant, Infrastructure Lead
   specialty: ""
-  semesters: Spring 2020
+  semesters: Spring 2020 - Fall 2020
 -
   name: Grace Robbins
   netid: gcr3
-  roles: Lab / Office Hours Assistant, Assignment Development
+  roles: Lab / Office Hours Assistant, Assignment Development Lead
   specialty: "Front-End"
-  semesters: Spring 2020
+  semesters: Spring 2020 - Fall 2020
 -
   name: Jenny Chen
   netid: xc14
-  roles: Lab / Office Hours Assistant, Infrastructure
+  roles: Lab / Office Hours Assistant, Infrastructure Lead
   specialty: "Web Development"
-  semesters: Spring 2020
--
-  name: Natalia Ozymko
-  netid: nozymko2
-  roles: Lab / Office Hours Assistant, Infrastructure, Analytics
-  specialty: "Front-End"
-  semesters: Spring 2020
+  semesters: Spring 2020 - Fall 2020
 -
   name: Robert Lou
   netid: robertl3
-  roles: Lab / Office Hours Assistant, Assignment Development, Analytics
+  roles: Lab / Office Hours Assistant, PrairieLearn Lead
   specialty: ""
-  semesters: Spring 2020
+  semesters: Spring 2020 - Fall 2020
 -
-  name: Devanshi Pratap
-  netid: dpratap2
-  roles: Lab / Office Hours Assistant
+  name: Mateusz Cikowski
+  netid: mwc3
+  roles: Lab / Office Hours Assistant, Assignment Development
   specialty: ""
-  semesters: Spring 2020
+  semesters: Fall 2020
+-
+  name: Jack Henhapl
+  netid: jackah2
+  roles: Lab / Office Hours Assistant, Infrastructure
+  specialty: ""
+  semesters: Fall 2020
+-
+  name: Mengjing Shi
+  netid: mshi16
+  roles: Assignment Development, Infrastructure
+  specialty: ""
+  semesters: Fall 2020
+-
+  name: Vivek Gupta
+  netid: vivekg2
+  roles: Lab / Office Hours Assistant, Honors
+  specialty: ""
+  semesters: Fall 2020
+-
+  name: Trevor Moyer
+  netid: trevorm4
+  roles: Lab / Office Hours Assistant, Infrastructure
+  specialty: ""
+  semesters: Fall 2020
+-
+  name: Rohin Bhasin
+  netid: rohinb2
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Spring 2019 - Fall 2019, Fall 2020
+-
+  name: Kevyn Cheng
+  netid: kkcheng2
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2020
+-
+  name: Vivian Hu
+  netid: vivianh2
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2020
+-
+  name: Isaac Love
+  netid: iblove2
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2020
+-
+  name: Omar Mbarki
+  netid: ombarki2
+  roles: Teaching Assistant
+  specialty: ""
+  semesters: Fall 2020
