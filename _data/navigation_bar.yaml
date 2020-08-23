@@ -9,11 +9,8 @@ navbar_items:
   - name: "Grades"
     link: "/grades.html"
 
-  - name: "Schedule"
+  - name: "Lectures"
     link: "/schedule.html"
-    sublinks:
-      - name: "Lectures"
-        link: "/lectures.html"
 
   - name: "Syllabus"
     link: "/syllabus.html"
