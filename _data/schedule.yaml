@@ -35,6 +35,11 @@
   color: "#E91E63"
   number: 6
 -
+  title: "Sept 7,Labor Day (all-campus holiday)"
+  summary: ""
+  resources: ""
+  color: "#808080"
+-
   title: "Signals for Process Control"
   summary: "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT"
   resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
