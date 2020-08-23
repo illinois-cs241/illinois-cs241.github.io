@@ -50,10 +50,10 @@ The following is subject to minor changes:
 
 ```
 Final Exam : 25%
-Quizzes/CBTF: 25%
+Quizzes/CBTF: 15%
 
-MP Programming Assignments : 35%
-Lab Programming Assignments: 12%
+MP Programming Assignments : 40%
+Lab Programming Assignments: 17%
 
 Lab Attendance & other items: 3%
 ```
