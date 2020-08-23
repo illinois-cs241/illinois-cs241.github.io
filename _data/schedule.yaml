@@ -35,8 +35,8 @@
   color: "#E91E63"
   number: 6
 -
-  title: "Sept 7,Labor Day (all-campus holiday)"
-  summary: ""
+  title: "Labor Day (all-campus holiday)"
+  summary: "<a href='https://en.wikipedia.org/wiki/Labor_Day'>Labor Day</a> (all-campus holiday)"
   resources: ""
   color: "#808080"
 -
@@ -215,12 +215,7 @@
   summary: "Intro to select, poll, and epoll"
   resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#C38A80"
-  number: 33
--
-  title: "Fall Break Nov 21-29"
-  summary: ""
-  resources: ""
-  color: "#808080"
+  number: 33 
 -
   title: "Disks and Signals"
   summary: "Disks and Signals"
@@ -233,6 +228,21 @@
   resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#FFC107"
   number: 35
+-
+  title: "Fall Break"
+  summary: ""
+  resources: ""
+  color: "#808080"
+-
+  title: "Fall Break"
+  summary: ""
+  resources: ""
+  color: "#808080"
+-
+  title: "Fall Break"
+  summary: ""
+  resources: ""
+  color: "#808080"
 -
   title: "Networking Protocols"
   summary: "TCP handshakes, QUIC, HTTP/1.1"
