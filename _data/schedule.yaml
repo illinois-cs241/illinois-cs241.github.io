@@ -1,8 +1,7 @@
-
 -
-  title: "System Programming"
+  title: "Welcome to System Programming"
   summary: "1. HW0 using my Linux-In-The-Browser minicourse"
-  resources: "See <a href = 'https://github-dev.cs.illinois.edu/angrave/cs241-lectures/blob/master/Welcome.md">Welcome</a>
+  resources: "See <a href = 'https://github-dev.cs.illinois.edu/angrave/cs241-lectures/blob/master/Welcome.md'>Welcome</a>"
   color: "#F44336"
   number: 1
 -
@@ -80,7 +79,7 @@
 -
   title: "Mutexes and semaphores"
   summary: "Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas."
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#2196F3"
   number: 14
 -
@@ -92,13 +91,13 @@
 -
   title: "Critical Section Problem"
   summary: "Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables."
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#2196F3"
   number: 16
 -
   title: "Condition Variables II"
   summary: "Condition Variables. Implementing a semaphore using a Condition Variable."
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#2196F3"
   number: 17
 -
@@ -110,19 +109,19 @@
 -
   title: "Dining Philosophers"
   summary: "The Dining Philosophers problem"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#00BCD4"
   number: 19
 -
   title: "Deadlock"
   summary: "Introduction to Deadlock. Coffman conditions."
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#00BCD4"
   number: 20
 -
   title: "Page tables and IPC"
   summary: "Virtual memory"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#009688"
   number: 21
 -
@@ -134,23 +133,23 @@
 -
   title: "Chat with Professor Angrave"
   summary: ""
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#009688"
   number: 23
 -
   title: "No lecture"
   summary: "Spring Break - Piazza responses limited"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#aaaaaa"
 -
   title: "No lecture"
   summary: "Spring Break - Piazza responses limited"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#aaaaaa"
 -
   title: "No lecture"
   summary: "Spring Break - Piazza responses limited"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#aaaaaa"
 -
   title: "UDP/TCP"
@@ -173,55 +172,55 @@
 -
   title: "Files"
   summary: "ext2/3/4 filesystem, index nodes (inodes), superbocks, ZFS / BtrFS"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#FFC107"
   number: 27
 -
   title: "Files 2"
   summary: "ext2/3/4 filesystem, index nodes (inodes), superbocks, ZFS / BtrFS"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#FFC107"
   number: 28
 -
   title: "Files 3"
   summary: "Symbolic links, hard links, directory searching, intro to permissions"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#FFC107"
   number: 29
 -
   title: "Files 4"
   summary: "File permissions, directories, file globbing, intro to RAID"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#FFC107"
   number: 30
 -
   title: "Files-5"
   summary: "Redundant Array of Inexpensive Disks (RAID), the various RAID levels"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#FFC107"
   number: 31
 -
   title: "Scheduling and Scheduling Algorithms"
   summary: "Scheduling examples"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#CDDC39"
   number: 32
 -
   title: "Epoll"
   summary: "Intro to select, poll, and epoll"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#C38A80"
   number: 33
 -
   title: "Disks and Signals"
   summary: "Disks and Signals"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#FFC107"
   number: 34
 -
   title: "Working with Signals"
   summary: "Working with Signals"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#FFC107"
   number: 35
 -
@@ -233,18 +232,18 @@
 -
   title: "RPC"
   summary: "Remote Procedure Calls"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"."
   color: "#FFC107"
   number: 37
 -
   title: "Systems Concepts Review"
   summary: "Systems Concepts Review"
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#FFC107"
   number: 38
 -
   title: "Misc."
   summary: ""
-  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>
+  resources: "See <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#C38A80"
   number: 39
