@@ -42,7 +42,7 @@
                         <div class="col-md-5 col-5 col-xs-12">
                             <div class="table-responsive">
                                 <h3>MPs</h3>
-                                {% assign released_mps = site.data.assignments['mps'] | where: "item", "item.visibility == true" %}
+                                {% assign released_mps = site.data.assignments['mps'] | where: "visible", "true" %}
                                 {% if released_mps.size == 0 %}
                                     <p>No MP released yet. Check back later!</p>
                                 {% else %}
@@ -71,7 +71,7 @@
 
                             <div class="table-responsive">
                                 <h3>Labs</h3>
-                                {% assign released_labs = site.data.assignments['labs'] | where: "item", "item.visibility == true" %}
+                                {% assign released_labs = site.data.assignments['labs'] | where: "visible", "true" %}
                                 {% if released_labs.size == 0 %}
                                     <p>No lab released yet. Check back later!</p>
                                 {% else %}
@@ -86,7 +86,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {% for lab in site.data.assignments['labs'] %}
+                                            {% for lab in released_labs %}
                                             <tr>
                                                 <th scope="row"><a href="/assignments/{{lab.url}}.html">{{lab.name}}</a></th>
                                                 <td>{{lab.releaseDate}}</td>
