@@ -40,7 +40,7 @@ You can also have what is called a bare-metal VM where you install a minimum set
 <vertical />
 
 ```bash
-ssh **NETID**@fa19-cs241-**xxx**.cs.illinois.edu
+ssh **NETID**@fa20-cs241-**xxx**.cs.illinois.edu
 ```
 where `xxx` is the VM number assigned to you.
 
