@@ -10,7 +10,7 @@ wikibook:
 
 ## HW0
 
-You have already been assigned a HW0 for the class. Add your answers to `hw0.md` in your course repository. Remember to commit and push your answers. We'll spend the first part of class going over the various questions from HW0. Your grade for this lab is partly HW0 and partly the assignment below.
+You have already been assigned a HW0 for the class. Add your answers to `HW0.md` in your course repository. Remember to commit and push your answers. We'll spend the first part of class going over the various questions from HW0. Your grade for this lab is partly HW0 and partly the assignment below.
 
 ## Background Guide
 
