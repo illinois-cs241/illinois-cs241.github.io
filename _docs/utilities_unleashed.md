@@ -129,6 +129,8 @@ $
 
 This has the exact same behavior as before, because `TEMP` is first set to `EST5EDT`, and then when `TZ` is set to `%TEMP`, the value of `EST5EDT` is retrieved and then `TZ` is set to that. Notice that the variables are set sequentially, or else it wouldn't work.
 
+We have provided you with a reference executable `env-reference` for you to test your understanding of `env`'s expected behavior. Kindly verify the behavior of your `env` against that of `env-reference` on a variety of test cases to avoid unnecesarily losing points.
+
 Again like `time`, you can play with Linux's builtin `env` command by typing `env <var-list> <command-name>` (`env MYVAR=CS241 printenv`, for example) in your terminal. Again, remember to add `./` to the beginning (or the full path to your `env` executable file if you are in another directory), otherwise the builtin `env` will be called. **Do not use the built-in env, or you will immediately fail the assignment**
 
 In addition, keep in mind that the builtin `env` uses `$` instead of `%` to denote environment variables. In practice, it can be very useful to change some environment variables when running certain commands.
