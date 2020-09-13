@@ -214,6 +214,18 @@
   color: "#FFC107"
   number: 35
 -
+  title: "Systems Concepts Review"
+  summary: "Systems Concepts Review"
+  resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+  color: "#FFC107"
+  number: 36
+-
+  title: "Misc."
+  summary: ""
+  resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+  color: "#C38A80"
+  number: 37
+-
   title: "No lecture"
   summary: ""
   resources: ""
@@ -233,18 +245,6 @@
   summary: ""
   resources: ""
   color: "#808080"
--
-  title: "Systems Concepts Review"
-  summary: "Systems Concepts Review"
-  resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
-  color: "#FFC107"
-  number: 36
--
-  title: "Misc."
-  summary: ""
-  resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
-  color: "#C38A80"
-  number: 37
 -
   title: "No lecture"
   summary: ""
