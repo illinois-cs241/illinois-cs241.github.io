@@ -90,6 +90,7 @@ When you and your group start writing code, we expect you to use git and for eac
 	  <th>Date</th>
 	  <th>Lecture Content</th>
 	  <th>Slides</th>
+	  <th>Videos</th>
 	</tr>
   </thead>
   <tbody>
@@ -99,6 +100,12 @@ When you and your group start writing code, we expect you to use git and for eac
 	<td>{{lecture.content}}</td>
 	{% if lecture.slides %}
 	<td><a href="{{lecture.slides}}"><img src="./images/lab-icons/animation.png" alt='Slides'></a></td>
+	{% else %}
+	<td>
+	</td>
+	{% endif %}
+	{% if lecture.video %}
+	<td><a href="{{lecture.video}}"><img src="./images/lab-icons/video.png" alt='Video'></a></td>
 	{% else %}
 	<td>
 	</td>
