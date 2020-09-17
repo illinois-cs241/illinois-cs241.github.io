@@ -16,14 +16,13 @@ At the end of the semester, you will present your work to your peers. The presen
 ## Grading
 
 ```
-Lecture Attendance          : 20%
-Mini Assignments            : 7%
-Semester Project            : 73%
+Mini Assignments            : 20%
+Semester Project            : 80%
 - Project Proposal/Planning : 5%
-- Midterm Presentation      : 10%
-- Weekly Check-ins          : 13%
-- Final Presentation        : 15%
+- Weekly Check-ins          : 10%
+- Midterm Presentation      : 15%
 - Final Deliverables        : 30%
+- Final Presentation        : 20%
 ```
 
 We publish the same grading thresholds as the regular section of CS 241. Your project will be graded in a holistic manner against other projects in the class. Note that this does not imply only a handful of projects can receive an A; education is not a zero-sum game. Historically, grades have been assigned with a generous curve.
@@ -79,11 +78,8 @@ When you and your group start writing code, we expect you to use git and for eac
 
 | Name | NetID | Interests |
 |:-----|:------|:----------|
-| Ophir Sneh | osneh2 | Security, Distributed Systems, Machine Learning |
-| Jav Mohamed | javedm2 | Functional Programming, Formal Methods, Security |
-| Anant Kandikuppa | anantk3 | Distributed Systems, Security |
-| Dillon Hammond | dillonh2 | Embedded, Kernel, Communication Protocols |
-| Bryant Zhao | bhzhao2 | Systems, Security |
+| Dillon Hammond | dillonh2 | Embedded, Kernel, Networking |
+| Kevyn Cheng | kkcheng2 | Security, Networking |
 
 ## Lectures
 
@@ -116,7 +112,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
 
-[https://piazza.com/class/k66qd01pyyk2bb](https://piazza.com/class/k66qd01pyyk2bb)
+[https://piazza.com/class/kem6e50zzrw62r](https://piazza.com/class/kem6e50zzrw62r)
 
 ## Project Ideas?
 
