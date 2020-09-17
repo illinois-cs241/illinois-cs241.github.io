@@ -1,72 +1,67 @@
 ---
 # Honors Schedule
    -
-     date: "February 5"
+     date: "September 16"
      content: "Introduction & Advanced Tools"
-     slides: "https://docs.google.com/presentation/d/1NxQxYPzWE5_JVSduIJWod6BKGFVU1g3cIfG3TZWGfic/edit?usp=sharing"
-     # video:
+     slides: "https://docs.google.com/presentation/d/19UowAB2bjunX4AT7ak_I1BtehE-g08zqVErwmSyEoq4/edit?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=f06e232a-e1b8-493e-bfaa-3d96adeebd79"
    -
-     date: "February 12"
-     content: "Cutting Edge Systems Programming + Pitches"
-     # slides: 
-     # video: 
-   -
-     date: "February 19"
+     date: "September 23"
      content: "Security"
-     slides: "https://drive.google.com/open?id=1VhONFdF2l6U79F5o3DJxGFnPLMFckULN"
+     # slides: "https://drive.google.com/open?id=1VhONFdF2l6U79F5o3DJxGFnPLMFckULN"
      # video: 
    -
-     date: "February 26"
+     date: "September 30"
      content: "Distributed Systems / Cloud / IoT"
-     slides: "https://drive.google.com/open?id=1L58q_65UPLRLG0anZnh8bwXCsxHpm23m"
+     # slides: "https://drive.google.com/open?id=1L58q_65UPLRLG0anZnh8bwXCsxHpm23m"
      # video: 
    -
-     date: "March 4"
+     date: "October 7"
      content: "Advanced Memory"
-     slides: "https://drive.google.com/open?id=1cG1AqFaO98VsfLCA2hLCfsKlmP0u8ARR"
+     # slides: "https://drive.google.com/open?id=1cG1AqFaO98VsfLCA2hLCfsKlmP0u8ARR"
      # video: 
    -
-     date: "March 11"
+     date: "October 14"
      content: "Kernel Programming"
-     slides: "https://drive.google.com/open?id=1fRtMZ7rHyiEceiRTTcr8eKERHWcqXCXf"
+     # slides: "https://drive.google.com/open?id=1fRtMZ7rHyiEceiRTTcr8eKERHWcqXCXf"
      # video: 
    -
-     date: "March 18"
-     content: "Spring Break"
-     # slides: 
-     # video: 
-   -
-     date: "March 25"
+     date: "October 21"
      content: "Midterm Presentations"
      # slides: 
-     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+     # video: 
    -
-     date: "April 1"
+     date: "October 28"
      content: "Concurrency / Lock Free Data Structures"
-     slides: "https://drive.google.com/file/d/1MtSLT1ElnH00wrcrHMzmThta6ycIcCkm/view?usp=sharing"
-     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+     # slides: 
+     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
    -
-     date: "April 8"
+     date: "November 4"
+     content: "Election Week"
+     # slides: "https://drive.google.com/file/d/1MtSLT1ElnH00wrcrHMzmThta6ycIcCkm/view?usp=sharing"
+     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+   -
+     date: "November 11"
      content: "Embedded Programming"
-     slides: "https://drive.google.com/open?id=1s75RppHNT7NVec6AGiTsH1YNr1rEuApj"
-     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+     # slides: "https://drive.google.com/open?id=1s75RppHNT7NVec6AGiTsH1YNr1rEuApj"
+     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
    -
-     date: "April 15"
+     date: "November 18"
      content: "Networking / TCP"
-     slides: "https://drive.google.com/open?id=1sWWjPgIloC1EENGpLrB-V4XnpC-Bcci"
-     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+     # slides: "https://drive.google.com/open?id=1sWWjPgIloC1EENGpLrB-V4XnpC-Bcci"
+     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
    -
-     date: "April 22"
+     date: "November 25"
+     content: "Fall Break"
+     # slides: "https://drive.google.com/open?id=1tfOs7coqWCRff3YBohQaziUDcHGsuR5H"
+     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+   -
+     date: "December 2"
      content: "Containerization / Virtualization"
-     slides: "https://drive.google.com/open?id=1tfOs7coqWCRff3YBohQaziUDcHGsuR5H"
-     video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
-   -
-     date: "April 29"
-     content: "TBD"
      # slides: 
      # video: 
    -
-     date: "May 6"
+     date: "December 9"
      content: "Final Presentations"
      # slides: 
      # video: 
