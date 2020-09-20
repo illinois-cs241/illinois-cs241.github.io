@@ -6,7 +6,6 @@ title: Quiz Topics
 
 Quizzes are available at https://prairielearn.engr.illinois.edu
 
-
 Quizzes may be retaken without penality and are due the last day of instruction at UIUC ie. *The day before Reading Day.*
 
 To avoid leaving all quizzes to the last moment we suggest the following due dates -
@@ -27,7 +26,7 @@ To avoid leaving all quizzes to the last moment we suggest the following due dat
 
 * C Strings representation
 * C Strings as pointers
-* char p[]vs char* p
+* char p[] vs. char* p
 * Simple C string functions (strcmp, strcat, strcpy)
 * sizeof char
 * sizeof x vs x*
