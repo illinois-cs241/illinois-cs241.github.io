@@ -4,7 +4,7 @@ title: Quiz Topics
 ---
 ## Overview
 
-Quizzes are available at https://prairielearn.illinois.edu
+Quizzes are available at https://prairielearn.engr.illinois.edu
 
 
 Quizzes may be retaken without penality and are due the last day of instruction at UIUC ie. *The day before Reading Day.*
