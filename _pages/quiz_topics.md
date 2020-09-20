@@ -2,11 +2,24 @@
 layout: doc
 title: Quiz Topics
 ---
+## Overview
 
-## CBTF Quiz Schedule.
-* The schedule will be published here in week 2 of the course.
-* These will be available on [PrairieLearn](https://prairielearn.engr.illinois.edu/)
-* Need DRES accomodations? Please visit the [DRES website](https://www.disability.illinois.edu/) for more informaiton.
+Quizzes are available at https://prairielearn.illinois.edu
+
+
+Quizzes may be retaken without penality and are due the last day of instruction at UIUC ie. *The day before Reading Day.*
+
+To avoid leaving all quizzes to the last moment we suggest the following due dates -
+
+#### Suggested due dates
+
+* 10/14 Quiz 1 (C foundation)
+* 10/21 Quiz 2 (fork,exec,wait and heap)
+* 11/4 Quiz 3 (pthreads, producer-consumer, synchronization primitives)
+* 11/11 Quiz 4 (threading issues & race conditions, virtual memory)
+* 11/18 Quiz 5 (networking and pipes)
+* 12/2 Quiz 6 (review -hand picked questions from the above)
+* 12/9 Quiz 7 (security)
 
 ## Quiz 1
 
@@ -35,13 +48,11 @@ title: Quiz Topics
 * POSIX file IO (read, write, open)
 * Buffering of stdout
 
-
 ## Quiz 2
 
 #### Topics
 
-C (As above with)
-
+* C Foundations (see above)
 * Correct use of fork, exec and waitpid
 * Using exec with a path
 * Understanding what fork and exec and waitpid do. E.g. how to use their return values.
@@ -54,12 +65,7 @@ C (As above with)
 * getpid vs getppid
 * How to use the WAIT exit status macros WIFEXITED etc.
 
-
 ## Quiz 3
-
-This quiz asks you about processes (fork, waitpid, waitpid macros, getpid/getppid, exec, and basic use of signals).
-
-## Quiz 4
 
 #### Topics
 
@@ -74,14 +80,7 @@ This quiz asks you about processes (fork, waitpid, waitpid macros, getpid/getppi
 * Producer Consumer
 * Ring buffer
 
-## Quiz 5
-
-#### Topics
-
-The quiz is about malloc and correctly working with pointers and linked lists in C. You'll be implementing a simple placement algorithm (e.g. Best/First/Worst-fit) for a memory pool. A memory pool is just a large piece of contiguous memory that you want to use for all future requests.
-
-
-## Quiz 6
+## Quiz 4
 
 #### Topics
 
@@ -96,11 +95,7 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 * Using fseek and ftell
 * page tables (page offsets, dirty bit,TLB)
 
-(Multiple Choice only. Scheduling will not be on this quiz)
-
-## Quiz 7
-
-#### Topics
+## Quiz 5
 
 * Basic properties of TCP and UDP
 * Purpose and properties of each TCP server call
@@ -113,8 +108,16 @@ The quiz is about malloc and correctly working with pointers and linked lists in
 * Correct setting up addrinfo hints struct for a TCP server or client
 * Purpose and properties of getaddrinfo
 * Reading and writing to pipes (including blocking, SIGPIPE and detecting when no more bytes can be read)
-* Security
-* Scheduling
-* Review of everything!
 
-(Multiple Choice only)
+## Quiz 6
+
+* Review. This quiz includes quizzes from all previous topics.
+
+## Quiz 7
+
+#### Topics
+
+* Security fundamentals and principles
+* Confidentiality, Integrity, Availability (CIA)
+* CIA examples
+
