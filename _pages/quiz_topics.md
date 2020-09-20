@@ -114,6 +114,8 @@ To avoid leaving all quizzes to the last moment we suggest the following due dat
 
 ## Quiz 7
 
+* See the [Security](http://cs241.cs.illinois.edu/coursebook/Security) chapter in the course book.
+
 #### Topics
 
 * Security fundamentals and principles
