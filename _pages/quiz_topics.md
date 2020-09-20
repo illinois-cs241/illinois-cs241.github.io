@@ -4,7 +4,7 @@ title: Quiz Topics
 ---
 ## Overview
 
-Quizzes are available at https://prairielearn.engr.illinois.edu
+Quizzes are available at [PrairieLearn](https://prairielearn.engr.illinois.edu)
 
 Quizzes may be retaken without penality and are due the last day of instruction at UIUC ie. *The day before Reading Day.*
 
@@ -110,13 +110,17 @@ To avoid leaving all quizzes to the last moment we suggest the following due dat
 
 ## Quiz 6
 
-* Review. This quiz includes quizzes from all previous topics.
+* Review. This quiz includes questions from previous topics.
 
 ## Quiz 7
 
 #### Topics
 
 * Security fundamentals and principles
-* Confidentiality, Integrity, Availability (CIA)
+* Confidentiality, Integrity, Availability (CIA) principles
 * CIA examples
-
+* Compiler and developer-related targetted attacks
+* Security-related development practices
+* CPU Microarchitecture side channel attacks (Meltdown and Spectre)
+* Network and protocol attacks (Heartbleed Syn-flooding, DDOS)
+* POSIX Process-related security features (exectable memory, process-as-a-secure container model)
