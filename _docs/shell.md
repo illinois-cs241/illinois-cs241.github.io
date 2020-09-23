@@ -569,7 +569,7 @@ Like bash, your shell will support sending signals to its child processes. We re
 The ever-useful panic button. Sends `SIGTERM` to the specified process.
 
 Use the appropriate prints from `format.h` for:
-- Successfully sending `SIGTERM` to process
+- Successfully sending `SIGKILL` to process
 - No process with `pid` exists
 - `kill` was ran without a `pid`
 
@@ -578,7 +578,7 @@ Use the appropriate prints from `format.h` for:
 This command will allow your shell to stop a currently executing process by sending it the `SIGTSTP` signal. It may be resumed by using the command `cont`.
 
 Use the appropriate prints from `format.h` for:
-- Process was successfully sent `SIGTSTP`
+- Process was successfully sent `SIGSTOP`
 - No process with `pid` exists
 - `stop` was ran without a `pid`
 
