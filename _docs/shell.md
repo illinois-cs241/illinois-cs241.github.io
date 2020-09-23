@@ -198,7 +198,7 @@ Your shell should store the command that the user entered, so the user can repea
 
 The shell will exit once it receives the `exit` command or once it receives an `EOF` **at the beginning of the line**. An `EOF` is sent by typing `Ctrl-D` from your terminal. It is also sent automatically from a script file (as used with the `-f` flag) once the end of the file is reached. This should cause your shell to exit with exit status 0.
 
-If there are currently stopped or running background processes when your shell receives `exit` or `Control-D` (EOF), you should kill and cleanup each of those children before your shell exits. You do not need to worry about SIGTERM.
+If there are currently stopped or running background processes when your shell receives `exit` or `Control-D` (EOF), you should kill and cleanup each of those children before your shell exits. You do not need to worry about SIGKILL.
 
 :warning: If you don't handle `EOF` or `exit` to exit, you will fail many of our test cases!
 
@@ -566,7 +566,7 @@ Like bash, your shell will support sending signals to its child processes. We re
 
 ### `kill <pid>`
 
-The ever-useful panic button. Sends `SIGTERM` to the specified process.
+The ever-useful panic button. Sends `SIGKILL` to the specified process.
 
 Use the appropriate prints from `format.h` for:
 - Successfully sending `SIGKILL` to process
@@ -575,7 +575,7 @@ Use the appropriate prints from `format.h` for:
 
 ### `stop <pid>`
 
-This command will allow your shell to stop a currently executing process by sending it the `SIGTSTP` signal. It may be resumed by using the command `cont`.
+This command will allow your shell to stop a currently executing process by sending it the `SIGTSTOP` signal. It may be resumed by using the command `cont`.
 
 Use the appropriate prints from `format.h` for:
 - Process was successfully sent `SIGSTOP`
