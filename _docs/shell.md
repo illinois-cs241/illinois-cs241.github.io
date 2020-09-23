@@ -575,7 +575,7 @@ Use the appropriate prints from `format.h` for:
 
 ### `stop <pid>`
 
-This command will allow your shell to stop a currently executing process by sending it the `SIGTSTOP` signal. It may be resumed by using the command `cont`.
+This command will allow your shell to stop a currently executing process by sending it the `SIGSTOP` signal. It may be resumed by using the command `cont`.
 
 Use the appropriate prints from `format.h` for:
 - Process was successfully sent `SIGSTOP`
