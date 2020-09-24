@@ -466,7 +466,7 @@ _Note:_ while `ps` is normally a separate binary, it is a built-in command for y
 Your version of the `ps` should print the following information for each process:
 - PID: The pid of the process
 - NLWP: The number of threads currently being used in the process
-- VSZ: The program size (virtual memory size) of the process, in kilobytes
+- VSZ: The program size (virtual memory size) of the process, in kilobytes (1 kilobyte = 1024 bytes)
 - STAT: The state of the process
 - START: The start time of the process. You will want to add the boot time of the computer, and start time of the process to calculate this. Make sure you are careful while converting from various formats - the man pages for `procfs` have helpful tips.
 - TIME: The amount of cpu time that the process has been executed for. This includes time the process has been scheduled in user mode (`utime`) and kernel mode (`stime`).
