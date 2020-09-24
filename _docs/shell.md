@@ -482,7 +482,7 @@ Example output of this command:
 ```
 (pid=25497)/home/user$ ps
 PID     NLWP    VSZ     STAT    START   TIME    COMMAND
-25498   1       7328    R       14:03   1:35    dd if=/dev/zero of=/dev/null &
+25498   1       7328    R       14:03   0:08    dd if=/dev/zero bs=1M count=123456 of=/dev/null &
 25501   1       7288    S       14:04   0:00    sleep 1000 &
 25497   1       7484    R       14:03   0:00    ./shell
 ```
