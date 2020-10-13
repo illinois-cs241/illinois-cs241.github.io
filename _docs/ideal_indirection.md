@@ -22,15 +22,39 @@ You will only have to write two functions in `mmu.c`, but it requires a good und
 ## How To Tackle This Assignment
 
 * First, you will need to understand how the virtual memory translation process works. You will be writing functions to translate virtual addresses into physical addresses, so a good first step is to understand that process. The coursebook has details on this process, and feel free to ask about this if you are unsure.
-* Then, you will want to understand how we simulate the different components of a computer in this assignment. The header files describe the various structs involved in this simulation, as well as their member variables. Understand them well, and take note of the various functions you can use (you will not be using all of them). The source code for these functions have been given to you. You should be able to get a grasp on the whole model just by reading the header files, but if you are interested to see how we model the different components, you are free to read the source code.
-* Once you have a good mental model, you will want to plan out the steps your code needs to perform. Start by listing the steps involved in translating virtual addresses to physical addresses. Then, add in the steps where you would perform other tasks like
-  * updating the bits of the table entries
-  * checking for tlb caches
-  * performing a context switch
-  * raising page faults and segfaults
-  * requesting memory frames from the kernel and retrieving swap files from the disk
-  * other stuff
-* Once this is done, turn these steps into actual code. Then, test with the given test cases.
+
+* Then, you will want to understand how we simulate the different components of a computer in this assignment. The header files describe the various structs involved in this simulation, as well as their member variables. At a minimum, you also need the following helper functions to complete the assignment:
+
+  * tlb_flush() in tlb.h
+  * tlb_add_pte() in tlb.h
+  * tlb_get_pte() in tlb.h
+  * mmu_raise_segmentation_fault() in mmu.h
+  * mmu_tlb_miss() in mmu.h
+  * mmu_raise_page_fault() in mmu.h
+  * ask_kernel_for_frame() in kernel.h
+  * get_system_pointer_from_pde() in kernel.h
+  * read_page_from_disk() in kernel.h
+  * get_system_pointer_from_address() in kernel.h
+  * find_segment() in segments.h
+  * address_in_segmentations() in segments.h
+
+  However you are free to use whichever other helper functions you'd like. The source code for these functions have been given to you; you should be able to get a grasp on the whole model just by reading the header files, but if you are interested to see how we model the different components, you can read the source code.
+
+* Once you have a good mental model, you will want to plan out the steps your code needs to perform. Start by following the pseudocode below:
+  * Use pid to check for a context switch. If there was a switch, flush the TLB
+  * Make sure that the address is in one of the segmentations. If not, raise a segfault and return
+  * Check the TLB for the page table entry. If it's not there:
+    * Raise a TLB miss
+    * Get the page directory entry. If it’s not present in memory, raise a page fault and ask the kernel for a frame
+    * Get the page table using the PDE
+    * Get the page table entry from the page table. Add the entry to the TLB
+  * If the page table entry is not present in memory, raise a page fault, ask the kernel for a frame, and read the page from disk
+  * Check that the user has permission to perform the read or write operation. If not, raise a segfault and return
+  * Use the page table entry’s base address and the offset of the virtual address to compute the physical address. Get a physical pointer from this address
+  * Perform the read or write operation
+  * Mark the PTE as accessed. If writing, also mark it as dirty.
+
+* Once you understand these steps, turn them into code. Then, test with the given test cases.
 
 The rest of this documentation will serve to help you understand the purpose of each file and give you a high level understanding of virtual memory.
 The implementation details of each function are documented in the header files.
