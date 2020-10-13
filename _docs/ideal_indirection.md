@@ -45,10 +45,17 @@ You will only have to write two functions in `mmu.c`, but it requires a good und
   * Make sure that the address is in one of the segmentations. If not, raise a segfault and return
   * Check the TLB for the page table entry. If it's not there:
     * Raise a TLB miss
-    * Get the page directory entry. If it’s not present in memory, raise a page fault and ask the kernel for a frame
+    * Get the page directory entry. If it’s not present in memory:
+      * Raise a page fault
+      * Ask the kernel for a frame
+      * Update the page directory entry's present, read_write, and user_supervisor flags
     * Get the page table using the PDE
     * Get the page table entry from the page table. Add the entry to the TLB
-  * If the page table entry is not present in memory, raise a page fault, ask the kernel for a frame, and read the page from disk
+  * If the page table entry is not present in memory:
+    * Raise a page fault
+    * Ask the kernel for a frame
+    * Update the page table entry's present, read_write, and user_supervisor flags
+    * Read the page from disk
   * Check that the user has permission to perform the read or write operation. If not, raise a segfault and return
   * Use the page table entry’s base address and the offset of the virtual address to compute the physical address. Get a physical pointer from this address
   * Perform the read or write operation
