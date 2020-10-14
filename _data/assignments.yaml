@@ -106,12 +106,12 @@ labs:
       url: "ideal_indirection"
       submissions:
         - title: Entire Assignment
-          due_date: 2020-03-25 23:59
+          due_date: 2020-10-21 23:59
           graded_files:
           - mmu.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "MapReduce"
       releaseDate: "Week 10"
