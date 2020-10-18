@@ -79,7 +79,7 @@ When you and your group start writing code, we expect you to use git and for eac
 | Name | NetID | Interests |
 |:-----|:------|:----------|
 | Dillon Hammond | dillonh2 | Embedded, Kernel, Networking |
-| Kevyn Cheng | kkcheng2 | Security, Networking |
+| Isaac Love |iblove2 | Memory |
 
 ## Lectures
 

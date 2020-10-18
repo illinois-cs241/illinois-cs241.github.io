@@ -7,62 +7,61 @@
      video: "https://classtranscribe.illinois.edu/video?id=f06e232a-e1b8-493e-bfaa-3d96adeebd79"
    -
      date: "September 23"
-     content: "Security"
-     # slides: "https://drive.google.com/open?id=1VhONFdF2l6U79F5o3DJxGFnPLMFckULN"
-     # video: 
+     content: "Security (Assignment Due on December 2nd)"
+     slides: "https://drive.google.com/file/d/1Qb0fBB2TOq-gj5oDiKe6cI4RmLoNQI-0/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=0053a501-9259-406b-8b90-86002418b6c7"
    -
      date: "September 30"
      content: "Distributed Systems / Cloud / IoT"
-     # slides: "https://drive.google.com/open?id=1L58q_65UPLRLG0anZnh8bwXCsxHpm23m"
-     # video: 
+     slides: "https://drive.google.com/file/d/14MLRcF7cDRczqoa6scECJpmBeAovHRRk/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=9e8cd16c-d45c-441a-912f-23fef637db98"
    -
      date: "October 7"
      content: "Advanced Memory"
-     # slides: "https://drive.google.com/open?id=1cG1AqFaO98VsfLCA2hLCfsKlmP0u8ARR"
-     # video: 
+     slides: "https://drive.google.com/file/d/1pjvfazh8Jhab1cFLTEnWRqKsXO4AMWIg/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=2e618766-1b61-4092-965f-2cd7a9f67669"
    -
      date: "October 14"
-     content: "Kernel Programming"
-     # slides: "https://drive.google.com/open?id=1fRtMZ7rHyiEceiRTTcr8eKERHWcqXCXf"
-     # video: 
+     content: "Kernel Programming (Assignment Due on December 2nd)"
+     slides: "https://drive.google.com/file/d/1W-A_bvPt7OjLX5LA4dM1AA_P1SMV8XEX/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=d9a4d1bb-6e3b-4645-b092-71d1f272593d"
    -
      date: "October 21"
+     content: "Networking / TCP"
+     slides: "https://drive.google.com/file/d/18F0LbSPuAzBJ4Bo89qUZ1jmQGmvx8v87/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=99d8efc0-3724-4053-811d-adb6f5ed7fcb"
+   -
+     date: "October 28"
      content: "Midterm Presentations"
      # slides: 
      # video: 
    -
-     date: "October 28"
-     content: "Concurrency / Lock Free Data Structures"
-     # slides: 
-     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
-   -
      date: "November 4"
-     content: "Election Week"
-     # slides: "https://drive.google.com/file/d/1MtSLT1ElnH00wrcrHMzmThta6ycIcCkm/view?usp=sharing"
-     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+     content: "Concurrency / Lock Free Data Structures"
+     slides: "https://drive.google.com/file/d/1sFD08xyR5FJ_89IakotTDEPfpWPXYt_F/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=d51c8615-f125-4879-8b35-6ac0e05c421d"
    -
      date: "November 11"
-     content: "Embedded Programming"
-     # slides: "https://drive.google.com/open?id=1s75RppHNT7NVec6AGiTsH1YNr1rEuApj"
-     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+     content: "Containerization / Virtualization (Assignment Due on Reading Day)"
+     slides: "https://drive.google.com/file/d/10Kw9e2Z8lXYLRUU9X7eHZUoTQOmg8X_Z/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=408b0a41-40e7-4b10-bcb4-502865845ca8"
    -
      date: "November 18"
-     content: "Networking / TCP"
-     # slides: "https://drive.google.com/open?id=1sWWjPgIloC1EENGpLrB-V4XnpC-Bcci"
-     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+     content: "Embedded Programming"
+     slides: "https://drive.google.com/file/d/1VC0ajlveNgj94BfNUEoX33ZGrBdqE0wE/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=492f72d3-b11c-409a-8d3a-3f77a347906e"
    -
      date: "November 25"
      content: "Fall Break"
-     # slides: "https://drive.google.com/open?id=1tfOs7coqWCRff3YBohQaziUDcHGsuR5H"
-     # video: "https://classtranscribe.illinois.edu/home/offering/3b6020ea-6fc9-4a32-9381-33432bea483f"
+     # slides:
+     # video:
    -
      date: "December 2"
-     content: "Containerization / Virtualization"
-     # slides: 
-     # video: 
+     content: "Load Balancing"
+     slides: "https://drive.google.com/file/d/1meQ4baWDW140Vaz_MANfUjVnCn4sTvZY/view?usp=sharing"
+     video: "https://classtranscribe.illinois.edu/video?id=82988d13-3a65-4b60-be7b-c9bfd044590a"
    -
      date: "December 9"
      content: "Final Presentations"
      # slides: 
      # video: 
-   -
