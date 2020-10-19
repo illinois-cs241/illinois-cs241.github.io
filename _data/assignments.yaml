@@ -277,16 +277,16 @@ mps:
       url: "parallel_make"
       submissions:
         - title: Part 1
-          due_date: 2020-03-30 23:59
+          due_date: 2020-10-26 23:59
           graded_files:
           - parmake.c
         - title: Part 2
-          due_date: 2020-04-06 23:59
+          due_date: 2020-11-02 23:59
           graded_files:
           - parmake.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Finding Filesystems"
       releaseDate: "Week 11"
