@@ -91,7 +91,7 @@ while number of bytes is not the number needed:
     else if return_code == -1 and error was interrupted:
         try again
     else:
-        return bytes read
+        return -1
 return bytes read
 ```
 
