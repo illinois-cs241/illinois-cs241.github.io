@@ -155,18 +155,15 @@ __EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!__
 This means you are not allowed to split the work with a partner.
 You are, however, allowed to discuss the assignments at a very high level.
 You can even share testing scripts!
-If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% penalty in the course for each incident where you are found to have used material that is not yours.
+If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% sanction in the course for each infraction where you are found to have used material that is not yours.
 
-
-Additionally, you may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating.
-If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each assignment.
-For example, if we find your code on GitHub for one MP then you will receive 10% penalty in the course if your code is there for two you will get a 20% penalty.
-You also may not publish our code anywhere publicly and you will receive the same penalty for sharing our code.
-If you are confused on what it means to be "publicly accessible", then do not put your code anywhere besides your private course repository and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
+You may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating.
+If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each infraction.
+Do not put your code anywhere besides your private course repository and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.
 
 In the case of quizzes in the CBTF, it is a violation of our course policy to access or provide access to the quiz material outside your registered window.
 Cheating at CBTF may also result in immediate failure of the course and further action by the college of engineering.
-If you are found to have done so you will receive a zero on the quiz and a 10% penalty in the course.
+If you are found to have done so you will receive a zero on the quiz and a 10% sanction in the course.
 This includes seeking descriptions of the questions from students who have taken the quiz, as well as any other method that would give you access to the quiz outside your scheduled time.
 If there is prep material provided in lecture or on Piazza, you are welcome to share that material freely.
 
