@@ -147,12 +147,12 @@ labs:
       url: "deepfried_dd"
       submissions:
         - title: Entire Assignment
-          due_date: 2020-04-15 23:59
+          due_date: 2020-11-11 23:59
           graded_files:
           - dd.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Mad Mad Access Pattern"
       releaseDate: "Week 13"
