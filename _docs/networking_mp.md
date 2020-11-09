@@ -329,4 +329,4 @@ if part2_orig > 0:
 networking_score = part1_final + part2_final + part3
 ```
 
-We provide AG runs as usual for part 1 and part 3. For part 2, we provide AG runs from Nov 16 through Nov 22, and on Nov 30. On top, an extra AG run on Nov 19 and 20 is provided.
+We provide AG runs as usual for part 1 and part 3. For part 2, we provide AG runs from Nov 16 through Nov 22, and on Nov 30. On top of it, an extra AG run on Nov 19 and 20 is provided.
