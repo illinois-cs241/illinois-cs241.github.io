@@ -126,7 +126,7 @@ dd if=/dev/urandom of=test_file.img bs=4M count=8
 diff test_file.img my_test_file.img
 ```
 
-We included a script `generate_data.sh` to automatically generate a few files of different sizes in the `test_files` directory. You can run it by entering `sh generate_data.sh` inside the assignment directory on your VM.
+We included a Makefile target to automatically generate a few files of different sizes in the `test_files` directory. You can build it by running `make test-data` inside the assignment directory on your VM.
 
 ## Grading
 
