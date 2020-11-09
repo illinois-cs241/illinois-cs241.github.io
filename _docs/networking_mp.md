@@ -305,7 +305,7 @@ There are **three** parts for this assignment:
 
 - Part 1: The Client
 
-Part 1 requires **full** client functionality, and is due Monday, April 20th at 23:59.
+Part 1 requires **full** client functionality, and is due Monday, November 16th at 23:59.
 
 - Part 2: The Server Part 1
 
@@ -314,7 +314,7 @@ Obtaining 50% of the points is a 100% on week 2, 45% yields a 90%, 40% an 80%, a
 
 - Part 3: The Server Part 2
 
-Part 3 is full server-client functionality. All tests will run, including the stress test. This is due Monday, May 4th, at 23:59.
+Part 3 is full server-client functionality. All tests will run, including the stress test. This is due Monday, December 7th, at 23:59.
 
 To compute your final grade:
 ```
@@ -328,3 +328,5 @@ if part2_orig > 0:
   
 networking_score = part1_final + part2_final + part3
 ```
+
+We provide AG runs as usual for part 1 and part 3. For part 2, we provide AG runs from Nov 16 through Nov 22, and on Nov 30. On top, an extra AG run on Nov 19 and 20 is provided.
