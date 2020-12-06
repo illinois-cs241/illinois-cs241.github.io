@@ -282,7 +282,7 @@ Keep things modular! Write functions for everything. This has multiple advantage
 
 This assignment is challenging enough, and debugging it is even more so. We recommend that you constantly log state as your client/server program executes. You might want to log at the beginning/end of function calls, entry and exit of loops etc. and maybe log the values of key variables, pointers, file descriptors etc. to sanity check what's going on with your code.
 
-We provide a simple `LOG()` macro, if you're interested in that. Or, you could play around with writing one of your own (ours is just a wrapper around `fprintf()`).
+We provide a simple `LOG()` macro, if you're interested in that. Or, you could play around with writing one of your own (ours is just a wrapper around `fprintf()`). If you decide not to use this macro, ensure you log only to stderr. The stdout of your client and server implementation are used for testing purposes so writing to stdout should be deliberate. Any unwarranted new line characters or extraneous logging within stdout could result in a test failure. 
 
 ## Testing
 
