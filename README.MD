@@ -64,8 +64,7 @@ The magic happens in the integration. Github Pages has Jekyll integration, so if
 ## Structure
 
 - `_data`: stores configurations files
-  - `labs.yaml`: stores the lab info
-  - `mps.yaml`: stores the mp info
+  - `assignments.yaml`: stores the assignments info. **Update this to release/hide assignment**
   - `schedule.yaml`: stores the lecture schedule
   - `staff.yaml`: stores the staff info
   - `honors_projects.yaml`
