@@ -174,7 +174,7 @@ Total CPU time: 5.77 seconds.
 CPU usage: 3.31x
 ```
 
-The times and order may vary slightly.
+The times and order may vary slightly. The "CPU usage" value will depend on the number of cores in your VM. The above example is run on a machine with 4 cores. If your machine has 2 cores, the CPU usage should be between 1x and 2x.
 
 Your password cracker should be processing passwords in a streaming manner. This means that once the program is started, if both a password and a worker thread are available, the thread should immediately work on the password.
 Be sure to consider how your task queue is conducive to this and when you launch your threads to achieve this.
