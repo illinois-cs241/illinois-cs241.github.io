@@ -30,6 +30,8 @@ Now, everything needed for your VM should be installed. Here are some commands t
 
 Here's the complete list of commands: [https://www.vagrantup.com/docs/cli](https://www.vagrantup.com/docs/cli).
 
+If you want to use a VScode SSH plugin to edit the files on Vagrant VM, you can configure the plugin to connect to localhost port 2222 with user name "student" (e.g. `ssh student@localhost -p 2222`). No password is needed if you use the correct ssh config files.
+
 
 ## Remote (CS Cloud) VM
 If you are receiving a VM from the CS VM Farm, you will not need to do any setup. When your VM is provisioned you should receive a message from EngrIT in the [secure messaging portal](https://my.engr.illinois.edu/smd).
