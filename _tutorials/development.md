@@ -15,7 +15,7 @@ We are using [Vagrant](https://www.vagrantup.com/) to provision VMs. Vagrant all
 
 Here are the steps to setup your personal VM.
 
-1. You will first need to install Vagrant. You can do this by going [here](https://www.vagrantup.com/downloads) and then downloading the correct version for your operating system. If you are on Windows or Mac, you should follow the steps in the installer.
+1. You will first need to install Vagrant. You can do this by following the instructions at [this page](https://www.vagrantup.com/docs/installation).
 
 2. Next, you will need to download VirtualBox. You can do this by going [here](https://www.virtualbox.org/wiki/Downloads) and then downloading the correct version for your operating system.
 
