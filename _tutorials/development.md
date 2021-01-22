@@ -11,7 +11,7 @@ In this course, we use Virtual Machines (VMs) for all our developmment. We will 
 For most students in the course, you will need to setup a VM for development on your personal computer. A small number of students may receive VMs from the CS Department's VM Farm if their personal computer isn't powerful enough. Below are tutorials on how to setup / access your VMs.
 
 ## Local (Personal Computer) VM
-We are using [Vagrant](https://www.vagrantup.com/) to provision VMs. Vagrant allows us to provide a consistent VM enviornment while maintaing the same feel as the remote VMs in the CS VM Farm.
+We are using [Vagrant](https://www.vagrantup.com/) to provision VMs. Vagrant allows us to provide a consistent VM environment, similar to the environment in which assignments will be graded.
 
 Here are the steps to setup your personal VM.
 
