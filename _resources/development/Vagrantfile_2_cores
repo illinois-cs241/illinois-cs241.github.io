@@ -1,0 +1,49 @@
+$script = <<-'SCRIPT'
+APT_FLAGS="-qq -y -o Dpkg::Use-Pty=0"
+export DEBIAN_FRONTEND=noninteractive
+
+apt-get $APT_FLAGS update
+apt-get $APT_FLAGS install clang=1:3.8-33ubuntu3.1 \
+                           libncurses5-dev=6.0+20160213-1ubuntu1 \
+                           valgrind=1:3.11.0-1ubuntu4.2 \
+                           manpages-posix manpages-posix-dev \
+                           build-essential git strace tmux vim
+
+if ! id -u student > /dev/null 2>&1 ; then
+  useradd student -u 10000 -m -s /bin/bash 2> /dev/null
+  rsync -a /etc/skel/ /home/student/
+
+  mkdir /home/student/.ssh
+  cp /home/vagrant/.ssh/authorized_keys /home/student/.ssh/
+  chmod 0700 /home/student/.ssh
+
+  echo "student ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers.d/student
+
+  touch /home/student/.hushlogin
+  chown student:student -R /home/student/
+
+  echo "America/Chicago" > /etc/timezone
+  dpkg-reconfigure tzdata 2>&1
+fi
+SCRIPT
+
+Vagrant.configure("2") do |config|
+	config.vm.box = "bento/ubuntu-16.04"
+	config.vm.hostname = "cs241"
+	config.vm.provider "virtualbox" do |v|
+		v.name = "CS 241"
+		v.cpus = "2"
+		v.memory = "4096"
+		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+		v.customize ["guestproperty", "set", :id, "/VirtualBox/GuestAdd/VBoxService/--timesync-set-threshold", 10000]
+		v.customize ["modifyvm", :id, "--usb", "off"]
+		v.customize ["modifyvm", :id, "--usbehci", "off"]
+		v.customize ["modifyvm", :id, "--cableconnected1", "on"]
+	end
+
+	config.vm.provision "shell", inline: $script
+
+	if ARGV[0] == "ssh"
+		config.ssh.username = "student"
+	end
+end

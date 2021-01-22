@@ -12,13 +12,13 @@ wikibook:
 
 You have already been assigned a HW0 for the class. Add your answers to `HW0.md` in your course repository. Remember to commit and push your answers. We'll spend the first part of class going over the various questions from HW0. Your grade for this lab is partly HW0 and partly the assignment below.
 
+## Development
+
+Read the [Development Guide]({% link _tutorials/development.md %}) to learn about how to set up your environment!
+
 ## Background Guide
 
 Read [this]({% link _coursebook/Background.md %}) to get started with the course!
-
-## Development
-
-Read the [Development Guide]({% link _tutorials/development.md %})!
 
 ## Git
 
@@ -38,7 +38,7 @@ git config --global user.name "Lawrence Angrave"
 git config --global user.email "angrave@illinois.edu"
 ```
 
-Your code will not be graded if you git config is not correctly set. **No exceptions!** Then checkout your repository as follows:
+Then checkout your repository as follows:
 
 ```console
 git clone https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.data.constants.semester }}/NETID.git
