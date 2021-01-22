@@ -45,4 +45,4 @@ $ ssh <NETID>@{{site.data.constants.semester }}-{{ site.data.constants.departmen
 
 On Windows, you can use an SSH client like [PuTTY](https://www.putty.org/).
 
-Note that if you are not connected to Campus Wifi, you will need to use a Virtual Private Network (VPN) to connect to your VM. You should set up the VPN from the UIUC WebStore. An alternative to using the UIUC VPN is to SSH twice. You can first into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
+Note that if you are not connected to on-campus internet, you will need to use a Virtual Private Network (VPN) to connect to your VM. Instructions on downloading and using the UIUC VPN can be found [here](https://answers.uillinois.edu/illinois/98773). An alternative to using the UIUC VPN is to SSH twice. You can first into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
