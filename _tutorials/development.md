@@ -43,6 +43,6 @@ On Linux / Mac, you can do something like
 $ ssh <NETID>@{{site.data.constants.semester }}-{{ site.data.constants.department_code }}{{ site.data.constants.course_number }}-<NUM>.cs.illinois.edu
 ```
 
-On Windows, you can use a SSH client like [PuTTY](https://www.putty.org/).
+On Windows, you can use an SSH client like [PuTTY](https://www.putty.org/).
 
 Note that if you are not connected to Campus Wifi, you will need to use a Virtual Private Network (VPN) to connect to your VM. You should set up the VPN from the UIUC WebStore. An alternative to using the UIUC VPN is to SSH twice. You can first into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
