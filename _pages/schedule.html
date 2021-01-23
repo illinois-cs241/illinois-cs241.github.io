@@ -6,7 +6,7 @@
 
 <body>
     {% include header.html %}
-        <h1 class="heading">Schedule</h1>
+        <h1 class="heading">Schedule (in progress...)</h1>
         <div class="container-fluid">
             <div class="row">
                 <!-- Your content goes here -->
@@ -29,7 +29,7 @@
                         {% assign days = 3 %}
                         {% assign weeks_zero_indexed = 15 %}
                         {% assign pretty_date_format = " [%m/%d/%Y] " %}
-                        {% assign initial_day = "2020-08-24" %}
+                        {% assign initial_day = "2021-01-25" %}
                         {% assign initial_day_unix = initial_day | date: "%s" %}
                         <!--The schedule is considered as a list, of which we visit a window of size days, for each week. 
                                 
