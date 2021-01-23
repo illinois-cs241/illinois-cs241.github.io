@@ -1,3 +1,5 @@
+# Start 1/25. Last Day of I 5/5
+# Non teaching Wed 2/17, Wed 3/24, Tue 4/13 
 -
   title: "Welcome to System Programming"
   summary: "1. HW0 using my Linux-In-The-Browser minicourse"
@@ -63,6 +65,11 @@
   resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#9C27B0"
   number: 10
+-
+  title: "Break"
+  summary: ""
+  resources: ""
+  color: "#808080"
 -
   title: "Threads"
   summary: "Introducing pthreads. stacks. Concurrency programming gotchas."
@@ -147,6 +154,11 @@
   resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
   color: "#8BC34A"
   number: 24
+-
+  title: "Break"
+  summary: ""
+  resources: ""
+  color: "#808080"
 -
   title: "TCP Client"
   summary: "TCP/IP Header. IPv4 exhaustion. A web client"
