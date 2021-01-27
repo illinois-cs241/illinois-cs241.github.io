@@ -5,7 +5,10 @@ title: Resources
 
 # Resources
 
-**If you added late, check [this page]({% link _pages/late_add.md %}) to get caught up.**
+## Late Add Instructions
+If you added late, check [this page]({% link _pages/late_add.md %}) to get caught up.
+
+## Textbook References
 
 An introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
 We also have the second iteration the [Coursebook](https://github.com/illinois-cs241/coursebook/wiki) That provides html, pdf, and wiki versions. Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
