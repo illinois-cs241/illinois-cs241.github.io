@@ -6,89 +6,92 @@
 
 <body>
     {% include header.html %}
-    <h1 class="heading">Live Exploration Schedule</h1>    
-       <p>Prof. Angrave will be hosting live non-lectures Mondays and Wednesdays 9:30-10:45 on Zoom. (See Piazza for link)</p> 
-    <h1 class="heading">Async Schedule</h1>
-        <div class="container-fluid">
-            <div class="row">
-                <!-- Your content goes here -->
-                <div class="col-sm-12 col-xs-12">
-                    <div class="container-fluid">
+    <main>
+        <h1 class="heading">Live Exploration Schedule</h1>
+        <section class="centered">
+            Prof. Angrave will be hosting live non-lectures Mondays and Wednesdays 9:30-10:45am CT on Zoom (see Piazza for link).
+        </section>
 
-                        <div class="row">
-                            <div class="col-lg-3 hidden-xs"></div>
-                            <div class="col-lg-3 hidden-xs">
-                                <h2>Monday</h2>
-                            </div>
-                            <div class="col-lg-3 hidden-xs">
-                                <h2>Wednesday</h2>
-                            </div>
-                            <div class="col-lg-3 hidden-xs">
-                                <h2>Friday</h2>
-                            </div>
-                        </div>
+        <h1 class="heading">Async Schedule</h1>
+        <!-- Your content goes here -->
+        <div class="col-sm-12 col-xs-12">
+            <div class="col-lg-3 hidden-xs">
+                <h2>Days</h2>
+            </div>
+            <div class="col-lg-3 hidden-xs">
+                <h2>Monday</h2>
+            </div>
+            <div class="col-lg-3 hidden-xs">
+                <h2>Wednesday</h2>
+            </div>
+            <div class="col-lg-3 hidden-xs">
+                <h2>Friday</h2>
+            </div>
+        </div>
 
-                        {% assign days = 3 %}
-                        {% assign weeks_zero_indexed = 15 %}
-                        {% assign pretty_date_format = " [%m/%d/%Y] " %}
-                        {% assign initial_day = "2021-01-25" %}
-                        {% assign initial_day_unix = initial_day | date: "%s" %}
-                        <!--The schedule is considered as a list, of which we visit a window of size days, for each week. 
-                                
-                        <!-- This lets us easily move schedule items in the YAML, without having to change the entire structure of the rest of the YAML file, and/or rename week names and dates.-->
-                        {% for week_number in (0..weeks_zero_indexed) %}
-                            {% assign seconds_diff = week_number | times: 7 | times: 86400 %}
-                            {% assign start_day = initial_day_unix | plus: seconds_diff | date: pretty_date_format %}
+        {% assign days = 3 %}
+        {% assign weeks_zero_indexed = 14 %}
+        {% assign pretty_date_format = " [%m/%d/%Y] " %}
+        {% assign initial_day = "2021-01-25" %}
+        {% assign initial_day_unix = initial_day | date: "%s" %}
+        <!--The schedule is considered as a list, of which we visit a window of size days, for each week.-->
 
-                            {% assign monday_friday_diff = 4 | times: 86400 %}
-                            {% assign seconds_diff = seconds_diff | plus: monday_friday_diff %}
-                            {% assign end_day = initial_day_unix | plus: seconds_diff | date: pretty_date_format %}
-                            <div class="row">
-                                <div class="col-lg-3 announcement-card">
-                                    <div class="day-title row" style="background-color: rgb(64, 64, 64)">
-                                        <div class="day-title-text col-md-12">
-                                            <h3 class="day-title-h3">Week {{ week_number | plus: 1 }}:
-                                                {{ start_day }}-{{ end_day }}</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% assign starting_day_offset = week_number | times: days %}
-                                {% for day in site.data.schedule limit: days offset: starting_day_offset %}
-                                    {% assign lecture_number = starting_day_offset | plus: forloop.index %}
-                                    <div class="col-lg-3 ">
-                                        <div class="day container">
-                                            <div class="day-title row" style="background-color: {{ day.color }}">
-                                                <div class="day-title-text col-md-12">
-                                                    <h3 class="day-title-h3">
-                                                        {% if day.number != null %}
-                                                            {{ day.number }}. 
-                                                        {% endif %}
-                                                        {{day.title}}
-                                                    </h3>
-                                                </div>
-                                            </div>
-                                            <div class="day-summary row">
-                                                <div class="col-xs-10 offset-xs-1">
-                                                    <p>{{day.summary}}</p>
-                                                </div>
-                                                <div class="col-xs-1"></div>
-                                            </div>
-                                            <div class="day-resources row">
-                                                <div class="col-md-10 offset-md-1">
-                                                    <p>{{day.resources}}</p>
-                                                </div>
-                                                <div class="col-md-1"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        {% endfor %}
+        <!-- This lets us easily move schedule items in the YAML, without having to change the entire structure of the rest of the YAML file, and/or rename week names and dates.-->
+        {% for week_number in (0..weeks_zero_indexed) %}
+        {% assign seconds_diff = week_number | times: 7 | times: 86400 %}
+        {% assign start_day = initial_day_unix | plus: seconds_diff | date: pretty_date_format %}
+
+        {% assign monday_friday_diff = 4 | times: 86400 %}
+        {% assign seconds_diff = seconds_diff | plus: monday_friday_diff %}
+        {% assign end_day = initial_day_unix | plus: seconds_diff | date: pretty_date_format %}
+            <div class="col-lg-3 announcement-card">
+                <div class="day-title" style="background-color: rgb(64, 64, 64)">
+                    <div class="day-title-text col-md-12">
+                        <h3 class="day-title-h3">Week {{ week_number | plus: 1 }}:
+                            {{ start_day }}-{{ end_day }}</h3>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+            {% assign starting_day_offset = week_number | times: days %}
+            {% for day in site.data.schedule.classes limit: days offset: starting_day_offset %}
+            {% assign lecture_number = starting_day_offset | plus: forloop.index %}
+            <div class="col-lg-3 ">
+                <div class="day">
+                    <div class="day-title" style="background-color: {{ day.color }}">
+                        <div class="day-title-text col-md-12">
+                            <h3 class="day-title-h3">
+                                {% if day.number != null %}
+                                {{ day.number }}.
+                                {% endif %}
+                                {{day.title}}
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="day-summary">
+                        <div class="col-xs-10 offset-xs-1">
+                            <p><strong>Topics: </strong>{{day.summary}}</p>
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
+                    <div class="day-coursebook-reading">
+                        <div class="col-xs-10 offset-xs-1">
+                            <p><strong>Coursebook Reading: </strong><a
+                                    href={{site.data.schedule.chapter_link_map[day.review_chapter]}}>Chapter {{
+                                    day.review_chapter }}</a></p>
+                        </div>
+                        <div class="col-xs-1"></div>
+                    </div>
+                    <div class="day-resources">
+                        <div class="col-md-10 offset-md-1">
+                            <p>{{day.resources}}</p>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+    </main>
     {% include footer.html %}
 </body>
 

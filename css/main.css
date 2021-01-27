@@ -1,6 +1,6 @@
 :root {
-  --color-primary: hsl(207, 59%, 43%);
-  --color-secondary: hsl(207, 70%, 53%);
+  --color-primary:hsl(174, 100%, 29%);
+  --color-secondary: black;
   --color-emphasis: hsl(204, 100%, 42%);
   --color-text: hsl(0, 0%, 0%);
   --color-translucent: hsla(0, 0%, 0%, 0.3);
@@ -9,7 +9,7 @@
 
 body {
     font-family: Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--color-pale-white);
+    background-color: white;
     color: var(--color-text);
     padding-bottom: 50px;
     position: relative;
@@ -25,7 +25,7 @@ body {
     border: 0px;
     border-top:none;
     box-shadow:none;
-    margin-bottom: 0;
+    margin: 0 15% 0;
 }
 
 .navbar-default .navbar-brand {
@@ -122,16 +122,16 @@ table {
     height:300px;
     margin-bottom:20px;
     width:100%;
-    background-color: hsl(0, 0%, 100%);
+    background-color: hsl(212deg 100% 90%);
     border-radius:3px; /* Has to be equal to the title border */
 }
 
 .day h1 {
-    color: hsl(240, 8%, 95%);
+    color: white;
 }
 
 .day-summary, .day-resources {
-    color: hsl(0, 0%, 0%);
+    color: var(--color-text)
 }
 
 .day-resources {
@@ -140,7 +140,6 @@ table {
 }
 
 .day-summary {
-    position: absolute;
     top: 75px; /* Related to the .day-title height attr */
 }
 
@@ -149,10 +148,10 @@ table {
 }
 
 .day-title {
+    display: flex;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 3px;
-    height:70px;
 }
 
 .schedule-container {
@@ -615,16 +614,36 @@ section.center {
     padding-top: 0;
 }
 
+section.flexbox {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.flexbox-item {
+    display: inline-block;
+    padding: 2vh;
+    margin: 2vh;
+}
+
+
 main {
-    text-align: center;
-    margin: 0;
-    padding: 0;
+    margin: 0 15% 0;
     background-color: white;
+}
+
+.centered {
+    text-align: center;
+}
+
+.row {
+    margin: 0 15% 0;
 }
 
 .card-body {
     background-color: var(--color-pale-white);
-    padding: 2vh;
+    padding: 2vw;
     display: block;
 }
 
@@ -636,30 +655,22 @@ main {
     color: white;
 }
 
-.card-body.course-description {
-
+.course-information, .course-description {
+    padding: 5%;
 }
 
-.card-body.course-information {
-    background-color: white;
+section.course-information section.flexbox {
+    justify-content: left;
+}
+
+section.course-information section.flexbox .flexbox-item {
+    width: 30vw;
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
     font-weight: 200;
-}
-
-section.flexbox {
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    flex-wrap: wrap;
-    width: 90vw;
-}
-
-.flexbox-item {
-    display: inline-block;
-    padding: 2vh;
-    margin: 2vh;
 }
 
 img.logo {
@@ -692,9 +703,7 @@ img.logo {
     display: flex;
     justify-content: center;
     margin: auto;
-    padding: 5vw;
     flex-wrap: wrap;
-    width: 100vw;
 }
 
 .staff {
@@ -751,10 +760,12 @@ section.center {
 }
 
 .latest-mp {
+    text-align: center;
     background-color: rgba(16, 213, 147, 0.85);
 }
 
 .latest-lab {
+    text-align: center;
     background-color: rgba(255, 102, 42, 0.85);
 }
 
