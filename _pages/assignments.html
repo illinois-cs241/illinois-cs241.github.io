@@ -40,7 +40,7 @@
                 <div class="col-md-5 col-5 col-xs-12">
                     <div class="table-responsive">
                         <h3>MPs</h3>
-                        {% assign released_mps = site.data.assignments['mps'] | where: "visible", "false" %}
+                        {% assign released_mps = site.data.assignments['mps'] | where: "visible", "true" %}
                         {% if released_mps.size == 0 %}
                         <p>No MP released yet. Check back later!</p>
                         {% else %}
@@ -69,7 +69,7 @@
 
                     <div class="table-responsive">
                         <h3>Labs</h3>
-                        {% assign released_labs = site.data.assignments['labs'] | where: "visible", "false" %}
+                        {% assign released_labs = site.data.assignments['labs'] | where: "visible", "true" %}
                         {% if released_labs.size == 0 %}
                         <p>No lab released yet. Check back later!</p>
                         {% else %}
