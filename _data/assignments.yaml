@@ -16,7 +16,7 @@ labs:
           - submission.txt
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Perilous Pointers"
       releaseDate: "Week 2"
@@ -30,7 +30,7 @@ labs:
           - part2-main.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Utilities Unleashed"
       releaseDate: "Week 3"
@@ -207,7 +207,7 @@ mps:
           - camelCaser_tests.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Vector"
       releaseDate: "Week 3"

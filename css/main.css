@@ -647,7 +647,8 @@ section.flexbox {
 }
 
 .course-information, .course-description {
-    padding: 5%;
+    padding: 2rem 5%;
+    margin: 0 15%;
 }
 
 section.course-information section.flexbox {
@@ -655,9 +656,8 @@ section.course-information section.flexbox {
 }
 
 section.course-information section.flexbox .flexbox-item {
-    width: 30vw;
     margin: 0;
-    padding: 0;
+    padding: 1rem;
 }
 
 h2 {
@@ -743,6 +743,10 @@ section.center {
     body {
         margin: 0 5% 0;
     }
+
+    .course-description, .course-information {
+        margin: 0 5%;
+    }
 }
 
 /* For phones */
@@ -768,6 +772,16 @@ section.center {
     section.course-information section.flexbox .flexbox-item {
         margin: 0;
     }
+}
+
+.latest-assignments {
+    margin: 4rem;
+}
+
+.latest-assignments .flexbox-item {
+    padding: 2rem;
+    border-radius: 2rem;
+    margin: 1rem 2rem;
 }
 
 .latest-mp {

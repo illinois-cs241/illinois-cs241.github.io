@@ -5,7 +5,7 @@ title: Home
 <!DOCTYPE html>
 <html lang="en">
   {% include head.html %}
-  <body>
+    <body style="margin: 0;">
     {% include header.html %}
 
     <main>
@@ -107,8 +107,8 @@ title: Home
       </section>
       </section>
         <section class="card-body course-information">
-            <section class="flexbox">
-                <section class="flexbox-item">
+            <section class="flexbox row">
+                <section class="flexbox-item col-sm-6 col-xs-12">
                     <h2>
                         Time and Location
                     </h2>
@@ -125,7 +125,7 @@ title: Home
                         <strong>Location: </strong> {{ site.data.constants.location }}
                     </p>
                 </section>
-                <section class="flexbox-item">
+                <section class="flexbox-item col-sm-6 col-xs-12">
                     <h2>
                         Getting Help
                     </h2>
@@ -148,7 +148,7 @@ title: Home
                         Please read our <a href="/syllabus#mental-health-statement">mental health statement.</a>
                   </p>  
                 </section>
-                <section class="flexbox-item">
+                <section class="flexbox-item col-sm-6 col-xs-12">
                     <h2>
                         Grading Policy
                     </h2>
@@ -168,7 +168,7 @@ title: Home
                         <strong>Final Exam: </strong>25% (comprehensive)
                     </p>
                 </section>
-                <section class="flexbox-item">
+                <section class="flexbox-item col-sm-6 col-xs-12">
                     <h2>
                         Course Prerequisites
                     </h2>
