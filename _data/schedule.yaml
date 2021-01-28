@@ -258,3 +258,9 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 39
+  - title: "Misc."
+    summary: ""
+    review_chapter: 15
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#C38A80"
+    number: 40

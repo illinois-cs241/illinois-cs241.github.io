@@ -14,6 +14,7 @@ body {
     color: var(--color-text);
     padding-bottom: 50px;
     position: relative;
+    margin: 0 15% 0;
 }
 
 .sticky-top {
@@ -614,12 +615,6 @@ section.flexbox {
     margin: 2vh;
 }
 
-
-main {
-    margin: 0 15% 0;
-    background-color: white;
-}
-
 .centered {
     text-align: center;
 }
@@ -731,11 +726,23 @@ section.center {
     padding-top: 0;
 }
 
+@media only screen and (max-width: 900px) {
+    body {
+        margin: 0 5% 0;
+    }
+}
+
 /* For phones */
 @media only screen and (max-width: 480px) {
     body {
         font-size: larger;
+        margin: 0;
     }
+
+    .day-title {
+        width: 100%;
+    }
+
     .staff-container div.staff-image {
         width: 20vh;
         height: 20vh;
@@ -743,10 +750,6 @@ section.center {
 
     .staff-name {
         font-size: 1.25em;
-    }
-
-    main {
-        margin: 2vh;
     }
 
     section.course-information section.flexbox .flexbox-item {
