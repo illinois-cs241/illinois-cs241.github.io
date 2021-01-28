@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 {% include head.html %}
+
 <body data-spy="scroll" data-target="#overview" data-offset="50">
-{% include header.html %}
-<div class="container-fluid">
-  <div class="row" style="display: flex; justify-content: stretch;">
-    <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
-      <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
-    </div>
-    <div class="col-sm-9 col-xs-12">
-      <div class="wrapper">
-        <div class="pad"><div class="card">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      {% include header.html %}
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
           <div class="title">
             {% assign split_url = page.url | split: '/' %}
             {% assign name_no_md = split_url[-1] | replace: '.html','' %}
@@ -19,45 +19,44 @@
               {{ page.title }}
             </h1>
           </div>
-          <div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+          <div class="content col-sm-11 .col-sm-offset-1">
             {% if assign_data.submissions %}
-              <div class="submission-wrapper">
-                {% for submission in assign_data.submissions %}
-                  <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br/>
-                  {% if submission.graded_files %}
-                    <b>Graded files:</b>
-                    <ul>
-                      {% for graded_file in submission.graded_files %}
-                        <li>{{ graded_file }}</li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
+            <div class="submission-wrapper">
+              {% for submission in assign_data.submissions %}
+              <b>{{ submission.title }}</b> due <b>{{ submission.due_date }}</b><br />
+              {% if submission.graded_files %}
+              <b>Graded files:</b>
+              <ul>
+                {% for graded_file in submission.graded_files %}
+                <li>{{ graded_file }}</li>
                 {% endfor %}
-              </div>
+              </ul>
+              {% endif %}
+              {% endfor %}
+            </div>
             {% endif %}
-          </div></div></div>
-        </div></div>
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            {% if page.toc != false %}
+            {{ content | toc }}
+            {% endif %}
+          </div>
+          <div id="content">
+            {% include doc_header.html %}
+            {{ content | content_style }}
+            {% capture doc_footer %}{% include doc_footer.md %}{% endcapture %}
+            {{ doc_footer | markdownify | content_style }}
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        {% include footer.html %}
       </div>
-      <div class="hidden-sm hidden-md hidden-lg">
-        {% if page.toc != false %}
-        {{ content | toc }}
-        {% endif %}
-      </div>
-      <div id="content">
-          {% include doc_header.html %}
-          {{ content | content_style }}
-          {% capture doc_footer %}{% include doc_footer.md %}{% endcapture %}
-          {{ doc_footer | markdownify | content_style }}
-      </div>
-      <div class="col-md-2 col-sm-1 col-xs-0"></div>
     </div>
   </div>
-
-  </div>
-  {% include footer.html %}
   <script type="application/javascript">
     var github_repo = "{{ site.repository | escape }}";
     var github_path = "{{ page.path | escape }}";
   </script>
 </body>
+
 </html>
