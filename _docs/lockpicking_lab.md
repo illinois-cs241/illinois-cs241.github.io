@@ -185,7 +185,7 @@ $(EXE_SHELL): $(OBJS_SHELL:%.o=$(OBJS_DIR)/%-release.o)
 
 .PHONY: clean
 clean:
-rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
+  rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
 
 ```
 
