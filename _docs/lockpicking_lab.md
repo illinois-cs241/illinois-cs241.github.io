@@ -165,27 +165,27 @@ debug: clean $(EXES_STUDENT:%=%-debug)
 -include $(OBJS_DIR)/*.d
 
 $(OBJS_DIR):
-@mkdir -p $(OBJS_DIR)
+  @mkdir -p $(OBJS_DIR)
 
 # patterns to create objects
 # keep the debug and release postfix for object files so that we can always
 # separate them correctly
 $(OBJS_DIR)/%-debug.o: %.c | $(OBJS_DIR)
-$(CC) $(CFLAGS_DEBUG) $< -o $@
+  $(CC) $(CFLAGS_DEBUG) $< -o $@
 
 $(OBJS_DIR)/%-release.o: %.c | $(OBJS_DIR)
-$(CC) $(CFLAGS_RELEASE) $< -o $@
+  $(CC) $(CFLAGS_RELEASE) $< -o $@
 
 # exes
 $(EXE_SHELL)-debug: $(OBJS_SHELL:%.o=$(OBJS_DIR)/%-debug.o)
-$(LD) $^ $(LDFLAGS) -o $@
+  $(LD) $^ $(LDFLAGS) -o $@
 
 $(EXE_SHELL): $(OBJS_SHELL:%.o=$(OBJS_DIR)/%-release.o)
-$(LD) $^ $(LDFLAGS) -o $@
+  $(LD) $^ $(LDFLAGS) -o $@
 
 .PHONY: clean
 clean:
-rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
+  rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT:%=%-debug)
 
 ```
 
