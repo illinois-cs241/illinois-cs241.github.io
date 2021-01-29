@@ -753,7 +753,7 @@ section.center {
 @media only screen and (max-width: 480px) {
     body {
         font-size: larger;
-        margin: 0;
+        margin: 1rem;
     }
 
     .day-title {

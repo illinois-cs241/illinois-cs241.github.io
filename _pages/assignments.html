@@ -37,12 +37,12 @@
         </section>
         <div class="row">
             <div class="col-md-5 col-5 col-xs-12">
+                <h3>MPs</h3>
+                {% assign released_mps = site.data.assignments['mps'] | where: "visible", "true" %}
+                {% if released_mps.size == 0 %}
+                <p>No MP released yet. Check back later!</p>
+                {% else %}
                 <div class="table-responsive">
-                    <h3>MPs</h3>
-                    {% assign released_mps = site.data.assignments['mps'] | where: "visible", "true" %}
-                    {% if released_mps.size == 0 %}
-                    <p>No MP released yet. Check back later!</p>
-                    {% else %}
                     <table>
                         <thead>
                             <tr>
@@ -61,17 +61,16 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    {% endif %}
                 </div>
+                {% endif %}
             </div>
             <div class="col-md-7 col-7 col-xs-12">
-
+                <h3>Labs</h3>
+                {% assign released_labs = site.data.assignments['labs'] | where: "visible", "true" %}
+                {% if released_labs.size == 0 %}
+                <p>No lab released yet. Check back later!</p>
+                {% else %}
                 <div class="table-responsive">
-                    <h3>Labs</h3>
-                    {% assign released_labs = site.data.assignments['labs'] | where: "visible", "true" %}
-                    {% if released_labs.size == 0 %}
-                    <p>No lab released yet. Check back later!</p>
-                    {% else %}
                     <table>
                         <thead>
                             <tr>
@@ -112,8 +111,8 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    {% endif %}
                 </div>
+                {% endif %}
             </div>
         </div>
         <div class="col-md-3 col-1 col-xs-0"></div>
