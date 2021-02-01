@@ -1,6 +1,6 @@
 # Webpage for CS 241
 
-[![Build Status](https://travis-ci.org/illinois-cs241/illinois-cs241.github.io.svg?branch=develop)](https://travis-ci.org/illinois-cs241/illinois-cs241.github.io)
+[![Build Status](https://travis-ci.org/illinois-cs241/illinois-cs241.github.io.svg?branch=develop)](https://travis-ci.com/illinois-cs241/illinois-cs241.github.io)
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/status.svg)](https://depfu.com)
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/overview.svg)](https://depfu.com/github/illinois-cs241/illinois-cs241.github.io?project_id=6331)
 
