@@ -79,9 +79,12 @@ When you and your group start writing code, we expect you to use git and for eac
 | Name | NetID | Interests |
 |:-----|:------|:----------|
 | Dillon Hammond | dillonh2 | Embedded, Kernel, Networking |
-| Isaac Love |iblove2 | Memory |
+| David James | davidtj2 | Security, Concurrency |
+| Rishabh Menezes | menezes4 | Multithreading, Concurrency, Memory |
 
 ## Lectures
+
+Lectures can be watched at any time. The table below contains a suggested cadence.
 
 <!-- Desktop Table -->
 <table width = "100%" class="table">
@@ -119,7 +122,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
 
-[https://piazza.com/class/kem6e50zzrw62r](https://piazza.com/class/kem6e50zzrw62r)
+[https://piazza.com/class/kkpuab92zfd7k0](https://piazza.com/class/kkpuab92zfd7k0)
 
 ## Project Ideas?
 
