@@ -20,7 +20,7 @@ To avoid leaving all quizzes to the last moment we suggest the following due dat
 * 2021-03-09 Quiz 3 (pthreads, producer-consumer, synchronization primitives)
 * 2021-03-23 Quiz 4 (threading issues & race conditions, virtual memory)
 * 2021-04-06 Quiz 5 (networking and pipes)
-* 2021-04-2 Quiz 6 (review -hand picked questions from the above)
+* 2021-04-20 Quiz 6 (review -hand picked questions from the above)
 * 2021-05-04 Quiz 7 (security)
 
 ## Quiz 1
