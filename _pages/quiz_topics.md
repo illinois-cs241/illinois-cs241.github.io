@@ -4,7 +4,9 @@ title: Quiz Topics
 ---
 ## Overview
 
-Quizzes are available at [PrairieLearn](https://prairielearn.engr.illinois.edu)
+These are *not* the PrairleLearn quizzes that are part of your weekly lab.
+
+There are 7 graded Quizzes available at [PrairieLearn](https://https://www.prairielearn.org/)
 
 Quizzes may be retaken without penality and are due the last day of instruction at UIUC ie. *The day before Reading Day.*
 
@@ -12,13 +14,14 @@ To avoid leaving all quizzes to the last moment we suggest the following due dat
 
 #### Suggested due dates
 
-* 10/14 Quiz 1 (C foundation)
-* 10/21 Quiz 2 (fork,exec,wait and heap)
-* 11/4 Quiz 3 (pthreads, producer-consumer, synchronization primitives)
-* 11/11 Quiz 4 (threading issues & race conditions, virtual memory)
-* 11/18 Quiz 5 (networking and pipes)
-* 12/2 Quiz 6 (review -hand picked questions from the above)
-* 12/9 Quiz 7 (security)
+
+* 2021-02-08 Quiz 1 (C foundation)
+* 2021-02-22 (fork,exec,wait and heap)
+* 2021-03-09 Quiz 3 (pthreads, producer-consumer, synchronization primitives)
+* 2021-03-23 Quiz 4 (threading issues & race conditions, virtual memory)
+* 2021-04-06 Quiz 5 (networking and pipes)
+* 2021-04-2 Quiz 6 (review -hand picked questions from the above)
+* 2021-05-04 Quiz 7 (security)
 
 ## Quiz 1
 
