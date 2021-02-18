@@ -23,7 +23,7 @@ jobs:
         sudo apt install hunspell libhunspell-dev hunspell-en-us
 
     - name: Deploy site
-    - run: |
+      run: |
         bundle exec rake spell_check
         gpg --passphrase $ericsz2_gpg_passphrase --output /tmp/dual_deploy_key --decrypt ericsz2-dual-deploy.enc 
         eval "$(ssh-agent -s)"
