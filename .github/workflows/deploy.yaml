@@ -1,0 +1,31 @@
+name: Website Deploy
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+
+    - name: Setup ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
+        bundler-cache: true
+
+    - name: Install dependencies
+      run: |
+        sudo apt install hunspell libhunspell-dev hunspell-en-us
+
+    - name: Deploy site
+    - run: |
+        bundle exec rake spell_check
+        gpg --passphrase $ericsz2_gpg_passphrase --output /tmp/dual_deploy_key --decrypt ericsz2-dual-deploy.enc 
+        eval "$(ssh-agent -s)"
+        chmod 600 /tmp/dual_deploy_key
+        bash _scripts/deploy.sh
