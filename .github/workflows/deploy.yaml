@@ -30,11 +30,7 @@ jobs:
 
     - name: Deploy site
       run: |
-        echo use-agent >> ~/.gnupg/gpg.conf
-        echo pinentry-mode loopback >> ~/.gnupg/gpg.conf
-        echo allow-loopback-pinentry >> ~/.gnupg/gpg-agent.conf
-        echo RELOADAGENT | gpg-connect-agent
-        gpg --passphrase ${{ secrets.GPG_PASSPHRASE }} --output /tmp/dual_deploy_key --decrypt dual_deploy_key.enc
+        gpg --no-tty --batch --yes --passphrase ${{ secrets.GPG_PASSPHRASE }} --output /tmp/dual_deploy_key --decrypt dual_deploy_key.enc
         eval "$(ssh-agent -s)"
         chmod 600 /tmp/dual_deploy_key
         bash _scripts/deploy.sh
