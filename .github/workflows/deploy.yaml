@@ -32,7 +32,7 @@ jobs:
       env:
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       run: |
-        gpg --passphrase env.GPG_PASSPHRASE --output /tmp/dual_deploy_key --decrypt dual_deploy_key.enc 
+        gpg --passphrase $GPG_PASSPHRASE --output /tmp/dual_deploy_key --decrypt dual_deploy_key.enc 
         eval "$(ssh-agent -s)"
         chmod 600 /tmp/dual_deploy_key
         bash _scripts/deploy.sh
