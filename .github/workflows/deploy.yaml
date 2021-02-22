@@ -36,6 +36,7 @@ jobs:
         eval "$(ssh-agent -s)"
         chmod 600 /tmp/dual_deploy_key
 
+        # Email from: # https://github.community/t/github-actions-bot-email-address/17204/6
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --global user.name "Github Actions Bot"
         bash _scripts/deploy.sh
