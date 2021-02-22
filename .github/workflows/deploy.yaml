@@ -30,6 +30,7 @@ jobs:
 
     - name: Deploy site
       run: |
+        export GPG_TTY=$(tty)
         gpg --passphrase ${{ secrets.GPG_PASSPHRASE }} --output /tmp/dual_deploy_key --decrypt dual_deploy_key.enc
         eval "$(ssh-agent -s)"
         chmod 600 /tmp/dual_deploy_key
