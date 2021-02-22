@@ -18,8 +18,7 @@ touch .nojekyll
 git add -A;
 git commit -m "Deploying from $(date -u +"%Y-%m-%dT%H:%M:%SZ")";
 git remote add origin git@github.com:${GITHUB_REPOSITORY}.git
-git checkout -b github-actions-test
-git push origin github-actions-test --force;
+git push origin master --force;
 
 cd ${GITHUB_WORKSPACE}
 
