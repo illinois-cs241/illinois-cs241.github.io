@@ -66,7 +66,6 @@ multitask default: [
 
   gen_search_json site
 
-  cp './.travis.yml', './_site/.travis.yml'
   cp './CNAME', './_site/CNAME'
 end
 
