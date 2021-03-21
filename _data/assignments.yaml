@@ -277,11 +277,11 @@ mps:
       url: "parallel_make"
       submissions:
         - title: Part 1
-          due_date: 2020-03-29 23:59
+          due_date: 2021-03-29 23:59
           graded_files:
           - parmake.c
         - title: Part 2
-          due_date: 2020-04-05 23:59
+          due_date: 2021-04-05 23:59
           graded_files:
           - parmake.c
       resources: true
