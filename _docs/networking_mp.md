@@ -279,7 +279,7 @@ Notes:
 Keep things modular! Write functions for everything. This has multiple advantages. First, it lets you debug your code in small, incremental units, rather than writing a huge monolith of code and trying to figure out which part of it is broken through trial and error. Secondly, you'd be surprised how much code you can end up reusing if you design your application appropriately. Third, it'll be helpful while debugging or discussing your approach with course staff - it's really hard to tell what your code is supposed to be doing, otherwise.
 
 ### Reusable Addresses and Ports
-Make sure you use `SO_REUSEADDR` and `SO_REUSEPORT` to ensure `bind()` doesn’t fail in the event that your server or client crashes. This will enable faster debugging for you (otherwise, you would have to wait for the kernel to reopen the source address and port). We will be making sure that your socket is set up with these options (look into `setsockopt`) so please make sure you use both flags! If you don’t, you will not pass this assignment.
+Make sure you use `SO_REUSEADDR` and `SO_REUSEPORT` to ensure `bind()` doesn’t fail in the event that your server or client crashes. This will enable faster debugging for you (otherwise, you would have to wait for the kernel to reopen the source address and port). We will be making sure that your socket is set up with these options (look into `setsockopt`) so please make sure you use both options! If you don’t, you will not pass this assignment.
 
 See [this StackOverflow question](https://stackoverflow.com/questions/14388706/how-do-so-reuseaddr-and-so-reuseport-differ) for more information on the differences between the two and why they are necessary.
 
