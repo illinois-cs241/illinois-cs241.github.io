@@ -64,8 +64,14 @@ So to sum up, your job in the client program is:
 ```
 * port - The port number to accept connections on.
 
-Similar to `client.c`, a lot of the functionality in `server.c` has been implemented for you.  Your job is to set up the server to use TCP IPv4 with reusable ports and gracefully close the server when `SIGINT` is received.
- The figure below illustrates how a message propagates through the system: ![Alt](../images/assignment-docs/lab/charming_chatroom/MessageBroadcast.png)
+Similar to `client.c`, a lot of the functionality in `server.c` has been implemented for you. Your job is to set up the server to use TCP IPv4 with reusable addresses and ports, and gracefully close the server when `SIGINT` is received.
+
+### Reusable Addresses and Ports
+Make sure you use `SO_REUSEADDR` and `SO_REUSEPORT` to ensure `bind()` doesn’t fail in the event that your server or client crashes. This will enable faster debugging for you (otherwise, you would have to wait for the kernel to reopen the source address and port). We will be making sure that your socket is set up with these options (look into `setsockopt`) so please make sure you use both options! If you don’t, you will not pass this assignment.
+
+See [this StackOverflow question](https://stackoverflow.com/questions/14388706/how-do-so-reuseaddr-and-so-reuseport-differ) for more information on the differences between the two and why they are necessary.
+
+The figure below illustrates how a message propagates through the system: ![Alt](../images/assignment-docs/lab/charming_chatroom/MessageBroadcast.png)
 
 To sum up, you have to:
 
