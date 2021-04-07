@@ -278,6 +278,11 @@ Notes:
 
 Keep things modular! Write functions for everything. This has multiple advantages. First, it lets you debug your code in small, incremental units, rather than writing a huge monolith of code and trying to figure out which part of it is broken through trial and error. Secondly, you'd be surprised how much code you can end up reusing if you design your application appropriately. Third, it'll be helpful while debugging or discussing your approach with course staff - it's really hard to tell what your code is supposed to be doing, otherwise.
 
+### Reusable Addresses and Ports
+Make sure you use `SO_REUSEADDR` and `SO_REUSEPORT` to ensure `bind()` doesn’t fail in the event that your server or client crashes. This will enable faster debugging for you (otherwise, you would have to wait for the kernel to reopen the source address and port). We will be making sure that your socket is set up with these options (look into `setsockopt`) so please make sure you use both options! If you don’t, you will not pass this assignment.
+
+See [this StackOverflow question](https://stackoverflow.com/questions/14388706/how-do-so-reuseaddr-and-so-reuseport-differ) for more information on the differences between the two and why they are necessary.
+
 ## Logging
 
 This assignment is challenging enough, and debugging it is even more so. We recommend that you constantly log state as your client/server program executes. You might want to log at the beginning/end of function calls, entry and exit of loops etc. and maybe log the values of key variables, pointers, file descriptors etc. to sanity check what's going on with your code.
@@ -295,10 +300,6 @@ Server - By the time you start your server, you will (hopefully) have a working 
 Alternatively, if higher level languages are more your thing, you could try writing a script in some other language (say, Python or Ruby). As long as you strictly adhere to the specified protocol, it should work fine (be careful about the width and byte ordering of types in other languages, though!). The catch is, you have to be sure your mock client/server actually works as expected, since you'll end up debugging programs in different languages at this point, which is never fun. On the bright side, this lets you practice multilingualism.
 
 We will also be providing a reference client and server.  These print out helpful logging messages that you do not need to mirror in your code.  These might also not be perfect, so please report things to us (they do pass our tests though).
-
-## Notes
-
-Make sure you use `SO_REUSEADDR` to ensure `bind()` doesn't fail in the event that your server or client crashes. This will enable faster debugging for you (otherwise, you would have to wait for the kernel to reopen the source address and port). We will be making sure that your socket is setup with these options (look into `setsockopt`) so please make sure you use this flag! If you don't, you will not pass this assignment.
 
 ## Grading
 There are **three** parts for this assignment:
