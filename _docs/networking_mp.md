@@ -311,11 +311,11 @@ Part 1 requires **full** client functionality, and is due at the first deadline 
 - Part 2: The Server Part 1
 
 Part 2 requires you to begin implementing your server. We will run the full server-client autograder for this week (except for the stress test).
-Obtaining 50% of the points is a 100% on week 2, 45% yields a 90%, 40% an 80%, and so on. You may choose which parts of the server you wish to implement first. We will refer to this score as `part2_orig`.
+Obtaining 50% of the points is a 100% on week 2, 45% yields a 90%, 40% an 80%, and so on. You may choose which parts of the server you wish to implement first. This will be due at the second deadline (i.e. two weeks after the assignment is released). We will refer to this score as `part2_orig`.
 
 - Part 3: The Server Part 2
 
-Part 3 is full server-client functionality. All tests will run, including the stress test. We will refer to this score as `part3`.
+Part 3 is full server-client functionality. All tests will run, including the stress test. This will be due at the third deadline (i.e. three weeks after the assignment is released). We will refer to this score as `part3`.
 
 To compute your final grade:
 ```
