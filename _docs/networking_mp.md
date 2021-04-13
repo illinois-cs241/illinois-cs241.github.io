@@ -306,16 +306,16 @@ There are **three** parts for this assignment:
 
 - Part 1: The Client
 
-Part 1 requires **full** client functionality, and is due Monday, November 16th at 23:59.
+Part 1 requires **full** client functionality, and is due at the first deadline (i.e. one week after the assignment is released). We will refer to this score as `part1_orig`.
 
 - Part 2: The Server Part 1
 
 Part 2 requires you to begin implementing your server. We will run the full server-client autograder for this week (except for the stress test).
-Obtaining 50% of the points is a 100% on week 2, 45% yields a 90%, 40% an 80%, and so on. You may choose which parts of the server you wish to implement first.
+Obtaining 50% of the points is a 100% on week 2, 45% yields a 90%, 40% an 80%, and so on. You may choose which parts of the server you wish to implement first. This is due at the second deadline (i.e. two weeks after the assignment is released). We will refer to this score as `part2_orig`.
 
 - Part 3: The Server Part 2
 
-Part 3 is full server-client functionality. All tests will run, including the stress test. This is due Monday, December 7th, at 23:59.
+Part 3 is full server-client functionality. All tests will run, including the stress test. This is due at the third deadline (i.e. three weeks after the assignment is released). We will refer to this score as `part3`.
 
 To compute your final grade:
 ```
@@ -330,4 +330,4 @@ if part2_orig > 0:
 networking_score = part1_final + part2_final + part3
 ```
 
-We provide AG runs as usual for part 1 and part 3. For part 2, we provide AG runs from Nov 16 through Nov 22, and on Nov 30. On top of it, an extra AG run on Nov 19 and 20 is provided.
+During week 1, the autograder will test exclusively your client, whereas we will add server-related tests in week 2. In week 3, we will add the stress test. The purpose of the stress test is to gauge the performance of your server in handling many clients concurrently.
