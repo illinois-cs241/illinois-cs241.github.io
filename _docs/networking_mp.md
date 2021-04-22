@@ -16,7 +16,7 @@ wikibook:
 
 ## Warning!
 
-We strongly recommend reading this entire document at least twice to make sure you understand what the exact requirements of the assignment are. This is a three week MP (one fifth of your MP grade!), and it may be long and painstaking. We strongly recommend starting early.
+We strongly recommend reading this entire document at least twice to make sure you understand what the exact requirements of the assignment are. This is a three week MP (over one fifth of your MP grade!), and it may be long and painstaking. We strongly recommend starting early.
 
 Make sure you also read the grading portion, as it is different than the standard multi-week MP grading scheme.
 
