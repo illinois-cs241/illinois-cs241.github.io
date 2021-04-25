@@ -323,7 +323,7 @@ part1_final = part1_orig
 if part1_orig > 0:
   part1_final = max(part1_orig, part3)
 
-part2_final = min(100, part2_orig * 2)
+part2_orig = min(100, part2_orig * 2)
 if part2_orig > 0:
   part2_final = max(part2_orig, part3)
   
