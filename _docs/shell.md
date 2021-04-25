@@ -208,11 +208,9 @@ If there are currently stopped or running background processes when your shell r
 
 ### Catching Ctrl+C
 
-Usually when we do `Ctrl+C`, the current running program will exit. However, we want the shell itself to ignore the `Ctrl+C` signal (`SIGINT`). Instead, it should check if there is a currently running foreground process, and if so, it should kill that foreground process using `SIGINT` (the `kill` function might come in handy, here and elsewhere).
+Usually when we do `Ctrl+C`, the current running program will exit. However, we want the shell itself to ignore the `Ctrl+C` signal (`SIGINT`) - instead, it should kill the currently running foreground process (if one exists) using `SIGINT`. One way to do this is to use the `kill` function on the foreground process PID when `SIGINT` is caught in your shell. However, when a signal is sent to a process, it is sent to all processes in its process group. In this assignment, the shell process is the leader of a process group consisting of all processes that are `fork`'d from it. So another way to properly handle `Ctrl+C` is to simply *do nothing* if `SIGINT` is caught in the shell - your shell will continue running, but `SIGINT` will automatically propagate to the foreground process and kill it.
 
-When a signal is sent to a process, it is sent to all processes in its process group. In this assignment, the shell process is the leader of a process group consisting of all processes that are `fork`'d from it.
-
-Since we want this signal sent to the foreground process, but not to any backgrounded processes, you will want to use `setpgid` to assign each background process to its own process group after forking. (Note: think about who should be making the `setpgid` call and why).
+However, since we want this signal to be sent to **only** the foreground process, but not to any backgrounded processes, you will want to use `setpgid` to assign each background process to its own process group after forking. (Note: think about who should be making the `setpgid` call and why).
 
 ## Built-in Commands
 
