@@ -80,6 +80,8 @@ strcmp(const char *s1, const char *s2) {
 }
 ```
 
+:bangbang: **A note about asserts:** `SIGABRT` is a signal that will kill any process. It can be called by writing `abort()`, and is often used by `libc` implementations when unrecoverable errors occur. For example if you damage `malloc`'s internal structure via heap overflow, `malloc` will call `abort()` and your program will exit immediately. Processes will also be terminated via `SIGABRT` if an `assert` fails. `SIGABRT` is also known as "signal 6" - if you see this pop up on the autograder, your implementation is either incorrect (or failing your own `asserts`) and causing the autograder to crash.
+
 ## Writing test cases
 
 Just to emphasize how important test cases are, this lab spec will repeat itself and remind you that as good programmers, you are expected to write your own test cases for sstring and vector.
