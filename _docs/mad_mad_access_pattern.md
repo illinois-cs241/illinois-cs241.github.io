@@ -150,6 +150,9 @@ Error cases:
   message describing the arguments it expects and exit with error code 1.
 + If the data file cannot be read or the first 4 bytes are not
   "BTRE", print a helpful error message and exit with error code 2.
++ If a call to `mmap` fails (for version 2), print a helpful error message
+  and exit with error code 3.
++ Helper functions for the above error cases can be found in `utils.h`.
 
 For each word that is found, print its count and its price, where the
 price is always printed with exactly two digits to the right of the decimal
