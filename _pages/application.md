@@ -126,7 +126,7 @@ Our web app suite including grade viewer, Broadway-on-Demand, and lab attendance
 ### Expected Time Obligations
 * Varies by project
 
-<form action="https://docs.google.com/forms/d/e/1FAIpQLSdXYjlNnRh--KKKsO3E-sBC8P2y1aO6Ehg_MneikQxzLlCDaA/viewform?usp=sf_link">
+<form action="https://forms.gle/hkDgASqVK8wobPEP8">
     <button type="submit" class="apply-button">
         Apply
     </button>
