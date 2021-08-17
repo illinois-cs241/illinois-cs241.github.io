@@ -3,7 +3,7 @@
   name: Lawrence Angrave
   netid: angrave
   roles: Captain and Lecturer
-  semesters: Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Spring 2020
+  semesters: Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Fall 2021
   specialty: Systems and CS Education
 -
   name: CS 241 Admin
@@ -12,90 +12,23 @@
   specialty: Jack of All Trades
   semesters: ""
 -
-  name: Pradyumna Shome
-  netid: pshome2
-  class: 21
-  roles: Lab / Office Hours Assistant, Assignment Development
-  specialty: Security, Privacy, Systems, and CS education
-  semesters: Spring 2019 - Spring 2021
--
-  name: Rafi Long
-  netid: rjlong2
-  roles: Assignment Development, Front End
-  specialty: ""
-  semesters: Spring 2019 - Spring 2021
--
-  name: Samiksha Pal
-  netid: sspal2
-  roles: Lab / Office Hours Assistant, Assignment Development
-  specialty: ""
-  semesters: Fall 2019 - Spring 2021
--
-  name: Spencer Gilbert
-  netid: smg4
-  roles: Lab / Office Hours Assistant, Assignment Development
-  specialty: ""
-  semesters: Fall 2019 - Spring 2021
--
   name: Aditya Mansharamani
   netid: adityam5
-  roles: Lab / Office Hours Assistant, Assignment Development Lead
+  roles: Teaching Assistant
   specialty: ""
-  semesters: Spring 2020 - Spring 2021
--
-  name: Dillon Hammond
-  netid: dillonh2
-  roles: Lab / Office Hours Assistant, Honors Lead
-  specialty: ""
-  semesters: Spring 2020 - Spring 2021
+  semesters: Spring 2020 - Fall 2021
 -
   name: Eric Zhang
   netid: ericsz2
-  roles: Lab / Office Hours Assistant, Infrastructure Lead
+  roles: Teaching Assistant
   specialty: ""
-  semesters: Spring 2020 - Spring 2021
+  semesters: Spring 2020 - Fall 2021
 -
   name: Grace Robbins
   netid: gcr3
   roles: Lab / Office Hours Assistant, Assignment Development Lead
   specialty: "Front-End"
-  semesters: Spring 2020 - Spring 2021
--
-  name: Jenny Chen
-  netid: xc14
-  roles: Lab / Office Hours Assistant, Infrastructure Lead
-  specialty: "Web Development"
-  semesters: Spring 2020 - Spring 2021
--
-  name: Robert Lou
-  netid: robertl3
-  roles: Lab / Office Hours Assistant, PrairieLearn Lead
-  specialty: ""
-  semesters: Spring 2020 - Spring 2021
--
-  name: Mateusz Cikowski
-  netid: mwc3
-  roles: Lab / Office Hours Assistant, Assignment Development
-  specialty: ""
-  semesters: Fall 2020 - Spring 2021
--
-  name: Jack Henhapl
-  netid: jackah2
-  roles: Lab / Office Hours Assistant, Infrastructure
-  specialty: ""
-  semesters: Fall 2020 - Spring 2021
--
-  name: Mengjing Shi
-  netid: mshi16
-  roles: Lab / Office Hours, Infrastructure
-  specialty: ""
-  semesters: Fall 2020 - Spring 2021
--
-  name: Vivek Gupta
-  netid: vivekg2
-  roles: Lab / Office Hours Assistant, Honors
-  specialty: ""
-  semesters: Fall 2020 - Spring 2021
+  semesters: Spring 2020 - Fall 2021
 -
   name: Trevor Moyer
   netid: trevorm4
@@ -107,70 +40,88 @@
   netid: sohailk2
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021
+  semesters: Spring 2021 - Fall 2021
 -
   name: Ameya Gharpure
   netid: ameyapg2
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021
+  semesters: Spring 2021 - Fall 2021
 -
   name: Ashank Kumar
   netid: ashankk2
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021
+  semesters: Spring 2021 - Fall 2021
 -
   name: Rishabh Menezes
   netid: menezes4
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021
--
-  name: Arravind Sudhakar
-  netid: aks11
-  roles: Lab / Office Hours
-  specialty: ""
-  semesters: Spring 2021
+  semesters: Spring 2021 - Fall 2021
 -
   name: David James
   netid: davidtj2
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021
+  semesters: Spring 2021 - Fall 2021
 -
   name: Rohan Goel
   netid: rohang4
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021
+  semesters: Spring 2021 - Fall 2021
 -
-  name: Anant Kandikuppa
-  netid: anantk3
+  name: Jacob Men
+  netid: men5
+  roles: ""
+  specialty: ""
+  semesters: Fall 2021
+-
+  name: Abhinav Pappu
+  netid: apappu2
+  roles: ""
+  specialty: ""
+  semesters: Fall 2021
+-
+  name: Kshitij Gupta
+  netid: kg13
+  roles: ""
+  specialty: ""
+  semesters: Fall 2021
+-
+  name: Teresa Dong
+  netid: teresad2
+  roles: ""
+  specialty: ""
+  semesters: Fall 2021
+-
+  name: Matt Hokinson
+  netid: mkh7
+  roles: ""
+  specialty: ""
+  semesters: Fall 2021
+-
+  name: Arpitha Raghunandan
+  netid: marpitha2
   roles: Teaching Assistant
   specialty: ""
-  semesters: Fall 2019 - Spring 2021
+  semesters: Fall 2021
 -
-  name: Kevyn Cheng
-  netid: kkcheng2
+  name: Shivram Gowtham
+  netid: gowtham6
   roles: Teaching Assistant
   specialty: ""
-  semesters: Fall 2020 - Spring 2021
+  semesters: Fall 2021
 -
-  name: Omar Mbarki
-  netid: ombarki2
+  name: Meghna Mandava
+  netid: meghnam4
   roles: Teaching Assistant
   specialty: ""
-  semesters: Fall 2020 - Spring 2021
+  semesters: Fall 2021
 -
-  name: Richa Meherwal
-  netid: meherwa2
+  name: Yinfang Chen
+  netid: yinfang3
   roles: Teaching Assistant
   specialty: ""
-  semesters: Spring 2021
--
-  name: Bryant Zhao
-  netid: bhzhao2
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Spring 2019 - Spring 2021
+  semesters: Fall 2021

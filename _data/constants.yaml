@@ -5,11 +5,11 @@ department_code: "cs"
 course_name: "System Programming"
 
 # Class info
-semester: sp21
-semester_full_name: Spring 2021
+semester: fa21
+semester_full_name: Fall 2021
 instructor: Lawrence Angrave (angrave@illinois.edu)
-location: Online
-timings: Asynchronous Videos
+location: Online (AL1), 1002 ECEB (AL2)
+timings: MWF 9:00AM - 09:50AM
 
 # Infrastructure examples-
 #grade_viewer_link: "https://sp20-cs241-grd-01.cs.illinois.edu/grades"
@@ -17,9 +17,9 @@ timings: Asynchronous Videos
 #malloc_contest_link: "https://sp20-cs241-grd-01.cs.illinois.edu/malloc/"
 #piazza_link: "https://piazza.com/illinois/spring2020/cs241/"
 
-grade_viewer_link: "https://fa20-cs241-grd-01.cs.illinois.edu/grades/"
-broadway_on_demand_link: "https://fa20-cs241-grd-01.cs.illinois.edu/on-demand/"
-malloc_contest_link: "https://fa20-cs241-grd-01.cs.illinois.edu/malloc/"
+grade_viewer_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO"
+broadway_on_demand_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO"
+malloc_contest_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstleyVEVO"
 piazza_link: "https://piazza.com/illinois/spring2021/cs241/"
 
 lecture_videos_link: "https://classtranscribe.illinois.edu/"
