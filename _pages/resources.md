@@ -10,8 +10,9 @@ If you added late, check [this page]({% link _pages/late_add.md %}) to get caugh
 
 ## Textbook References
 
-An introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
-We also have the second iteration the [Coursebook](https://github.com/illinois-cs241/coursebook/wiki) That provides html, pdf, and wiki versions. Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
+An gentle and short introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
+We also have the second iteration the [Coursebook](https://github.com/illinois-cs241/coursebook/wiki) That provides html, pdf, and wiki versions. 
+Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
 [mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
 No formal textbook is required, but if you really want to buy a physical book, we recommend the following custom book Angrave put together in 2007:
@@ -46,7 +47,9 @@ How to fail: some students do not take the time to learn how to debug and reason
 
 There are no shortcuts to mastery, but we can help you get there. We recommend the [Feynman technique](https://www.youtube.com/watch?v=tkm0TNFzIeg) to learning. Remember, simply recognizing some text in a past exam or in the coursebook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes, this requires effort. Start the assignments early; expect to get stuck. Write code _slowly_; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending "time on task" with these materials.
 
-## Piazza: Search First. Don't Post.
+## Forum Q-and-A: Search First. Don't Post.
+
+We're using [Ed](https://edstem.org/) for our Question and Answer forum - check your email for the invite link. Before posting please search the forun to see if someone has already asked your question. Some questions where you need to include your netid (e.g. regrade requests) should be private posts
 
 #### Low-Effort Questions
 
@@ -80,6 +83,8 @@ If you are truly lost, can't find an answer in the docs, or in other questions, 
 *   What have you tried? Have you tested your code?
 *   What does Valgrind say? How about a gdb backtrace?
 *   If you need to show code, don't take a screenshot. Copy it into a pre tag ("code" on the rich editor bar)
+*   If referencing your repo please include your netid or URL so we can easily look it up, and make the post private
+*   You can post anonymously if you wish
 
 ## CS 241 Admin
 
@@ -89,7 +94,7 @@ Note: We do not provide attendance misses for labs (this is not negotiable), esp
 
 ## Lawrence Angrave
 
-Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours are on Tuesdays 11:00-12:00. He's also able to answer quick questions before or after lecture.
+Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours will be posted here. He's also able to answer quick questions before or after lecture.
 
 ## Graham Carl Evans
 
