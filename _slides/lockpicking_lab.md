@@ -166,13 +166,12 @@ Given a program `myprog arg1 arg2`:
 
 ## What is GDB?
 
-* GDB stands for GNU Project Debugger
 * GDB is a program that allows you to see "inside" a program as it executes.
 * From the [GDB site](https://www.gnu.org/software/gdb/), GDB helps you catch bugs by enabled you to:
 	* Start your program, specifying anything that might affect its behavior.
 	* Make your program stop on specified conditions.
 	* Examine what has happened, when your program has stopped.
-	* Change things in your program, so you can experiment with correcting the effects of one bug and go on to learn about another.
+	* Change things within in your program
 
 ## GDB Commands
 
