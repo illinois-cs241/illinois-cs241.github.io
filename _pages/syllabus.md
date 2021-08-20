@@ -107,11 +107,11 @@ Forgot to commit or your committed code that does not compile? Zero. The basic h
 
 There are two kinds of autograder runs:
 
- * Pre-deadline runs: **You are responsible for starting these.** Our team has worked really hard to improve our grading system and make it more reliable and flexible. Now, you can schedule your pre-deadline autograder runs using the on-demand grading system, that you can find on the `Assignments` page! You have to log in with your GitHub Enterprise account. Assignments will become visible on the web app as we release them. You will get one AG run a day which you can trigger at your disposal. Please be careful in using these. **These pre-deadline runs do not roll over.** We recommend that you develop and work on your assignments every day to make the best of this system. Once you click "Grade Now", your code will start getting tested on our grading machines. You can expect to see feedback in your CS 241 repository's `_feedback` branch in a few minutes. In rare circumstances, the grading process might fail (if your code made our Docker containers crash). In this scenario, there will be no visible feedback. You should make a private Piazza post and we will deal with this on a per-student basis. Use these runs for feedback as you work on the assignment. **These have no effect on your grade for the assignment.**
+ * Pre-deadline runs: **You are responsible for starting these.** Our team has worked really hard to improve our grading system and make it more reliable and flexible. Now, you can schedule your pre-deadline autograder runs using the on-demand grading system, that you can find on the `Assignments` page! You have to log in with your GitHub Enterprise account. Assignments will become visible on the web app as we release them. You will get one AG run a day which you can trigger at your disposal. Please be careful in using these. **These pre-deadline runs do not roll over.** We recommend that you develop and work on your assignments every day to make the best of this system. Once you click "Grade Now", your code will start getting tested on our grading machines. You can expect to see feedback in your CS 241 repository's `_feedback` branch in a few minutes. In rare circumstances, the grading process might fail (if your code made our Docker containers crash). In this scenario, there will be no visible feedback. You should make a private post in the course forum and we will deal with this on a per-student basis. Use these runs for feedback as you work on the assignment. **These have no effect on your grade for the assignment.**
 * Deadline runs: These will be triggered by us and the grades you get on these will be counted towards your final grades. The results will show up in the `_feedback` branch as usual.
 
 Labs:
-- Released every Thursday
+- Released every Wednesday
 - Pre-deadline runs: Available every day from Friday to Thursday (you will get to start these!)
 - Deadline AG run on Thursday at 11:59 pm
 
@@ -122,7 +122,7 @@ MPs:
 
 We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don't be surprised if race conditions that go undetected on a different machine cause your code to fail. We encourage you to develop and test your code on your CS 241 VM, which is near-identical to the grading machine. We will attempt to give you some partial credit if your code passes the tests.
 
-If you have a question about your personal autograder results after the final autograde run, then feel free to make a private Piazza post titled "&lt;assignment name&gt; Autograde Question" with the folders/tags/labels `autograder` and `<assignment name>` selected.
+If you have a question about your personal autograder results after the final autograde run, then feel free to make a private post in the course forum titled "&lt;assignment name&gt; Autograde Question" with the folders/tags/labels `autograder` and `<assignment name>` selected.
 
 * It will take time to go through autograder questions, so please do not expect an immediate (or even same day or same week) response. We will try to answer you as quickly as possible.
 * _You must show us your test cases first. If they are not close to exhaustive, we reserve to right to not answer your question._
@@ -165,7 +165,7 @@ In the case of quizzes in the CBTF, it is a violation of our course policy to ac
 Cheating at CBTF may also result in immediate failure of the course and further action by the college of engineering.
 If you are found to have done so you will receive a zero on the quiz and a 10% sanction in the course.
 This includes seeking descriptions of the questions from students who have taken the quiz, as well as any other method that would give you access to the quiz outside your scheduled time.
-If there is prep material provided in lecture or on Piazza, you are welcome to share that material freely.
+If there is prep material provided in lecture or on the course forums, you are welcome to share that material freely.
 
 We want you to get the most out your education, and cheating not only affects your peers, but also your level of knowledge and ability.
 
