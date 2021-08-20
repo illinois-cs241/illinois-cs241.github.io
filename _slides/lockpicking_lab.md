@@ -7,78 +7,68 @@ title: "Welcome to CS 241"
 
 ## Rules
 
-* Most labs will begin with a worksheet
+* Labs may begin with a worksheet
 * 15-20 minutes in, your TA may go over it with the class
 * You should work on your lab assignment for the rest of class time
-* Email the GA (cs241admin@illinois.edu) if you need an exemption
 
 ## Lab Attendance
 
-* Ten Minute Rule: if you aren't here in the first ten minutes of class, you don't get credit
+* Ten minute rule: if you aren't here in the first ten minutes of class, you don't get credit
 * Part of your grade in this class relies on you attending labs. Near the end of every lab, we will ask you to swipe out. You may only leave early if you show us that you have finished the lab, or if the lab attendant calls the time.
+* Email the GA (cs241admin@illinois.edu) if you need an exemption for lab attendance
 
 ## Different Lab Sections
 
 * Due to seating limitations, you are required to go to the lab section you signed up for.
+* If you need to miss a lab, you may be able to switch labs to make up the attendance. 
+	* You must email the TA in charge of your assigned lab and the TA for the lab to which you are going.
 
-<vertical />
-
-You must email the TA in charge of your assigned lab and the TA for the lab to which you are going.
-
-<horizontal />
 
 ## Virtual Machines
 
-## What is it?
+## What are they?
 
-A virtual machine is simply a computer that is running on top of another computer emulation system. The computer emulation underneath can be an operating system like Ubuntu that has an application like VmWare workstation to emulate the VM. 
-
-## Bare Metal
-
-You can also have what is called a bare-metal VM where you install a minimum set of instructions needed to get the VM up and running. The second option has the added benefit that you can spawn multiple VMs on the same physical device with low operating system overhead.
+* A virtual machine is simply a computer that is running on top of another computer via an emulation system. For example, you may run a Linux virtual machine on top of your Windows installation using a software like Virtualbox, which allows you to use a virtualized version of Linux "inside" of the Windows OS. 
+* In this class, you will be assigned a Linux (Ubuntu) virtual machine that has all the prerequisite software for compiling and running the assignments.
 
 <vertical />
 
 ```bash
-ssh **NETID**@fa20-cs241-**xxx**.cs.illinois.edu
+ssh **NETID**@fa21-cs241-**xxx**.cs.illinois.edu
 ```
 where `xxx` is the VM number assigned to you.
 
 ## VM Use
 
-We will only help you with your assignments on your VM. All other platforms are unsupported. You have been warned.
+We will only help you with your assignments on your VM. We will not debug code running elsewhere.
 
 ## Note
 
-You are going to need to be on the campus network for this to work. If you want to make it work at home, make sure to log in to the campus VPN first before ssh'ing. See the [development guide](http://cs241.cs.illinois.edu/tutorials/development) for details.
+You are going to need to be on the campus network to be able to access your VM. If you want to make it work at home, make sure to log in to the campus VPN first before ssh'ing. See the [development guide](http://cs241.cs.illinois.edu/tutorials/development) for details.
 
 ## Late Adds
 
-If you added in the past 24 hours, you should be getting an email soon about accessing your VM. If you cannot find the assignments, they are available in the release folder:
-
-```
-https://github-dev.cs.illinois.edu/cs241-{{ site.semester }}/_release/
-```
+If enrolled in the class recently, you should be getting an email soon about accessing your VM. Everyone else should already have received an email with their VM's details.
 
 <horizontal />
 
-## Utils
+## Utilities
 
-## What is ssh
+## What is ssh?
 
-SSH is short for secure shell (secure sh). SSH is a network protocol that leverages public key cryptography in order to connect to another computer. In the basic version, two key pairs are generated for communication. In the more advanced cases, the keys are only used for another key exchange.
+SSH is short for secure shell (secure sh). SSH is a network protocol that leverages public key cryptography in order to connect to another computer. You may have used SSH in other classes to connect to EWS.
 
-## What is sudo
+## What is sudo?
 
-All of you have probably heard of sudo before. It is short for super-user do. This lets you execute any command as root. You have that ability on your VM. Be careful. There is no way to faster crash your VM that throwing sudo around.
+All of you have probably heard of sudo before - it is short for super-user do, and lets you execute any command as root. You have that ability on your VM. Be careful: there is no way to faster crash your VM that throwing sudo around. VMs can only be rebooted or re-imaged by staff.
 
-## What is git
+## What is git?
 
 `git` is a version control system. That means it keeps track of changes in code, allows you to group changes into a commit, and provides tools to manipulate commits.
 
 <horizontal />
 
-## Sample Questions
+## C Questions
 
 ## Question 1
 
@@ -151,25 +141,22 @@ int print_error(int err_num){
 
 ## Today's lab: Debugging
 
-## Valgrind!
+## Valgrind
 
-1. A suite providing several tools.
-2. Memcheck is the most popular one.
-3. Memcheck detects memory-leak.
+Valgrind is a framework for building program analysis tools. The most popular Valgrind tool is memcheck, which detects memory leaks. You will use Valgrind very often in CS 241, and the autograder will run Valgrind against your code to check for memory leaks.
 
 ## Usage
-Given a program test arg1 arg2.
-`valgrind --leak-check=type command`
-`type = <no|summary|yes|full>`
-`valgrind --show-leak-kinds=all ...`
+Given a program `myprog arg1 arg2`:
+
+`valgrind --leak-check=yes myprog arg1 arg2`
 
 ## Leak Types
 
 1. _Memory block_: A block of allocated, not-freed memory
-2. _Definitely lost_: No pointer to a memory block
-3. _Still reachable_: Live pointer to a memory block (not freed)
-4. _Indirectly lost_: Memory blocks pointing to a memory block is lost
-5. _Possibly lost_: Have a (moved) pointer pointing to a memory block
+2. _Definitely lost_: A memory block wasn't freed, and no pointers point to it.
+3. _Still reachable_: A memory block wasn't freed, but there are pointers to it still left.
+4. _Indirectly lost_: A memory block wasn't freed that contained pointers to other memory blocks.
+5. _Possibly lost_: A memory block wasn't freed, and the pointer to it still exists but was moved (e.g. array)
 
 <horizontal />
 
@@ -177,7 +164,17 @@ Given a program test arg1 arg2.
 
 ## A lot of you are afraid – don't be!
 
-## Commands intro
+## What is GDB?
+
+* GDB stands for GNU Project Debugger
+* GDB is a program that allows you to see "inside" a program as it executes.
+* From the [GDB site](https://www.gnu.org/software/gdb/), GDB helps you catch bugs by enabled you to:
+	* Start your program, specifying anything that might affect its behavior.
+	* Make your program stop on specified conditions.
+	* Examine what has happened, when your program has stopped.
+	* Change things in your program, so you can experiment with correcting the effects of one bug and go on to learn about another.
+
+## GDB Commands
 
 * `layout src` gives you a text-based GUI
 * `break <file:line|function> [if condition]`: You can make powerful breakpoints by giving a line, but only under certain circumstances.
@@ -192,4 +189,4 @@ Given a program test arg1 arg2.
 * `finish` finishes the function and breaks.
 * `step` executes the line and goes to the next line. If there is a function, gdb steps into the function.
 
-## Demo! (maybe)
+## Demo
