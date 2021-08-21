@@ -5,7 +5,7 @@ learning_objectives:
   - Using the tools needed for CS 241
 ---
 
-## Development in CS 241
+## Development in CS 241 for Spring 2021
 In this course, we use Virtual Machines (VMs) for all our developmment. We will not support development in any other enviornment (e.g. EWS).
 
 For most students in the course, you will need to setup a VM for development on your personal computer. A small number of students may receive VMs from the CS Department's VM Farm if their personal computer isn't powerful enough. Below are tutorials on how to setup / access your VMs.
