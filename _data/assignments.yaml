@@ -9,7 +9,7 @@ labs:
         - title: HW0
           due_date: 2021-09-01 23:59
           graded_files:
-          - hw0.md
+          - HW0.md
         - title: Lab Assignment
           due_date: 2021-09-01 23:59
           graded_files:
