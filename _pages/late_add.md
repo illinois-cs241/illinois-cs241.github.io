@@ -24,7 +24,7 @@ To get a sense of going on and where we are in the course, please read **all** t
 
 * Overdue assignment's deadlines will not be extended. **Though, It is in your best interest to read through the assignments that you missed in order to understand them (some of them will build of each other)**
 * Email cs241admin@illinois.edu and say that you have added late (give the date you added if you can remember it).
-* If you haven't received your VM after one busniess day of registration, email engrit-help@illinois.edu and ask them for assistance. You will need git access as well. You can create your repository at [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.data.constants.department_code}}{{site.data.constants.course_number}}-{{site.semester}}/) Your repo should be available at
+* You will need git access as well. You can create your repository at [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.data.constants.department_code}}{{site.data.constants.course_number}}-{{site.semester}}/) Your repo should be available at
 
 `https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/NETID`.
 

@@ -3,9 +3,9 @@ APT_FLAGS="-qq -y -o Dpkg::Use-Pty=0"
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get $APT_FLAGS update
-apt-get $APT_FLAGS install clang=1:3.8-33ubuntu3.1 \
-                           libncurses5-dev=6.0+20160213-1ubuntu1 \
-                           valgrind=1:3.11.0-1ubuntu4.2 \
+apt-get $APT_FLAGS install clang=1:6.0-41~exp5~ubuntu1 \
+                           libncurses5-dev=6.1-1ubuntu1.18.04 \
+                           valgrind=1:3.13.0-2ubuntu2.3 \
                            manpages-posix manpages-posix-dev \
                            build-essential git strace tmux vim
 
@@ -28,7 +28,7 @@ fi
 SCRIPT
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "bento/ubuntu-16.04"
+	config.vm.box = "bento/ubuntu-18.04"
 	config.vm.hostname = "cs241"
 	config.vm.provider "virtualbox" do |v|
 		v.name = "CS 241"
