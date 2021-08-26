@@ -77,6 +77,9 @@ Grading issues should be raised with your TA during section or by email. Missing
 ### Regrades
 At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops. Please note that the score for each regrade will be capped at 90%.
 
+### Lab Attendance
+Traditionally, students are expected to attend the lab section they registered for. However, this semester we are offering two lab sections for most time slots: an in-person section, and an online section. You can receive attendance credit if you attend *either* the in-person or online section. If you are registered for the in-person section, we recommend attending the online version if you are feeling unwell or experiencing symptoms of COVID-19. For any other attendance exceptions, please contact [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu).
+
 ## Exams
 
 The quizzes are approximately every other week. Quizzes include a mix of multiple choice questions and at least one short coding problem. In the coding problem, you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
