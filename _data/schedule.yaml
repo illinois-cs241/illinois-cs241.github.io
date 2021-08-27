@@ -275,3 +275,11 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 40
+  - title: "Extra Topics I"
+    summary: ""
+    resources: ""
+    color: "#808080"
+  - title: "Extra Topics II"
+    summary: ""
+    resources: ""
+    color: "#808080"  
