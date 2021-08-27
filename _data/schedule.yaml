@@ -253,7 +253,7 @@ classes:
     summary: ""
     resources: ""
     color: "#808080"
-  - title: "FAll Break"
+  - title: "Fall Break"
     summary: ""
     resources: ""
     color: "#808080" 
@@ -269,7 +269,7 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 39
-  - title: "Misc."
+  - title: "Course Review"
     summary: ""
     review_chapter: 15
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
