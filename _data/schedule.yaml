@@ -1,5 +1,3 @@
-# Start 1/25. Last Day of I 5/5
-# Non teaching Wed 2/17, Wed 3/24, Tue 4/13
 chapter_link_map:
   3: "http://cs241.cs.illinois.edu/coursebook/index.html#3-the-c-programming-language-"
   4: "http://cs241.cs.illinois.edu/coursebook/index.html#4-processes--"
@@ -52,6 +50,10 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#E91E63"
     number: 6
+  - title: "No class - Labor day "
+    summary: "History of <a href = 'https://www.dol.gov/general/laborday/history/'>Labor day</a>"
+    resources: ""
+    color: "#808080"
   - title: "Signals for Process Control"
     summary: "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT"
     review_chapter: 4
@@ -76,10 +78,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#9C27B0"
     number: 10
-  - title: "Break"
-    summary: ""
-    resources: ""
-    color: "#808080"
   - title: "Threads"
     summary: "Introducing pthreads. stacks. Concurrency programming gotchas."
     review_chapter: 6
@@ -164,10 +162,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#8BC34A"
     number: 24
-  - title: "Break"
-    summary: ""
-    resources: ""
-    color: "#808080"
   - title: "TCP Client"
     summary: "TCP/IP Header. IPv4 exhaustion. A web client"
     review_chapter: 11
@@ -234,6 +228,18 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#FFC107"
     number: 35
+  - title: "Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
+  - title: "Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
+  - title: "Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
   - title: "Networking Protocols"
     summary: "TCP handshakes, QUIC, HTTP/1.1"
     review_chapter: 11
