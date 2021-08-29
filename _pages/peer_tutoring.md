@@ -5,7 +5,7 @@ title: Peer Tutoring
 
 ## Getting Help
 
-We hold peer tutoring sessions in the basement of Siebel in the computer labs. You can join by adding yourself onto the [Queue](https://edu.cs.illinois.edu/queue/) (the schedule can be found below).
+We hold peer tutoring sessions via Zoom. You can join by adding yourself onto the [Queue](https://edu.cs.illinois.edu/queue/) (the schedule can be found below). More detailed instructions are on our [Queue](https://edu.cs.illinois.edu/queue/) page.
 
 Please note that this is not CS 225, so we will not do your assignments. This is one of the last classes you will take before being thrown into 400-level courses, where the assignments are much harder, help is much more limited, and hand holding is negative.
 
