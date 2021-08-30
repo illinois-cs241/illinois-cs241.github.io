@@ -17,7 +17,7 @@ To avoid leaving all quizzes to the last moment we suggest the following due dat
 Don't stress ... These due dates are not enforced; they are just suggestions to space out quizes over the semeste . You can take and retake the quizes before or after these dates (upto reading day).
 
 * 2021-09-08 Quiz 1 (C foundation)
-* 2021-09-22 (fork,exec,wait and heap)
+* 2021-09-22 Quiz 2 (fork,exec,wait and heap)
 * 2021-10-09 Quiz 3 (pthreads, producer-consumer, synchronization primitives)
 * 2021-11-23 Quiz 4 (threading issues & race conditions, virtual memory)
 * 2021-11-06 Quiz 5 (networking and pipes)
