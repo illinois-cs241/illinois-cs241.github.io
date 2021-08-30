@@ -6,7 +6,7 @@ title: Quiz Topics
 
 These are *not* the PrairleLearn quizzes that are part of your weekly lab.
 
-There are 7 graded Quizzes available at [PrairieLearn](https://https://www.prairielearn.org/)
+There are 7 graded Quizzes available at [PrairieLearn](https://www.prairielearn.org/)
 
 Quizzes may be retaken without penality and are due the last day of instruction at UIUC ie. *The day before Reading Day.*
 
