@@ -181,7 +181,7 @@ Let's say there are five good implementations and five bad implementations. If y
 * Always debug your code using the `debug` build, as the debug build is compiled with the `-O0` flag, which means no compiler optimizations. In addition, the debug build is compiled with the `-g` flag. This allows you to view source code in GDB, and shows the line numbers where things fail in Valgrind.
 * Ensure that the code you submitted is the version that you want to grade (before the deadline, or before running an autograder run).
 * Take note of graded files. Make sure any changes you want graded are placed in the graded files.
-* Pay attention to Piazza for pitfalls and issues that you may have overlooked.
+* Pay attention to Ed for pitfalls and issues that you may have overlooked.
 
 ### Print smart
 Many assignments in this course will read your output and grade them. This means that having stray prints may cause you to randomly fail tests. Furthermore, excessive logging prints can reduce the performance of your code, which can also cause you to fail tests. Therefore, you should always check your code to make sure you don't have random prints in your code. Instead of writing print statements and removing them repeatedly, a recommended strategy is to use the following function below to perform logging:
