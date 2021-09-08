@@ -38,13 +38,13 @@ labs:
       url: "utilities_unleashed"
       submissions:
         - title: Entire Assignment
-          due_date: 2021-02-18 23:59
+          due_date: 2021-09-15 23:59
           graded_files:
           - env.c
           - time.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Mini Memcheck"
       releaseDate: "Week 4"
