@@ -94,10 +94,9 @@ if(pid == -1){
 
 ## env
 
-* `./env [-n #] [key=val1,val2,...] [key2=val1,val2,...] ... -- cmd [args] ..`
-* `./env -n 4 TZ=EST5EDT,CST6CDT,MST7MDT,PST8PDT -- date` - execute date under environment TZ=EST5EDT,
-	then TZ=CST6CDT, then TZ=MST7MDT, and finally TZ=PST8PDT
-* `./env -n 4 TEMP=EST5EDT,CST6CDT,MST7MDT,PST8PDT TZ=%TEMP -- date` - why is this the same as above?
+* `./env [key=val1] [key2=val1] ... -- cmd [args] ..`
+* `./env TZ=EST5EDT -- date` - execute date under enviornment TZ=EST5EDT
+* `./env TEMP=EST5EDT TZ=%TEMP -- date` - why is this the same as above?
 
 ## env Workflow
 
