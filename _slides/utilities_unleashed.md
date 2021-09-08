@@ -107,7 +107,6 @@ if(pid == -1){
 * `int setenv(const char* name, const char* value,` \
 	`int overwrite)`
 * `char *getenv(const char *name)`
-* Write a split function that can split string based on `,`
 * Write a function that can find all `%notation` in a string
 * Extend that function so that you can replace variables \
 	with environment variables
