@@ -31,8 +31,6 @@ To prevent you from fork bombing your own VM, we recommend looking into `ulimit`
 
 Note that you should give it a more generous amount (say, 100-200), since the terminal will likely have background processes already running. If you give it too small a limit, you won't be able to launch anything, and you'll need to launch a new terminal.
 
-If you happen to fork bomb your local Vagrant VM, you will need to force power off the VM by running `vagrant halt --force` in your `cs241-vm` directory. You can then turn on your machine again and connect to it (`vagrant up` and `vagrant ssh`).
-
 If you happen to fork bomb your CS Cloud VM, please notify course staff in a private post with your VM number. Note that it may take up to a few hours for us to respond, so try not to fork bomb your VM.
 
 ### Plan Before You Start
