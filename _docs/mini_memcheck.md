@@ -62,7 +62,7 @@ We've provided you with a `test.c` file that you can put test cases in. Running 
 
 The output should look familiar!
 
-Note that we always build `./test` with debugging symbols (`gcc -g`), so `mini_memcheck` can find the line numbers corresponding to memory leaks.
+Note that we always build `./test` with debugging symbols (`clang -g`), so `mini_memcheck` can find the line numbers corresponding to memory leaks.
 
 To debug `mini_memcheck` itself, you can use `gdb` like usual. Use `make debug` to generate a version of `mini_memcheck` with debugging symbols:
 
