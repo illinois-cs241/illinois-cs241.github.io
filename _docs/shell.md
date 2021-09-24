@@ -493,7 +493,7 @@ Your boss wants some way for your shell commands to be able to link together. Yo
 
 **Important**: each input can have at most *one* of `>>`, `>` or `<`. You do *not* have to support chaining (e.g. `x >> y < z > w`).
 
-**Important**: you should *not* try to handle the combination of the `cd`, `!history`, `#<n>`, `!<prefix>`, or `exit` commands with any redirection operators. Rather, you can assume these commands will always be run on a line by themselves.
+**Important**: you should *not* try to handle the combination of the `cd`, `!history`, `#<n>`, `!<prefix>`, `ps`, or `exit` commands with any redirection operators. Rather, you can assume these commands will always be run on a line by themselves.
 
 **Note**: Assume that the redirection operator commands will be formatted correctly. Any incorrectly formatted redirection commands is considered undefined behavior.
 
