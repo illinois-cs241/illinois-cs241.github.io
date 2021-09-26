@@ -149,7 +149,7 @@ or
 ```
 
 There are some programs that might not work correctly under your malloc, for a variety of reasons. You might be able to avoid this problem if you make all your
-global variables static. If you encounter a program for which this fix doesn't work, post on Piazza!
+global variables static. If you encounter a program for which this fix doesn't work, post on Ed!
 
 ## Grading
 
