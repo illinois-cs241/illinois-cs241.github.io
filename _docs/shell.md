@@ -457,7 +457,7 @@ Backgrounding will **not** be chained with the logical operators nor with redire
 
 ## `ps`
 
-Like our good old `ps`, your shell should print out information about all currently executing processes. You should include the shell and its immediate children, but don't worry about grandchildren or other processes. Make sure you use `print_process_info_header()` and `print_process_info()` (and maybe some other helper functions)!
+Like our good old `ps`, your shell should print out information about all currently executing processes. You should include the shell and its immediate children, but don't worry about grandchildren or other processes. Make sure you use `print_process_info_header()`, `print_process_info()`, and `time_struct_to_string()` (and maybe some other helper functions)!
 
 _Note:_ while `ps` is normally a separate binary, it is a built-in command for your shell. (This is not "execing `ps`", this is you implementing it in the code. Thus you may have to keep track of some information for each process.)
 
