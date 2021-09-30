@@ -3,7 +3,7 @@ layout: slide
 title: Synchronization
 ---
 
-## Sema-More
+## Implementing a Sema-More
 
 <vertical />
 
@@ -28,17 +28,17 @@ Just kidding, this is a real semaphore:
 ```C
 pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
 Semamore sem;
-Stack s; //Thread Safe Stack
-void* transaction_listener(void*arg) {
+Stack s; // Thread Safe Stack
+void* transaction_listener(void* arg) {
     while(1) {
-        semm_wait(&sem);
+        semm_wait(&sem); // decrements the semaphore
         stack_push(&s, get_transaction());
     }
 }
 
-void* transaction_verifier(void*useless) {
+void* transaction_verifier(void* arg) {
     while(1) {
-        semm_post(&sem);
+    	semm_post(&sem); // increments the semaphore
         transaction = stack_pop(&s);
         verify(transaction);
     }
@@ -106,10 +106,13 @@ What does a barrier look like? Glad you asked.
 
 <vertical />
 
+
+
 ```C
 void * entry_point(void *arg)
 {
-    int rank = (int)arg;
+
+    // final_matrix = initial_matrix * initial_matrix
     for(int row in thread_range)
         for(int col = 0; col < COLS; ++col)
             DotProduct(row, col, initial_matrix, final_matrix);
@@ -123,7 +126,8 @@ void * entry_point(void *arg)
         printf("Could not wait on barrier\n");
         exit(-1);
     }
-
+	
+    // initial matrix = final_matrix * final_matrix
     for(int row in thread_range)
         for(int col = 0; col < COLS; ++col)
             DotProduct(row, col, final_matrix, initial_matrix);
@@ -132,7 +136,7 @@ void * entry_point(void *arg)
 
 <vertical />
 
-Please read the coursebook about this!
+More information is in the coursebook.
 
 <horizontal />
 
