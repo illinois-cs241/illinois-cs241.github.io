@@ -1,6 +1,6 @@
 ---
 layout: slide
-title: Dining Philosophers
+title: Deadlock Demolotion
 ---
 
 ## Deadlock
@@ -11,24 +11,21 @@ title: Dining Philosophers
 
 ## Dining philosophers
 
-A good example of deadlock is the dining philosophers problem
+A good example of deadlock is the dining philosophers problem. In this problem, there are _n_ philosophers trying to have dinner with _n_ chopsticks. Each requires two chopsticks to eat. How can we allocate the chopsticks such that every philosopher gets to eat?
 
 ![Deadlock Dining](/images/assignment-docs/lab/slides/dining/dining.gif)
 
-## Who's a good Dining Philosopher
+## Who's a good dining philosopher?
 
 ![Dog Philosopher](/images/assignment-docs/lab/slides/dining/dogdining.gif)
 
-## A Good Overview
-
-[Read a Ron Swanson Version Here](http://adit.io/posts/2013-05-11-The-Dining-Philosophers-Problem-With-Ron-Swanson.html)
 
 <horizontal />
 
 ## What is deadlock?
 
 From wikipedia:
-> In an operating system, a deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. If a process is unable to change its state indefinitely because the resources requested by it are being used by another waiting process, then the system is said to be in a deadlock.
+> A deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. If a process is unable to change its state indefinitely because the resources requested by it are being used by another waiting process, then the system is said to be in a deadlock.
 
 <horizontal />
 
@@ -40,7 +37,7 @@ resource allocation graph implies that we have deadlock.
 
 ## Example RAG
 
-![Deadlock RAG](/images/assignment-docs/lab/slides/dining/rag.gif)
+![Deadlock RAG](https://www.researchgate.net/profile/Muhammad-Khan-121/publication/288592077/figure/fig2/AS:311899972489219@1451374156670/Resource-Allocation-Graph.png)
 
 <horizontal />
 
@@ -52,13 +49,13 @@ resource allocation graph implies that we have deadlock.
 
 <vertical />
 
-Have one authority (mutex in the case of c). Have each philosopher grab that authority and only when they have the authority can they pick up their forks and eat. They eat, put the arbitrator and the forks down and move on to the next philosopher (can be random or sequential).
+Have one authority (e.g. a mutex). Have each philosopher grab that authority and only when they have the authority can they pick up their forks and eat. They eat, put the arbitrator and the forks down and move on to the next philosopher (can be random or sequential).
 
 ## Downsides
 
 * Very slow
-* Only one thread running at a time essentially
-* This is python's GIL in a nutshell
+* Only one thread running at a time
+* Python's global interpreter lock is implemented this way
 
 <horizontal />
 
@@ -66,13 +63,13 @@ Have one authority (mutex in the case of c). Have each philosopher grab that aut
 
 <vertical />
 
-Reduce the case of the dining philosophers to a case of n-chopsticks and p-philosophers. Reduce the number of philosophers currently allowed at the table to n-1. Have them eat. Cycle out the philosophers.
+Consider the case of the dining philosophers with _n_-chopsticks and _n_-philosophers. Reduce the number of philosophers currently allowed at the table to _n-1_ using a semaphore. Have them eat. Cycle out the philosophers.
 
 ## Downsides
 
-* Very heavy on context switchings for process
-* Needs way of keeping the philosophers at bay (SIGSTOP for linux kernel)
-* Needs some cycling algorithm
+* Very heavy on context switches for a process
+* Needs way of "pausing" a philosopher (SIGSTOP for linux kernel)
+* Need a "fair" cycling algorithm
 
 <horizontal />
 
@@ -80,7 +77,7 @@ Reduce the case of the dining philosophers to a case of n-chopsticks and p-philo
 
 <vertical />
 
-Order the chopsticks 1..n. For each philosopher have them pick up the lower number chopstick. Then, only if they can pick up the lower chopstick, pick up the higher chopstick. Why does this work?
+Order the chopsticks _1..n_. For each philosopher have them pick up the lower number chopstick. Then, only if they can pick up the lower chopstick, pick up the higher chopstick. Why does this work?
 
 ## Downsides
 
@@ -94,7 +91,16 @@ Order the chopsticks 1..n. For each philosopher have them pick up the lower numb
 
 <vertical />
 
-If you want reeealllllllly fast (Given a lot of philosophers).
+If you want reeealllllllly fast (given a lot of philosophers numbered _1..n_).
+
+Chopsticks can be dirty or clean. Initially all chopsticks start out as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When a philosopher wants to eat, they ask the person next to them for a chopstick. If the neighbor's chopstick is clean (they haven't eaten yet), they keep the chopstick. Otherwise, they clean it, and give it to the requesting philosopher. This prevents starvation of philosophers and ensures priority is given to the philosopher that has least recently eaten.
+
+
+## A good overview of solutions
+
+<vertical />
+
+[Read the Ron Swanson version Here](http://adit.io/posts/2013-05-11-The-Dining-Philosophers-Problem-With-Ron-Swanson.html)
 
 <horizontal />
 
