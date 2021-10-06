@@ -37,7 +37,7 @@ resource allocation graph implies that we have deadlock.
 
 ## Example RAG
 
-![Deadlock RAG](https://www.researchgate.net/profile/Muhammad-Khan-121/publication/288592077/figure/fig2/AS:311899972489219@1451374156670/Resource-Allocation-Graph.png)
+![Deadlock RAG](/images/assignment-docs/lab/slides/dining/rag.png)
 
 <horizontal />
 
@@ -98,9 +98,7 @@ Chopsticks can be dirty or clean. Initially all chopsticks start out as dirty. F
 
 ## A good overview of solutions
 
-<vertical />
-
-[Read the Ron Swanson version Here](http://adit.io/posts/2013-05-11-The-Dining-Philosophers-Problem-With-Ron-Swanson.html)
+[Read the Ron Swanson version here](http://adit.io/posts/2013-05-11-The-Dining-Philosophers-Problem-With-Ron-Swanson.html)
 
 <horizontal />
 
