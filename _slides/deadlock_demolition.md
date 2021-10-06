@@ -25,7 +25,7 @@ A good example of deadlock is the dining philosophers problem. In this problem, 
 ## What is deadlock?
 
 From wikipedia:
-> A deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. If a process is unable to change its state indefinitely because the resources requested by it are being used by another waiting process, then the system is said to be in a deadlock.
+> In an operating system, a deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. 
 
 <horizontal />
 
@@ -95,6 +95,7 @@ If you want reeealllllllly fast (given a lot of philosophers numbered _1..n_).
 
 Chopsticks can be dirty or clean. Initially all chopsticks start out as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When a philosopher wants to eat, they ask the person next to them for a chopstick. If the neighbor's chopstick is clean (they haven't eaten yet), they keep the chopstick. Otherwise, they clean it, and give it to the requesting philosopher. This prevents starvation of philosophers and ensures priority is given to the philosopher that has least recently eaten.
 
+<horizontal />
 
 ## A good overview of solutions
 
