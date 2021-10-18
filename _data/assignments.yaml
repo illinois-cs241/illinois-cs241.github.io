@@ -286,7 +286,7 @@ mps:
           - parmake.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Finding Filesystems"
       releaseDate: "Week 11"
