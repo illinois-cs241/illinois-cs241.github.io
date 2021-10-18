@@ -3,10 +3,6 @@ layout: slide
 title: MapReduce
 ---
 
-## MapReduce
-
-<horizontal />
-
 
 ## What is MapReduce?
 
@@ -24,7 +20,7 @@ Suppose we wanted to find the count of each word (word frequency) in a large doc
 
 ## Parallelism
 
-MapReduce is easily parallelizable because we can run the mappers and reducers across multiple threads, processes, or machines. The mapping operation for a given input is independent of other inputs, so it's easy to just divide up the work of mapping. The reducing can happen either sequentially for all of the mapped outputs, or we can also run the reducers for each chunk individually then finally reduce *those* results to produce the final answer. The reduce operation should be associative, so `reduce(A[1...n]) = reduce(reduce(A[1...n/2]) + reduce(A[n/2...n]))`. Why does this need to be true?
+MapReduce is parallelizable because we can run the mappers and reducers across multiple threads/processes/machines. The mapping operation is independent per input element, so we can easily divide up the work of mapping. The reducing can be run once for all of the mapped outputs, or we can also multiple reducers for each chunk and then reduce *those* results to produce the final answer. The reduce operation should be associative, so `reduce(A[1...n]) = reduce(reduce(A[1...n/2]) + reduce(A[n/2...n]))`. Why does this need to be true?
 
 <horizontal />
 
@@ -32,6 +28,7 @@ MapReduce is easily parallelizable because we can run the mappers and reducers a
 
 ![MapReduce](https://user-images.githubusercontent.com/3259988/137649801-e741375d-2904-4ab8-81b1-558d05b78302.png)
 
+<horizontal />
 
 ## Your Assignment
 
