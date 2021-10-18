@@ -18,11 +18,17 @@ Suppose we wanted to find the count of each word (word frequency) in a large doc
 
 <horizontal />
 
+## Visualization
+
+![MapReduce](https://user-images.githubusercontent.com/3259988/137649801-e741375d-2904-4ab8-81b1-558d05b78302.png)
+
+<horizontal />
+
 ## Parallel Mapping
 
 MapReduce is parallelizable because we can run the mappers and reducers across multiple threads/processes/machines. The mapping operation is independent per input element, so we can easily divide up the work of mapping. We simply take the input, split it up into a predefined number of chunks, and distribut each chunk to a mapper process. 
 
-</vertical>
+<vertical />
 
 ## Parallel Reducing
 
@@ -30,11 +36,6 @@ The reducing should also be parallelizable. We can run a single reducer for *all
 
 <horizontal />
 
-## Visualization
-
-![MapReduce](https://user-images.githubusercontent.com/3259988/137649801-e741375d-2904-4ab8-81b1-558d05b78302.png)
-
-<horizontal />
 
 ## Your Assignment
 
