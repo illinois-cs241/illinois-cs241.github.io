@@ -18,9 +18,15 @@ Suppose we wanted to find the count of each word (word frequency) in a large doc
 
 <horizontal />
 
-## Parallelism
+## Parallel Mapping
 
-MapReduce is parallelizable because we can run the mappers and reducers across multiple threads/processes/machines. The mapping operation is independent per input element, so we can easily divide up the work of mapping. The reducing can be run once for all of the mapped outputs, or we can also multiple reducers for each chunk and then reduce *those* results to produce the final answer. The reduce operation should be associative, so `reduce(A[1...n]) = reduce(reduce(A[1...n/2]) + reduce(A[n/2...n]))`. Why does this need to be true?
+MapReduce is parallelizable because we can run the mappers and reducers across multiple threads/processes/machines. The mapping operation is independent per input element, so we can easily divide up the work of mapping. We simply take the input, split it up into a predefined number of chunks, and distribut each chunk to a mapper process. 
+
+</vertical>
+
+## Parallel Reducing
+
+The reducing should also be parallelizable. We can run a single reducer for *all* of the mapped outputs, or we can also multiple reducers for each chunk and then reduce *those* results to produce the final answer. We can even layer this operation to use multiple stacked layers of reducers. This is only possible because the reduce operation needs to be associative, so `reduce(A[1...n]) = reduce(reduce(A[1...n/2]) + reduce(A[n/2...n]))`. 
 
 <horizontal />
 
@@ -38,7 +44,11 @@ In this lab, you will be implementing the MapReduce infrastructure, i.e. the "or
 
 ## Implementation
 
-Your program will be called as `./mapreduce <input_file> <output_file> <mapper_executable> <reducer_executable> <mapper_count>`, and will need to do the following:
+Your program will be called as `./mapreduce <input_file> <output_file> <mapper_executable> <reducer_executable> <mapper_count>`.
+
+<vertical />
+
+Your program will do the following:
 
 1. Split the input file into `<mapper_count>` chunks using the given `splitter` tool.
 2. Start a mapper executable for each input chunk, and pipe the output of each mapper process into the input of the singular reducer process.
