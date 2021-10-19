@@ -3,6 +3,97 @@ layout: slide
 title: MapReduce
 ---
 
+## Inter Process Communication
+
+<vertical />
+
+The goal of Inter Process Communication (IPC) is to communicate between different *processes*.
+- Pipes
+- Sockets
+- Shared Memory
+
+<horizontal />
+
+## Pipes
+
+A pipe takes in a stream of bytes from an input file descriptor, and spits out the data through an output file descriptor.
+
+## How are pipes used?
+
+```
+> ls -1 | cut -d'.' -f1 | sort | uniq | tee dirents
+```
+
+![Pipes](https://raw.githubusercontent.com/illinois-cs241/coursebook/master/ipc/drawings/pipe_process.png)
+
+What is going on with this command? How many processes are spawned here?
+
+<vertical />
+
+```
+> ls -1 | cut -d'.' -f1 | sort | uniq | tee dirents
+```
+
+![Pipes](https://raw.githubusercontent.com/illinois-cs241/coursebook/master/ipc/drawings/pipe_process.png)
+
+There are 5 processes spawned. The stdout (fd 1) of one process is connected to the stdin (fd 0) of the next process through a pipe.
+
+<horizontal />
+
+## Pipes in code
+
+```
+int pipe(int pipefd[2]);
+```
+
+`pipe()` takes in a single argument - an array of size 2.
+
+`pipefd[0]` will be set to the file descriptor to read from.
+
+`pipefd[1]` will be set to the file descriptor to write to.
+
+<vertical />
+
+How does the reading end of the pipe know when it's done reading?
+
+`read()` will return 0 when all writers close their ends.
+
+If a writer has not closed their end of the pipe yet, `read()` will just block.
+
+<vertical />
+
+How does the writing end of the pipe know when there's no more readers?
+
+If all file descriptors referring to the read end of a pipe have been closed,
+then a `write()` will cause a `SIGPIPE` signal to be generated for the writing process.
+
+<horizontal />
+
+## Other facts about pipes
+
+<vertical />
+
+How much data can a pipe hold?
+
+The maximum size is dependent on the system, but usually it ranges from 4 KiB to 128 KiB.
+
+<vertical />
+
+What happens if the pipe is full?
+
+Writing to the pipe will block if a pipe is full. It will unblock once data is read from the pipe.
+
+<vertical />
+
+`pipe()` vs `pipe2()`
+
+`pipe2()` has an additional argument (`flags`).
+
+One flag that might be useful is `O_CLOEXEC`. It closes both pipe file descriptors if a successful `exec` occurs.
+
+<horizontal />
+
+## Mapreduce
 
 ## What is MapReduce?
 
