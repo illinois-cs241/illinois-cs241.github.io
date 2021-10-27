@@ -17,7 +17,7 @@ title: Networking
 
 ## Packet Size
 
-![Size of Packet](http://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif)
+![Size of Packet](https://web.archive.org/web/20210520052048if_/https://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif)
 
 
 ## Diff
@@ -34,7 +34,7 @@ title: Networking
 
 ## Bind
 
-![bind](http://995642590.r.lightningbase-cdn.com/wp-content/uploads/2015/12/2015-12-15-Double-Bind-425x282px.jpg)
+![bind](https://web.archive.org/web/20170424145552/http://995642590.r.lightningbase-cdn.com/wp-content/uploads/2015/12/2015-12-15-Double-Bind-425x282px.jpg)
 
 ## Listen
 
@@ -42,7 +42,7 @@ title: Networking
 
 ## Accept
 
-![accept](http://pad2.whstatic.com/images/thumb/4/42/Accept-a-Diploma-Step-4-Version-2.jpg/aid346607-728px-Accept-a-Diploma-Step-4-Version-2.jpg)
+![accept](https://www.wikihow.com/images/thumb/c/c4/Accept-a-Diploma-Step-3-Version-3.jpg/aid346607-v4-728px-Accept-a-Diploma-Step-3-Version-3.jpg.webp)
 
 ## Connect
 
@@ -58,7 +58,7 @@ Make sure to check errors for *every* call, networking can fail at any point.
 
 ## Network Order
 
-![Byte Ordering](http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png)
+![Byte Ordering](https://web.archive.org/web/20191222042521im_/http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png)
 
 ## Sock Options
 
@@ -96,7 +96,7 @@ Try to modularize your functions so that everything is not in the main method. T
 
 ## Dropped Packets
 
-![Why packets get dropped](https://www.isa.org/uploadedImages/Content/Standards_and_Publications/ISA_Publications/InTech_Magazine/2014/Sep-Oct/SO-2014-System-Int-figure1.jpg)
+![Why packets get dropped](https://web.archive.org/web/20191222042522if_/https://www.isa.org/uploadedImages/Content/Standards_and_Publications/ISA_Publications/InTech_Magazine/2014/Sep-Oct/SO-2014-System-Int-figure1.jpg)
 
 ## UDP Example
 
