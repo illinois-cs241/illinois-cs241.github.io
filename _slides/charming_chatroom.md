@@ -5,7 +5,7 @@ title: Networking
 
 ## TCP
 
-![TCP Rabbit](http://ithare.com/wp-content/uploads/BB_part43_v3.png)
+![image](https://user-images.githubusercontent.com/3259988/139184799-efe5eae4-b92c-439f-9143-ba8d3901e734.png)
 
 ## SYN/ACK Dance
 
@@ -64,11 +64,9 @@ Make sure to check errors for *every* call, networking can fail at any point! Al
 
 ## A few gotchas
 
-## Network Order
+## Network vs Host Byte Ordering
 
 ![Byte Ordering](https://web.archive.org/web/20191222042521im_/http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png)
-
-Often, the order bytes are sent over the network is different than the order of bytes used internally by your computer. Make sure to convert to/from the right formats!
 
 ## Socket Options
 
