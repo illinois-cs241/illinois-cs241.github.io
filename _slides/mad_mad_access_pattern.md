@@ -37,7 +37,7 @@ typedef struct {
 
 ## Fseek Juggle
 
-![Fseek Map](http://forum.falinux.com/_clibimages/073_fseek.png)
+![Fseek Map](https://web.archive.org/web/20210427234631if_/http://forum.falinux.com/_clibimages/073_fseek.png)
 
 ## More Juggling
 
