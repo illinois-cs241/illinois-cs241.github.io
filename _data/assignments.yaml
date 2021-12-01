@@ -187,12 +187,12 @@ labs:
       url: "lovable_linux"
       submissions:
         - title: Entire Assignment
-          due_date: 2021-05-06 23:59
+          due_date: 2021-12-08 23:59
           graded_files:
           - kernel.c
       resources: false
       worksheet: false
-      visible: false
+      visible: true
 mps:
   -
       name: "Extreme Edge Cases"
