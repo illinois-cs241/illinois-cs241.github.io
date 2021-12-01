@@ -190,8 +190,8 @@ labs:
           due_date: 2021-12-08 23:59
           graded_files:
           - kernel.c
-      resources: false
-      worksheet: false
+      resources: true
+      worksheet: true
       visible: true
 mps:
   -
