@@ -19,7 +19,7 @@ For now, please pick one secondary role, and up to 2 primary roles that sound mo
 - Web and Coursebook Development
 
 All positions require dedicated people who have a passion for teaching system programming. Those who submit a promising application will be offered an interview. We also want to be completely transparent about what we look in our applicants.
-We are not simply looking for A+ students. A good grade is neither necessary nor sufficient to be a good course assistant. We expect everyone on course staff to contribute regularly to Piazza, to help answer student questions. You _must_ have a primary role to be considered, but secondary roles are optional. The reason we have secondary roles is so each member on staff has a few main responsibilities, and can operate knowing that other aspects of the course are being managed by people specifically tasked to do so. This lets each area of course staff get individual attention which enables visible improvements from semester-to-semester.
+We are not simply looking for A+ students. A good grade is neither necessary nor sufficient to be a good course assistant. We expect everyone on course staff to contribute regularly to Edstem, to help answer student questions. You _must_ have a primary role to be considered, but secondary roles are optional. The reason we have secondary roles is so each member on staff has a few main responsibilities, and can operate knowing that other aspects of the course are being managed by people specifically tasked to do so. This lets each area of course staff get individual attention which enables visible improvements from semester-to-semester.
 
 Things we look for in our application:
 
@@ -50,7 +50,7 @@ In lab section, you will be helping run lab activities, helping students out wit
 * Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page, and for everyone to be present to make key decisions. Meetings also serve as a means for more experienced course staff members to give less experienced course staff members advice.
 * Office Hours (2 or 4 hrs / week) - It should go without saying that as an office hours assistant you will be hosting office hours. This is the time where you will put yourself on the queue and help students.
 * Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Most lab sections will run about an hour and twenty minutes. You are expected to have read the documentation already and at a high level know how to solve the assignment. In the bulk of lab time, you will be going around helping students with the assignment. At the beginning of the lab, you may do a demo on the projector and explain to the students what they have to do.
-* Piazza (1-2 hrs / week) - It is also important to answer questions on Piazza, since some students are too shy to come to office hours or ask you in lab section. Answering one question well on Piazza can potentially resolve a problem for the entire class.
+* Edstem (1-2 hrs / week) - It is also important to answer questions on Edstem, since some students are too shy to come to office hours or ask you in lab section. Answering one question well on Edstem can potentially resolve a problem for the entire class.
 
 ## Honors
 
