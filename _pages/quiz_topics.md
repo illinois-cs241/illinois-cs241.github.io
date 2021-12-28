@@ -19,7 +19,7 @@ Don't stress ... These due dates are not enforced; they are just suggestions to 
 * 2021-09-08 Quiz 1 (C foundation)
 * 2021-09-22 Quiz 2 (fork,exec,wait and heap)
 * 2021-10-09 Quiz 3 (pthreads, producer-consumer, synchronization primitives)
-* 2021-11-23 Quiz 4 (threading issues & race conditions, virtual memory)
+* 2021-10-23 Quiz 4 (threading issues & race conditions, virtual memory)
 * 2021-11-06 Quiz 5 (networking and pipes)
 * 2021-11-20 Quiz 6 (review -hand picked questions from the above)
 * 2021-12-04 Quiz 7 (security)
