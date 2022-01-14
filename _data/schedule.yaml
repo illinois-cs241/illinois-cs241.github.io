@@ -14,6 +14,11 @@ chapter_link_map:
   15: "http://cs241.cs.illinois.edu/coursebook/index.html#15-review-"
 
 classes:
+  - title: "Martin Luther King Day (Break)"
+    summary: ""
+    resources: "<a href='https://en.wikipedia.org/wiki/Martin_Luther_King_Jr._Day'>MLK Day</a>"
+    color: "#808080" 
+
   - title: "Welcome to System Programming"
     summary: "1. HW0 using my Linux-In-The-Browser minicourse"
     review_chapter: 3
@@ -241,22 +246,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
     color: "#FFC107"
     number: 37
-  - title: "Pre-break Casual Friday"
-    summary: "Review / extra topics"
-    resources: ""
-    color: "#80FFC0"
-  - title: "Fall Break"
-    summary: ""
-    resources: ""
-    color: "#808080"
-  - title: "Fall Break"
-    summary: ""
-    resources: ""
-    color: "#808080"
-  - title: "Fall Break"
-    summary: ""
-    resources: ""
-    color: "#808080" 
   - title: "Systems Concepts Review"
     summary: "Systems Concepts Review"
     review_chapter: 15
