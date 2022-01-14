@@ -49,13 +49,13 @@ The operating system presents common interfaces for programmers to perform these
 The following is subject to minor changes:
 
 ```
-Final Exam : 25%
+Final Exam : 23%
 Quizzes/CBTF: 15%
 
-MP Programming Assignments : 40%
+MP Programming Assignments : 45%
 Lab Programming Assignments: 17%
 
-Lab Attendance & other items: 3%
+Lab Attendance & other items: see below
 ```
 
 We publish the following thresholds:
@@ -70,7 +70,7 @@ All lab programming assignments are equally weighted. MP programming assignments
 
 <!-- The 3-hour handwritten final exam is comprehensive and will test all CS 241 topics, including programming topics covered in the MP and Labs. Do not book your flights until the exam date is known. Early exams will not be offered. Conflict final exams will be offered if you have three exams in a 24 hour period, or you have an exam in another, smaller enrollment course at the same time. -->
 
-The final is 3 hours and will be online. More details will be published at the end of the semester. Early exams will not be offered. Conflict final exams will be offered if you have three exams in a 24 hour period, or you have an exam in another, smaller enrollment course at the same time.
+The final is take-home, 3 hours and will be online. The exam can be completed over a 3 day period during exam week. More details will be published at the end of the semester. Early exams will not be offered. 
 
 Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being reported.
 
@@ -78,18 +78,18 @@ Grading issues should be raised with your TA during section or by email. Missing
 At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops. Please note that the score for each regrade will be capped at 90%.
 
 ### Lab Attendance
-Traditionally, students are expected to attend the lab section they registered for. However, this semester we are offering two lab sections for most time slots: an in-person section, and an online section. You can receive attendance credit if you attend *either* the in-person or online section. If you are registered for the in-person section, we recommend attending the online version if you are feeling unwell or experiencing symptoms of COVID-19. For any other attendance exceptions, please contact [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu).
 
-## Exams
+When labs are offered in-person there will be a small reward for in-person attendance: Your final exam contribution (23%) can be reduced to 20% by attending all labs. Partial attendance of in-person labs will be prorated. For example, if you attend 6 of 9 in-person labs then your final exam will be worth 21%, and you will have 2% of course credit.
 
-The quizzes are approximately every other week. Quizzes include a mix of multiple choice questions and at least one short coding problem. In the coding problem, you will be asked to create programs similar to the MPs and labs using a standard Linux machine with local tools (`gedit`, `vim`, `gcc`, `man`, `make`, `bash`, etc) but in an exam environment. Runnable tests will be provided.
+What this means: If you choose to complete this course virtually, or are sick and unable to attend labs, or do not wish to be in close contact with other students you can still succeed and earn a high grade.
 
-<!-- This course uses the College of Engineering Computer-Based Testing Facility (CBTF) for its quizzes[https://cbtf.engr.illinois.edu/sched/](https://cbtf.engr.illinois.edu/sched/).
+For those that need it: There is still a small carrot to encourage you to leave your dorm and make it to Siebel! But don't get anxious about loosing points if you can't attend.
 
-The policies of the CBTF are the policies of this course, and academic integrity infractions related to the CBTF are infractions in this course.
--->
+## Quizzes
 
-Quizzes will be online using [Prairie Learn](https://prairielearn.engr.illinois.edu/). Please see the Quiz topics page for more information.
+Each quiz covers approximately 2 weeks of content. They can be completed multiple times (highest score is used) at any time. They are due by last day of instruction (i.e. before reading day).
+
+Quizzes will be online using [Prairie Learn](https://prairielearn.org). Please see the Quiz topics page for more information.
 
 
 ## Coding Assignments
@@ -142,6 +142,8 @@ It's important to say physically and mentally healthy. Please see the links belo
 
 If you are in an exceptional situation -- i.e. family emergency, sickness, please email ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)) and we will deal with your situation on a case-by-case basis via the course admin ([cs241admin@illinois.edu](mailto:cs241admin@illinois.edu)). For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://odos.illinois.edu/community-of-care/student-assistance-center/) note stating that you contacted the Emergency Dean.
 
+Lab attendance credit will *not* be given unless you are physically present in lab (there is no point asking the admin for this if you are sick or away). Lab attendance reduces the fraction contribution from your final exam by a small amount. This is a small reward for attending.
+
 ## Academic Integrity
 
 CS 241 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously, and all cases of cheating will be brought to the University, your department, and your college. You should understand how [academic integrity](https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code) applies to Computer Science courses.
@@ -174,12 +176,13 @@ We want you to get the most out your education, and cheating not only affects yo
 
 ## Diversity Statement
 
-UIUC is committed to equal opportunity for all persons, regardless of race, ethnicity, religion, sex, gender identity or expression, creed, age, ancestry, national origin, handicap, sexual orientation, political affiliation, marital status, developmental disability, or arrest or conviction record. We value diversity in all of its definitions, including who we are, how we think, and what we do. We cultivate an accessible, inclusive, and equitable culture where everyone can pursue their passions and reach their potential in an intellectually stimulating and respectful environment. We will continue to create an inclusive campus culture where different perspectives are respected and individuals feel valued.
+Please see our important Diversity Statement <a href="/statements">here</a>.
 
 ## Mental Health Statement
 
-Diminished mental health, including significant stress, mood changes, excessive worry, substance/alcohol abuse, or problems with eating and/or sleeping can interfere with optimal academic performance, social development, and emotional wellbeing. The University of Illinois offers a variety of confidential services including individual and group counseling, crisis intervention, psychiatric services, and specialized screenings at no additional cost. If you or someone you know experiences any of the above mental health concerns, it is strongly encouraged to contact or visit any of the University’s resources provided below. Getting help is a smart and courageous thing to do -- for yourself and for those who care about you.
+Please see our important Mental Health Statement <a href="/statements">here</a>.
 
-[Counseling Center](https://www.counselingcenter.illinois.edu/): <a href="tel:+12173333704">+1 (217) 333-3704</a>, 610 East John Street Champaign, IL 61820
+## CS Cares Statement
 
-[McKinley Health Center](https://mckinley.illinois.edu/): <a href="tel:+12173332700">+1 (217) 333-2700</a>, 1109 South Lincoln Avenue, Urbana, Illinois 61801
+Please see our important CS Cares Statement <a href="/statements">here</a>.
+
