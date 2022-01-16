@@ -20,15 +20,15 @@ classes:
     color: "#808080" 
 
   - title: "Welcome to System Programming"
-    summary: "1. HW0 using my Linux-In-The-Browser minicourse"
+    summary: "1. HW0 using my Linux-In-The-Browser minicourse (Zoom link on Ed)"
     review_chapter: 3
-    resources: "See <a href = 'https://github-dev.cs.illinois.edu/angrave/cs241-lectures/blob/master/Welcome.md'>Welcome</a>"
+    resources: "See <a href = 'https://github.com/angrave/CS241-Lectures-SP22/blob/main/Welcome.md'>Welcome</a>"
     color: "#F44336"
     number: 1
   - title: "How to crash in C"
-    summary: "2. Dive into C programming"
+    summary: "2. Dive into C programming (Zoom link on Ed)"
     review_chapter: 3
-    resources: "See Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    resources: "Code and handouts are <a href='https://github.com/angrave/CS241-Lectures-SP22/'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#F44336"
     number: 2
   - title: "C Crash Course 2"
