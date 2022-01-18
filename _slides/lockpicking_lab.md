@@ -13,11 +13,9 @@ title: "Welcome to CS 241"
 ## Lab Attendance
 
 * Ten minute rule: if you aren't here in the first ten minutes of class, you don't get credit.
-* Your total attendance grade will be "pre-credited" towards the final exam, up to 3%.
-	* i.e. A perfect attendance score will mean your final is only worth 20% of the grade instead of 23%.
+* Your total attendance grade will be credited towards the final exam, up to 3%.
 * Near the end of every lab, we will ask you to swipe out. You may only leave early if you show us that you have finished the lab.
-	* Zoom attendance will be taken automatically.
-	* If you were present for a significant majority of the lab time, you will get credit.
+	* Zoom attendance will be taken automatically. If you were present for a significant majority of the lab time, you will get credit.
 * Email the GA (cs241admin@illinois.edu) if you need an exemption for lab attendance.
 
 ## Different Lab Sections
