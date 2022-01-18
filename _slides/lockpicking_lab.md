@@ -7,21 +7,27 @@ title: "Welcome to CS 241"
 
 ## Rules
 
-* Labs may begin with a worksheet
-* 15-20 minutes in, your TA may go over it with the class
-* You should work on your lab assignment for the rest of class time
+* Labs will begin with slides followed by a worksheet/Kahoot-style quiz.
+* You should work on your lab assignment for the rest of class time.
 
 ## Lab Attendance
 
-* Ten minute rule: if you aren't here in the first ten minutes of class, you don't get credit
-* Part of your grade in this class relies on you attending labs. Near the end of every lab, we will ask you to swipe out. You may only leave early if you show us that you have finished the lab, or if the lab attendant calls the time.
-* Email the GA (cs241admin@illinois.edu) if you need an exemption for lab attendance
+* Ten minute rule: if you aren't here in the first ten minutes of class, you don't get credit.
+* Your total attendance grade will be "pre-credited" towards the final exam, up to 3%.
+	* i.e. A perfect attendance score will mean your final is only worth 20% of the grade instead of 23%.
+* Near the end of every lab, we will ask you to swipe out. You may only leave early if you show us that you have finished the lab.
+	* Zoom attendance will be taken automatically.
+	* If you were present for a significant majority of the lab time, you will get credit.
+* Email the GA (cs241admin@illinois.edu) if you need an exemption for lab attendance.
 
 ## Different Lab Sections
 
 * Due to seating limitations, you are required to go to the lab section you signed up for.
+* Labs will be in-person starting in Week 2, but every lab section will also be broadcasted via Zoom.
+	* You may freely attend either the in-person or Zoom version of your registered section.
 * If you need to miss a lab, you may be able to switch labs to make up the attendance. 
 	* You must email the TA in charge of your assigned lab and the TA for the lab to which you are going.
+* There will be no attendance taken for week 1.
 
 
 ## Virtual Machines
@@ -34,7 +40,7 @@ title: "Welcome to CS 241"
 <vertical />
 
 ```bash
-ssh **NETID**@fa21-cs241-**xxx**.cs.illinois.edu
+ssh **NETID**@sp22-cs241-**xxx**.cs.illinois.edu
 ```
 where `xxx` is the VM number assigned to you.
 
@@ -139,7 +145,7 @@ int print_error(int err_num){
 
 <horizontal />
 
-## Today's lab: Debugging
+## Debugging
 
 ## Valgrind
 
@@ -187,5 +193,3 @@ Given a program `myprog arg1 arg2`:
 * `next` executes the line and goes to the next line, runs functions without stopping.
 * `finish` finishes the function and breaks.
 * `step` executes the line and goes to the next line. If there is a function, gdb steps into the function.
-
-## Demo
