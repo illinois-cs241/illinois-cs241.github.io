@@ -201,13 +201,13 @@ mps:
       url: "extreme_edge_cases"
       submissions:
         - title: Entire Assignment
-          due_date: 2021-09-06 23:59
+          due_date: 2022-01-31 23:59
           graded_files:
           - camelCaser.c
           - camelCaser_tests.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Vector"
       releaseDate: "Week 3"
