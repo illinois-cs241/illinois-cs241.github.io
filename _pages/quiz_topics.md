@@ -16,13 +16,13 @@ To avoid leaving all quizzes to the last moment we suggest the following due dat
 
 Don't stress ... These due dates are not enforced; they are just suggestions to space out quizes over the semester. You can take and retake the quizes before or after these dates (upto reading day).
 
-* 2021-02-15 Quiz 1 (C foundation)
-* 2021-03-01 Quiz 2 (fork,exec,wait and heap)
-* 2021-03-25 Quiz 3 (pthreads, producer-consumer, synchronization primitives)
-* 2021-04-01 Quiz 4 (threading issues & race conditions, virtual memory)
-* 2021-04-13 Quiz 5 (networking and pipes)
-* 2021-04-20 Quiz 6 (review -hand picked questions from the above)
-* 2021-05-03 Quiz 7 (security)
+* 2022-02-15 Quiz 1 (C foundation)
+* 2022-03-01 Quiz 2 (fork,exec,wait and heap)
+* 2022-03-25 Quiz 3 (pthreads, producer-consumer, synchronization primitives)
+* 2022-04-01 Quiz 4 (threading issues & race conditions, virtual memory)
+* 2022-04-13 Quiz 5 (networking and pipes)
+* 2022-04-20 Quiz 6 (review -hand picked questions from the above)
+* 2022-05-03 Quiz 7 (security)
 
 ## Quiz 1
 
