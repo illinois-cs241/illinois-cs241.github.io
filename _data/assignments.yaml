@@ -250,7 +250,7 @@ mps:
           graded_files:
           - alloc.c
         - title: Part 2
-          due_date: 2022-02-07 23:59
+          due_date: 2022-03-07 23:59
           graded_files:
           - alloc.c
       resources: true
