@@ -206,7 +206,7 @@ So, let's work out some scenarios:
 
 <!--- **View the malloc contest [here]({{ site.data.constants.malloc_contest_link }})!** -->
 
-**Contest link coming up soon**
+**Contest link coming up soon!**
 
 The malloc contest pits your memory allocator implementation against your fellow students. There are a few things to know:
 
