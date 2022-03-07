@@ -263,7 +263,7 @@ mps:
       url: "password_cracker"
       submissions:
         - title: Version 1 and 2
-          due_date: 2022-02-20 23:59
+          due_date: 2022-02-21 23:59
           graded_files:
           - cracker1.c
           - cracker2.c
