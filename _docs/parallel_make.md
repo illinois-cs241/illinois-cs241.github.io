@@ -55,7 +55,7 @@ The following graph represents the above Makefile. Note that 'a' and 'b' form a 
 
 ![Makefile Graph](../images/assignment-docs/mp/parallel_make/ColorfulDeadlock.svg)
 
-Note that your cycle detection from `deadlock_demolition` may not work here! Does the graph described by the following Makefile have a cycle? 
+Note that not all Makefiles form RAG-like graphs, so your cycle detection from `deadlock_demolition` may not work here! Does the graph below have a cycle? 
 
 ![Makefile Graph Alternate](../images/assignment-docs/mp/parallel_make/makefile_cross_edge2.svg)
 
