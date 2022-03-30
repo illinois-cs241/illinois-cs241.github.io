@@ -114,17 +114,17 @@ labs:
       visible: true
   -
       name: "MapReduce"
-      releaseDate: "Week 10"
-      dueDate: "Week 11"
+      releaseDate: "Week 11"
+      dueDate: "Week 12"
       url: "mapreduce"
       submissions:
         - title: MapReduce
-          due_date: 2021-10-27 23:59
+          due_date: 2022-04-06 23:59
           graded_files:
           - mapreduce.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Charming Chatroom"
       releaseDate: "Week 11"
