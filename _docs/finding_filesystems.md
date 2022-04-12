@@ -95,6 +95,10 @@ This is the famous inode struct that you have been learning about! Here are a br
 - `direct` is an array where  `direct[i]` is the `i`th data block's offset ( `data_block_number`) from the `data_root`.
 - `indirect` is the offset number (`data_block_number`) of a data block, which contains `NUM_INDIRECT_BLOCKS` number of `data_block_number`'s.
 
+We are using the direct and indirect members of the inode to index our data blocks, which works like so. 
+
+![iNode Diagram](../images/assignment-docs/mp/finding_filesystems/iNodeDiagram.png)
+
 ### Data blocks
 
 ```
