@@ -1,0 +1,274 @@
+chapter_link_map:
+  3: "http://cs341.cs.illinois.edu/coursebook/index.html#3-the-c-programming-language-"
+  4: "http://cs341.cs.illinois.edu/coursebook/index.html#4-processes--"
+  5: "http://cs341.cs.illinois.edu/coursebook/index.html#5-memory-allocators-"
+  6: "http://cs341.cs.illinois.edu/coursebook/index.html#6-threads-"
+  7: "http://cs341.cs.illinois.edu/coursebook/index.html#7-synchronization-"
+  8: "http://cs341.cs.illinois.edu/coursebook/index.html#8-deadlock-"
+  9: "http://cs341.cs.illinois.edu/coursebook/index.html#9-virtual-memory-and-interprocess-communication-"
+  10: "http://cs341.cs.illinois.edu/coursebook/index.html#10-scheduling-"
+  11: "http://cs341.cs.illinois.edu/coursebook/index.html#11-networking-"
+  12: "http://cs341.cs.illinois.edu/coursebook/index.html#12-filesystems-"
+  13: "http://cs341.cs.illinois.edu/coursebook/index.html#13-signals-"
+  14: "http://cs341.cs.illinois.edu/coursebook/index.html#14-security-"
+  15: "http://cs341.cs.illinois.edu/coursebook/index.html#15-review-"
+
+classes:
+  - title: "Martin Luther King Day (Break)"
+    summary: ""
+    resources: "<a href='https://en.wikipedia.org/wiki/Martin_Luther_King_Jr._Day'>MLK Day</a>"
+    color: "#808080" 
+
+  - title: "Welcome to System Programming"
+    summary: "1. HW0 using my Linux-In-The-Browser minicourse (Zoom link will be posted on Ed)"
+    review_chapter: 3
+    resources: "See <a href = 'https://github.com/angrave/CS241-FA22/blob/main/Welcome.md'>Welcome</a>"
+    color: "#F44336"
+    number: 1
+  - title: "How to crash in C"
+    summary: "2. Dive into C programming (Zoom link will be posted on Ed)"
+    review_chapter: 3
+    resources: "Code and handouts are <a href='https://github.com/angrave/CS241-FA22/'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#F44336"
+    number: 2
+  - title: "C Crash Course 2"
+    summary: "3. man,asprintf,free,assert"
+    review_chapter: 3
+    resources: "See Lecture 3 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#F44336"
+    number: 3
+  - title: "A day at the C side: C Crash Course 3"
+    summary: "4. getenv, scanf, getline, fork "
+    review_chapter: 3
+    resources: "See lecture 4 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#F44336"
+    number: 4
+  - title: "Fork and wait"
+    summary: "5. fork and waitpid"
+    review_chapter: 4
+    resources: "See lecture 5 <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#E91E63"
+    number: 5
+  - title: "Forking Processes"
+    summary: "6. The fork-exec-wait pattern"
+    review_chapter: 4
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#E91E63"
+    number: 6
+  - title: "No class - Labor day "
+    summary: "History of <a href = 'https://www.dol.gov/general/laborday/history/'>Labor day</a>"
+    resources: ""
+    color: "#808080"
+  - title: "Signals for Process Control"
+    summary: "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT"
+    review_chapter: 4
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#E91E63"
+    number: 7
+  - title: "Thanks for the heap memory"
+    summary: "How to build a memory allocator. Placement algorithms. Fragmentation."
+    review_chapter: 5
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#9C27B0"
+    number: 8
+  - title: "Memory allocators I"
+    summary: "Hone your pointer skills when writing malloc and free."
+    review_chapter: 5
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#9C27B0"
+    number: 9
+  - title: "Memory allocators II "
+    summary: "Memory allocators part 2."
+    review_chapter: 5
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#9C27B0"
+    number: 10
+  - title: "Threads"
+    summary: "Introducing pthreads. stacks. Concurrency programming gotchas."
+    review_chapter: 6
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#673AB7"
+    number: 11
+  - title: "Threads, memory and mutex locks"
+    summary: "Introducing pthreads. stacks, shared memory. creating and joining. Concurrency programming gotchas."
+    review_chapter: 6
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#673AB7"
+    number: 12
+  - title: "Mutexes and semaphores"
+    summary: "Why we need Mutex locks and semaphores. Basic usage of pthread implementations. Common gotchas."
+    review_chapter: 7
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#2196F3"
+    number: 13
+  - title: "Condition Variables"
+    summary: "Mutex and Condition Variable examples. How to implement a lock (The critical section problem)."
+    review_chapter: 7
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#2196F3"
+    number: 14
+  - title: "Critical Section Problem"
+    summary: "Incorrect attempts to solve the Critical Section Problem. Introduction to Condition Variables."
+    review_chapter: 7
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#2196F3"
+    number: 15
+  - title: "Condition Variables II"
+    summary: "Condition Variables. Implementing a semaphore using a Condition Variable."
+    review_chapter: 7
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#2196F3"
+    number: 16
+  - title: "Producer Consumers. Barriers"
+    summary: "Implementing a barrier. Implementing Producer Consumer."
+    review_chapter: 7
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#03A9F4"
+    number: 17
+  - title: "Reader Writer and Deadlock - Part 1"
+    summary: ""
+    review_chapter: 8
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#03A9F4"
+    number: 18
+  - title: "Reader Writer and Deadlock - Part 1"
+    summary: ""
+    review_chapter: 8
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#03A9F4"
+    number: 19
+  - title: "Dining Philosophers"
+    summary: "The Dining Philosophers problem"
+    review_chapter: 8
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#00BCD4"
+    number: 20
+  - title: "Page tables and IPC"
+    summary: "Virtual memory"
+    review_chapter: 9
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#009688"
+    number: 21
+  - title: "Pipes and seeking"
+    summary: "Moving data using pipes, seekable streams, named pipes, behavior with fork"
+    review_chapter: 9
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#009688"
+    number: 22
+  - title: "Files. Pipes and seeks part 2. "
+    summary: "Working with files"
+    review_chapter: 9
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#009688"
+    number: 23
+  - title: "UDP/TCP"
+    summary: "Robust error handling. EINTR. Intro to TCP,UDP,IP"
+    review_chapter: 11
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#8BC34A"
+    number: 24
+  - title: "TCP Client"
+    summary: "TCP/IP Header. IPv4 exhaustion. A web client"
+    review_chapter: 11
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#8BC34A"
+    number: 25
+  - title: "TCP Server"
+    summary: "Passive sockets. The 4 server calls and what they do. Gotchas."
+    review_chapter: 11
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#8BC34A"
+    number: 26
+  - title: "Files"
+    summary: "ext2/3/4 filesystem, index nodes (inodes), superbocks, ZFS / BtrFS"
+    review_chapter: 12
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#FFC107"
+    number: 27
+  - title: "Files 2"
+    summary: "ext2/3/4 filesystem, index nodes (inodes), superbocks, ZFS / BtrFS"
+    review_chapter: 12
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#FFC107"
+    number: 28
+  - title: "Files 3"
+    summary: "Symbolic links, hard links, directory searching, intro to permissions"
+    review_chapter: 12
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#FFC107"
+    number: 29
+  - title: "Files 4"
+    summary: "File permissions, directories, file globbing, intro to RAID"
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    review_chapter: 12
+    color: "#FFC107"
+    number: 30
+  - title: "Files-5"
+    summary: "Redundant Array of Inexpensive Disks (RAID), the various RAID levels"
+    review_chapter: 12
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#FFC107"
+    number: 31
+  - title: "Scheduling and Scheduling Algorithms"
+    summary: "Scheduling examples"
+    review_chapter: 10
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#CDDC39"
+    number: 32
+  - title: "Epoll"
+    summary: "Intro to select, poll, and epoll"
+    review_chapter: 11
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#C38A80"
+    number: 33
+  - title: "Disks and Signals"
+    summary: "Disks and Signals"
+    review_chapter: 13
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#FFC107"
+    number: 34
+  - title: "Working with Signals"
+    summary: "Working with Signals"
+    review_chapter: 13
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#FFC107"
+    number: 35
+    
+  - title: "Networking Protocols"
+    summary: "TCP handshakes, QUIC, HTTP/1.1"
+    review_chapter: 11
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#FFC107"
+    number: 36
+  - title: "RPC"
+    summary: "Remote Procedure Calls"
+    review_chapter: 11
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
+    color: "#FFC107"
+    number: 37
+  - title: "Systems Concepts Review"
+    summary: "Systems Concepts Review"
+    review_chapter: 15
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#FFC107"
+    number: 38
+  - title: "Security"
+    summary: ""
+    review_chapter: 14
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#C38A80"
+    number: 39
+  - title: "Course Review"
+    summary: ""
+    review_chapter: 15
+    resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    color: "#C38A80"
+    number: 40
+  - title: "Extra Topics I"
+    summary: ""
+    resources: ""
+    color: "#808080"
+  - title: "Extra Topics II"
+    summary: ""
+    resources: ""
+    color: "#808080"  
