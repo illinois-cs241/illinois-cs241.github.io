@@ -22,7 +22,7 @@ Additionally, you will need to make use of synchronization primitives to protect
 
 You are given a task of writing an application which will imitate the common `make` utility.
 `make` is a utility that automatically builds executable programs from source code by reading files called `Makefiles` which specify how to derive the program.
-You have encountered Makefiles in CS 241 MPs as well as in your previous undergraduate CS classes and should be familiar with them.
+You have encountered Makefiles in CS 341 MPs as well as in your previous undergraduate CS classes and should be familiar with them.
 
 We have provided the code to parse a `Makefile` and list the dependencies and commands specified in the file.
 Once the file is parsed, you will need to perform the actions specified by the `Makefile` following the rules specified later in the docs.
@@ -38,7 +38,7 @@ You might also want to look [here](https://web.archive.org/web/20170202011246/ht
 
 ## Resource Allocation Graphs
 
-A good way to think about this MP at a high level is by using a model [covered in lecture](http://cs241.cs.illinois.edu/coursebook/Deadlock#resource-allocation-graphs), Resource Allocation Graphs. You can think of `make` rules as nodes in the graph and dependency relations as directed edges that point from rules to dependencies. This visualization comes in handy when we are dealing with programs that may encounter deadlock. Given that a `Makefile` may contain a circular dependency (what are the required conditions for a program to deadlock?), keep this model at the back of your mind when building your solution.
+A good way to think about this MP at a high level is by using a model [covered in lecture](http://cs341.cs.illinois.edu/coursebook/Deadlock#resource-allocation-graphs), Resource Allocation Graphs. You can think of `make` rules as nodes in the graph and dependency relations as directed edges that point from rules to dependencies. This visualization comes in handy when we are dealing with programs that may encounter deadlock. Given that a `Makefile` may contain a circular dependency (what are the required conditions for a program to deadlock?), keep this model at the back of your mind when building your solution.
 
 Here is an example Makefile:
 
@@ -124,7 +124,7 @@ The parser will return a graph containing 5 vertices, once each for rule 'a', 'b
 
 Those curious of the implementation can view the source in `parser.c` although this is not necessary.
 
-We have provided an implementation of a thread safe queue, a vector, a set, a dictionary, and a graph. This is the same queue from luscious locks and the same vector you've used in prior assignments. The set, graph, and dictionary are new data structures from the CS 241 provided library.
+We have provided an implementation of a thread safe queue, a vector, a set, a dictionary, and a graph. This is the same queue from luscious locks and the same vector you've used in prior assignments. The set, graph, and dictionary are new data structures from the CS 341 provided library.
 You can view the header information in `includes/`.
 
 ## Graph Data Structure

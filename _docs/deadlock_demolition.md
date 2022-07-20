@@ -36,7 +36,7 @@ The details of what these functions do can be found in the header file `libdrm.h
 
 ## Resource Allocation Graph
 
-To detect deadlock, you will need to maintain a [Resource Allocation Graph](http://cs241.cs.illinois.edu/coursebook/Deadlock#resource-allocation-graphs) and be able to perform cycle detection on it. To assist you with this, we have provided you an implementation of a graph data structure. See `graph.h` for details on how to use the graph.
+To detect deadlock, you will need to maintain a [Resource Allocation Graph](http://cs341.cs.illinois.edu/coursebook/Deadlock#resource-allocation-graphs) and be able to perform cycle detection on it. To assist you with this, we have provided you an implementation of a graph data structure. See `graph.h` for details on how to use the graph.
 
 Since your Resource Allocation Graph will need to represent both drm locks and threads as vertices, use a shallow graph. You will need to lazy initialize a global graph in `drm_init()`. Here is an example of lazy initialization with an integer variable:
 
@@ -97,7 +97,7 @@ Anything not specified in these docs or the header files is considered undefined
 
 We have another target executed by typing `make tsan`. This compiles your code with Thread Sanitizer.
 
-ThreadSantizer is a race condition detection tool. See [this page](http://cs241.cs.illinois.edu/coursebook/Background#tsan) for more information.
+ThreadSantizer is a race condition detection tool. See [this page](http://cs341.cs.illinois.edu/coursebook/Background#tsan) for more information.
 
 **We will be using ThreadSanitizer to grade your code, but we will ONLY test for data race warnings, NOT any other warning type.**
 

@@ -8,7 +8,7 @@ learning_objectives:
 ---
 
 
-Welcome to CS 296's first lab! Unlike CS 241, this course only has labs (and not
+Welcome to CS 296's first lab! Unlike CS 341, this course only has labs (and not
 every week!). Each lab will usually involve getting some hands on experience
 related to our lectures. You will be given time in class to complete this
 assignment. If you are unable to finish it by the end of the period, you have
@@ -17,7 +17,7 @@ week, the lab is due at the end of this lab period. Your grade will be
 determined based off of whether or not you made an attempt in good faith.
 
 Today's lab is inteded to help you explore the concepts you have been learning
-in CS 241 and also introduce, processing binary data and how to analyze a
+in CS 341 and also introduce, processing binary data and how to analyze a
 program like a systems programmer!
 
 ## Obtaining honors labs
@@ -26,7 +26,7 @@ We have a seperate repo set up for honors labs which you can add a remote to
 your own repository.
 
 ```
-git remote add honors https://github-dev.cs.illinois.edu/cs241-sp19/_honors.git
+git remote add honors https://github.com/???/cs341-sp19/_honors.git
 git pull honors master --allow-unrelated-histories
 git push origin master
 ```
@@ -59,7 +59,7 @@ this kind of data efficiently, having mastery over a scripting languages such as
 `bash`, `awk`, `perl`, `sed` (to a certain extent), is incredibly useful.
 Furthermore, we hope that if you do this week's assignment in bash you will
 explore the utilities availible on your machine which may help you throughout
-the semester in 241 or in your project.
+the semester in 341 or in your project.
 
 ### Optional task
 If you finish, continue onwards to design and implement a more 'effecient'

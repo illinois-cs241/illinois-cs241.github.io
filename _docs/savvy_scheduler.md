@@ -57,7 +57,7 @@ The scheduling algorithms you are going to implement are:
 * Round Robin (RR)
 * Shortest Job First (SJF)
 
-You can read up on scheduling in [the scheduling chapter](http://cs241.cs.illinois.edu/coursebook/Scheduling)
+You can read up on scheduling in [the scheduling chapter](http://cs341.cs.illinois.edu/coursebook/Scheduling)
 
 **You should use the priority queue that we provided to help you complete this part of the lab.**
 

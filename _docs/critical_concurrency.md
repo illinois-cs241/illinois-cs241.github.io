@@ -49,7 +49,7 @@ In rendezvous you saw an example of an one-time-use barrier.  Now, you get to bu
 
 Note that most barrier implementations (including the pthread library barrier) are "reusable", but never say so.  This is because it simply does not make sense to have a "not-reusable" barrier.  Thus, we are only iterating to you that the barrier your build should be reusable so that you understand what  it means.
 
-You can find more info in the [barriers coursebook entry](http://cs241.cs.illinois.edu/coursebook/Synchronization#barriers)
+You can find more info in the [barriers coursebook entry](http://cs341.cs.illinois.edu/coursebook/Synchronization#barriers)
 
 Your goal is to implement the functions
 
@@ -87,7 +87,7 @@ For `queue_test.c` we would like you to write tests yourself.  Learning to write
 
 We have another target executed by typing `make tsan`. This compiles your code with Thread Sanitizer.
 
-ThreadSantizer is a race condition detection tool. See [this page](http://cs241.cs.illinois.edu/coursebook/Background#tsan) for more information.
+ThreadSantizer is a race condition detection tool. See [this page](http://cs341.cs.illinois.edu/coursebook/Background#tsan) for more information.
 
 **We will be using ThreadSanitizer to grade your code! If the autograder detects a data race, you won't automatically get 0 points, but a few points will be deducted.**
 

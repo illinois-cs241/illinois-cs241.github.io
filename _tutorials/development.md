@@ -2,13 +2,13 @@
 layout: doc
 title: "Development Guide"
 learning_objectives:
-  - Using the tools needed for CS 241
+  - Using the tools needed for CS 341
 ---
 
-## Development in CS 241
-In this course, we use Virtual Machines (VMs) for all our developmment. We will not support development in any other enviornment (e.g. EWS). We would like to stress that no matter what method you use to develop code for CS 241, test all your final code on your VM. The autograding environment is similar to your VM. Thus even though your code "works" on your machine, it may not work on the VMs and thus for the autograder.
+## Development in CS 341
+In this course, we use Virtual Machines (VMs) for all our developmment. We will not support development in any other enviornment (e.g. EWS). We would like to stress that no matter what method you use to develop code for CS 341, test all your final code on your VM. The autograding environment is similar to your VM. Thus even though your code "works" on your machine, it may not work on the VMs and thus for the autograder.
 
-For all registered students in the course, you will receive a VM in the CS Department’s VM Farm provisioned by EngrIT. When your VM is provisioned you should receive an email from the course staff or Professor Angrave with information about your VM. If you registered late, please email the CS 241 Admin (you can find the email on our [staff page]({% link _pages/staff.html %})).
+For all registered students in the course, you will receive a VM in the CS Department’s VM Farm provisioned by EngrIT. When your VM is provisioned you should receive an email from the course staff or Professor Angrave with information about your VM. If you registered late, please email the CS 341 Admin (you can find the email on our [staff page]({% link _pages/staff.html %})).
 
 Once you have received your VM, you can connect to your VM via SSH. The VM number will be included in the email you received.
 

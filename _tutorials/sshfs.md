@@ -38,7 +38,7 @@ For Windows, you can either install it in the Ubuntu subsystem using apt-get, or
 
 ## Using SSHFS
 
-If you are trying to mount your CS241 virtual machine, you **do** need to be on the campus network or VPN to be able to connect. These instructions apply to Linux and MacOS. Windows will be later.
+If you are trying to mount your CS341 virtual machine, you **do** need to be on the campus network or VPN to be able to connect. These instructions apply to Linux and MacOS. Windows will be later.
 
 ### Mounting the Remote Filesystem
 

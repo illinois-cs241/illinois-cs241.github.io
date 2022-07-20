@@ -103,21 +103,21 @@ When provided `-h`, the shell should load in the history file as its history. Up
 
 `history.txt`:
 ```
-cd cs241
+cd cs341
 Hm
 ```
 
 ```
 ./shell -h history.txt
-(pid=1234)/home/user/cs241$ echo Hey!
+(pid=1234)/home/user/cs341$ echo Hey!
 Command executed by pid=1235
 Hey!
-(pid=1234)/home/user/cs241$ exit
+(pid=1234)/home/user/cs341$ exit
 ```
 
 Updated `history.txt`:
 ```
-cd cs241
+cd cs341
 Hm
 echo Hey!
 ```
@@ -138,14 +138,14 @@ When provided `-f`, your shell will both print and run the commands in the file 
 
 `commands.txt`:
 ```
-cd cs241
+cd cs341
 echo Hey!
 ```
 
 ```
 ./shell -f commands.txt
-(pid=1234)/home/user$ cd cs241
-(pid=1234)/home/user/cs241$ echo Hey!
+(pid=1234)/home/user$ cd cs341
+(pid=1234)/home/user/cs341$ echo Hey!
 Command executed by pid=1235
 Hey!
 ```
@@ -510,11 +510,11 @@ Command executed by pid=3750
 (pid=2777)/home/usr$ cat hey.txt
 Command executed by pid=3751
 hello
-(pid=2777)/home/usr$ echo welcome to cs241 > hey.txt
+(pid=2777)/home/usr$ echo welcome to cs341 > hey.txt
 Command executed by pid=3752
 (pid=2777)/home/usr$ cat hey.txt
 Command executed by pid=3754
-welcome to cs241
+welcome to cs341
 ```
 
 ### APPEND
@@ -547,7 +547,7 @@ wheeee
 If the file does not exist, it is undefined behavior. Example usage:
 `hello.txt` contains:
 ```
-welcome to cs241
+welcome to cs341
 ```
 
 ```

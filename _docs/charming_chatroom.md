@@ -153,7 +153,7 @@ Connection made: client_fd=4
 ```
 
 ```
- ./client {{site.semester}}-cs241-XYZ.cs.illinois.edu 12345 steve
+ ./client {{site.semester}}-cs341-XYZ.cs.illinois.edu 12345 steve
 steve: hello there!
 alec: sending bytes
 ^CClosing Client

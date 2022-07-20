@@ -15,7 +15,7 @@ learning_objectives:
 
 Requirements:
   + Understand how netfilter could be used to block packets
-  + Understand how the concepts you leared in CS 241 apply to the kernel
+  + Understand how the concepts you leared in CS 341 apply to the kernel
   + Log incoming packets from google
   + Have a proc endpoint to display how many times each of google's IP ranges sent a packet 
   + Optional: Implement something extra (more statistics or some actual filtering)

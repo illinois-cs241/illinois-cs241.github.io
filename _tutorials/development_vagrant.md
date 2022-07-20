@@ -16,9 +16,9 @@ Here are the steps to provision a VM on your own laptop using Vagrant:
 
 3. Next, you will need to download a Vagrantfile. The Vagrantfile sets the enviornment for your VM, so please do not modify it. The libraries configured are the exact same versions as the ones that will be used when grading. We have 2 different versions depending on the number of cores your computer has. If your computer has 2 cores, download [this version](../resources/development/Vagrantfile_2_cores). If your computer has 4 or more cores, download [this version](../resources/development/Vagrantfile_4_cores).
 
-4. Next, make a directory called `cs241-vm`. Move the downloaded file from step (3) into this folder, and **rename the downloaded file to `Vagrantfile`**.
+4. Next, make a directory called `cs341-vm`. Move the downloaded file from step (3) into this folder, and **rename the downloaded file to `Vagrantfile`**.
 
-Now, everything needed for your VM should be installed. Here are some commands that you will need to use to connect to your personal VM. All these commands should be run in the `cs241-vm` directory (i.e. the directory that contains the Vagrantfile).
+Now, everything needed for your VM should be installed. Here are some commands that you will need to use to connect to your personal VM. All these commands should be run in the `cs341-vm` directory (i.e. the directory that contains the Vagrantfile).
 1. `vagrant up` - This command turns on and configures the VM according to the Vagrantfile.
 2. `vagrant halt` - This command shuts down the VM.
 3. `vagrant ssh` - You can use this command to SSH into the VM. Make sure that the VM is already running before trying to SSH into the VM.

@@ -23,17 +23,17 @@ To get a sense of going on and where we are in the course, please read **all** t
 ## Assignments
 
 * Overdue assignment's deadlines will not be extended. **Though, It is in your best interest to read through the assignments that you missed in order to understand them (some of them will build of each other)**
-* Email cs241admin@illinois.edu and say that you have added late (give the date you added if you can remember it).
+* Email cs341admin@illinois.eduedu and say that you have added late (give the date you added if you can remember it).
 * You will need git access as well. You can create your repository at [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.data.constants.department_code}}{{site.data.constants.course_number}}-{{site.semester}}/) Your repo should be available at
 
-`https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/NETID`.
+`https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/NETID`.
 
 You can read the [Development Guide]({% link _tutorials/development.md %}) to get familiar with the VM, `ssh`, `git`, and any other tools you will need to be successful in the course.
 * Ideally, we want (and most cases) require you to work on your assignment on your VM. Instructions on how to log in are on the Know Your Tools page. If you can't get your VM in time for an assignment to be do, you can do work on EWS -- just complete the steps below.
 * The only non-programming assignment in the first few weeks is [Homework 0](https://github.com/angrave/SystemProgramming/wiki/HW0) if the assignment's deadline has not passed, submit the form on the know your tools page as soon as possible!
 * We will not extend deadlines for programming assignments. Here are the steps to be able to start working on your assignments that are not past due. To check if an assignment's deadline has passed, check piazza or the lab and MP page. **If the Assignment has not been deployed to your git (you don't see a folder), complete the following steps**
 
-Go to [https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release](https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release) and piazza and see what assignments are deployed and are not yet due.
+Go to [https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release](https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release) and piazza and see what assignments are deployed and are not yet due.
 
 Here are the terminal steps to update. Make sure you are in your git repository in the terminal.
 ```bash

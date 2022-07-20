@@ -80,7 +80,7 @@ Pro tip: 1 second == 1,000,000,000 nanoseconds.
 ### Useful Resources
 
 *   [Program arguments: argc & argv](http://cs-education.github.io/sys/#chapter/2/section/0/activity/0)
-*   [fork, exec, wait](http://cs241.cs.illinois.edu/coursebook/Processes#the-fork-exec-wait-pattern)
+*   [fork, exec, wait](http://cs341.cs.illinois.edu/coursebook/Processes#the-fork-exec-wait-pattern)
 *   [fork and waitpid](http://cs-education.github.io/sys/#chapter/5/section/1/activity/0)
 
 ## env
@@ -131,7 +131,7 @@ This has the exact same behavior as before, because `TEMP` is first set to `EST5
 
 We have provided you with a reference executable `env-reference` for you to test your understanding of `env`'s expected behavior. You can also use it to see if your `env`'s output matches the expected output.
 
-Again like `time`, you can play with Linux's builtin `env` command by typing `env <var-list> <command-name>` (`env MYVAR=CS241 printenv`, for example) in your terminal. Again, remember to add `./` to the beginning (or the full path to your `env` executable file if you are in another directory), otherwise the builtin `env` will be called. **Do not use the built-in env, or you will immediately fail the assignment**
+Again like `time`, you can play with Linux's builtin `env` command by typing `env <var-list> <command-name>` (`env MYVAR=CS341 printenv`, for example) in your terminal. Again, remember to add `./` to the beginning (or the full path to your `env` executable file if you are in another directory), otherwise the builtin `env` will be called. **Do not use the built-in env, or you will immediately fail the assignment**
 
 In addition, keep in mind that the builtin `env` uses `$` instead of `%` to denote environment variables. In practice, it can be very useful to change some environment variables when running certain commands.
 

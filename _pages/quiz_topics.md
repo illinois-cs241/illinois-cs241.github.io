@@ -119,7 +119,7 @@ Don't stress ... These due dates are not enforced; they are just suggestions to 
 
 ## Quiz 7
 
-* See the [Security](http://cs241.cs.illinois.edu/coursebook/Security) chapter in the course book.
+* See the [Security](http://cs341.cs.illinois.edu/coursebook/Security) chapter in the course book.
 
 #### Topics
 

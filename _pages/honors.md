@@ -7,7 +7,7 @@ title: Honors
 
 Couldn't get enough systems programming from CS 341? Welcome to the honors section! This course is recommended for those who want to expand their systems knowledge with additional lectures and a semester long project in systems programming.
 
-There will be lectures throughout the semester, usually every week or every other week, given by various members of the 296-41 course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 341. On some weeks, we will have lecture activities to complement the lectures.
+There will be lectures throughout the semester, usually every week or every other week, given by various members of the honors course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 341. On some weeks, we will have lecture activities to complement the lectures.
 
 You are also required to propose and complete a project of your own. Your project should be related to systems programming and it should clearly demonstrate and build upon concepts learned in regular [and/or honors] CS 341 lectures. Once your project has been approved by course staff, you will be assigned a mentor who you will check in with weekly for progress reports and code review.
 

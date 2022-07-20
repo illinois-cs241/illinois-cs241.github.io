@@ -22,7 +22,7 @@ So you've been doing well at Macrohard. Your turbo malloc really impressed your 
 
 Sounds tough. That second requirement really throws a spin on things. It's such an arbitrary requirement. Almost as if it was just thrown in as a TA's lazy writing to motivate an MP or something. Lame!
 
-Of course, as a student of CS241, you know exactly what they're asking for - a loopback filesystem! After doing some research, you decide that a good filesystem to base your implementation off of is minixfs. Your friendly coworkers have already made some progress on this project and created a filesystem wrapper, fakefs, that can load a mininxfs image. It's now your job to implement a few filesystem operations for minix.
+Of course, as a student of CS341, you know exactly what they're asking for - a loopback filesystem! After doing some research, you decide that a good filesystem to base your implementation off of is minixfs. Your friendly coworkers have already made some progress on this project and created a filesystem wrapper, fakefs, that can load a mininxfs image. It's now your job to implement a few filesystem operations for minix.
 
 In this MP, you will be implementing several callbacks to file system operations, namely, `chmod`, `chown`, `read`, and `write`. To do this you will be exploring how metadata is stored in the inode and how data is stored in the data blocks. You will also be exploring the idea of virtual filesystems and how they can be used to present metadata about a system.
 

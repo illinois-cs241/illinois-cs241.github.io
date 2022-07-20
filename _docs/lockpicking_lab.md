@@ -122,7 +122,7 @@ If you have the correct answers then `Sucessfully unlocked the safe!` will be pr
 * Add your answers to `submission.txt`
 * `git commit -a -m "My Submission"` (commit your work to git).
 
-## CS 241 Makefile
+## CS 341 Makefile
 
 There is no Makefile for this assignment, but all future assignment in this class will use a Makefile similar to the one which follows. It's important to have a basic understanding of how it works.
 
@@ -227,6 +227,6 @@ Due to seating limitations, you are required to go to the lab section you signed
 
 You must email the TA of that lab section beforehand.
 
-You can still get credit for attending a different section due to special or occasional circumstances by making arrangements with the graduate assistant (GA) at [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu). However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office (SC 1210) to change your section without having to drop your enrollment.
+You can still get credit for attending a different section due to special or occasional circumstances by making arrangements with the graduate assistant (GA) at [cs341admin@illinois.edu](mailto:cs341admin@illinois.edu). However, you must change your registered lab if you start regularly going to a different lab. Please contact the academic office (SC 1210) to change your section without having to drop your enrollment.
 
 We will never grant exemptions for lab attendance. If you have an interview, then you are just going to have to use your lab attendance drop. You also can _not_ make up lab attendance. Be warned that forgetting to swipe out is not a valid excuse—your lab attendant is not allowed to vouch for your attendance.

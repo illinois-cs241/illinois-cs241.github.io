@@ -1,6 +1,6 @@
 ---
 layout: slide
-title: "Welcome to CS 241"
+title: "Welcome to CS 341"
 ---
 
 ## What's Lab Gonna Be Like?

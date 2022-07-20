@@ -201,7 +201,7 @@ This way, to run your code, you can simply open up 9 terminals and run the same 
 # Grading
 
 - The MP will be hand-graded.
-	- Different from CS 241 MPs, in this MP, you do not need to worry about design details. If there is something unclear about the requirement, feel free to use your own interpretation. We will not knock off points for small inconsistencies.
+	- Different from CS 341 MPs, in this MP, you do not need to worry about design details. If there is something unclear about the requirement, feel free to use your own interpretation. We will not knock off points for small inconsistencies.
 	- That being said, you must demonstrate a good understanding of the concepts. Your network protocol and your code must reflect what you learned from this doc.
 
 - **In your repository, you must update the file `README.md` to include the following:**
@@ -220,9 +220,9 @@ This way, to run your code, you can simply open up 9 terminals and run the same 
 	- There are many great resources online:
 		- For Python: https://realpython.com/python-sockets/
 		- For C: https://beej.us/guide/bgnet/
-		- CS241 WikiBook: 
-			- C client: http://cs241.cs.illinois.edu/wikibook/networking-part-3-building-a-simple-tcp-client.html
-			- C server: http://cs241.cs.illinois.edu/wikibook/networking-part-4-building-a-simple-tcp-server.html
+		- CS341 WikiBook: 
+			- C client: http://cs341.cs.illinois.edu/wikibook/networking-part-3-building-a-simple-tcp-client.html
+			- C server: http://cs341.cs.illinois.edu/wikibook/networking-part-4-building-a-simple-tcp-server.html
 		- When in doubt, Google!
 
 - I don't understand a concept, what do I do?

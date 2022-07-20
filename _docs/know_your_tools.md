@@ -2,7 +2,7 @@
 layout: doc
 title: "Know Your Tools"
 learning_objectives:
-  - Getting familiar with the tools needed for CS 241.
+  - Getting familiar with the tools needed for CS 341.
 wikibook:
   - "HW0"
   - "System Programming Jokes"
