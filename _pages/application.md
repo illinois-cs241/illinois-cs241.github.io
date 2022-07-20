@@ -3,7 +3,7 @@ layout: doc
 title: "Course Staff Application"
 ---
 
-Are you interested in becoming a course assistant for CS 241? If so, then you are welcome to apply for positions. Although we have specialized roles, there is always plenty of work to do and course staff often work on areas they did not start out doing.
+Are you interested in becoming a course assistant for CS 341? If so, then you are welcome to apply for positions. Although we have specialized roles, there is always plenty of work to do and course staff often work on areas they did not start out doing.
 For now, please pick one secondary role, and up to 2 primary roles that sound most interesting to you, but do read through all the descriptions!
 
 ## Roles
@@ -24,7 +24,7 @@ We are not simply looking for A+ students. A good grade is neither necessary nor
 Things we look for in our application:
 
 * A passion for teaching
-* Systems programming aptitude (not just an A+ in CS 241)
+* Systems programming aptitude (not just an A+ in CS 341)
 * Clear communication skills
 * Work well with students, especially those who are struggling
 * Ability to work well in a team
@@ -54,7 +54,7 @@ In lab section, you will be helping run lab activities, helping students out wit
 
 ## Honors
 
-If you have a deep passion for systems and want to instill that passion in the course's one-percent, then this is the position for you. You get to mentor highly talented and passionate students in a semester-long project of their choosing. Note: It is not required for you to have taken CS 241 Honors (CS 296-41) to work on Honors staff.
+If you have a deep passion for systems and want to instill that passion in the course's one-percent, then this is the position for you. You get to mentor highly talented and passionate students in a semester-long project of their choosing. Note: It is not required for you to have taken CS 341 Honors (CS 296-41) to work on Honors staff.
 
 ### Expected Time Obligations
 

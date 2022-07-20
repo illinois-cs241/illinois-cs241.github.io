@@ -10,7 +10,7 @@ If you added late, check [this page]({% link _pages/late_add.md %}) to get caugh
 
 ## Textbook References
 
-An gentle and short introduction to system programming is Angrave's [CS 241 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
+An gentle and short introduction to system programming is Angrave's [CS 341 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
 We also have the second iteration the [Coursebook](https://github.com/illinois-cs241/coursebook/wiki) That provides html, pdf, and wiki versions. 
 Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
 [mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
@@ -86,15 +86,17 @@ If you are truly lost, can't find an answer in the docs, or in other questions, 
 *   If referencing your repo please include your netid or URL so we can easily look it up, and make the post private
 *   You can post anonymously if you wish
 
-## CS 241 Admin
+## CS 341 Admin
 
-Jillian is our class admin, and she is in charge of all administrative items (e.g. exam sickness, DRES, 1% issues). If you feel your issue falls under those definitions, then please email her at [cs241admin@illinois.edu](mailto:cs241admin@illinois.edu) and explain your scenario.
+Please contact your section TA for most things.
+
+For unusual administrative items (e.g. exam sickness, DRES, 1% issues, problems with your TA) then please email [cs341admin@illinois.edu](mailto:cs341admin@illinois.edu) and explain your scenario.
 
 Note: We do not provide attendance misses for labs (this is not negotiable), especially for something that is 100% in your control like "I have an interview."
 
 ## Lawrence Angrave
 
-Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours will be posted here. He's also able to answer quick questions before or after lecture.
+Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours will be posted once the semester starts. He's also able to answer quick questions before or after most lectures.
 
 ## Graham Carl Evans
 

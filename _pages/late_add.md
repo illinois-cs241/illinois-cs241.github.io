@@ -14,11 +14,11 @@ title: Getting Caught Up
 
 Previous semester lecture videos are on [https://echo360.org](https://echo360.org) and [https://classtranscribe.ncsa.illinois.edu](https://classtranscribe.ncsa.illinois.edu) 
 
-## Join Piazza!
+## Join the Forum!
 
-[Piazza](https://piazza.com) is the way that we communicate announcements to the rest of the class. It should have deadlines, which you can also find on our course web page (here) under the Labs and MP tab. You can register with your illinois email and pick the classes you are apart of. Search for CS241 and also the advising piazza for all things CS.
+We use Ed as the official staff-supported Q&A forum and is the way that we communicate announcements to the rest of the class. It should have deadlines, which you can also find on our course web page (here) under the Labs and MP tab. You can register with your illinois email and pick the classes you are apart of. Search for CS341 and also the advising piazza for all things CS.
 
-To get a sense of going on and where we are in the course, please read **all** the posts by instructors.
+To get a sense of going on and where we are in the course, please read **all** the posts by staff.
 
 ## Assignments
 
@@ -37,9 +37,9 @@ Go to [https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code
 
 Here are the terminal steps to update. Make sure you are in your git repository in the terminal.
 ```bash
-git clone https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/${NETID}
+git clone https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/${NETID}
 cd ${NETID}
-git remote add release https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release
+git remote add release https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release
 git pull release master
 git push origin master
 cd ${ASSIGNMENT}

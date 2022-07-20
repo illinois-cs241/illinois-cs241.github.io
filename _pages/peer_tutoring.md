@@ -17,4 +17,5 @@ This department is scaling rapidly, which is great, since computer science is an
 
 ## Calendar
 
-<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=aWxsaW5vaXMuZWR1X3J0cGZxYm5idmQwNzFyY3BzOG9vdWdsamlzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23DD4477&amp;mode=WEEK" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+The Calendar will appear here in the second week of classes.
+<!-- iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=aWxsaW5vaXMuZWR1X3J0cGZxYm5idmQwNzFyY3BzOG9vdWdsamlzQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23DD4477&amp;mode=WEEK" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe -->
