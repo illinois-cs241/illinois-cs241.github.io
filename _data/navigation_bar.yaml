@@ -26,7 +26,7 @@ navbar_items:
       - name: "Coursebook"
         link: "/coursebook/index.html"
       - name: "Lecture Materials"
-        link: "https://github.com/angrave/cs241-fa22"
+        link: "https://github.com/angrave/cs341-fa22"
 
   - name: "Honors"
     link: "/honors.html"

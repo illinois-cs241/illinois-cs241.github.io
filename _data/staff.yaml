@@ -2,14 +2,14 @@
   instructor: true
   name: Lawrence Angrave
   netid: angrave
-  roles: Captain and Lecturer
-  semesters: Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Fall 2021
+  roles: Captain, Lecturer, Teaching Professor
+  semesters: Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Fall 2022
   specialty: Systems and CS Education
 -
-  name: CS 241 Admin
-  netid: cs241admin
-  roles: "Graduate Assistant: Assists with course administration (e.g. exam sickness, DRES)"
-  specialty: Jack of All Trades
+  name: CS 341 Admin
+  netid: cs341admin
+  roles: "Assistance for exceptional items that cannot be handled by your section TA (e.g. exam sickness, DRES)"
+  specialty: Exceptional Issues
   semesters: ""
 -
   name: Aditya Mansharamani
