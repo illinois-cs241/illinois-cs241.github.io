@@ -1,4 +1,4 @@
-# Webpage for CS 241
+# Webpage for CS 341 (formerly CS 241)
 
 [![Website Deploy](https://github.com/illinois-cs241/illinois-cs241.github.io/actions/workflows/deploy.yaml/badge.svg?branch=develop)](https://github.com/illinois-cs241/illinois-cs241.github.io/actions/workflows/deploy.yaml)
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/status.svg)](https://depfu.com)
