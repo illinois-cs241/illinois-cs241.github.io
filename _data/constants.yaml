@@ -1,14 +1,14 @@
 # Settings for the course
 # semester is generated automagically
-course_number: "241"
+course_number: "341"
 department_code: "cs"
 course_name: "System Programming"
 
 # Class info
-semester: sp22
-semester_full_name: Spring 2022
+semester: fa22
+semester_full_name: Fall 2022
 instructor: Lawrence Angrave (angrave@illinois.edu)
-location: 0027/1025 Campus Instructional Facility (from Mon 24<sup>th</sup>; see COVID policy)
+location: 0027/1025 Campus Instructional Facility
 timings: MWF 10:00AM - 10:50AM
 
 # Infrastructure examples-
@@ -17,9 +17,11 @@ timings: MWF 10:00AM - 10:50AM
 #malloc_contest_link: "https://sp20-cs241-grd-01.cs.illinois.edu/malloc/"
 #piazza_link: "https://edstem.org/us/courses/18578/discussion/"
 
-grade_viewer_link: "https://fa21-cs241-grd-01.cs.illinois.edu/new-grade-viewer"
-broadway_on_demand_link: "https://fa21-cs241-grd-13.cs.illinois.edu/on-demand/"
-malloc_contest_link: "https://fa21-cs241-grd-13.cs.illinois.edu/malloc/"
-piazza_link: "https://edstem.org/us/courses/18578/discussion/"
+# fa21-cs241-grd-01
+# fa21-cs241-grd-13
+grade_viewer_link: "https://fa22-cs341-grd-01.cs.illinois.edu/new-grade-viewer"
+broadway_on_demand_link: "https://fa22-cs341-grd-13.cs.illinois.edu/on-demand/"
+malloc_contest_link: "https://fa222-cs341-grd-13.cs.illinois.edu/malloc/"
+piazza_link: "https://edstem.org/us/courses/24201/discussion/"
 
 lecture_videos_link: "https://classtranscribe.illinois.edu/"

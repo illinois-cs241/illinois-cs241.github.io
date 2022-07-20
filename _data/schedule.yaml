@@ -1,17 +1,17 @@
 chapter_link_map:
-  3: "http://cs241.cs.illinois.edu/coursebook/index.html#3-the-c-programming-language-"
-  4: "http://cs241.cs.illinois.edu/coursebook/index.html#4-processes--"
-  5: "http://cs241.cs.illinois.edu/coursebook/index.html#5-memory-allocators-"
-  6: "http://cs241.cs.illinois.edu/coursebook/index.html#6-threads-"
-  7: "http://cs241.cs.illinois.edu/coursebook/index.html#7-synchronization-"
-  8: "http://cs241.cs.illinois.edu/coursebook/index.html#8-deadlock-"
-  9: "http://cs241.cs.illinois.edu/coursebook/index.html#9-virtual-memory-and-interprocess-communication-"
-  10: "http://cs241.cs.illinois.edu/coursebook/index.html#10-scheduling-"
-  11: "http://cs241.cs.illinois.edu/coursebook/index.html#11-networking-"
-  12: "http://cs241.cs.illinois.edu/coursebook/index.html#12-filesystems-"
-  13: "http://cs241.cs.illinois.edu/coursebook/index.html#13-signals-"
-  14: "http://cs241.cs.illinois.edu/coursebook/index.html#14-security-"
-  15: "http://cs241.cs.illinois.edu/coursebook/index.html#15-review-"
+  3: "http://cs341.cs.illinois.edu/coursebook/index.html#3-the-c-programming-language-"
+  4: "http://cs341.cs.illinois.edu/coursebook/index.html#4-processes--"
+  5: "http://cs341.cs.illinois.edu/coursebook/index.html#5-memory-allocators-"
+  6: "http://cs341.cs.illinois.edu/coursebook/index.html#6-threads-"
+  7: "http://cs341.cs.illinois.edu/coursebook/index.html#7-synchronization-"
+  8: "http://cs341.cs.illinois.edu/coursebook/index.html#8-deadlock-"
+  9: "http://cs341.cs.illinois.edu/coursebook/index.html#9-virtual-memory-and-interprocess-communication-"
+  10: "http://cs341.cs.illinois.edu/coursebook/index.html#10-scheduling-"
+  11: "http://cs341.cs.illinois.edu/coursebook/index.html#11-networking-"
+  12: "http://cs341.cs.illinois.edu/coursebook/index.html#12-filesystems-"
+  13: "http://cs341.cs.illinois.edu/coursebook/index.html#13-signals-"
+  14: "http://cs341.cs.illinois.edu/coursebook/index.html#14-security-"
+  15: "http://cs341.cs.illinois.edu/coursebook/index.html#15-review-"
 
 classes:
   - title: "Martin Luther King Day (Break)"
@@ -22,13 +22,13 @@ classes:
   - title: "Welcome to System Programming"
     summary: "1. HW0 using my Linux-In-The-Browser minicourse (Zoom link will be posted on Ed)"
     review_chapter: 3
-    resources: "See <a href = 'https://github.com/angrave/CS241-Lectures-SP22/blob/main/Welcome.md'>Welcome</a>"
+    resources: "See <a href = 'https://github.com/angrave/CS241-FA22/blob/main/Welcome.md'>Welcome</a>"
     color: "#F44336"
     number: 1
   - title: "How to crash in C"
     summary: "2. Dive into C programming (Zoom link will be posted on Ed)"
     review_chapter: 3
-    resources: "Code and handouts are <a href='https://github.com/angrave/CS241-Lectures-SP22/'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    resources: "Code and handouts are <a href='https://github.com/angrave/CS241-FA22/'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#F44336"
     number: 2
   - title: "C Crash Course 2"
