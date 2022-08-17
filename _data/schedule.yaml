@@ -14,10 +14,6 @@ chapter_link_map:
   15: "http://cs341.cs.illinois.edu/coursebook/index.html#15-review-"
 
 classes:
-  - title: "Martin Luther King Day (Break)"
-    summary: ""
-    resources: "<a href='https://en.wikipedia.org/wiki/Martin_Luther_King_Jr._Day'>MLK Day</a>"
-    color: "#808080" 
 
   - title: "Welcome to System Programming"
     summary: "1. HW0 using my Linux-In-The-Browser minicourse (Zoom link will be posted on Ed)"
@@ -272,3 +268,15 @@ classes:
     summary: ""
     resources: ""
     color: "#808080"  
+  - title: "TBD - ThanksGiving Break (Placeholder)"
+    summary: ""
+    resources: ""
+    color: "#808080" 
+  - title: "TBD - ThanksGiving Break (Placeholder)"
+    summary: ""
+    resources: ""
+    color: "#808080" 
+  - title: "TBD - ThanksGiving Break (Placeholder)"
+    summary: ""
+    resources: ""
+    color: "#808080" 
