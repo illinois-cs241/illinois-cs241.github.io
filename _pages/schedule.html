@@ -10,8 +10,8 @@
     <section class="centered">
         For students who like to learn independently you can succeed in this course using the 
         <a target='_blank' href="http://cs341.cs.illinois.edu/coursebook/index.html">course book</a> and 
-        <a target='_blank' href="https://Classtranscribe.illinois.edu">videos</a> on ClassTranscribe. The examples used in the past-semester videos are 
-        <a target='_blank' href='https://github.com/angrave/cs341-fa22'>here</a>
+        <a target='_blank' href="https://Classtranscribe.illinois.edu">videos</a> on ClassTranscribe. The lecture handouts and example code is
+        <a target='_blank' href='https://github.com/angrave/CS341-Lectures-FA22'>here</a>. (Note the videos are from when the course was called CS241).
 
 
     </section>
@@ -19,7 +19,7 @@
     <h1 class="heading">Synchronous Learning</h1>
     <!-- Your content goes here -->
       <section class="centered">
-        The schedule below is subject to change. The handouts and code examples for this semester are <a target='_blank' href='https://github.com/angrave/cs341-fa22'>here</a>
+        The schedule below is subject to change. The handouts and code examples for this semester are <a target='_blank' href='https://github.com/angrave/CS341-Lectures-FA22'>here</a>
     </section>
     <div class="row hidden-xs">
         <div class="col-md-3 hidden-sm">
@@ -40,7 +40,8 @@
     {% assign weeks_zero_indexed = 15 %}
     {% assign pretty_date_format = " [%m/%d/%Y] " %}
     {% assign initial_day = "2022-08-22" %}
-    {% assign initial_day_unix = initial_day | date: "%s" %}
+    {% assign initial_day_unix = initial_day | date: "%s" | plus: 7200 %}
+    <!-- Add an two hours safety margin, as we may cross a summer time change and the clocks change-> 
     <!--The schedule is considered as a list, of which we visit a window of size days, for each week.-->
 
     <!-- This lets us easily move schedule items in the YAML, without having to change the entire structure of the rest of the YAML file, and/or rename week names and dates.-->
