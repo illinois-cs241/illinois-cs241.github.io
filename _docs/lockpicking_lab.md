@@ -22,7 +22,7 @@ Read [this]({% link _coursebook/Background.md %}) to get started with the course
 
 ## Git
 
-(Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.data.constants.department_code}}{{site.data.constants.course_number}}-{{site.data.constants.semester}}/). **DO NOT DO THE README TUTORIAL!**
+(Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-gh-repo/{{site.data.constants.semester}}_{{site.data.constants.department_code}}{{site.data.constants.course_number}}/). **DO NOT DO THE README TUTORIAL!**
 
 **Once you are in your VM**, you'll need to set up some global defaults
 
@@ -41,21 +41,21 @@ git config --global user.email "angrave@illinois.edu"
 Then checkout your repository as follows:
 
 ```console
-git clone https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.data.constants.semester }}/NETID.git
+git clone https://github.com/illinois-cs-coursework/{{site.data.constants.semester }}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID.git
 ```
 
-which will check out your entire git repo into a folder called 'NETID' into your current directory. Now change your directory into that folder:
+which will check out your entire git repo into a folder called '{{site.data.constants.semester}}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID' into your current directory. Now change your directory into that folder:
 
 ```console
-cd NETID
+cd {{site.data.constants.semester}}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID
 ```
 
 You've probably noticed the repository is empty! In order to grab the latest version of our assignment, complete the following steps. This adds the `_release` repository as an extra remote, and this step must be completed every time you want to initialize your repository on a new machine.
 
 ```console
-git remote add release https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.data.constants.semester }}/_release.git
-git pull release master
-git push origin master
+git remote add release https://github.com/illinois-cs-coursework/{{site.data.constants.semester }}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_.release.git
+git pull release main
+git push origin main
 ```
 
 ## Graded Files
