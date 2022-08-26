@@ -37,7 +37,7 @@ title: "Welcome to CS 341"
 <vertical />
 
 ```bash
-ssh **NETID**@sp22-cs241-**xxx**.cs.illinois.edu
+ssh **NETID**@fa22-cs341-**xxx**.cs.illinois.edu
 ```
 where `xxx` is the VM number assigned to you.
 
@@ -47,7 +47,7 @@ We will only help you with your assignments on your VM. We will not debug code r
 
 ## Note
 
-You are going to need to be on the campus network to be able to access your VM. If you want to make it work at home, make sure to log in to the campus VPN first before ssh'ing. See the [development guide](http://cs241.cs.illinois.edu/tutorials/development) for details.
+You are going to need to be on the campus network to be able to access your VM. If you want to make it work at home, make sure to log in to the campus VPN first before ssh'ing. See the [development guide](http://cs341.cs.illinois.edu/tutorials/development) for details.
 
 ## Late Adds
 
@@ -146,7 +146,7 @@ int print_error(int err_num){
 
 ## Valgrind
 
-Valgrind is a framework for building program analysis tools. The most popular Valgrind tool is memcheck, which detects memory leaks. You will use Valgrind very often in CS 241, and the autograder will run Valgrind against your code to check for memory leaks.
+Valgrind is a framework for building program analysis tools. The most popular Valgrind tool is memcheck, which detects memory leaks. You will use Valgrind very often in CS 341, and the autograder will run Valgrind against your code to check for memory leaks.
 
 ## Usage
 Given a program `myprog arg1 arg2`:
