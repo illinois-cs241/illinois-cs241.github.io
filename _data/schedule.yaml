@@ -18,7 +18,7 @@ classes:
   - title: "Welcome to System Programming"
     summary: "1. HW0 using my Linux-In-The-Browser minicourse (Zoom link will be posted on Ed)"
     review_chapter: 3
-    resources: "See <a href = 'https://github.com/angrave/cs341-fa22/blob/main/Welcome.md'>Welcome</a>"
+    resources: "See <a href = 'https://github.com/angrave/CS341-Lectures-FA22/blob/main/Welcome.md'>Welcome</a>"
     color: "#F44336"
     number: 1
   - title: "How to crash in C"
