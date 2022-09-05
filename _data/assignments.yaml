@@ -201,7 +201,7 @@ mps:
       url: "extreme_edge_cases"
       submissions:
         - title: Entire Assignment
-          due_date: 2022-09-05 23:59
+          due_date: 2022-09-06 23:59
           graded_files:
           - camelCaser.c
           - camelCaser_tests.c
@@ -215,13 +215,13 @@ mps:
       url: "vector"
       submissions:
         - title: Entire Assignment
-          due_date: 2022-02-07 23:59
+          due_date: 2022-09-12 23:59
           graded_files:
           - vector.c
           - sstring.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Shell"
       releaseDate: "Week 4"
