@@ -116,6 +116,12 @@ This is the canonical example and a practical use case:
 ```
 $ ./env TZ=EST5EDT -- date
 Sat Sep  9 19:19:42 EDT 2017
+$ 
+```
+Alternatively:
+```
+$ ./env TZ=EST5EDT -- date
+Sat 09 Sep 2017 07:19:42 PM EDT
 $
 ```
 
@@ -124,6 +130,13 @@ Example of using references to other variables:
 ```
 $ ./env TEMP=EST5EDT TZ=%TEMP -- date
 Sat Sep  9 19:19:42 EDT 2017
+$
+```
+
+Accordingly:
+```
+$ ./env TEMP=EST5EDT TZ=%TEMP -- date
+Sat 09 Sep 2017 07:19:42 PM EDT
 $
 ```
 
