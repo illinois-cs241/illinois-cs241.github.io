@@ -229,16 +229,16 @@ mps:
       url: "shell"
       submissions:
         - title: Part 1
-          due_date: 2022-02-14 23:59
+          due_date: 2022-09-19 23:59
           graded_files:
           - shell.c
         - title: Part 2
-          due_date: 2022-02-21 23:59
+          due_date: 2022-09-26 23:59
           graded_files:
           - shell.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Malloc"
       releaseDate: "Week 6"
