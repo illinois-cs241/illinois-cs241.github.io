@@ -11,36 +11,42 @@
   roles: "Assistance for exceptional items that cannot be handled by your section TA (e.g. exam sickness, DRES)"
   specialty: Exceptional Issues
   semesters: ""
--
-  name: Aditya Mansharamani
-  netid: adityam5
+- 
+  name: Shivram Gowtham
+  netid: gowtham6
+  roles: Teaching Assistant Lead
+  speciality: ""
+  semesters: Fall 2021 - Fall 2022
+- 
+  name: Pinhao Guo
+  netid: pinhaog2
   roles: Teaching Assistant
-  specialty: ""
-  semesters: Spring 2020 - Fall 2021
+  speciality: ""
+  semesters: ""
 -
-  name: Eric Zhang
-  netid: ericsz2
+  name: Arpitha Raghunandan
+  netid: arpitha2
   roles: Teaching Assistant
-  specialty: ""
-  semesters: Spring 2020 - Fall 2021
+  speciality: ""
+  semesters: Fall 2021 - Fall 2022
 -
-  name: Grace Robbins
-  netid: gcr3
-  roles: Lab / Office Hours Assistant, Assignment Development Lead
-  specialty: "Front-End"
-  semesters: Spring 2020 - Fall 2021
--
-  name: Trevor Moyer
-  netid: trevorm4
-  roles: Lab / Office Hours Assistant, Infrastructure
-  specialty: ""
-  semesters: Fall 2020 - Spring 2021
--
-  name: Sohail Khan
-  netid: sohailk2
-  roles: Lab / Office Hours
-  specialty: ""
-  semesters: Spring 2021 - Fall 2021
+  name: Enguang Fan
+  netid: enguang2
+  roles: Teaching Assistant
+  speciality: ""
+  semesters: ""
+- 
+  name: Jadon Schuler
+  netid: jadonts2
+  roles: Teaching Assistant
+  speciality: ""
+  semesters: Fall 2022
+- 
+  name: Tianhua Tao
+  netid: tianhua3
+  roles: Teaching Assistant
+  speciality: ""
+  semesters: Fall 2022
 -
   name: Ameya Gharpure
   netid: ameyapg2
@@ -52,94 +58,76 @@
   netid: ashankk2
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021 - Fall 2021
+  semesters: Spring 2021 - Fall 2022
 -
   name: Rishabh Menezes
   netid: menezes4
-  roles: Lab / Office Hours
+  roles: Course Assistant Lead / Assignment Development / Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021 - Fall 2021
--
-  name: Arravind Sudhakar
-  netid: aks11
-  roles: Lab / Office Hours
-  specialty: ""
-  semesters: Spring 2021 - Fall 2021
+  semesters: Spring 2021 - Fall 2022
 -
   name: David James
   netid: davidtj2
-  roles: Lab / Office Hours
+  roles: Lab / Office Hours / Assignment Development
   specialty: ""
-  semesters: Spring 2021 - Fall 2021
+  semesters: Spring 2021 - Fall 2022
 -
-  name: Rohan Goel
-  netid: rohang4
-  roles: Lab / Office Hours
+  name: Tino Caer
+  netid: ccaer2
+  roles: Admin / Lab / Office Hours
   specialty: ""
-  semesters: Spring 2021 - Fall 2021
+  semesters: Spring 2021 - Fall 2022
 -
-  name: Jacob Men
-  netid: men5
-  roles: Lab / Office Hours
+  name: Donghyeon Jeong
+  netid: djeong20
+  roles: Lab / Office Hours / Assignment Development
   specialty: ""
-  semesters: Fall 2021
+  semesters: Spring 2022 - Fall 2022
 -
-  name: Abhinav Pappu
-  netid: apappu2
+  name: Tomoyoshi Kimura
+  netid: tkimura4
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Fall 2021
--
-  name: Kshitij Gupta
-  netid: kg13
-  roles: Lab / Office Hours
-  specialty: ""
-  semesters: Fall 2021
+  semesters: Spring 2022 - Fall 2022
 -
   name: Teresa Dong
   netid: teresad2
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Fall 2021
+  semesters: Fall 2021 - Fall 2022
 -
-  name: Matt Hokinson
-  netid: mkh7
+  name: Chenyu Wang
+  netid: chenyuw3
+  roles: Lab / Office Hours / Infrastructure
+  specialty: ""
+  semesters: Spring 2022 - Fall 2022
+-
+  name: Andrew Orals
+  netid: aorals2
+  roles: Lab / Office Hours / Infrastructure
+  specialty: ""
+  semesters: Fall 2022
+-
+  name: Xinyi Wei
+  netid: xwei16
+  roles: Lab / Office Hours / Assignment Development
+  specialty: ""
+  semesters: Fall 2022
+-
+  name: Gisella Kontaria
+  netid: grk3
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Fall 2021
+  semesters: Fall 2022
 -
-  name: Pengyue Jiang
-  netid: pengyue3
+  name: Raghav Anand
+  netid: chenyuw3
+  roles: Lab / Office Hours
+  specialty: Engineering City Scholars
+  semesters: Fall 2022
+-
+  name: Abhinav Pappu
+  netid: apappu2
   roles: Lab / Office Hours
   specialty: ""
-  semesters: Fall 2021
--
-  name: Arpitha Raghunandan
-  netid: arpitha2
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2021
--
-  name: Shivram Gowtham
-  netid: gowtham6
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2021
--
-  name: Meghna Mandava
-  netid: meghnam4
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2021
--
-  name: Yinfang Chen
-  netid: yinfang3
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2021
--
-  name: Muhammed Imran
-  netid: miimran2
-  roles: Teaching Assistant
-  specialty: ""
-  semesters: Fall 2021
+  semesters: Fall 2021 - Spring 2022
