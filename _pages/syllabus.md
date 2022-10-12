@@ -136,10 +136,11 @@ If you have a question about your personal autograder results after the final au
 * These questions should be for "I have exhaustive test cases for _X_, so how am I failing _Y_?"
 * Please mention your NetID in the post, so we can look up your code if needed.
 
-## Getting Help
+## Getting Help & Extensions
 
 It's important to say physically and mentally healthy. Please see the links below for mental health resources.
 * Office hours and peer mentoring for course staff will be posted in the forums. Office hours will start the second full week of the semester
+* For unusual administrative items (e.g. sickness preventing you from working, DRES, 1% issues, problems with your TA) then please email ([cs341admin@illinois.edu](mailto:cs341admin@illinois.edu)) and explain your scenario.
 
 ## Absences
 
