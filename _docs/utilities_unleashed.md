@@ -30,7 +30,7 @@ Notes:
 
 If you fork bomb on *any* autograder run, you will receive a zero on this assignment.
 
-To prevent you from fork bombing your own VM, we recommend looking into [`ulimit`](https://ss64.com/bash/ulimit.html). This will allow you to set a limit for how many times you can fork.
+To prevent you from fork bombing your own VM, we recommend looking into [`ulimit`](https://ss64.com/bash/ulimit.html). This will allow you to set a limit for various operations on your system, including how many files you can open concurrently or how many times you can fork. The side effect is that a poorly chosen limit may throttle your system's operations (e.g. setting the fork limit too low may make your terminal unable to execute commands!).
 
 ## format.c and .h
 
