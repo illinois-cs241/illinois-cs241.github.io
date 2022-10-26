@@ -50,9 +50,10 @@ So to sum up, your job in the client program is:
 
 * Implement the running client and closing client functions
 * Set up the network connection (TCP + IPv4).
-* Launch threads to read from the server.
-* Launch threads to write to server.
 * Free memory you allocate.
+<!-- * Launch threads to read from the server. -->
+<!-- * Launch threads to write to server. -->
+
 
 **Note:** You do not need to modify any of the code in `client.c` except for the function `connect_to_server()` and `close_server_connection()` in order to get the client successfully working.  However, you *may* modify any of the other code if you want, but **be careful**.
 
