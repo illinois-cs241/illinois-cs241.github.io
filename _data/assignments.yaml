@@ -165,7 +165,7 @@ labs:
           - lookup1.c
           - lookup2.c
       resources: true
-      worksheet: false
+      worksheet: true
       visible: true
   -
       name: "Savvy Scheduler"
