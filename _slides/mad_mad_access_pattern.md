@@ -72,11 +72,11 @@ Now, the pages can be tied to file pages, instead of pages backed by physical RA
 
 ## Address Space
 
-<img src="https://www.safaribooksonline.com/library/view/linux-system-programming/0596009585/httpatomoreillycomsourceoreillyimages47949.png" height="80%" width="80%">
+<img src="https://www.oreilly.com/api/v2/epubs/0596009585/files/httpatomoreillycomsourceoreillyimages47949.png" height="80%" width="80%">
 
 ## MMAP for IPC
 
-![MMAP Read a lot](http://www.linuxidc.com/upload/2011_08/110819060295692.gif)
+![MMAP Read a lot](https://static.javatpoint.com/operating-system/images/ipc-through-shared-memory2.png)
 
 ## Lazy MMAP
 
