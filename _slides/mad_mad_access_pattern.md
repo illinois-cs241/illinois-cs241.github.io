@@ -76,7 +76,7 @@ Now, the pages can be tied to file pages, instead of pages backed by physical RA
 
 ## MMAP for IPC
 
-![MMAP Read a lot](https://static.javatpoint.com/operating-system/images/ipc-through-shared-memory2.png)
+![MMAP Read a lot](https://github.com/illinois-cs241/illinois-cs241.github.io/blob/develop/images/assignment-docs/lab/mad_mad_access_patterns/MMAP_for_IPC.drawio.png)
 
 ## Lazy MMAP
 
