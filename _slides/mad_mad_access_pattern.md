@@ -75,8 +75,7 @@ Now, the pages can be tied to file pages, instead of pages backed by physical RA
 <img src="https://www.oreilly.com/api/v2/epubs/0596009585/files/httpatomoreillycomsourceoreillyimages47949.png" height="80%" width="80%">
 
 ## MMAP for IPC
-
-![MMAP Read a lot](https://github.com/illinois-cs241/illinois-cs241.github.io/blob/develop/images/assignment-docs/lab/mad_mad_access_patterns/MMAP_for_IPC.drawio.png)
+<img src="https://github.com/illinois-cs241/illinois-cs241.github.io/blob/develop/images/assignment-docs/lab/mad_mad_access_patterns/MMAP_for_IPC.drawio.png" height="80%" width="80%">
 
 ## Lazy MMAP
 
