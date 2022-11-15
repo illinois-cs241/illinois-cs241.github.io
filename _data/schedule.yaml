@@ -276,7 +276,11 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 40
-  - title: "Extra Topics I"
+  - title: "Extra I (Security Case Studies)"
     summary: ""
     resources: ""
-    color: "#808080"
+    color: "#8080F0"
+  - title: "Extra II (Containers and Concurrency)"
+    summary: ""
+    resources: ""
+    color: "#8080F0"
