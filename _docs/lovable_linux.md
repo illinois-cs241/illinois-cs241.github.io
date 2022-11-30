@@ -4,6 +4,7 @@ title: "Lovable Linux"
 learning_objectives:
     - Building Character
     - Proving a Point
+    - Never giving up
 ---
 
 ## ECE 391 vs. CS 341
@@ -12,7 +13,7 @@ A common point of contention among ECE and CS majors: "Is CS 341 harder than ECE
 This has probably been debated, since the beginning of either course's conception.
 Your TAs discussed this and wanted to settle this question once and for all.
 ECE 391 is known for their killer semester long final project, which is building an operating system from scratch.
-Normally a 391 student is given 6 weeks and 3 partners to finish this assignment, but since 341 students are superior programmers we feel that 1.5 weeks should be plenty of time to do this on your own. We decided that, since this assignment is very demanding we would make it worth 50% of your lab assignment grade in the class meaning that you can NOT use your 1 lab drop on this. The rest of the documentation and starter code is transcribed from the actual assignment.
+Normally a 391 student is given 6 weeks and 3 partners to finish this assignment, but since 341 students are superior programmers we feel that 1.5 weeks should be plenty of time to do this on your own. The rest of the documentation and starter code is transcribed from the actual assignment.
 
 ## Introduction
 
@@ -614,4 +615,5 @@ chapter 10.
 
 Please watch this [introductory video to linux kernels](https://www.youtube.com/watch?v=oHg5SJYRHA0) before you begin.
 
-There is no lab assignment, just do the review. It will be graded for completion.
+<!-- There is no lab assignment, just do the review. It will be graded for completion. -->
+There is no lab assignment, just do the review. It will not be graded.
