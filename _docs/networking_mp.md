@@ -322,12 +322,16 @@ To compute your final grade:
 part1_final = part1_orig
 if part1_orig > 0:
   part1_final = max(part1_orig, part3)
+else:
+  part1_final = max(part1_orig, .8 * part3)
 
 part2_orig = min(100, part2_orig * 2)
 if part2_orig > 0:
   part2_final = max(part2_orig, part3)
+else:
+  part2_final = max(part2_orig, .8 * part3)
   
-networking_score = part1_final + part2_final + part3
+networking_score = (part1_final + part2_final + part3) / 3
 ```
 
 During week 1, the autograder will test exclusively your client, whereas we will add server-related tests in week 2. In week 3, we will add the stress test. The purpose of the stress test is to gauge the performance of your server in handling many clients concurrently.
