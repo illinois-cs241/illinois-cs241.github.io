@@ -4,7 +4,7 @@ title: "Lovable Linux"
 learning_objectives:
     - Building Character
     - Proving a Point
-    - Never giving up
+    - Never Giving Up
 ---
 
 ## ECE 391 vs. CS 341
