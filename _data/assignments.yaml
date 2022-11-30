@@ -187,7 +187,7 @@ labs:
       url: "lovable_linux"
       submissions:
         - title: Entire Assignment
-          due_date: 2022-12-07 23:59
+          due_date: 1987-11-16 23:59
           graded_files:
           - kernel.c
       resources: true
