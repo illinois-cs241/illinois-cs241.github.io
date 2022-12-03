@@ -21,7 +21,7 @@ For now, please pick one secondary role, and up to 2 primary roles that sound mo
 - Web and Coursebook Development
 
 All positions require dedicated people who have a passion for teaching system programming. Those who submit a promising application will be offered an interview. We also want to be completely transparent about what we look in our applicants.
-We are not simply looking for A+ students. A good grade is neither necessary nor sufficient to be a good course assistant. We expect everyone on course staff to contribute regularly to Edstem, to help answer student questions. You _must_ have a primary role to be considered, but secondary roles are optional. The reason we have secondary roles is so each member on staff has a few main responsibilities, and can operate knowing that other aspects of the course are being managed by people specifically tasked to do so. This lets each area of course staff get individual attention which enables visible improvements from semester-to-semester.
+We are not simply looking for A+ students. A good grade is neither necessary nor sufficient to be a good course assistant. We expect everyone on course staff to contribute regularly to Edstem, to help answer student questions. You _must_ have a primary role to be considered and all staff participate in handling Office Hours and Labs, but secondary roles are optional. The reason we have secondary roles is so each member on staff has a few main responsibilities, and can operate knowing that other aspects of the course are being managed by people specifically tasked to do so. This lets each area of course staff get individual attention which enables visible improvements from semester-to-semester.
 
 Things we look for in our application:
 
