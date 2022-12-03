@@ -8,8 +8,10 @@ For now, please pick one secondary role, and up to 2 primary roles that sound mo
 
 ## Roles
 
-### Primary
+### All Staff
 - Lab and Office hours
+
+### Primary
 - Assignment Development
 - Honors (CS 296-41)
 - Infrastructure
@@ -29,7 +31,7 @@ Things we look for in our application:
 * Work well with students, especially those who are struggling
 * Ability to work well in a team
 
-## Primary Roles
+## All Staff
 
 ## Lab and Office Hours
 
@@ -51,6 +53,8 @@ In lab section, you will be helping run lab activities, helping students out wit
 * Office Hours (2 or 4 hrs / week) - It should go without saying that as an office hours assistant you will be hosting office hours. This is the time where you will put yourself on the queue and help students.
 * Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Most lab sections will run about an hour and twenty minutes. You are expected to have read the documentation already and at a high level know how to solve the assignment. In the bulk of lab time, you will be going around helping students with the assignment. At the beginning of the lab, you may do a demo on the projector and explain to the students what they have to do.
 * Edstem (1-2 hrs / week) - It is also important to answer questions on Edstem, since some students are too shy to come to office hours or ask you in lab section. Answering one question well on Edstem can potentially resolve a problem for the entire class.
+
+## Primary Roles
 
 ## Honors
 
@@ -126,7 +130,7 @@ Our web app suite including grade viewer, Broadway-on-Demand, and lab attendance
 ### Expected Time Obligations
 * Varies by project
 
-<form action="https://forms.gle/WguXHmUPK6Rigq2v6">
+<form action="https://forms.gle/vB2FXMgz4wSCtF1d9">
     <button type="submit" class="apply-button">
         Apply
     </button>
