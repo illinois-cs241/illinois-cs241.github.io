@@ -85,7 +85,7 @@ What this means: If you choose to complete this course virtually, or are sick an
 
 For those that need it: There is still a small carrot to encourage you to leave your dorm and make it to Siebel! But don't get anxious about loosing points if you can't attend.
 
-Spring 2022 Update: Since the course staff in the lab are able to give credit for virtual attendance then that will be counted as equivalent attendance credit i.e. equivalent to attending the lab in person.
+Update: Since the course staff in the lab are able to give credit for virtual attendance then that will be counted as equivalent attendance credit i.e. equivalent to attending the lab in person.
 
 ## Quizzes
 
