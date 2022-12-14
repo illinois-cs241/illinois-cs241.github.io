@@ -52,9 +52,9 @@ If you can't connect -
 
 2. Check the status of your VM on the [vsphere console](https://vc.cs.illinois.edu/) and start/restart it if necessary. The VMs are shutdown daily at 5am, or perhaps you created a fork-bomb while working on the Shell MP. Additional Power on/reset instructions are at this IT page](https://answers.uillinois.edu/illinois.engineering/page.php?id=108475)
 
-3. Check (https://status.engineering.illinois.edu/announcements.asp) and (https://status.engineering.illinois.edu/) and the class forum
+3. Check [Engrit Annoucements](https://status.engineering.illinois.edu/announcements.asp) and slow loading [Status Page](https://status.engineering.illinois.edu/) and the class forum
 
-4. Contact IT by emailling (mail:cs-vmfarm-help@illinois.edu). Include all relevant details (your VM hostname and your netid, and description of what you've tried.)
+4. Contact IT by emailling [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu). Include all relevant details (your VM hostname and your netid, and description of what you've tried.)
 
 
 ## Provisioning a local VM using Vagrant
