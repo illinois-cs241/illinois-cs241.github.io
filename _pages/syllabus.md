@@ -72,14 +72,14 @@ The final is take-home, 3 hours and will be online. The exam can be completed ov
 
 Opportunities for a small amount of extra credit may be offered and will be annouced during the semester.
 
-Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being reported.
+Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being published.
 
 ### Regrades
 At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops. Please note that the score for each regrade will be capped at 90%.
 
 ### Lab Attendance
 
-When labs are offered in-person there will be a small reward for in-person attendance: Your final exam contribution (23%) can be reduced to 20% by attending all labs. Partial attendance of in-person labs will be prorated. For example, if you attend 6 of 9 in-person labs then your final exam will be worth 21%, and you will have 2% of full course credit .
+When labs are offered in-person there will be a small reward for in-person attendance: Your final exam contribution (23%) can be reduced to 20% by attending all labs. Partial attendance of in-person labs will be prorated. For example, if afer allowing for 2 drops, you attend 6 of 9 in-person labs then your final exam will be worth 21%, and you will have 2% of full course credit .
 
 What this means: If you choose to complete this course virtually, or are sick and unable to attend labs, or do not wish to be in close contact with other students you can still succeed and earn a high grade.
 
