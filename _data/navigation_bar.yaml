@@ -26,9 +26,8 @@ navbar_items:
       - name: "Coursebook"
         link: "/coursebook/index.html"
       - name: "Lecture Materials"
-        link: "https://github.com/angrave/CS341-Lectures-FA22"
+        link: "https://github.com/angrave/CS341-Lectures-SP23"
       - name: "Linux Virtual Machine"
         link: "/tutorials/development"
-
   - name: "Honors"
     link: "/honors.html"
