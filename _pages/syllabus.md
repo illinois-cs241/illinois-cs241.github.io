@@ -49,7 +49,7 @@ The operating system presents common interfaces for programmers to perform these
 The following is subject to minor changes:
 
 ```
-Final Exam : 23%
+Final Exam : 20 - 23% (see notes)
 Quizzes/CBTF: 15%
 
 MP Programming Assignments : 45%
@@ -68,7 +68,7 @@ We publish the following thresholds:
 
 All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week. For grading, we will drop your lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet.
 
-The final is take-home, 3 hours and will be online. The exam can be completed over a 3 day period during exam week. More details will be published at the end of the semester. Early exams will not be offered. 
+The final is take-home, 3 hours and will be available online. The exam can be completed at any time over a 3 day period during exam week. More details will be published at the end of the semester. Early exams will not be offered. The exam will be available on the first Sunday after reading day and closes 3 days later, Wednesday 11 pm.
 
 Opportunities for a small amount of extra credit may be offered and will be annouced during the semester.
 
@@ -79,7 +79,7 @@ At the end of the semester there will be a last chance regrade option for two we
 
 ### Lab Attendance
 
-When labs are offered in-person there will be a small reward for in-person attendance: Your final exam contribution (23%) can be reduced to 20% by attending all labs. Partial attendance of in-person labs will be prorated. For example, if afer allowing for 2 drops, you attend 6 of 9 in-person labs then your final exam will be worth 21%, and you will have 2% of full course credit .
+When labs are offered in-person there will be a small reward for in-person attendance: Your final exam contribution (23%) can be reduced to 20% by attending all labs. Partial attendance of in-person labs will be prorated. For example, if after allowing for 2 drops, you attended 6 of 9 in-person labs then your final exam will be worth 21%, and you will have 2% of full course credit.
 
 What this means: If you choose to complete this course virtually, or are sick and unable to attend labs, or do not wish to be in close contact with other students you can still succeed and earn a high grade.
 
