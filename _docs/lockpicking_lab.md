@@ -20,6 +20,11 @@ Read the [Development Guide]({% link _tutorials/development.md %}) to learn abou
 
 Read [this]({% link _coursebook/Background.md %}) to get started with the course!
 
+## VM
+
+You need either campus wifi or a VPN connection to ssh into your VM. Additionally, make sure it is on and running, which can be done [at the VM dashboard](https://vc.cs.illinois.edu/). Use [this](https://csid-basic-apps.cs.illinois.edu/) to lookup your VM name if needed.  
+**Note: Both of the above links also require campus wifi or a VPN**
+
 ## Git
 
 (Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-gh-repo/{{site.data.constants.semester}}_{{site.data.constants.department_code}}{{site.data.constants.course_number}}/). **DO NOT DO THE README TUTORIAL!**
