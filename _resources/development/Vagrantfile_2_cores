@@ -2,12 +2,18 @@ $script = <<-'SCRIPT'
 APT_FLAGS="-qq -y -o Dpkg::Use-Pty=0"
 export DEBIAN_FRONTEND=noninteractive
 
+type -p curl >/dev/null || sudo apt install curl -y
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+
 apt-get $APT_FLAGS update
-apt-get $APT_FLAGS install clang=1:6.0-41~exp5~ubuntu1 \
-                           libncurses5-dev=6.1-1ubuntu1.18.04 \
-                           valgrind=1:3.13.0-2ubuntu2.3 \
+apt-get $APT_FLAGS install clang=1:10.0-50~exp1 \
+                           libncurses5-dev=6.2-0ubuntu2 \
+                           valgrind=1:3.15.0-1ubuntu9.1 \
                            manpages-posix manpages-posix-dev \
-                           build-essential git strace tmux vim
+                           build-essential git strace tmux vim \
+                           gh
 
 if ! id -u student > /dev/null 2>&1 ; then
   useradd student -u 10000 -m -s /bin/bash 2> /dev/null
@@ -28,10 +34,10 @@ fi
 SCRIPT
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "bento/ubuntu-18.04"
-	config.vm.hostname = "cs241"
+	config.vm.box = "bento/ubuntu-20.04"
+	config.vm.hostname = "cs341"
 	config.vm.provider "virtualbox" do |v|
-		v.name = "CS 241"
+		v.name = "CS 341"
 		v.cpus = "2"
 		v.memory = "4096"
 		v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]

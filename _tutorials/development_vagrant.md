@@ -22,6 +22,7 @@ Now, everything needed for your VM should be installed. Here are some commands t
 1. `vagrant up` - This command turns on and configures the VM according to the Vagrantfile.
 2. `vagrant halt` - This command shuts down the VM.
 3. `vagrant ssh` - You can use this command to SSH into the VM. Make sure that the VM is already running before trying to SSH into the VM.
+    - After ssh'ing in, use `gh auth login` to login to Github and configure git (if asked to configure git protocol as well, answer `Y`).
 
 Here's the complete list of commands: [https://www.vagrantup.com/docs/cli](https://www.vagrantup.com/docs/cli).
 
