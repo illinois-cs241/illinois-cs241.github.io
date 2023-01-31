@@ -14,10 +14,8 @@ You are also required to propose and complete a project of your own. Your projec
 At the end of the semester, you will present your work to your peers. The presentation will consist of a demonstration of your project along with a brief explanation of your project and results. Your presentation should include what you learned working on your project, challenges faced, results (if any), etc.
 
 ## Grading
-
 ```
-Mini Assignments            : 20%
-Semester Project            : 80%
+Semester-Long Project
 - Project Proposal/Planning : 5%
 - Weekly Check-ins          : 10%
 - Midterm Presentation      : 15%
