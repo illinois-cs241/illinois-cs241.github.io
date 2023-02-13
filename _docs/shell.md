@@ -349,6 +349,18 @@ Like `bash`, your shell should support `&&`, `||`, and `;` in between two comman
 
 **Important**: you should *not* try to handle the combination of the `!history`, `#<n>`, `!<prefix>`, or `exit` commands with any logical operators. Rather, you can assume these commands will always be run on a line by themselves.
 
+**Important**: logical operators are stored in the history as one entry. This means your history should look like so
+
+```
+(pid=1234)/home/user$ echo foo && echo bar
+Command executed by pid=1235
+foo
+Command executed by pid=1236
+bar
+(pid=1234)/home/user$ !history
+0       echo foo && echo bar
+```
+
 ### AND
 
 `&&` is the AND operator. Usage:
@@ -395,8 +407,9 @@ hi
 ```
 
 ```
-(pid=1234)/home/user$ cd /asdf || echo runMe
+(pid=27853)/home/user$ cd /asdf || echo runMe
 /asdf: No such file or directory
+Command executed by pid=27854
 runMe
 ```
 
