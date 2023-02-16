@@ -60,6 +60,10 @@ If you place print statements in your debugging code, please remember to remove 
 
 **Note**: don't worry if you don't use all of the functions in `format.h`, but you should use them whenever their documented purpose matches the situation.
 
+### Flush Before Forking
+
+Ensure that you `fflush` all input and output file handles before forking. See [section 2.5.1 of the Open Group Base Specifications](https://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html#tag_15_05) for more information on why this is necessary.
+
 ## Overview and To-Dos
 
 The shell is responsible for providing a command line for users to execute programs or scripts. You should be very familiar with `bash` by now, which will be the basis for your own shell. This is a 2 week MP, and the features you will need to implement are as follows:
