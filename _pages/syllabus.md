@@ -155,8 +155,9 @@ CS 341 is considered a critical step in your ability to create useful programs f
 __Rule of Thumb:__ If at any point you submit an assignment that does not reflect your understanding of the material, then you have probably cheated.
 
 
-In the cases of labs, you are allowed to collaborate with others in the class. All you need to do is put your partners netid at the top.
- This can include detailed debugging and code sharing.
+In the cases of labs, you are allowed to collaborate with others in the class, which includes detailed debugging and code sharing. All you need to do is put your partners' netid at the top.  
+
+This does *not* mean that will you share the same grade for the assignment, and each group member must submit a solution to receive credit.
 
 
 __EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!__
