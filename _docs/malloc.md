@@ -26,7 +26,7 @@ You should write your implementations of `calloc`, `malloc`, `realloc`, and `fre
 
 Don't modify `mcontest.c`, `contest.h`, or `contest-alloc.so`. Those files create the environment that replaces the standard glibc malloc with your malloc. These files will be used for testing.
 
-Your `malloc` must allocate heap memory using `sbrk`. You may not use files, pipes, system shared memory, `mmap`, a chunk of pre-defined stack memory, other external memory libraries found on the Internet, or any of the various other external sources of memory that exist on modern operating systems.
+Your `malloc` must allocate heap memory using `sbrk`. You may not use files, pipes, system shared memory, `mmap`, a chunk of pre-defined stack memory, other external memory libraries found on the Internet, or any of the various other external sources of memory that exist on modern operating systems. You can find more information in the [Memory Allocators](http://cs341.cs.illinois.edu/coursebook/Malloc) coursebook entry.
 
 ## A Bad Example
 
