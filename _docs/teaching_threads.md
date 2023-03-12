@@ -90,3 +90,24 @@ You can also run `make debug` and run the debugging executable with the same arg
 ```
 ./par_reduce-debug <reducer_name> <list_len> <num_threads>
 ```
+
+## Examples
+
+### add
+``` 
+$ ./par_reduce add 20 3
+par_reduce ran in 0.000123 seconds
+Congratulations you have succesfully ran par_reduce with add on a list with 20 elements, and 3 threads
+```
+### mult
+```
+$ ./par_reduce mult 20 3
+par_reduce ran in 0.000126 seconds
+Congratulations you have succesfully ran par_reduce with mult on a list with 20 elements, and 3 threads
+```
+### slow 
+```
+$ ./par_reduce slow 20 3
+par_reduce ran in 0.010734 seconds
+Congratulations you have succesfully ran par_reduce with slow on a list with 20 elements, and 3 threads
+```
