@@ -119,12 +119,12 @@ labs:
       url: "mapreduce"
       submissions:
         - title: MapReduce
-          due_date: 2022-10-26 23:59
+          due_date: 2023-03-29 23:59
           graded_files:
           - mapreduce.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Charming Chatroom"
       releaseDate: "Week 10"
