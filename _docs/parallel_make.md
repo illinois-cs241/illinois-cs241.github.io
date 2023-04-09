@@ -285,6 +285,7 @@ There are many more examples provided in your MP folder.
 ### Notes
 
 * Only make changes in `parmake.c`.
+* Note that Makefiles require tabs for indentation, so do not use spaces or modify tabs in editor settings if you plan on directly editing a `Makefile`. `cat -T` may be useful for detecting errors.
 * You will receive 0 points if your implementation uses `sleep()`, `usleep()`, or any other form of timed waiting (e.g. `sem_timedwait()`).
 * For full points, avoid busy-waiting. i.e. threads should not be burning CPU when they aren't doing useful work.
 * You must only ever launch `T+1` threads, where `T` is the number of worker threads (+1 comes from the main thread). Do not keep re-spawning new threads for every rule.
