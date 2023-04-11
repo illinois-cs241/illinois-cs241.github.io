@@ -160,13 +160,13 @@ labs:
       url: "mad_mad_access_pattern"
       submissions:
         - title: Entire Assignment
-          due_date: 2021-11-16 23:59
+          due_date: 2023-04-19 23:59
           graded_files:
           - lookup1.c
           - lookup2.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Savvy Scheduler"
       releaseDate: "Week 13"
