@@ -186,6 +186,8 @@ contain some hints.
 Note that the parent directory of a path passed in will always exist when we
 test your code.
 
+A valid file path is absolute, unique, and links to a directory containing a file with a valid filename.
+
 When you find an unused inode, you will need to use `init_inode` to initialize
 it.
 
