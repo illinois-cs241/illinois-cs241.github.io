@@ -174,7 +174,7 @@ labs:
       url: "savvy_scheduler"
       submissions:
         - title: Entire Assignment
-          due_date: 2022-04-26 23:59
+          due_date: 2023-04-26 23:59
           graded_files:
           - libscheduler.c
       resources: true
