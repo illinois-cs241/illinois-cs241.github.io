@@ -34,9 +34,9 @@ ext2 is good filesystem, but to keep things simple, we will be using a modified 
 
 ```
 typedef struct {
-	superblock* meta;
-	inode* inode_root;
-	data_block* data_root;
+  superblock* meta;
+  inode* inode_root;
+  data_block* data_root;
 } file_system;
 
 ```
@@ -48,7 +48,7 @@ The `file_system` struct keeps track of the metadata, the root inode (where `fs-
 * The `meta` pointer points to the start of the file system, which includes the superblock.
 * The `inode_root` points to the start of the inodes as in the picture.
 * The `data_root` points to the start of the `data_blocks` as in the picture, right after the inodes.
-* The `data_map` keeps track of which blocks are used and is placed at the end of the filesystem which makes it easy to resize the filesystem (although resizing is not supported by your implementation).
+* The `data_map` keeps track of which blocks are used and is placed at the end of the filesystem which makes it easy to resize the filesystem (although resizing is not supported by your implementation). Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to indicate if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
 
 The inodes and data blocks are laid sequentially out so you can treat them like an array. Think about how you could get a pointer to the nth `data_block`.
 
@@ -56,14 +56,13 @@ The inodes and data blocks are laid sequentially out so you can treat them like 
 
 ```
 typedef struct {
-	uint64_t size;
-	uint64_t inode_count;
-	uint64_t dblock_count;
-	char data_map[0];
+  uint64_t size;
+  uint64_t inode_count;
+  uint64_t dblock_count;
 } superblock;
 ```
 
-The superblock stores information like the size of the filesystem, the number of inodes and data blocks, and whether those data blocks are being used. Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to indicate if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
+The superblock stores information like the size of the filesystem, the number of inodes, and the number of data blocks. 
 
 ### Inodes
 
@@ -103,7 +102,7 @@ We are using the direct and indirect members of the inode to index our data bloc
 
 ```
 typedef struct {
-	char data[16 * KILOBYTE];
+  char data[16 * KILOBYTE];
 } data_block;
 
 ```
@@ -273,9 +272,9 @@ You can also test by generating your own filesystems. Simply run ./fakefs mkfs _
 
 ## Other Edge Cases
 
-*	You do need to update `atim` and the `ctim`!
-*	You don't need to worry about data corruption or checksums or anything fancy, the filesystem will be valid. (Unless your write has bugs in it)
-*	Make sure all the files you cat out in `/goodies` look correct when you `xdg-open` them. Make sure you can get the PNGs and the PDFs to print out correctly.
+* You do need to update `atim` and the `ctim`!
+* You don't need to worry about data corruption or checksums or anything fancy, the filesystem will be valid. (Unless your write has bugs in it)
+* Make sure all the files you cat out in `/goodies` look correct when you `xdg-open` them. Make sure you can get the PNGs and the PDFs to print out correctly.
 * Make sure your output is the same size as the files inside the filesystem. You can check this by running stat on the files inside the filesystem(`./fakefs test.fs stat test.fs/FILE_PATH`), and wc -c on the on output of running cat on the file (`./fakefs test.fs cat test.fs/FILE_PATH | wc -c`) to check that the number of bytes is the same.
 
 
