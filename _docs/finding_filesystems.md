@@ -48,7 +48,7 @@ The `file_system` struct keeps track of the metadata, the root inode (where `fs-
 * The `meta` pointer points to the start of the file system, which includes the superblock.
 * The `inode_root` points to the start of the inodes as in the picture.
 * The `data_root` points to the start of the `data_blocks` as in the picture, right after the inodes.
-* The `data_map` keeps track of which blocks are used and is placed at the end of the filesystem which makes it easy to resize the filesystem (although resizing is not supported by your implementation).
+* The `data_map` keeps track of which blocks are used and is placed at the end of the filesystem which makes it easy to resize the filesystem (although resizing is not supported by your implementation). Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to indicate if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
 
 The inodes and data blocks are laid sequentially out so you can treat them like an array. Think about how you could get a pointer to the nth `data_block`.
 
@@ -59,11 +59,10 @@ typedef struct {
 	uint64_t size;
 	uint64_t inode_count;
 	uint64_t dblock_count;
-	char data_map[0];
 } superblock;
 ```
 
-The superblock stores information like the size of the filesystem, the number of inodes and data blocks, and whether those data blocks are being used. Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to indicate if they are being used. `data_map` is a variable-sized array that holds this information. **You don't need to worry about these abstractions, they are taken care of for you**.
+The superblock stores information like the size of the filesystem, the number of inodes, and the number of data blocks.
 
 ### Inodes
 
