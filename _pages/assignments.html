@@ -96,8 +96,9 @@
                                 <td></td>
                                 {% endif %} {% if lab.worksheet == nil or lab.worksheet != false %}
                                 <td>
-                                    <a href="/resources/handouts/{{lab.url}}.pdf" class="fancy-link wiki-link"><img
-                                            src="./images/lab-icons/file-document.png" alt='Handout'></a>
+                                    <a href="/resources/handouts/{{lab.worksheet}}.pdf"
+                                        class="fancy-link wiki-link"><img src="./images/lab-icons/file-document.png"
+                                            alt='Handout'></a>
                                 </td>
                                 {% else %}
                                 <td></td>
@@ -118,4 +119,5 @@
         <div class="col-md-3 col-1 col-xs-0"></div>
         {% include footer.html %}
 </body>
+
 </html>
