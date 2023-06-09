@@ -15,10 +15,10 @@ chapter_link_map:
 #1/17/2023 – 5/3/2023 plus finals)
 
 classes:
-  - title: "No class - MLK day "
-    summary: "History of <a href = 'https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.'>Martin Luther King Jr.</a>"
-    resources: ""
-    color: "#808080"
+#  - title: "No class - MLK day "
+#    summary: "History of <a href = 'https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.'>Martin Luther King Jr.</a>"
+#    resources: ""
+#    color: "#808080"
   - title: "Welcome to System Programming"
     summary: "1. HW0 using my Linux-In-The-Browser minicourse (Zoom link will be posted on Ed)"
     review_chapter: 3
