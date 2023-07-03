@@ -6,11 +6,11 @@ course_name: "System Programming"
 
 # Class info
 semester: sp23
-semester_full_name: Spring 2023
+semester_full_name: Fall 2023
 instructor: Lawrence Angrave (angrave@illinois.edu)
-location: ECEB 1002
-timings: MWF 11:00AM - 11:50AM
-courses_schedule_link: "https://courses.illinois.edu/schedule/2023/spring/CS/341"
+location: CIF 0027
+timings: MWF 10:00AM - 10:50AM
+courses_schedule_link: "https://courses.illinois.edu/schedule/2023/fall/CS/341"
 
 # Infrastructure examples-
 #grade_viewer_link: "https://sp20-cs241-grd-01.cs.illinois.edu/grades"
