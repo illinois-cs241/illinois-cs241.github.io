@@ -16,13 +16,13 @@ courses_schedule_link: "https://courses.illinois.edu/schedule/2023/fall/CS/341"
 #grade_viewer_link: "https://sp20-cs241-grd-01.cs.illinois.edu/grades"
 #broadway_on_demand_link: "https://sp20-cs241-grd-01.cs.illinois.edu/on-demand/"
 #malloc_contest_link: "https://sp20-cs241-grd-01.cs.illinois.edu/malloc/"
-#piazza_link: "https://edstem.org/us/courses/18578/discussion/"
+#forum_link: "https://edstem.org/us/courses/18578/discussion/"
 
 # fa21-cs241-grd-01
 # fa21-cs241-grd-13
 grade_viewer_link: "https://grd-cs341-01.cs.illinois.edu/new-grade-viewer"
 broadway_on_demand_link: "https://grd-cs341-01.cs.illinois.edu/on-demand/"
 malloc_contest_link: "https://grd-cs341-01.cs.illinois.edu/malloc/"
-piazza_link: "https://edstem.org/us/courses/32069/discussion/"
+forum_link: "https://edstem.org/us/courses/41378/discussion/"
 
 lecture_videos_link: "https://classtranscribe.illinois.edu/"
