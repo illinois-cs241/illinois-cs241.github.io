@@ -22,13 +22,13 @@ classes:
   - title: "Welcome to System Programming"
     summary: "1. HW0 using my Linux-In-The-Browser minicourse (Zoom link will be posted on Ed)"
     review_chapter: 3
-    resources: "See <a href = 'https://github.com/angrave/CS341-Lectures-SP23/blob/main/Welcome.md'>Welcome</a>"
+    resources: "See <a href = '{{ site.data.constants.lecture_handouts }}/blob/main/Welcome.md'>Welcome</a>"
     color: "#F44336"
     number: 1
   - title: "How to crash in C"
     summary: "2. Dive into C programming (Zoom link will be posted on Ed)"
     review_chapter: 3
-    resources: "Code and handouts are <a href='https://github.com/angrave/CS341-Lectures-SP23'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    resources: "Code and handouts are <a href='{{ site.data.constants.lecture_handouts }}'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#F44336"
     number: 2
   - title: "C Crash Course 2"
