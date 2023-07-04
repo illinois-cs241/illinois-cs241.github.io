@@ -38,7 +38,7 @@
 
     {% assign days = 3 %}
     {% assign weeks_zero_indexed = 15 %}
-    {% assign pretty_date_format = " [%m/%d/%Y] " %}
+    {% assign pretty_date_format = " [%m/%d] " %}
     {% assign initial_day = "2023-08-21" %}
     {% assign initial_day_unix = initial_day | date: "%s" | plus: 7200 %}
     <!-- Add an two hours safety margin, as we may cross a summer time change and the clocks change-> 
