@@ -7,11 +7,11 @@ labs:
       url: "lockpicking_lab"
       submissions:
         - title: HW0
-          due_date: 2023-08-23 23:59
+          due_date: 2023-08-30 23:59
           graded_files:
           - HW0.md
         - title: Lab Assignment
-          due_date: 2023-08-23 23:59
+          due_date: 2023-08-30 23:59
           graded_files:
           - submission.txt
       resources: true
