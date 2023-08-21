@@ -148,6 +148,13 @@ If you are in an exceptional situation -- i.e. family emergency, sickness, pleas
 
 Lab attendance credit will *not* be given unless you are physically present in lab (there is no point asking the admin for this if you are sick or away). Lab attendance reduces the fraction contribution from your final exam by a small amount. This is a small reward for attending.
 
+## Use of Large Language Models, Code Assistants,  and generative AI Models
+
+You may use Large LanguageAI  Models (e.g. Github Copilot, ChatGPT, and other mdoels) in this class with the following conditions-
+
+* You must document their use in your code. Clearly describe which parts of your submitted code were generated automatically.
+* Document when you used an AI model as part of your development process and how well it worked. Specifically, in your code comments describe if you used an AI model to assist in your initial design, initial implementation, developing test code, debugging code or other software development process.
+
 ## Academic Integrity
 
 CS 341 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously, and all cases of cheating will be brought to the University, your department, and your college. You should understand how [academic integrity](https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code) applies to Computer Science courses.
@@ -178,6 +185,8 @@ This includes seeking descriptions of the questions from students who have taken
 If there is prep material provided in lecture or on the course forums, you are welcome to share that material freely.
 
 We want you to get the most out your education, and cheating not only affects your peers, but also your level of knowledge and ability.
+
+You may use AI and other code-assist tools - see AI statement above.
 
 ## Diversity Statement
 
