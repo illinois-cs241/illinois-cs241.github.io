@@ -14,14 +14,13 @@ title: "Welcome to CS 341"
 
 * Ten minute rule: if you aren't here in the first ten minutes of class, you don't get credit.
 * Your total attendance grade will be credited towards the final exam, up to 3%.
-* Near the end of every lab, we will ask you to swipe out. Zoom attendance will be taken automatically. You may only leave early if you show us that you have finished the lab.
+* Near the end of every lab, we will ask you to swipe out. You may only leave early if you show us that you have finished the lab.
 * Email the GA (cs341admin@illinois.edu) if you need an exemption for lab attendance.
 
 ## Different Lab Sections
 
 * Due to seating limitations, you are required to go to the lab section you signed up for.
-* Labs will be in-person starting in Week 2, but every lab section will also be broadcasted via Zoom.
-	* You may freely attend either the in-person or Zoom version of your registered section.
+* Labs will be in-person.
 * If you need to miss a lab, you may be able to switch labs to make up the attendance. 
 	* You must email the TA in charge of your assigned lab and the TA for the lab to which you are going.
 * There will be no attendance taken for week 1.
