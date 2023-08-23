@@ -48,7 +48,7 @@ After the first few weeks of the course, you will be required to submit a projec
 * Projected project milestones (What will you do in the first month? Second month? etc.)
 * Challenges you expect will arise in working on this project
 
-Project proposals should be submitted as a private post on Piazza by the due date (we will specify the due date in lecture and on Piazza).
+Project proposals should be submitted as a private post on Ed by the due date (we will specify the due date in lecture and on Ed).
 
 The exact grading requirements of each project vary. You and your mentor will decide on a reasonable scope for your project at the beginning of the semester, though this target may move as appropriate throughout the semester.
 
@@ -76,10 +76,7 @@ When you and your group start writing code, we expect you to use git and for eac
 
 | Name | NetID | Interests |
 |:-----|:------|:----------|
-| Dillon Hammond | dillonh2 | Embedded, Kernel, Networking |
-| David James | davidtj2 | Security, Concurrency |
-| Rishabh Menezes | menezes4 | Multithreading, Concurrency, Memory |
-
+| TBA | TBA | TBA |
 ## Lectures
 
 Lectures can be watched at any time. The table below contains a suggested cadence.
@@ -116,11 +113,9 @@ Lectures can be watched at any time. The table below contains a suggested cadenc
   </tbody>
 </table>
 
-## Piazza
+## Ed
 
-We will use Piazza for this course to post announcements, lecture schedules, etc. You will also need to submit your project proposals on piazza, so be sure to add our class's here:
-
-[https://piazza.com/class/kkpuab92zfd7k0](https://piazza.com/class/kkpuab92zfd7k0)
+We will use Ed for this course to post announcements, lecture schedules, etc.
 
 ## Project Ideas?
 
