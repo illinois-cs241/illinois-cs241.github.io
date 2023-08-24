@@ -36,7 +36,7 @@ title: "Welcome to CS 341"
 <vertical />
 
 ```bash
-ssh **NETID**@sp23-cs341-**xxx**.cs.illinois.edu
+ssh **NETID**@fa23-cs341-**xxx**.cs.illinois.edu
 ```
 where `xxx` is the VM number assigned to you.
 
