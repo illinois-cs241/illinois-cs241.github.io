@@ -59,7 +59,7 @@ You've probably noticed the repository is empty! In order to grab the latest ver
 
 ```console
 git remote add release https://github.com/illinois-cs-coursework/{{site.data.constants.semester }}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_.release.git
-git pull release main
+git pull release main --allow-unrelated-histories
 git push origin main
 ```
 
