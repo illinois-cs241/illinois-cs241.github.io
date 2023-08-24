@@ -110,6 +110,9 @@ short mystery_bits(short input){
 	short ret = (shifted | 0xCC);
 	return ret;
 }
+
+short in = 0xCAFE;
+short result = mystery_bits(in); // result = ?
 ```
 
 ## Question 4
