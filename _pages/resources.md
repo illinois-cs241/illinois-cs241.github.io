@@ -61,7 +61,7 @@ We _will not_ accept "low effort questions":
 *   Questions that have already been answered many times before and can easily be found by searching
 *   Questions that provide basically no information to go off of (Debugging? Tests? Valgrind? Anything?)
 
-If we find you asking too many of these low-effort questions, then we reserve the right to remove your Piazza privileges. Hopefully these steps will lead you to the answer you're looking for, or at the very least help you find the answer yourself. Asking on Piazza should not be the first thing you do when you have a problem. You're here to learn; we're not going to give you the answer every time you ask.
+If we find you asking too many of these low-effort questions, then we reserve the right to remove your forum posting privileges. Hopefully these steps will lead you to the answer you're looking for, or at the very least help you find the answer yourself. Asking on our forum should not be the first thing you do when you have a problem. You're here to learn; we're not going to give you the answer every time you ask.
 
 #### Debugging
 
