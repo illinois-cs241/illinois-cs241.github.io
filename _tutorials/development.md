@@ -26,10 +26,30 @@ Note that if you are not connected to on-campus internet, you will need to use a
 
 ## Install compiler and CS341 tools
 
-Todo: Define the specific clang compiler installation here.
-Also...  install pthread man pages.
+Here is the script used to provision the VMs this semester:
 
-sudo apt install
+```sh
+# update sources
+apt-get update && \
+	apt-get install -y software-properties-common && \
+	add-apt-repository ppa:deadsnakes/ppa && \
+	apt-get update
+
+# install python3.6
+apt-get install -y python3.10 python3-pip python2-dev python3.10-dev cmake iproute2 && \
+	rm /usr/bin/python3 && \
+	ln -s python3.10 /usr/bin/python3
+
+# install bulid-related tools
+apt-get install -y \
+	clang=1:14.0-55~exp2 \
+	libncurses5-dev=6.3-2ubuntu0.1 \
+	rpcbind=1.2.6-2build1 \
+	valgrind=1:3.18.1-1ubuntu2 \
+	git=1:2.34.1-1ubuntu1.10 \
+	strace=5.16-0ubuntu3 && \
+	rm -rf /var/lib/apt/lists/*
+```
 
 ## Installing Other Stuff
 
