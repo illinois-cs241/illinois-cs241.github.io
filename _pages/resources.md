@@ -90,7 +90,7 @@ If you are truly lost, can't find an answer in the docs, or in other questions, 
 
 Please contact your section TA for most things.
 
-For unusual administrative items (e.g. exam sickness, DRES, 1% issues, problems with your TA) then please email [cs341admin@illinois.edu](mailto:cs341admin@illinois.edu) and explain your scenario.
+For unusual administrative items (e.g. exam sickness, DRES, 1% issues, problems with your TA) then please email [cs341admin@cs.illinois.edu](mailto:cs341admin@cs.illinois.edu) and explain your scenario.
 
 Note: We do not provide attendance misses for labs (this is not negotiable), especially for something that is 100% in your control like "I have an interview."
 

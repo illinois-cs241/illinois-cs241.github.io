@@ -23,7 +23,7 @@ To get a sense of going on and where we are in the course, please read **all** t
 ## Assignments
 
 * Overdue assignment's deadlines will not be extended. **Though, It is in your best interest to read through the assignments that you missed in order to understand them (some of them will build of each other)**
-* Email cs341admin@illinois.eduedu and say that you have added late (give the date you added if you can remember it).
+* Email cs341admin@cs.illinois.edu and say that you have added late (give the date you added if you can remember it).
 * You will need git access as well. You can create your repository at [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.data.constants.department_code}}{{site.data.constants.course_number}}-{{site.semester}}/) Your repo should be available at
 
 `https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/NETID`.

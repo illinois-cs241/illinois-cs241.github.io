@@ -140,11 +140,11 @@ If you have a question about your personal autograder results after the final au
 
 It's important to say physically and mentally healthy. Please see the links below for mental health resources.
 * Office hours and peer mentoring for course staff will be posted in the forums. Office hours will start the second full week of the semester
-* For unusual administrative items (e.g. sickness preventing you from working, DRES, 1% issues, problems with your TA) then please email ([cs341admin@illinois.edu](mailto:cs341admin@illinois.edu)) and explain your scenario.
+* For unusual administrative items (e.g. sickness preventing you from working, DRES, 1% issues, problems with your TA) then please email ([cs341admin@cs.illinois.edu](mailto:cs341admin@cs.illinois.edu)) and explain your scenario.
 
 ## Absences
 
-If you are in an exceptional situation -- i.e. family emergency, sickness, please email ([cs341admin@illinois.edu](mailto:cs341admin@illinois.edu)) and we will deal with your situation on a case-by-case basis via the course admin ([cs341admin@illinois.edu](mailto:cs341admin@illinois.edu)). For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://odos.illinois.edu/community-of-care/student-assistance-center/) note stating that you contacted the Emergency Dean.
+If you are in an exceptional situation -- i.e. family emergency, sickness, please email ([cs341admin@cs.illinois.edu](mailto:cs341admin@cs.illinois.edu)) and we will deal with your situation on a case-by-case basis via the course admin ([cs341admin@cs.illinois.edu](mailto:cs341admin@cs.illinois.edu)). For illness-related excuses, you will need a doctor's note of some kind verifying your illness. _No_ illness-related excuses will be accepted without a dated [Emergency Dean's](http://odos.illinois.edu/community-of-care/student-assistance-center/) note stating that you contacted the Emergency Dean.
 
 Lab attendance credit will *not* be given unless you are physically present in lab (there is no point asking the admin for this if you are sick or away). Lab attendance reduces the fraction contribution from your final exam by a small amount. This is a small reward for attending.
 

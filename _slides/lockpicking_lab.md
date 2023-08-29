@@ -15,7 +15,7 @@ title: "Welcome to CS 341"
 * Ten minute rule: if you aren't here in the first ten minutes of class, you don't get credit.
 * Your total attendance grade will be credited towards the final exam, up to 3%.
 * Near the end of every lab, we will ask you to swipe out. You may only leave early if you show us that you have finished the lab.
-* Email the GA (cs341admin@illinois.edu) if you need an exemption for lab attendance.
+* Email the GA (cs341admin@cs.illinois.edu) if you need an exemption for lab attendance.
 
 ## Different Lab Sections
 
