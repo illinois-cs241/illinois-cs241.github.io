@@ -57,7 +57,7 @@ remote: Please see https://docs.github.com/en/get-started/getting-started-with-g
 fatal: Authentication failed for 'https://github.com/illinois-cs-coursework/{{site.data.constants.semester }}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID.git'
 ```
 
-As the error message implies, Github no longer allows you to login with plaintext password. There are several ways around this, we recommend using Github's command line tool `gh`, or using a personal access token:
+As stated by the  message implies, Github no longer allows you to login with plaintext password due to security concerns. There are several ways around this, we recommend using Github's command line tool `gh`, or using a personal access token:
 ### gh
 
 `gh` is the offical command-line interface for Github. You will first need to install it using `apt`. Be sure to install it as root:
