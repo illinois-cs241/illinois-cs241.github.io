@@ -29,26 +29,44 @@ Note that if you are not connected to on-campus internet, you will need to use a
 Here is the script used to provision the VMs this semester:
 
 ```sh
-# update sources
-apt-get update && \
-	apt-get install -y software-properties-common && \
-	add-apt-repository ppa:deadsnakes/ppa && \
-	apt-get update
+# update sources and install basic tools
+sudo apt-get update && \
+    apt-get install -y \
+      software-properties-common \
+      wget \
+      bzip2 && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update
 
 # install python3.6
-apt-get install -y python3.10 python3-pip python2-dev python3.10-dev cmake iproute2 && \
-	rm /usr/bin/python3 && \
-	ln -s python3.10 /usr/bin/python3
+sudo apt-get install -y python3.10 python3-pip python2-dev python3.10-dev cmake iproute2 && \
+    rm /usr/bin/python3 && \
+    ln -s python3.10 /usr/bin/python3 && \
+    ln -s -f /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/liblibc.a
 
 # install bulid-related tools
-apt-get install -y \
-	clang=1:14.0-55~exp2 \
-	libncurses5-dev=6.3-2ubuntu0.1 \
-	rpcbind=1.2.6-2build1 \
-	valgrind=1:3.18.1-1ubuntu2 \
-	git=1:2.34.1-1ubuntu1.10 \
-	strace=5.16-0ubuntu3 && \
-	rm -rf /var/lib/apt/lists/*
+sudo apt-get install -y \
+        clang=1:14.0-55~exp2 \
+        libncurses5-dev=6.3-2ubuntu0.1 \
+        rpcbind=1.2.6-2build1 \
+        git=1:2.34.1-1ubuntu1.10 \
+        strace=5.16-0ubuntu3 && \
+    rm -rf /var/lib/apt/lists/*
+
+# install the latest version of valgrind
+wget https://sourceware.org/pub/valgrind/valgrind-3.21.0.tar.bz2 && \
+  echo "b8b89b327732c12191306c3d31cfd4b1 *./valgrind-3.21.0.tar.bz2" | md5sum -c - && \
+  bunzip2 valgrind-3.21.0.tar.bz2 && \
+  tar xf valgrind-3.21.0.tar
+cd ./valgrind-3.21.0
+./configure && \
+  make && \
+  make install
+cd ..
+rm -rf valgrind-3.21.0
+
+# valgrind fix: install debug symbols for libc
+sudo apt-get install -y libc6-dbg
 ```
 
 ## Installing Other Stuff
