@@ -58,10 +58,11 @@ fatal: Authentication failed for 'https://github.com/illinois-cs-coursework/{{si
 ```
 
 As stated by the  message implies, Github no longer allows you to login with plaintext password due to security concerns. There are several ways around this, we recommend using Github's command line tool `gh`, or using a personal access token:
-### gh
+### gh (Recommended)
 
 `gh` is the offical command-line interface for Github. You will first need to install it using `apt`. Be sure to install it as root:
 ```console
+sudo apt update
 sudo apt install gh
 ```
 Then login through gh as follows:
@@ -80,7 +81,7 @@ We recommend only giving your new token **repo** scope, as that is all you need 
 
 Once the token is generated (be sure to save it somewhere), there is one more important step: Click on the **Configure SSO** button next to the token, and authorize **illinois-cs-coursework** organization. Otherwise, you will encounter cryptic errors when trying to push your repo!
 
-Finally, you can run `git clone` again and use your newly generated token in place of your password.
+Finally, you can run `git clone` again and use your newly generated token in place of your password. If you're using VSCode, you may need to log out of Github in VSCode (Using **Accounts** button at bottom left) and login again.
 
 If you want to learn more about Github authentication, you can check out [this document](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls) on the official Github Docs.
 
