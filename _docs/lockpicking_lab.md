@@ -29,7 +29,7 @@ You need either campus wifi or a VPN connection to ssh into your VM. Additionall
 
 (Read the first section of the development site!) You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-gh-repo/{{site.data.constants.semester}}_{{site.data.constants.department_code}}{{site.data.constants.course_number}}/). **DO NOT DO THE README TUTORIAL!**
 
-**Once you are in your VM**, you'll need to set up some global defaults
+**Once you are in your VM**, you'll need to set up some global defaults. The name and email you input here will be used to mark your commits.
 
 ```console
 git config --global user.name "FIRST_NAME LAST_NAME"
@@ -49,7 +49,45 @@ Then checkout your repository as follows:
 git clone https://github.com/illinois-cs-coursework/{{site.data.constants.semester }}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID.git
 ```
 
-which will check out your entire git repo into a folder called '{{site.data.constants.semester}}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID' into your current directory. Now change your directory into that folder:
+Unfortunately, cloning a repository is not so easy. If you follow git's prompt and submit your username and password, you will likely see an error message like this:
+
+```console
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+fatal: Authentication failed for 'https://github.com/illinois-cs-coursework/{{site.data.constants.semester }}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID.git'
+```
+
+As stated by the  message implies, Github no longer allows you to login with plaintext password due to security concerns. There are several ways around this, we recommend using Github's command line tool `gh`, or using a personal access token:
+### gh (Recommended)
+
+`gh` is the offical command-line interface for Github. You will first need to install it using `apt`. Be sure to install it as root:
+```console
+sudo apt update
+sudo apt install gh
+```
+Then login through gh as follows:
+```console
+gh auth login
+```
+`gh` will prompt you with multiple questions. Make sure to allow it to **Authenticate Git with your Github credentials** and then **Login with a web browser**. 
+
+Once you're logged in through `gh`, you can clone the repo without git asking for your username or password.
+
+### Personal Access Tokens
+
+You can think of a personal access token as a  password with limited privileges and an expiration date. To create a token, go to [Github settings](https://github.com/settings/tokens), and click **Generate new token (classic)**.
+
+We recommend only giving your new token **repo** scope, as that is all you need to push and pull from your repo.
+
+Once the token is generated (be sure to save it somewhere), there is one more important step: Click on the **Configure SSO** button next to the token, and authorize **illinois-cs-coursework** organization. Otherwise, you will encounter cryptic errors when trying to push your repo!
+
+Finally, you can run `git clone` again and use your newly generated token in place of your password. If you're using VSCode, you may need to log out of Github in VSCode (Using **Accounts** button at bottom left) and login again.
+
+If you want to learn more about Github authentication, you can check out [this document](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls) on the official Github Docs.
+
+Once you're able to run `git clone`, it will check out your entire git repo into a folder called '{{site.data.constants.semester}}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID' into your current directory. 
+
+Now, change your directory into the repo folder:
 
 ```console
 cd {{site.data.constants.semester}}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID
