@@ -57,7 +57,7 @@ labs:
           - mini_memcheck.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Teaching Threads"
       releaseDate: "Week 5"
