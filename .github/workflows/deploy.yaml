@@ -25,7 +25,7 @@ jobs:
 
     - name: Build site
       run: |
-        bundle install nokogiri
+        gem install nokogiri
         bundle update rake
         bundle exec rake
         bundle exec rake spell_check
