@@ -15,7 +15,7 @@ jobs:
     - name: Setup ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6
+        ruby-version: 2.7
         bundler-cache: true
 
     - name: Install dependencies
@@ -25,7 +25,7 @@ jobs:
 
     - name: Build site
       run: |
-        gem install nokogiri
+        gem install nokogiri -v 1.13.10
         bundle update rake
         bundle exec rake
         bundle exec rake spell_check
