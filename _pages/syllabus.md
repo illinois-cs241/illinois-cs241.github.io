@@ -150,7 +150,7 @@ Lab attendance credit will *not* be given unless you are physically present in l
 
 ## Use of Large Language Models, Code Assistants,  and generative AI Models
 
-You may use Large LanguageAI  Models (e.g. Github Copilot, ChatGPT, and other mdoels) in this class with the following conditions-
+You may use Large Language AI  Models (e.g. Github Copilot, ChatGPT, and other models) in this class with the following conditions-
 
 * You must document their use in your code. Clearly describe which parts of your submitted code were generated automatically.
 * Document when you used an AI model as part of your development process and how well it worked. Specifically, in your code comments describe if you used an AI model to assist in your initial design, initial implementation, developing test code, debugging code or other software development process.
