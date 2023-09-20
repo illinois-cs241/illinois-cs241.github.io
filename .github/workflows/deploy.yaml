@@ -20,8 +20,8 @@ jobs:
 
     - name: Install dependencies
       run: |
-        gem install rake -v '0.9.6'
         sudo apt install hunspell libhunspell-dev hunspell-en-us
+        gem install rake -v '0.9.6'
 
     - name: Build site
       run: |
