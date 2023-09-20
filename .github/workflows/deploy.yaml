@@ -25,8 +25,7 @@ jobs:
 
     - name: Build site
       run: |
-        bundle show rake
-        gem list rake
+        gem update --system 3.2.3
         bundle update rake
         bundle exec rake
         bundle exec rake spell_check
