@@ -82,7 +82,8 @@ namespace :pre_build do
   desc 'Houses all pre build tasks'
 
   sections = [1, 2, 3, 4]
-  base_uri = 'https://linux.die.net/man/'
+  desc 'https://linux.die.net/man/1/ throws 403'
+  base_uri = 'https://man7.org/linux/man-pages/man'
   cache_time = 30 # days
 
   task :gen_man, [:file] do |_t, args|
@@ -105,7 +106,7 @@ namespace :pre_build do
     output = {}
     urls.each do |url|
       puts url
-      page = Nokogiri::HTML(open('https://man7.org/linux/man-pages/man2/',ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE, 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'))
+      page = Nokogiri::HTML(open(url,ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE, 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'))
       page.css('dt a').each do |link|
         output[link.inner_html] = url + link['href']
       end
