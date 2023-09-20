@@ -16,6 +16,7 @@ require 'yaml'
 require 'fileutils'
 require 'nokogiri'
 require 'json'
+require 'openssl'
 
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
@@ -104,7 +105,7 @@ namespace :pre_build do
     output = {}
     urls.each do |url|
       puts url
-      page = Nokogiri::HTML(open(url,'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'))
+      page = Nokogiri::HTML(open(url,ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE, 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'))
       page.css('dt a').each do |link|
         output[link.inner_html] = url + link['href']
       end
