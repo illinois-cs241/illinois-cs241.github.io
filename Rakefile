@@ -104,7 +104,7 @@ namespace :pre_build do
     output = {}
     urls.each do |url|
       puts url
-      page = Nokogiri::HTML(open(url),ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,'User-Agent' => 'firefox')
+      page = Nokogiri::HTML(open(url,ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,'User-Agent' => 'firefox'))
       page.css('dt a').each do |link|
         output[link.inner_html] = url + link['href']
       end
