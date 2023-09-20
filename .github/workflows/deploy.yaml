@@ -15,18 +15,15 @@ jobs:
     - name: Setup ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 2.6
         bundler-cache: true
 
     - name: Install dependencies
       run: |
         sudo apt install hunspell libhunspell-dev hunspell-en-us
-        gem install rake -v '0.9.6'
 
     - name: Build site
       run: |
-        gem install nokogiri -v 1.13.10
-        bundle update rake
         bundle exec rake
         bundle exec rake spell_check
 
