@@ -110,7 +110,7 @@ namespace :pre_build do
       page.css('dt a').each do |link|
         output[link.inner_html] = url + link['href']
         puts link.inner_html
-        puts output[link.inner_html
+        puts output[link.inner_html]
       end
     end
 
