@@ -82,7 +82,7 @@ namespace :pre_build do
   desc 'Houses all pre build tasks'
 
   sections = [1, 2, 3, 4]
-  desc 'https://linux.die.net/man/1/ throws 403'
+  desc 'https://linux.die.net/man/ throws 403; see their robots.txt for more info'
   base_url = 'https://man7.org/linux/man-pages/'
   cache_time = 30 # days
 
@@ -109,7 +109,6 @@ namespace :pre_build do
       page.css('a').each do |link|
         func_name = link.inner_html.match(/^(\w+)/)[1]
         if !output.key?(func_name)
-          puts "there" + func_name
           output[func_name] = base_url + link['href']
         end
       end
