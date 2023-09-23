@@ -109,6 +109,7 @@ namespace :pre_build do
       page.css('a').each do |link|
         func_name = link.inner_html.match(/^(\w+)/)[1]
         if !output.key?(func_name)
+          puts "there" + func_name
           output[func_name] = base_url + link['href']
         end
       end
