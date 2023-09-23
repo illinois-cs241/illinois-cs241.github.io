@@ -107,7 +107,10 @@ namespace :pre_build do
     urls.each do |url|
       page = Nokogiri::HTML(open(url,ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE, 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'))
       page.css('a').each do |link|
-        output[link.inner_html] = base_url + link['href']
+        func_name = link.inner_html.match(/^(\w+)/)[1]
+        if !output.key?(func_name)
+          output[func_name] = base_url + link['href']
+        end
       end
     end
 
