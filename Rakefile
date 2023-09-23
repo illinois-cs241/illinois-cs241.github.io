@@ -83,7 +83,7 @@ namespace :pre_build do
 
   sections = [1, 2, 3, 4]
   desc 'https://linux.die.net/man/1/ throws 403'
-  base_uri = 'https://man7.org/linux/man-pages/man'
+  base_url = 'https://man7.org/linux/man-pages/'
   cache_time = 30 # days
 
   task :gen_man, [:file] do |_t, args|
@@ -101,16 +101,14 @@ namespace :pre_build do
     puts 'Updating file'
 
     urls = sections.map do |e|
-      base_uri + e.to_s + '/'
+      base_url + 'dir_section_' + e.to_s + '.html'
     end
     output = {}
     urls.each do |url|
       puts url
       page = Nokogiri::HTML(open(url,ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE, 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'))
       page.css('dt a').each do |link|
-        output[link.inner_html] = url + link['href']
-        puts link.inner_html
-        puts output[link.inner_html]
+        output[link.inner_html] = base_url + link['href']
       end
     end
 
