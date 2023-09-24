@@ -246,16 +246,16 @@ mps:
       url: "malloc"
       submissions:
         - title: Part 1 # 18
-          due_date: 2023-02-27 23:59
+          due_date: 2023-10-02 23:59
           graded_files:
           - alloc.c
         - title: Part 2
-          due_date: 2023-03-06 23:59
+          due_date: 2023-10-09 23:59
           graded_files:
           - alloc.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Password Cracker"
       releaseDate: "Week 8"
