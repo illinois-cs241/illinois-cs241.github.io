@@ -16,6 +16,7 @@ require 'yaml'
 require 'fileutils'
 require 'nokogiri'
 require 'json'
+require 'openssl'
 
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
@@ -81,7 +82,8 @@ namespace :pre_build do
   desc 'Houses all pre build tasks'
 
   sections = [1, 2, 3, 4]
-  base_uri = 'https://linux.die.net/man/'
+  desc 'https://linux.die.net/man/ throws 403; see their robots.txt for more info'
+  base_url = 'https://man7.org/linux/man-pages/'
   cache_time = 30 # days
 
   task :gen_man, [:file] do |_t, args|
@@ -99,13 +101,16 @@ namespace :pre_build do
     puts 'Updating file'
 
     urls = sections.map do |e|
-      base_uri + e.to_s + '/'
+      base_url + 'dir_section_' + e.to_s + '.html'
     end
     output = {}
     urls.each do |url|
-      page = Nokogiri::HTML(open(url))
-      page.css('dt a').each do |link|
-        output[link.inner_html] = url + link['href']
+      page = Nokogiri::HTML(open(url,ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE, 'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_0) AppleWebKit/600.1.17 (KHTML, like Gecko) Version/8.0 Safari/600.1.17'))
+      page.css('a').each do |link|
+        func_name = link.inner_html.match(/^(\w+)/)[1]
+        if !output.key?(func_name)
+          output[func_name] = base_url + link['href']
+        end
       end
     end
 
