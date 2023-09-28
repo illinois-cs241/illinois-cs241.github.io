@@ -74,11 +74,11 @@ typedef struct {
 <vertical />
 
 * When `max_value` is reached
-	* All thread trying to post should be blocked
+	* All threads trying to post should be blocked
 	* Where/how do you notify these blocked threads when a thread decreases the semamore’s value below `max_value`?
 * When 0 is reached
-	* All thread trying to wait should be blocked
-	* Where/how do you notify these blocked thread when a thread increases the semamore's value above 0?
+	* All threads trying to wait should be blocked
+	* Where/how do you notify these blocked threads when a thread increases the semamore's value above 0?
 
 <horizontal />
 
@@ -148,7 +148,7 @@ More information is in the coursebook.
 
 <vertical />
 
-Remember CS 125/225! Appending to the head of a linked list, other edge cases, etc...
+Remember CS 124/225! Appending to the head of a linked list, other edge cases, etc...
 
 <horizontal />
 
