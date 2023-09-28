@@ -66,10 +66,11 @@ Some food for thought:
 	* What are `start_routine` and `arg`?
 * What information does each thread need to know in order to do its job?
 * How would you divide the problem among your threads?
+  * What happens when `num_threads` does not divide `list_len`?
 * What does `int pthread_join(pthread_t thread, void **retval);` do?
 	* What is `retval`?
-* How can you make sure to always spawn the least number of threads?
-	* You have an example above where the length of the list is greater than the number of threads, what about the opposite scenario?
+
+We expect your `par_reduce()` to not spawn unnecessary worker threads. Each worker thread you spawn should process at least one element of the input list. Therefore, you should only spawn `max(num_threads, list_len)` worker threads.
 
 ## Testing your code
 
