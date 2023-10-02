@@ -131,12 +131,16 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#03A9F4"
     number: 18
-  - title: "Reader Writer and Deadlock - Part 1"
+  - title: "Reader Writer and Deadlock - Part 2"
     summary: ""
     review_chapter: 8
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#03A9F4"
     number: 19
+  - title: "No lecture"
+    summary: "Extra Programming Time"
+    resources: ""
+    color: "#808080" 
   - title: "Dining Philosophers"
     summary: "The Dining Philosophers problem"
     review_chapter: 8
@@ -280,11 +284,7 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 40
-  - title: "Extra I (Security Case Studies)"
-    summary: ""
-    resources: ""
-    color: "#8080F0"
-  - title: "Extra II (Containers and Concurrency)"
+  - title: "Extra I (Containers, Security Case Studies)"
     summary: ""
     resources: ""
     color: "#8080F0"
