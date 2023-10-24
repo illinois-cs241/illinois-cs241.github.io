@@ -111,7 +111,7 @@ Data blocks are currently defined to be 16 kilobytes. Nothing fancy here.
 
 ## fakefs interface
 
-You do not to modify or read any of the code in `fakefs_src/`.
+You do not need to modify or read any of the code in `fakefs_src/`.
 
 To make this MP possible, we've developed our own userspace filesystem interface which we're calling fakefs. Normally, filesystems are a piece of code which you load into your kernel and must provide a few things. It needs a constructor, destructor, callbacks for all system calls involving files and file descriptors within your filesystem. However, writing kernel code is a bit more cumbersome than writing normal code since you need additional security checks among other things, and can even lead to instability in your operating system. To avoid this, there are various ways to implment a filesystem in userspace. The most common (and preferred) method is to use a library called FUSE (Filesystems in USErspace). FUSE allows you to implement your file operations in userspace, but still interacts with the kernel to provide it's functionality. While this allows you to mount the filesystem and use it like any other filesystem, there are a few reasons why we chose not to use it for this MP. A major reason is that if a FUSE callback crashes while it is mounted, it renders the mounted partition unusable and in some cases, you won't be able to even unmount the partition without rebooting the machine. To prevent making this MP annoying and tedious, we've made our own way of implementing filesystems in userspace by `hooking` filesystem operations.
 
