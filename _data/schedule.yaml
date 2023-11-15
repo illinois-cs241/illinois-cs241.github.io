@@ -250,10 +250,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
     color: "#FFC107"
     number: 37
-  - title: "Special Topics/Beyond CS341"
-    summary: ""
-    resources: ""
-    color: "#FFC107"
   - title: "Fall Break"
     summary: ""
     resources: ""
@@ -288,3 +284,7 @@ classes:
     summary: ""
     resources: ""
     color: "#8080F0"
+ - title: "Special Topics/Beyond CS341"
+    summary: ""
+    resources: ""
+    color: "#FFC107"
