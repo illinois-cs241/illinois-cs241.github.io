@@ -152,6 +152,10 @@ DELETE prison_break_s05_e01.mp4\n
 ```
 OK\n
 ```
+Note that the usage shown below is also valid. We always recommend using the reference client to test out expected behaviors. More information about the reference client will be introduced later in this document.
+```
+$ ./client server:port DELETE prison_break_s05_e01.mp4 garbage.mp4
+```
 
 - LIST
 
