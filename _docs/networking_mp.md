@@ -303,7 +303,9 @@ Server - By the time you start your server, you will (hopefully) have a working 
 
 Alternatively, if higher level languages are more your thing, you could try writing a script in some other language (say, Python or Ruby). As long as you strictly adhere to the specified protocol, it should work fine (be careful about the width and byte ordering of types in other languages, though!). The catch is, you have to be sure your mock client/server actually works as expected, since you'll end up debugging programs in different languages at this point, which is never fun. On the bright side, this lets you practice multilingualism.
 
-We will also be providing a reference client and server.  These print out helpful logging messages that you do not need to mirror in your code.  These might also not be perfect, so please report things to us (they do pass our tests though).
+We will also be providing a reference client and server. These print out helpful logging messages that you do not need to mirror in your code. These might also not be perfect, so please report things to us (they do pass our tests though).
+
+To view only the STDOUT content of the reference client or server, we recommend using [redirection](https://www.man7.org/linux/man-pages/man1/bash.1.html#REDIRECTION).
 
 ## Grading
 There are **three** parts for this assignment:
