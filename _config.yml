@@ -2,7 +2,7 @@
 title: "CS 341: System Programming"
 email: angrave@illinois.edu
 description: > # this means to ignore newlines until "baseurl:"
-  "Webpage for CS 341: System Programming at the University of Illinois at Urbana-Champaign.
+  "Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign.
   All documentation and information about the course can be found here."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://cs341.cs.illinois.edu" # the base hostname & protocol for your site
