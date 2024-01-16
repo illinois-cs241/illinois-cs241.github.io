@@ -79,7 +79,7 @@ At the end of the semester there will be a last chance regrade option for two we
 
 ### Lab Attendance
 
-When labs are offered in-person there will be a small reward for in-person attendance: Your final exam contribution (23%) can be reduced to 20% by attending all labs. Partial attendance of in-person labs will be prorated. For example, if after allowing for 2 drops, you attended 6 of 9 in-person labs then your final exam will be worth 21%, and you will have 2% of full course credit.
+Chicago students will have their own online lab (arranged with the TA). Urbana-Champaign students have in-person labs in Siebel. Labs are required and there is also a small reward for in-person attendance: Your final exam contribution (23%) can be reduced to 20% by attending all labs. Partial attendance of in-person labs will be prorated. For example, if after allowing for 2 drops, you attended 6 of 9 in-person labs then your final exam will be worth 21%, and you will have 2% of full course credit.
 
 What this means: If you choose to complete this course virtually, or are sick and unable to attend labs, or do not wish to be in close contact with other students you can still succeed and earn a high grade.
 
