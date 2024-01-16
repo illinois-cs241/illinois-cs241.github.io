@@ -79,7 +79,7 @@ GitHub provides an easy way to add SSH keys to your account. This method has the
 
 In summary:
 
-1. Create an SSH key on your local machine if you do not already have one. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command `ssh-keygen -t ed25519 -a 100`.
+1. Create an SSH key on your local machine if you do not already have one. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command `ssh-keygen -t ed25519 -a 100`. This command generates a private and public key for authentication. It will prompt you to enter a name for the file storing your private key, and will generate a .pub file for your public key.
 2. Copy the ***public*** key to your clipboard. This is usually stored at a path like `~/.ssh/*.pub`, where `~` denotes your home directory.
 3. Log into your GitHub account, navigate to Settings->SSH Keys, and follow the prompts to add a new SSH key by pasting in the ***public*** key on your clipboard.
 
@@ -100,7 +100,7 @@ You can think of a personal access token as a  password with limited privileges 
 
 We recommend only giving your new token **repo** scope, as that is all you need to push and pull from your repo.
 
-Once the token is generated (be sure to save it somewhere), there is one more important step: Click on the **Configure SSO** button next to the token, and authorize **illinois-cs-coursework** organization. Otherwise, you will encounter cryptic errors when trying to push your repo!
+Once the token is generated (be sure to save it somewhere), you must authorize the token for use with Illinois Single Sign-On (SSO). See GitHub's docs [here](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).
 
 Finally, you can run `git clone` again and use your newly generated token in place of your password. If you're using VSCode, you may need to log out of Github in VSCode (Using **Accounts** button at bottom left) and login again.
 
