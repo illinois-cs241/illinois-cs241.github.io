@@ -8,12 +8,47 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 
 apt-get $APT_FLAGS update
-apt-get $APT_FLAGS install clang=1:10.0-50~exp1 \
-                           libncurses5-dev=6.2-0ubuntu2 \
-                           valgrind=1:3.15.0-1ubuntu9.1 \
-                           manpages-posix manpages-posix-dev \
-                           build-essential git strace tmux vim \
+apt-get $APT_FLAGS install manpages-posix manpages-posix-dev \
+                           build-essential \
                            gh
+
+# update sources and install basic tools
+apt-get install $APT_FLAGS \
+      software-properties-common \
+      wget \
+      bzip2 && \
+    add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get update
+
+# install python3.6
+sudo apt-get install $APT_FLAGS python3.10 python3-pip python2-dev python3.10-dev cmake iproute2 && \
+    rm /usr/bin/python3 && \
+    ln -s python3.10 /usr/bin/python3 && \
+    ln -s -f /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/liblibc.a
+
+# install bulid-related tools
+sudo apt-get install $APT_FLAGS \
+        clang=1:14.0-55~exp2 \
+        libncurses5-dev=6.3-2ubuntu0.1 \
+        rpcbind=1.2.6-2build1 \
+        git=1:2.34.1-1ubuntu1.10 \
+        strace=5.16-0ubuntu3 && \
+    rm -rf /var/lib/apt/lists/*
+
+# install the latest version of valgrind
+wget https://sourceware.org/pub/valgrind/valgrind-3.21.0.tar.bz2 && \
+  echo "b8b89b327732c12191306c3d31cfd4b1 *./valgrind-3.21.0.tar.bz2" | md5sum -c - && \
+  bunzip2 valgrind-3.21.0.tar.bz2 && \
+  tar xf valgrind-3.21.0.tar
+cd ./valgrind-3.21.0
+./configure && \
+  make && \
+  make install
+cd ..
+rm -rf valgrind-3.21.0
+
+# valgrind fix: install debug symbols for libc
+sudo apt-get install -y libc6-dbg
 
 if ! id -u student > /dev/null 2>&1 ; then
   useradd student -u 10000 -m -s /bin/bash 2> /dev/null
@@ -34,7 +69,7 @@ fi
 SCRIPT
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "bento/ubuntu-20.04"
+	config.vm.box = "bento/ubuntu-22.04"
 	config.vm.hostname = "cs341"
 	config.vm.provider "virtualbox" do |v|
 		v.name = "CS 341"

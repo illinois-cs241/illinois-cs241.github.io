@@ -24,6 +24,34 @@ On Windows, you can use an SSH client like [PuTTY](https://www.putty.org/).
 
 Note that if you are not connected to on-campus internet, you will need to use a Virtual Private Network (VPN) to connect to your VM. Instructions on downloading and using the UIUC VPN can be found [here](https://answers.uillinois.edu/illinois/98773). An alternative to using the UIUC VPN is to SSH twice. You can first SSH into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
 
+### Enabling password-less authentication with you VM
+
+If you have generated an SSH key on your local machine (see [Using SSH keys](#using-ssh-keys) below), you can export your public key to your VM using the following command:
+ssh-copy-id <netid>@<vm hostname>
+
+## Authenticating with GitHub
+
+There are two ways that we recommend for authenticating with GitHub
+
+### Using SSH keys
+
+GitHub provides an easy way to add SSH keys to your account. GitHub's documentation can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux). This method has the added benefit that you can reuse the same SSH key for passwordless authentication to your CS341 VM.
+
+In summary:
+
+1. Create an SSH key on your local machine if you do not already have one. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command `ssh-keygen -t ed25519 -a 100 -f`.
+2. Copy the ***public*** key to your clipboard. This is usually stored at a path like `~/.ssh/*.pub`, where `~` denotes your home directory.
+3. Log into your GitHub account, navigate to Settings->SSH Keys, and follow the prompts to add a new SSH key by pasting in the ***public*** key on your clipboard.
+
+### Using the GH Auth tool
+
+GitHub provides their own command line tool for automating tasks, including authentication. The relevant documentation for the tool can be found [here](https://cli.github.com/manual/gh_auth_login).
+
+In summary:
+
+1. Install the `gh` tool using `sudo apt update && sudo apt install gh`.
+2. Run `gh auth login` to authenticate.
+
 ## Install compiler and CS341 tools
 
 Here is the script used to provision the VMs this semester:
