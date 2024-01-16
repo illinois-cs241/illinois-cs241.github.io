@@ -6,12 +6,12 @@ learning_objectives:
 ---
 
 ## Development in CS 341
-In this course, we use Virtual Machines (VMs) for all our developmment. We will not support development in any other enviornment (e.g. EWS). We would like to stress that no matter what method you use to develop code for CS 341, test all your final code on your VM. The autograding environment is similar to your VM. Thus even though your code "works" on your machine, it may not work on the VMs and thus for the autograder.
+In this course, we use Virtual Machines (VMs) for all our development. We will not support development in any other environment (e.g. EWS). We would like to stress that no matter what method you use to develop code for CS 341, test all your final code on your VM. The autograding environment is similar to your VM. Thus even though your code "works" on your machine, it may not work on the VMs and thus for the autograder.
 
 For all registered students in the course, you will receive a VM in the CS Department’s VM Farm provisioned by EngrIT. When your VM is provisioned you should receive an email about your VM. If you registered late, please email the CS 341 Admin (you can find the email on our [staff page]({% link _pages/staff.html %})).
 
 Once you have received your VM, you can connect to your VM via SSH. 
-If you are not on the campus netowkr you will need to install and use the campus VPN.
+If you are not on the campus network you will need to install and use the campus VPN.
 
 The VM number will be included in the email you received.
 
@@ -24,7 +24,7 @@ On Windows, you can use an SSH client like [PuTTY](https://www.putty.org/).
 
 Note that if you are not connected to on-campus internet, you will need to use a Virtual Private Network (VPN) to connect to your VM. Instructions on downloading and using the UIUC VPN can be found [here](https://answers.uillinois.edu/illinois/98773). An alternative to using the UIUC VPN is to SSH twice. You can first SSH into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
 
-### Enabling password-less authentication with you VM
+### Enabling password-less authentication with your VM
 
 If you have generated an SSH key on your local machine (see [Using SSH keys](#using-ssh-keys) below), you can export your public key to your VM using the following command:
 ```console
@@ -37,7 +37,7 @@ There are two ways that we recommend for authenticating with GitHub
 
 ### Using SSH keys
 
-GitHub provides an easy way to add SSH keys to your account. GitHub's documentation can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux). This method has the added benefit that you can reuse the same SSH key for passwordless authentication to your CS341 VM.
+GitHub provides an easy way to add SSH keys to your account. GitHub's documentation can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux). This method has the added benefit that you can reuse the same SSH key for password-less authentication to your CS341 VM.
 
 In summary:
 
@@ -103,7 +103,7 @@ sudo apt-get install -y libc6-dbg
 
 ## Installing Other Stuff
 
-This is your VM! You can sudo and install whatever you want on it (given that it is school appropriate and [VM Farm policies](https://answers.uillinois.edu/illinois.engineering/page.php?id=104597)
+This is your VM! You can `sudo` and install whatever you want on it (given that it is school appropriate and compliant with [VM Farm policies](https://answers.uillinois.edu/illinois.engineering/page.php?id=104597))
 
 You can install `vim` or `emacs`. If you've ever wanted to become terminal-savvy, this is definitely the course to do it!
 
@@ -120,15 +120,15 @@ If you can't connect -
 
 1. Not on the campus network? You will need to use the University VPN, [Cisco AnyConnect](https://answers.uillinois.edu/illinois/page.php?id=47507)
 
-2. Check the status of your VM on the [vsphere console](https://vc.cs.illinois.edu/) and start/restart it if necessary. The VMs are shutdown daily at 5am, or perhaps you created a fork-bomb while working on the Shell MP. Additional Power on/reset instructions are at this IT page](https://answers.uillinois.edu/illinois.engineering/page.php?id=108475)
+2. Check the status of your VM on the [VSphere console](https://vc.cs.illinois.edu/) and start/restart it if necessary. The VMs are shutdown daily at 5am, or perhaps you created a fork-bomb while working on the Shell MP. Additional Power on/reset instructions are at [this IT page](https://answers.uillinois.edu/illinois.engineering/page.php?id=108475)
 
-3. Check [Engrit Annoucements](https://status.engineering.illinois.edu/announcements.asp) and slow loading [Status Page](https://status.engineering.illinois.edu/) and the class forum
+3. Check [EngrIT Annoucements](https://status.engineering.illinois.edu/announcements.asp) and slow loading [Status Page](https://status.engineering.illinois.edu/) and the class forum
 
-4. Contact IT by emailling [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu). Include all relevant details (your VM hostname and your netid, and description of what you've tried.)
+4. Contact IT by emailing [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu). Include all relevant details (your VM hostname and your netid, and description of what you've tried.)
 
 
 ## Provisioning a local VM using Vagrant
 
-If you are taking the course remotely and have slow internet when connected to the Campus VPN, you can set up a VM locally (on your own computer) using Vagrant. [This page]({% link _tutorials/development_vagrant.md %}) has instructions on how to do that.
+If you are taking the course remotely and have a slow internet connection when using the Campus VPN, you can set up a VM locally (on your own computer) using Vagrant. [This page]({% link _tutorials/development_vagrant.md %}) has instructions on how to do that.
 
-**Note: Your EngrIT-provisioned VM is still the authoritive place for final testing. Your local Vagrant VM is just a way to help remote students with development.**
+**Note: Your EngrIT-provisioned VM is still the authoritative place for final testing. Your local Vagrant VM is just a way to help remote students with development.**
