@@ -27,7 +27,9 @@ Note that if you are not connected to on-campus internet, you will need to use a
 ### Enabling password-less authentication with you VM
 
 If you have generated an SSH key on your local machine (see [Using SSH keys](#using-ssh-keys) below), you can export your public key to your VM using the following command:
-ssh-copy-id <netid>@<vm hostname>
+```console
+$ ssh-copy-id <NETID>@{{site.data.constants.semester }}-{{ site.data.constants.department_code }}{{ site.data.constants.course_number }}-<NUM>.cs.illinois.edu
+```
 
 ## Authenticating with GitHub
 
@@ -42,6 +44,8 @@ In summary:
 1. Create an SSH key on your local machine if you do not already have one. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command `ssh-keygen -t ed25519 -a 100 -f`.
 2. Copy the ***public*** key to your clipboard. This is usually stored at a path like `~/.ssh/*.pub`, where `~` denotes your home directory.
 3. Log into your GitHub account, navigate to Settings->SSH Keys, and follow the prompts to add a new SSH key by pasting in the ***public*** key on your clipboard.
+
+_Please keep in mind that, when using this method, you will need to use SSH protocol URLs (e.g. `git@github.com:<repo>`), not HTTPS protocol URLs (e.g. `https://github.com/<repo>`)_.
 
 ### Using the GH Auth tool
 
