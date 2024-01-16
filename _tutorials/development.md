@@ -73,9 +73,9 @@ fatal: Authentication failed for 'https://github.com/illinois-cs-coursework/{{si
 
 There are three ways that we recommend for authenticating with GitHub
 
-#### Option 1: Using SSH keys
+#### Option 1: Using [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-GitHub provides an easy way to add SSH keys to your account. GitHub's documentation can be found [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux). This method has the added benefit that you can reuse the same SSH key for password-less authentication to your CS341 VM.
+GitHub provides an easy way to add SSH keys to your account. This method has the added benefit that you can reuse the same SSH key for password-less authentication to your CS341 VM.
 
 In summary:
 
