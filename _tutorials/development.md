@@ -104,6 +104,24 @@ Once the token is generated (be sure to save it somewhere), you must authorize t
 
 Finally, you can run `git clone` again and use your newly generated token in place of your password. If you're using VSCode, you may need to log out of Github in VSCode (Using **Accounts** button at bottom left) and login again.
 
+### Fetching from `_release`
+
+Change your directory into your repo folder:
+
+```console
+cd {{site.data.constants.semester}}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_NETID
+```
+
+You've probably noticed the repository is empty! In order to access the assignments, complete the following steps. This adds the `_release` repository as an extra remote, and this step must be completed every time you want to initialize your repository on a new machine.
+
+```console
+git remote add release https://github.com/illinois-cs-coursework/{{site.data.constants.semester }}_{{ site.data.constants.department_code }}{{site.data.constants.course_number}}_.release.git
+git pull release main --allow-unrelated-histories --no-rebase
+git push origin main
+```
+
+Whenever you start an assignment, you will need to run `git pull release main` to retrieve the starter code for the assignment.
+
 ## Install compiler and CS341 tools
 
 _Your VM should already be provisioned with the required tools. This section is for reference in case you need to reinstall specific tools, e.g. in the case where your VM must be reset_
