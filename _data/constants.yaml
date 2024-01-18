@@ -20,8 +20,8 @@ courses_schedule_link: "https://courses.illinois.edu/schedule/2024/spring/CS/341
 
 # fa21-cs241-grd-01
 # fa21-cs241-grd-13
-grade_viewer_link: "" # https://grd-cs341-01.cs.illinois.edu/new-grade-viewer"
-broadway_on_demand_link: "" # https://grd-cs341-01.cs.illinois.edu/on-demand/"
+grade_viewer_link: "https://grd-cs341-01.cs.illinois.edu/new-grade-viewer" # https://grd-cs341-01.cs.illinois.edu/new-grade-viewer"
+broadway_on_demand_link: "https://grd-cs341-01.cs.illinois.edu/on-demand/" # https://grd-cs341-01.cs.illinois.edu/on-demand/"
 malloc_contest_link: "" # https://grd-cs341-01.cs.illinois.edu/malloc/"
 forum_link: "https://edstem.org/us/courses/52101/discussion/"
 
