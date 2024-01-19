@@ -1,68 +1,99 @@
 ---
+
 layout: doc
+
 title: Getting Caught Up
+
 ---
+
+  
 
 ## Quick Links
 
-* Piazza: [https://piazza.com](https://piazza.com)
-* Linux in Browser: [https://cs-education.github.io/sys/#playground](https://cs-education.github.io/sys/#playground)
-* Coursebook: [https://github.com/illinois-cs241/coursebook/wiki](https://github.com/illinois-cs241/coursebook/wiki)
-* Class Transcribe/Lecture Recordings: [https://classtranscribe.ncsa.illinois.edu](https://classtranscribe.ncsa.illinois.edu)
-* Shared Github: [https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release](https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release)
-* CBTF Quiz and Test Signup: [https://edu.cs.illinois.edu/testcenter/](https://edu.cs.illinois.edu/testcenter/)
+  
 
-Previous semester lecture videos are on [https://echo360.org](https://echo360.org) and [https://classtranscribe.ncsa.illinois.edu](https://classtranscribe.ncsa.illinois.edu) 
+* Syllabus: [https://cs341.cs.illinois.edu/syllabus.html](https://cs341.cs.illinois.edu/syllabus.html)
+
+* EdStem: [https://edstem.org/](https://edstem.org/)
+
+* Mini-Course: [https://cs-education.github.io/sys/#/lessons](https://cs-education.github.io/sys/#/lessons)
+
+* Coursebook: [https://cs341.cs.illinois.edu/coursebook/index.html](https://github.com/illinois-cs241/coursebook/wiki)
+
+* Class Transcribe (Lecture Recordings): [https://classtranscribe.illinois.edu/](https://classtranscribe.illinois.edu/)
+
+* Development Guide: [https://cs341.cs.illinois.edu/tutorials/development](https://cs341.cs.illinois.edu/tutorials/development)
+
+* PrairieLearn: [https://us.prairielearn.com/](https://us.prairielearn.com/)
+
+  
 
 ## Join the Forum!
 
-We use Ed as the official staff-supported Q&A forum and is the way that we communicate announcements to the rest of the class. It should have deadlines, which you can also find on our course web page (here) under the Labs and MP tab. You can register with your illinois email and pick the classes you are apart of. Search for CS341 and also the advising piazza for all things CS.
+  
 
-To get a sense of going on and where we are in the course, please read **all** the posts by staff.
+We use Ed as the official staff-supported Q&A forum and is the way that we communicate announcements to the rest of the class (e.g., assignment releases, changes to the office hour schedule). If you can't access our forum, ask a member of course staff for the Ed join link.
+
+  
+
+To get a sense of what's going on and where we are in the course, please read **all** the posts by staff.
+
+  
+
+## Read the Syllabus
+
+  
+
+The syllabus is an important read; we find that the answers to many student questions are in the syllabus. Please read the [syllabus](https://cs341.cs.illinois.edu/syllabus.html) thoroughly!
+
+  
 
 ## Assignments
 
-* Overdue assignment's deadlines will not be extended. **Though, It is in your best interest to read through the assignments that you missed in order to understand them (some of them will build of each other)**
-* Email cs341admin@cs.illinois.edu and say that you have added late (give the date you added if you can remember it).
-* You will need git access as well. You can create your repository at [the repository creator](https://edu.cs.illinois.edu/create-ghe-repo/{{site.data.constants.department_code}}{{site.data.constants.course_number}}-{{site.semester}}/) Your repo should be available at
+  
 
-`https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/NETID`.
+* You can see a list of assignments under the "Assignments" tab. Assignment deadlines are stated on the linked assignment pages.
 
-You can read the [Development Guide]({% link _tutorials/development.md %}) to get familiar with the VM, `ssh`, `git`, and any other tools you will need to be successful in the course.
-* Ideally, we want (and most cases) require you to work on your assignment on your VM. Instructions on how to log in are on the Know Your Tools page. If you can't get your VM in time for an assignment to be do, you can do work on EWS -- just complete the steps below.
-* The only non-programming assignment in the first few weeks is [Homework 0](https://github.com/angrave/SystemProgramming/wiki/HW0) if the assignment's deadline has not passed, submit the form on the know your tools page as soon as possible!
-* We will not extend deadlines for programming assignments. Here are the steps to be able to start working on your assignments that are not past due. To check if an assignment's deadline has passed, check piazza or the lab and MP page. **If the Assignment has not been deployed to your git (you don't see a folder), complete the following steps**
+* Email cs341admin@cs.illinois.edu and say that you have added late (please include the date you added the classes).
 
-Go to [https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release](https://github-dev.cs.illinois.edu/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release) and piazza and see what assignments are deployed and are not yet due.
+If you joining the class after 10 days, then start on the current lab and MP. There will be an opportunity to address missing grades towards the end of the semester. 
 
-Here are the terminal steps to update. Make sure you are in your git repository in the terminal.
-```bash
-git clone https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/${NETID}
-cd ${NETID}
-git remote add release https://github.com/???/{{ site.data.constants.department_code }}{{site.data.constants.course_number}}-{{site.semester }}/_release
-git pull release master
-git push origin master
-cd ${ASSIGNMENT}
-```
+  
 
-Then to submit your work.
+You will need to set up/get familiar with the tools necessary to be successful in this course, such as the VM, `ssh`, and `git`. Read the [Development Guide](https://cs341.cs.illinois.edu/tutorials/development) to do so.
 
-```bash
-# Do work on the assignment
-$ git commit -a -m "my_submission"
-$ git push origin master
-```
+  
+
+The only non-programming assignment in the first few weeks is Homework 0, which is Professor Angrave's introductory mini-course. You will submit your answers for this assignment in the `HW0.md` file in the Luscious Locks lab. See below for the mini-course and "Linux-In-TheBrowser" virtual machine:
+
+  
+
+[https://cs-education.github.io/sys/#/lessons](https://cs-education.github.io/sys/#/lessons
+
+  
+
+You can find the questions for Homework 0 in the lecture handout repository corresponding to the current semester on [https://github.com/angrave](https://github.com/angrave).
+
+  
 
 ## Catching up on Material
 
-Make sure you visit the course [Wiki Book](https://github.com/angrave/SystemProgramming/wiki) and read over the chapters relating to our [lecture schedule]({% link _pages/schedule.html %}#currentWeek) from when you joined.
+  
 
-If you are looking for the lecture handouts, they are in the _shared folder above. Feel free to ask about any material you don't understand on our forum or Lab sections. There is a lot to go through in this course, so falling behind is not ideal.
+See the recorded lectures you missed on [ClassTranscribe](https://classtranscribe.illinois.edu/). You can also review content you have missed by reading the [coursebook](https://github.com/illinois-cs241/coursebook/wiki). You can find the lecture handouts in the lecture handout repository corresponding to the current semester on [https://github.com/angrave](https://github.com/angrave). Ask about material you don't understand on the forum, in your lab section, or in office hours!
+
+  
 
 ## Labs
 
-Go to your assigned lab section and tell the TA in charge that you added late, we will manually give you attendance until we can update the roster. Remember go to your registered lab section.
+  
+
+Go to the lab section that you registered for and tell the TA that you added late. We will manually give you attendance until we can update the roster. 
+
+  
 
 ## Quizzes
 
-We won't have quizzes for the first few weeks but if and when the time comes, go to the quiz and test signup in order to take register to take computerized quizzes at the testing facility in the basement of Grainger.
+  
+
+Note that while the PrairieLearn quizzes are due towards the end of the semester, we encourage spacing them out. See the "Quizzes" page and PrairieLearn for more information.
