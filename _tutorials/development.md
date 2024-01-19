@@ -75,12 +75,8 @@ There are three ways that we recommend for authenticating with GitHub
 
 #### Option 1: Using [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-GitHub provides an easy way to add SSH keys to your account. This method has the added benefit that you can reuse the same SSH key for password-less authentication to your CS341 VM.
-
-In summary:
-
-1. Create an SSH key on your local machine if you do not already have one. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command `ssh-keygen -t ed25519 -a 100`. This command generates a private and public key for authentication. It will prompt you to enter a name for the file storing your private key, and will generate a .pub file for your public key.
-2. Copy the ***public*** key to your clipboard. This is usually stored at a path like `~/.ssh/*.pub`, where `~` denotes your home directory.
+1. Create an SSH key on your VM. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command `ssh-keygen -t ed25519 -a 100`. This command generates a private and public key in the directory `~/.ssh`, where `~` denotes your home directory. It will prompt you to enter a name for the file storing your private key, and will generate a .pub file for your public key. It's not necessary to enter a password for the key.
+2. Copy the ***public*** key to your clipboard. This is usually stored at a path like `~/.ssh/*.pub`, where `~` denotes your home directory. You can print out the public key to the terminal with the `cat` command.
 3. Log into your GitHub account, navigate to Settings->SSH Keys, and follow the prompts to add a new SSH key by pasting in the ***public*** key on your clipboard.
 
 _Please keep in mind that, when using this method, you will need to use SSH protocol URLs (e.g. `git@github.com:<repo>`), not HTTPS protocol URLs (e.g. `https://github.com/<repo>`)_.
@@ -96,7 +92,7 @@ In summary:
 
 #### Option 3: Using a Personal Access Token
 
-You can think of a personal access token as a  password with limited privileges and an expiration date. To create a token, go to [Github settings](https://github.com/settings/tokens), and click **Generate new token (classic)**.
+You can think of a personal access token as a password with limited privileges and an expiration date. To create a token, go to [Github settings](https://github.com/settings/tokens), and click **Generate new token (classic)**.
 
 We recommend only giving your new token **repo** scope, as that is all you need to push and pull from your repo.
 
