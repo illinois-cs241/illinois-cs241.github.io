@@ -54,9 +54,9 @@ The syllabus is an important read; we find that the answers to many student ques
 
 * You can see a list of assignments under the "Assignments" tab. Assignment deadlines are stated on the linked assignment pages.
 
-* We strongly encourage that you complete assignments which were due before you added the class, as the course content builds off itself.
-
 * Email cs341admin@cs.illinois.edu and say that you have added late (please include the date you added the classes).
+
+If you joining the class after 10 days, then start on the current lab and MP. There will be an opportunity to address missing grades towards the end of the semester. 
 
   
 
