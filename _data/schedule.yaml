@@ -20,13 +20,13 @@ classes:
     resources: ""
     color: "#808080"
   - title: "Welcome to System Programming"
-    summary: "1. HW0 using my Linux-In-The-Browser minicourse (Zoom link will be posted on Ed)"
+    summary: "1. HW0 using my <a href = 'https://cs-education.github.io/sys/#/lessons'>Linux-In-The-Browser minicourse</a>"
     review_chapter: 3
     resources: "See <a href = '{{ site.data.constants.lecture_handouts }}/blob/main/Welcome.md'>Welcome</a>"
     color: "#F44336"
     number: 1
   - title: "How to crash in C"
-    summary: "2. Dive into C programming (Zoom link will be posted on Ed)"
+    summary: "2. Dive into C programming"
     review_chapter: 3
     resources: "Code and handouts are <a href='{{ site.data.constants.lecture_handouts }}'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#F44336"
