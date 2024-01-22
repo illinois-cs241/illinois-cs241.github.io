@@ -31,10 +31,10 @@ classes:
     resources: "Code and handouts are <a href='{{ site.data.constants.lecture_handouts }}'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#F44336"
     number: 2
-  - title: "C Crash Course 2"
+  - title: "C Crash Course 2 (Virtual only; no class)"
     summary: "3. man,asprintf,free,assert"
     review_chapter: 3
-    resources: "See Lecture 3 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
+    resources: "See Lecture 3 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a> or <a href = 'https://drive.google.com/drive/folders/1baLvQNhhTBv8Z8xNQnCPq6pnp7c6-1Ek?usp=sharing'>here</a>"
     color: "#F44336"
     number: 3
   - title: "A day at the C side: C Crash Course 3"
