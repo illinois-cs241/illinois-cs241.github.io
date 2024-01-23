@@ -66,9 +66,8 @@ You will need to set up/get familiar with the tools necessary to be successful i
 
 The only non-programming assignment in the first few weeks is Homework 0, which is Professor Angrave's introductory mini-course. You will submit your answers for this assignment in the `HW0.md` file in the Luscious Locks lab. See below for the mini-course and "Linux-In-TheBrowser" virtual machine:
 
-  
-
-[https://cs-education.github.io/sys/#/lessons](https://cs-education.github.io/sys/#/lessons
+* [Mini-courses](https://cs-education.github.io/sys/#/lessons)
+* [Virtual Machine](https://cs-education.github.io/sys/#VM)
 
   
 
