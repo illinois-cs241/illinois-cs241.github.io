@@ -188,7 +188,12 @@ If you can't connect -
 
 3. Check [EngrIT Annoucements](https://status.engineering.illinois.edu/announcements.asp) and slow loading [Status Page](https://status.engineering.illinois.edu/) and the class forum
 
-4. Contact IT by emailing [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu). Include all relevant details (your VM hostname and your netid, and description of what you've tried.)
+
+## Still have VM issues?
+
+If you are sure that you follow the setup guidance correctly and you are on either the Campus VPN or the IllinoisNet WiFi but you still have VM issues (e.g. cannot access vc.cs.illinois.edu, cannot ssh into VM), then the fastest resolution will come from directly contacting EngrIT with your issue using their [form](https://go.illinois.edu/ewshelp). In the form, under the “Which lab(s) or remote resource(s) is your request about?”, you can type "CS VM Farm".
+
+If you are not hearing back for days and the issue is urgent, contact IT by emailing one of the [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu), [ews@illinois.edu](mail:ews@illinois.edu), and [engrit-help@illinois.edu](mail:engrit-help@illinois.edu). Include as many details as possible (Course number, your VM hostname, time of error, type of error, and description of what you've tried.)
 
 
 ## Provisioning a local VM using Vagrant (optional)
