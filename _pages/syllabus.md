@@ -50,7 +50,7 @@ The following is subject to minor changes:
 
 ```
 Final Exam : 20 - 23% (see notes)
-Quizzes/CBTF: 15%
+Quizzes: 15%
 
 MP Programming Assignments : 45%
 Lab Programming Assignments: 17%
