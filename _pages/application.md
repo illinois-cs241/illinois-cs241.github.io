@@ -15,7 +15,7 @@ For now, please pick one secondary role, and up to 2 primary roles that sound mo
 
 ### Primary
 - Assignment Development
-- Honors (CS 296-41)
+- Honors (CS 199-341)
 - Infrastructure
 
 ### Secondary
@@ -60,7 +60,7 @@ In lab section, you will be helping run lab activities, helping students out wit
 
 ## Honors
 
-If you have a deep passion for systems and want to instill that passion in the course's one-percent, then this is the position for you. You get to mentor highly talented and passionate students in a semester-long project of their choosing. Note: It is not required for you to have taken CS 341 Honors (CS 296-41) to work on Honors staff.
+If you have a deep passion for systems and want to instill that passion in the course's one-percent, then this is the position for you. You get to mentor highly talented and passionate students in a semester-long project of their choosing. Note: It is not required for you to have taken CS 341 Honors (CS 199-341) to work on Honors staff.
 
 ### Expected Time Obligations
 
