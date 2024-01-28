@@ -5,7 +5,7 @@ title: Peer Tutoring
 
 ## Getting Help
 
-We hold peer tutoring sessions via Zoom. You can join by adding yourself onto the [Queue](https://queue.illinois.edu/q/queue/907) (the schedule can be found below). More detailed instructions are on our [Queue](https://queue.illinois.edu/q/queue/907) page.
+We hold peer tutoring sessions either in-person or via Zoom. You can join by adding yourself onto the [Queue](https://queue.illinois.edu/q/queue/907) (the schedule can be found below). More detailed instructions are on our [Queue](https://queue.illinois.edu/q/queue/907) page.
 
 Please note that this is not CS 225, so we will not do your assignments. This is one of the last classes you will take before being thrown into 400-level courses, where the assignments are much harder, help is much more limited, and hand holding is negative.
 
