@@ -73,7 +73,7 @@ A lot of questions can be answered simply by looking at the MP spec, pinned erra
 
 #### Google Is Your Friend
 
-Most questions can simply be answered by searching Piazza, or Googling your question. The chances are that someone has had your exact problem, and someone has answered it (especially near a due date when most people have already finished). Even if you don't find your exact answer, the questions you find can be close enough to what you're looking for. Here are some tips on Googling: [How to be a Google Power User](http://imgur.com/gallery/rNlQJuT) and [How to get more out of Google](http://imgur.com/gallery/hkmIT).
+Most questions can simply be answered by searching Edstem, or Googling your question. The chances are that someone has had your exact problem, and someone has answered it (especially near a due date when most people have already finished). Even if you don't find your exact answer, the questions you find can be close enough to what you're looking for. Here are some tips on Googling: [How to be a Google Power User](http://imgur.com/gallery/rNlQJuT) and [How to get more out of Google](http://imgur.com/gallery/hkmIT).
 
 #### I Found Nothing. What Now?
 
