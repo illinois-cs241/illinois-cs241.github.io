@@ -198,11 +198,13 @@ For GET, binary data should be written to the `[local]` file specified when the 
 
 Your client is allowed to use blocking I/O, since clients don't really care about scaling. However, there are a few important things to keep in mind:
 
-1) Parse the response carefully. When you're reading, you may accidentally read into the application binary data without realizing it (since you don't have fixed size fields in the responses).
+1) Use the provided argument checkers. In the starter files, we provide you with two functions called `check_args` and `parse_args`, used to validate and parse arguments, respectively. If you choose to write your own argument checkers, make sure they behave exactly the same as the ones provided — no more or less strict.
 
-2) `write(fd, buffer, n)` may not always write n bytes for various reasons. Buffers may become full, signals may arrive, the Skynet revolution might begin. None of which are excuses for not sending the correct amount of data to the server. Good practice is to wrap your read/write calls in a loop that runs until the specified number of bytes are read, the connection is closed, or an error (with the exception of EINTR) occurs.
+2) Parse the response carefully. When you're reading, you may accidentally read into the application binary data without realizing it (since you don't have fixed size fields in the responses).
 
-3) Your client needs to be able to handle large files (more than physical RAM) and should do so efficiently.
+3) `write(fd, buffer, n)` may not always write n bytes for various reasons. Buffers may become full, signals may arrive, the Skynet revolution might begin. None of which are excuses for not sending the correct amount of data to the server. Good practice is to wrap your read/write calls in a loop that runs until the specified number of bytes are read, the connection is closed, or an error (with the exception of EINTR) occurs.
+
+4) Your client needs to be able to handle large files (more than physical RAM) and should do so efficiently.
 
 ### Error Handling
 
@@ -303,9 +305,21 @@ Server - By the time you start your server, you will (hopefully) have a working 
 
 Alternatively, if higher level languages are more your thing, you could try writing a script in some other language (say, Python or Ruby). As long as you strictly adhere to the specified protocol, it should work fine (be careful about the width and byte ordering of types in other languages, though!). The catch is, you have to be sure your mock client/server actually works as expected, since you'll end up debugging programs in different languages at this point, which is never fun. On the bright side, this lets you practice multilingualism.
 
-We will also be providing a reference client and server. These print out helpful logging messages that you do not need to mirror in your code. These might also not be perfect, so please report things to us (they do pass our tests though).
+:bangbang: We will also be providing a reference client and server. These print out helpful logging messages to `stderr` that you do **not** need to mirror in your code. These might also not be perfect, so please report things to us (they do pass our tests though).
 
-To view only the STDOUT content of the reference client or server, we recommend using [redirection](https://www.man7.org/linux/man-pages/man1/bash.1.html#REDIRECTION).
+An instructive example of how to run the server-reference and client-reference with some example files:
+
+```bash
+$ ./server-reference 127.0.0.1:12345 # Runs a localhost server on port 12345
+$ ./client-reference 127.0.0.1:12345 PUT remote-image.png my-local-image.png # PUTs my-local-image.png onto the server as remote-image.png
+$ ./client-reference 127.0.0.1:12345 GET remote-image.png new-local-image.png # GETs remote-image.png from the server and downloads it as new-local-image.png
+
+```
+It is important to note that the client-reference and server-reference output some text to `stdout`, and some text to `stderr`. To view only the `stdout` content of the reference client or server, we recommend using [redirection](https://www.man7.org/linux/man-pages/man1/bash.1.html#REDIRECTION). For example, the command below will run server and redirect any error (`stderr`) messages to `/dev/null`, essentially discarding them. As a result, this command will only print `stdout` content. 
+
+```c
+./server 12345 2> /dev/null
+```
 
 ## Grading
 There are **three** parts for this assignment:
