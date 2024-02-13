@@ -70,7 +70,7 @@ labs:
           - par_reduce.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Critical Concurrency"
       releaseDate: "Week 6"
