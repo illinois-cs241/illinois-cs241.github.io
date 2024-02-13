@@ -65,7 +65,7 @@ labs:
       url: "teaching_threads"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-09-27 23:59
+          due_date: 2024-02-21 23:59
           graded_files:
           - par_reduce.c
       resources: true
