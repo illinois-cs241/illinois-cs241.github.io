@@ -51,6 +51,131 @@ This is a "correct" way to implement `free`. However, the obvious drawback with 
 
 Despite all of this, this is still a "working" implementation of `malloc`. So, the job of `malloc` is not really to allocate memory, but to keep track of the memory we've allocated so that we can reuse it. You will use methods that you've learned in class and practiced in the Mini Valgrind lab to do this.
 
+## Debugging Tips
+
+### Magic Tags
+Adding a magic tag is a great way to quickly diagnose issues you find when stepping through your code in GDB. if you add a "magic" tag to your metadata:
+
+```c
+struct metadata {
+    // metadata items
+    int magic;
+}
+```
+
+Then in every function that modifies your block, you can update magic to a unique value. For example, in `malloc`, you can set magic to `0x1111` if you're allocating new memory, or `0x2222` if you are assigning to an existing free block. In your `split` and `coalesce`, you can choose different magic values as well. Now, when debugging through GDB, if you notice a block is invalid, you can quickly determine what last changed it and narrow down your search. You can also get more creative with the magic tag if you want to, keeping track of any information you'd like.
+If you're worried about performance, you can wrap the magic tag in preprocessor definitions like this:
+
+```c
+#define MAGIC_DEBUG 0
+
+#define set_magic(block, x) 
+#if MAGIC_DEBUG
+#undef set_magic
+#define set_magic(block, x) do {block->magic = x;} while(0)
+#endif
+
+struct metadata {
+    // metadata items
+#if MAGIC_DEBUG
+    int magic;
+#endif
+}
+```
+
+Then, changing the define line to `#define MAGIC_DEBUG 1` will enable the magic tag, but otherwise it will be disabled
+
+### Heap Checker (REQUIRED FOR OH)
+New this semester, to aid in your debugging, we are asking you to write a heap checker. **To receive help at office hours, course staff will ask to see if anything in your heap checker is failing before debugging specific bugs.**
+
+The heap checker is a way to ensure consistency between the actual heap, and any of the internal data structures that you maintain. As such, the heap checker should check and maintain some set of invariants, suggestions are listed below. The invariants and design of your heap checker will depend on the specifics of your malloc implementation.
+
+Suggested invariants:
+* Heap Invariants:
+  * Confirm that header and footers store consistent data
+  * If coalescing is implemented, confirm that there are no two consecutive free blocks in the heap
+* List Invariants:
+  * Check that list pointers are consistent (if `A->next == B`, then `B->prev == A`)
+  * Check that all list elements are within heap bounds
+  * Confirm that number of free blocks match up with number of free blocks in the heap
+  * If using a free list, confirm that every block in the list is actually free
+  * If using a segregated list, confirm that all elements in the list are of appropriate size
+
+There are many other things you can check to confirm that your malloc implementation is staying consistent, but these are a good starting point and should help you catch the majority of bugs.
+
+You do not need to implement and check every invariant, but doing so will save significant time in avoiding heap corruption whenever you make a change to your malloc implementation. Course staff will ask to see your heap checker, and may suggest adding invariants if you are running into a bug and have not covered everything. The following section outlines an example heap checker to aid you in writing your own: 
+
+#### Example Heap Checker
+
+This heap checker will assume that you have store a list of every allocated block. First, near the top of your `alloc.c`, we define some preprocessor macros so that we can enable and disable heap checking:
+```c
+#define HEAP_CHECKER 1
+
+#define heap_check()
+#if HEAP_CHECKER
+#undef heap_check
+#define heap_check() do { if(!heap_checker(__LINE__)) exit(1); } while(0)
+#endif
+```
+
+When `HEAP_CHECKER` is defined to be 1, calling `heap_check()` will call a function `heap_checker` with the current line number, if the function returns 0, it will terminate early. For testcases that do a lot of allocations, this will be slow, so you can disable the `heap_check` by changing the line to `#define HEAP_CHECKER 0`; this will make any calls to `heap_check()` do nothing. 
+
+Now, we can define the `heap_checker` function:
+
+```c
+typedef struct metadata {
+  int free;
+  metadata_t* next;
+  // ... anything else you need to store 
+} metadata_t;
+
+static metadata_t* lst_head = NULL;
+static void* start_of_heap = NULL;
+
+int heap_checker(int lineno) {
+    void* top_of_heap = sbrk(0);
+    void* heap_curr = start_of_heap;
+
+    int num_free_blocks = 0;
+    while (heap_curr < top_of_heap) {
+        metadata_t* block = (metadata_t*) heap_curr;
+        if (block->free) num_free_blocks++;
+        heap_curr = get_next_mem(block);
+    }
+
+    metadata_t* list_curr = lst_head;
+    int num_free_nodes = 0;
+    while(list_curr) {
+        if(list_curr->free) num_free_nodes++;
+        list_curr = list_curr->next;
+    }
+
+    if (num_free_blocks != num_free_nodes) {
+        fprintf(stderr, "HEAP CHECK: number of free nodes in list does not match heap at alloc.c:%d\n", lineno);
+        return 0;
+    }
+
+    return 1;
+}
+```
+
+This example iterates from the start of the heap, which we must initialize elsewhere, until `sbrk(0)`, and at every step along the way, it counts the number of free blocks. This relies on the implementation of a `get_next_mem` function, which moves from the current metadata block the next one in physical memory. The implementation of `get_next_mem` will depend on how you structure your blocks in memory, consult the course book for examples! Then, the heap checker loops over our list of blocks, and counts how many nodes are marked free. If these numbers do not align, the `heap_checker` prints an error message with the line number, and returns 0, or false. 
+
+To initialize `start_of_heap`, we can call `sbrk(0)` at the first malloc call as such:
+```c
+void *malloc(size_t size) {
+    if (start_of_heap == NULL) start_of_heap = sbrk(0);
+    heap_check();
+
+    ...
+    heap_check();
+}
+```
+
+Now, you can place calls to heap_check at the beginning and end of every function you'd like to analyze, and this will ensure that invariants are held throughout your function calls. 
+
+To reiterate, **course staff will ask you to demonstrate your heap checker if you are asking for help in office hours!**
+
 ## Testing Your Code
 
 In order to run your solution on the testers, run `./mcontest` with the tester you want. You __must__ do this, or your code will be run with the glibc implementation!
@@ -100,7 +225,7 @@ Since you can implement your malloc in whatever way you want, you may end up wit
 * Separate the functionality of your program into smaller chunks of independent code. For example, if you find that you're frequently splitting a block of memory into two blocks, you probably want to write a split function instead of copy-pasting the splitting code every time you need to split.
 * Keep your code readable. This can be naming your variables appropriately or commenting your code well. This will really help you understand what your code is doing when you look back at them three days later!
 
-### Debugging
+### Debugging with GDB
 `./mcontest` runs an optimized version of your code, so you won't be able to debug with `gdb`. To solve this, we have provided another version called `./mreplace` which uses a version of your malloc compiled without optimization, so you can debug with `gdb`. Here's an example, running tester 2 with gdb:
 
 ```
