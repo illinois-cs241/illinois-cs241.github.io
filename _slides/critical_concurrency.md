@@ -31,14 +31,14 @@ Semamore sem;
 Stack s; // Thread Safe Stack
 void* transaction_listener(void* arg) {
     while(1) {
-        semm_wait(&sem); // decrements the semaphore
+        semm_wait(&sem); // decrements the semamore
         stack_push(&s, get_transaction());
     }
 }
 
 void* transaction_verifier(void* arg) {
     while(1) {
-    	semm_post(&sem); // increments the semaphore
+    	semm_post(&sem); // increments the semamore
         transaction = stack_pop(&s);
         verify(transaction);
     }
