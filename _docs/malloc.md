@@ -12,7 +12,7 @@ wikibook:
 
 ## Backstory
 
-Well, color me impressed! Your shell was so fancy that you actually received that pay raise! However, you *may* have gone too far with your shell. Your boss is now so impressed at your skills that they sent you to the $$n$$th Inter-Company Turbo Malloc Contest - even though you're just a newhire! But hey, a business trip doesn't sound that bad, right?
+Well, color me impressed! Your shell was so fancy that you actually received that pay raise! However, you *may* have gone too far with your shell. Your boss is now so impressed at your skills that they sent you to the $$n$$th Inter-Company Turbo Malloc Contest - even though you're just a new hire! But hey, a business trip doesn't sound that bad, right?
 
 Upon arriving at the competition venue, you realize that all your peers from CS 341 are in the contest! Apparently, all of them went too far with their shells as well, and ended up in the same scenario as you. Just as you were reminiscing about your time in CS 341, you received an email from your senpai in the company about the contest, and your face turns pale immediately.
 
@@ -49,7 +49,7 @@ void free(void *ptr) {
 
 This is a "correct" way to implement `free`. However, the obvious drawback with our implementation is that we can't reuse memory after we are done with it. Also, we have not checked for errors when we call `sbrk`, and we have not implemented `realloc` or `calloc`.
 
-Despite all of this, this is still a "working" implementation of `malloc`. So, the job of `malloc` is not really to allocate memory, but to keep track of the memory we've allocated so that we can reuse it. You will use methods that you've learned in class and practiced in the Mini Valgrind lab to do this.
+Despite all of this, this is still a "working" implementation of `malloc`. So, the job of `malloc` is not really to allocate memory, but to keep track of the memory we've allocated so that we can reuse it. You will use methods that you've learned in class and practiced in the `mini_memcheck` lab to do this.
 
 ## Debugging Tips
 
