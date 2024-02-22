@@ -163,8 +163,8 @@ Remember CS 124/225! Appending to the head of a linked list, other edge cases, e
 
 <vertical />
 
-* `PTHREAD_MUTEX_INITIALIZER` only works for static initialization
-* Use `pthread_mutex_init(&mtex, NULL)` in other cases
+* `PTHREAD_MUTEX_INITIALIZER` initializes a mutex with default properties
+* `pthread_mutex_init(&mtex, &attr)` allows specialized attributes
 * Think of all critical/edge cases to test your queue/semamore
 * Consider one thread that starts working really late
 * Semamore is not a real term!
