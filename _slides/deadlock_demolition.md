@@ -1,6 +1,6 @@
 ---
 layout: slide
-title: Deadlock Demolotion
+title: Deadlock Demolition
 ---
 
 ## Deadlock
