@@ -32,8 +32,8 @@ From wikipedia:
 ## Resource allocation graph
 
 We can model resource allocation by having resources and processes represented as vertices
-and use edges to show ownership of a resource. A cycle in the (undirected)
-resource allocation graph implies that we have deadlock.
+and use edges to show ownership of a resource. A cycle in the
+resource allocation graph implies that we have deadlock (assuming other Coffman Conditions hold).
 
 ## Example RAG
 
