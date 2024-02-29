@@ -87,7 +87,7 @@ Order the chopsticks _1..n_. For each philosopher have them pick up the lower nu
 
 <horizontal />
 
-## Clean/Dirty (Chandra/Misra)
+## Clean/Dirty (Chandy/Misra)
 
 <vertical />
 
