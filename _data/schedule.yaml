@@ -55,10 +55,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#E91E63"
     number: 6
-  - title: "No class - Labor day "
-    summary: "History of <a href = 'https://www.dol.gov/general/laborday/history/'>Labor day</a>"
-    resources: ""
-    color: "#808080"
   - title: "Signals for Process Control"
     summary: "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT"
     review_chapter: 4
@@ -161,6 +157,18 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#009688"
     number: 23
+  - title: "No class - Spring Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
+  - title: "No class - Spring Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
+  - title: "No class - Spring Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
   - title: "UDP/TCP"
     summary: "Robust error handling. EINTR. Intro to TCP,UDP,IP"
     review_chapter: 11
