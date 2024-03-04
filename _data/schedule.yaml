@@ -137,10 +137,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#03A9F4"
     number: 19
-  - title: "No lecture"
-    summary: "Extra Programming Time"
-    resources: ""
-    color: "#808080" 
   - title: "Dining Philosophers"
     summary: "The Dining Philosophers problem"
     review_chapter: 8
