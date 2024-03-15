@@ -186,15 +186,26 @@ We want you to get the most out your education, and cheating not only affects yo
 
 You may use AI and other code-assist tools - see AI statement above.
 
+LandAcknowledgementStatement
+
+
+## Land Acknowledgment Statement
+
+Please see our important Diversity Statement <a href="/statements#LandAcknowledgementStatement">here</a>.
+
+## Sexual Misconduct Policy and Reporting Statement
+
+Please see our important Diversity Statement <a href="/statements#SexualMisconductPolicyStatement">here</a>.
+
 ## Diversity Statement
 
-Please see our important Diversity Statement <a href="/statements">here</a>.
+Please see our important Diversity Statement <a href="/statements#InclusivityStatement">here</a>.
 
 ## Mental Health Statement
 
-Please see our important Mental Health Statement <a href="/statements">here</a>.
+Please see our important Mental Health Statement <a href="/statements#MentalHealthStatement">here</a>.
 
 ## CS Cares Statement
 
-Please see our important CS Cares Statement <a href="/statements">here</a>.
+Please see our important CS Cares Statement <a href="/statements#CSCaresStatement">here</a>.
 
