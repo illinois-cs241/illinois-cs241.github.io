@@ -75,7 +75,11 @@ Opportunities for a small amount of extra credit may be offered and will be anno
 Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being published.
 
 ### Regrades
-At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops. Please note that the score for each regrade will be capped at 90%.
+At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. If you have a perfect lab attendance grade after the drops, you will receive a bonus and have the option to regrade three weeks of assignments instead. Please note that the exact number of regrade weeks is subject to change, and we will announce the definitive regrade policy near the end of a semester.
+
+If you want to regrade a multi-week machine problem, you must regrade all parts of the assignment together. For example, if you were to regrade malloc, you must use two weeks to regrade both part 1 and part 2 at the same time.
+
+If you decide to regrade an assignments, the new score will be capped at 90%, and it will replace your previous score **only if** it is higher. This means that a regrade cannot lower your grades, only increase them.
 
 ### Lab Attendance
 
