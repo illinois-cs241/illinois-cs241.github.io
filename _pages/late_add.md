@@ -56,7 +56,7 @@ The syllabus is an important read; we find that the answers to many student ques
 
 * Email cs341admin@cs.illinois.edu and say that you have added late (please include the date you added the classes).
 
-If you joining the class after 10 days, then start on the current lab and MP. There will be an opportunity to address missing grades towards the end of the semester. 
+If you joining the class after 10 days, then start on the current lab and MP. There will be an opportunity ([regrades](https://cs341.cs.illinois.edu/syllabus.html#regrades)) to address missing grades towards the end of the semester. 
 
   
 
