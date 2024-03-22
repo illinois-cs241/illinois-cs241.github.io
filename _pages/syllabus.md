@@ -75,11 +75,15 @@ Opportunities for a small amount of extra credit may be offered and will be anno
 Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being published.
 
 ### Regrades
-At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. If you have a perfect lab attendance grade after the drops, you will receive a bonus and have the option to regrade three weeks of assignments instead. Please note that the exact number of regrade weeks is subject to change, and we will announce the definitive regrade policy near the end of a semester.
+At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a "perfect" (we define) attendance grade after the drops.
 
-If you want to regrade a multi-week machine problem, you must regrade all parts of the assignment together. For example, if you were to regrade malloc, you must use two weeks to regrade both part 1 and part 2 at the same time.
+When will this start? We will announce the regrade policy on [Ed](https://edstem.org/us/dashboard) later in the semester.
 
-If you decide to regrade an assignments, the new score will be capped at 90%, and it will replace your previous score **only if** it is higher. This means that a regrade cannot lower your grades, only increase them.
+How many assignments can be regraded? We will announce the regrade policy on [Ed](https://edstem.org/us/dashboard) later in the semester.
+
+Are there any exceptions or special conditions? We will announce the regrade policy on [Ed](https://edstem.org/us/dashboard) later in the semester.
+
+Please note that the score for each regrade will be capped at 90%. For the assignment's final grade, we will **automatically** use your higher score between the regrade score and the original score.
 
 ### Lab Attendance
 
