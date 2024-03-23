@@ -49,7 +49,7 @@ There are no shortcuts to mastery, but we can help you get there. We recommend t
 
 ## Forum Q-and-A: Search First. Don't Post.
 
-We're using [Ed](https://edstem.org/) for our Question and Answer forum - check your email for the invite link. Before posting please search the forun to see if someone has already asked your question. Some questions where you need to include your netid (e.g. regrade requests) should be private posts
+We're using [Ed](https://edstem.org/) for our Question and Answer forum - check your email for the invite link. Before posting please search the forum to see if someone has already asked your question. Some questions where you need to include your netid (e.g. regrade requests) should be private posts.
 
 #### Low-Effort Questions
 
