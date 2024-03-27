@@ -75,7 +75,15 @@ Opportunities for a small amount of extra credit may be offered and will be anno
 Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being published.
 
 ### Regrades
-At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a perfect attendance grade after the drops. Please note that the score for each regrade will be capped at 90%.
+At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a "perfect" (we define) attendance grade after the drops.
+
+When will this start? We will announce the regrade policy on [Ed](https://edstem.org/us/dashboard) later in the semester.
+
+How many assignments can be regraded? We will announce the regrade policy on [Ed](https://edstem.org/us/dashboard) later in the semester.
+
+Are there any exceptions or special conditions? We will announce the regrade policy on [Ed](https://edstem.org/us/dashboard) later in the semester.
+
+Please note that the score for each regrade will be capped at 90%. For the assignment's final grade, we will **automatically** use your higher score between the regrade score and the original score.
 
 ### Lab Attendance
 
