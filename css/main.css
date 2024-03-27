@@ -1,0 +1,795 @@
+:root {
+  --color-primary:hsl(0, 100%, 33%);
+  --color-secondary: black;
+  --color-text: hsl(0, 0%, 0%);
+  --color-translucent: hsla(0, 0%, 0%, 0.3);
+  --color-pale-white: hsla(240, 8%, 95%);
+  --color-navbar-text: white;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, Helvetica, Arial, sans-serif;
+    background-color: white;
+    font-size: large;
+    color: var(--color-text);
+    padding-bottom: 50px;
+    position: relative;
+    margin: 0 15% 0;
+}
+
+.sticky-top {
+  position: sticky;
+}
+
+.navbar {
+    background-color: var(--color-primary);
+    border-color: var(--color-secondary);
+    border: 0px;
+    border-top:none;
+    box-shadow:none;
+}
+
+.navbar-default .navbar-brand {
+    color: var(--color-navbar-text) !important;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: var(--color-navbar-text) !important;
+}
+
+.navbar-collapse {
+    border-top:0px !important;
+    box-shadow:none;
+}
+
+.navbar-brand:hover {
+    background: var(--color-primary);
+    color: var(--color-navbar-text);
+}
+
+.navbar-nav, .navbar-nav > ul {
+    margin: 0;
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p,li {
+        font-size: 16px;
+    }
+}
+
+ /* Popover */
+.popover {
+    background-color: black;
+    color:black;
+    display:block;
+}
+
+/* Popover Header */
+.popover-title {
+    background-color: black;
+    color: black;
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 0px;
+}
+
+.popover-title a {
+    color: white;
+    cursor: pointer;
+}
+
+/* Popover Body */
+.popover-content {
+    background-color: black;
+    padding: 0px;
+}
+
+.popover.top>.arrow:after {
+    border-top-color: black;
+}
+
+table {
+    @extend .table;
+    width: 100%;
+}
+
+td, th {
+    padding: 1%;
+}
+
+
+.anchor {
+    display: none;
+    padding-left: 5px;
+}
+
+.title-text:hover > .anchor {
+    display: inline;
+}
+
+.schedule-container {
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    align-items: stretch;
+    padding: 1rem;
+}
+
+@media (min-width: 550px) {
+    .schedule-container {
+        padding: 1rem 5rem;
+    }
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    height: calc(100% - 20px);
+    background-color: hsl(212deg 100% 90%);
+    border-radius: 5px;
+}
+
+.day h1 {
+    color: white;
+}
+
+.day-summary, .day-coursebook-reading, .day-resources{
+    padding: 0.5rem 2rem;
+}
+
+.day-summary {
+    padding-top: 1rem;
+}
+
+.day-title-text h3 {
+    margin: 0px;
+}
+
+.day-title {
+    padding: 1rem 1.6rem;
+    border-radius: 5px 5px 0 0;
+}
+
+.announcement-card + div .day-title {
+    border-radius: 0;
+}
+
+@media (min-width: 992px) {
+    .announcement-card .day-title {
+        border-radius: 5px;
+    } 
+}
+
+@media (min-width: 768px) {
+    .schedule-container {
+        padding: 0;
+    }
+    .announcement-card + div .day-title {
+        border-radius: 5px 5px 0 0;
+    }
+}
+
+ul.toc {
+    list-style: none;
+    padding-left: 1em;
+}
+
+h1, h2, h3 {
+    color: var(--color-secondary);
+}
+
+.day-title-h3 {
+    color: white;
+}
+
+img:not(.emoji) {
+    max-height: 80vh;
+    display: inline-block;
+    margin: auto;
+    max-width: 100%;
+}
+
+.img-paragraph {
+    display: grid;
+}
+
+/* Loader */
+
+.hidden {
+    display: none !important;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+    border-radius: 50%;
+}
+.loader {
+    color: white;
+    font-size: 11px;
+    text-indent: -99999em;
+    margin: 55px auto;
+    position: relative;
+    width: 10em;
+    height: 10em;
+    box-shadow: inset 0 0 0 1em;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.loader:before,
+.loader:after {
+    position: absolute;
+    content: '';
+}
+.loader:before {
+    width: 5.2em;
+    height: 10.2em;
+    background: #0dc5c1;
+    border-radius: 10.2em 0 0 10.2em;
+    top: -0.1em;
+    left: -0.1em;
+    -webkit-transform-origin: 5.2em 5.1em;
+    transform-origin: 5.2em 5.1em;
+    -webkit-animation: load2 2s infinite ease 1.5s;
+    animation: load2 2s infinite ease 1.5s;
+}
+.loader:after {
+    width: 5.2em;
+    height: 10.2em;
+    background: #0dc5c1;
+    border-radius: 0 10.2em 10.2em 0;
+    top: -0.1em;
+    left: 5.1em;
+    -webkit-transform-origin: 0px 5.1em;
+    transform-origin: 0px 5.1em;
+    -webkit-animation: load2 2s infinite ease;
+    animation: load2 2s infinite ease;
+}
+@-webkit-keyframes load2 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+@keyframes load2 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.anchor {
+    text-decoration: none;
+}
+
+.anchor:hover {
+    text-decoration: none;
+}
+
+.fancy-link {
+    text-decoration: none !important;
+    color: var(--color-primary);
+    display: inline-block;
+}
+
+.fancy-link:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 1px;
+    width: 0px;
+    background: transparent;
+    transition: width .3s ease, background-color .3s ease;
+}
+
+.fancy-link:hover:after {
+    width: 100%;
+    background: var(--color-emphasis);
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-toggle {
+    border-width: 0px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+
+.navbar-brand.small {
+    display:none;
+}
+
+@media (max-width: 767px) {
+    .navbar-brand.normal {
+        display:none;
+    }
+
+    .navbar-brand.small {
+        display:inline-block;
+    }
+}
+
+.speaker-wrapper {
+    float: right;
+}
+
+.speaker {
+    background-image: url('data:image/png;base64,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');
+    background-size: cover;
+    height:40px;
+    width:40px;
+    margin-top: 5px;
+}
+
+/***************** Code Copying ***************/
+
+pre {
+    color: var(--color-pale-white);
+    background-color: var(--color-text);
+    border: inherit;
+}
+
+code {
+    color: var(--color-pale-white);
+}
+
+.code-copy {
+    float: right;
+    right: 0px;
+    display: none;
+    background-color:var(--color-text);
+    padding: 5px 5px 5px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+pre code {
+    display: block;
+}
+
+pre:hover > * > .code-copy {
+    display: inline;
+}
+
+.code-copy-textarea {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+pre.highlight {
+    margin-bottom: -10px;
+    padding-bottom: 0px;
+}
+
+.highlighter-rouge {
+    background-color: #DFDFDF;
+    color: #151515;
+    border-radius: 5px;
+    padding-top: 4px;
+}
+
+.highlight {
+    background-color: #151515;
+    border: 0px;
+    color: #F2F2F4;
+}
+
+div.highlighter-rouge, figure.highlighter-rouge {
+    background-color: #151515;
+    color: #D7D7D7;
+    padding-bottom: 1.5em;
+    margin-bottom: 0.65em;
+}
+
+.fancy-link code {
+    color: #337ab7;
+}
+
+.fancy-link:hover code {
+    color: #23527c;
+}
+
+.fancy-link:hover:after code {
+    background-color: #337ab7;
+}
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    border-top: 0px;
+}
+
+.search-icon-div {
+    width: initial;
+    padding-left: 10px;
+    background-color: white;
+    height: 34px;
+    border-radius: 3px 0px 0px 3px;
+}
+.glyphicon-search {
+    font-size: 32px;
+    top: 0px;
+    color: #2C72AD;
+}
+
+.search {
+    border-radius: 0px 3px 3px 0px;
+    border: 0px;
+    outline:none;
+    box-shadow:none;
+}
+
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+.result-link {
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.result-div {
+    padding-bottom: 12px;
+}
+
+.highlight-result {
+    background-color: yellow;
+    border-radius: 3px;
+    color: black;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #DDD;
+    border-radius: 20px;
+}
+
+html.hacker, body.hacker, header.hacker, nav.hacker, :not(.card-staff) > * > div:not(.card-staff).hacker, table.hacker, pre.hacker, span.hacker, :not(.card-staff) >
+    a.hacker, p.hacker, h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker
+ {
+    color: white !important;
+    font-family: monospace !important;
+    background-color: black !important;
+ }
+
+h1.hacker, h2.hacker, h3.hacker, h4.hacker, h5.hacker, h6.hacker {
+    color: #20C20E !important;
+}
+ul.hacker {
+    list-style-type: square;
+}
+
+pre.hacker {
+    border-color: white;
+    border-radius: 0;
+}
+.toc.hacker {
+    border-left-width: 0;
+}
+.content .highlighter-rouge.hacker {
+    font-weight: bold;
+    background-color: black;
+}
+
+.pad.hacker {
+    padding: 0;
+}
+a.hacker {
+    color: #20C20E;
+}
+
+tbody tr:nth-child(odd).hacker {
+    background-color: inherit;
+}
+
+body.hacker .day, body.hacker .announcement-card {
+    background-color: #151515;
+}
+
+body.hacker .announcement {
+    color: white !important;
+}
+
+#tuxlink img.hacker {
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+}
+
+.apply-button {
+    border: none;
+    background-color: white;
+    padding: 10px 20px 10px 20px;
+    font-size: 36px;
+    border-radius: 5px;
+    box-shadow: 5px 5px gray;
+    margin: 10px auto 10px auto;
+    display: block;
+    transition: background-color 0.5s ease;
+}
+
+.apply-button:hover {
+    background-color: var(--color-primary);
+}
+
+/* The dropdown container */
+li.navbar-subitem {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+}
+
+.navbar-item, .navbar-subitem {
+    color: var(--color-navbar-text);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Add a background color to navbar links (and sublinks) on hover */
+li.navbar-item:hover, li.navbar-subitem:hover{
+    background-color: white;
+}
+
+li.navbar-item:hover > a, li.navbar-subitem:hover > a {
+    color: var(--color-primary) !important;
+}
+
+.subitem-container {
+    display: none;
+    position: absolute;
+    min-width: 8vw;
+    background-color: var(--color-primary);
+    box-shadow: 0px 8px 16px 0px var(--color-translucent);
+    z-index: 1;
+    width: 100%;
+}
+
+/* Makes the dropdown visible on items which have subitems */
+.navbar-item:hover .subitem-container {
+    display: block;
+}
+
+.staff {
+    width: 100%;
+}
+
+.flexbox-item div.staff-image {
+    width: 18vh;
+    height: 18vh;
+    overflow: hidden;
+    background-size: cover;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.flexbox-item:hover div.staff-image {
+    box-shadow:0 4px 12px 0 var(--color-translucent), 0 6px 20px 0 var(--color-translucent);
+}
+
+.staff-name {
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    font-weight: 100;
+    padding-top: 2vh;
+    color: var(--color-secondary-emphasis);
+}
+
+.heading {
+    text-align: center;
+}
+
+section.center {
+    text-align: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+section.flexbox {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.flexbox-item {
+    display: inline-block;
+    padding: 2vh;
+    margin: 2vh;
+}
+
+.centered {
+    text-align: center;
+}
+
+.card-body {
+    background-color: var(--color-pale-white);
+    padding: 2vw;
+    display: block;
+}
+
+.card-body.course-heading {
+    background-color: rgba(72, 105, 255, 0.945);
+}
+
+.card-body.card-body.course-heading h1 {
+    color: white;
+}
+
+.course-information, .course-description {
+    padding: 2rem 5%;
+    margin: 0 15%;
+}
+
+section.course-information section.flexbox {
+    justify-content: left;
+}
+
+section.course-information section.flexbox .flexbox-item {
+    margin: 0;
+    padding: 1rem;
+}
+
+h2 {
+    font-weight: 200;
+}
+
+img.logo {
+    width: 2vw;
+    height: 3vw;
+    margin: 2vh;
+}
+
+@media (max-width: 480px) {
+    .flexbox-item div.staff-image {
+        width: 18vh;
+        height: 18vh;
+    }
+    img.logo {
+        width: 10vw;
+        height: 8vh;
+    }
+    .staff-name {
+        font-size: 0.75em;
+    }
+}
+
+.infrastructure-links {
+    margin: auto;
+    text-align: center;
+    display: block;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.staff {
+    width: 100%;
+}
+
+.staff-container {
+    margin: 2vh;
+}
+
+.staff-container div.staff-image {
+    width: 24vh;
+    height: 24vh;
+    overflow: hidden;
+    background-size: cover;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.staff-container:hover div.staff-image {
+    box-shadow:0 4px 12px 0 var(--color-translucent), 0 6px 20px 0 var(--color-translucent);
+}
+
+.staff-name {
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 1vh;
+    color: var(--color-emphasis);
+}
+
+.heading {
+    text-align: center;
+}
+
+section.center {
+    text-align: center;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+@media only screen and (max-width: 900px) {
+    body {
+        margin: 0 5% 0;
+    }
+
+    .course-description, .course-information {
+        margin: 0 5%;
+    }
+}
+
+/* For phones */
+@media only screen and (max-width: 480px) {
+    body {
+        font-size: larger;
+        margin: 1rem;
+    }
+
+    .day-title {
+        width: 100%;
+    }
+
+    .staff-container div.staff-image {
+        width: 20vh;
+        height: 20vh;
+    }
+
+    .staff-name {
+        font-size: 1.25em;
+    }
+
+    section.course-information section.flexbox .flexbox-item {
+        margin: 0;
+    }
+}
+
+.latest-assignments {
+    margin: 4rem;
+}
+
+.latest-assignments .flexbox-item {
+    padding: 2rem;
+    border-radius: 2rem;
+    margin: 1rem 2rem;
+}
+
+.latest-mp {
+    text-align: center;
+    border: solid rgba(16, 213, 147, 0.85);
+}
+
+.latest-lab {
+    text-align: center;
+    border: solid rgba(255, 102, 42, 0.85);
+}

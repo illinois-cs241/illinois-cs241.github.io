@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Networking | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/charming_chatroom">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Networking</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="tcp">TCP</h2>
+
+<p><img src="https://user-images.githubusercontent.com/3259988/139184799-efe5eae4-b92c-439f-9143-ba8d3901e734.png" alt="image"></p>
+
+</section><section><h2 id="synack-dance">SYN/ACK Dance</h2>
+
+<p>In order to establish a TCP connection, one party must send a SYN packet to the other, receive a SYN-ACK packet back, and finally send an ACK packet.</p>
+
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Tcp_normal.png" alt="SYN SYN-ACK ACK"></p>
+
+</section><section><h2 id="tcp-packet-layout">TCP Packet Layout</h2>
+
+<p><img src="https://web.archive.org/web/20210520052048if_/https://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif" alt="Size of Packet"></p>
+
+</section><section><h2 id="tcp-vs-udp">TCP vs UDP</h2>
+
+<p>In this class, we focus on TCP. Where might UDP be used?</p>
+
+<p><img src="https://www.bestvpnserver.com/wp-content/uploads/2013/09/UDP_vs_TCP.jpg" alt="Drfferences"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="networking-functions">Networking Functions</h2>
+
+</section><section><h2 id="socket">Socket</h2>
+
+<p><code class="language-plaintext highlighter-rouge">socket</code> creates an endpoint for communication and returns a file descriptor that refers to that endpoint.</p>
+
+<p><img src="https://user-images.githubusercontent.com/3259988/139183617-24a3226d-9bae-42fa-a651-d9fd58030102.png" alt="image"></p>
+
+</section><section><h2 id="bind">Bind</h2>
+
+<p><code class="language-plaintext highlighter-rouge">bind</code> associates an abstract network socket created with <code class="language-plaintext highlighter-rouge">socket</code> to an actual networking interface/address.</p>
+
+<p><img src="https://user-images.githubusercontent.com/3259988/139183780-8ac6fec6-dd93-4c0a-8239-c08c287b5091.png" alt="image"></p>
+
+</section><section><h2 id="listen">Listen</h2>
+
+<p><code class="language-plaintext highlighter-rouge">listen</code> marks a socket as “passive”, or ready to accept incoming connections.</p>
+
+</section><section><h2 id="accept">Accept</h2>
+
+<p><code class="language-plaintext highlighter-rouge">accept</code> accepts an incoming connection on a socket that has been listening.</p>
+
+</section><section><h2 id="connect">Connect</h2>
+
+<p><code class="language-plaintext highlighter-rouge">connect</code> is used to connect a socket to a given address (which might have a socket listening for connections).</p>
+
+</section><section><h2 id="error-checking">Error checking</h2>
+
+<p>Make sure to check errors for <em>every</em> call, networking can fail at any point! All networking functions specify in their manpages what types of errors you might have to deal with.</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="a-few-gotchas">A few gotchas</h2>
+
+</section><section><h2 id="network-vs-host-byte-ordering">Network vs Host Byte Ordering</h2>
+
+<p><img src="https://web.archive.org/web/20191222042521im_/http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png" alt="Byte Ordering"></p>
+
+</section><section><h2 id="socket-options">Socket Options</h2>
+
+<p>Make sure to set socket options to reuse to enable effective debugging of the server - otherwise, the system won’t immediately reallow you to use a socket once it’s been closed by your program.</p>
+
+</section><section><h2 id="signal-handler-safety">Signal Handler Safety</h2>
+
+<p>Most server applications are interupted through a signal, but you shouldn’t do all of the cleanup in the signal handler because not every function is signal handler safe (think back to CS233 interrupts). This pattern avoids this issue:</p>
+
+</section><section><h2></h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int is_running = 1;
+int handler(){
+	is_running = 0;
+}
+int main(){
+	while(is_running){ /*...*/};
+
+	close(...);
+}
+</code></pre></div></div>
+
+</section><section><h2 id="style">Style</h2>
+
+<p>Try to modularize your functions so that everything is not in the main method. This is ideally because we <strong>need</strong> to tell the system that we are done using shared resources like sockets, and we need to determine when a socket goes “out of scope” – we don’t have RAII like in C++ so we have to determine that ourselves, and modularizing your code makes it easy to see when things are in/out of scope.</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="fun-facts">Fun facts</h2>
+
+</section><section><h2 id="latency">Latency</h2>
+
+<p><img src="http://i.imgur.com/k0t1e.png" alt="Latency numbers you should know"></p>
+
+</section><section><h2 id="dropped-packets">Dropped Packets</h2>
+
+<p><img src="https://web.archive.org/web/20191222042522if_/https://www.isa.org/uploadedImages/Content/Standards_and_Publications/ISA_Publications/InTech_Magazine/2014/Sep-Oct/SO-2014-System-Int-figure1.jpg" alt="Why packets get dropped"></p>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>
