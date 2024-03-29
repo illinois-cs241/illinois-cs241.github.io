@@ -221,6 +221,10 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
     color: "#FFC107"
     number: 31
+  - title: "No class"
+    summary: ""
+    resources: ""
+    color: "#808080"
   - title: "Scheduling and Scheduling Algorithms"
     summary: "Scheduling examples"
     review_chapter: 10
@@ -288,7 +292,7 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 40
-  - title: "Extra I (Containers, Security Case Studies)"
+  - title: "Guest Lecture (NCSA)"
     summary: ""
     resources: ""
     color: "#8080F0"
