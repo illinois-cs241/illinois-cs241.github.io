@@ -317,8 +317,8 @@ $ ./client-reference 127.0.0.1:12345 GET remote-image.png new-local-image.png # 
 ```
 It is important to note that the client-reference and server-reference output some text to `stdout`, and some text to `stderr`. To view only the `stdout` content of the reference client or server, we recommend using [redirection](https://www.man7.org/linux/man-pages/man1/bash.1.html#REDIRECTION). For example, the command below will run server and redirect any error (`stderr`) messages to `/dev/null`, essentially discarding them. As a result, this command will only print `stdout` content. 
 
-```c
-./server 12345 2> /dev/null
+```bash
+./server-reference 12345 2> /dev/null
 ```
 
 ## Grading
