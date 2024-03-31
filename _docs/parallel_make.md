@@ -124,7 +124,7 @@ The parser will return a graph containing 5 vertices, once each for rule 'a', 'b
 
 Those curious of the implementation can view the source in `parser.c` although this is not necessary.
 
-We have provided an implementation of a thread safe queue, a vector, a set, a dictionary, and a graph. This is the same queue from luscious locks and the same vector you've used in prior assignments. The set, graph, and dictionary are new data structures from the CS 341 provided library.
+We have provided an implementation of a vector, a set, a dictionary, a graph, and a thread-safe queue. This is the same queue from luscious locks and the same vector you've used in prior assignments. The set, graph, and dictionary are new data structures from the CS 341 provided library.
 You can view the header information in `includes/`.
 
 ## Graph Data Structure
