@@ -299,7 +299,7 @@ mps:
           - minixfs.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Nonstop Networking"
       releaseDate: "Week 12"
