@@ -83,8 +83,7 @@ Your input will be a file with one line for each password to recover. Each line 
 
 * Username (1-8 characters)
 * Password hash (13 characters)
-* Known part of password (plus periods representing unknown characters) (1-8 characters, contains 0-8 lowercase letters followed by 0-8 periods)
-  * A period in the password represents an unknown letter.
+* Known part of password plus periods representing unknown characters (**1-8** characters in total, contains 0-8 lowercase letters followed by 0-8 periods)
 
 These three fields are separated by a single space.
 Don't worry about duplicate usernames, duplicate password hashes, or duplicate prefixes.
@@ -96,10 +95,10 @@ Example input:
 
 ```
 donna xxC4UjY9eNri6 hello...
-eric xxqJ7cKzV3v4E zip.....
-francie xxGGPN89YLcGY cham....
-george xxq5aBqiB66j2 xz....
-helen xxhx0AsVpMTMU sysx....
+eric xxVnOA1dCz8Rg jw....
+francie xxQcyaFLsUcho dag....
+george xxw/GvgoPjHCM iene....
+helen xxZepoRNH59K. gm....
 inigo xxHUf9zUctXNA miss....
 ```
 
@@ -142,10 +141,10 @@ Example:
 ```
 $ cat password_file.txt
 donna xxC4UjY9eNri6 hello...
-eric xxqJ7cKzV3v4E zip.....
-francie xxGGPN89YLcGY cham....
-george xxq5aBqiB66j2 xz....
-helen xxhx0AsVpMTMU sysx....
+eric xxVnOA1dCz8Rg jw....
+francie xxQcyaFLsUcho dag....
+george xxw/GvgoPjHCM iene....
+helen xxZepoRNH59K. gm....
 inigo xxHUf9zUctXNA miss....
 ```
 
@@ -156,22 +155,22 @@ $ ./cracker1 [thread_pool_size] <  password_file.txt
 Example output:
 
 ```
-Thread 1: Start donna
-Thread 4: Start francie
-Thread 3: Start george
-Thread 1: Password for donna is helloaac (3 hashes in 0.00 seconds)
-Thread 1: Start helen
-Thread 2: Start eric
-Thread 2: Password for eric is zipaaazz (676 hashes in 0.00 seconds)
+Thread 2: Start donna
+Thread 3: Start eric
+Thread 1: Start francie
+Thread 2: Password for donna is helloaac (3 hashes in 0.00 seconds)
+Thread 2: Start helen
+Thread 4: Start george
+Thread 2: Password for helen is gmhabn (123072 hashes in 0.74 seconds)
 Thread 2: Start inigo
-Thread 1: Password for helen is sysxpert (266806 hashes in 1.05 seconds)
-Thread 2: Password for inigo is missudad (353552 hashes in 1.32 seconds)
-Thread 4: Password for francie not found (456976 hashes in 1.65 seconds)
-Thread 3: Password for george is xzzzzy (456975 hashes in 1.75 seconds)
+Thread 3: Password for eric is jwkypz (192400 hashes in 1.18 seconds)
+Thread 4: Password for george is ienexzwi (421729 hashes in 2.59 seconds)
+Thread 1: Password for francie not found (456976 hashes in 2.72 seconds)
+Thread 2: Password for inigo is missudad (353552 hashes in 2.13 seconds)
 5 passwords recovered, 1 failed.
-Total time: 1.74 seconds.
-Total CPU time: 5.77 seconds.
-CPU usage: 3.31x
+Total time: 2.89 seconds.
+Total CPU time: 9.36 seconds.
+CPU usage: 3.24x
 ```
 
 The times and order may vary slightly. The "CPU usage" value will depend on the number of cores in your VM. The above example is run on a machine with 4 cores. If your machine has 2 cores, the CPU usage should be between 1x and 2x.
