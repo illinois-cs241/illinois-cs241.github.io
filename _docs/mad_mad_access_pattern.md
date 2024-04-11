@@ -11,6 +11,9 @@ wikibook:
 ---
 
 ## Mapping Inventory
+
+A quick [Country Song Introduction](media/madmadaccess-country.mp3) and [Lyrics](media/madmadaccess-country.txt).
+
 You've landed an internship at **_Zing!_**, a search engine
 start-up.  Your first project is to develop a keyword advertisement
 inventory tool.
