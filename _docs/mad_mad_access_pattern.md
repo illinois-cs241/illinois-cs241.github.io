@@ -12,7 +12,7 @@ wikibook:
 
 ## Mapping Inventory
 
-A quick [Country Song Introduction](media/madmadaccess-country.mp3) and [Lyrics](media/madmadaccess-country.txt).
+Here's the [BlueGrass Song](media/madmadaccess-country.mp3) ([Description and Lyrics](media/madmadaccess-country.txt)) introduction to this assignment.
 
 You've landed an internship at **_Zing!_**, a search engine
 start-up.  Your first project is to develop a keyword advertisement
