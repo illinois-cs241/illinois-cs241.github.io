@@ -176,6 +176,8 @@ Now, you can place calls to heap_check at the beginning and end of every functio
 
 To reiterate, **course staff will ask you to demonstrate your heap checker if you are asking for help in office hours!**
 
+**!! Important Note**: In the above heap checker example, the `metadata` struct was implemented with its `next` pointer pointing to the next _physically adjacent_ block. This does NOT mean that you must implement your `metdata` struct or `next` pointer in this way - this was a simple example we created to demonstrate how you may use a heap checker. You are allowed (and encouraged) to design and implement a different implementation of the `metadata` struct to improve performance.
+
 ## Testing Your Code
 
 In order to run your solution on the testers, run `./mcontest` with the tester you want. You __must__ do this, or your code will be run with the glibc implementation!
