@@ -46,7 +46,7 @@ So why would we ever want to use edge triggered behavior? Well, consider what ha
 
 Edge triggered mode (together with the `EPOLLONESHOT` flag) guarantees that a single thread will handle all the data that arrived on that given socket, so (although with some additional code complexity) it's not possible that two threads accidentally 'steal' the file descriptor data from each other.
 
-The above overiew is also available as a [song](../media/epoll-edgelevel.mp3) ([lyrics](../media/epoll-edgelevel.txt)) introduction.
+The above overview is also available as a [song](../media/epoll-edgelevel.mp3) ([lyrics](../media/epoll-edgelevel.txt)) introduction.
 
 **Note**: You **must** use `epoll()` for this assignment. If you do not, you will get a 0 on all tests that use your server.
 
