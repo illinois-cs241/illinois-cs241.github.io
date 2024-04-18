@@ -1,3 +1,5 @@
+Malloc Blues By Angrave (with help from ChatGPT and Suno)
+
 Lyrics - 
 (Intro)
 My papa said stay away from unsafe C; 
@@ -35,9 +37,7 @@ So though my future will be more dignified
 C will live forever burning me inside
 for my passion remains unanswered
 I'm in love with C but will it ever love me?
-
-
-
+I'm in love with C but will it ever love me?
  
 (Instrumental)
 

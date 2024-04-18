@@ -28,6 +28,10 @@ Don't modify `mcontest.c`, `contest.h`, or `contest-alloc.so`. Those files creat
 
 Your `malloc` must allocate heap memory using `sbrk`. You may not use files, pipes, system shared memory, `mmap`, a chunk of pre-defined stack memory, other external memory libraries found on the Internet, or any of the various other external sources of memory that exist on modern operating systems. You can find more information in the [Memory Allocators](http://cs341.cs.illinois.edu/coursebook/Malloc) coursebook entry.
 
+## Malloc and C ; Chicago Blues Style
+
+Implementing a heap allocator is a challenging assignment that has been known to rewire students' brains. For inspiration, please listen to this [Chicago Blues song](../media/malloc-blues.mp3) ([lyrics and description](../media/malloc-blues.txt)).
+
 ## A Bad Example
 
 Memory allocation seems like a mystery, but in actuality, we are making a wrapper around the system call [`sbrk`](http://linux.die.net/man/2/sbrk). Here's a really simple implementation of `malloc`:
