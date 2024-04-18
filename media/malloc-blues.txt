@@ -16,7 +16,7 @@ Boundary tags for my calloc and free?
 Block coalescing and a placement strategy.
 I'm in love with C but will it ever love me?
 
-(verse)
+(Verse)
 Well, I'm just a coder, with C as my muse,
 In a heap of trouble, with placement blues.
 From syntax errors, to my bugs so deep,
@@ -28,16 +28,18 @@ Boundary tags for my calloc and free?
 Block coalescing and a placement strategy.
 I'm in love with C but will it ever love me?
 
-
-My friends they like abstraction
-And constructing an exception.
-But my fingers desire that raw connection
+(Verse)
+My friends they like abstraction.
+An exception gives me no satisfaction.
+Cause my fingers desire that raw connection
 to know and touch it all is just perfection.
 So though my future will be more dignified
-C will live forever burning me inside
-for my passion remains unanswered
+C will live forever burning me inside.
+For my passion remains unanswered
 I'm in love with C but will it ever love me?
+
 I'm in love with C but will it ever love me?
+
  
 (Instrumental)
 
