@@ -1,0 +1,97 @@
+Lyrics - 
+(Intro)
+My papa said stay away from unsafe C; 
+A coder like you needs security!
+My mama warned me of low-level types;
+You'll never be happy with compilation fights!
+But here I am coding close to the metal.
+My quickening heart will never settle.
+I'm in love with C but will it ever love me?
+
+(Chorus)
+So I'm singing the blues of malloc and C,
+Boundary tags for my calloc and free?
+Block coalescing and a placement strategy.
+I'm in love with C but will it ever love me?
+
+(verse)
+Well, I'm just a coder, with C as my muse,
+In a heap of trouble, with placement blues.
+From syntax errors, to my bugs so deep,
+Every line I write, I'm being bitten by the heap.
+
+(Chorus)
+So I'm singing the blues of malloc and C,
+Boundary tags for my calloc and free?
+Block coalescing and a placement strategy.
+I'm in love with C but will it ever love me?
+
+
+My friends they like abstraction
+And constructing an exception.
+But my fingers desire that raw connection
+to know and touch it all is just perfection.
+So though my future will be more dignified
+C will live forever burning me inside
+for my passion remains unanswered
+I'm in love with C but will it ever love me?
+
+
+
+ 
+(Instrumental)
+
+Suno prompt "Quick, fast, Chicago Blues with Brass. Clear Sound. Female singer."
+
+Lyrics 
+by Lawrence Angrave (4/18/2024), based on initial suggestions using ChatGPT3 prompt
+"write a first person song lyrics for an upbeat blues song about challenges, woes and satisfaction of writing and debugging a single-threaded high performance implementation of malloc in C. Some ideas that could be included: I got a whole heap of trouble. Boundary tags. Free lists.  Difficulties of Block Coalescing. When to block split. Failing unit tests. Free. Tests timing out. Loving C Programming. Hating C Programming. Asserts. Null Pointers. Pointer arithmetic. Sentinel values. Also Implementing Realloc and calloc. Late nights. Frustration. Learning"
+
+For comparison, the ChatGPT output is below-
+(Verse 1)
+Well, I'm just a coder, in a world of woes,
+Got a mountain of troubles, yeah, it surely shows.
+From the breakneck pace, to the bugs so deep,
+Every line I write, it's like dancing on a steep.
+
+(Chorus)
+I'm singing the blues of malloc in C,
+Boundary tags, and free lists, won't you set me free?
+Block coalescing, oh, what a fight,
+But when it all works out, it's a pure delight.
+
+(Verse 2)
+Late nights and frustration, they're my closest friends,
+But I keep on pushing, until the journey ends.
+Unit tests failing, timing out on me,
+But I won't give up, till my code's debris-free.
+
+(Chorus)
+I'm singing the blues of malloc in C,
+Asserts and null pointers, they're haunting me.
+Pointer arithmetic, it's a perilous ride,
+But when it all clicks, I've got nothing to hide.
+
+(Bridge)
+I love C programming, and I hate it too,
+But the satisfaction it brings, is oh so true.
+Implementing realloc, and calloc too,
+Oh, the highs and lows, they're nothing new.
+
+(Verse 3)
+Sentinel values, they guide my way,
+Through the maze of memory, where I often stray.
+Debugging each line, with a keen eye,
+Hoping for that moment, when it all will comply.
+
+(Chorus)
+I'm singing the blues of malloc in C,
+Through the darkness and the light, I will be.
+With every challenge faced, I learn and grow,
+In the world of coding, that's how we flow.
+
+(Outro)
+So here's to the journey, with all its highs and lows,
+Writing and debugging, till the solution glows.
+For in the end, it's the satisfaction earned,
+In the world of malloc, where the fire still burns.
