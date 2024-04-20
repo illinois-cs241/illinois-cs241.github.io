@@ -36,11 +36,11 @@ In this MP, your goal is to create and test the behavior of an arbitrary string 
 
 The man (manual) pages are the main system of documentation for C system calls, library functions, and other information related to Unix-based operating systems like Linux. 
 
-Learning how to use documentation to unblock yourself when stuck is an integral part of software development, in CS 341 and beyond. For the purposes of this course, the man pages are an excellent resource to direct documentation-related questions to. For example:
+Learning how to use documentation to unblock yourself when stuck is an integral part of software development, in CS 341 and beyond. For the purposes of this course, the man pages are an excellent resource to direct documentation-related questions to. For example, some good questions related to this MP to direct to the man pages:
 
 - What does `strtok` take as input, and what does it return?
 - What is the difference between `strcpy` and `strncpy`?
-- What does `errno` get set to when this function fails?
+- Which characters are considered whitespace characters by `isspace`?
 
 You can view the man pages through your terminal's command-line interface by typing in `man <command>` or `man <function>`, like `man ls` or `man malloc`. The man pages are also accessible via several sites on the web, such as
 * https://man7.org/linux/man-pages/
@@ -91,7 +91,7 @@ Here is a formal description of how your camelCaser should behave:
 *   A word `w` is camelCased if and only if:
     *   it is the first word and every letter is lowercased.
     *   it is any word after the first word, its first letter is uppercased and every subsequent letter in the word is lowercased.
-*   Punctuation marks, whitespace, and letters are defined by `ispunct`, `isspace`, and `isalpha` respectively.
+*   Punctuation marks, whitespace, and letters are identified by `ispunct`, `isspace`, and `isalpha` respectively.
     *   These are functions in the C standard library, so you can `man ispunct` for more information.
     *   If `input_s` has ANY non-{punctuation, letter, whitespace} characters, they go straight into `output_s` without any modifications. **ALL** ASCII characters are valid input. Your camelCaser does not need to handle all of Unicode.
 *   `camel_caser` returns an array of `output_s` for every `input_s` in the input string,  terminated by a NULL pointer.
