@@ -32,6 +32,21 @@ In order to write effective unit tests, all possible cases of input to a unit (m
 
 In this MP, your goal is to create and test the behavior of an arbitrary string manipulation function to determine if it is reliable, predictable, and correct. While writing your functions, try to write modular code, as this will make your life easier when you test it. You'll learn how to write effective test cases - an incredibly helpful skill for the rest of the course. Finally, you'll be able to take these skills to Facenovel for your next internship and impress your coworkers.
 
+## Man pages
+
+The man (manual) pages are the main system of documentation for C system calls, library functions, and other information related to Unix-based operating systems like Linux. 
+
+Learning how to use documentation to unblock yourself when stuck is an integral part of software development, in CS 341 and beyond. For the purposes of this course, the man pages are an excellent resource to direct documentation-related questions to. For example:
+
+- What does `strtok` take as input, and what does it return?
+- What is the difference between `strcpy` and `strncpy`?
+- What does `errno` get set to when this function fails?
+
+You can view the man pages through your terminal's command-line interface by typing in `man <command>` or `man <function>`, like `man ls` or `man malloc`. The man pages are also accessible via several sites on the web, such as
+* https://man7.org/linux/man-pages/
+* https://linux.die.net/man/
+
+
 ## camelCaser
 
 We have chosen
@@ -195,7 +210,7 @@ void log(char *message) {
 ```
 The `DEBUG` macro is enabled in the `debug` build by passing the flag `-DDEBUG` to the compiler when compiling the `debug` build of an assignment (please report to staff if an assignment's `debug` build does not have the `-g` or `-DDEBUG` flags). The `#ifdef` statement is a preprocessor directive which includes a code snippet into the executable if the macro is enabled during compilation. Therefore, statements in `#ifdef DEBUG` blocks do not appear in `release` builds of assignments. This will prevent you from impacting the performance of `release` builds (if you need these logging prints in `release` builds, remove the `#ifdef` directive). Furthermore, this logging function prints to `stderr`. We typically do not check what's in `stderr`, so feel free to use that output stream to dump your logging messages.
 
-### `errno` knows what's up
+### `errno` knows what's up 
 
 Often, you'll see that system calls and library functions will return -1 and set `errno` upon execution failure. `errno` is a special global variable that stores the error codes for failures in function calls. Many system calls do not guarantee success and can fail at random, even `malloc`! Therefore, whenever you encounter bizarre failures, one thing to keep in mind is to check if a function/system call failed, and if so, determine why it failed. Attached below is a sample code snippet of reading `errno` using `perror`:
 ```
@@ -206,5 +221,37 @@ if (bytes == -1) {
     perror("read failed");
 }
 ```
+
+### A note on `strtok`
+
+Using `strtok` (instead of `strchr`) for this MP can be confusing without an understanding of how it works, and often leads to pitfalls. If you choose to use `strtok`, read the first few paragraphs of the man page thoroughly.
+
+```bash
+$ man strtok
+
+STRTOK(3)                                                     Linux Programmer's Manual                                                     STRTOK(3)
+
+NAME
+       strtok - extract tokens from strings
+
+SYNOPSIS
+       #include <string.h>
+
+       char *strtok(char *str, const char *delim);
+
+DESCRIPTION
+       The strtok() function breaks a string into a sequence of zero or more nonempty tokens.  On the first call to strtok(), the string to be parsed
+       should be specified in str.  In each subsequent call that should parse the same string, str must be NULL.
+
+       The delim argument specifies a set of bytes that delimit the tokens in the parsed string.  The caller may specify different strings  in  delim
+       in successive calls that parse the same string.
+
+       Each  call  to  strtok() returns a pointer to a null-terminated string containing the next token.  This string does not include the delimiting
+       byte.  If no more tokens are found, strtok() returns NULL.
+
+      ...
+
+```
+
 
 Good luck!
