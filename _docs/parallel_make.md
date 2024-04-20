@@ -33,9 +33,6 @@ Before starting you should read the Wikipedia article on [Make](http://en.wikipe
 You might also want to look [here](https://web.archive.org/web/20170202011246/http://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/makefile.html) for some notes that explain makefiles really well.
 (They start with some C++ specific details but you can skip to the 'Now, makefiles' section. Also, do note that the makefile for this MP does NOT use makefile macros.)
 
-
-**THIS IS A HARD MP. WE RECOMMEND THAT YOU START EARLY.**
-
 ## Resource Allocation Graphs
 
 A good way to think about this MP at a high level is by using a model [covered in lecture](http://cs341.cs.illinois.edu/coursebook/Deadlock#resource-allocation-graphs), Resource Allocation Graphs. You can think of `make` rules as nodes in the graph and dependency relations as directed edges that point from rules to dependencies. This visualization comes in handy when we are dealing with programs that may encounter deadlock. Given that a `Makefile` may contain a circular dependency (what are the required conditions for a program to deadlock?), keep this model at the back of your mind when building your solution.
