@@ -224,7 +224,7 @@ if (bytes == -1) {
 
 ### A note on `strtok`
 
-Using `strtok` (instead of `strchr`) for this MP can be confusing without an understanding of how it works, and often leads to pitfalls. If you choose to use `strtok`, read the first few paragraphs of the man page thoroughly.
+Using `strtok` (instead of `strchr`) for this MP can be confusing without an understanding of how it works, and often leads to pitfalls. An important fact about strtok to keep in mind for this MP is that it ignores multiple consecutive separators when parsing a string. If you still choose to use `strtok`, read the first few paragraphs of the man page thoroughly.
 
 ```bash
 $ man strtok
