@@ -7,7 +7,7 @@ title: VS Code Tutorial
 
 Most of you have noticed that you must develop in your VMs for CS 341. This requires editing and writing code within the VM, which is usually done via the vim text editor. Vim is a great tool, and we highly encourage you to at least pick up the basics of vim so that you can be comfortable using it throughout your careers as software engineers.
 
-That being said, we understand that it can be frustrating to use vim when you are working with large files and projects, and many of you would feel more comfortable using your traditional text editor of choice. We'll provide a series of steps here that will help you set up a development environment that lets you edit your code locally in VS Code (you can modify this process to use Atom or Sublime) and run the code in the VM. Feel free to 
+That being said, we understand that it can be frustrating to use vim when you are working with large files and projects, and many of you would feel more comfortable using your traditional text editor of choice. We'll provide a series of steps here that will help you set up a development environment that lets you edit your code locally in VS Code (you can modify this process to use Atom or Sublime) and run the code in the VM.
 
 To be clear, you will not be running your code locally. You will be editing and running your code on your VM through ssh (e.g. make, make test, running binaries, etc). However, you will be able to do all of that in VS code, which is synced to the VM through ssh.
 
