@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Resplendent RPCs</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Resplendent RPCs" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Resplendent RPCs
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_warning" href="#warning" class="fancy-link">Warning</a></li>
+<li><a id="toc_background" href="#background" class="fancy-link">Background</a></li>
+<li><a id="toc_overview" href="#overview" class="fancy-link">Overview</a></li>
+<li><a id="toc_why-udp" href="#why-udp" class="fancy-link">Why UDP?</a></li>
+<li><a id="toc_what-to-write" href="#what-to-write" class="fancy-link">What to write</a></li>
+<li><a id="toc_testing" href="#testing" class="fancy-link">Testing</a></li>
+<li><a id="toc_extra-tech-descriptions" href="#extra-tech-descriptions" class="fancy-link">Extra: Tech Descriptions</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Resplendent RPCs are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Learn about RPCs with rpcgen</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Learn basic UDP networking</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Learn about DNS</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="warning" class="title-text">Warning<a class="anchor title-text" href="#warning"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Before you begin this lab, remember to run <code class="language-plaintext highlighter-rouge">rpcinfo</code>, then <code class="language-plaintext highlighter-rouge">rpcgen dns_query.x</code>!
+This call generates a C version of <code class="language-plaintext highlighter-rouge">dns_query.x</code>, the server stub, and the client stub.
+If you do not run this command, your implementations will not compile with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code>!</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="background" class="title-text">Background<a class="anchor title-text" href="#background"> #</a>
+</h2></div>
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This lab will serve as an introduction to remote procedure calls and UDP. Remote procedure calls, as the name suggests, are a way to execute a procedure (in C, a function) that exists in a different address space and in any language. In this lab, our client in C executes a procedure in C, but it could execute a procedure written in python as well.</p>
+<p>In order to accomplish this, the server will agree to take in a ‘request’ or ‘query’ from a client and send a ‘response’ back, and the client will agree to send a ‘request’ or ‘query’ and receive a ‘response’.
+Actually implementing an RPC framework is really hard. Marshalling, unmarshalling, and keeping data formats consistent could easily be an MP! Most of the time software engineers use an existing RPC format like <code class="language-plaintext highlighter-rouge">protobuf</code> <code class="language-plaintext highlighter-rouge">thrift</code>. For the purposes of this lab we chose to use <code class="language-plaintext highlighter-rouge">rpcgen</code>.
+In rpcgen, the request and response are defined in a .x file in XDR, which is a language that is useful for encoding data that is to be transferred between different machines. 
+It is easy to translate this file into any language, so in this lab it is translated into a C-language .h file with rpcgen. You don’t need to worry about implementing this, we’ve done it for you.</p>
+<p>Server and client stubs can be generated as well from this .x file in any language (both in C in this lab), and these stubs deal with the networking between the server and client. 
+The implementation logic, AKA what the server and client decide to do with these requests and responses they send back and forth, is left up to you.
+Effectively, using RPCs abstracts away the complex networking calls that are usually necessary to complete this task (i.e. it’s one layer above TCP/UDP). The only thing you have to do is fill out the structs defined in the .x file to create a response</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="overview" class="title-text">Overview<a class="anchor title-text" href="#overview"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In this lab, we will create a client that queries a server for an IPv4 address for a given domain over RPC. The server that receives this query over RPC sends a UDP packet to an <code class="language-plaintext highlighter-rouge">nameserver</code> which will send back an IP Address – aka a DNS Proxy server.
+Note: This <em>isn’t</em> actually how the true DNS protocol works. The true protocol has different resolvers for different parts of the domain. For example a domain like <code class="language-plaintext highlighter-rouge">www.google.com</code> will first contact the <code class="language-plaintext highlighter-rouge">.com</code> server, then get routed to the <code class="language-plaintext highlighter-rouge">google.com</code> server and then get routed to the <code class="language-plaintext highlighter-rouge">www.google.com</code> server.</p>
+<h3 id="failure" class="title-text">Failure</h3>
+<p>In this lab, if a server ever fails to retrieve a result, it will return “-1.-1.-1.-1”. Make sure to check for this and set the success field in the server response accordingly!
+Like in chatroom’s <code class="language-plaintext highlighter-rouge">read_all_from_socket</code>/<code class="language-plaintext highlighter-rouge">write_all_to_socket</code>, remember to check errno when sendto() and recvfrom() return -1; and errno = EAGAIN, meaning you have to restart your call.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="why-udp" class="title-text">Why UDP?<a class="anchor title-text" href="#why-udp"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>In chatroom, a TCP connection made sense because you wanted to stay in contact with the chatting server for a long time, never lose messages, and receive messages in a particular order. 
+When it comes to querying nameservers for DNS resolution in this lab, you only send one packet and receive one packet per server and then you’re done.
+The overhead in using TCP for this purpose is not necessary, so we opt to use the faster and less complex UDP.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="what-to-write" class="title-text">What to write<a class="anchor title-text" href="#what-to-write"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>More information in the header files – this is the high level overview.</p>
+<h3 id="dns_query_clnt_implc" class="title-text"><code class="language-plaintext highlighter-rouge">dns_query_clnt_impl.c</code></h3>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">resolve_hostname()</code> Given a host and a dns server, figures out what IP this hostname points to or reports if it couldn’t find the hostname.</li>
+</ul>
+<h3 id="dns_query_svc_implc" class="title-text"><code class="language-plaintext highlighter-rouge">dns_query_svc_impl.c</code></h3>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">create_response()</code> Given a few parameters, allocates all needed fields for the <code class="language-plaintext highlighter-rouge">response</code> object on the heap</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">contact_nameserver()</code> Given all appropriate parameters, sends a UDP Packet to the nameserver containing the hostname and the server sends back an IP address or sentinel value (check the error section above).</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing" class="title-text">Testing<a class="anchor title-text" href="#testing"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>To make a nameservers for testing, run <code class="language-plaintext highlighter-rouge">./authoritative_nameservers</code> which by default runs on port 9000. 
+This will let you fully complete a DNS lookup of the IPv4 addresses of various websites (check <code class="language-plaintext highlighter-rouge">hosts.txt</code>) given that you have a complete implementation. 
+This shouldn’t be necessary to create a complete implementation, but if you want to test your implementation out with other domains, you can supply your own files as arguments.
+Check the usage of <code class="language-plaintext highlighter-rouge">./authoritative_nameservers</code> with the -h flag.
+Make sure to follow the format exactly and make sure that you reference the correct &amp; existing servers and ports in the files you create!</p>
+<h3 id="example" class="title-text">Example</h3>
+<p>This command will set up a nameserver:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./authoritative_nameserver
+Nameserver running on port 9000
+</code></pre></div></div>
+<p>Run your server with environment variables:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ NAMESERVER_HOST</span><span class="o">=</span>127.0.0.1 <span class="nv">NAMESERVER_PORT</span><span class="o">=</span>9000 ./server
+</code></pre></div></div>
+<p>Then send a query for a domain through the client. The client requires two arguments. The first is the IP address of the server that will accept its RPC and the second is the domain to resolve.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./client 127.0.0.1 www.google.com
+www.google.com has ipv4 address &lt;...&gt;
+</code></pre></div></div>
+<p>See if your client interprets the correct input when</p>
+<ul>
+  <li>A hostname is in none of the caches or the nameserver</li>
+  <li>A hostname is in none of the caches but on the nameserver</li>
+  <li>A hostname is in the server not client cache</li>
+  <li>A hostname is in the client cache</li>
+  <li>Makes sure that your client works with your server</li>
+</ul>
+<p>Things you don’t need to worry about:</p>
+<ul>
+  <li>Don’t worry about retransmitting UDP packets.</li>
+  <li>For this lab we won’t be testing memory as intensively</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="extra-tech-descriptions" class="title-text">Extra: Tech Descriptions<a class="anchor title-text" href="#extra-tech-descriptions"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The motivation for this type of protocol is influenced by <a href="https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions" class="fancy-link wiki-link">DNSSec</a>. In a nutshell, DNS is really insecure. Your computer first (usually) sends your host name request to a server unencrypted, and has no way of verifying that the sent-to server is an actual server. Secondly, when your computer gets a response back, it has no way of verifying that the response was sent from that server. This is all because UDP packets are plain text and can be spoofed – so the first leg of this connection matters a <em>lot</em>. The other parts of the connection don’t need to matter as much because often they are on your Internet Service Provider’s internal, trusted network.</p>
+<p>The benefit of our proxy server is that we can establish a secure TLS/TCP (Encrypted TCP connection) with a server and verify that the server is a DNS server with a Certificate. Then all hostnames sent to and from the server will be hidden from prying eyes and it will be nearly impossible to forge requests.</p>
+<ul>
+  <li>DNS communications usually happen on port 53, so records don’t need to specify a port to send packets to (unlike in this lab)</li>
+  <li>IPv4 addresses in a cache need to have a valid time to live (they can’t be too old or you have to requery!)</li>
+  <li>DNS has more details; you can do queries that specifically ask for a nameserver or a mailserver, for example.</li>
+  <li>There can be multiple IP addresses for one domain, but not in this lab.</li>
+  <li>This lab only covers the case where the domain is defined as [something].[something].[top-level]., but as you know there can be more subdomains as well e.g. www.cs.illinois.edu</li>
+  <li>DNS has some weak points as it is. A particular nameserver can be DDOSed so that all caches of a domain expire and no one can access it. You can mess with any computer’s DNS resolution so that it returns invalid IPs for a domain. A good way to mess with your friends is making it so that www.google.com always directs to an IP address for www.bing.com.</li>
+  <li>Mentioned before, but keep in mind how simple it is to send data between 2 programs written in 2 different languages with RPCs</li>
+  <li>If you’re curious about more modern frameworks for RPCs, check out gRPC (https://grpc.io/).</li>
+</ul>
+<h3 id="extra-dns-resolution-overview" class="title-text">Extra: DNS Resolution Overview</h3>
+<p>As you know, domains are not useful as-is; they need to be translated into an IP address. The IP addresses are not stored all at one place; they are distributed hierarchically through multiple servers responsible for them, called authoritative nameservers. A recursive DNS server (which is usually provided by your ISPs) does the work of contacting all the necessary nameservers in this hierarchy.  Here’s an overview of how it does this:
+ First it goes to the root nameserver, the server responsible for ‘.’ AKA the root of all domains (fun fact; all domains have an implicit . at the end, so www.microsoft.com is also www.microsoft.com.). This server will hold the nameservers responsible for top-level domains like .com, .org, and .net, so the appropriate nameserver is returned to the recursive server. The recursive server then goes to the top-level nameserver it just got, which is responsible for holding nameservers responsible for domains registered under the top-level domain, so .com is responsible for nameservers for reddit.com, tumblr.com, twitter.com, etc, so the appropriate nameserver is returned. The nameserver just received is authoritative for your initial domain, so when you contact it it will return your final answer! The recursive server returns this final answer and the query is finished.
+This recursive DNS server is the server you will implement in the lab.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/resplendent_rpcs.md";
+  </script>
+</body>
+
+</html>
