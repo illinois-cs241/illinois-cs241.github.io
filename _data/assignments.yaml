@@ -15,7 +15,7 @@ labs:
           graded_files:
           - submission.txt
       resources: true
-      worksheet: true
+      worksheet: "lockpicking_lab"
       visible: true
   -
       name: "Perilous Pointers"
@@ -29,7 +29,7 @@ labs:
           - part1-functions.c
           - part2-main.c
       resources: true
-      worksheet: true
+      worksheet: "perilous_pointers"
       visible: true
   -
       name: "Utilities Unleashed"
@@ -43,7 +43,7 @@ labs:
           - env.c
           - time.c
       resources: true
-      worksheet: true
+      worksheet: "utilities_unleashed"
       visible: true
   -
       name: "Mini Memcheck"
@@ -56,7 +56,7 @@ labs:
           graded_files:
           - mini_memcheck.c
       resources: true
-      worksheet: true
+      worksheet: "mini_memcheck"
       visible: true
   -
       name: "Teaching Threads"
@@ -69,7 +69,7 @@ labs:
           graded_files:
           - par_reduce.c
       resources: true
-      worksheet: true
+      worksheet: "teaching_threads"
       visible: true
   -
       name: "Critical Concurrency"
@@ -84,7 +84,7 @@ labs:
           - queue.c
           - semamore.c
       resources: true
-      worksheet: true
+      worksheet: "critical_concurrency"
       visible: true
   -
       name: "Deadlock Demolition"
@@ -97,7 +97,7 @@ labs:
           graded_files:
           - libdrm.c
       resources: true
-      worksheet: true
+      worksheet: "deadlock_demolition"
       visible: true
   -
       name: "Ideal Indirection"
@@ -110,7 +110,7 @@ labs:
           graded_files:
           - mmu.c
       resources: true
-      worksheet: true
+      worksheet: "ideal_indirection"
       visible: true
   -
       name: "MapReduce"
@@ -123,7 +123,7 @@ labs:
           graded_files:
           - mapreduce.c
       resources: true
-      worksheet: true
+      worksheet: false
       visible: true
   -
       name: "Charming Chatroom"
@@ -138,7 +138,7 @@ labs:
           - server.c
           - utils.c
       resources: true
-      worksheet: true
+      worksheet: "charming_chatroom"
       visible: true
   -
       name: "Deepfried dd"
@@ -151,7 +151,7 @@ labs:
           graded_files:
           - dd.c
       resources: true
-      worksheet: false
+      worksheet: "finding_filesystems"
       visible: true
   -
       name: "Mad Mad Access Patterns"
@@ -165,7 +165,7 @@ labs:
           - lookup1.c
           - lookup2.c
       resources: true
-      worksheet: true
+      worksheet: "mad_mad_access_pattern"
       visible: true
   -
       name: "Savvy Scheduler"
@@ -178,7 +178,7 @@ labs:
           graded_files:
           - libscheduler.c
       resources: true
-      worksheet: true
+      worksheet: "savvy_scheduler"
       visible: true
   -
       name: "Lovable Linux"
@@ -191,7 +191,7 @@ labs:
           graded_files:
           - kernel.c
       resources: true
-      worksheet: true
+      worksheet: "lovable_linux"
       visible: true
 mps:
   -
