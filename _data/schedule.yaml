@@ -31,12 +31,16 @@ classes:
     resources: "Code and handouts are <a href='{{ site.data.constants.lecture_handouts }}'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#F44336"
     number: 2
-  - title: "C Crash Course 2 (Virtual only; no class)"
+  - title: "C Crash Course 2"
     summary: "3. man,asprintf,free,assert"
     review_chapter: 3
     resources: "See Lecture 3 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a> or <a href = 'https://drive.google.com/drive/folders/1baLvQNhhTBv8Z8xNQnCPq6pnp7c6-1Ek?usp=sharing'>here</a>"
     color: "#F44336"
     number: 3
+  - title: "No class - Labor Day"
+    summary: "History of <a href = 'https://en.wikipedia.org/wiki/Labor_Day'>Labor Day</a>"
+    resources: ""
+    color: "#808080"
   - title: "A day at the C side: C Crash Course 3"
     summary: "4. getenv, scanf, getline, fork "
     review_chapter: 3

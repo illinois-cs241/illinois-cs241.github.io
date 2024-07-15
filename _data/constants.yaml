@@ -22,7 +22,7 @@ courses_schedule_link: "https://courses.illinois.edu/schedule/2024/fall/CS/341"
 grade_viewer_link: "https://www.meme-arsenal.com/memes/f98b7cfa7bc928372bac515c8a43d3c7.jpg" # "https://grd-cs341-01.cs.illinois.edu/new-grade-viewer" # https://grd-cs341-01.cs.illinois.edu/new-grade-viewer"
 broadway_on_demand_link: "https://www.meme-arsenal.com/memes/f98b7cfa7bc928372bac515c8a43d3c7.jpg" #""https://grd-cs341-01.cs.illinois.edu/on-demand/" # https://grd-cs341-01.cs.illinois.edu/on-demand/"
 malloc_contest_link: "" # ""https://grd-cs341-01.cs.illinois.edu/malloc" # https://grd-cs341-01.cs.illinois.edu/malloc/"
-forum_link: "https://www.meme-arsenal.com/memes/f98b7cfa7bc928372bac515c8a43d3c7.jpg" # "https://edstem.org/us/courses/52101/discussion/"
+forum_link: "https://edstem.org/us/courses/61021/discussion/" # "https://edstem.org/us/courses/52101/discussion/"
 
 lecture_videos_link: "https://classtranscribe.illinois.edu/"
 lecture_handouts: "https://github.com/angrave/CS341-Lectures-FA24"
