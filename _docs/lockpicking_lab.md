@@ -26,7 +26,7 @@ One section we will have on the top of every assignment is a section called `gra
 
 ## Background and Assignment
 
-You are working for ShadyCorp Inc. Your boss discover's that your competitor, ShadierCorp Inc., has uploaded a safe to your company's production server. Your boss is curious and wants to know what's in the safe. Luckily you boss has a lockpick to help you.
+You are working for ShadyCorp Inc., listening to your favorite song, the [Debugging Waltz](https://go.cs.illinois.edu/debugging_waltz_mp4).  Your boss discover's that your competitor, ShadierCorp Inc., has uploaded a safe to your company's production server. Your boss is curious and wants to know what's in the safe. Luckily you boss has a lockpick to help you.
 
 
 Initial analysis of the safe indicates that it has two modes: interactive mode and file mode.
