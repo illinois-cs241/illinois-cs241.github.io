@@ -35,7 +35,9 @@ Additionally, make sure your VM is on and running, which can be done [at the VM 
 
 ## Setting Up Git
 
-You will be using `git` to submit all your assignments in this course. First go to [the repository creator](https://edu.cs.illinois.edu/create-gh-repo/{{site.data.constants.semester}}_{{site.data.constants.department_code}}{{site.data.constants.course_number}}/).
+You will be using `git` to submit all your assignments in this course. 
+
+First go to [the repository creator](https://edu.cs.illinois.edu/create-gh-repo/{{site.data.constants.semester}}_{{site.data.constants.department_code}}{{site.data.constants.course_number}}/).
 
 ### Configuring Git
 
