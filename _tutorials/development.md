@@ -197,7 +197,9 @@ If you can't connect -
 
 If you are sure that you follow the setup guidance correctly and you are on either the Campus VPN or the IllinoisNet WiFi but you still have VM issues (e.g. cannot access vc.cs.illinois.edu, cannot ssh into VM), then the fastest resolution will come from directly contacting EngrIT with your issue using their [form](https://go.illinois.edu/ewshelp). In the form, under the “Which lab(s) or remote resource(s) is your request about?”, you can type "CS VM Farm".
 
-If you are not hearing back for days and the issue is urgent, contact IT by emailing one of the [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu), [ews@illinois.edu](mail:ews@illinois.edu), and [engrit-help@illinois.edu](mail:engrit-help@illinois.edu). Include as many details as possible (Course number, your VM hostname, time of error, type of error, and description of what you've tried.)
+You can contact IT by directly emailing  [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu). This a  bit faster than the known 'standard' emails, [ews@illinois.edu](mail:ews@illinois.edu), and [engrit-help@illinois.edu](mail:engrit-help@illinois.edu) because these two wrequire an extra manual step to send your request to the right people. 
+
+<strong>Include as many details as possible (Course number, your VM hostname, time of error, type of error, and description of what you've tried.</strong>
 
 
 ## Provisioning a local VM using Vagrant (optional)
