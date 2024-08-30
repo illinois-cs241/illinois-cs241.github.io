@@ -13,6 +13,8 @@ In this course, we use Virtual Machines (VMs) for all our development. We will n
 
 For all registered students in the course, you will receive a VM in the CS Department’s VM Farm provisioned by EngrIT. When your VM is provisioned you should receive an email about your VM. If you registered late, please email the CS 341 Admin (you can find the email on our [staff page]({% link _pages/staff.html %})).
 
+Approximately 12-24 hours aftering registering for the course your VM host name should also be on this [page](https://csid-basic-apps.cs.illinois.edu/) - so that's another way to lookup your VM name.(VPN needed).
+
 Once you have received your VM, you can connect to your VM via SSH. 
 If you are not on the campus network you will need to install and use the campus VPN.
 
@@ -29,7 +31,7 @@ Note that if you are not connected to on-campus internet, you will need to use a
 
 An alternative to using the UIUC VPN is to SSH twice. You can first SSH into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
 
-Additionally, make sure your VM is on and running, which can be done [at the VM dashboard](https://vc.cs.illinois.edu/). Use [this](https://csid-basic-apps.cs.illinois.edu/) to lookup your VM name if needed.  
+Additionally, make sure your VM is on and running, which can be done [at the VM dashboard](https://vc.cs.illinois.edu/). Use this [page](https://csid-basic-apps.cs.illinois.edu/) to lookup your VM name if needed.  
 **Note: Both of the above links also require campus wifi or a VPN**
 
 
