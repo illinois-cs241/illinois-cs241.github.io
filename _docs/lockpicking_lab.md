@@ -82,7 +82,10 @@ If you have the correct answers then `Sucessfully unlocked the safe!` will be pr
 * Clone or Update your git repository on your VM
 * Use the lockpick to figure out how to unlock the safe
 * Add your answers to `submission.txt`
-* `git commit -a -m "My Submission"` (commit your work to git).
+* Submit your work via git:
+  * `git add submission.txt`
+  * `git commit -m "My Submission"` (commit your work to git).
+  * `git push origin main` (push your committed work to Github -- **Required for your changes to be visible to the Autograder**).
 
 ## CS 341 Makefile
 
