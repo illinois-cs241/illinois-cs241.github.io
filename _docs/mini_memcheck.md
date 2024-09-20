@@ -170,10 +170,10 @@ Sentinel value is a chunck of *pre-defined bits* at the end of an allocated memo
 
 On every operation, we would check that the sentinel value is still the same as it was pre-defined. If the sentinel value has changed, then we know for certain that the user has corrupted memory.
 
-In your `mini_memcheck`, you will use the [magic number](https://en.wikipedia.org/wiki/Magic_number_(programming)) `0xCAFEBABE` for sentinel value. [(Why x0CAFEBABE?)](http://www.artima.com/insidejvm/whyCAFEBABE.html)
+In your `mini_memcheck`, you will use the [magic number](https://en.wikipedia.org/wiki/Magic_number_(programming)) `0xDEADBEEF` for the sentinel value. 
 
 Implementation:
-- Add the bits `0xCAFEBABE` to the end of every allocation. (Do you need to do it for `realloc`?)
+- Add the bits `0xDEADBEEF` to the end of every allocation. (Do you need to do it for `realloc`?)
 - Check if the sentinel value of a previously allocated buffer has changed in `mini_realloc` and `mini_free`.
 - If so, print out a warning to the user with `fprintf(stderr, ...)`. (Do not print to stdout!)
 
