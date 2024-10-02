@@ -74,14 +74,14 @@ labs:
       url: "critical_concurrency"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-02-28 23:59
+          due_date: 2024-10-09 23:59
           graded_files:
           - barrier.c
           - queue.c
           - semamore.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Deadlock Demolition"
       releaseDate: "Week 7"
@@ -89,12 +89,12 @@ labs:
       url: "deadlock_demolition"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-10-09 23:59
+          due_date: 2024-10-16 23:59
           graded_files:
           - libdrm.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Ideal Indirection"
       releaseDate: "Week 8"
