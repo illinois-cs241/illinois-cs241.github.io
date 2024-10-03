@@ -31,14 +31,14 @@ Semamore sem;
 Stack s; // Thread Safe Stack
 void* transaction_listener(void* arg) {
     while(1) {
-        semm_wait(&sem); // decrements the semamore
+    	semm_post(&sem); // increments the semamore
         stack_push(&s, get_transaction());
     }
 }
 
 void* transaction_verifier(void* arg) {
     while(1) {
-    	semm_post(&sem); // increments the semamore
+        semm_wait(&sem); // decrements the semamore
         transaction = stack_pop(&s);
         verify(transaction);
     }
@@ -92,7 +92,7 @@ if(!condition)
 ```
 
 What is wrong with the code above?
-
+(hint: what if we get woken up while `condition` is still true?)
 
 <horizontal />
 
