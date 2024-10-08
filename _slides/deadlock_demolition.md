@@ -74,13 +74,21 @@ Order the chopsticks _1..n_. For each philosopher have them pick up the lower nu
 
 <horizontal />
 
-## Clean/Dirty (Chandy/Misra)
+## BONUS: Clean/Dirty (Chandy/Misra)
 
 <vertical />
 
-If you want reeealllllllly fast (given a lot of philosophers numbered _1..n_).
+(Beyond 341 scope) If you want reeallly fast, given a lot of philosophers numbered _1..n_.
 
-Chopsticks can be dirty or clean. Initially all chopsticks start out as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When a philosopher wants to eat, they ask the person next to them for a chopstick. If the neighbor's chopstick is clean (they haven't eaten yet), they keep the chopstick. Otherwise, they clean it, and give it to the requesting philosopher. This prevents starvation of philosophers and ensures priority is given to the philosopher that has least recently eaten.
+Relax problem assumptions-- let philosophers talk to each other only to ask for chopsticks.
+
+Chopsticks can be dirty or clean. Initially all start as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When a philosopher wants to eat, they ask the person next to them for a chopstick. If the neighbor's chopstick is clean (they haven't eaten yet), they keep the chopstick. Otherwise, they clean it, and give it to the requesting philosopher.
+
+## Tradeoffs
+
+* Ensures priority is given to the philosopher that has least recently eaten (starvation prevention).
+* Requires philosopher communication, so is not an exact instance of Dining Philosophers.
+* Requires careful resource ordering to avoid an initial deadlock.
 
 <horizontal />
 
