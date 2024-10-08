@@ -9,6 +9,13 @@ title: Deadlock Demolition
 
 ![Traffic Jam](/images/assignment-docs/lab/slides/dining/traffic.gif)
 
+## What is deadlock?
+
+From wikipedia:
+> In an operating system, a deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. 
+
+<horizontal />
+
 ## Dining philosophers
 
 A good example of deadlock is the dining philosophers problem. In this problem, there are _n_ philosophers trying to have dinner with _n_ chopsticks. Each requires two chopsticks to eat. How can we allocate the chopsticks such that every philosopher gets to eat?
@@ -18,26 +25,6 @@ A good example of deadlock is the dining philosophers problem. In this problem, 
 ## Who's a good dining philosopher?
 
 ![Dog Philosopher](/images/assignment-docs/lab/slides/dining/dogdining.gif)
-
-
-<horizontal />
-
-## What is deadlock?
-
-From wikipedia:
-> In an operating system, a deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. 
-
-<horizontal />
-
-## Resource allocation graph
-
-We can model resource allocation by having resources and processes represented as vertices
-and use edges to show ownership of a resource. A cycle in the
-resource allocation graph implies that we have deadlock (assuming other Coffman Conditions hold).
-
-## Example RAG
-
-![Deadlock RAG](/images/assignment-docs/lab/slides/dining/rag.png)
 
 <horizontal />
 
@@ -100,6 +87,18 @@ Chopsticks can be dirty or clean. Initially all chopsticks start out as dirty. F
 ## A good overview of solutions
 
 [Read the Ron Swanson version here](http://adit.io/posts/2013-05-11-The-Dining-Philosophers-Problem-With-Ron-Swanson.html)
+
+<horizontal />
+
+## Resource allocation graph
+
+We can model resource allocation by having resources and processes represented as vertices
+and use edges to show ownership of a resource. A cycle in the
+resource allocation graph implies that we have deadlock (assuming other Coffman Conditions hold).
+
+## Example RAG
+
+![Deadlock RAG](/images/assignment-docs/lab/slides/dining/rag.png)
 
 <horizontal />
 
