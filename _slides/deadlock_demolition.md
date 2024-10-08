@@ -38,7 +38,7 @@ A good example of deadlock is the dining philosophers problem. In this problem, 
 
 Have one authority (e.g. a mutex). Have each philosopher grab that authority and only when they have the authority can they pick up their forks and eat. They eat, put the arbitrator and the forks down and move on to the next philosopher (can be random or sequential).
 
-## Downsides
+## Tradeoffs
 
 * Very slow
 * Only one thread running at a time
@@ -52,7 +52,7 @@ Have one authority (e.g. a mutex). Have each philosopher grab that authority and
 
 Consider the case of the dining philosophers with _n_-chopsticks and _n_-philosophers. Reduce the number of philosophers currently allowed at the table to _n-1_ using a semaphore. Have them eat. Cycle out the philosophers.
 
-## Downsides
+## Tradeoffs
 
 * Very heavy on context switches for a process
 * Needs way of "pausing" a philosopher (SIGSTOP for linux kernel)
@@ -66,7 +66,7 @@ Consider the case of the dining philosophers with _n_-chopsticks and _n_-philoso
 
 Order the chopsticks _1..n_. For each philosopher have them pick up the lower number chopstick. Then, only if they can pick up the lower chopstick, pick up the higher chopstick. Why does this work?
 
-## Downsides
+## Tradeoffs
 
 * Needs to be able to order the resources
 * Doesn't livelock but often leads one thread working at a time for large applications (databases)
