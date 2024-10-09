@@ -14,6 +14,19 @@ title: Deadlock Demolition
 From wikipedia:
 > In an operating system, a deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process. 
 
+## Coffman Conditions
+
+Conditions on the system and its resources that are necessary and sufficient for deadlock to *possibly* occur.
+
+So violating *any* condition = preventing deadlock!
+
+<vertical />
+
+1. _Mutual Exclusion_: No two processes can own a resource at the same time. 
+2. _Circular Wait_: There is a 'cyclic dependency' in processes owning and waiting for resources.
+3. _Hold and Wait_: Once a process owns a resource, it retains that ownership, even while waiting for another.
+4. _Lack of Preemption_: Processes cannot be forced to give up owned resources.
+
 <horizontal />
 
 ## Dining philosophers
