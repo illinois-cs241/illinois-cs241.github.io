@@ -115,11 +115,18 @@ Chopsticks can be dirty or clean. Initially all start as dirty. For each pair of
 
 We can model resource allocation by having resources and processes represented as vertices
 and use edges to show ownership of a resource. A cycle in the
-resource allocation graph implies that we have deadlock (assuming other Coffman Conditions hold).
+resource allocation graph implies that we can have deadlock (assuming other Coffman Conditions hold).
 
 ## Example RAG
 
 ![Deadlock RAG](/images/assignment-docs/lab/slides/dining/rag.png)
+
+## Relation to Dining Philosophers
+
+The Dining Philosophers provide a more general view of preventing deadlock, and RAG analysis can be applied to some of our previous solutions. Replace 'philosopher' with 'process' and consider how our solutions stop a cycle:
+* Arbitrator: The central authority is now the only dependency (forms a 'star' graph). 
+* Stallings: Remove a 'process', creating a path instead of a cycle.
+* Ordering Solutions: Ensure that at least one 'process' always can get all resources through ordering (creates a sink node).
 
 <horizontal />
 
