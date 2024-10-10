@@ -95,7 +95,7 @@ Order the chopsticks _1..n_. For each philosopher have them pick up the lower nu
 
 Relax problem assumptions-- let philosophers talk to each other only to ask for chopsticks.
 
-Chopsticks can be dirty or clean. Initially all start as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When one wants to eat, they ask their neighbor for a chopstick. If the neighbor's chopstick is clean (they haven't eaten yet), they keep the chopstick. Otherwise, they clean it, and give it to the requesting philosopher.
+Chopsticks can be dirty or clean. Initially all start as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When one wants to eat, they ask their neighbor for a chopstick. If the neighbor's chopstick is clean (they haven't eaten yet), they keep the chopstick. Otherwise, they clean and relinquish it.
 
 ## Tradeoffs
 
