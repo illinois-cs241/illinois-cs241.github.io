@@ -91,11 +91,11 @@ Order the chopsticks _1..n_. For each philosopher have them pick up the lower nu
 
 <vertical />
 
-(Beyond 341 scope) If you want reeallly fast, given a lot of philosophers numbered _1..n_.
+(Beyond 341 scope) If you want a reeallly fast solution, given many philosophers numbered _1..n_.
 
 Relax problem assumptions-- let philosophers talk to each other only to ask for chopsticks.
 
-Chopsticks can be dirty or clean. Initially all start as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When a philosopher wants to eat, they ask the person next to them for a chopstick. If the neighbor's chopstick is clean (they haven't eaten yet), they keep the chopstick. Otherwise, they clean it, and give it to the requesting philosopher.
+Chopsticks can be dirty or clean. Initially all start as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When one wants to eat, they ask their neighbor for a chopstick. If the neighbor's chopstick is clean (they haven't eaten yet), they keep the chopstick. Otherwise, they clean it, and give it to the requesting philosopher.
 
 ## Tradeoffs
 
@@ -123,7 +123,10 @@ resource allocation graph implies that we can have deadlock (assuming other Coff
 
 ## Relation to Dining Philosophers
 
-The Dining Philosophers provide a more general view of preventing deadlock, and RAG analysis can be applied to some of our previous solutions. Replace 'philosopher' with 'process' and consider how our solutions stop a cycle:
+The Dining Philosophers provide a more general view of preventing deadlock, and RAG analysis can be applied to some of our previous solutions. Replace 'philosopher' with 'process' and consider how our solutions stop a cycle.
+
+<vertical />
+
 * Arbitrator: The central authority is now the only dependency (forms a 'star' graph). 
 * Stallings: Remove a 'process', creating a path instead of a cycle.
 * Ordering Solutions: Ensure that at least one 'process' always can get all resources through ordering (creates a sink node).
