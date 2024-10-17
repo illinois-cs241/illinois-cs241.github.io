@@ -5,8 +5,6 @@ title: Virtual Memory
 
 ## What's in a memory address?
 
-<vertical />
-
 Suppose I have an integer `p` allocated on the stack, and the value of `&p` is `0xAB0` (= 2736). What does this mean?
 
 <vertical />
@@ -34,77 +32,72 @@ The lookup process then looks something like this:
 
 ## Virtual Memory Visualization
 
-<vertical />
-
 ![MMU](/images/assignment-docs/lab/slides/virtual/mmu_pic.png)
 
 <vertical />
 
-![Indirection](/images/assignment-docs/lab/slides/virtual/indirection.gif)
+![Page_Map](/images/assignment-docs/lab/slides/virtual/page_map.png)
 
 <horizontal />
 
-## How many pages are there in a 32bit machine (assume frame size of 4KB)?
+<section>
+How many pages are there in a 32bit machine (assume frame size of 4KB)?
 
-<vertical />
-
+<p class="fragment" data-fragment-index="1">
 Answer: 2^32 address / 2^12 = 2^20 pages.
 
 Remember that 2^10 is 1024, so 2^20 is a bit more than one million.
 
 For a 64 bit machine, 2^64 / 2^12 = 2^52, which is roughly 10^15 pages. 
+</p>
+</section>
 
-<vertical />
+<section>
 
-### On a 32 bit machine with 2KB pages and 4 Byte entries, how big would a single layered page table have to be to address all of the physical memory? 
+On a 32 bit machine with 2KB pages and 4 Byte entries, how big would a single layered page table have to be to address all of the physical memory? 
 
-<vertical />
-
+<p class="fragment" data-fragment-index="2">
 There are 2^32 addresses, and each page is 2^11 bytes large. So there are a total of 2^21 pages. The page directory needs to hold a 4 byte entry corresponding to each page, so the total memory uses is 4 bytes * 2^21 = 8 MB.
+</p>
+</section>
 
 <horizontal />
 
-## Multi Leveled Page Table
+## Multi-Level Page Table
 
-In 64 bit systems, the amount of 4 KB pages is very high (10^15 from the previous slides). We can no longer afford to use a single massive page directory, so we can layer the page tables.
-
-<vertical />
+In 64-bit systems, there are 10^15 4KB pages. We cannot afford to use a single massive page directory, so we layer the page tables.
 
 ![Page Table Division](/images/assignment-docs/lab/slides/virtual/division.gif)
 
 <horizontal />
 
-## Faults in our page tables
+## Page faults and segmentation faults
 
-<vertical />
-
-## What is the difference between a page fault and a seg fault?
-
-<vertical />
-
-Your program cannot recover from a segfault. A page fault, however, occurs when a page is not found in physical RAM. One of the advantages of virtual memory is that we can now back memory addresses with things other than just RAM - for example, when your computer's memory gets full, it can start writing some pages to disk instead. A page fault might occur if your program tries to read memory that was sent to the disk - but the kernel will "catch" the page fault, load the data back into memory, and your program can continue unhindered.
+- A segfault occurs when a memory access is invalid. Your program cannot recover from a segfault.
+- A page fault occurs when a page is not found in physical RAM.
+- Swap: When physical memory gets full, the kernel sends some pages to disk.
 
 <horizontal />
 
-## What is an MMU? What is a TLB.
-
-<vertical />
+## What is an MMU?
 
 The memory management unit in modern computing is a physical component inside a computer that is responsible for handling virtual memory requests from the CPU. In this lab, you will be implementing portions of an MMU in C.
 
-![MMU Pictures](/images/assignment-docs/lab/slides/virtual/mmu_pic.png)
+![MMU](/images/assignment-docs/lab/slides/virtual/mmu_pic.png)
+
+## What is a TLB?
+
+- The Translation Look-aside Buffer is a "cache" for the MMU.
+- The most recently used addresses will be stored.
+- For frequently accessed addresses, the TLB can tell the MMU directly where to go (no translation necessary).
 
 <vertical />
 
-The translation look-aside buffer is a kind of "cache" for the MMU where the most recently used addresses will be stored. That way, addresses that are being accessed frequently can avoid having to be translated into physical memory, and the buffer can tell the system directly where to go in RAM to find a piece of memory.
-
-![TLB](/images/assignment-docs/lab/slides/virtual/tlb.gif)
+![TLB](/images/assignment-docs/lab/slides/virtual/tlb_workflow.png)
 
 <horizontal />
 
 ## Be careful about bitshifting!
-
-<vertical />
 
 Some parts of this lab require bit shifting when translating virtual memory addresses. Watch out for the distinction between signed and unsigned shifts!
 
