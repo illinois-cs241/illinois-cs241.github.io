@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Getting Caught Up</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Getting Caught Up" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Getting Caught Up
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_quick-links" href="#quick-links" class="fancy-link">Quick Links</a></li>
+<li><a id="toc_join-the-forum" href="#join-the-forum" class="fancy-link">Join the Forum!</a></li>
+<li><a id="toc_read-the-syllabus" href="#read-the-syllabus" class="fancy-link">Read the Syllabus</a></li>
+<li><a id="toc_assignments" href="#assignments" class="fancy-link">Assignments</a></li>
+<li><a id="toc_catching-up-on-material" href="#catching-up-on-material" class="fancy-link">Catching up on Material</a></li>
+<li><a id="toc_labs" href="#labs" class="fancy-link">Labs</a></li>
+<li><a id="toc_quizzes" href="#quizzes" class="fancy-link">Quizzes</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="quick-links" class="title-text">Quick Links<a class="anchor title-text" href="#quick-links"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>
+    <p>Syllabus: <a href="https://cs341.cs.illinois.edu/syllabus.html" class="fancy-link wiki-link">https://cs341.cs.illinois.edu/syllabus.html</a></p>
+  </li>
+  <li>
+    <p>EdStem: <a href="https://edstem.org/" class="fancy-link wiki-link">https://edstem.org/</a></p>
+  </li>
+  <li>
+    <p>Mini-Course: <a href="https://cs-education.github.io/sys/#/lessons" class="fancy-link wiki-link">https://cs-education.github.io/sys/#/lessons</a></p>
+  </li>
+  <li>
+    <p>Coursebook: <a href="https://github.com/illinois-cs241/coursebook/wiki" class="fancy-link wiki-link">https://cs341.cs.illinois.edu/coursebook/index.html</a></p>
+  </li>
+  <li>
+    <p>Class Transcribe (Lecture Recordings): <a href="https://classtranscribe.illinois.edu/" class="fancy-link wiki-link">https://classtranscribe.illinois.edu/</a></p>
+  </li>
+  <li>
+    <p>Development Guide: <a href="https://cs341.cs.illinois.edu/tutorials/development" class="fancy-link wiki-link">https://cs341.cs.illinois.edu/tutorials/development</a></p>
+  </li>
+  <li>
+    <p>PrairieLearn: <a href="https://us.prairielearn.com/" class="fancy-link wiki-link">https://us.prairielearn.com/</a></p>
+  </li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="join-the-forum" class="title-text">Join the Forum!<a class="anchor title-text" href="#join-the-forum"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We use Ed as the official staff-supported Q&amp;A forum and is the way that we communicate announcements to the rest of the class (e.g., assignment releases, changes to the office hour schedule). If you can’t access our forum, ask a member of course staff for the Ed join link.</p>
+<p>To get a sense of what’s going on and where we are in the course, please read <strong>all</strong> the posts by staff.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="read-the-syllabus" class="title-text">Read the Syllabus<a class="anchor title-text" href="#read-the-syllabus"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>The syllabus is an important read; we find that the answers to many student questions are in the syllabus. Please read the <a href="https://cs341.cs.illinois.edu/syllabus.html" class="fancy-link wiki-link">syllabus</a> thoroughly!</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="assignments" class="title-text">Assignments<a class="anchor title-text" href="#assignments"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>
+    <p>You can see a list of assignments under the “Assignments” tab. Assignment deadlines are stated on the linked assignment pages.</p>
+  </li>
+  <li>
+    <p>Email cs341admin@cs.illinois.edu and say that you have added late (please include the date you added the classes).</p>
+  </li>
+</ul>
+<p>If you joining the class after 10 days, then start on the current lab and MP. There will be an opportunity (<a href="https://cs341.cs.illinois.edu/syllabus.html#regrades" class="fancy-link wiki-link">regrades</a>) to address missing grades towards the end of the semester.</p>
+<p>You will need to set up/get familiar with the tools necessary to be successful in this course, such as the VM, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ssh.1.html" class="fancy-link">ssh</a></code>, and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/git.1.html" class="fancy-link">git</a></code>. Read the <a href="https://cs341.cs.illinois.edu/tutorials/development" class="fancy-link wiki-link">Development Guide</a> to do so.</p>
+<p>The only non-programming assignment in the first few weeks is Homework 0, which is Professor Angrave’s introductory mini-course. You will submit your answers for this assignment in the <code class="language-plaintext highlighter-rouge">HW0.md</code> file in the Luscious Locks lab. See below for the mini-course and “Linux-In-TheBrowser” virtual machine:</p>
+<ul>
+  <li><a href="https://cs-education.github.io/sys/#/lessons" class="fancy-link wiki-link">Mini-courses</a></li>
+  <li><a href="https://cs-education.github.io/sys/#VM" class="fancy-link wiki-link">Virtual Machine</a></li>
+</ul>
+<p>You can find the questions for Homework 0 in the lecture handout repository corresponding to the current semester on <a href="https://github.com/angrave" class="fancy-link wiki-link">https://github.com/angrave</a>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="catching-up-on-material" class="title-text">Catching up on Material<a class="anchor title-text" href="#catching-up-on-material"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>See the recorded lectures you missed on <a href="https://classtranscribe.illinois.edu/" class="fancy-link wiki-link">ClassTranscribe</a>. You can also review content you have missed by reading the <a href="https://github.com/illinois-cs241/coursebook/wiki" class="fancy-link wiki-link">coursebook</a>. You can find the lecture handouts in the lecture handout repository corresponding to the current semester on <a href="https://github.com/angrave" class="fancy-link wiki-link">https://github.com/angrave</a>. Ask about material you don’t understand on the forum, in your lab section, or in office hours!</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="labs" class="title-text">Labs<a class="anchor title-text" href="#labs"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Go to the lab section that you registered for and tell the TA that you added late. We will manually give you attendance until we can update the roster.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="quizzes" class="title-text">Quizzes<a class="anchor title-text" href="#quizzes"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Note that while the PrairieLearn quizzes are due towards the end of the semester, we encourage spacing them out. See the “Quizzes” page and PrairieLearn for more information.</p></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_pages/late_add.md";
+  </script>
+</body>
+
+</html>
