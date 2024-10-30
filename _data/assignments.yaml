@@ -128,14 +128,14 @@ labs:
       url: "charming_chatroom"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-04-03 23:59
+          due_date: 2024-11-06 23:59
           graded_files:
           - client.c
           - server.c
           - utils.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Deepfried dd"
       releaseDate: "Week 11"
