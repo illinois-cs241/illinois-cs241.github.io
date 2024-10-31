@@ -18,7 +18,7 @@
         }
     </style>
     {% include header.html %}
-    <div class="col-md-11 col-11 col-xs-12">
+    <div class="col-md-10 col-10 col-xs-12">
         <h1>Assignments</h1>
         <section class="infrastructure-links">
             <p>
@@ -36,7 +36,7 @@
             {% endfor %}
         </section>
         <div class="row">
-            <div class="col-md-6 col-6 col-xs-12">
+            <div class="col-md-5 col-5 col-xs-12">
                 <h3>MPs</h3>
                 {% assign released_mps = site.data.assignments['mps'] | where: "visible", "true" %}
                 {% if released_mps.size == 0 %}
