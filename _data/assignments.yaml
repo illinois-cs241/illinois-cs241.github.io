@@ -283,6 +283,7 @@ mps:
       resources: true
       worksheet: false
       visible: true
+      slides: https://docs.google.com/presentation/d/1vOdlHMjhpBXmLosPW2wVIe5dhBCIeC3E0esYxdw3GvE/edit?usp=sharing
   -
       name: "Finding Filesystems"
       releaseDate: "Week 11"
