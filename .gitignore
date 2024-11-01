@@ -1,11 +1,8 @@
 _site/
 .sass-cache/
 .jekyll-metadata
-Gemfile.lock
 
 .DS_Store
 ._*
 .#*
-_coursebook/*
-_coursebook
 .jekyll-cache
