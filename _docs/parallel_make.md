@@ -297,9 +297,7 @@ Unfortunately, you can't use `parmake` to compile `parmake`, because our parser 
 
 To compile in release mode, run `make`, for debug mode, use `make debug.`
 
-You are given a handful of simple test cases in the `test_makefiles` directory. However, they are by no means comprehensive and we highly recommand you to write more test cases yourself! 
-
-If you are using VSCode, make sure you **turn off `Editor: Insert Spaces` in the settings** before writing your own makefiles, or you will get the `missing separator` error when you try to run them. This is because the makefile parser expects tab characters instead of space characters at the beginning of indented lines for [historical reasons](https://retrocomputing.stackexchange.com/questions/20292/why-does-make-only-accept-tab-indentation).
+If you want to write more test cases yourself (which we highly recommend!) in VSCode, make sure you **turn off** `Editor: Insert Spaces` **in the settings** first, or you will get the `missing separator` error when you try to run parmake on them. This is because the makefile parser expects tab characters instead of space characters at the beginning of indented lines for [historical reasons](https://retrocomputing.stackexchange.com/questions/20292/why-does-make-only-accept-tab-indentation).
 
 ### ThreadSanitizer
 The provided `Makefile` also builds a ThreadSanitizer instrumented version of your code.
