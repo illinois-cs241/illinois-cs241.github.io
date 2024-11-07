@@ -47,14 +47,13 @@ Some notable parameters:
 
 ## Warnings
 
-`dd` configurability and power can lead to some interesting errors:
+`dd` misuse can cause interesting errors:
 * `bs` and `count` definition errors can lead to *infinite size files*
     * This can break password login on your machine!
 * `of` definition errors can overwrite endpoints: 
     * Worst case: it can corrupt your hard disk/SSD
-* `if` defintion errors can lead to infinitely running `dd`
 
-In short, define each parameter carefully, especially if running as root!
+So define each parameter carefully, especially if running as root!
 
 <horizontal/>
 
