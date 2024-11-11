@@ -310,14 +310,14 @@ mps:
           - common.c
           - common.h
         - title: Part 2 The Server Part 1
-          due_date: 2024-11-25 23:59
+          due_date: 2024-12-02 23:59
           graded_files:
           - client.c
           - server.c
           - common.c
           - common.h
         - title: Part 3 The Server Part 2
-          due_date: 2024-12-02 23:59
+          due_date: 2024-12-09 23:59
           graded_files:
           - client.c
           - server.c
