@@ -3,21 +3,97 @@ layout: slide
 title: Memory Mapped IO
 ---
 
+## Learning Objectives 
+
+- Review of the C file interface
+- Introduction to `mmap`
+
+<horizontal />
+
+## C File Manipulation
+
+- A higher level, more portable interface for interacting with file operations than syscalls.
+- Some familiar functions: `fopen` and `fwrite`
+
+## Fseek and Ftell
+
+- Lets us move around the position of a `FILE*`
+- New position specified via an `offset` and a `whence` origin
+- Syscall analog for working with file descriptors: `lseek`
+
+## Fseek Juggle
+
+![Fseek Map](https://web.archive.org/web/20210427234631if_/http://forum.falinux.com/_clibimages/073_fseek.png)
+## MMAP
+
+## What is it?
+
+- Syscall- can define a new memory mapping.
+- This can apply to files or devices, letting us emulate writing through standard memory writes. 
+- Files are loaded lazily into memory page by page and writes can be reflected to the underlying file.
+	 
+<vertical />
+
+- On the kernel end, only a memory mapping is created.
+- The kernel/CPU is free to do whatever under the hood as long as when a process asks for a memory address a page is available.
+- If any writes happen, they are eventually flushed to disk.
+
+How do we implement this? Page faults!
+
+## Remember this?
+
+<img src="https://www.oreilly.com/api/v2/epubs/0596009585/files/httpatomoreillycomsourceoreillyimages47949.png" height="80%" width="80%">
+
+Now, the pages can be tied to file pages, instead of pages backed by physical RAM.
+
+## MMAP for IPC
+![Virtual Memory Pics](http://www.tldp.org/LDP/tlk/mm/vm.gif)
+
+## Lazy MMAP
+
+- Laziness in this context means entire files may not be mmapped.
+- Parts of files are assigned to memory pages as they are needed.
+- When `mmap` is called, it's possible that *none* of the file is loaded into memory yet.
+
+<horizontal />
+
+## Mad Mad Access Patterns
+
+- A file search problem: given a query and a formatted file, implement a search to either find the value or report that no such value exists.
+- The file size can exceed memory.
+- You will solve this problem twice:
+  - Once with the C file interface (`lookup1.c`)
+  - Once with `mmap` (`lookup2.c`)
+
+<horizontal />
+
 ## Background
+
+## Efficient File Navigation
+
+- If we want to quickly navigate a file's data, we can encode its contents using a data structure, in our case a tree.
+- We translate the tree to a flat array/file by providing a *serialization scheme* or an encoding.
 
 <vertical />
 
-Binary Trees:
+Here's a serialization using an inorder traversal:
 
 ![Binary Tree](https://2.bp.blogspot.com/-SKDmvFFeO4k/V_0pb7xvuSI/AAAAAAAABTo/UlEmSIX29Qg3eZBFcHaq3SETawISEYewwCLcB/s1600/deserialized-binary-tree.png)
 
 <vertical />
 
-This is how we store them in arrays:
+Another example with a level-ordered traversal:
 
 ![Serializing Them In Arrays](http://d2vlcm61l7u1fs.cloudfront.net/media%2F858%2F858e0ee4-80a8-4837-8e97-c1925cdbb231%2FphppObXfG.png)
 
-## Tree node structure
+## Our Trees
+
+We will use *file offsets*:
+- The root will always be at offset `4` in a correct file.
+- Each node will hold the file offsets of their children.
+- Offset `0` is analogous to a `NULL` ptr.
+
+## Tree Node Structure
 
 ```C
 typedef struct {
@@ -36,7 +112,8 @@ typedef struct {
 
 ## How does word[0] work?
 
-```
+Recall `malloc`!
+```C
 // allocate 12 bytes for word
 BinaryTreeNode* node1 = malloc(sizeof(BinaryTreeNode) + 12);
 // allocate 20 bytes for word
@@ -45,46 +122,12 @@ BinaryTreeNode* node2 = malloc(sizeof(BinaryTreeNode) + 20);
 
 <horizontal />
 
-## C File Manipulation
+## Implementation Notes
 
-## Fseek Juggle
+- Use `strcmp` on the `word` field of each node to traverse the tree.
+- You will have to handle certain errors, each with their own specific exit codes -- check the docs.
 
-![Fseek Map](https://web.archive.org/web/20210427234631if_/http://forum.falinux.com/_clibimages/073_fseek.png)
+## Testing
 
-## What to do in this lab
-
-Read in the file provided. Skip the first 4 header bytes and then treat the next bytes as the metadata for the binary tree node. After that is the word - a C-string delimited by a null byte.
-
-<horizontal />
-
-## MMAP
-
-## What is it?
-
-mmap is a really cool function call. It uses memory mapped IO to emulate writing to files. This means that the file is loaded lazily into memory page by page and any writes write back to the original file. We can effectively treat files as memory, just like stack and heap memory.
-
-## Remember this?
-
-![Virtual Memory Pics](http://www.tldp.org/LDP/tlk/mm/vm.gif)
-
-Now, the pages can be tied to file pages, instead of pages backed by physical RAM.
-
-
-## Address Space
-
-<img src="https://www.oreilly.com/api/v2/epubs/0596009585/files/httpatomoreillycomsourceoreillyimages47949.png" height="80%" width="80%">
-
-## MMAP for IPC
-![BTRE](../images/assignment-docs/lab/mad_mad_access_patterns/MMAP_for_IPC.drawio.png)
-
-## Lazy MMAP
-
-Mmapping is lazy! Entire files may not be mmapped, you may just use parts of files and assign them to memory pages as they are needed because you don't need a file until the first time you need it. When `mmap` is called, it is possible that *none* of the file is loaded into memory yet.
-
-<vertical />
-
-Just like the function name says, mmap creates a memory mapping in the kernel and the kernel/CPU is free to do whatever under the hood so long as when a process asks for a memory address it will get the correct bytes and when the write happens, the write eventually goes through to the actual disk.
-
-## How do I use it?
-
-Read the man page!
+- `create_data` for making your own BTRE files
+- `lookup1-reference` / `lookup2-reference` for comparison
