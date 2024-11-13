@@ -55,6 +55,20 @@ Now, the pages can be tied to file pages, instead of pages backed by physical RA
 - Parts of files are assigned to memory pages as they are needed.
 - When `mmap` is called, it's possible that *none* of the file is loaded into memory yet.
 
+## Usage
+
+`mmap` is complicated! Here are some common options:
+
+`void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);`
+- `addr`: Page aligned address to start the mapping at or `NULL` to let `mmap` choose
+- `length`: Len of mapping
+- `prot`: Memory protection (r/w/x/none)
+- `flags`: Update visibility to other processes (ex. `MAP_SHARED` / `MAP_PRIVATE`) or define a non-file mapping (`MAP_ANONYMOUS`)
+- `fd`: File descriptor used in a file mapping
+- `offset`: Page-aligined offset in a file to begin a mapping at
+
+See the man page for more!
+
 <horizontal />
 
 ## Mad Mad Access Patterns
