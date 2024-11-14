@@ -4,6 +4,14 @@
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/status.svg)](https://depfu.com)
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/overview.svg)](https://depfu.com/github/illinois-cs241/illinois-cs241.github.io?project_id=6331)
 
+## Dependencies
+
+- Ruby
+- bundler (Ruby's package manager)
+- gcc
+- make
+- hunspell
+
 ## Installing
 
 First make sure you have ruby >= 2.6. We recommend using `rvm`

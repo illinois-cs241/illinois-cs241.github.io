@@ -30,6 +30,7 @@ $config = Jekyll.configuration({
 :destination => DEST_DIR,
 :timezone => 'America/Chicago',
 :safe => false,
+:host => '0.0.0.0',
 })
 
 def gen_search_json(site)
@@ -159,11 +160,6 @@ namespace :pre_build do
     if folder.nil?
       folder = coursebook_dir
       puts "Using default Folder #{folder}"
-    end
-
-    if not Dir.exist?(folder)
-        puts "Cloning coursebook"
-        system "git clone #{coursebook_url} #{folder}"
     end
 
     system "cd #{folder} && git clean -fq && git reset --hard HEAD"
