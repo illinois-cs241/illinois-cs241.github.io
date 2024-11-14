@@ -22,6 +22,11 @@ jobs:
       run: |
         sudo apt install hunspell libhunspell-dev hunspell-en-us
 
+    - name: Pull Coursebook
+      run: |
+        git submodule init
+        git submodule update --recursive
+
     - name: Build site
       run: |
         bundle exec rake
