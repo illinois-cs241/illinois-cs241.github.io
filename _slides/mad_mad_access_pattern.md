@@ -24,19 +24,21 @@ title: Memory Mapped IO
 ## Fseek Juggle
 
 ![Fseek Map](https://web.archive.org/web/20210427234631if_/http://forum.falinux.com/_clibimages/073_fseek.png)
+
+<horizontal />
+
 ## MMAP
 
 ## What is it?
 
 - Syscall- can define a new memory mapping.
 - This can apply to files or devices, letting us emulate writing through standard memory writes. 
-- Files are loaded lazily into memory page by page and writes can be reflected to the underlying file.
+- Files are loaded lazily into memory page by page and writes can be reflected to the underlying file depending on the mapping's settings.
 	 
 <vertical />
 
 - On the kernel end, only a memory mapping is created.
 - The kernel/CPU is free to do whatever under the hood as long as when a process asks for a memory address a page is available.
-- If any writes happen, they are eventually flushed to disk.
 
 How do we implement this? Page faults!
 
@@ -55,17 +57,33 @@ Now, the pages can be tied to file pages, instead of pages backed by physical RA
 - Parts of files are assigned to memory pages as they are needed.
 - When `mmap` is called, it's possible that *none* of the file is loaded into memory yet.
 
-## Usage
+<horizontal />
 
-`mmap` is complicated! Here are some common options:
+## MMAP Usage
+
+`mmap` is complicated! Here is the signature: 
 
 `void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);`
+
+<vertical />
+
+Basic mapping parameters:
 - `addr`: Page aligned address to start the mapping at or `NULL` to let `mmap` choose
-- `length`: Len of mapping
+- `length`: Byte length of mapping
+
+<vertical />
+
+Common access settings:
 - `prot`: Memory protection (r/w/x/none)
 - `flags`: Update visibility to other processes (ex. `MAP_SHARED` / `MAP_PRIVATE`) or define a non-file mapping (`MAP_ANONYMOUS`)
+
+<vertical />
+
+File mapping options:
 - `fd`: File descriptor used in a file mapping
 - `offset`: Page-aligined offset in a file to begin a mapping at
+
+<vertical />
 
 See the man page for more!
 
