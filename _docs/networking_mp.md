@@ -312,7 +312,7 @@ Alternatively, if higher level languages are more your thing, you could try writ
 An instructive example of how to run the server-reference and client-reference with some example files:
 
 ```bash
-$ ./server-reference 127.0.0.1:12345 # Runs a localhost server on port 12345
+$ ./server-reference 12345 # Runs a localhost server on port 12345
 $ ./client-reference 127.0.0.1:12345 PUT remote-image.png my-local-image.png # PUTs my-local-image.png onto the server as remote-image.png
 $ ./client-reference 127.0.0.1:12345 GET remote-image.png new-local-image.png # GETs remote-image.png from the server and downloads it as new-local-image.png
 
