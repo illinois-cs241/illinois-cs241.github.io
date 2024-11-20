@@ -4,41 +4,47 @@ title: "Savvy Scheduler"
 authors: "Pradyumna Shome"
 ---
 
-## Savvy Scheduler
-
-<horizontal/>
-
 ## Scheduling
 
-* Must efficiently select which process must be run on a system’s CPU cores
-* Additional complexity of multiple threads per process at this point not considered at this point
+* Must efficiently select which process must be run
+* For the sake of simplicity: Only considering single process/single thread single core systems
+
+i.e. one thing running at a time
 
 <horizontal />
 
-## Key Terms
+## Key Terms - timestamps
 
 * Arrival Time
 * Start Time
 * End Time
-* Response time
-* Turnaround time
-* Wait time
 
-## Convoy Effect
+## Key Terms - durations
 
-Convoy of processes following a CPU-intensive processes, with potentially smaller resource requirements.
+* Response time = start time - arrival time
+* Turnaround time = end time - arrival time
+* Wait time = turnaround time - run time
 
-Affects IO-intensive operations.
+## Measures of efficiency
+
+* Lowest average turnaround time
+
+* Lowest wait time
+
+* Latency
+
+## Process State
+
+* R - Running or Runnable
+* S - Interruptible Sleeping (waiting on an event)
+* D - Uninterruptable Sleep (IO typically, still on the CPU)
+* T - Stopped
+* Z - Zombie process (terminated, but not reaped)
 
 <horizontal />
 
-## What is pre-emption?
-
-When a more preferable (multiple criteria) process is ready, the CPU can suspend the current process (think `SIGSTOP`), and can switch in the new process. Later, the process that was pre-empted can be scheduled (`SIGCONT`)
-
-Without pre-emption processes will run until they are unable to utilize the CPU any further!
-
-<horizontal />
+## Ready Queue
+A queue of runnable processes, not waiting for resources, ready to be executed
 
 ## Why might a process (or thread) be placed on the ready queue?
 
@@ -66,16 +72,21 @@ A process is placed on the ready queue when it is able to use a CPU. Some exampl
 
 * Example: Shortest Job First with continuous stream of short processes
 
-<horizontal />
+## Convoy Effect
 
-## Measures of efficiency
+Convoy of processes following a CPU-intensive processes, with potentially smaller resource requirements.
 
-* Lowest average turnaround time
+Affects IO-intensive operations. FCFS suffers from this.
 
-* Lowest wait time
+## What is pre-emption?
 
-* Latency
+When a more preferable (multiple criteria) process is ready, the CPU can suspend the current process (think `SIGSTOP`), and can switch in the new process. Later, the process that was pre-empted can be scheduled (`SIGCONT`)
+
+Without pre-emption processes will run until they are unable to utilize the CPU any further!
 
 <horizontal />
 
 ## Questions
+
+
+<!-- use vertical tag to get a vertical slide without a header -->
