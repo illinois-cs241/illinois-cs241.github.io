@@ -170,12 +170,12 @@ labs:
       url: "savvy_scheduler"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-04-24 23:59
+          due_date: 2024-12-04 23:59
           graded_files:
           - libscheduler.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Lovable Linux"
       releaseDate: "Week 14"
