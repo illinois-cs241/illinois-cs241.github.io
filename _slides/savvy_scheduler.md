@@ -50,7 +50,7 @@ A queue of runnable processes, not waiting for resources, ready to be executed
 
 A process is placed on the ready queue when it is able to use a CPU. Some examples include:
 
-* A process was blocked waiting for a [`**read**`](https://linux.die.net/man/3/read) from storage or socket to complete and data is now available.
+* A process was blocked waiting a [**read**](https://linux.die.net/man/3/read) from storage or socket to complete and data is now available.
 * A new process has been created and is ready to start.
 
 ## Other situations
@@ -74,7 +74,7 @@ A process is placed on the ready queue when it is able to use a CPU. Some exampl
 
 ## Convoy Effect
 
-Convoy of processes following a CPU-intensive processes, with potentially smaller resource requirements.
+Convoy of processes following a CPU-intensive process, with potentially smaller resource requirements.
 
 Affects IO-intensive operations. FCFS suffers from this.
 
