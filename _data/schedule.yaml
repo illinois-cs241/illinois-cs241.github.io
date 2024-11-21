@@ -287,16 +287,20 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 39
+  - title: "Invited Lecture (Rob Kooper NCSA)"
+    summary: ""
+    resources: ""
+    color: "#8080F0"
   - title: "Course Review"
     summary: ""
     review_chapter: 15
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 40
-  - title: "Guest Lecture (NCSA)"
+  - title: "No class (office hours in CIF)"
     summary: ""
     resources: ""
-    color: "#8080F0"
+    color: "#808080"
   # - title: "Special Topics/Beyond CS341"
   #   summary: ""
   #   resources: ""
