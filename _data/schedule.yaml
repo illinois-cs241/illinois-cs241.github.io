@@ -155,10 +155,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#009688"
     number: 22
-  - title: "Surprize Quiz for Angrave"
-    summary: "Bring your discussion questions"
-    resources: ""
-    color: "#509688"
   # - title: "No class - Spring Break"
 #     summary: ""
 #     resources: ""
@@ -225,10 +221,7 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
     color: "#FFC107"
     number: 31
-  - title: "No class"
-    summary: ""
-    resources: ""
-    color: "#808080"
+
   - title: "Scheduling and Scheduling Algorithms"
     summary: "Scheduling examples"
     review_chapter: 10
@@ -266,6 +259,10 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
     color: "#FFC107"
     number: 37
+  - title: "No class (office hours in CIF)"
+    summary: ""
+    resources: ""
+    color: "#808080"
   - title: "Fall Break"
     summary: ""
     resources: ""
@@ -304,3 +301,7 @@ classes:
   #   summary: ""
   #   resources: ""
   #   color: "#FFC107"
+  # - title: "Surprize Quiz for Angrave"
+  #   summary: "Bring your discussion questions"
+  #   resources: ""
+  #   color: "#509688"
