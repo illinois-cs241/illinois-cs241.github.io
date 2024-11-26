@@ -54,7 +54,7 @@ Last but not least, the front facing team is the eyes and ears of the entire sta
 
 ## Assignment Development
 
-Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course.
+Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course. You will be responsible for improving existing assignments and fixing any issue that pops up, and occasioanlly creating brand new assignments.
 
 Writing assignments involves coming up with a meaningful tasks where students can master the learning objectives. Writing these assignments involves a lot of time spent drafting on white boards and bouncing ideas around. As you are writing these assignments, you will have to ask yourself, "What am I trying to have the students learn?".
 
@@ -97,9 +97,9 @@ If you have a deep passion for systems and want to instill that passion in the c
 ### Expected Time Obligations
 
 * Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page. Meetings also serve as a means for more experienced course staff members to give less experienced course staff members advice.
-* Mentoring meetings (3-4 hrs / week) - The honors section has weekly one-hour meetings, and you will be expected to have two or three one-hour meetings with your assigned groups. The meeting will primarily cover what happened this past week and prepare for the next week.
-* Lecture Development (5-10 hrs / week per lecture week) - You will be helping out prepare and deliver part of a lecture to honors students. This lecture needs to be well-documented, well-researched, and expertly given. Not every Honors CA will be helping out with the lecture every week, but the weeks you choose to teach spike the time spent on development.
-* Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Ditto
+* Mentoring meetings (2 - 2.5 hrs / week) - The honors section has weekly one-hour meetings, and you will be expected to have two or three 30 minutee meetings with your assigned groups. The meeting will primarily cover what happened this past week and prepare for the next week.
+* Lecture Development (4 - 6 hrs / week per lecture week) - You will be helping out prepare and deliver part of a lecture to honors students. This lecture needs to be well-documented, well-researched, and expertly given. Not every Honors CA will be helping out with the lecture every week, but the weeks you choose to teach spike the time spent on development.
+* Lab Sections (1 or 2 sections = 1.5 - 3 hrs / week) - Ditto
 
 ### Skills
 
