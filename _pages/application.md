@@ -50,7 +50,7 @@ Last but not least, the front facing team is the eyes and ears of the entire sta
 * Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page, and for everyone to be present to make key decisions. For front facing specifically, this is the time for summarizing student feedback and brainstorming improvements that can be made.
 * Office Hours (2 hrs / week) - It should go without saying that as an front facing course assistant you will be hosting office hours. This is the time where you will put yourself on the queue and help students.
 * Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Most lab sections will run about an hour and twenty minutes. You are expected to have read the documentation already and at a high level know how to solve the assignment. In the bulk of lab time, you will be going around helping students with the assignment. For the more challening MPs, you will also walk through the high level design and pitfalls with students using our slides.
-* Edstem (1-2 hrs / week) - It is also important to answer questions on Edstem, since labs and office hours are not available 24/7. Answering one question well on Edstem can potentially resolve a problem for the entire class.
+* Edstem (1 hr / week) - It is also important to answer questions on Edstem, since labs and office hours are not available 24/7. Answering one question well on Edstem can potentially resolve a problem for the entire class.
 
 ## Assignment Development
 
