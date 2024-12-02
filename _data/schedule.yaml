@@ -281,16 +281,16 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#FFC107"
     number: 38
+  - title: "Invited Lecture (Rob Kooper NCSA)"
+    summary: ""
+    resources: ""
+    color: "#8080F0"
   - title: "Security"
     summary: ""
     review_chapter: 14
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 39
-  - title: "Invited Lecture (Rob Kooper NCSA)"
-    summary: ""
-    resources: ""
-    color: "#8080F0"
   - title: "Course Review"
     summary: ""
     review_chapter: 15
