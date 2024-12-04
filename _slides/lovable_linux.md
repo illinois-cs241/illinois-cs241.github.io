@@ -7,9 +7,9 @@ title: Review
 
 <vertical />
 
-How are C strings represented in memory? 
+*How are C strings represented in memory?* 
 
-What is wrong with malloc(strlen(s)) when copying strings?
+*What is wrong with malloc(strlen(s)) when copying strings?*
 
 <vertical />
 
@@ -31,8 +31,7 @@ If used with malloc, there won't be enough memory allocated for the null termina
 
 <vertical />
 
-Explain how a virtual address is converted into a physical address using a multi-level page table. You may use a concrete example e.g. a 64bit machine with 4KB pages.
-
+*Explain how a virtual address is converted into a physical address using a multi-level page table. You may use a concrete example e.g. a 64bit machine with 4KB pages.*
 
 <vertical />
 
@@ -62,11 +61,13 @@ Page size: ```4 KB = 2^12 B```
 
 <vertical />
 
-What is a page fault? When is it an error? When is it not an error?
+*What is a page fault? When is it an error? When is it not an error?*
 
 <vertical />
 
 Page fault – program attempts access to virtual memory that is not mapped to physical memory. 
+
+<vertical />
 
 There are three types
 
@@ -82,7 +83,7 @@ When it’s not an Error - Major or Minor
 
 <vertical />
 
-What is Spatial and Temporal Locality? Swapping? Swap file? Demand Paging? 
+*What is Spatial and Temporal Locality? Swapping? Swap file? Demand Paging?*
 
 <vertical />
 
@@ -100,15 +101,15 @@ Demand Paging - Only allocate pages as the process requests them
 
 <horizontal />
 
-Processes and Threads
+## Processes and Threads
 
 <vertical />
 
-Explain the operating system actions required to perform a process context switch.
+*Explain the operating system actions required to perform a process context switch.*
 
 <vertical/>
 
-1. Save state in process control block(pcb)
+Step 1: Save state in process control block(pcb)
 
 This includes:
 * Program Counter
@@ -119,7 +120,8 @@ This includes:
 
 <vertical />
 
-2. Flush Translation Lookaside Buffer (TLB)
+Step 2: Flush Translation Lookaside Buffer (TLB)
+
 **BUT** with ASID or PCID (intel) may not be necessary
 * Used to identify which process an entry is from
 * Address space identifiers (ASID) assigned dynamically
@@ -128,15 +130,15 @@ This includes:
 * stored in a data structure and optimized for cache usage
 
 <vertical />
-3. Choose next process (scheduler's job)
+Step 3: Choose next process (scheduler's job)
 
-4. Load process state from control block
+Step 4: Load process state from control block
 
-5. Pop program counter, resume task
+Step 5: Pop program counter, resume task
 
 <vertical />
 
-Explain the actions required to perform a thread context switch (to a thread in the same process)
+*Explain the actions required to perform a thread context switch (to a thread in the same process)*
 
 <vertical />
 
@@ -146,33 +148,35 @@ Same as above **EXCEPT**
 (i.e. not whole address space, just the stack)
 
 * Don't need to flush TLB
-* Scheduler could be the OS for kernel threads (so just like process scheduling) or the scheduler could be the CPU for user-level threads (so a library handles it)
+* Different Scheduler:
+  * kernel threads: OS handles it (so just like process scheduling)
+  * user-level threads: CPU handles it (so a library handles it)
 
 <horizontal />
 
-Scheduling
+## Scheduling
 
 <vertical />
 
-Which scheduling algorithm results the smallest average wait time?
+*Which scheduling algorithm results the smallest average wait time?*
 
 <vertical />
 
 Round Robin (**IF** new processes sent to the back of the queue)
-* wait time \leq (x number of processes on queue)
+* wait time ≤ (x number of processes on queue)
 
 <vertical />
 Why not any other scheduler?
 
 FCFS: wait time = sum of runtime of all processes on queue
 
-SJF/PSJF: wait time = /inf if shorter jobs keep arriving
+SJF/PSJF: wait time = ∞ if shorter jobs keep arriving
 
-Priority: waittime = /inf if higher priority jobs keep arriving
+Priority: waittime = ∞ if higher priority jobs keep arriving
 
 <vertical />
 
-What scheduling algorithm has the longest average response time?
+*What scheduling algorithm has the longest average response time?*
 
 <vertical />
 
@@ -183,17 +187,19 @@ Priority
 <vertical />
 Why not any other scheduler?
 
-FCFS: response \leq runtime of processes ahead of it on the queue
-SJF/PSJF: \inf, but at least all jobs ahead of a process on the queue have shorter runtimes. Priority doesn't guarantee this.
-RR: response \leq time quantum x number of processes ahead on the queue.
+FCFS: response ≤ runtime of processes ahead of it on the queue
+
+SJF/PSJF: ∞, but at least all jobs ahead of a process on the queue have shorter runtimes. Priority doesn't guarantee this.
+
+RR: response ≤ time quantum x number of processes ahead on the queue.
 
 <horizontal />
 
-Synchronization and Deadlock
+## Synchronization and Deadlock
 
 <vertical />
 
-Define circular wait, mutual exclusion, hold and wait, and no-preemption. How are these related to deadlock?
+*Define circular wait, mutual exclusion, hold and wait, and no-preemption. How are these related to deadlock?*
 
 <vertical />
 
@@ -206,6 +212,10 @@ Circular wait: There exists a cycle in the Resource Allocation graph
 * ect...
 * PN is waiting for resources from P1
 
+<vertical />
+
+### Coffman Conditions Cont.
+
 Mutual Exclusion: no two processes can hold the same resources at the same time
 
 Hold and Wait: Once a resources is obtained, process holds it until finished
@@ -214,25 +224,29 @@ No pre-emption: Nothing can make a process give up a resource
 
 <vertical />
 
-What is the difference between Deadlock Prevention, Deadlock Detection and Deadlock Avoidance?
+*What is the difference between Deadlock Prevention, Deadlock Detection and Deadlock Avoidance?*
 
 <vertical />
 
-Deadlock Prevention: Eliminate a Coffman conditions. Deadlocks become impossible.
+**Deadlock Prevention**: Eliminate a Coffman conditions. Deadlocks become impossible.
 
-Deadlock Avoidance: Avoid by allocating resources in a safe manner. The OS implements concurrency control.
+<vertical />
 
-Deadlock Detection: When deadlock occurs, OS can detect and resolve it. 
+**Deadlock Avoidance**: Avoid by allocating resources in a safe manner. The OS implements concurrency control.
+
+<vertical />
+
+**Deadlock Detection**: When deadlock occurs, OS can detect and resolve it. 
 
 (i.e. use a Resource Allocation Graph to detect deadlocks. kill processes or preempt resources to resolve)
 
 <horizontal />
 
-IPC and signals
+## IPC and signals
 
 <vertical />
 
-Give an example of kernel generated signal. List 2 calls that can a process can use to generate a ```SIGUSR1```.
+*Give an example of kernel generated signal. List 2 calls that can a process can use to generate a ```SIGUSR1```.*
 
 <vertical />
 
@@ -251,7 +265,7 @@ Try running ```kill -l``` to see all signals
 
 <vertical />
 
-What signals can be caught and ignored? What signals cannot be caught?
+*What signals can be caught and ignored? What signals cannot be caught?*
 
 <vertical />
 
@@ -261,11 +275,11 @@ See man page for ```signal(2)``` on how to set signal disposition.
 
 <horizontal />
 
-Networking
+## Networking
 
 <vertical />
 
-Describe the services provided by TCP but not UDP.
+*Describe the services provided by TCP but not UDP. What applications use TCP? What applications use UDP?*
 
 <vertical />
 
@@ -274,25 +288,55 @@ Describe the services provided by TCP but not UDP.
 * TCP has a notion of a connection, UDP is connectionless
 * TCP has 3-way (SYN - SYN/ACK - ACK) handshake
 
-TCP is used for web browsing, email, file transfers, etc. UDP is used when data becomes stale quickly (e.g. audio/video streaming and DNS).
+<vertical />
+
+TCP is used for web browsing, email, file transfers, etc. 
+
+UDP is used when data becomes stale quickly (e.g. audio/video streaming and DNS).
 
 <horizontal />
 
-Files
+## Files
 
 <vertical />
 
-Briefly explain permission bits (including sticky and setuid bits) for files and directories.
+*Briefly explain permission bits (including sticky and setuid bits) for files and directories.*
 
 <vertical />
 
 ```drwxrwxr-x```
 
-```d``` or ```-``` : directory or file
-```rwx``` : What the owner of the file is allowed to do (read, write, execute)
-```rwx```: What users in the owner's group are allowed to do (read, write, execute)
-```r-x```: What everyone else is allowed to od (read and execute, but not write)
+* ```d``` or ```-``` : directory or file
+
+* ```rwx``` : What the owner of the file is allowed to do (read, write, execute)
+
+* ```rwx```: What users in the owner's group are allowed to do (read, write, execute)
+
+* ```r-x```: What everyone else is allowed to od (read and execute, but not write)
 
 <horizontal />
 
-File System
+## File System
+
+<vertical />
+
+*What information is stored in an i-node? What file system information is not?*
+
+<vertical />
+
+* ```uid```: user ID of the inode owner.
+* ```gid```: the ID of the inode group (does not have to include the owner).
+* ```mode```: a bitmask. Bottom 9 bits are read-write-execute for owner-group-others. Bits 11-10 are the type of the file. 
+* ```nlink```: hard link count. The number of directories that the file is linked to from (directories can’t be hard linked).
+
+<vertical />
+
+* ```atim```: access time. Time of last access or the last time a file was read(2).
+* ```mtim```: last modification time. Last time the file was changed with write(2).
+* ```ctim```: last change time. Last time the file’s metadata was changed.
+* ```size```: size of the file in bytes
+
+<vertical />
+
+* ```direct```: an array. ```direct[i]``` is the ith data block’s offset (```data_block_number```) from the data_root.
+* ```indirect```: the offset number (```data_block_number```) of a data block, which contains ```NUM_INDIRECT_BLOCKS``` number of ```data_block_number```’s.
