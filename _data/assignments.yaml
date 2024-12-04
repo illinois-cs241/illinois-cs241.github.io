@@ -188,7 +188,7 @@ labs:
           - kernel.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
 mps:
   -
       name: "Extreme Edge Cases"
