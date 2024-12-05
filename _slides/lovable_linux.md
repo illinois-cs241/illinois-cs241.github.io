@@ -43,7 +43,7 @@ Page size: ```4 KB = 2^12 B```
 
 * How many bits do you need to define 2^12 addresses?
 
-```log_2⁡ (2^12⁡)```  = 12 bits
+```log2⁡ (2^12⁡)```  = 12 bits
 
 * You take the rest of the bits and split it up evenly among the level of page tables.
   
@@ -51,7 +51,7 @@ Page size: ```4 KB = 2^12 B```
 
 ```|-VPN1-|-VPN2-|-VPN3-|-Offset-|```
 
-> level_1 = top_level[VPN1]
+> level_1 = page_table_base_register[VPN1]
 
 > level_2 = level_1[VPN2]
 
@@ -65,7 +65,7 @@ Page size: ```4 KB = 2^12 B```
 
 <vertical />
 
-Page fault – program attempts access to virtual memory that is not mapped to physical memory. 
+Page fault – program attempts access to virtual memory that is not mapped to up-to-date physical memory. 
 
 <vertical />
 
@@ -93,7 +93,7 @@ Temporal Locality - Objects used more recently get used. The TLB takes advantage
 
 <vertical />
 
-Swapping - Taking a page in memory and burning to disk.
+Swapping - Taking a page in memory and writing to disk.
 
 Swap File - specific file on disk that the pages get written to. Another solution is a swap space partition.
 
@@ -125,9 +125,9 @@ Step 2: Flush Translation Lookaside Buffer (TLB)
 **BUT** with ASID or PCID (intel) may not be necessary
 * Used to identify which process an entry is from
 * Address space identifiers (ASID) assigned dynamically
-* interactive processes don't get ASIDs
+* Interactive processes don't get ASIDs
 * ASID's are short, too short to identify all processes
-* stored in a data structure and optimized for cache usage
+* Stored in a data structure and optimized for cache usage
 
 <vertical />
 Step 3: Choose next process (scheduler's job)
@@ -168,11 +168,11 @@ Round Robin (**IF** new processes sent to the back of the queue)
 <vertical />
 Why not any other scheduler?
 
-FCFS: wait time = sum of runtime of all processes on queue
+FCFS: wait time ≤ sum of runtime of all processes on queue
 
-SJF/PSJF: wait time = ∞ if shorter jobs keep arriving
+SJF/PSJF: wait time ≤ ∞ if shorter jobs keep arriving
 
-Priority: waittime = ∞ if higher priority jobs keep arriving
+Priority: waittime ≤ ∞ if higher priority jobs keep arriving
 
 <vertical />
 
@@ -216,9 +216,9 @@ Circular wait: There exists a cycle in the Resource Allocation graph
 
 ### Coffman Conditions Cont.
 
-Mutual Exclusion: no two processes can hold the same resources at the same time
+Mutual Exclusion: no two processes can hold the same resource at the same time
 
-Hold and Wait: Once a resources is obtained, process holds it until finished
+Hold and Wait: Once a resource is obtained, process holds it until finished
 
 No pre-emption: Nothing can make a process give up a resource
 
@@ -320,7 +320,7 @@ UDP is used when data becomes stale quickly (e.g. audio/video streaming and DNS)
 
 <vertical />
 
-*What information is stored in an i-node? What file system information is not?*
+*What information is stored in an inode? What file system information is not?*
 
 <vertical />
 
