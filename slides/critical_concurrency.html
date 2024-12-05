@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Synchronization | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/critical_concurrency">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Synchronization</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="implementing-a-sema-more">Implementing a Sema-More</h2>
+
+</section><section><h2></h2>
+
+<p>This is the idea of a mutex: keep the other person out while you do your thing.</p>
+
+<p><img src="/images/assignment-docs/lab/slides/synch/rest.gif" alt="Bathroom mutex"></p>
+
+</section><section><h2></h2>
+
+<p>This is a semaphore:</p>
+
+<p><img src="/images/assignment-docs/lab/slides/synch/semaphore.gif" alt="Fake Semaphore"></p>
+
+</section><section><h2></h2>
+
+<p>Just kidding, this is a real semaphore:</p>
+
+<p><img src="/images/assignment-docs/lab/slides/synch/sema.gif" alt="Programming Semaphore"></p>
+
+</section><section><h2></h2>
+
+<pre><code class="language-C"><span class="n">pthread_mutex_t</span> <span class="n">m</span> <span class="o">=</span> <span class="n">PTHREAD_MUTEX_INITIALIZER</span><span class="p">;</span>
+<span class="n">Semamore</span> <span class="n">sem</span><span class="p">;</span>
+<span class="n">Stack</span> <span class="n">s</span><span class="p">;</span> <span class="c1">// Thread Safe Stack</span>
+<span class="kt">void</span><span class="o">*</span> <span class="nf">transaction_listener</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    	<span class="n">semm_post</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span> <span class="c1">// increments the semamore</span>
+        <span class="n">stack_push</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="n">get_transaction</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="o">*</span> <span class="nf">transaction_verifier</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">semm_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sem</span><span class="p">);</span> <span class="c1">// decrements the semamore</span>
+        <span class="n">transaction</span> <span class="o">=</span> <span class="n">stack_pop</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">verify</span><span class="p">(</span><span class="n">transaction</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">pthread_t</span> <span class="n">tid1</span><span class="p">,</span> <span class="n">tid2</span><span class="p">;</span>
+    <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">transaction_listener</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid2</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">transaction_verifier</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="n">pthread_join</span><span class="p">(</span><span class="n">tid1</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">pthread_join</span><span class="p">(</span><span class="n">tid2</span><span class="p">,</span><span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="semamore-outline">Semamore Outline</h2>
+
+</section><section><h2></h2>
+
+</section><section><h2 id="struct">Struct</h2>
+
+<pre><code class="language-C"><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="kt">int</span> <span class="n">value</span><span class="p">,</span> <span class="n">max_value</span><span class="p">;</span>
+	<span class="n">pthread_mutext_t</span> <span class="n">m</span><span class="p">;</span>
+	<span class="n">pthread_cond_t</span> <span class="n">cv</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Semamore</span><span class="p">;</span>
+</code></pre>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>When <code class="language-plaintext highlighter-rouge">max_value</code> is reached
+    <ul>
+      <li>All threads trying to post should be blocked</li>
+      <li>Where/how do you notify these blocked threads when a thread decreases the semamore’s value below <code class="language-plaintext highlighter-rouge">max_value</code>?</li>
+    </ul>
+  </li>
+  <li>When 0 is reached
+    <ul>
+      <li>All threads trying to wait should be blocked</li>
+      <li>Where/how do you notify these blocked threads when a thread increases the semamore’s value above 0?</li>
+    </ul>
+  </li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="remember-to-not-burn-cpu">Remember to not burn CPU</h2>
+
+</section><section><h2 id="spurious-wakeups">Spurious Wakeups?</h2>
+
+<pre><code class="language-C"><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">condition</span><span class="p">)</span>
+	<span class="n">pthread_cond_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">cv</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+</code></pre>
+
+<p>What is wrong with the code above?
+(hint: what if we get woken up while <code class="language-plaintext highlighter-rouge">condition</code> is still true?)</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="not-so-broken-barriers">Not-So-Broken Barriers</h2>
+
+</section><section><h2></h2>
+
+<p>What does a barrier look like? Glad you asked.</p>
+
+<p><img src="/images/assignment-docs/lab/slides/synch/barrier.gif" alt="Pthread Barrier"></p>
+
+</section><section><h2></h2>
+
+<pre><code class="language-C"><span class="kt">void</span> <span class="o">*</span> <span class="nf">entry_point</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span>
+<span class="p">{</span>
+
+    <span class="c1">// final_matrix = initial_matrix * initial_matrix</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="n">in</span> <span class="n">thread_range</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="o">++</span><span class="n">col</span><span class="p">)</span>
+            <span class="n">DotProduct</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">initial_matrix</span><span class="p">,</span> <span class="n">final_matrix</span><span class="p">);</span>
+
+    <span class="c1">// Make sure the threads stop before moving on</span>
+    <span class="kt">int</span> <span class="n">rc</span> <span class="o">=</span> <span class="n">pthread_barrier_wait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">barr</span><span class="p">);</span>
+
+    <span class="c1">//Check for error</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">rc</span> <span class="o">!=</span> <span class="n">PTHREAD_BARRIER_SERIAL_THREAD</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"Could not wait on barrier</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+	
+    <span class="c1">// initial matrix = final_matrix * final_matrix</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="n">in</span> <span class="n">thread_range</span><span class="p">)</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="o">++</span><span class="n">col</span><span class="p">)</span>
+            <span class="n">DotProduct</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">final_matrix</span><span class="p">,</span> <span class="n">initial_matrix</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+
+</section><section><h2></h2>
+
+<p>More information is in the coursebook.</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="thread-safe-queues">Thread-Safe Queues</h2>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/synch/buffer_anim.gif" alt="Buffer animation"></p>
+
+</section><section><h2></h2>
+
+<p>Remember CS 124/225! Appending to the head of a linked list, other edge cases, etc…</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="reminders">Reminders</h2>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>Use a while loop to check the condition when using <code class="language-plaintext highlighter-rouge">cond_wait</code>.</li>
+  <li>A thread might be awoken even the condition for waking up is not reached.</li>
+  <li>Google spurious wakeups: https://goo.gl/TEJVOl</li>
+  <li>Write a correctly working queue first before making it thread-safe</li>
+</ul>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">PTHREAD_MUTEX_INITIALIZER</code> initializes a mutex with default properties</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">pthread_mutex_init(&amp;mtex, &amp;attr)</code> allows specialized attributes</li>
+  <li>Think of all critical/edge cases to test your queue/semamore</li>
+  <li>Consider one thread that starts working really late</li>
+  <li>Semamore is not a real term!</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="questions">Questions?</h2>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="credit-where-credit-is-due">Credit Where Credit is Due</h2>
+
+</section><section><h2></h2>
+
+<p>Credit to https://habrahabr.ru/post/277669/ for most of these animations!</p>
+
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>
