@@ -612,14 +612,14 @@ Note: Any `<pid>` used in `kill`, `stop`, or, `cont` will either be a process th
 In case you are still confused about what exactly to store in history, here are relevant examples. Note that the last row corresponds to an "invalid command", which has been historically troublesome (pun intended).
 | **Examples:**                        | **What should I store?**                      |
 |--------------------------------------|-----------------------------------------------|
-| ``cd <path>``                        | ``cd <path>``                                 |
-| ``!history``                         | Don't store anything.                         |
-| ``#<n>``                             | Command ``#<n>`` points to (**IF any**).      |
-| ``!<prefix>``                        | Command ``!<prefix>`` points to (**IF any**). |
-| ``echo HISTORY_IS_HARD``             | ``echo HISTORY_IS_HARD``                      |
-| ``echo pi:G-> && echo G/ker(phi)``   | ``echo pi:G-> && echo G/ker(phi)``            |
-| ``echo x; echo y``                   | ``echo x; echo y``                            |
-| ``Jarvis, don't store me in history``| ``Jarvis, don't store me in history``         | 
+| `cd <path>`                          | `cd <path>`                                   |
+| `!history`                           | Don't store anything.                         |
+| `#<n>`                               | Command `#<n>` points to (**IF any**).        |
+| `!<prefix>`                          | Command `!<prefix>` points to (**IF any**).   |
+| `echo HISTORY_IS_HARD`               | `echo HISTORY_IS_HARD`                        |
+| `echo pi:G-> && echo G/ker(phi)`     | `echo pi:G-> && echo G/ker(phi)`              |
+| `echo x; echo y`                     | `echo x; echo y`                              |
+| `Jarvis, don't store me in history`  | `Jarvis, don't store me in history`           | 
 
 ## Grading
 
