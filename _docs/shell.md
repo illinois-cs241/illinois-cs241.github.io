@@ -610,6 +610,9 @@ Note: Any `<pid>` used in `kill`, `stop`, or, `cont` will either be a process th
 
 ## Summary of History Storing
 In case you are still confused about what exactly to store in history, here are relevant examples. Note that the last row corresponds to an "invalid command", which has been historically troublesome (pun intended).
+
+### empty_header
+
 | **Examples:**| **What should I store?**|
 |----------------|----------------|
 |`cd <path>`| `cd <path>` |
