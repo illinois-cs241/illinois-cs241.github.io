@@ -608,6 +608,19 @@ Use the appropriate prints from `format.h` for:
 
 Note: Any `<pid>` used in `kill`, `stop`, or, `cont` will either be a process that is a direct child of your shell or a non-existent process. You do not have to worry about killing other processes.
 
+## Summary of History Storing
+In case you are still confused about what exactly to store in history, here are relevant examples. Note that the last row corresponds to an "invalid command", which has been historically troublesome (pun intended).
+| **Examples:**                        | **What should I store?**                      |
+|--------------------------------------|-----------------------------------------------|
+| ``cd <path>``                        | ``cd <path>``                                 |
+| ``!history``                         | Don't store anything.                         |
+| ``#<n>``                             | Command ``#<n>`` points to (**IF any**).      |
+| ``!<prefix>``                        | Command ``!<prefix>`` points to (**IF any**). |
+| ``echo HISTORY_IS_HARD``             | ``echo HISTORY_IS_HARD``                      |
+| ``echo pi:G-> && echo G/ker(phi)``   | ``echo pi:G-> && echo G/ker(phi)``            |
+| ``echo x; echo y``                   | ``echo x; echo y``                            |
+| ``Jarvis, don't store me in history``| ``Jarvis, don't store me in history``         | 
+
 ## Grading
 
 Note that Week 1 and Week 2 count as one week of MP grades respectively. See the overview for a list of features required for each week.
