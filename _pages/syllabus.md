@@ -171,6 +171,7 @@ This means you are not allowed to split the work with a partner.
 You are, however, allowed to discuss the assignments at a very high level.
 You can even share testing scripts!
 If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% sanction in the course for each infraction where you are found to have used material that is not yours.
+Intentional obfuscation of code (e.g., adding dead code, no-op functions, non-standard formatting, and deceptive naming conventions) also constitutes a violation of the course policy.
 
 You may not publish your solutions or leave them in "plain view", thereby leaving your programs open to copying, which constitutes cheating.
 If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each infraction.
@@ -185,8 +186,6 @@ If there is prep material provided in lecture or on the course forums, you are w
 We want you to get the most out your education, and cheating not only affects your peers, but also your level of knowledge and ability.
 
 You may use AI and other code-assist tools - see AI statement above.
-
-LandAcknowledgementStatement
 
 
 ## Land Acknowledgment Statement
