@@ -193,4 +193,3 @@ Given a program `myprog arg1 arg2`:
 * `finish` finishes the function and breaks.
 * `step` executes the line and goes to the next line. If there is a function, gdb steps into the function.
 * `continue` resumes execution of your program.
-
