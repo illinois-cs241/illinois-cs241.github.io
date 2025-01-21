@@ -36,7 +36,7 @@ title: "Welcome to CS 341"
 <vertical />
 
 ```bash
-ssh **NETID**@fa23-cs341-**xxx**.cs.illinois.edu
+ssh <NETID>@sp25-cs341-<xxx>.cs.illinois.edu
 ```
 where `xxx` is the VM number assigned to you.
 
@@ -182,7 +182,7 @@ Given a program `myprog arg1 arg2`:
 
 * `layout src` gives you a text-based GUI
 * `break <file:line|function> [if condition]`: You can make powerful breakpoints by giving a line, but only under certain circumstances.
-* `watch (type *)0xADDRESS`: Watches an address for a read or write and tells you when it has changed -- useful for when you don't know where the bug is.
+* `watch (type *)0xADDRESS`: Watches an address for a read or write and tells you when it has changed -- useful for locating bugs.
 * `backtrace`, `bt` to see what functions you are in
 * `up`, `down` goes up and down a stack frame
 
@@ -192,3 +192,5 @@ Given a program `myprog arg1 arg2`:
 * `next` executes the line and goes to the next line, runs functions without stopping.
 * `finish` finishes the function and breaks.
 * `step` executes the line and goes to the next line. If there is a function, gdb steps into the function.
+* `continue` resumes execution of your program.
+
