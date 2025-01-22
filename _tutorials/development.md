@@ -77,32 +77,32 @@ fatal: Authentication failed for 'https://github.com/illinois-cs-coursework/{{si
 
 There are three ways that we recommend for authenticating with GitHub
 
-#### Option 1: Using [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+#### Option 1: Using the GH Auth tool (**Recommended**)
+
+`gh` is Github's official command line interface. Almost anything you can do through the Github website, you can do through `gh`, and this includes authenticating your Git:
+
+1. Run `sudo apt update && sudo apt install gh` on your VM to install `gh`.
+2. Run `gh auth login`, choose `Github.com` for account type, `HTTPS` for protocol, and `Y` for authenticating Git, then follow its instruction to complete authentication.
+
+You can learn more about what `gh` can do [here](https://cli.github.com/manual/).
+
+#### Option 2: Using a Personal Access Token
+
+You can think of a personal access token as a password with limited privileges and an expiration date. To create a token, go to [Github settings](https://github.com/settings/tokens), and click **Generate new token (classic)**.
+
+We recommend only giving your new token **repo** scope, as that is all you need to push and pull from your repos.
+
+Once the token is generated (be sure to save it somewhere), you **must** further authorize the token with your NetID to access your CS 341 repos with it. See GitHub's docs [here](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).
+
+Finally, you can run `git clone` again and use your newly generated token in place of your password. If you're using VSCode, you may need to log out of Github in VSCode (Using **Accounts** button at bottom left) and log in again.
+
+#### Option 3: Using [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 1. Create an SSH key on your VM. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command `ssh-keygen -t ed25519 -a 100`. This command generates a private and public key in the directory `~/.ssh`, where `~` denotes your home directory. It will prompt you to enter a name for the file storing your private key, and will generate a .pub file for your public key. It's not necessary to enter a password for the key.
 2. Copy the ***public*** key to your clipboard. This is usually stored at a path like `~/.ssh/*.pub`, where `~` denotes your home directory. You can print out the public key to the terminal with the `cat` command.
 3. Log into your GitHub account, navigate to Settings->SSH Keys, and follow the prompts to add a new SSH key by pasting in the ***public*** key on your clipboard.
 
-_Please keep in mind that, when using this method, you will need to use SSH protocol URLs (e.g. `git@github.com:<repo>`), not HTTPS protocol URLs (e.g. `https://github.com/<repo>`)_.
-
-#### Option 2: Using the GH Auth tool
-
-GitHub provides their own command line tool for automating tasks, including authentication. The relevant documentation for the tool can be found [here](https://cli.github.com/manual/gh_auth_login).
-
-In summary:
-
-1. Install the `gh` tool using `sudo apt update && sudo apt install gh`.
-2. Run `gh auth login` to authenticate.
-
-#### Option 3: Using a Personal Access Token
-
-You can think of a personal access token as a password with limited privileges and an expiration date. To create a token, go to [Github settings](https://github.com/settings/tokens), and click **Generate new token (classic)**.
-
-We recommend only giving your new token **repo** scope, as that is all you need to push and pull from your repo.
-
-Once the token is generated (be sure to save it somewhere), you must authorize the token for use with Illinois Single Sign-On (SSO). See GitHub's docs [here](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).
-
-Finally, you can run `git clone` again and use your newly generated token in place of your password. If you're using VSCode, you may need to log out of Github in VSCode (Using **Accounts** button at bottom left) and login again.
+_Please keep in mind that if you use this method, you will need to use SSH protocol URLs (e.g. `git@github.com:<repo>`) when you pull from / push to Github, not HTTPS protocol URLs (e.g. `https://github.com/<repo>`)_.
 
 ### Fetching from `_release`
 
