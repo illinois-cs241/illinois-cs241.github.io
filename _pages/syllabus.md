@@ -75,7 +75,7 @@ Opportunities for a small amount of extra credit may be offered and will be anno
 Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being published.
 
 ### Regrades
-At the end of the semester there will be a last chance regrade option for two weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a "perfect" (we define) attendance grade after the drops.
+At the end of the semester there will be a last chance regrade option for three weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a "perfect" (we define) attendance grade after the drops.
 
 When will this start? For Fall semesters, it will be around the middle of April; for Spring semesters, it will start around the Thanksgiving week.
 
