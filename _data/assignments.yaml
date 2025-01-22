@@ -7,12 +7,12 @@ labs:
       url: "lockpicking_lab"
       submissions:
         - title: Lab Assignment
-          due_date: 2024-09-04 23:59
+          due_date: 2024-01-29 23:59
           graded_files:
           - submission.txt
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Perilous Pointers"
       releaseDate: "Week 2"
