@@ -173,10 +173,9 @@ sudo apt-get install -y libc6-dbg
 
 This is your VM! You can `sudo` and install whatever you want on it (given that it is school appropriate and compliant with [VM Farm policies](https://answers.uillinois.edu/illinois.engineering/page.php?id=104597))
 
-You can install `vim` or `emacs`. If you've ever wanted to become terminal-savvy, this is definitely the course to do it!
+You can install `vim` or `emacs`. If you've ever wanted to become terminal-savvy, this is definitely the course to do it! If you don't feel like learning a new language and want to stick to GUIs, you can also `ssh` into your machine and work on your code through VSCode, which is covered in greater detail in [this guide](https://cs341.cs.illinois.edu/tutorials/vscode).
 
 If anything is unclear, either post on the course forums or ask your TAs/CAs/fellow students! **Be careful about messing up your VM.** If your VM ever gets into an unusable state, please make a private post in the course forums **with your VM number**, and we will try to resolve it.
-
 
 You may find ssh-copy-id useful (A web search using Google/Duck Duck Go is useful). You can also configure MS Code and other GUI editors to work remotely. However some people still use 'out of the box' terminal-based editors like vi/vim that you can find (or install) on even the smallest of Linux distributions, and work even on low-bandwidth connections.
 
