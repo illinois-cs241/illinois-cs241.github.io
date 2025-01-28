@@ -4,6 +4,48 @@
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/status.svg)](https://depfu.com)
 [![Depfu](https://badges.depfu.com/badges/78ebc2831869c07b5ad540abdd03b457/overview.svg)](https://depfu.com/github/illinois-cs241/illinois-cs241.github.io?project_id=6331)
 
+
+## Option 1: Build from a Docker container
+
+First, after cloning the website repo, make sure the `_coursebook` submodule is updated.
+
+```
+git submodule init
+git submodule update --recursive
+```
+
+Make a folder separate from the folder which holds the course repository and copy into that folder `Dockerfile`, `Gemfile`, and `Gemfile.lock`.
+
+Run `id -u` in the terminal to get your user id. Then, in the Dockerfile, replace number in the `USER` line with that id in the following format
+
+```
+USER <uid>:<uid>
+```
+
+If you are not able to run docker commands without using sudo, add yourself to the docker sudo users group with the following commands:
+
+```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+Reboot the terminal with `sudo reboot` for the changes to take effect. This will give your uid permissions to run docker.
+
+See the following link for more information on this step: https://docs.docker.com/engine/install/linux-postinstall/
+
+Lookup the ip address of your machine using `ip a`. The inet address for either the loopback interface or the ens interface will work. 
+
+Build an image from the dockerfile and run it as a contaiiner:
+
+```
+docker build -t course_site .
+docker run -v /home/marial5/illinois-cs241.github.io/:/workspace -p 4000:4000 -it course_site
+```
+
+In a web browser go to the ip address listed from the `ip a` command and port number 4000 (i.e. localhost/4000). The website will be running there.
+
+
 ## Dependencies
 
 - Ruby
@@ -11,6 +53,7 @@
 - gcc
 - make
 - hunspell
+
 
 ## Installing
 
