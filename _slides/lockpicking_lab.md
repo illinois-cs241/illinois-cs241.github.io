@@ -25,17 +25,21 @@ title: "Welcome to CS 341"
 	* You must email the TA in charge of your assigned lab and the TA for the lab to which you are going.
 * There will be no attendance taken for week 1.
 
+<horizontal />
+
+## Utilities
 
 ## Virtual Machines
 
 ## What are they?
 
-* A virtual machine is simply a computer that is running on top of another computer via an emulation system. For example, you may run a Linux virtual machine on top of your Windows installation using a software like Virtualbox, which allows you to use a virtualized version of Linux "inside" of the Windows OS. 
+* A computer running on top of another computer via an emulation system. 
+* Ex) running a Linux virtual machine on top of a Windows OS using a software like Virtualbox, which creates a virtualized version of Linux "inside" of the Windows OS. 
 * In this class, you will be assigned a Linux (Ubuntu) virtual machine that has all the prerequisite software for compiling and running the assignments.
 
 <vertical />
 
-```bash
+```C
 ssh <NETID>@sp25-cs341-<xxx>.cs.illinois.edu
 ```
 where `xxx` is the VM number assigned to you.
@@ -52,10 +56,6 @@ You are going to need to be on the campus network to be able to access your VM. 
 
 If enrolled in the class recently, you should be getting an email soon about accessing your VM. Everyone else should already have received an email with their VM's details.
 
-<horizontal />
-
-## Utilities
-
 ## What is ssh?
 
 SSH is short for secure shell (secure sh). SSH is a network protocol that leverages public key cryptography in order to connect to another computer. You may have used SSH in other classes to connect to EWS.
@@ -67,101 +67,6 @@ All of you have probably heard of sudo before - it is short for super-user do, a
 ## What is git?
 
 `git` is a version control system. That means it keeps track of changes in code, allows you to group changes into a commit, and provides tools to manipulate commits.
-
-<horizontal />
-
-## C Questions
-
-## Question 1
-
-```C
-int a = 0;
-size_t a_size = sizeof(a++);
-printf("size: %zu, a: %d\n", a_size, a);
-```
-
-## Question 2
-
-```C
-#define swap(a, b) temp = a; \
-    a = b; \
-    b = temp;
-
-void selection_sort(int* a, size_t len){
-    size_t temp = len - 1;
-    for(size_t i = 0; i < temp; ++i){
-        size_t min_index = i;
-        for(size_t j = i+1; j < len; ++i){
-			if(a[j] < a[i]) min_index = j;
-        }
-        if(i != min_index)
-			swap(a[i], a[min_index]);
-    }
-}
-```
-
-## Question 3
-
-```C
-short mystery_bits(short input){
-	short max_set = ~0;
-	short masked = input & (0xFF00 ^ max_set);
-	short shifted = masked << 8;
-	short ret = (shifted | 0xCC);
-	return ret;
-}
-
-short in = 0xCAFE;
-short result = mystery_bits(in); // result = ?
-```
-
-## Question 4
-
-```C
-void positive_under_ten(int input){
-	if(0 < input < 10){
-		printf("Input is in the range\n");
-	}else{
-		printf("Input is not in the range\n");
-	}
-}
-```
-
-## Question 5
-
-```C
-int print_error(int err_num){
-	switch(err_num){
-	case ENOENT:
-		printf("No such file or entry\n");
-	case EINTR:
-		printf("Interrupted\n");
-	default:
-		break;
-	}
-}
-```
-
-<horizontal />
-
-## Debugging
-
-## Valgrind
-
-Valgrind is a framework for building program analysis tools. The most popular Valgrind tool is memcheck, which detects memory leaks. You will use Valgrind very often in CS 341, and the autograder will run Valgrind against your code to check for memory leaks.
-
-## Usage
-Given a program `myprog arg1 arg2`:
-
-`valgrind --leak-check=yes myprog arg1 arg2`
-
-## Leak Types
-
-1. _Memory block_: A block of allocated, not-freed memory
-2. _Definitely lost_: A memory block wasn't freed, and no pointers point to it.
-3. _Still reachable_: A memory block wasn't freed, but there are pointers to it still left.
-4. _Indirectly lost_: A memory block wasn't freed that contained pointers to other memory blocks.
-5. _Possibly lost_: A memory block wasn't freed, and the pointer to it still exists but was moved (e.g. array)
 
 <horizontal />
 
