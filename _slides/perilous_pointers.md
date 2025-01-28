@@ -3,14 +3,6 @@ layout: slide
 title: Memory
 ---
 
-## Worksheet Review
-
-## Pointer Arithmetic
-
-![Pointer Arithmetic](/images/assignment-docs/lab/perilous_pointers/pointerArithmetic.drawio.png)
-
-<horizontal />
-
 ## Lab Time!
 
 <vertical />
@@ -42,6 +34,10 @@ With this, we can pass a function as an argument
 This allows us to reuse code
 
 E.g., sorting an array of arbitrary objects could use a function pointer as the comparison function
+
+## Pointer Arithmetic
+
+![Pointer Arithmetic](/images/assignment-docs/lab/perilous_pointers/pointerArithmetic.drawio.png)
 
 ## Part 1
 
