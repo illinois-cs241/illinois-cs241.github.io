@@ -46,7 +46,9 @@ docker run -v /home/marial5/illinois-cs241.github.io/:/workspace -p 4000:4000 -i
 In a web browser go to the ip address listed from the `ip a` command and port number 4000 (i.e. localhost/4000). The website will be running there.
 
 
-## Dependencies
+## Option 2: Run locally
+
+### Dependencies
 
 - Ruby
 - bundler (Ruby's package manager)
@@ -55,7 +57,7 @@ In a web browser go to the ip address listed from the `ip a` command and port nu
 - hunspell
 
 
-## Installing
+### Installing
 
 First make sure you have ruby >= 2.6. We recommend using `rvm`
 
@@ -82,7 +84,7 @@ git submodule init
 git submodule update --recursive
 ```
 
-## Running
+### Running
 
 To build the site it is as simple as
 
