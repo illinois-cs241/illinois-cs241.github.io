@@ -20,7 +20,7 @@ labs:
       url: "perilous_pointers"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-02-05 23:59
+          due_date: 2025-02-05 23:59
           graded_files:
           - part1-functions.c
           - part2-main.c
