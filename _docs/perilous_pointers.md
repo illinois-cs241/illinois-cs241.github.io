@@ -14,7 +14,7 @@ wikibook:
 
 ## Introduction
 
-In CS 125, CS 225, and other classes, you have used various languages that are considered to be "C-based", but up to now you may have very limited experience in C programming. This lab will provide a short programming introduction to pointers, strings, and functions in C.
+In CS 128, CS 225, and other classes, you have used various languages that are considered to be "C-based", but up to now you may have very limited experience in C programming. This lab will provide a short programming introduction to pointers, strings, and functions in C.
 
 This lab will be divided up into two parts. In the first part, you will be debugging broken functions that use pointers incorrectly. In the second part, you will need to write code to call some "creatively defined" functions so that each prints out "Illinois".
 
