@@ -36,11 +36,11 @@ See the following link for more information on this step: https://docs.docker.co
 
 Lookup the ip address of your machine using `ip a`. The inet address for either the loopback interface or the ens interface will work. 
 
-Build an image from the dockerfile and run it as a contaiiner:
+Build an image from the dockerfile and run it as a container:
 
 ```
 docker build -t course_site .
-docker run -v /home/marial5/illinois-cs241.github.io/:/workspace -p 4000:4000 -it course_site
+docker run -v /home/<NETID>/illinois-cs241.github.io/:/workspace -p 4000:4000 -it course_site
 ```
 
 In a web browser go to the ip address listed from the `ip a` command and port number 4000 (i.e. localhost/4000). The website will be running there.
