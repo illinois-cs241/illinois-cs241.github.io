@@ -6,12 +6,8 @@ labs:
       dueDate: "Week 2"
       url: "lockpicking_lab"
       submissions:
-        - title: HW0
-          due_date: 2024-01-24 23:59
-          graded_files:
-          - HW0.md
         - title: Lab Assignment
-          due_date: 2024-01-24 23:59
+          due_date: 2025-01-29 23:59
           graded_files:
           - submission.txt
       resources: true
@@ -24,13 +20,13 @@ labs:
       url: "perilous_pointers"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-01-31 23:59
+          due_date: 2024-09-11 23:59
           graded_files:
           - part1-functions.c
           - part2-main.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Utilities Unleashed"
       releaseDate: "Week 3"
@@ -38,7 +34,7 @@ labs:
       url: "utilities_unleashed"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-09-13 23:59
+          due_date: 2024-09-18 23:59
           graded_files:
           - env.c
           - time.c
@@ -52,7 +48,7 @@ labs:
       url: "mini_memcheck"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-09-20 23:59
+          due_date: 2024-09-25 23:59
           graded_files:
           - mini_memcheck.c
       resources: true
@@ -65,7 +61,7 @@ labs:
       url: "teaching_threads"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-09-27 23:59
+          due_date: 2024-10-2 23:59
           graded_files:
           - par_reduce.c
       resources: true
@@ -78,7 +74,7 @@ labs:
       url: "critical_concurrency"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-10-04 23:59
+          due_date: 2024-10-09 23:59
           graded_files:
           - barrier.c
           - queue.c
@@ -93,7 +89,7 @@ labs:
       url: "deadlock_demolition"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-10-11 23:59
+          due_date: 2024-10-16 23:59
           graded_files:
           - libdrm.c
       resources: true
@@ -106,7 +102,7 @@ labs:
       url: "ideal_indirection"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-10-18 23:59
+          due_date: 2024-10-23 23:59
           graded_files:
           - mmu.c
       resources: true
@@ -119,7 +115,7 @@ labs:
       url: "mapreduce"
       submissions:
         - title: MapReduce
-          due_date: 2023-10-25 23:59
+          due_date: 2024-10-30 23:59
           graded_files:
           - mapreduce.c
       resources: true
@@ -132,7 +128,7 @@ labs:
       url: "charming_chatroom"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-11-01 23:59
+          due_date: 2024-11-06 23:59
           graded_files:
           - client.c
           - server.c
@@ -147,7 +143,7 @@ labs:
       url: "deepfried_dd"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-11-08 23:59
+          due_date: 2024-11-13 23:59
           graded_files:
           - dd.c
       resources: true
@@ -160,7 +156,7 @@ labs:
       url: "mad_mad_access_pattern"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-11-15 23:59
+          due_date: 2024-11-20 23:59
           graded_files:
           - lookup1.c
           - lookup2.c
@@ -174,7 +170,7 @@ labs:
       url: "savvy_scheduler"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-11-29 23:59
+          due_date: 2024-12-04 23:59
           graded_files:
           - libscheduler.c
       resources: true
@@ -187,7 +183,7 @@ labs:
       url: "lovable_linux"
       submissions:
         - title: Entire Assignment
-          due_date: 1987-07-27 23:59
+          due_date: 1987-12-11 23:59
           graded_files:
           - kernel.c
       resources: true
@@ -201,13 +197,13 @@ mps:
       url: "extreme_edge_cases"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-01-29 23:59
+          due_date: 2024-09-09 23:59
           graded_files:
           - camelCaser.c
           - camelCaser_tests.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Vector"
       releaseDate: "Week 3"
@@ -215,7 +211,7 @@ mps:
       url: "vector"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-09-11 23:59
+          due_date: 2024-09-16 23:59
           graded_files:
           - vector.c
           - sstring.c
@@ -229,11 +225,11 @@ mps:
       url: "shell"
       submissions:
         - title: Part 1
-          due_date: 2023-09-18 23:59
+          due_date: 2024-09-23 23:59
           graded_files:
           - shell.c
         - title: Part 2
-          due_date: 2023-09-25 23:59
+          due_date: 2024-09-30 23:59
           graded_files:
           - shell.c
       resources: true
@@ -246,11 +242,11 @@ mps:
       url: "malloc"
       submissions:
         - title: Part 1 # 18
-          due_date: 2023-10-02 23:59
+          due_date: 2024-10-8 23:59
           graded_files:
           - alloc.c
         - title: Part 2
-          due_date: 2023-10-09 23:59
+          due_date: 2024-10-15 23:59
           graded_files:
           - alloc.c
       resources: true
@@ -263,7 +259,7 @@ mps:
       url: "password_cracker"
       submissions:
         - title: Version 1 and 2
-          due_date: 2023-10-16 23:59
+          due_date: 2024-10-21 23:59
           graded_files:
           - cracker1.c
           - cracker2.c
@@ -277,16 +273,17 @@ mps:
       url: "parallel_make"
       submissions:
         - title: Part 1
-          due_date: 2023-10-23 23:59
+          due_date: 2024-10-28 23:59
           graded_files:
           - parmake.c
         - title: Part 2
-          due_date: 2023-10-30 23:59
+          due_date: 2023-11-04 23:59
           graded_files:
           - parmake.c
       resources: true
       worksheet: false
       visible: false
+      slides: https://docs.google.com/presentation/d/1vOdlHMjhpBXmLosPW2wVIe5dhBCIeC3E0esYxdw3GvE/edit?usp=sharing
   -
       name: "Finding Filesystems"
       releaseDate: "Week 11"
@@ -294,7 +291,7 @@ mps:
       url: "finding_filesystems"
       submissions:
         - title: Entire Assignment
-          due_date: 2023-11-06 23:59
+          due_date: 2024-11-11 23:59
           graded_files:
           - minixfs.c
       resources: true
@@ -307,20 +304,20 @@ mps:
       url: "networking_mp"
       submissions:
         - title: Part 1 The Client
-          due_date: 2023-11-13 23:59
+          due_date: 2024-11-18 23:59
           graded_files:
           - client.c
           - common.c
           - common.h
         - title: Part 2 The Server Part 1
-          due_date: 2023-11-27 23:59
+          due_date: 2024-12-02 23:59
           graded_files:
           - client.c
           - server.c
           - common.c
           - common.h
         - title: Part 3 The Server Part 2
-          due_date: 2023-12-04 23:59
+          due_date: 2024-12-09 23:59
           graded_files:
           - client.c
           - server.c

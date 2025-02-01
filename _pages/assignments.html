@@ -48,7 +48,8 @@
                             <tr>
                                 <th>MP</th>
                                 <th>Release Date</th>
-                                <th>End Date</th>
+                                <th>Due Date</th>
+                                <th>Slides</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,6 +58,14 @@
                                 <th scope="row"><a href="/assignments/{{mp.url}}.html">{{mp.name}}</a></th>
                                 <td>{{mp.releaseDate}}</td>
                                 <td>{{mp.dueDate}}</td>
+                                {% if mp.slides %}
+                                <td>
+                                    <a href="{{mp.slides}}" class="fancy-link wiki-link"><img
+                                            src="./images/lab-icons/animation.png" alt='Slides'></a>
+                                </td>
+                                {% else %}
+                                <td></td>
+                                {% endif %}
                             </tr>
                             {% endfor %}
                         </tbody>

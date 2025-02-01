@@ -1,0 +1,40 @@
+Lyrics
+Edge triggered, wake up, don't stall,
+Handling data, we heed the call.
+Epoll wait, no more delay,
+One thread, one socket, in our relay.
+
+Level triggered, a constant flow,
+But edge triggered's where we go.
+Half processed, then a wakeup call,
+Epoll returns, data for all.
+
+Edge triggered, wake up, don't stall,
+Handling data, we heed the call.
+Epoll wait, no more delay,
+One thread, one socket, in our relay.
+
+Threads blocking, on one descriptor's reign,
+Data arrives, causing a chain.
+Multiple wakes, a chaotic spree,
+Edge triggered ensures only one to see.
+
+Edge triggered, wake up, don't stall,
+Handling data, we heed the call.
+Epoll wait, no more delay,
+One thread, one socket, in our relay.
+
+EPOLLONESHOT flag, our trusty guide,
+No more accidental thread collide.
+Complexity, but peace we find,
+In edge triggered mode, our data bind.
+
+Edge triggered, wake up, don't stall,
+Handling data, we heed the call.
+Epoll wait, no more delay,
+One thread, one socket, in our relay.
+
+So why edge triggered? Now you know,
+In the chaos, it's our bow.
+Guaranteed handling, in our thread's sight,
+Edge triggered, our guiding light.

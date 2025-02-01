@@ -9,6 +9,7 @@ gem 'pigments'
 gem 'rake'
 gem 'redcarpet'
 gem 'nokogiri', '~> 1.10'
+gem 'erb'
 
 group :jekyll_plugins do
   gem 'jemoji'

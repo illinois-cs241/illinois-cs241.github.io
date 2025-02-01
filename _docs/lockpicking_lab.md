@@ -10,7 +10,7 @@ wikibook:
 
 ## HW0
 
-You have already been assigned a HW0 for the class. Add your answers to `HW0.md` in your course repository. Remember to commit and push your answers. We'll spend the first part of class going over the various questions from HW0. Your grade for this lab is partly HW0 and partly the assignment below.
+You have already been assigned a HW0 for the class, which is available on [Prairelearn](https://us.prairielearn.com/pl/course_instance/161719/assessments). We'll spend the first part of class going over the various questions from HW0. Your grade for this lab is partly HW0 and partly the assignment below.
 
 ## Development
 
@@ -26,7 +26,7 @@ One section we will have on the top of every assignment is a section called `gra
 
 ## Background and Assignment
 
-You are working for ShadyCorp Inc. Your boss discover's that your competitor, ShadierCorp Inc., has uploaded a safe to your company's production server. Your boss is curious and wants to know what's in the safe. Luckily you boss has a lockpick to help you.
+You are working for ShadyCorp Inc., listening to your favorite song, the [Debugging Waltz](https://go.cs.illinois.edu/debugging_waltz_mp4).  Your boss discover's that your competitor, ShadierCorp Inc., has uploaded a safe to your company's production server. Your boss is curious and wants to know what's in the safe. Luckily you boss has a lockpick to help you.
 
 
 Initial analysis of the safe indicates that it has two modes: interactive mode and file mode.
@@ -82,7 +82,10 @@ If you have the correct answers then `Sucessfully unlocked the safe!` will be pr
 * Clone or Update your git repository on your VM
 * Use the lockpick to figure out how to unlock the safe
 * Add your answers to `submission.txt`
-* `git commit -a -m "My Submission"` (commit your work to git).
+* Submit your work via git:
+  * `git add submission.txt`
+  * `git commit -m "My Submission"` (commit your work to git).
+  * `git push origin main` (push your committed work to Github -- **Required for your changes to be visible to the Autograder**).
 
 ## CS 341 Makefile
 

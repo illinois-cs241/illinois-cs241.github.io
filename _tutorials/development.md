@@ -13,6 +13,8 @@ In this course, we use Virtual Machines (VMs) for all our development. We will n
 
 For all registered students in the course, you will receive a VM in the CS Department’s VM Farm provisioned by EngrIT. When your VM is provisioned you should receive an email about your VM. If you registered late, please email the CS 341 Admin (you can find the email on our [staff page]({% link _pages/staff.html %})).
 
+Approximately 12-24 hours aftering registering for the course your VM host name should also be on this [page](https://csid-basic-apps.cs.illinois.edu/) - so that's another way to lookup your VM name.(VPN needed).
+
 Once you have received your VM, you can connect to your VM via SSH. 
 If you are not on the campus network you will need to install and use the campus VPN.
 
@@ -29,7 +31,7 @@ Note that if you are not connected to on-campus internet, you will need to use a
 
 An alternative to using the UIUC VPN is to SSH twice. You can first SSH into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
 
-Additionally, make sure your VM is on and running, which can be done [at the VM dashboard](https://vc.cs.illinois.edu/). Use [this](https://csid-basic-apps.cs.illinois.edu/) to lookup your VM name if needed.  
+Additionally, make sure your VM is on and running, which can be done [at the VM dashboard](https://vc.cs.illinois.edu/). Use this [page](https://csid-basic-apps.cs.illinois.edu/) to lookup your VM name if needed.  
 **Note: Both of the above links also require campus wifi or a VPN**
 
 
@@ -75,32 +77,32 @@ fatal: Authentication failed for 'https://github.com/illinois-cs-coursework/{{si
 
 There are three ways that we recommend for authenticating with GitHub
 
-#### Option 1: Using [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+#### Option 1: Using the GH Auth tool (**Recommended**)
+
+`gh` is Github's official command line interface. Almost anything you can do through the Github website, you can do through `gh`, and this includes authenticating your Git:
+
+1. Run `sudo apt update && sudo apt install gh` on your VM to install `gh`.
+2. Run `gh auth login`, choose `Github.com` for account type, `HTTPS` for protocol, and `Y` for authenticating Git, then follow its instruction to complete authentication.
+
+You can learn more about what `gh` can do [here](https://cli.github.com/manual/).
+
+#### Option 2: Using a Personal Access Token
+
+You can think of a personal access token as a password with limited privileges and an expiration date. To create a token, go to [Github settings](https://github.com/settings/tokens), and click **Generate new token (classic)**.
+
+We recommend only giving your new token **repo** scope, as that is all you need to push and pull from your repos.
+
+Once the token is generated (be sure to save it somewhere), you **must** further authorize the token with your NetID to access your CS 341 repos with it. See GitHub's docs [here](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).
+
+Finally, you can run `git clone` again and use your newly generated token in place of your password. If you're using VSCode, you may need to log out of Github in VSCode (Using **Accounts** button at bottom left) and log in again.
+
+#### Option 3: Using [SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 1. Create an SSH key on your VM. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command `ssh-keygen -t ed25519 -a 100`. This command generates a private and public key in the directory `~/.ssh`, where `~` denotes your home directory. It will prompt you to enter a name for the file storing your private key, and will generate a .pub file for your public key. It's not necessary to enter a password for the key.
 2. Copy the ***public*** key to your clipboard. This is usually stored at a path like `~/.ssh/*.pub`, where `~` denotes your home directory. You can print out the public key to the terminal with the `cat` command.
 3. Log into your GitHub account, navigate to Settings->SSH Keys, and follow the prompts to add a new SSH key by pasting in the ***public*** key on your clipboard.
 
-_Please keep in mind that, when using this method, you will need to use SSH protocol URLs (e.g. `git@github.com:<repo>`), not HTTPS protocol URLs (e.g. `https://github.com/<repo>`)_.
-
-#### Option 2: Using the GH Auth tool
-
-GitHub provides their own command line tool for automating tasks, including authentication. The relevant documentation for the tool can be found [here](https://cli.github.com/manual/gh_auth_login).
-
-In summary:
-
-1. Install the `gh` tool using `sudo apt update && sudo apt install gh`.
-2. Run `gh auth login` to authenticate.
-
-#### Option 3: Using a Personal Access Token
-
-You can think of a personal access token as a password with limited privileges and an expiration date. To create a token, go to [Github settings](https://github.com/settings/tokens), and click **Generate new token (classic)**.
-
-We recommend only giving your new token **repo** scope, as that is all you need to push and pull from your repo.
-
-Once the token is generated (be sure to save it somewhere), you must authorize the token for use with Illinois Single Sign-On (SSO). See GitHub's docs [here](https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on).
-
-Finally, you can run `git clone` again and use your newly generated token in place of your password. If you're using VSCode, you may need to log out of Github in VSCode (Using **Accounts** button at bottom left) and login again.
+_Please keep in mind that if you use this method, you will need to use SSH protocol URLs (e.g. `git@github.com:<repo>`) when you pull from / push to Github, not HTTPS protocol URLs (e.g. `https://github.com/<repo>`)_.
 
 ### Fetching from `_release`
 
@@ -171,10 +173,9 @@ sudo apt-get install -y libc6-dbg
 
 This is your VM! You can `sudo` and install whatever you want on it (given that it is school appropriate and compliant with [VM Farm policies](https://answers.uillinois.edu/illinois.engineering/page.php?id=104597))
 
-You can install `vim` or `emacs`. If you've ever wanted to become terminal-savvy, this is definitely the course to do it!
+You can install `vim` or `emacs`. If you've ever wanted to become terminal-savvy, this is definitely the course to do it! If you don't feel like learning a new language and want to stick to GUIs, you can also `ssh` into your machine and work on your code through VSCode, which is covered in greater detail in [this guide](https://cs341.cs.illinois.edu/tutorials/vscode).
 
 If anything is unclear, either post on the course forums or ask your TAs/CAs/fellow students! **Be careful about messing up your VM.** If your VM ever gets into an unusable state, please make a private post in the course forums **with your VM number**, and we will try to resolve it.
-
 
 You may find ssh-copy-id useful (A web search using Google/Duck Duck Go is useful). You can also configure MS Code and other GUI editors to work remotely. However some people still use 'out of the box' terminal-based editors like vi/vim that you can find (or install) on even the smallest of Linux distributions, and work even on low-bandwidth connections.
 
@@ -190,7 +191,14 @@ If you can't connect -
 
 3. Check [EngrIT Annoucements](https://status.engineering.illinois.edu/announcements.asp) and slow loading [Status Page](https://status.engineering.illinois.edu/) and the class forum
 
-4. Contact IT by emailing [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu). Include all relevant details (your VM hostname and your netid, and description of what you've tried.)
+
+## Still have VM issues?
+
+If you are sure that you follow the setup guidance correctly and you are on either the Campus VPN or the IllinoisNet WiFi but you still have VM issues (e.g. cannot access vc.cs.illinois.edu, cannot ssh into VM), then the fastest resolution will come from directly contacting EngrIT with your issue using their [form](https://go.illinois.edu/ewshelp). In the form, under the “Which lab(s) or remote resource(s) is your request about?”, you can type "CS VM Farm".
+
+You can contact IT by directly emailing  [cs-vmfarm-help@illinois.edu](mail:cs-vmfarm-help@illinois.edu). This a  bit faster than the known 'standard' emails, [ews@illinois.edu](mail:ews@illinois.edu), and [engrit-help@illinois.edu](mail:engrit-help@illinois.edu) because these last two need an extra manual step to get your request to the right support people. 
+
+<strong>Include as many details as possible (Course number, your VM hostname, time of error, type of error, and description of what you've tried.</strong>
 
 
 ## Provisioning a local VM using Vagrant (optional)

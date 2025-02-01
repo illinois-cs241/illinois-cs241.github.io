@@ -3,26 +3,23 @@ layout: slide
 title: Networking
 ---
 
-## TCP
+## Networking Overview
 
-![image](https://user-images.githubusercontent.com/3259988/139184799-efe5eae4-b92c-439f-9143-ba8d3901e734.png)
+![OSI Model](/images/assignment-docs/lab/slides/networking/osi.png)
 
-## SYN/ACK Dance
+## TCP vs UDP
 
-In order to establish a TCP connection, one party must send a SYN packet to the other, receive a SYN-ACK packet back, and finally send an ACK packet.
+![Differences](https://www.bestvpnserver.com/wp-content/uploads/2013/09/UDP_vs_TCP.jpg)
+
+We focus on TCP in this class.
+
+## TCP Handshakes
 
 ![SYN SYN-ACK ACK](https://upload.wikimedia.org/wikipedia/commons/8/8c/Tcp_normal.png)
 
 ## TCP Packet Layout
 
-![Size of Packet](https://web.archive.org/web/20210520052048if_/https://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif)
-
-
-## TCP vs UDP
-
-In this class, we focus on TCP. Where might UDP be used?
-
-![Drfferences](https://www.bestvpnserver.com/wp-content/uploads/2013/09/UDP_vs_TCP.jpg)
+![TCP Packets](https://web.archive.org/web/20210520052048if_/https://tr1.cbsistatic.com/hub/i/2015/06/03/596ecee7-0987-11e5-940f-14feb5cc3d2a/r00220010702mul01_02.gif)
 
 <horizontal />
 
@@ -37,8 +34,6 @@ In this class, we focus on TCP. Where might UDP be used?
 ## Bind
 
 `bind` associates an abstract network socket created with `socket` to an actual networking interface/address.
-
-![image](https://user-images.githubusercontent.com/3259988/139183780-8ac6fec6-dd93-4c0a-8239-c08c287b5091.png)
 
 ## Listen
 
@@ -64,20 +59,23 @@ Make sure to check errors for *every* call, networking can fail at any point! Al
 
 ## A few gotchas
 
-## Network vs Host Byte Ordering
+## Byte Ordering
 
-![Byte Ordering](https://web.archive.org/web/20191222042521im_/http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png)
+- Convert your data to/from the "network byte order" to be architecture-agnostic.
+- See `man 3 htonl` for more info.
+
+<img src="https://web.archive.org/web/20191222042521im_/http://orca.st.usm.edu/~seyfarth/network_pgm/byte_ordering.png" width="50%" />
 
 ## Socket Options
 
-Make sure to set socket options to reuse to enable effective debugging of the server - otherwise, the system won't immediately reallow you to use a socket once it's been closed by your program. 
+- Use `setsockopt` to set `SO_REUSEADDR` on your socket.
+- Otherwise the system won't immediately reallow you to use a socket after it's been closed.
 
 ## Signal Handler Safety
 
-Most server applications are interupted through a signal, but you shouldn't do all of the cleanup in the signal handler because not every function is signal handler safe (think back to CS233 interrupts). This pattern avoids this issue:
-
-<vertical />
-
+- Most server applications are interupted through a signal.
+- Don't do cleanup in the signal handler! Not every function is signal handler safe.
+- Do this instead:
 ```
 int is_running = 1;
 int handler(){
@@ -90,18 +88,8 @@ int main(){
 }
 ```
 
-## Style
-
-Try to modularize your functions so that everything is not in the main method. This is ideally because we **need** to tell the system that we are done using shared resources like sockets, and we need to determine when a socket goes "out of scope" -- we don't have RAII like in C++ so we have to determine that ourselves, and modularizing your code makes it easy to see when things are in/out of scope.
-
 <horizontal />
 
-## Fun facts
-
-## Latency
+## Fun Facts: Latency
 
 ![Latency numbers you should know](http://i.imgur.com/k0t1e.png)
-
-## Dropped Packets
-
-![Why packets get dropped](https://web.archive.org/web/20191222042522if_/https://www.isa.org/uploadedImages/Content/Standards_and_Publications/ISA_Publications/InTech_Magazine/2014/Sep-Oct/SO-2014-System-Int-figure1.jpg)

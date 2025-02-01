@@ -70,7 +70,7 @@ Some food for thought:
 * What does `int pthread_join(pthread_t thread, void **retval);` do?
 	* What is `retval`?
 
-We expect your `par_reduce()` to not spawn unnecessary worker threads. Each worker thread you spawn should process at least one element of the input list. Therefore, you should only spawn `max(num_threads, list_len)` worker threads.
+We expect your `par_reduce()` to not spawn unnecessary worker threads. Each worker thread you spawn should process at least one element of the input list. Therefore, you should only spawn `min(num_threads, list_len)` worker threads.
 
 ## Testing your code
 

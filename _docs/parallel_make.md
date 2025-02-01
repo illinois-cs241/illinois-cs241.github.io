@@ -33,9 +33,6 @@ Before starting you should read the Wikipedia article on [Make](http://en.wikipe
 You might also want to look [here](https://web.archive.org/web/20170202011246/http://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/makefile.html) for some notes that explain makefiles really well.
 (They start with some C++ specific details but you can skip to the 'Now, makefiles' section. Also, do note that the makefile for this MP does NOT use makefile macros.)
 
-
-**THIS IS A HARD MP. WE RECOMMEND THAT YOU START EARLY.**
-
 ## Resource Allocation Graphs
 
 A good way to think about this MP at a high level is by using a model [covered in lecture](http://cs341.cs.illinois.edu/coursebook/Deadlock#resource-allocation-graphs), Resource Allocation Graphs. You can think of `make` rules as nodes in the graph and dependency relations as directed edges that point from rules to dependencies. This visualization comes in handy when we are dealing with programs that may encounter deadlock. Given that a `Makefile` may contain a circular dependency (what are the required conditions for a program to deadlock?), keep this model at the back of your mind when building your solution.
@@ -124,7 +121,7 @@ The parser will return a graph containing 5 vertices, once each for rule 'a', 'b
 
 Those curious of the implementation can view the source in `parser.c` although this is not necessary.
 
-We have provided an implementation of a thread safe queue, a vector, a set, a dictionary, and a graph. This is the same queue from luscious locks and the same vector you've used in prior assignments. The set, graph, and dictionary are new data structures from the CS 341 provided library.
+We have provided an implementation of a vector, a set, a dictionary, a graph, and a thread-safe queue. This is the same queue from luscious locks and the same vector you've used in prior assignments. The set, graph, and dictionary are new data structures from the CS 341 provided library.
 You can view the header information in `includes/`.
 
 ## Graph Data Structure
@@ -295,11 +292,12 @@ There are many more examples provided in your MP folder.
 
 ## Compiling and Running
 
-
 As usual, we have provided you with a Makefile which will compile your code in a variety of ways.
 Unfortunately, you can't use `parmake` to compile `parmake`, because our parser does not support variables and variable expansions.
 
 To compile in release mode, run `make`, for debug mode, use `make debug.`
+
+If you want to write more test cases yourself (which we highly recommend!) in VSCode, make sure you **turn off** `Editor: Insert Spaces` **in the settings** first, or you will get the `missing separator` error when you try to run parmake on them. This is because the makefile parser expects tab characters instead of space characters at the beginning of indented lines for [historical reasons](https://retrocomputing.stackexchange.com/questions/20292/why-does-make-only-accept-tab-indentation).
 
 ### ThreadSanitizer
 The provided `Makefile` also builds a ThreadSanitizer instrumented version of your code.

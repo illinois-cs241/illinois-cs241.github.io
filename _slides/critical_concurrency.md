@@ -31,14 +31,14 @@ Semamore sem;
 Stack s; // Thread Safe Stack
 void* transaction_listener(void* arg) {
     while(1) {
-        semm_wait(&sem); // decrements the semaphore
+    	semm_post(&sem); // increments the semamore
         stack_push(&s, get_transaction());
     }
 }
 
 void* transaction_verifier(void* arg) {
     while(1) {
-    	semm_post(&sem); // increments the semaphore
+        semm_wait(&sem); // decrements the semamore
         transaction = stack_pop(&s);
         verify(transaction);
     }
@@ -92,7 +92,7 @@ if(!condition)
 ```
 
 What is wrong with the code above?
-
+(hint: what if we get woken up while `condition` is still true?)
 
 <horizontal />
 
@@ -163,8 +163,8 @@ Remember CS 124/225! Appending to the head of a linked list, other edge cases, e
 
 <vertical />
 
-* `PTHREAD_MUTEX_INITIALIZER` only works for static initialization
-* Use `pthread_mutex_init(&mtex, NULL)` in other cases
+* `PTHREAD_MUTEX_INITIALIZER` initializes a mutex with default properties
+* `pthread_mutex_init(&mtex, &attr)` allows specialized attributes
 * Think of all critical/edge cases to test your queue/semamore
 * Consider one thread that starts working really late
 * Semamore is not a real term!

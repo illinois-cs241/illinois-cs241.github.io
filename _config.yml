@@ -58,8 +58,7 @@ reveal:
   css_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"
   css_theme_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css"
   css_syntax_url: "/css/reveal-code-style.css"
-  lib_head_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/head.min.js"
-  reveal_js_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/js/reveal.js"
+  reveal_js_url: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"
 plugins_dir:
   - _plugins
 plugins:

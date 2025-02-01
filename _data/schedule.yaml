@@ -13,7 +13,7 @@ chapter_link_map:
   14: "http://cs341.cs.illinois.edu/coursebook/index.html#14-security-"
   15: "http://cs341.cs.illinois.edu/coursebook/index.html#15-review-"
 #1/17/2023 – 5/3/2023 plus finals)
-
+# first day Wed 1/21/2025. Spring Break March 15–23. May 7 Last day of instruction
 classes:
   - title: "No class - MLK day "
     summary: "History of <a href = 'https://en.wikipedia.org/wiki/Martin_Luther_King_Jr.'>Martin Luther King Jr.</a>"
@@ -31,12 +31,16 @@ classes:
     resources: "Code and handouts are <a href='{{ site.data.constants.lecture_handouts }}'>here</a>. Alternatively see Lecture 2 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#F44336"
     number: 2
-  - title: "C Crash Course 2 (Virtual only; no class)"
+  - title: "C Crash Course 2"
     summary: "3. man,asprintf,free,assert"
     review_chapter: 3
     resources: "See Lecture 3 on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a> or <a href = 'https://drive.google.com/drive/folders/1baLvQNhhTBv8Z8xNQnCPq6pnp7c6-1Ek?usp=sharing'>here</a>"
     color: "#F44336"
     number: 3
+  - title: "No class - Labor Day"
+    summary: "History of <a href = 'https://en.wikipedia.org/wiki/Labor_Day'>Labor Day</a>"
+    resources: ""
+    color: "#808080"
   - title: "A day at the C side: C Crash Course 3"
     summary: "4. getenv, scanf, getline, fork "
     review_chapter: 3
@@ -55,10 +59,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#E91E63"
     number: 6
-  - title: "No class - Labor day "
-    summary: "History of <a href = 'https://www.dol.gov/general/laborday/history/'>Labor day</a>"
-    resources: ""
-    color: "#808080"
   - title: "Signals for Process Control"
     summary: "7. Introducing POSIX signals to suspend and kill child processes. SIGSTOP, SIGKILL, SIGINT"
     review_chapter: 4
@@ -137,10 +137,6 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#03A9F4"
     number: 19
-  - title: "No lecture"
-    summary: "Extra Programming Time"
-    resources: ""
-    color: "#808080" 
   - title: "Dining Philosophers"
     summary: "The Dining Philosophers problem"
     review_chapter: 8
@@ -159,6 +155,18 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#009688"
     number: 22
+  - title: "No class - Spring Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
+  - title: "No class - Spring Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
+  - title: "No class - Spring Break"
+    summary: ""
+    resources: ""
+    color: "#808080"
   - title: "Files. Pipes and seeks part 2. "
     summary: "Working with files"
     review_chapter: 9
@@ -236,8 +244,7 @@ classes:
     review_chapter: 13
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#FFC107"
-    number: 35
-    
+    number: 35  
   - title: "Networking Protocols"
     summary: "TCP handshakes, QUIC, HTTP/1.1"
     review_chapter: 11
@@ -250,24 +257,32 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>."
     color: "#FFC107"
     number: 37
-  # - title: "Fall Break"
-  #   summary: ""
-  #   resources: ""
-  #   color: "#808080" 
-  # - title: "Fall Break"
-  #   summary: ""
-  #   resources: ""
-  #   color: "#808080" 
-  # - title: "Fall Break"
-  #   summary: ""
-  #   resources: ""
-  #   color: "#808080"
+# - title: "No class (office hours in CIF)"
+#   summary: ""
+#   resources: ""
+#   color: "#808080"
+# - title: "Fall Break"
+#   summary: ""
+#   resources: ""
+#   color: "#808080"
+# - title: "Fall Break"
+#   summary: ""
+#   resources: ""
+#   color: "#808080"
+# - title: "Fall Break"
+#   summary: ""
+#   resources: ""
+#   color: "#808080"
   - title: "Systems Concepts Review"
     summary: "Systems Concepts Review"
     review_chapter: 15
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#FFC107"
     number: 38
+# - title: "Invited Lecture (Rob Kooper NCSA)"
+#   summary: ""
+#   resources: ""
+#   color: "#8080F0"
   - title: "Security"
     summary: ""
     review_chapter: 14
@@ -280,11 +295,19 @@ classes:
     resources: "See lecture on <a href = 'https://classtranscribe.illinois.edu/'>ClassTranscribe</a>"
     color: "#C38A80"
     number: 40
-  - title: "Extra I (Containers, Security Case Studies)"
+  - title: "To be announced"
     summary: ""
     resources: ""
-    color: "#8080F0"
-  - title: "Special Topics/Beyond CS341"
+    color: "#808080"
+  - title: "To be announced"
     summary: ""
     resources: ""
-    color: "#FFC107"
+    color: "#808080"
+# - title: "Special Topics/Beyond CS341"
+#   summary: ""
+#   resources: ""
+#   color: "#FFC107"
+# - title: "Surprize Quiz for Angrave"
+#   summary: "Bring your discussion questions"
+#   resources: ""
+#   color: "#509688"

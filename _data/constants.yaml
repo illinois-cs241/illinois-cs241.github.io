@@ -5,25 +5,30 @@ department_code: "cs"
 course_name: "System Programming"
 
 # Class info
-semester: sp24
-semester_full_name: Spring 2024
-instructor: Lawrence Angrave (angrave@illinois.edu)
-location: ECEB 1002
-timings: MWF 11:00AM - 11:50AM
-courses_schedule_link: "https://courses.illinois.edu/schedule/2024/spring/CS/341"
+semester: "sp25"
+semester_full_name: "Spring 2025"
+instructor: "Lawrence Angrave (angrave@illinois.edu)"
+location: "ECEB 1002"
+timings: "MWF 11:00AM - 11:50AM"
+courses_schedule_link: "https://courses.illinois.edu/schedule/2025/spring/CS/341"
 
 # Infrastructure examples-
-#grade_viewer_link: "https://sp20-cs241-grd-01.cs.illinois.edu/grades"
-#broadway_on_demand_link: "https://sp20-cs241-grd-01.cs.illinois.edu/on-demand/"
-#malloc_contest_link: "https://sp20-cs241-grd-01.cs.illinois.edu/malloc/"
-#forum_link: "https://edstem.org/us/courses/18578/discussion/"
+# grade_viewer_link: "https://sp20-cs241-grd-01.cs.illinois.edu/grades"
+# broadway_on_demand_link: "https://sp20-cs241-grd-01.cs.illinois.edu/on-demand/"
+# malloc_contest_link: "https://grd-cs341-01.cs.illinois.edu/malloc"
+# forum_link: "https://edstem.org/us/courses/18578/discussion/"
 
-# fa21-cs241-grd-01
-# fa21-cs241-grd-13
-grade_viewer_link: "https://grd-cs341-01.cs.illinois.edu/new-grade-viewer" # https://grd-cs341-01.cs.illinois.edu/new-grade-viewer"
-broadway_on_demand_link: "https://grd-cs341-01.cs.illinois.edu/on-demand/" # https://grd-cs341-01.cs.illinois.edu/on-demand/"
-malloc_contest_link: "" # https://grd-cs341-01.cs.illinois.edu/malloc/"
-forum_link: "https://edstem.org/us/courses/52101/discussion/"
+# Not Yet Available = https://www.meme-arsenal.com/memes/f98b7cfa7bc928372bac515c8a43d3c7.jpg
+# NO LONGER USED - it's automatically generated from the semester slug.
+grade_viewer_link: "https://www.meme-arsenal.com/memes/f98b7cfa7bc928372bac515c8a43d3c7.jpg" 
+# " "https://grd-cs341-01.cs.illinois.edu/new-grade-viewer" 
+# https://grd-cs341-01.cs.illinois.edu/new-grade-viewer"
+broadway_on_demand_link: "https://grd-cs341-01.cs.illinois.edu/on-demand/" 
+# ""https://grd-cs341-01.cs.illinois.edu/on-demand/" # https://grd-cs341-01.cs.illinois.edu/on-demand/"
+malloc_contest_link: "https://www.meme-arsenal.com/memes/f98b7cfa7bc928372bac515c8a43d3c7.jpg" 
+# "https://grd-cs341-01.cs.illinois.edu/malloc" # "https://grd-cs341-01.cs.illinois.edu/malloc" # https://grd-cs341-01.cs.illinois.edu/malloc/"
+forum_link: "https://edstem.org/us/courses/74018/discussion" 
+# "https://edstem.org/us/courses/61021/discussion/" # "https://edstem.org/us/courses/52101/discussion/"
 
 lecture_videos_link: "https://classtranscribe.illinois.edu/"
-lecture_handouts: "https://github.com/angrave/CS341-Lectures-SP24"
+lecture_handouts: "https://github.com/angrave/CS341-Lectures-SP25"

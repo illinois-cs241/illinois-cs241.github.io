@@ -42,7 +42,7 @@ if(pid == -1){
 	exec(...)
 }else{
 	//I Am the parent
-	wait(pid);
+	waitpid(pid, ...);
 }
 ```
 
