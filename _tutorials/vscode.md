@@ -3,9 +3,6 @@ layout: doc
 title: VS Code Tutorial
 ---
 
-## Disclaimer
-Although using VS Code can be helpful and possibly more intuitive than vim, we do not officially support it. This means that any problems you run into by using VS Code are up to you to solve.
-
 ## Introduction
 
 Most of you have noticed that you must develop in your VMs for CS 341. This requires editing and writing code within the VM, which is usually done via the vim text editor. Vim is a great tool, and we highly encourage you to at least pick up the basics of vim so that you can be comfortable using it throughout your careers as software engineers. Some good resources are [https://learnvimscriptthehardway.stevelosh.com/](url), [https://vim-adventures.com/](url), and, for those who just want a basic cheat sheet, [https://vimsheet.com/](url).
