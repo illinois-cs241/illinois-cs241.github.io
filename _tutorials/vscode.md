@@ -5,9 +5,9 @@ title: VS Code Tutorial
 
 ## Introduction
 
-Most of you have noticed that you must develop in your VMs for CS 341. This requires editing and writing code within the VM, which is usually done via the vim text editor. Vim is a great tool, and we highly encourage you to at least pick up the basics of vim so that you can be comfortable using it throughout your careers as software engineers.
+Most of you have noticed that you must develop in your VMs for CS 341. This requires editing and writing code within the VM, which is usually done via the vim text editor. Vim is a great tool, and we highly encourage you to at least pick up the basics of vim so that you can be comfortable using it throughout your careers as software engineers. Some good resources are [https://learnvimscriptthehardway.stevelosh.com/](url), [https://vim-adventures.com/](url), and, for those who just want a basic cheat sheet, [https://vimsheet.com/](url).
 
-That being said, we understand that it can be frustrating to use vim when you are working with large files and projects, and many of you would feel more comfortable using your traditional text editor of choice. We'll provide a series of steps here that will help you set up a development environment that lets you edit your code locally in VS Code (you can modify this process to use Atom or Sublime) and run the code in the VM.
+All that said, we understand that it can be frustrating to use vim when you are working with large files and projects, and many of you would feel more comfortable using your traditional text editor of choice. We'll provide a series of steps here that will help you set up a development environment that lets you edit your code locally in VS Code (you can modify this process to use Atom or Sublime) and run the code in the VM.
 
 To be clear, you will not be running your code locally. You will be editing and running your code on your VM through ssh (e.g. make, make test, running binaries, etc). However, you will be able to do all of that in VS code, which is synced to the VM through ssh.
 
@@ -19,20 +19,12 @@ To be clear, you will not be running your code locally. You will be editing and 
 ```console
 ssh <netid>@<your vm address here>
 ```
-Ensure that this successfully logs you into your VM, and navigate to an assignment directory. If this doesn't log in correctly, the following steps will not work.
+Ensure that this successfully logs you into your VM, and navigate to an assignment directory. If this doesn't log in correctly, the following steps will not work. If you are unable to ssh into your VM, make a post on EdStem. You may also need to contact EngrIT.
 
 3. Download and install VS code from [this website](https://code.visualstudio.com).
 
-4. Type Cmd + O (Ctrl + O on Windows) and open up the folder where you want your CS 341 code to live on your local machine.
+4. Follow the steps in the section "Getting Started" from [this website](https://code.visualstudio.com/docs/remote/ssh).
 
-5. Go to Code -> Preferences -> Extensions. In the search bar, type "sftp". Install the first extension (the author should be liximomo).
+In particular, you should read the "Installation", "SSH host setup", and "Connect to a remote host" sections. The other sections might prove useful, but these three are the sections that dictate how to set up your remote client.
 
-6. After the extension is installed, hit Cmd + Shift + P (Ctrl on windows). This should pull up a command window. Type "SFTP: Config" and hit enter when you find that command.
-
-7. A config file should pop up. Edit the value corresponding to the "host" key to be your VM address. This is the \<semester\>-cs341-\<vm number\>.cs.illinois.edu address.
-
-8. Set your username as your netid. Add a field in the JSON called "password" and map the value to be a string containing your password. Save the file, you should be good to go now!
-
-9. Once again hit Cmd + Shift + P and type in "SFTP: List". Click enter on the top, and then navigate to your CS 341 directory. You'll need to go in home/ and your netid and navigate from there. Once you're in your directory, click the dot at the top that says current folder. Your files should start slowly showing up in the left column of VS code.
-
-10. Try editing a file. On your VM that you've ssh'd into in your terminal from Step #2, cat the file you just edited. You should see that your changes have shown up on your VM! You can now edit your code in VS code and then run it in your VM while you are on the VPN or on IllinoisNet.
+5. Try editing a file. On your VM that you've ssh'd into in your terminal from Step #2, cat the file you just edited, or click on the file in the file explorer. You should see that your changes have shown up on your VM! You can now edit your code in VS code and then run it in your VM while you are on the VPN or on IllinoisNet.

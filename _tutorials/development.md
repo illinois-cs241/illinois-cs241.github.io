@@ -35,11 +35,11 @@ Additionally, make sure your VM is on and running, which can be done [at the VM 
 **Note: Both of the above links also require campus wifi or a VPN**
 
 
-## Setting Up Git
+## Creating your course repository
 
-You will be using `git` to submit all your assignments in this course. 
+You will get the starter code for all the labs and MPs through `Git` and Github, and submit your solutions to be graded in the same way. 
 
-First go to [the repository creator](https://edu.cs.illinois.edu/create-gh-repo/{{site.data.constants.semester}}_{{site.data.constants.department_code}}{{site.data.constants.course_number}}/).
+Click on [the repository creator](https://edu.cs.illinois.edu/create-gh-repo/{{site.data.constants.semester}}_{{site.data.constants.department_code}}{{site.data.constants.course_number}}/) and follow the instructions to create your own CS 341 repository. This process will also add you to the `illinois-cs-coursework` organization and thus give you permission to our release repository.
 
 ### Configuring Git
 
