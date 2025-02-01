@@ -12,7 +12,7 @@
     <section class="center">
         <p>
             Most questions should be asked on our Q &amp; A Forum, so that answers can benefit the entire class.
-            Please acquaint yourself with our <a href="/help.html#piazza-search-first-dont-post">Forum policy!</a>
+            Please acquaint yourself with our <a href="https://cs341.cs.illinois.edu/resources.html#forum-q-and-a-search-first-dont-post">Forum policy!</a>
         </p>
         <p>
             However, if you have a sensitive issue feel free to make a private note on the forum, or email course staff
@@ -29,7 +29,7 @@
         {% assign photofile = photos | where_exp: "file", "file.path contains member.netid" | first %}
         {% assign photo = photofile.path | default: "/images/staffPhotos/default.jpg" %}
         <section class="staff-container">
-            <a href="mailto:{{member.netid}}@illinois.edu?Subject=CS%20241%20Student" alt="Mail Student">
+            <a href="mailto:{{member.netid}}@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
                 <div class="staff-image" id="{{member.netid}}" data-toggle="tooltip" data-placement="bottom"
                     title="{{ member.roles }} {% if member.specialty != '' %}interested in {{ member.specialty }}{% endif %} and has been on staff for {{ member.semesters }}"
                     style="background-image: url({{ photo }});">
