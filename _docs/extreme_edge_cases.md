@@ -196,6 +196,7 @@ Let's say there are five good implementations and five bad implementations. If y
 * Always debug your code using the `debug` build, as the debug build is compiled with the `-O0` flag, which means no compiler optimizations. In addition, the debug build is compiled with the `-g` flag. This allows you to view source code in GDB, and shows the line numbers where things fail in Valgrind.
 * Ensure that the code you submitted is the version that you want to grade (before the deadline, or before running an autograder run).
 * Take note of graded files. Make sure any changes you want graded are placed in the graded files.
+* Do not declare your functions as just `inline`, as it is a keyword that may cause issues with linkage. Functions declared with `inline` will not have an external definition (unless overrided with keywords like `extern`), so it may be considered undefined unless an explicit external definition is provided. In addition, the auto-grader compiles the code in debug mode for valgrind checks, which `inline` can break. You can read more about this [here](https://stackoverflow.com/questions/25000497/whats-the-difference-between-static-inline-extern-inline-and-a-normal-inline) or [here in the docs](https://en.cppreference.com/w/cpp/language/inline).
 * Pay attention to Ed for pitfalls and issues that you may have overlooked.
 
 ### Print smart
