@@ -23,8 +23,18 @@ Ensure that this successfully logs you into your VM, and navigate to an assignme
 
 3. Download and install VS code from [this website](https://code.visualstudio.com).
 
-4. Follow the steps in the section "Getting Started" from [this website](https://code.visualstudio.com/docs/remote/ssh).
+4. Install the Remote SSH Extention from Microsoft: 
 
-In particular, you should read the "Installation", "SSH host setup", and "Connect to a remote host" sections. The other sections might prove useful, but these three are the sections that dictate how to set up your remote client.
+![VS Code SSH Extention](/images/VSCode_SSH.png)
 
-5. Try editing a file. On your VM that you've ssh'd into in your terminal from Step #2, cat the file you just edited, or click on the file in the file explorer. You should see that your changes have shown up on your VM! You can now edit your code in VS code and then run it in your VM while you are on the VPN or on IllinoisNet.
+5. Click the open remote window button at the bottom left of the editor: 
+
+![Open Remote Button](/images/VSCode_open_remote.png)
+
+6. Click "Connect to Host... Remote-SSH", then "+ Add New SSH Host"
+
+7. Enter the SSH Command shown above, then pick a configuration file to save it to.
+
+8. You can then click the open remote button again, connect to remote ssh host, and pick the VM you just added. It will prompt you for a platform (use linux) and your netID password. 
+
+9. Now you have remote access to your VM! The integrated terminal and file editor will run and make changes on the VM itself, not on your local machine. You can [clone your course repository](https://cs341.cs.illinois.edu/tutorials/development#creating-your-course-repository) to the VM (if you have not done so already), and open the folder in the editor (this may require you to enter your password again). Happy Programming!
