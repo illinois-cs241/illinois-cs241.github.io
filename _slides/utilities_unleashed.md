@@ -11,16 +11,14 @@ title: Processes
 
 * At the start of each program, a program gets one process, but each program can make more processes. 
 
-* powerful, but isolated!
+* Powerful, but isolated! Can only communicate with each other by explicit means.
 
-* by default, no process can communicate with another process.
+## Contents of a Process Memory Space
 
-## Contents of a Process
-
-* Stack: Where declared variables live, grows down, W^X
+* Stack: Where declared variables live, grows down, writable only
 * Heap: Where malloc'd memory lives, grows up, writable only
-* Data segment: globals, static vars, 
-* Text segment: executable instructions
+* Data segment: globals, static vars, some parts writable, some parts readable
+* Text segment: program instructions, the only executable part of a program
 
 ## Address Space of a Process
 
@@ -54,6 +52,8 @@ it copies the state of the existing process with a few minor differences
 occurs when there is an attempt to create an infinite number of processes. 
 
 This will often bring a system to a near-standstill
+
+You do NOT want to do this (or else your VM will be difficult to recover)
 
 <vertical />
 
