@@ -15,10 +15,10 @@ title: Processes
 
 ## Contents of a Process Memory Space
 
-* Stack: Where declared variables live, grows down, writable only
-* Heap: Where malloc'd memory lives, grows up, writable only
-* Data segment: globals, static vars, some parts writable, some parts readable
-* Text segment: program instructions, the only executable part of a program
+* Stack: Where declared variables live, grows down, **r**eadable & **w**riteable (rw)
+* Heap: Where malloc'd memory lives, grows up, rw 
+* Data segment: globals, static vars, some parts rw, some parts read-only
+* Text segment: program instructions, the only e**x**ecutable (x) part of a program
 
 ## Address Space of a Process
 
