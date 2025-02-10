@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Virtual Memory | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/ideal_indirection">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Virtual Memory</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="whats-in-a-memory-address">What’s in a memory address?</h2>
+
+<p>Suppose I have an integer <code class="language-plaintext highlighter-rouge">p</code> allocated on the stack, and the value of <code class="language-plaintext highlighter-rouge">&amp;p</code> is <code class="language-plaintext highlighter-rouge">0xAB0</code> (= 2736). What does this mean?</p>
+
+</section><section><h2></h2>
+
+<p>In very old computers, this would imply that <code class="language-plaintext highlighter-rouge">p</code> is stored starting at the 2736th byte in physical memory of the computer. However, with modern computers, this is no longer true. Modern operating systems and computers rely on virtual memory to better abstract the idea of computer memory.</p>
+
+</section><section><h2></h2>
+
+<p>Consider a very simple virtual memory setup. The kernel maintains a lookup table - every memory address given to a process can be looked up in this table to see where it really lies in RAM. So the kernel could do <code class="language-plaintext highlighter-rouge">lookup(0xAB0)</code> and know where to actually find some data being requested by a program. Let’s suppose the system was 32 bits, so there are a total of 2^32 possible memory addresses (1 address = 1 byte). I can fit each address in a 4 byte (32 bit) integer - but my total storage required to maintain a lookup table would be <code class="language-plaintext highlighter-rouge">4 bytes x 2^32 addresses</code> = 16 GB. This is a lot of memory!</p>
+
+</section><section><h2></h2>
+
+<p>In order to get around this issue, we can address memory as “pages”. A very common page size is 4 kilobytes. Now, I can maintain a lookup table that only refers to segments of 4 KB in RAM, instead of individual bytes. On a 32 bit system, there would be only 2^20 4 KB pages, so I can easily store a lookup table on the system. But now how do I actually access specific bytes?</p>
+
+</section><section><h2></h2>
+
+<p>The answer is to split up the memory addresses we give to the user into two segments. On a 32 bit system, we can use the first 20 bits of the address to tell us which page the byte we’re looking for is in. So we can do a lookup in the page table to find out where in physical RAM that page is actually stored. Then, the bottom 12 bits can be used to tell us the exact offset into that region of RAM to get the byte we want.</p>
+
+</section><section><h2></h2>
+
+<p>The lookup process then looks something like this:</p>
+
+<p><img src="https://user-images.githubusercontent.com/3259988/137242880-f1e522a8-5efe-45fa-961d-456ec6e94f7b.png" alt="Level_split"></p>
+
+</section><section><h2 id="virtual-memory-visualization">Virtual Memory Visualization</h2>
+
+<p><img src="/images/assignment-docs/lab/slides/virtual/mmu_pic.png" alt="MMU"></p>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/virtual/page_map.png" alt="Page_Map"></p>
+
+</section></section><section><h1></h1>
+
+<section>
+How many pages are there in a 32bit machine (assume frame size of 4KB)?
+
+<p class="fragment" data-fragment-index="1">
+Answer: 2^32 address / 2^12 = 2^20 pages.
+
+Remember that 2^10 is 1024, so 2^20 is a bit more than one million.
+
+For a 64 bit machine, 2^64 / 2^12 = 2^52, which is roughly 10^15 pages. 
+</p>
+</section>
+
+<section>
+
+On a 32 bit machine with 2KB pages and 4 Byte entries, how big would a single layered page table have to be to address all of the physical memory? 
+
+<p class="fragment" data-fragment-index="2">
+There are 2^32 addresses, and each page is 2^11 bytes large. So there are a total of 2^21 pages. The page directory needs to hold a 4 byte entry corresponding to each page, so the total memory uses is 4 bytes * 2^21 = 8 MB.
+</p>
+</section>
+
+</section><section><h1></h1>
+
+<section><h2 id="multi-level-page-table">Multi-Level Page Table</h2>
+
+<p>In 64-bit systems, there are 10^15 4KB pages. We cannot afford to use a single massive page directory, so we layer the page tables.</p>
+
+<p><img src="/images/assignment-docs/lab/slides/virtual/division.gif" alt="Page Table Division"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="page-faults-and-segmentation-faults">Page faults and segmentation faults</h2>
+
+<ul>
+  <li>A segfault occurs when a memory access is invalid. Your program cannot recover from a segfault.</li>
+  <li>A page fault occurs when a page is not found in physical RAM.</li>
+  <li>Swap: When physical memory gets full, the kernel sends some pages to disk.</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="what-is-an-mmu">What is an MMU?</h2>
+
+<p>The memory management unit in modern computing is a physical component inside a computer that is responsible for handling virtual memory requests from the CPU. In this lab, you will be implementing portions of an MMU in C.</p>
+
+<p><img src="/images/assignment-docs/lab/slides/virtual/mmu_pic.png" alt="MMU"></p>
+
+</section><section><h2 id="what-is-a-tlb">What is a TLB?</h2>
+
+<ul>
+  <li>The Translation Look-aside Buffer is a “cache” for the MMU.</li>
+  <li>The most recently used addresses will be stored.</li>
+  <li>For frequently accessed addresses, the TLB can tell the MMU directly where to go (no translation necessary).</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/virtual/tlb_workflow.png" alt="TLB"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="be-careful-about-bitshifting">Be careful about bitshifting!</h2>
+
+<p>Some parts of this lab require bit shifting when translating virtual memory addresses. Watch out for the distinction between signed and unsigned shifts!</p>
+
+<p><img src="/images/assignment-docs/lab/slides/virtual/byte-extend.png" alt="Byte Extending"></p>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>
