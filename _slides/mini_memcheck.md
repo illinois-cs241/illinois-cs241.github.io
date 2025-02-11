@@ -28,14 +28,14 @@ Information about the current block of memory:
 <vertical />
 
 ```C
-struct metadata {
+typedef struct {
 	struct metadata *next;
 	size_t size;
-};
+} metadata;
 
 int main(void)
 {
-	struct metadata* md = malloc(sizeof(*md) + 64);
+	metadata* md = malloc(sizeof(metadata) + 64);
 	
 	printf("metadata address:\t%p\n", md);
 	printf("start of allocation:\t%p\n", md + 1);
@@ -93,6 +93,15 @@ $ ./malloc-main
 * How can we use tags to merge adjacent blocks?
 
 Understanding how to do this will be useful when you implement malloc!
+
+<vertical />
+
+![Malloc split](/images/assignment-docs/lab/slides/memory/malloc_split.png)
+
+<vertical />
+
+![Malloc merge](/images/assignment-docs/lab/slides/memory/malloc_double_coalesce.png)
+
 
 <horizontal />
 
