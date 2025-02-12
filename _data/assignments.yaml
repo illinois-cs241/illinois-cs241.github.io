@@ -48,12 +48,12 @@ labs:
       url: "mini_memcheck"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-09-25 23:59
+          due_date: 2025-02-19 23:59
           graded_files:
           - mini_memcheck.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Teaching Threads"
       releaseDate: "Week 5"
