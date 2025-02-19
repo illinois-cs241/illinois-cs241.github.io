@@ -66,7 +66,8 @@ labs:
           - par_reduce.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
+      slides: https://docs.google.com/presentation/d/1zdh2QgI40KssmoIhcJqZJoxfVB8euOXyx8-H1lV0NhA/edit?usp=sharing
   -
       name: "Critical Concurrency"
       releaseDate: "Week 6"
