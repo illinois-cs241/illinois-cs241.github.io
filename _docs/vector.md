@@ -88,7 +88,7 @@ strcmp(const char *s1, const char *s2) {
 
 ## Callbacks 
 
-A set of callback functions representing copy constructors, default constructors, and destructors for different types have been provided in `callbacks.h`. Please read `callbacks.h` and `callbacks.c` carefully, especially the function documentation, to understand when to use each one accordingly. The function pointers defined in the vector struct can store the function pointer to the defined callback functions, which allows for flexibility and emulation of Object-Oriented Programming in C. You can also learn more about callbacks and how to use them [here](https://www.geeksforgeeks.org/callbacks-in-c/) or [here](https://www.tutorialspoint.com/callbacks-in-c).
+A set of callback functions representing copy constructors, default constructors, and destructors for different types have been provided in `callbacks.h`. Please read `callbacks.h` and `callbacks.c` carefully, especially the function documentation, to understand when to use each one accordingly. The function pointers defined in the vector struct can store function pointers to the defined callback functions, which allows for flexibility and emulation of Object-Oriented Programming in C. You can also learn more about callbacks and how to use them [here](https://www.geeksforgeeks.org/callbacks-in-c/) or [here](https://www.tutorialspoint.com/callbacks-in-c).
 
 ## Writing test cases
 
