@@ -1,0 +1,2192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Networking</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Networking" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Networking
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<hr>
+<p>bibliography:</p>
+<ul>
+  <li>‘networking/networking.bib’
+…</li>
+</ul>
+
+
+
+<p>Networking has become arguably the most important use of computers in
+the past 10-20 years. Most of us nowadays can’t stand a place without
+wifi or any connectivity, so it is crucial as programmers that you have
+an understanding of networking and how to program to communicate across
+networks. Although it may sound complicated, POSIX has defined nice
+standards that make connecting to the outside world easy. POSIX also
+lets you peer underneath the hood and optimize all the little parts of
+each connection to write high performant</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-osi-model" class="title-text">The OSI Model<a class="anchor title-text" href="#the-osi-model"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The Open Source Interconnection 7 layer model (OSI Model) is a sequence
+of segments that define standards for both infrastructure and protocols
+for forms of radio communication, in our case the internet. The 7 layer
+model is as follows</p>
+<ol>
+  <li>
+    <p>Layer 1: The physical layer. These are the actual waves that carry
+the bauds across the wire. As an aside, bits don’t cross the wire
+because in most mediums you can alter two characterstics of a wave –
+the amplitude and the frequency – and get more bits per clock cycle.</p>
+  </li>
+  <li>
+    <p>Layer 2: The link layer. This is how each of the agents react to
+certain events (error detection, noisy channels, etc). This is where
+and live.</p>
+  </li>
+  <li>
+    <p>Layer 3: The network layer. This is the heart of the internet. The
+bottom two protocols deal with communication between two different
+computers that are directly connected. This layer deals with routing
+packets from one endpoint to another.</p>
+  </li>
+  <li>
+    <p>Layer 4: The transport layer. This layer specifies how the slices of
+data are received. The bottom three layers make no guarantee about
+the order that packets are received and what happens when a packet
+is dropped. Using different protocols, this layer can.</p>
+  </li>
+  <li>
+    <p>Layer 5: The session layer. This layer makes sure that if a
+connection in the previous layers is dropped, a new connection in
+the lower layers can be established, and it looks like a nothing
+happened to the end user.</p>
+  </li>
+  <li>
+    <p>Layer 6: The presentation layer. This layer deals with encryption,
+compression, and data translation. For example, portability between
+different operating systems like translating newlines to
+windows newlines.</p>
+  </li>
+  <li>
+    <p>Layer 7: The application layer. The application layer is where many
+different protocols live. and are both defined at this level. This
+is typically where we define protocols across the internet. As
+programmers, we only go lower when we think we can create algorithms
+that are more suited to our needs than all of the below.</p>
+  </li>
+</ol>
+<p>Just to be clear this is not a networking class. We won’t go over most
+of these layers in depth. We will focus on some aspects of layers 3, 4,
+and 7 because they are essential to know if you are going to be doing
+something with the internet, which at some point in your career you will
+be. As for another definition, a protocol is a set of specifications put
+forward by the that govern how implementers of protocol have their
+program or circuit behave under specific circumastnces.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="layer-3-the-internet-protocol" class="title-text">Layer 3: The Internet Protocol<a class="anchor title-text" href="#layer-3-the-internet-protocol"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The following is the 30 second introduction to internet protocol (IP),
+the primary way to send datagrams of information from one machine to
+another. “IP4”, or more precisely, is version 4 of the Internet Protocol
+that describes how to send of information across a network from one
+machine to another. Roughly 95% of all packets on the Internet today are
+IPv4 packets. A significant limitation of IPv4 is that source and
+destination addresses are limited to 32 bits. IPv4 was designed at a
+time when the idea of 4 billion devices connected to the same network
+was unthinkable or at least not worth making the packet size larger. are
+written typically in a sequence of four octets delimited by periods
+“255.255.255.0” for example.</p>
+<p>Each IPv4 includes a very small header - typically 20 , that includes a
+source and destination address. Conceptually the source and destination
+addresses can be split into two: a network number the upper bits and the
+lower bits represent a particular host number on that network.</p>
+<p>A newer packet protocol solves many of the limitations of IPv4 like
+making routing tables simpler and 128 bit addresses. However, less than
+5% of web traffic is IPv6 based. We write IPv6 addresses in a sequence
+of eight, four hexadecimal delimiters like
+“1F45:0000:0000:0000:0000:0000:0000:0000”. Since that can get unruly, we
+can omit the zeros “1F45::”. A machine can have an IPv6 address and an
+IPv4 address.</p>
+<p>There are special IP Addresses. One such in IPv4 is , IPv6 as or also
+known as localhost. Packets sent to 127.0.0.1 will never leave the
+machine; the address is specified to be the same machine. There are a
+lot of others that are denoted by certain octets being zeros or 255, the
+maximum value. You won’t need to know all the terminology, just keep in
+mind that the actual number of IP addresses that a machine can have
+globally over the internet is smaller than the number of “raw”
+addresses. For the purposes of the class, you need to know at this layer
+that IP deals with routing, fragmenting, and reassembling upper level
+protocols. A more in-depth aside follows.</p>
+<h3 id="in-depth-ipv4-specification" class="title-text">In-depth IPv4 Specification</h3>
+<p>The internet protocol deals with routing, fragmentation, and reassembly
+of fragments. Datagrams are formatted as such</p>
+<p class="img-paragraph"><img src="networking/images/ipv4_header.png" alt="image">{width=”.8\textwidth”}</p>
+<ol>
+  <li>
+    <p>The first octet is the version number, either 4 or 6</p>
+  </li>
+  <li>
+    <p>The next octet is how long the header is. Although it may seem that
+the header is constant size, you can include optional parameters to
+augment the path taken or other instructions</p>
+  </li>
+  <li>
+    <p>The next two octets specify the total length of the datagram. This
+means this is the header, the data, footer, and padding. This is
+given in multiple of octets, meaning that a value of 20 means
+20 octets.</p>
+  </li>
+  <li>
+    <p>The next two are Identification number. IP handles taking packets
+that are too big to be sent over the phsyical wire and chunks them
+up. As such, this number identifies what datagram this originally
+belonged to.</p>
+  </li>
+  <li>
+    <p>The next octet is various bit flags that can be set.</p>
+  </li>
+  <li>
+    <p>The next octet and half is fragment number. If this packet was
+fragmented, this is the number this fragment represents</p>
+  </li>
+  <li>
+    <p>The next octet is time to live. So this is the number of “hops”
+(travels over a wire) a packet is allowed to go. This is set because
+different routing protocols could cuase packets to go in circles,
+the packets must be dropped at some point.</p>
+  </li>
+  <li>
+    <p>The next octet is the protocol number. Although protocols between
+different layers of the OCI model are supposed to be black boxes,
+this is included, so that hardware can peer into the underlying
+protocol efficiently. Take for example IP over IP (yes you can do
+that!). Your ISP wraps IPv4 packets sent from your computer to the
+ISP in another IP layer and sends the packet off to be delivered to
+the website. On the reverse trip the packet is “unwrapped” and the
+original IP datagram is sent to your computer. This was done because
+we ran out of IP addresses, and this adds additional overhead but it
+is a necessary fix. Other common protocols are TCP, UDP, etc.</p>
+  </li>
+  <li>
+    <p>The next two octets is an internet checksum. This is a CRC that is
+calculated to make sure that a wide variety of bit errors
+are detected.</p>
+  </li>
+  <li>
+    <p>Source address is what people generally refer to as the IP address.
+There is no verification of this, so one host can pretend to be any
+IP address possible</p>
+  </li>
+  <li>
+    <p>Destination address is where you want the packet to be sent to. This
+is crucial in the routing process as you need that to route.</p>
+  </li>
+  <li>
+    <p>After: Your data! All layer of higher order protocols are put in
+there</p>
+  </li>
+  <li>
+    <p>Additional options: Hosts of additional options</p>
+  </li>
+  <li>
+    <p>Footer: A bit of padding to make sure your data is a multiple of 8</p>
+  </li>
+</ol>
+<h3 id="routing" class="title-text">Routing</h3>
+<p>The internet protocol routing is an amazing intersection of theory and
+application. We can imagine the entire internet as a set of graphs. Most
+peers are connected to what we call “peering points” these are the WIFI
+routers and the ethernet ports that one finds in their house, work, or
+public. These peering points are then connected to a wired network of
+routers, switches, and servers that all route themselves. At a top level
+there are two types of routing</p>
+<ol>
+  <li>
+    <p>Internal Routing Protocols. Internal protocols is routing designed
+for within an ISP’s network. These protocols are meant to be fast
+and more trusting because all computers, switches, and routers are
+part of an ISP. communication between two routers.</p>
+  </li>
+  <li>
+    <p>External Routing Protocols. These typically happen to be ISP to ISP
+protocol. Certain routers are designated as border routers. These
+routers talk to routers from ISPs have have different policies from
+accepting or receiving packets. If an evil ISP is trying to dump all
+network traffic onto your ISP, these routers would deal with that.
+These protocols also deal with gathering information about the
+outside world to each router. In most routing protocols using link
+state or OSPF, a router must necessarily calculate the shortest path
+to the destination. This means it needs information about the
+“foreign” routers which is disseminated according to
+these protocols.</p>
+  </li>
+</ol>
+<p>These two protocols have to interplay with each other nicely in order to
+make sure that packets are mostly delivered. In addition, ISPs need to
+be nice to each other because theoretically an ISP can handle lower load
+by forwarding all packets to another ISP. If everyone does that then, no
+packets get delivered at all which won’t make customers happy at all. So
+these two protocols need to be fair so the end result works</p>
+<p>If you want to read more about this, look at the wikipedia page for
+routing here <a href="https://en.wikipedia.org/wiki/Routing" class="fancy-link wiki-link">Routing</a>.</p>
+<h3 id="fragmentationreassembly" class="title-text">Fragmentation/Reassembly</h3>
+<p>Lower layers like WiFi and Ethernet have maximum transmission sizes. The
+reason being is</p>
+<ol>
+  <li>
+    <p>One host shouldn’t crowd the medium for too long</p>
+  </li>
+  <li>
+    <p>If an error occurs, we want some sort of “progress bar” on how far
+the communication has gone instead of retransmitting the stream</p>
+  </li>
+  <li>
+    <p>There are physical limitations as well, keeping a laser beam in
+optics working continuously may cause bit errors.</p>
+  </li>
+</ol>
+<p>As such if the internet protocol receives a packet that is too big for
+the maximum size, it must chunk it up. TCP calculates how many datagrams
+it needs to construct a packet and ensures that they are all transmitted
+and reconstructed at the end receiver. The reason that we barely use
+this feature is that if any fragment is lost, the entire packet is lost.
+Meaning that, assuming the probability of receiving a packet assuming
+each fragment is lost with an independent percentage, the probability of
+successfully sending a packet drops off exponentially as packet size
+increases.</p>
+<p>As such, TCP slices its packets so that it fits inside on IP datagram.
+The only time that this applies is when sending UDP packets that are too
+big, but most people who are using UDP optimize and set the same packet
+size as well.</p>
+<h3 id="ip-multicast" class="title-text">IP Multicast</h3>
+<p>A little known feature is that using the IP protocol one can send a
+datagram to all devices connected to a router in what is called a
+multicast. Multicasts can also be configured with groups, so one can
+efficiently slice up all connected routers and send a piece of
+information to all of them efficiently. To access this in a higher
+protocol, you need to use UDP and specify a few more options. Note that
+this will cause undo stress on the network, so a series of multicasts
+could flood the network fast.</p>
+<h3 id="whats-the-deal-with-ipv6" class="title-text">What’s the deal with IPv6?</h3>
+<p>One of the big features of IPv6 is the address space. The world ran out
+of IP addresses a while ago and has been using hacks to get around that.
+With IPv6 there are enough internal and external addresses, so that
+unless we discover alien civilizations, we probably won’t run out. The
+other benefit is that these addresses are leased not bought, meaning
+that if something drastic happens in let’s say the internet of things
+and there needs to be a change in the block addressing scheme, it can be
+done.</p>
+<p>Another big feature is security through IPsec. IPv4 was designed with
+little to no security in mind. As such, now there is a key exchange
+similar to TLS in higher layers that allows you to encrypt
+communication.</p>
+<p>Another feature is simplified processing. In order to make the internet
+fast, IPv4 and IPv6 headers alike are actually implemented in hardware.
+That means that all header options are processed in circuits as they
+come in. The problem is that as the IPv4 spec grew to include a copious
+amount of headers, the hardware had to become more and more advanced to
+support those headers. IPv6 reorders the headers so that packets can be
+dropped and routed with less hardware cycles. In the case of the
+internet, every cycle matters when trying to route the world’s traffic.</p>
+<h3 id="whats-my-address" class="title-text">What’s My Address?</h3>
+<p>To obtain a linked list of IP addresses of the current machine use which
+will return a linked list of IPv4 and IPv6 IP addresses among other
+interfaces as well. We can examine each entry and use to print the
+host’s IP address. The struct includes the family but does not include
+the sizeof the struct. Therefore we need to manually determine the
+struct sized based on the family.</p>
+<p>``` {.c language=”C”}
+ (family == AF_INET) ? sizeof(struct sockaddr_in) : sizeof(struct sockaddr_in6)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+The complete code is shown below.
+
+``` {.c language="C"}
+    int required_family = AF_INET; // Change to AF_INET6 for IPv6
+    struct ifaddrs *myaddrs, *ifa;
+    getifaddrs(&amp;myaddrs);
+    char host[256], port[256];
+    for (ifa = myaddrs; ifa != NULL; ifa = ifa-&gt;ifa_next) {
+        int family = ifa-&gt;ifa_addr-&gt;sa_family;
+        if (family == required_family &amp;&amp; ifa-&gt;ifa_addr) {
+            if (0 == getnameinfo(ifa-&gt;ifa_addr,
+                                (family == AF_INET) ? sizeof(struct sockaddr_in) :
+                                sizeof(struct sockaddr_in6),
+                                host, sizeof(host), port, sizeof(port)
+                                 , NI_NUMERICHOST | NI_NUMERICSERV  ))
+                puts(host);
+            }
+        }
+</code></pre></div></div>
+<p>To get your IP Address from the command line use (or Windows’s ) However
+this command generates a lot of output for each interface, so we can
+filter the output using grep</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ifconfig | grep inet
+
+Example output:
+    inet6 fe80::1%lo0 prefixlen 64 scopeid 0x1 
+    inet 127.0.0.1 netmask 0xff000000 
+    inet6 ::1 prefixlen 128 
+    inet6 fe80::7256:81ff:fe9a:9141%en1 prefixlen 64 scopeid 0x5 
+    inet 192.168.1.100 netmask 0xffffff00 broadcast 192.168.1.255
+</code></pre></div></div>
+<p>To actually grab the IP Address of a remote website. The function can
+convert a human readable domain name (e.g. ) into an IPv4 and IPv6
+address. In fact it will return a linked-list of addrinfo structs:</p>
+<p>``` {.c language=”C”}
+struct addrinfo {
+    int              ai_flags;
+    int              ai_family;
+    int              ai_socktype;
+    int              ai_protocol;
+    socklen_t        ai_addrlen;
+    struct sockaddr *ai_addr;
+    char            *ai_canonname;
+    struct addrinfo *ai_next;
+};</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+For example, suppose you wanted to find out the numeric IPv4 address of
+a webserver at We do this in two stages. First use getaddrinfo to build
+a linked-list of possible connections. Secondly use to convert the
+binary address into a readable form.
+
+``` {.c language="C"}
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netdb.h&gt;
+
+struct addrinfo hints, *infoptr; // So no need to use memset global variables
+
+int main() {
+  hints.ai_family = AF_INET; // AF_INET means IPv4 only addresses
+
+  int result = getaddrinfo("www.bbc.com", NULL, &amp;hints, &amp;infoptr);
+  if (result) {
+    fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(result));
+    exit(1);
+  }
+
+  struct addrinfo *p;
+  char host[256];
+
+  for(p = infoptr; p != NULL; p = p-&gt;ai_next) {
+
+    getnameinfo(p-&gt;ai_addr, p-&gt;ai_addrlen, host, sizeof(host), NULL, 0, NI_NUMERICHOST);
+    puts(host);
+  }
+
+  freeaddrinfo(infoptr);
+  return 0;
+}
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>212.58.244.70
+212.58.244.71
+</code></pre></div></div>
+<p>If you are wondering how the the computer maps to addresses, we will
+talk about that in Layer 7. Spoiler: It is a service called</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="layer-4-tcp-and-client" class="title-text">Layer 4: TCP and Client<a class="anchor title-text" href="#layer-4-tcp-and-client"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Most services on the Internet today use because it efficiently hides the
+complexity of lower, packet-level nature of the Internet. TCP or
+Transport Control Protocol is a connection-based protocol that is built
+on top of IPv4 and IPv6 and therefore can be described as “TCP/IP” or
+“TCP over IP”. TCP creates a <em>pipe</em> between two machines and abstracts
+away the low level packet-nature of the Internet. Thus, under most
+conditions, bytes sent over a TCP connection will not be lost or
+corrupted.</p>
+<p>TCP has a number of features that set it apart from the other transport
+protocol UDP.</p>
+<ol>
+  <li>
+    <p>With IP, you are only allowed to send packets to a machine. If you
+want one machine to handle multiple flows of data, you have to do it
+manually with IP. TCP abstracts that an gives the programmer a set
+of virtual sockets. Clients specify the socket that you want the
+packet sent to and the TCP protocol makes sure that applications
+that are waiting for packets on that port receive that. A process
+can listen for incoming packets on a particular port. However only
+processes with (root) access can listen on ports less than 1024. Any
+process can listen on ports 1024 or higher. An often used port is
+port 80: Port 80 is used for unencrypted http requests or web pages.
+For example, if a web browser connects to then it will be connecting
+to port 80.</p>
+  </li>
+  <li>
+    <p>Packets can get dropped due to network errors or congestion. As
+such, they need to be retransmitted but at the same time the
+retransmission shouldn’t cause packets more packets to be dropped.
+This needs to balance the tradeoff between flooding the network
+and speed.</p>
+  </li>
+  <li>
+    <p>Out of order packets. Packets may get routed more favorably due to
+various reasons in IP. If a later packet arrives before another
+packet, the protocol should detect and reorder them.</p>
+  </li>
+  <li>
+    <p>Duplicate packets. Packets can arrive twice. Packets can arrive
+twice. As such, a protocol need to be able to differentiate between
+two packets given a sequence number subject to overflow.</p>
+  </li>
+  <li>
+    <p>Error correction. There is a TCP checksum that handles bit errors.
+This is rarely used though.</p>
+  </li>
+  <li>
+    <p>Flow Control. Flow control is performed on the receiver side. This
+may be done so that a slow receiver doesn’t get overwhelmed with
+packets. Servers especially that may handle 10000 or 10 million
+concurrent connection may need to tell receivers to slow down, but
+not disconnect due to load. There are also other prorblem of making
+sure the local network is not overwhelmed</p>
+  </li>
+  <li>
+    <p>Congestion control. Congestion control is performed on the sender
+side. Congestion control is to avoid a sender from flooding the
+network with too many packets. This is really important to make sure
+that each TCP connection is treated fairly. Meaning that two
+connections leaving a computer to google and youtube receive the
+same bandwidth and ping as each other. One can easily define a
+protocol that takes all the bandwidth and leaves other protocols in
+the dust, but this tends to be malicious because more often than not
+limiting a computer to a single TCP connection will yield the
+same result.</p>
+  </li>
+  <li>
+    <p>Connection oriented/lifecycle oriented. You can really imagine a TCP
+connection as a series of bytes sent through a pipe. There is a
+“lifecycle” to a TCP connection though. What this means is that a
+TCP connection has a series of states and certain packets received
+can or not received can move it to another state. TCP handles
+setting up the connection through SYN SYN-ACK ACK. This means the
+client will send a SYNchronization packet that tells TCP what
+starting sequence to start on. Then the receiver will send a SYN-ACK
+message acknowledging the synchronization number. Then the client
+will ACKnowledge that with one last packet. The connection is now
+open for both reading and writing on both ends TCP will send data
+and the receiver of the data will acknowledge that it received a
+packet. Then every so often if a packet is not sent, TCP will trade
+zero length packets to make sure the connection is still alive. At
+any point, the client and server can send a FIN packet meaning that
+the server will not transmit. This packet can be altered with bits
+that only close the read or write end of a particular connection.
+When all ends are closed then the connection is over.</p>
+  </li>
+</ol>
+<p>There are a list of things that TCP doesn’t provide though</p>
+<ol>
+  <li>
+    <p>Security. This means that if you connect to an IP address that says
+that it is a certain website, TCP does not verify that this website
+is in fact that IP address. You could be sending packets to a
+malicious computer.</p>
+  </li>
+  <li>
+    <p>Encryption. Anybody can listen in on plain TCP. The packets in
+transport are in plain text meaning that important things like your
+passwords could easily be skimmed by servers and regularly are.</p>
+  </li>
+  <li>
+    <p>Session Reconnection. This is handled by a higher protocols, but if
+a TCP connection dies then a whole new one hast to be created and
+the transmission has to be started over again.</p>
+  </li>
+  <li>
+    <p>Delimiting Requests. TCP is naturally connection oriented.
+Applications that are communicating over TCP need to find a unique
+way of telling each other that this request or response is over.
+HTTP delimits the header through two carriage returns and uses
+either a length field or one keeps listening until the connection
+closes</p>
+  </li>
+</ol>
+<h3 id="note-on-network-orders" class="title-text">Note on network orders</h3>
+<p>Integers can be represented in least significant byte first or
+most-significant byte first. Either approach is reasonable as long as
+the machine itself is internally consistent. For network communications
+we need to standardize on agreed format.</p>
+<p>returns the 16 bit unsigned integer ‘short’ value xyz in network byte
+order. returns the 32 bit unsigned integer ‘long’ value xyz in network
+byte order.</p>
+<p>These functions are read as ‘host to network’; the inverse functions (,
+) convert network ordered byte values to host-ordered ordering. So, is
+host-ordering little-endian or big-endian? The answer is - it depends on
+your machine! It depends on the actual architecture of the host running
+the code. If the architecture happens to be the same as network ordering
+then the result of these functions is just the argument. For x86
+machines, the host and network ordering is different.</p>
+<p>Unless agreed otherwise whenever you read or write the low level C
+network structures (e.g. port and address information), remember to use
+the above functions to ensure correct conversion to/from a machine
+format. Otherwise the displayed or specified value may be incorrect.</p>
+<p>This doesn’t apply to protocols that negotiate the endianness
+before-hand. If two computers are CPU bound by converting the messages
+between network orders – this happens with JSON parsing all the time in
+high performance systems – it may be worth it to negotiate if they are
+on similar endians to send in little endian order.</p>
+<h3 id="tcp-client" class="title-text">TCP Client</h3>
+<p>There are three basic system calls you need to connect to a remote
+machine:</p>
+<ol>
+  <li>
+    <p>The call if successful, creates a linked-list of structs and sets
+the given pointer to point to the first one.</p>
+
+    <p>In addition, you can use the hints struct to only grab certain
+entries like certain IP protocols etc. The addrinfo structure that
+is passed into to define the kind of connection you’d like. For
+example, to specify stream-based protocols over IPv6:</p>
+
+    <p>``` {.c language=”C”}
+struct addrinfo hints;
+memset(&amp;hints, 0, sizeof(hints));</p>
+
+    <p>hints.ai_family = AF_INET6; // Only want IPv6 (use AF_INET for IPv4)
+hints.ai_socktype = SOCK_STREAM; // Only want stream-based connection</p>
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>
+Error handling with is a little different: The return value *is* the
+error code. To convert to a human-readable error use to get the
+equivalent short English error text.
+
+``` {.c language="C"}
+int result = getaddrinfo(...);
+if(result) { 
+   const char *mesg = gai_strerror(result); 
+   ...
+}
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>The socket call creates an outgoing socket and returns a descriptor
+that can be used with and . In this sense it is the network analog
+of that opens a file stream - except that we haven’t connected the
+socket to anything yet!</p>
+
+    <p>Socket creates a socket with domain  AF_INET for IPv4 or AF_INET6
+for IPv6, is whether to use UDP or TCP or other socket type, is an
+optional choice of protocol configuration (for our examples this we
+can just leave this as 0 for default). This call creates a socket
+object in the kernel with which one can communicate with the outside
+world/network. You can use the result of to fill in the parameters,
+or provide them manually.</p>
+
+    <p>The socket call returns an integer - a file descriptor - and, for
+TCP clients, you can use it like a regular file descriptor i.e. you
+can use and to receive or send packets.</p>
+
+    <p>TCP sockets are similar to except that they allow full duplex
+communication i.e. you can send and receive data in both
+directions independently.</p>
+  </li>
+  <li>
+    <p>Finally the connect call attempts the connection to the remote
+machine. We pass the original socket descriptor and also the socket
+address information which is stored inside the addrinfo structure.
+There are different kinds of socket address structures which can
+require more memory. So in addition to passing the pointer, the size
+of the structure is also passed. To help identify errors and
+mistakes it is good practice to check the return value of all
+networking calls, including</p>
+
+    <p><code class="language-plaintext highlighter-rouge">{.c language="C"}
+// Pull out the socket address info from the addrinfo struct:
+connect(sockfd, p-&gt;ai_addr, p-&gt;ai_addrlen)
+</code></p>
+  </li>
+  <li>
+    <p>(Optional) To clean up code call on the first level struct.</p>
+  </li>
+</ol>
+<p>There is an old function is deprecated; it’s the old way convert a host
+name into an IP address. The port address still needs to be manually set
+using function. It’s much easier to write code to support IPv4 AND IPv6
+using the newer</p>
+<p>This is all that is needed to create a <em>simple</em> TCP client - however
+network communications offers many different levels of abstraction and
+several attributes and options that can be set at each level of
+abstraction. For example we haven’t talked about which can manipulate
+options for the socket. For more information see this
+<a href="http://www.beej.us/guide/bgnet/output/html/multipage/getaddrinfoman.html" class="fancy-link wiki-link">guide</a>.</p>
+<h3 id="sending-some-data" class="title-text">Sending some data</h3>
+<p>Once we have a successful connection we can read or write like any old
+file descriptor. Keep in mind if you are connected to a website, you
+want to conform to the HTTP protocol specification in order to get any
+sort of meaningful results back. There are libraries to do this, usually
+you don’t connect at the socket level because there are other libraries
+or packages around it. The number of bytes read or written may be
+smaller than expected. Thus it is important to check the return value of
+read and write. A simple HTTP client that sends a request to compliant
+URL is below.</p>
+<p>``` {.c language=”C”}
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include &lt;sys/types.h&gt; 
+#include &lt;sys/socket.h&gt; 
+#include <netdb.h>
+#include <errno.h>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include <fcntl.h>
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif</fcntl.h></errno.h></netdb.h></string.h></unistd.h></stdlib.h></stdio.h></p>
+<p>typedef struct _host_info {
+    char *hostname;
+    char *port;
+    char *resource;
+} host_info;</p>
+<p>host_info *get_info(char *uri);
+void free_info(host_info *info);
+host_info *send_request(host_info *info);</p>
+<p>ssize_t min(ssize_t a, ssize_t b) {
+    return a &lt; b ? a : b;
+}</p>
+<p>host_info *get_info(char *uri) {</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>const char *http = "http://";
+int http_len = strlen(http);
+int uri_len = strlen(uri);
+if (uri_len &lt; http_len &amp;&amp; !strncmp(uri, http, min(strlen(http), uri_len))) {
+    fprintf(stderr, "The uri must start with \"%s\"", http);
+    exit(1);
+} else {
+    uri += http_len;
+    uri_len -= http_len;
+}
+char *hostname = malloc(uri_len+1);
+char *port = malloc(6);
+char *ptr = hostname;
+while(*uri &amp;&amp; *uri != '/' &amp;&amp; *uri != ':') {
+    *ptr++ = *uri++;
+}
+*ptr = '\0';
+
+if(*uri == ':') {
+    ptr = port;
+    uri++;
+    while(*uri != '/') {
+        *ptr++ = *uri++;
+    }
+    *ptr = '\0';
+} else {
+    free(port);
+    port = strdup("80");
+}
+char *resource = NULL;
+int len = strlen(uri);
+if (len == 0) {
+    // Empty means get the index
+    resource = strdup("/");
+} else {
+    resource = strdup(uri);
+}
+
+host_info *info = malloc(sizeof(*info));
+info-&gt;hostname = hostname;
+info-&gt;port = port;
+info-&gt;resource = resource;  
+return info; }
+</code></pre></div></div>
+<p>void free_info(host_info *info) {
+    free(info-&gt;hostname);
+    free(info-&gt;port);
+    free(info-&gt;resource);
+    free(info);
+}</p>
+<p>static void send_get_request(FILE <em>sock_file, host_info *info) {
+    char *buffer;
+    asprintf(&amp;buffer, 
+        “GET %s HTTP/1.0\r\n”
+        “Connection: close\r\n”
+        “Accept: */</em>\r\n\r\n”, 
+        info-&gt;resource);
+    int sock_fd = fileno(sock_file);
+    write(sock_fd, buffer, strlen(buffer));
+    free(buffer);
+}</p>
+<p>static void connect_to_address(int sock_fd, host_info *info) {
+    struct addrinfo current, *result;
+    memset(&amp;current, 0, sizeof(struct addrinfo));
+    current.ai_family = AF_INET;
+    current.ai_socktype = SOCK_STREAM;
+    int s = getaddrinfo(info-&gt;hostname, info-&gt;port, &amp;current, &amp;result);
+    if (s != 0) {
+        fprintf(stderr, “getaddrinfo: %s\n”, gai_strerror(s));
+        exit(1);
+    }
+    if(connect(sock_fd, result-&gt;ai_addr, result-&gt;ai_addrlen) == -1){
+        perror(“connection error”);
+        exit(1);
+    }
+    freeaddrinfo(result);
+}</p>
+<p>host_info *send_request(host_info *info) {
+    int sock_fd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock_fd == -1) {
+        perror(“socket”);
+        exit(1);
+    }
+    int optval = 1;
+    int retval = setsockopt(sock_fd, SOL_SOCKET, SO_REUSEADDR, &amp;optval,
+                sizeof(optval));
+    if(retval == -1) {
+        perror(“setsockopt”);
+        exit(1);
+    }
+    connect_to_address(sock_fd, info);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Open so you can use getline
+FILE *sock_file = fdopen(sock_fd, "r+");
+setvbuf(sock_file, NULL, _IONBF, 0);
+
+send_get_request(sock_file, info);
+host_info *ret = NULL;
+if (is_redirect(sock_file)) {
+    ret = handle_redirect(sock_file);
+} else {
+    handle_okay(sock_file);
+}
+
+fclose(sock_file);
+return ret; }
+</code></pre></div></div>
+<p>int main(int argc, char *argv[]) {
+    if(argc != 2) {
+        fprintf(stderr, “Usage: %s http://hostname[:port]/path\n”, *argv);
+        return 1; <br>
+    }
+    char *uri = argv[1];
+    host_info *info = get_info(uri);
+    do {
+        host_info *temp = send_request(info);
+        free_info(info);
+        info = NULL;
+        if (temp) {
+            info = temp;
+        }
+    } while(info);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>return 0; } ```
+</code></pre></div></div>
+<p>The example above demonstrates a request to the server using Hypertext
+Transfer Protocol. A web page (or other resources) are requested using
+the following request:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET / HTTP/1.0
+</code></pre></div></div>
+<p>There are four parts the method e.g. GET,POST,…); the resource (e.g. /
+/index.html /image.png); the proctocol “HTTP/1.0” and two new lines
+(<code class="language-plaintext highlighter-rouge"> r n r n</code>)</p>
+<p>The server’s first response line describes the HTTP version used and
+whether the request is successful using a 3 digit response code:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 200 OK
+</code></pre></div></div>
+<p>If the client had requested a non existing file, e.g. Then the first
+line includes the response code is the well-known response code:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HTTP/1.1 404 Not Found
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="layer-4-tcp-server" class="title-text">Layer 4: TCP Server<a class="anchor title-text" href="#layer-4-tcp-server"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The four system calls required to create a TCP server are: , and . Each
+has a specific purpose and should be called in roughly the above order</p>
+<ol>
+  <li>
+    <p>To create a endpoint for networking communication. A new socket by
+itself is not particularly useful. Though we’ve specified either a
+packet or stream-based connections, it is not bound to a particular
+network interface or port. Instead socket returns a network
+descriptor that can be used with later calls to bind, listen
+and accept.</p>
+
+    <p>As one gotcha, these sockets must be declared passive. Passive
+server sockets do not actively try to connect to another host;
+instead they wait for incoming connections. Additionally, server
+sockets are not closed when the peer disconnects. Instead the client
+communicates with a separate active socket on the server that is
+specific to that connection.</p>
+
+    <p>Since a TCP connection is defined by the sender address and port
+along with a receiver address and port, a particular server port
+there can be one passive server socket but multiple active sockets:
+one for each currently open connection. The server’s operating
+system maintains a lookup table that associates a unique tuple with
+active sockets, so that incoming packets can be correctly routed to
+the correct socket.</p>
+  </li>
+  <li>
+    <p>The call associates an abstract socket with an actual network
+interface and port. It is possible to call bind on a TCP client. The
+port information used by bind can be set manually many older
+IPv4-only C code examples do this, or be created using</p>
+
+    <p>By default a port is not immediately released when the server socket
+is closed. Instead, the port enters a “TIMED-WAIT” state. This can
+lead to significant confusion during development because the timeout
+can make valid networking code appear to fail.</p>
+
+    <p>To be able to immediately re-use a port, specify before binding to
+the port.</p>
+
+    <p>``` {.c language=”C”}
+  int optval = 1;
+  setsockopt(sfd, SOL_SOCKET, SO_REUSEPORT, &amp;optval, sizeof(optval));</p>
+
+    <p>bind(…);</p>
+
+    <p>```</p>
+
+    <p>Here’s <a href="http://stackoverflow.com/questions/14388706/socket-options-so-reuseaddr-and-so-reuseport-how-do-they-differ-do-they-mean-t" class="fancy-link wiki-link">an extended stackoverflow introductory discussion of
+</a>.</p>
+  </li>
+  <li>
+    <p>The call specifies the queue size for the number of incoming,
+unhandled connections i.e. that have not yet been assigned a network
+descriptor by Typical values for a high performance server are 128
+or more.</p>
+  </li>
+  <li>
+    <p>Once the server socket has been initialized the server calls to wait
+for new connections. Unlike and , this call will block. i.e. if
+there are no new connections, this call will block and only return
+when a new client connects. The returned TCP socket is associated
+with a particular tuple and will be used for all future incoming and
+outgoing TCP packets that match this tuple.</p>
+
+    <p>Note the call returns a new file descriptor. This file descriptor is
+specific to a particular client. It is common programming mistake to
+use the original server socket descriptor for server I/O and then
+wonder why networking code has failed.</p>
+
+    <p>The system call can optionally provide information about the remote
+client, by passing in a sockaddr struct. Different protocols have
+differently variants of the , which are different sizes. The
+simplest struct to use is the which is sufficiently large to
+represent all possible types of sockaddr. Notice that C does not
+have any model of inheritance. Therefore we need to explicitly cast
+our struct to the ‘base type’ struct sockaddr.</p>
+
+    <p>``` {.c language=”C”}
+  struct sockaddr_storage clientaddr;
+  socklen_t clientaddrsize = sizeof(clientaddr);
+  int client_id = accept(passive_socket,
+          (struct sockaddr *) &amp;clientaddr,
+          &amp;clientaddrsize);</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>
+We’ve already seen that can build a linked list of addrinfo entries
+(and each one of these can include socket configuration data). What
+if we wanted to turn socket data into IP and port addresses? Enter
+that can be used to convert a local or remote socket information
+into a domain name or numeric IP. Similarly the port number can be
+represented as a service name (e.g. “http” for port 80). In the
+example below we request numeric versions for the client IP address
+and client port number.
+
+``` {.c language="C"}
+  socklen_t clientaddrsize = sizeof(clientaddr);
+  int client_id = accept(sock_id, (struct sockaddr *) &amp;clientaddr, &amp;clientaddrsize);
+  char host[256], port[256];
+  getnameinfo((struct sockaddr *) &amp;clientaddr,
+        clientaddrsize, host, sizeof(host), port, sizeof(port),
+        NI_NUMERICHOST | NI_NUMERICSERV);
+      
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>(optional but highly recommended) and</p>
+
+    <p>Use the call when you no longer need to read any more data from the
+socket, write more data, or have finished doing both. When you
+shutdown a socket for further writing (or reading) that information
+is also sent to the other end of the connection. For example if you
+shutdown the socket for further writing at the server end, then a
+moment later, a blocked call could return 0 to indicate that no more
+bytes are expected.</p>
+
+    <p>Use when your process no longer needs the socket file descriptor.</p>
+
+    <p>If you -ed after creating a socket file descriptor, all processes
+need to close the socket before the socket resources can be re-used.
+If you shutdown a socket for further read then all process are be
+affected because you’ve changed the socket, not just the
+file descriptor.</p>
+
+    <p>Well written code will a socket before calling it.</p>
+  </li>
+</ol>
+<p>There are a few gotchas to creating a server.</p>
+<ul>
+  <li>
+    <p>Using the socket descriptor of the passive server socket
+(described above)</p>
+  </li>
+  <li>
+    <p>Not specifying SOCK_STREAM requirement for getaddrinfo</p>
+  </li>
+  <li>
+    <p>Not being able to re-use an existing port.</p>
+  </li>
+  <li>
+    <p>Not initializing the unused struct entries</p>
+  </li>
+  <li>
+    <p>The call will fail if the port is currently in use. Ports are per
+machine – not per process or user. In other words, you cannot use
+port 1234 while another process is using that port. Worse, ports are
+by default ‘tied up’ after a process has finished.</p>
+  </li>
+</ul>
+<h3 id="server-code-example" class="title-text">Server code example</h3>
+<p>A working simple server example is shown below. Note this example is
+incomplete - for example it does not close either socket descriptor, or
+free up memory created by</p>
+<p>``` {.c language=”C”}
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include <netdb.h>
+#include <unistd.h>
+#include &lt;arpa/inet.h&gt;</unistd.h></netdb.h></stdlib.h></stdio.h></string.h></p>
+<p>int main(int argc, char **argv)
+{
+    int s;
+    int sock_fd = socket(AF_INET, SOCK_STREAM, 0);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>struct addrinfo hints, *result;
+memset(&amp;hints, 0, sizeof(struct addrinfo));
+hints.ai_family = AF_INET;
+hints.ai_socktype = SOCK_STREAM;
+hints.ai_flags = AI_PASSIVE;
+
+s = getaddrinfo(NULL, "1234", &amp;hints, &amp;result);
+if (s != 0) {
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
+        exit(1);
+}
+
+if (bind(sock_fd, result-&gt;ai_addr, result-&gt;ai_addrlen) != 0) {
+    perror("bind()");
+    exit(1);
+}
+
+if (listen(sock_fd, 10) != 0) {
+    perror("listen()");
+    exit(1);
+}
+
+struct sockaddr_in *result_addr = (struct sockaddr_in *) result-&gt;ai_addr;
+printf("Listening on file descriptor %d, port %d\n", sock_fd, ntohs(result_addr-&gt;sin_port));
+
+printf("Waiting for connection...\n");
+int client_fd = accept(sock_fd, NULL, NULL);
+printf("Connection made: client_fd=%d\n", client_fd);
+
+char buffer[1000];
+int len = read(client_fd, buffer, sizeof(buffer) - 1);
+buffer[len] = '\0';
+
+printf("Read %d chars\n", len);
+printf("===\n");
+printf("%s\n", buffer);
+
+return 0; } ```
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="layer-4-udp" class="title-text">Layer 4: UDP<a class="anchor title-text" href="#layer-4-udp"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>UDP is a connectionless protocol that is built on top of IPv4 and IPv6.
+It’s very simple to use: Decide the destination address and port and
+send your data packet! However the network makes no guarantee about
+whether the packets will arrive. Packets (aka Datagrams) may be dropped
+if the network is congested. Packets may be duplicated or arrive out of
+order.</p>
+<p>Between two distant data-centers it’s typical to see 3% packet loss. A
+typical use case for UDP is when receiving up to date data is more
+important than receiving all of the data. For example, a game may send
+continuous updates of player positions. A streaming video signal may
+send picture updates using UDP</p>
+<h3 id="udp-attributes" class="title-text">UDP Attributes</h3>
+<ul>
+  <li>
+    <p>Unreliable Datagram Protocol Packets sent through UDP are not
+guaranteed to reach their destination. The probability that the
+packet gets delivered goes down over time.</p>
+  </li>
+  <li>
+    <p>Simple The UDP protocol is supposed to have much less fluff than
+TCP. Meaning that for TCP there are a lot of configurable parameters
+and a lot of edge cases in the implementation. UDP is just fire
+and forget.</p>
+  </li>
+  <li>
+    <p>Stateless/Transaction The UDP protocol does not keep a “state” of
+the connection. This makes the protocol more simple and let’s the
+protocol represent simple transactions like requesting or responding
+to queries. There is also less overhead to sending a UDP message
+because there is no three way handshake.</p>
+  </li>
+  <li>
+    <p>Manual Flow/Congestion Control You have to manually manage the flow
+and congestion control which is a double edged sword. On one hand
+you have full control over everything, but on the other hand TCP has
+<em>decades</em> of optimization, meaning your protocol for its use cases
+needs to be more efficient that that to be more beneficial to
+use it.</p>
+  </li>
+  <li>
+    <p>Multicast This is one thing that you can only do with UDP. This
+means that you can send a message to every peer connected to a
+particular router that is part of a particular group.</p>
+  </li>
+</ul>
+<h3 id="udp-client" class="title-text">UDP Client</h3>
+<p>UDP Clients are pretty versatile below is a simple client that sends a
+packet to a server specified through the command line. Note that this
+client sends a packet and doesn’t wait for acknowledgement. It fires and
+forgets. The example below also uses because some legacy functionality
+still works pretty well for setting up a client.</p>
+<p>``` {.c language=”C”}
+    struct sockaddr_in addr;
+    memset(&amp;addr, 0, sizeof(addr));
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons((uint16_t)port);
+  struct hostent *serv = gethostbyname(hostname);
+  if (!serv) {
+    perror(“gethostbyname”);
+    exit(1);
+  }</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+The previous code grabs an entry that matches by hostname. Even though
+this isn’t portable, it definitely gets the job done. The full example
+follows.
+
+``` {.c language="C"}
+#include &lt;stdint.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/time.h&gt;
+#include &lt;assert.h&gt;
+#include &lt;arpa/inet.h&gt;
+#include &lt;sys/time.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netdb.h&gt;
+#include &lt;pthread.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;sys/mman.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;string.h&gt;
+
+int connectToUDP(int port, char *hostname, struct sockaddr_in *ipaddr) {
+
+    int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
+    if (sockfd &lt; 0) {
+        perror("socket");
+    }
+    int optval = 1;
+    // Let them reuse
+    setsockopt(sockfd, SOL_SOCKET, SO_REUSEPORT, &amp;optval, sizeof(optval));
+
+    struct sockaddr_in addr;
+    memset(&amp;addr, 0, sizeof(addr));
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons((uint16_t)port);
+  struct hostent *serv = gethostbyname(hostname);
+  if (!serv) {
+    perror("gethostbyname");
+    exit(1);
+  } 
+
+  memcpy(&amp;addr.sin_addr.s_addr, serv-&gt;h_addr, serv-&gt;h_length);
+
+  if (ipaddr) {
+    memcpy(ipaddr, &amp;addr, sizeof(*ipaddr));
+  }
+
+    // Timeouts for resending acks and whatnot
+    struct timeval tv;
+    tv.tv_sec = 0;
+    tv.tv_usec = SOCKET_TIMEOUT;
+    setsockopt(sockfd, SOL_SOCKET, SO_RCVTIMEO, &amp;tv, sizeof(tv));
+
+    return sockfd;
+}
+
+int main(int argc, char **argv) {
+  char *hostname = argv[1];
+  int port = strtoll(argv[2], NULL, 10);
+  struct sock_addr_in ipaddr;
+
+  port = connectToUDP(port, hostname, &amp;ipaddr, 0) 
+  char *to_send = "Hello!"
+  int send_ret = sendto(port, to_send, packet_size, 0, 
+            (struct sockaddr *)&amp;ipaddr, 
+            sizeof(ipaddr));
+  return 0;
+}
+</code></pre></div></div>
+<h3 id="udp-server" class="title-text">UDP Server</h3>
+<p>There are a variety of function calls available to send UDP sockets. We
+will use the newer getaddrinfo to help set up a socket structure.
+Remember that UDP is a simple packet-based (‘data-gram’) protocol ;
+there is no connection to set up between the two hosts. First,
+initialize the hints addrinfo struct to request an IPv6, passive
+datagram socket.</p>
+<p>``` {.c language=”C”}
+memset(&amp;hints, 0, sizeof(hints));
+hints.ai_family = AF_INET6; // use AF_INET instead for IPv4
+hints.ai_socktype =  SOCK_DGRAM;
+hints.ai_flags =  AI_PASSIVE;</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Next, use getaddrinfo to specify the port number (we don’t need to
+specify a host as we are creating a server socket, not sending a packet
+to a remote host).
+
+``` {.c language="C"}
+getaddrinfo(NULL, "300", &amp;hints, &amp;res);
+
+sockfd = socket(res-&gt;ai_family, res-&gt;ai_socktype, res-&gt;ai_protocol);
+bind(sockfd, res-&gt;ai_addr, res-&gt;ai_addrlen);
+</code></pre></div></div>
+<p>The port number is less than 1024, so the program will need privileges.
+We could have also specified a service name instead of a numeric port
+value.</p>
+<p>So far the calls have been similar to a TCP server. For a stream-based
+service we would call and accept. For our UDP-serve we can just start
+waiting for the arrival of a packet on the socket-</p>
+<p>``` {.c language=”C”}
+struct sockaddr_storage addr;
+int addrlen = sizeof(addr);</p>
+<p>// ssize_t recvfrom(int socket, void* buffer, size_t buflen, int flags, struct sockaddr *addr, socklen_t * address_len);</p>
+<p>byte_count = recvfrom(sockfd, buf, sizeof(buf), 0, &amp;addr, &amp;addrlen);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+The addr struct will hold sender (source) information about the arriving
+packet. Note the type is a sufficiently large enough to hold all
+possible types of socket addresses (e.g. IPv4, IPv6 and other socket
+types). The full UDP server code is below.
+
+``` {.c language="C"}
+#include &lt;string.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netdb.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;arpa/inet.h&gt;
+
+int main(int argc, char **argv)
+{
+    int s;
+
+    struct addrinfo hints, *res;
+    memset(&amp;hints, 0, sizeof(hints));
+    hints.ai_family = AF_INET6; // INET for IPv4
+    hints.ai_socktype =  SOCK_DGRAM;
+    hints.ai_flags =  AI_PASSIVE;
+
+    getaddrinfo(NULL, "300", &amp;hints, &amp;res);
+
+    int sockfd = socket(res-&gt;ai_family, res-&gt;ai_socktype, res-&gt;ai_protocol);
+
+    if (bind(sockfd, res-&gt;ai_addr, res-&gt;ai_addrlen) != 0) {
+        perror("bind()");
+        exit(1);
+    }
+    struct sockaddr_storage addr;
+    int addrlen = sizeof(addr);
+
+    while(1){
+        char buf[1024];
+        ssize_t byte_count = recvfrom(sockfd, buf, sizeof(buf), 0, &amp;addr, &amp;addrlen);
+        buf[byte_count] = '\0';
+
+        printf("Read %d chars\n", byte_count);
+        printf("===\n");
+        printf("%s\n", buf);
+    }
+
+    return 0;
+}
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="layer-7-http" class="title-text">Layer 7: HTTP<a class="anchor title-text" href="#layer-7-http"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Layer 7 of the OSI layer deals with application level interfaces.
+Meaning that you can ignore everything below this layer and treat an
+internet as a way of communicating with another computer than can be
+secure and the session may reconnect. Common layer 7 protocols are the
+following</p>
+<ol>
+  <li>
+    <p>HTTP(S) - Hyper Text Transfer Protocol. Sends arbitrary data and
+executes remote actions on a web server.</p>
+  </li>
+  <li>
+    <p>FTP - File Transfer Protocol. Transfers a file from one computer to
+another</p>
+  </li>
+  <li>
+    <p>TFTP - Trivial File Transfer Protocol. Same as above but using UDP.</p>
+  </li>
+  <li>
+    <p>DNS - Domain Name Service. Translates hostnames to IP addresses</p>
+  </li>
+  <li>
+    <p>SMTP - Simple Mail Transfer Protocol. Allows one to send plain text
+emails to an email server</p>
+  </li>
+  <li>
+    <p>SSH - Secure SHell. Allows one computer to connect to another
+computer and execute commands remotely.</p>
+  </li>
+  <li>
+    <p>Bitcoin - Decentralized crypto currency</p>
+  </li>
+  <li>
+    <p>BitTorrent - Peer to peer file sharing protocol</p>
+  </li>
+  <li>
+    <p>NTP - Network Time Protocol. This protocol helps keep your
+computer’s clock synced with the outside world</p>
+  </li>
+</ol>
+<h3 id="how-is-a-website-converted-into-an-ip-address" class="title-text">How is a website converted into an IP address?</h3>
+<p>A system called “DNS” (Domain Name Service) is used. If a machine does
+not hold the answer locally then it sends a UDP packet to a local DNS
+server. This server in turn may query other upstream DNS servers.</p>
+<p>DNS by itself is fast but not secure. DNS requests are not encrypted and
+susceptible to ‘man-in-the-middle’ attacks. For example, a coffee shop
+internet connection could easily subvert your DNS requests and send back
+different IP addresses for a particular domain. The way this is usually
+subverted is that after the IP address is obtained then a connection is
+usually made over HTTPS. HTTPS uses what is called the TLS (formerly
+known as SSL) to secure transmissions and verify the IP address is who
+they say they are.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="nonblocking-io" class="title-text">Nonblocking IO<a class="anchor title-text" href="#nonblocking-io"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Normally, when you call , if the data is not available yet it will wait
+until the data is ready before the function returns. When you’re reading
+data from a disk, that delay may not be long, but when you’re reading
+from a slow network connection it may take a long time for that data to
+arrive, if it ever arrives.</p>
+<p>POSIX lets you set a flag on a file descriptor such that any call to on
+that file descriptor will return immediately, whether it has finished or
+not. With your file descriptor in this mode, your call to will start the
+read operation, and while it’s working you can do other useful work.
+This is called “nonblocking” mode, since the call to doesn’t block.</p>
+<p>To set a file descriptor to be nonblocking:</p>
+<p>``` {.c language=”C”}
+// fd is my file descriptor
+int flags = fcntl(fd, F_GETFL, 0);
+fcntl(fd, F_SETFL, flags | O_NONBLOCK);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+For a socket, you can create it in nonblocking mode by adding to the
+second argument to :
+
+``` {.c language="C"}
+fd = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
+</code></pre></div></div>
+<p>When a file is in nonblocking mode and you call , it will return
+immediately with whatever bytes are available. Say 100 bytes have
+arrived from the server at the other end of your socket and you call .
+Read will return immediately with a value of 100, meaning it read 100 of
+the 150 bytes you asked for. Say you tried to read the remaining data
+with a call to , but the last 50 bytes still hadn’t arrived yet. would
+return -1 and set the global error variable <strong>errno</strong> to either EAGAIN
+or EWOULDBLOCK. That’s the system’s way of telling you the data isn’t
+ready yet.</p>
+<p>also works in nonblocking mode. Say you want to send 40,000 bytes to a
+remote server using a socket. The system can only send so many bytes at
+a time. Common systems can send about 23,000 bytes at a time. In
+nonblocking mode, would return the number of bytes it was able to send
+immediately, or about 23,000. If you called right away again, it would
+return -1 and set errno to EAGAIN or EWOULDBLOCK. That’s the system’s
+way of telling you it’s still busy sending the last chunk of data, and
+isn’t ready to send more yet.</p>
+<div class="pad"><div class="card">
+<h4 id="how-do-i-check-when-the-io-has-finished">How do I check when the I/O has finished?</h4>
+
+<p>There are a few ways. Let’s see how to do it using <em>select</em> and <em>epoll</em>.</p>
+
+<p>``` {.c language=”C”}
+int select(int nfds, 
+           fd_set *readfds, 
+           fd_set *writefds,
+           fd_set *exceptfds, 
+           struct timeval *timeout);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Given three sets of file descriptors, will wait for any of those file
+descriptors to become ‘ready’.
+
+1.  - a file descriptor in is ready when there is data that can be read
+    or EOF has been reached.
+
+2.  - a file descriptor in is ready when a call to write() will succeed.
+
+3.  - system-specific, not well-defined. Just pass NULL for this.
+
+returns the total number of file descriptors that are ready. If none of
+them become ready during the time defined by *timeout*, it will return
+0. After returns, the caller will need to loop through the file
+descriptors in readfds and/or writefds to see which ones are ready. As
+readfds and writefds act as both input and output parameters, when
+indicates that there are file descriptors which are ready, it would have
+overwritten them to reflect only the file descriptors which are ready.
+Unless it is the caller’s intention to call only once, it would be a
+good idea to save a copy of readfds and writefds before calling it.
+
+``` {.c language="C"}
+fd_set readfds, writefds;
+FD_ZERO(&amp;readfds);
+FD_ZERO(&amp;writefds);
+for (int i=0; i &lt; read_fd_count; i++)
+  FD_SET(my_read_fds[i], &amp;readfds);
+for (int i=0; i &lt; write_fd_count; i++)
+  FD_SET(my_write_fds[i], &amp;writefds);
+
+struct timeval timeout;
+timeout.tv_sec = 3;
+timeout.tv_usec = 0;
+
+int num_ready = select(FD_SETSIZE, &amp;readfds, &amp;writefds, NULL, &amp;timeout);
+
+if (num_ready &lt; 0) {
+  perror("error in select()");
+} else if (num_ready == 0) {
+  printf("timeout\n");
+} else {
+  for (int i=0; i &lt; read_fd_count; i++)
+    if (FD_ISSET(my_read_fds[i], &amp;readfds))
+      printf("fd %d is ready for reading\n", my_read_fds[i]);
+  for (int i=0; i &lt; write_fd_count; i++)
+    if (FD_ISSET(my_write_fds[i], &amp;writefds))
+      printf("fd %d is ready for writing\n", my_write_fds[i]);
+}
+</code></pre></div></div>
+
+<p><a href="http://pubs.opengroup.org/onlinepubs/9699919799/functions/select.html" class="fancy-link wiki-link">For more information on
+select()</a></p>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="epoll" class="title-text">epoll<a class="anchor title-text" href="#epoll"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><em>epoll</em> is not part of POSIX, but it is supported by Linux. It is a more
+efficient way to wait for many file descriptors. It will tell you
+exactly which descriptors are ready. It even gives you a way to store a
+small amount of data with each descriptor, like an array index or a
+pointer, making it easier to access your data associated with that
+descriptor.</p>
+<p>To use epoll, first you must create a special file descriptor with
+<a href="http://linux.die.net/man/2/epoll_create" class="fancy-link wiki-link">epoll_create()</a>. You won’t
+read or write to this file descriptor; you’ll just pass it to the other
+epoll_xxx functions and call close() on it at the end.</p>
+<p>``` {.c language=”C”}
+    epfd = epoll_create(1);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+For each file descriptor you want to monitor with epoll, you’ll need to
+add it to the epoll data structures using
+[epoll\_ctl()](http://linux.die.net/man/2/epoll_ctl) with the option.
+You can add any number of file descriptors to it.
+
+``` {.c language="C"}
+struct epoll_event event;
+event.events = EPOLLOUT;  // EPOLLIN==read, EPOLLOUT==write
+event.data.ptr = mypointer;
+epoll_ctl(epfd, EPOLL_CTL_ADD, mypointer-&gt;fd, &amp;event)
+</code></pre></div></div>
+<p>To wait for some of the file descriptors to become ready, use
+<a href="http://linux.die.net/man/2/epoll_wait" class="fancy-link wiki-link">epoll_wait()</a>. The epoll_event
+struct that it fills out will contain the data you provided in
+event.data when you added this file descriptor. This makes it easy for
+you to look up your own data associated with this file descriptor.</p>
+<p>``` {.c language=”C”}
+int num_ready = epoll_wait(epfd, &amp;event, 1, timeout_milliseconds);
+if (num_ready &gt; 0) {
+  MyData <em>mypointer = (MyData</em>) event.data.ptr;
+  printf(“ready to write on %d\n”, mypointer-&gt;fd);
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+Say you were waiting to write data to a file descriptor, but now you
+want to wait to read data from it. Just use with the option to change
+the type of operation you’re monitoring.
+
+``` {.c language="C"}
+event.events = EPOLLOUT;
+event.data.ptr = mypointer;
+epoll_ctl(epfd, EPOLL_CTL_MOD, mypointer-&gt;fd, &amp;event);
+</code></pre></div></div>
+<p>To unsubscribe one file descriptor from epoll while leaving others
+active, use with the option.</p>
+<p>``` {.c language=”C”}
+epoll_ctl(epfd, EPOLL_CTL_DEL, mypointer-&gt;fd, NULL);</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+To shut down an epoll instance, close its file descriptor.
+
+``` {.c language="C"}
+close(epfd);
+</code></pre></div></div>
+<p>In addition to nonblocking and , any calls to on a nonblocking socket
+will also be nonblocking. To wait for the connection to complete, use or
+epoll to wait for the socket to be writable. There are definitely
+reasons to use epoll over select but due to to interface, there are
+fundamental problems with doing so.</p>
+<p><a href="https://idea.popcount.org/2017-01-06-select-is-fundamentally-broken/" class="fancy-link wiki-link">Blogpost about select being
+broken</a></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="remote-procedure-calls" class="title-text">Remote Procedure Calls<a class="anchor title-text" href="#remote-procedure-calls"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Remote Procedure Call. RPC is the idea that we can execute a procedure
+(function) on a different machine. In practice the procedure may execute
+on the same machine, however it may be in a different context - for
+example under a different user with different permissions and different
+lifecycle.</p>
+<h3 id="what-is-privilege-separation" class="title-text">What is Privilege Separation?</h3>
+<p>The remote code will execute under a different user and with different
+privileges from the caller. In practice the remote call may execute with
+more or fewer privileges than the caller. This in principle can be used
+to improve the security of a system (by ensuring components operate with
+least privilege). Unfortunately, security concerns need to be carefully
+assessed to ensure that RPC mechanisms cannot be subverted to perform
+unwanted actions. For example, an RPC implementation may implicitly
+trust any connected client to perform any action, rather than a subset
+of actions on a subset of the data.</p>
+<h3 id="what-is-stub-code-what-is-marshalling" class="title-text">What is stub code? What is marshalling?</h3>
+<p>The stub code is the necessary code to hide the complexity of performing
+a remote procedure call. One of the roles of the stub code is to
+<em>marshall</em> the necessary data into a format that can be sent as a byte
+stream to a remote server.</p>
+<p>``` {.c language=”C”}
+// On the outside ‘getHiscore’ looks like a normal function call
+// On the inside the stub code performs all of the work to send and receive the data to and from the remote machine.</p>
+<p>int getHighScore(char* game) {
+  // Marshall the request into a sequence of bytes:
+  char* buffer;
+  asprintf(&amp;buffer,”getHiscore(%s)!”, name);</p>
+<p>// Send down the wire (we do not send the zero byte; the ‘!’ signifies the end of the message)
+  write(fd, buffer, strlen(buffer) );</p>
+<p>// Wait for the server to send a response
+  ssize_t bytesread = read(fd, buffer, sizeof(buffer));</p>
+<p>// Example: unmarshal the bytes received back from text into an int
+  buffer[bytesread] = 0; // Turn the result into a C string</p>
+<p>int score= atoi(buffer);
+  free(buffer);
+  return score;
+}</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+### What is server stub code? What is unmarshalling?
+
+The server stub code will receive the request, unmarshall the request
+into a valid in-memory data call the underlying implementation and send
+the result back to the caller.
+
+### How do you send an int? float? a struct? A linked list? A graph?
+
+To implement RPC you need to decide (and document) which conventions you
+will use to serialize the data into a byte sequence. Even a simple
+integer has several common choices:
+
+1.  Signed or unsigned?
+
+2.  ASCII, Unicode Text Format 8, some other encoding?
+
+3.  Fixed number of bytes or variable depending on magnitude
+
+4.  Little or Big endian binary format?
+
+To marshall a struct, decide which fields need to be serialized. It may
+not be necessary to send all data items (for example, some items may be
+irrelevant to the specific RPC or can be re-computed by the server from
+the other data items present).
+
+To marshall a linked list it is unnecessary to send the link pointers-
+just stream the values. As part of unmarshalling the server can recreate
+a linked list structure from the byte sequence.
+
+By starting at the head node/vertex, a simple tree can be recursively
+visited to create a serialized version of the data. A cyclic graph will
+usually require additional memory to ensure that each edge and vertex is
+processed exactly once.
+
+### What is an Interface Description Language (IDL)?
+
+Writing stub code by hand is painful, tedious, error prone, difficult to
+maintain and difficult to reverse engineer the wire protocol from the
+implemented code. A better approach is specify the data objects,
+messages and services and automatically generate the client and server
+code.
+
+A modern example of an Interface Description Language is Google’s
+Protocol Buffer .proto files.
+
+### Complexity and challenges of RPC vs local calls?
+
+Remote Procedure Calls are significantly slower (10x to 100x) and more
+complex than local calls. An RPC must marshall data into a
+wire-compatible format. This may require multiple passes through the
+data structure, temporary memory allocation and transformation of the
+data representation.
+
+Robust RPC stub code must intelligently handle network failures and
+versioning. For example, a server may have to process requests from
+clients that are still running an early version of the stub code.
+
+A secure RPC will need to implement additional security checks
+(including authentication and authorization), validate data and encrypt
+communication between the client and host.
+
+### Transferring large amounts of structured data
+
+Let’s examine three methods of transferring data using 3 different
+formats - JSON, XML and Google Protocol Buffers. JSON and XML are
+text-based protocols. Examples of JSON and XML messages are below.
+
+``` {.xml language="XML"}
+&lt;ticket&gt;&lt;price currency='dollar'&gt;10&lt;/price&gt;&lt;vendor&gt;travelocity&lt;/vendor&gt;&lt;/ticket&gt;
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ 'currency':'dollar' , 'vendor':'travelocity', 'price':'10' }
+</code></pre></div></div>
+<p>Google Protocol Buffers is an open-source efficient binary protocol that
+places a strong emphasis on high throughput with low CPU overhead and
+minimal memory copying. Implementations exist for multiple languages
+including Go, Python, C++ and C. This means client and server stub code
+in multiple languages can be generated from the .proto specification
+file to marshall data to and from a binary stream.</p>
+<p><a href="https://developers.google.com/protocol-buffers/docs/overview" class="fancy-link wiki-link">Google Protocol
+Buffers</a>
+reduces the versioning problem by ignoring unknown fields that are
+present in a message. See the introduction to Protocol Buffers for more
+information.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="topics" class="title-text">Topics<a class="anchor title-text" href="#topics"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>
+    <p>IPv4 vs IPv6</p>
+  </li>
+  <li>
+    <p>TCP vs UDP</p>
+  </li>
+  <li>
+    <p>Packet Loss/Connection Based</p>
+  </li>
+  <li>
+    <p>Get address info</p>
+  </li>
+  <li>
+    <p>DNS</p>
+  </li>
+  <li>
+    <p>TCP client calls</p>
+  </li>
+  <li>
+    <p>TCP server calls</p>
+  </li>
+  <li>
+    <p>shutdown</p>
+  </li>
+  <li>
+    <p>recvfrom</p>
+  </li>
+  <li>
+    <p>epoll vs select</p>
+  </li>
+  <li>
+    <p>RPC</p>
+  </li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="questions" class="title-text">Questions<a class="anchor title-text" href="#questions"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>
+    <p>What is IPv4? IPv6? What are the differences between them?</p>
+  </li>
+  <li>
+    <p>What is TCP? UDP? Give me advantages and disadvantages of both of
+them. When would I use one and not the other?</p>
+  </li>
+  <li>
+    <p>Which protocol is connection less and which one is connection based?</p>
+  </li>
+  <li>
+    <p>What is DNS? What is the route that DNS takes?</p>
+  </li>
+  <li>
+    <p>What does socket do?</p>
+  </li>
+  <li>
+    <p>What are the calls to set up a TCP client?</p>
+  </li>
+  <li>
+    <p>What are the calls to set up a TCP server?</p>
+  </li>
+  <li>
+    <p>What is the difference between a socket shutdown and closing?</p>
+  </li>
+  <li>
+    <p>When can you use and ? How about and ?</p>
+  </li>
+  <li>
+    <p>What are some advantages to over ? How about over ?</p>
+  </li>
+  <li>
+    <p>What is a remote procedure call? When should I use it?</p>
+  </li>
+  <li>
+    <p>What is marshalling/unmarshalling? Why is HTTP <em>not</em> an RPC?</p>
+  </li>
+</ul></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/networking.md";
+  </script>
+</body>
+
+</html>

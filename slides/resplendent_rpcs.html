@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Remote Procedure Calls | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/resplendent_rpcs">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Remote Procedure Calls</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="remote-procedure-calls">Remote Procedure Calls</h2>
+
+<p>Remote procedure calls are a way to execute a procedure (ex. function) that exists in a different context.</p>
+
+</section><section><h2></h2>
+
+<table class="reveal">
+<tr>
+<td>
+POST /say HTTP/1.1
+HOST: api.example.com
+Content-Type: application/json
+
+{"name": "Racey McRacerson"}
+</td>
+<td>
+/* Signature */
+function sayHello(name) {
+  // ...
+}
+
+/* Usage */
+sayHello("Racey McRacerson");          |
+</td>
+</tr>
+</table>
+
+</section><section><h2></h2>
+
+<table class="reveal">
+<tr>
+<td>
+POST /say HTTP/1.1
+HOST: api.example.com
+Content-Type: application/json
+
+{"name": "Racey McRacerson"}
+</td>
+<td>
+/* Signature */
+function clientContact(name) {
+// ...
+}
+
+/* Usage */
+if(request == “/ping}
+clientContact(request.data);
+
+</td>
+</tr>
+</table>
+
+</section><section><h2></h2>
+
+<p><img src="/images/udp_communication.png" alt="UDP Communication"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="dns-resolution">DNS Resolution</h2>
+
+</section><section><h2></h2>
+
+<p><img src="/images/dns.png" alt="DNS Resolution"></p>
+
+</section><section><h2 id="udp-code">UDP Code</h2>
+
+<pre><code class="language-C"><span class="kt">int</span> <span class="n">sockfd</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_DGRAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">sockfd</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">perror</span><span class="p">(</span><span class="s">"socket"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="n">optval</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="c1">// Let them reuse</span>
+<span class="n">setsockopt</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">SO_REUSEPORT</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">optval</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">optval</span><span class="p">));</span>
+</code></pre>
+
+<pre><code class="language-C"><span class="k">struct</span> <span class="n">sockaddr_in</span> <span class="n">addr</span><span class="p">;</span>
+<span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">addr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">addr</span><span class="p">));</span>
+<span class="n">addr</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>
+<span class="n">addr</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">((</span><span class="kt">uint16_t</span><span class="p">)</span><span class="n">port</span><span class="p">);</span>
+<span class="k">struct</span> <span class="n">hostent</span> <span class="o">*</span><span class="n">serv</span> <span class="o">=</span> <span class="n">gethostbyname</span><span class="p">(</span><span class="n">hostname</span><span class="p">);</span>
+</code></pre>
+
+<pre><code class="language-C"><span class="c1">// Timeouts for resending acks and whatnot</span>
+<span class="k">struct</span> <span class="n">timeval</span> <span class="n">tv</span><span class="p">;</span>
+<span class="n">tv</span><span class="p">.</span><span class="n">tv_sec</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">tv</span><span class="p">.</span><span class="n">tv_usec</span> <span class="o">=</span> <span class="n">SOCKET_TIMEOUT</span><span class="p">;</span>
+<span class="n">setsockopt</span><span class="p">(</span><span class="n">sockfd</span><span class="p">,</span> <span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">SO_RCVTIMEO</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">tv</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">tv</span><span class="p">));</span>
+</code></pre>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

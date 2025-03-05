@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Memory Mapped IO | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/mad_mad_access_pattern">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Memory Mapped IO</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="learning-objectives">Learning Objectives</h2>
+
+<ul>
+  <li>Review of the C file interface</li>
+  <li>Introduction to <code class="language-plaintext highlighter-rouge">mmap</code>
+</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="c-file-manipulation">C File Manipulation</h2>
+
+<ul>
+  <li>A higher level, more portable interface for interacting with file operations than syscalls.</li>
+  <li>Some familiar functions: <code class="language-plaintext highlighter-rouge">fopen</code> and <code class="language-plaintext highlighter-rouge">fwrite</code>
+</li>
+</ul>
+
+</section><section><h2 id="fseek-and-ftell">Fseek and Ftell</h2>
+
+<ul>
+  <li>Lets us move around the position of a <code class="language-plaintext highlighter-rouge">FILE*</code>
+</li>
+  <li>New position specified via an <code class="language-plaintext highlighter-rouge">offset</code> and a <code class="language-plaintext highlighter-rouge">whence</code> origin</li>
+  <li>Syscall analog for working with file descriptors: <code class="language-plaintext highlighter-rouge">lseek</code>
+</li>
+</ul>
+
+</section><section><h2 id="fseek-juggle">Fseek Juggle</h2>
+
+<p><img src="https://web.archive.org/web/20210427234631if_/http://forum.falinux.com/_clibimages/073_fseek.png" alt="Fseek Map"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="mmap">MMAP</h2>
+
+</section><section><h2 id="what-is-it">What is it?</h2>
+
+<ul>
+  <li>Syscall- can define a new memory mapping.</li>
+  <li>This can apply to files or devices, letting us emulate writing through standard memory writes.</li>
+  <li>Files are loaded lazily into memory page by page and writes can be reflected to the underlying file depending on the mapping’s settings.</li>
+</ul>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>On the kernel end, only a memory mapping is created.</li>
+  <li>The kernel/CPU is free to do whatever under the hood as long as when a process asks for a memory address a page is available.</li>
+</ul>
+
+<p>How do we implement this? Page faults!</p>
+
+</section><section><h2 id="remember-this">Remember this?</h2>
+
+<p><img src="https://www.oreilly.com/api/v2/epubs/0596009585/files/httpatomoreillycomsourceoreillyimages47949.png" height="80%" width="80%"></p>
+
+<p>Now, the pages can be tied to file pages, instead of pages backed by physical RAM.</p>
+
+</section><section><h2 id="mmap-for-ipc">MMAP for IPC</h2>
+<p><img src="http://www.tldp.org/LDP/tlk/mm/vm.gif" alt="Virtual Memory Pics"></p>
+
+</section><section><h2 id="lazy-mmap">Lazy MMAP</h2>
+
+<ul>
+  <li>Laziness in this context means entire files may not be mmapped.</li>
+  <li>Parts of files are assigned to memory pages as they are needed.</li>
+  <li>When <code class="language-plaintext highlighter-rouge">mmap</code> is called, it’s possible that <em>none</em> of the file is loaded into memory yet.</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="mmap-usage">MMAP Usage</h2>
+
+<p><code class="language-plaintext highlighter-rouge">mmap</code> is complicated! Here is the signature:</p>
+
+<p><code class="language-plaintext highlighter-rouge">void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);</code></p>
+
+</section><section><h2></h2>
+
+<p>Basic mapping parameters:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">addr</code>: Page aligned address to start the mapping at or <code class="language-plaintext highlighter-rouge">NULL</code> to let <code class="language-plaintext highlighter-rouge">mmap</code> choose</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">length</code>: Byte length of mapping</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>Common access settings:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">prot</code>: Memory protection (r/w/x/none)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">flags</code>: Update visibility to other processes (ex. <code class="language-plaintext highlighter-rouge">MAP_SHARED</code> / <code class="language-plaintext highlighter-rouge">MAP_PRIVATE</code>) or define a non-file mapping (<code class="language-plaintext highlighter-rouge">MAP_ANONYMOUS</code>)</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>File mapping options:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">fd</code>: File descriptor used in a file mapping</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">offset</code>: Page-aligined offset in a file to begin a mapping at</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>See the man page for more!</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="mad-mad-access-patterns">Mad Mad Access Patterns</h2>
+
+<ul>
+  <li>A file search problem: given a query and a formatted file, implement a search to either find the value or report that no such value exists.</li>
+  <li>The file size can exceed memory.</li>
+  <li>You will solve this problem twice:
+    <ul>
+      <li>Once with the C file interface (<code class="language-plaintext highlighter-rouge">lookup1.c</code>)</li>
+      <li>Once with <code class="language-plaintext highlighter-rouge">mmap</code> (<code class="language-plaintext highlighter-rouge">lookup2.c</code>)</li>
+    </ul>
+  </li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="background">Background</h2>
+
+</section><section><h2 id="efficient-file-navigation">Efficient File Navigation</h2>
+
+<ul>
+  <li>If we want to quickly navigate a file’s data, we can encode its contents using a data structure, in our case a tree.</li>
+  <li>We translate the tree to a flat array/file by providing a <em>serialization scheme</em> or an encoding.</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>Here’s a serialization using an inorder traversal:</p>
+
+<p><img src="https://2.bp.blogspot.com/-SKDmvFFeO4k/V_0pb7xvuSI/AAAAAAAABTo/UlEmSIX29Qg3eZBFcHaq3SETawISEYewwCLcB/s1600/deserialized-binary-tree.png" alt="Binary Tree"></p>
+
+</section><section><h2></h2>
+
+<p>Another example with a level-ordered traversal:</p>
+
+<p><img src="http://d2vlcm61l7u1fs.cloudfront.net/media%2F858%2F858e0ee4-80a8-4837-8e97-c1925cdbb231%2FphppObXfG.png" alt="Serializing Them In Arrays"></p>
+
+</section><section><h2 id="our-trees">Our Trees</h2>
+
+<p>We will use <em>file offsets</em>:</p>
+<ul>
+  <li>The root will always be at offset <code class="language-plaintext highlighter-rouge">4</code> in a correct file.</li>
+  <li>Each node will hold the file offsets of their children.</li>
+  <li>Offset <code class="language-plaintext highlighter-rouge">0</code> is analogous to a <code class="language-plaintext highlighter-rouge">NULL</code> ptr.</li>
+</ul>
+
+</section><section><h2 id="tree-node-structure">Tree Node Structure</h2>
+
+<pre><code class="language-C"><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="kt">uint32_t</span> <span class="n">left_child</span><span class="p">;</span>  <span class="c1">// offset of node containing left child</span>
+	<span class="kt">uint32_t</span> <span class="n">right_child</span><span class="p">;</span> <span class="c1">// offset of node containing right child</span>
+
+	<span class="c1">// Offsets are relative to the beginning of the file.</span>
+	<span class="c1">// An offset of zero means the child does not exist.</span>
+
+	<span class="kt">uint32_t</span> <span class="n">count</span><span class="p">;</span>  <span class="c1">// number of times the word occurs in the data set</span>
+	<span class="kt">float</span> <span class="n">price</span><span class="p">;</span>     <span class="c1">// price of the word</span>
+
+	<span class="kt">char</span> <span class="n">word</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>    <span class="c1">// contents of the word, null-terminated</span>
+<span class="p">}</span> <span class="n">BinaryTreeNode</span><span class="p">;</span>
+</code></pre>
+
+</section><section><h2 id="how-does-word0-work">How does word[0] work?</h2>
+
+<p>Recall <code class="language-plaintext highlighter-rouge">malloc</code>!</p>
+<pre><code class="language-C"><span class="c1">// allocate 12 bytes for word</span>
+<span class="n">BinaryTreeNode</span><span class="o">*</span> <span class="n">node1</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">BinaryTreeNode</span><span class="p">)</span> <span class="o">+</span> <span class="mi">12</span><span class="p">);</span>
+<span class="c1">// allocate 20 bytes for word</span>
+<span class="n">BinaryTreeNode</span><span class="o">*</span> <span class="n">node2</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">BinaryTreeNode</span><span class="p">)</span> <span class="o">+</span> <span class="mi">20</span><span class="p">);</span>
+</code></pre>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="implementation-notes">Implementation Notes</h2>
+
+<ul>
+  <li>Use <code class="language-plaintext highlighter-rouge">strcmp</code> on the <code class="language-plaintext highlighter-rouge">word</code> field of each node to traverse the tree.</li>
+  <li>You will have to handle certain errors, each with their own specific exit codes – check the docs.</li>
+</ul>
+
+</section><section><h2 id="testing">Testing</h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">create_data</code> for making your own BTRE files</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">lookup1-reference</code> / <code class="language-plaintext highlighter-rouge">lookup2-reference</code> for comparison</li>
+</ul>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

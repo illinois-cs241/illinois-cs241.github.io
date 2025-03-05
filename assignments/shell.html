@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Shell</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Shell" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Shell
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Part 1</b> due <b>2025-02-17 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>shell.c</li>
+                
+              </ul>
+              
+              
+              <b>Part 2</b> due <b>2025-02-24 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>shell.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_backstory" href="#backstory" class="fancy-link">Backstory</a></li>
+<li><a id="toc_important-things-to-note" href="#important-things-to-note" class="fancy-link">Important Things to Note</a></li>
+<li><a id="toc_overview-and-to-dos" href="#overview-and-to-dos" class="fancy-link">Overview and To-Dos</a></li>
+<li><a id="toc_starting-your-shell" href="#starting-your-shell" class="fancy-link">Starting Your Shell</a></li>
+<li><a id="toc_interaction-within-your-shell" href="#interaction-within-your-shell" class="fancy-link">Interaction Within Your Shell</a></li>
+<li><a id="toc_built-in-commands" href="#built-in-commands" class="fancy-link">Built-in Commands</a></li>
+<li><a id="toc_external-commands" href="#external-commands" class="fancy-link">External Commands</a></li>
+<li><a id="toc_logical-operators" href="#logical-operators" class="fancy-link">Logical Operators</a></li>
+<li><a id="toc_memory" href="#memory" class="fancy-link">Memory</a></li>
+<li><a id="toc_background-processes" href="#background-processes" class="fancy-link">Background Processes</a></li>
+<li><a id="toc_ps" href="#ps" class="fancy-link"><code class="language-plaintext highlighter-rouge">ps</code></a></li>
+<li><a id="toc_redirection-operators" href="#redirection-operators" class="fancy-link">Redirection Operators</a></li>
+<li><a id="toc_signal-commands" href="#signal-commands" class="fancy-link">Signal Commands</a></li>
+<li><a id="toc_summary-of-history-storing" href="#summary-of-history-storing" class="fancy-link">Summary of History Storing</a></li>
+<li><a id="toc_grading" href="#grading" class="fancy-link">Grading</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Shell are: <br>
+    </p>
+<ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Learning How a Shell Works</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Fork, Exec, Wait</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Signals</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Processes</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Zombie Processes</span>
+        </li>
+      
+    </ul>
+  
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="backstory" class="title-text">Backstory<a class="anchor title-text" href="#backstory"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Well, we’ll keep it short – you got fired from Macrohard. Your boss brought you in for a code review and was more than disappointed. Apparently, they wanted a C++ style vector: we didn’t get the memo. Now, you’ve decided to work for <em>insert hot tech company here</em>, and you got the job! However, there’s a catch - all newhires in <em>insert hot tech company here</em> apparently have to go through a newcomers test if they want to keep their jobs. The task? Write a shell. So, you’re going to drop a <img class="emoji" title=":fire:" alt=":fire:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"> <img class="emoji" title=":fire:" alt=":fire:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png" height="20" width="20"> shell that is so fancy that your boss will not just keep you in the company, they’ll immediately give you a pay raise as well.</p>
+<p>The basic function of a shell is to accept commands as inputs and execute the corresponding programs in response. You will be provided the <code class="language-plaintext highlighter-rouge">vector</code>, <code class="language-plaintext highlighter-rouge">sstring</code> and <code class="language-plaintext highlighter-rouge">format.h</code> libraries for your use. Hopefully, this will make things right and you can secure your foothold at <em>insert hot tech company here</em>. Feel free to refer to the Unix shell as a rough reference.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="important-things-to-note" class="title-text">Important Things to Note<a class="anchor title-text" href="#important-things-to-note"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="fork-bombs" class="title-text">Fork Bombs</h3>
+<p><img class="emoji" title=":fork_and_knife:" alt=":fork_and_knife:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f374.png" height="20" width="20"> <img class="emoji" title=":bomb:" alt=":bomb:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f4a3.png" height="20" width="20"> <img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"></p>
+<p>To prevent you from fork bombing your own VM, we recommend looking into <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/ulimit.3p.html" class="fancy-link">ulimit</a></code>. This will allow you to set a limit for how many times you can fork. Note that <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/ulimit.3p.html" class="fancy-link">ulimit</a></code> is terminal session specific, so you will need to</p>
+<ul>
+  <li>do it everytime you launch a terminal</li>
+  <li>add this to your <code class="language-plaintext highlighter-rouge">~/.bashrc</code> file (feel free to look up online how to do so), so that it is run every time you log in to your VM.</li>
+</ul>
+<p>Note that you should give it a more generous amount (say, 100-200), since the terminal will likely have background processes already running. If you give it too small a limit, you won’t be able to launch anything, and you’ll need to launch a new terminal.</p>
+<p>If you happen to fork bomb your CS Cloud VM, please notify course staff in a private post with your VM number. Note that it may take up to a few hours for us to respond, so try not to fork bomb your VM.</p>
+<h3 id="plan-before-you-start" class="title-text">Plan Before You Start</h3>
+<p>This assignment marks the beginning of a series of projects where you will be given mostly blank files without predefined functions to fill in. Most of the remaining MPs will challenge your design skills to create interesting utilities. Therefore, it is important that you <strong>read the entirety of the documentation (including part 2), as well as the header files</strong> to get a clear idea on what needs to be done. A few reminders about good coding and developing practices that will really help you in the rest of the semester:</p>
+<ul>
+  <li>List down the features that you need to implement, as well as the gotchas. Make a to-do list to ensure you don’t miss out anything.</li>
+  <li>Plan out the entirety of your assignment. Create a skeleton of how your entire code will look like. This will prevent you from needing to restructure your entire code to add in a single new feature.</li>
+  <li>Ensure that you fully understand the system calls/library functions you’re using - the parameters, the return values, the possible errors, the gotchas and notes.</li>
+  <li>Structure your code into modular functions. You do not want to debug a 1500 line <code class="language-plaintext highlighter-rouge">while</code> loop within <code class="language-plaintext highlighter-rouge">main</code>.</li>
+  <li>Work incrementally. Implement a feature, test, debug, move on.</li>
+  <li>Good naming and spacing will make your code much more readable.</li>
+  <li>Try putting <code class="language-plaintext highlighter-rouge">TODO</code> comments in unfinished portions of your code. They are automatically highlighted in many text editors, which alerts you to incomplete code.</li>
+</ul>
+<h3 id="do-not-use-system" class="title-text">Do Not Use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/system.3p.html" class="fancy-link">system</a></code>
+</h3>
+<p>Since a learning objective of this assignment is to use the fork-exec-wait pattern, if you use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/system.3p.html" class="fancy-link">system</a></code>, you will automatically fail this MP.</p>
+<h3 id="input-formatting" class="title-text">Input Formatting</h3>
+<p><strong>Do not worry about irregular spacing</strong> in command inputs (i.e. extra whitespace before and after each token). This is considered undefined behavior and will not be tested. You are free to make your code as robust as you want, but we will only test the basic cases without irregular spacing (unless specified).</p>
+<h3 id="output-formatting" class="title-text">Output Formatting</h3>
+<p>Since this MP <strong>requires</strong> your shell and the programs you launch to print a variety of things like output messages and error messages, we have provided you with our own highly customized formatting library. You should not be printing out to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdout.3p.html" class="fancy-link">stdout</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stderr.3p.html" class="fancy-link">stderr</a></code> at all; instead, all output and errors should be printed using the functions provided in <code class="language-plaintext highlighter-rouge">format.h</code>. In <code class="language-plaintext highlighter-rouge">format.h</code> you can find documentation about what each function does, and you should use them whenever appropriate.</p>
+<p>If you place print statements in your debugging code, please remember to remove them before autograding, or use the <code class="language-plaintext highlighter-rouge">#define DEBUG</code> block to place your print statements.</p>
+<p><strong>Note</strong>: don’t worry if you don’t use all of the functions in <code class="language-plaintext highlighter-rouge">format.h</code>, but you should use them whenever their documented purpose matches the situation.</p>
+<h3 id="flush-before-forking" class="title-text">Flush Before Forking</h3>
+<p>Ensure that you <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fflush.3p.html" class="fancy-link">fflush</a></code> output file handles before forking. See <a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/V2_chap02.html#tag_15_05" class="fancy-link wiki-link">section 2.5.1 of the Open Group Base Specifications</a> for more information on why this is necessary.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="overview-and-to-dos" class="title-text">Overview and To-Dos<a class="anchor title-text" href="#overview-and-to-dos"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The shell is responsible for providing a command line for users to execute programs or scripts. You should be very familiar with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/bash.1.html" class="fancy-link">bash</a></code> by now, which will be the basis for your own shell. This is a 2 week MP, and the features you will need to implement are as follows:</p>
+<h3 id="part-1" class="title-text">Part 1</h3>
+<ul>
+  <li>Starting up a shell</li>
+  <li>Optional arguments when launching shell</li>
+  <li>Interaction</li>
+  <li>Built-in commands</li>
+  <li>Foreground external commands</li>
+  <li>Logical operators</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">SIGINT</code> handling</li>
+  <li>Exiting</li>
+</ul>
+<h3 id="part-2" class="title-text">Part 2</h3>
+<p>Everything from part 1, and:</p>
+<ul>
+  <li>Background external commands</li>
+  <li><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code></li>
+  <li>Redirection commands</li>
+  <li>Signal commands</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="starting-your-shell" class="title-text">Starting Your Shell<a class="anchor title-text" href="#starting-your-shell"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The shell should run in a loop like this executing multiple commands:</p>
+<ul>
+  <li>Print a command prompt</li>
+  <li>Read the command from standard input</li>
+  <li>Print the PID of the process executing the command (with the exception of built-in commands), and run the command</li>
+</ul>
+<p>The shell must support the following two optional arguments, however, <em>the order of the arguments does not matter, and should not affect the functionality of your shell. Your shell should be able to handle having none, one or both of these arguments</em>.</p>
+<h3 id="history" class="title-text">History</h3>
+<p>Your shell should support storing the history of commands executed across shell sessions. The command is as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./shell -h &lt;filename&gt;
+</code></pre></div></div>
+<p>When provided <code class="language-plaintext highlighter-rouge">-h</code>, the shell should load in the history file as its history. Upon exiting, the shell should <em>append the commands of the current session</em> into the supplied history file, even if the shell is in a different working directory than where it started. If the file does not exist, you should treat it as an empty file. The format of the history file stored should be exactly the same as a script file, where you list a series of commands to be executed. Example:</p>
+<p><code class="language-plaintext highlighter-rouge">history.txt</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd cs341
+Hm
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./shell -h history.txt
+(pid=1234)/home/user/cs341$ echo Hey!
+Command executed by pid=1235
+Hey!
+(pid=1234)/home/user/cs341$ exit
+</code></pre></div></div>
+<p>Updated <code class="language-plaintext highlighter-rouge">history.txt</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd cs341
+Hm
+echo Hey!
+</code></pre></div></div>
+<p>Notes:</p>
+<ul>
+  <li>If the the <code class="language-plaintext highlighter-rouge">-h</code> flag is not specified, the shell <em>will still keep a history of commands run</em>, but will not read/write from/to a history file. Just think of it like private browsing mode for your terminal.</li>
+  <li>Every command should be stored into the history file, unless specified.</li>
+</ul>
+<h3 id="file" class="title-text">File</h3>
+<p>Your shell should also support running a series of commands from a script file. The command is as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./shell -f &lt;filename&gt;
+</code></pre></div></div>
+<p>When provided <code class="language-plaintext highlighter-rouge">-f</code>, your shell will both print and run the commands in the file in sequential order until the end of the file. See the following example file and execution:</p>
+<p><code class="language-plaintext highlighter-rouge">commands.txt</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd cs341
+echo Hey!
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./shell -f commands.txt
+(pid=1234)/home/user$ cd cs341
+(pid=1234)/home/user/cs341$ echo Hey!
+Command executed by pid=1235
+Hey!
+</code></pre></div></div>
+<p>You have been given a sample script file <code class="language-plaintext highlighter-rouge">test_file.txt</code>. Your history files and script files should be formatted in the same manner (this means you can use your history file as a script file in <code class="language-plaintext highlighter-rouge">-f</code>).</p>
+<p>If the user supplies an incorrect number of arguments, or the script file cannot be found, your shell should print the appropriate error from <code class="language-plaintext highlighter-rouge">format.h</code> and exit.</p>
+<p>Tip: The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getopt.3p.html" class="fancy-link">getopt</a></code> function may come in handy. <img class="emoji" title=":smile:" alt=":smile:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png" height="20" width="20"></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="interaction-within-your-shell" class="title-text">Interaction Within Your Shell<a class="anchor title-text" href="#interaction-within-your-shell"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="prompting" class="title-text">Prompting</h3>
+<p>When prompting for a command, the shell will print a prompt in the following format (from <code class="language-plaintext highlighter-rouge">format.h</code>):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=&lt;pid&gt;)&lt;path&gt;$
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">&lt;pid&gt;</code> is the process ID of the shell, and <code class="language-plaintext highlighter-rouge">&lt;path&gt;</code> is a path to the current working directory. Note the lack of a newline at the end of this prompt.</p>
+<h3 id="reading-in-commands" class="title-text">Reading in Commands</h3>
+<p>The shell will read in a command from <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdin.3p.html" class="fancy-link">stdin</a></code> (or a file if <code class="language-plaintext highlighter-rouge">-f</code> was specified).</p>
+<h3 id="command-types-and-formats" class="title-text">Command Types and Formats</h3>
+<p>Shell supports two types of commands: built-in and external (i.e. non-built-in). Built-in commands are part of the shell’s code, and are executed without creating a new process. External commands <em>must</em> be executed by a new process, forked from your shell. If a command is not one of the built-in commands listed, it is an external command.</p>
+<p>Command arguments will be space-separated without trailing whitespace. Your shell does not need to support quotes (for example, <code class="language-plaintext highlighter-rouge">echo "hello there"</code>).</p>
+<h3 id="running-the-commands" class="title-text">Running the Commands</h3>
+<p>The shell should run the command that was read in previously.</p>
+<p>If the command is run by a new process, the PID of the process should be printed like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Command executed by pid=&lt;pid&gt;
+</code></pre></div></div>
+<p>This should be printed by the process that will run the command, before any of the output of the command is printed (prints to be used are in <code class="language-plaintext highlighter-rouge">format.h</code>).</p>
+<h3 id="keeping-history" class="title-text">Keeping History</h3>
+<p>Your shell should store the command that the user entered, so the user can repeat it later if they wish. Every command should be stored unless otherwise noted. A vector may be useful here.</p>
+<h3 id="exit" class="title-text"><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code></h3>
+<p>The shell will exit once it receives the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code> command or once it receives an <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/EOF.3const.html" class="fancy-link">EOF</a></code> <strong>at the beginning of the line</strong>. An <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/EOF.3const.html" class="fancy-link">EOF</a></code> is sent by typing <code class="language-plaintext highlighter-rouge">Ctrl-D</code> from your terminal. It is also sent automatically from a script file (as used with the <code class="language-plaintext highlighter-rouge">-f</code> flag) once the end of the file is reached. This should cause your shell to exit with exit status 0.</p>
+<p>If there are currently stopped or running background processes when your shell receives <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code> or <code class="language-plaintext highlighter-rouge">Control-D</code> (EOF), you should kill and cleanup each of those children before your shell exits. You do not need to worry about SIGTERM.</p>
+<p><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" height="20" width="20"> If you don’t handle <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/EOF.3const.html" class="fancy-link">EOF</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code> to exit, you will fail many of our test cases!</p>
+<p><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" height="20" width="20"> Do <strong>not</strong> store <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code> in history!</p>
+<h3 id="catching-ctrlc" class="title-text">Catching Ctrl+C</h3>
+<p>Usually when we do <code class="language-plaintext highlighter-rouge">Ctrl+C</code>, the current running program will exit. However, we want the shell itself to ignore the <code class="language-plaintext highlighter-rouge">Ctrl+C</code> signal (<code class="language-plaintext highlighter-rouge">SIGINT</code>) - instead, it should kill the currently running foreground process (if one exists) using <code class="language-plaintext highlighter-rouge">SIGINT</code>. One way to do this is to use the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/kill.3p.html" class="fancy-link">kill</a></code> function on the foreground process PID when <code class="language-plaintext highlighter-rouge">SIGINT</code> is caught in your shell. However, when a signal is sent to a process, it is sent to all processes in its process group. In this assignment, the shell process is the leader of a process group consisting of all processes that are <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>‘d from it. So another way to properly handle <code class="language-plaintext highlighter-rouge">Ctrl+C</code> is to simply <em>do nothing inside the handler for <code class="language-plaintext highlighter-rouge">SIGINT</code></em> if it is caught in the shell - your shell will continue running, but <code class="language-plaintext highlighter-rouge">SIGINT</code> will automatically propagate to the foreground process and kill it.</p>
+<p>However, since we want this signal to be sent to <strong>only</strong> the foreground process, but not to any backgrounded processes, you will want to use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/setpgid.3p.html" class="fancy-link">setpgid</a></code> to assign each background process to its own process group after forking. (Note: think about who should be making the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/setpgid.3p.html" class="fancy-link">setpgid</a></code> call and why).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="built-in-commands" class="title-text">Built-in Commands<a class="anchor title-text" href="#built-in-commands"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>There are several built-in commands your shell is expected to support.</p>
+<h3 id="cd-path" class="title-text"><code class="language-plaintext highlighter-rouge">cd &lt;path&gt;</code></h3>
+<p>Changes the current working directory of the shell to <code class="language-plaintext highlighter-rouge">&lt;path&gt;</code>. Paths not starting with <code class="language-plaintext highlighter-rouge">/</code> should be followed relative to the current directory. If the directory does not exist, then print the appropriate error. Unlike your regular shell, the <code class="language-plaintext highlighter-rouge">&lt;path&gt;</code> argument is mandatory here. A missing path should be treated as a nonexistent directory.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=1234)/home/user$ cd code
+(pid=1234)/home/user/code$ cd imaginary_directory
+imaginary_directory: No such file or directory
+(pid=1234)/home/user/code$
+</code></pre></div></div>
+<p>There is a system call that may be helpful here.</p>
+<h3 id="history-1" class="title-text"><code class="language-plaintext highlighter-rouge">!history</code></h3>
+<p>Prints out each command in the history, in order.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=1234)/home/user$ !history
+0    ls -l
+1    pwd
+2    ps
+(pid=1234)/home/user$
+</code></pre></div></div>
+<p><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" height="20" width="20"> This command is not stored in history.</p>
+<h3 id="n" class="title-text"><code class="language-plaintext highlighter-rouge">#&lt;n&gt;</code></h3>
+<p>Prints and executes the \(n\)-th command in history (in chronological order, from earliest to most recent), where \(n\) is a non-negative integer. Other values of \(n\) will not be tested. The command executed should be stored in the history. If \(n\) is not a valid index, then print the appropriate error and do not store anything in the history.</p>
+<p>The following example assumes a fresh history:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=1234)/home/user$ echo Echo This!
+Command executed by pid=1235
+Echo This!
+(pid=1234)/home/user$ echo Another echo
+Command executed by pid=1236
+Another echo
+(pid=1234)/home/user$ !history
+0    echo Echo This!
+1    echo Another echo
+(pid=1234)/home/user$ #1
+echo Another echo
+Command executed by pid=1237
+Another echo
+(pid=1234)/home/user$ #9001
+Invalid Index
+(pid=1234)/home/user$ !history
+0    echo Echo This!
+1    echo Another echo
+2    echo Another echo
+(pid=1234)/home/user$
+</code></pre></div></div>
+<p><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" height="20" width="20"> Print out the command before executing if there is a match.</p>
+<p><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" height="20" width="20"> The <code class="language-plaintext highlighter-rouge">#&lt;n&gt;</code> command itself is <strong>not</strong> stored in history, but the command being executed (if any) <strong>is</strong>.</p>
+<h3 id="prefix" class="title-text"><code class="language-plaintext highlighter-rouge">!&lt;prefix&gt;</code></h3>
+<p>Prints and executes the last command that has the specified prefix. If no match is found, print the appropriate error and do not store anything in the history. The prefix may be empty. The following example assumes a fresh history:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=1234)/home/user$ echo Echo This!
+Command executed by pid=1235
+Echo This!
+(pid=1234)/home/user$ echo Another echo
+Command executed by pid=1236
+Another echo
+(pid=1234)/home/user$ !e
+echo Another echo
+Command executed by pid=1237
+Another echo
+(pid=1234)/home/user$ !echo E
+echo Echo This!
+Command executed by pid=1238
+Echo This!
+(pid=1234)/home/user$ !d
+No Match
+(pid=1234)/home/user$ !
+echo Echo This!
+Command executed by pid=1239
+Echo This!
+(pid=1234)/home/user$ !history
+0       echo Echo This!
+1       echo Another echo
+2       echo Another echo
+3       echo Echo This!
+4       echo Echo This!
+(pid=1234)/home/user$
+</code></pre></div></div>
+<p><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" height="20" width="20"> Print out the command before executing if there is a match.</p>
+<p><img class="emoji" title=":warning:" alt=":warning:" src="https://github.githubassets.com/images/icons/emoji/unicode/26a0.png" height="20" width="20"> The <code class="language-plaintext highlighter-rouge">!&lt;prefix&gt;</code> command itself is <strong>not</strong> stored in history, but the command being executed (if any) <strong>is</strong>.</p>
+<h3 id="invalid-built-in-commands" class="title-text">Invalid Built-in Commands</h3>
+<p>You should be printing appropriate errors in cases where built-in commands fail; for example, if the user tries to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cd.1p.html" class="fancy-link">cd</a></code> into a nonexistent directory.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=1234)/home/user$ cd /imaginary_directory
+/imaginary_directory: No such file or directory
+(pid=1234)/home/user$
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="external-commands" class="title-text">External Commands<a class="anchor title-text" href="#external-commands"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>For commands that are not built-in, the shell should consider the command name to be the name of a file that contains executable binary code. Such a code must be executed in a process different from the one executing the shell. You must use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code>, and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code>/<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/waitpid.3p.html" class="fancy-link">waitpid</a></code>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">fork/exec/wait</code> paradigm is as follows: <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code> a child process. The child process must execute the command with <code class="language-plaintext highlighter-rouge">exec*</code>, while the parent must <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code> for the child to terminate before printing the next prompt.</p>
+<p>You are responsible of cleaning up all the child processes upon termination of your program. It is important to note that, upon a successful execution of the command, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> never returns to the child process. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> only returns to the child process when the command fails to execute successfully. If any of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code>, or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code> fail, the appropriate error messages should be printed. The child should <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code> with exit status 1 if it fails to execute a command.</p>
+<p>Some external commands you may test to see whether your shell works are:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/ls
+echo hello
+</code></pre></div></div>
+<p>Tip: It is good practice to flush the standard output stream before the fork to be able to correctly display the output. This will also prevent duplicate printing from the child process.</p>
+<p><img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"> Please read the disclaimer at the top of the page! We don’t want to have to give any failing grades. <img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="logical-operators" class="title-text">Logical Operators<a class="anchor title-text" href="#logical-operators"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/bash.1.html" class="fancy-link">bash</a></code>, your shell should support <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>, <code class="language-plaintext highlighter-rouge">||</code>, and <code class="language-plaintext highlighter-rouge">;</code> in between two commands. This will require only a minimal amount of string parsing that you have to do yourself.</p>
+<p><strong>Important</strong>: each input can have at most <em>one</em> of <code class="language-plaintext highlighter-rouge">&amp;&amp;</code>, <code class="language-plaintext highlighter-rouge">||</code>, or <code class="language-plaintext highlighter-rouge">;</code>. You do <em>not</em> have to support chaining (e.g. <code class="language-plaintext highlighter-rouge">x &amp;&amp; y || z; w</code>).</p>
+<p><strong>Important</strong>: you should <em>not</em> try to handle the combination of the <code class="language-plaintext highlighter-rouge">!history</code>, <code class="language-plaintext highlighter-rouge">#&lt;n&gt;</code>, <code class="language-plaintext highlighter-rouge">!&lt;prefix&gt;</code>, or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code> commands with any logical operators. Rather, you can assume these commands will always be run on a line by themselves.</p>
+<p><strong>Important</strong>: logical operators are stored in the history as one entry. This means your history should look like so</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=1234)/home/user$ echo foo &amp;&amp; echo bar
+Command executed by pid=1235
+foo
+Command executed by pid=1236
+bar
+(pid=1234)/home/user$ !history
+0       echo foo &amp;&amp; echo bar
+</code></pre></div></div>
+<h3 id="and" class="title-text">AND</h3>
+<p><code class="language-plaintext highlighter-rouge">&amp;&amp;</code> is the AND operator. Usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x &amp;&amp; y
+</code></pre></div></div>
+<ul>
+  <li>The shell first runs <code class="language-plaintext highlighter-rouge">x</code>, then checks the exit status.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">x</code> exited successfully (status = 0), run <code class="language-plaintext highlighter-rouge">y</code>.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">x</code> did not exit successfully (status ≠ 0), do <em>not</em> run <code class="language-plaintext highlighter-rouge">y</code>. This is also known as <a href="https://en.wikipedia.org/wiki/Short-circuit_evaluation" class="fancy-link wiki-link">short-circuiting</a>.</li>
+</ul>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=27853)/home/user/semester/shell$ echo hi &amp;&amp; echo bye
+Command executed by pid=27854
+hi
+Command executed by pid=27855
+bye
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=27879)/home/mkrzys2/fa19/shell$ cd /asdf &amp;&amp; echo short-circuit
+/asdf: No such file or directory!
+</code></pre></div></div>
+<p>This mimics short-circuiting AND in boolean algebra: if <code class="language-plaintext highlighter-rouge">x</code> is false, we know the result will be false <em>without</em> having to run <code class="language-plaintext highlighter-rouge">y</code>.</p>
+<p><img class="emoji" title=":question:" alt=":question:" src="https://github.githubassets.com/images/icons/emoji/unicode/2753.png" height="20" width="20"> This is often used to run multiple commands in a sequence and stop early if one fails. For example, <code class="language-plaintext highlighter-rouge">make &amp;&amp; ./shell</code> will run your shell only if <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> succeeds.</p>
+<p>Tip: You may want to look into the provided macros to read the status of an exited child.</p>
+<h3 id="or" class="title-text">OR</h3>
+<p><code class="language-plaintext highlighter-rouge">||</code> is the OR operator. Usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x || y
+</code></pre></div></div>
+<ul>
+  <li>The shell first runs <code class="language-plaintext highlighter-rouge">x</code>, then checks the exit status.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">x</code> exited successfully, the shell does <em>not</em> run <code class="language-plaintext highlighter-rouge">y</code>. This is short-circuiting.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">x</code> did not exit successfully, run <code class="language-plaintext highlighter-rouge">y</code>.</li>
+</ul>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=27853)/home/user/semester/shell$ echo hi || echo bye
+Command executed by pid=27854
+hi
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=27853)/home/user$ cd /asdf || echo runMe
+/asdf: No such file or directory
+Command executed by pid=27854
+runMe
+</code></pre></div></div>
+<p>Boolean algebra: if <code class="language-plaintext highlighter-rouge">x</code> is true, we can return true right away <em>without</em> having to run <code class="language-plaintext highlighter-rouge">y</code>.</p>
+<p><img class="emoji" title=":question:" alt=":question:" src="https://github.githubassets.com/images/icons/emoji/unicode/2753.png" height="20" width="20"> This is often used to recover after errors. For example, <code class="language-plaintext highlighter-rouge">make || echo 'Make failed!'</code> will run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/echo.3x.html" class="fancy-link">echo</a></code> only if <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> does not succeed.</p>
+<h3 id="separator" class="title-text">Separator</h3>
+<p><code class="language-plaintext highlighter-rouge">;</code> is the command separator. Usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x; y
+</code></pre></div></div>
+<ul>
+  <li>The shell first runs <code class="language-plaintext highlighter-rouge">x</code>.</li>
+  <li>The shell then runs <code class="language-plaintext highlighter-rouge">y</code>.</li>
+</ul>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=27879)/home/user/semester/shell$ echo hi; echo bye
+Command executed by pid=27883
+hi
+Command executed by pid=27884
+bye
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=27879)/home/user/semester/shell$ cd /asdf; echo runMe
+/asdf: No such file or directory
+Command executed by pid=27884
+runMe
+</code></pre></div></div>
+<p><img class="emoji" title=":question:" alt=":question:" src="https://github.githubassets.com/images/icons/emoji/unicode/2753.png" height="20" width="20"> The two commands are run regardless of whether the first one succeeds.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="memory" class="title-text">Memory<a class="anchor title-text" href="#memory"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>As usual, you may not have any memory leaks or errors. Note that still reachable memory blocks do not count as memory leaks.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="background-processes" class="title-text">Background Processes<a class="anchor title-text" href="#background-processes"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>An <em>external</em> command suffixed with <code class="language-plaintext highlighter-rouge">&amp;</code> should be run in the background. In other words, the shell should be ready to take the next command before the given command has finished running. There is no limit on the number of background processes you can have running at one time (aside from any limits set by the system).</p>
+<p>There will be a single space between the rest of the command and <code class="language-plaintext highlighter-rouge">&amp;</code>. For example, <code class="language-plaintext highlighter-rouge">pwd &amp;</code> is valid while you need not worry about <code class="language-plaintext highlighter-rouge">pwd&amp;</code>.</p>
+<p>Since spawning a background process introduces a race condition, it is okay if the prompt gets misaligned as in the following example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=1873)/home/user$ pwd &amp; 
+Command executed by pid=1874  
+(pid=1873)/home/user$ 
+/home/user  
+When I type, it shows up on this line 
+</code></pre></div></div>
+<p>Note this is not the only way your shell may misalign.</p>
+<p>While the shell should be usable after calling the command, after the process finishes, the parent is still responsible for waiting on the child. Avoid creating zombies! Do not catch <code class="language-plaintext highlighter-rouge">SIGCHLD</code>, as catching <code class="language-plaintext highlighter-rouge">SIGCHLD</code> comes with all sorts of caveats and subtleties that are hard to work around. Instead regularly check to see if your children need reaping (think about placement of this piece of code: where should you put this, and why). Think about what happens when multiple children finish around the same time, and what happens if a foreground/background process finish around the same time.</p>
+<p>Backgrounding will <strong>not</strong> be chained with the logical operators nor with redirection operators.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="ps" class="title-text">
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code><a class="anchor title-text" href="#ps"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Like our good old <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code>, your shell should print out information about all currently executing processes. You should include the shell and its immediate children, but don’t worry about grandchildren or other processes. Make sure you use <code class="language-plaintext highlighter-rouge">print_process_info_header()</code>, <code class="language-plaintext highlighter-rouge">print_process_info()</code>, and <code class="language-plaintext highlighter-rouge">time_struct_to_string()</code> (and maybe some other helper functions)!</p>
+<p><em>Note:</em> while <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code> is normally a separate binary, it is a built-in command for your shell. (This is not “execing <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code>”, this is you implementing it in the code. Thus you may have to keep track of some information for each process.)</p>
+<p>Your version of the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code> should print the following information for each process:</p>
+<ul>
+  <li>PID: The pid of the process</li>
+  <li>NLWP: The number of threads currently being used in the process</li>
+  <li>VSZ: The program size (virtual memory size) of the process, in kilobytes (1 kilobyte = 1024 bytes)</li>
+  <li>STAT: The state of the process</li>
+  <li>START: The start time of the process. You will want to add the boot time of the computer (<a href="https://linux.die.net/man/5/proc" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">btime</code></a>), and start time of the process (<a href="https://linux.die.net/man/5/proc" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">starttime</code></a>) to calculate this. Make sure you are careful while converting from various formats - the man pages for <a href="https://linux.die.net/man/5/proc" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">procfs</code></a> have helpful tips.</li>
+  <li>TIME: The amount of cpu time that the process has been executed for. This includes time the process has been scheduled in user mode (<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/utime.3p.html" class="fancy-link">utime</a></code>) and kernel mode (<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/stime.2.html" class="fancy-link">stime</a></code>).</li>
+  <li>COMMAND: The command that executed the process</li>
+</ul>
+<p>Some things to keep in mind:</p>
+<ul>
+  <li>The order in which you print the processes does not matter.</li>
+  <li>The ‘command’ for <code class="language-plaintext highlighter-rouge">print_process_info</code> should be the full command you executed. The <code class="language-plaintext highlighter-rouge">&amp;</code> for background processes is optional. For the main shell process <em>only</em>, you do not need to include the command-line flags. Ensure that the ‘command’ does not have trailing whitespace at the end of it.</li>
+  <li>You may not exec the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code> binary to complete this part of the assignment.</li>
+</ul>
+<p>Example output of this command:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=25497)/home/user$ ps
+PID     NLWP    VSZ     STAT    START   TIME    COMMAND
+25498   1       7328    R       14:03   0:08    dd if=/dev/zero bs=1M count=123456 of=/dev/null &amp;
+25501   1       7288    S       14:04   0:00    sleep 1000 &amp;
+25497   1       7484    R       14:03   0:00    ./shell
+</code></pre></div></div>
+<p><em>Hint:</em> You may find the <code class="language-plaintext highlighter-rouge">/proc</code> filesystem to be useful, as well as the man pages for it.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="redirection-operators" class="title-text">Redirection Operators<a class="anchor title-text" href="#redirection-operators"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Your boss wants some way for your shell commands to be able to link together. You decide to implement <code class="language-plaintext highlighter-rouge">&gt;&gt;</code>, <code class="language-plaintext highlighter-rouge">&gt;</code>, and <code class="language-plaintext highlighter-rouge">&lt;</code>. This will require only a minimal amount of string parsing that you have to do yourself.</p>
+<p><strong>Important</strong>: each input can have at most <em>one</em> of <code class="language-plaintext highlighter-rouge">&gt;&gt;</code>, <code class="language-plaintext highlighter-rouge">&gt;</code> or <code class="language-plaintext highlighter-rouge">&lt;</code>. You do <em>not</em> have to support chaining (e.g. <code class="language-plaintext highlighter-rouge">x &gt;&gt; y &lt; z &gt; w</code>).</p>
+<p><strong>Important</strong>: you should <em>not</em> try to handle the combination of the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cd.1p.html" class="fancy-link">cd</a></code>, <code class="language-plaintext highlighter-rouge">!history</code>, <code class="language-plaintext highlighter-rouge">#&lt;n&gt;</code>, <code class="language-plaintext highlighter-rouge">!&lt;prefix&gt;</code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code>, or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code> commands with any redirection operators. Rather, you can assume these commands will always be run on a line by themselves.</p>
+<p><strong>Note</strong>: Assume that the redirection operator commands will be formatted correctly. Any incorrectly formatted redirection commands is considered undefined behavior.</p>
+<h3 id="output" class="title-text">OUTPUT</h3>
+<p><code class="language-plaintext highlighter-rouge">&gt;</code> places the output of a command into a file. Usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;cmd&gt; [args ...] &gt; &lt;filename&gt;
+</code></pre></div></div>
+<p>If the file exists, overwrite the contents of the file with the output of the current command. Example usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=2777)/home/usr$ echo hello &gt; hey.txt
+Command executed by pid=3750
+(pid=2777)/home/usr$ cat hey.txt
+Command executed by pid=3751
+hello
+(pid=2777)/home/usr$ echo welcome to cs341 &gt; hey.txt
+Command executed by pid=3752
+(pid=2777)/home/usr$ cat hey.txt
+Command executed by pid=3754
+welcome to cs341
+</code></pre></div></div>
+<h3 id="append" class="title-text">APPEND</h3>
+<p><code class="language-plaintext highlighter-rouge">&gt;&gt;</code> appends the output of a command into a file. Usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;cmd&gt; [args ...] &gt;&gt; &lt;filename&gt;
+</code></pre></div></div>
+<p>If the file does not exist, assume that it is an empty file. Example usage (<code class="language-plaintext highlighter-rouge">hi.txt</code> does not exist in the directory before these commands are executed):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=2777)/home/usr$ echo a &gt;&gt; hi.txt
+Command executed by pid=2780
+(pid=2777)/home/usr$ cat hi.txt
+Command executed by pid=2781
+a
+(pid=2777)/home/usr$ echo wheeee &gt;&gt; hi.txt
+Command executed by pid=2782
+(pid=2777)/home/usr$ cat hi.txt
+Command executed by pid=2783
+a
+wheeee
+</code></pre></div></div>
+<h3 id="input" class="title-text">INPUT</h3>
+<p><code class="language-plaintext highlighter-rouge">&lt;</code> pipes the contents of a file into a command as its input. Usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;cmd&gt; [args ...] &lt; &lt;filename&gt;
+</code></pre></div></div>
+<p>If the file does not exist, it is undefined behavior. Example usage:
+<code class="language-plaintext highlighter-rouge">hello.txt</code> contains:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>welcome to cs341
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(pid=3771)/home/usr$ wc &lt; hello.txt
+Command executed by pid=3772
+ 1  3 17
+</code></pre></div></div>
+<p>Hint: <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/dup.3p.html" class="fancy-link">dup</a></code> will be useful for all the redirection commands</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="signal-commands" class="title-text">Signal Commands<a class="anchor title-text" href="#signal-commands"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Like bash, your shell will support sending signals to its child processes. We require you to implement the 3 signals listed below.</p>
+<h3 id="kill-pid" class="title-text"><code class="language-plaintext highlighter-rouge">kill &lt;pid&gt;</code></h3>
+<p>The ever-useful panic button. Sends <code class="language-plaintext highlighter-rouge">SIGKILL</code> to the specified process.</p>
+<p>Use the appropriate prints from <code class="language-plaintext highlighter-rouge">format.h</code> for:</p>
+<ul>
+  <li>Successfully sending <code class="language-plaintext highlighter-rouge">SIGKILL</code> to process</li>
+  <li>No process with <code class="language-plaintext highlighter-rouge">pid</code> exists</li>
+  <li>
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/kill.3p.html" class="fancy-link">kill</a></code> was ran without a <code class="language-plaintext highlighter-rouge">pid</code>
+</li>
+</ul>
+<h3 id="stop-pid" class="title-text"><code class="language-plaintext highlighter-rouge">stop &lt;pid&gt;</code></h3>
+<p>This command will allow your shell to stop a currently executing process by sending it the <code class="language-plaintext highlighter-rouge">SIGSTOP</code> signal. It may be resumed by using the command <code class="language-plaintext highlighter-rouge">cont</code>.</p>
+<p>Use the appropriate prints from <code class="language-plaintext highlighter-rouge">format.h</code> for:</p>
+<ul>
+  <li>Process was successfully sent <code class="language-plaintext highlighter-rouge">SIGSTOP</code>
+</li>
+  <li>No process with <code class="language-plaintext highlighter-rouge">pid</code> exists</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">stop</code> was ran without a <code class="language-plaintext highlighter-rouge">pid</code>
+</li>
+</ul>
+<h3 id="cont-pid" class="title-text"><code class="language-plaintext highlighter-rouge">cont &lt;pid&gt;</code></h3>
+<p>This command resumes the specified process by sending it <code class="language-plaintext highlighter-rouge">SIGCONT</code>.</p>
+<p>Use the appropriate prints from <code class="language-plaintext highlighter-rouge">format.h</code> for:</p>
+<ul>
+  <li>Process was successfully sent <code class="language-plaintext highlighter-rouge">SIGCONT</code>
+</li>
+  <li>No such process exists</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">cont</code> was ran without a <code class="language-plaintext highlighter-rouge">pid</code>
+</li>
+</ul>
+<p>Note: Any <code class="language-plaintext highlighter-rouge">&lt;pid&gt;</code> used in <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/kill.3p.html" class="fancy-link">kill</a></code>, <code class="language-plaintext highlighter-rouge">stop</code>, or, <code class="language-plaintext highlighter-rouge">cont</code> will either be a process that is a direct child of your shell or a non-existent process. You do not have to worry about killing other processes.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="summary-of-history-storing" class="title-text">Summary of History Storing<a class="anchor title-text" href="#summary-of-history-storing"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In case you are still confused about what exactly to store in history, here are relevant examples. The last row corresponds to an “invalid command”, a histori-cally troublesome case.</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th><strong>Examples:</strong></th>
+      <th><strong>What should I store?</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">cd &lt;path&gt;</code></td>
+      <td><code class="language-plaintext highlighter-rouge">cd &lt;path&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">!history</code></td>
+      <td>Don’t store anything.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">#&lt;n&gt;</code></td>
+      <td>Command <code class="language-plaintext highlighter-rouge">#&lt;n&gt;</code> points to (<strong>IF any</strong>).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">!&lt;prefix&gt;</code></td>
+      <td>Command <code class="language-plaintext highlighter-rouge">!&lt;prefix&gt;</code> points to (<strong>IF any</strong>).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">echo HISTORY_IS_HARD</code></td>
+      <td><code class="language-plaintext highlighter-rouge">echo HISTORY_IS_HARD</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">echo pi:G-&gt; &amp;&amp; echo G/ker(phi)</code></td>
+      <td><code class="language-plaintext highlighter-rouge">echo pi:G-&gt; &amp;&amp; echo G/ker(phi)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">echo x; echo y</code></td>
+      <td><code class="language-plaintext highlighter-rouge">echo x; echo y</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">jarvis, store this in history</code></td>
+      <td><code class="language-plaintext highlighter-rouge">jarvis, store this in history</code></td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="grading" class="title-text">Grading<a class="anchor title-text" href="#grading"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Note that Week 1 and Week 2 count as one week of MP grades respectively. See the overview for a list of features required for each week.</p></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/shell.md";
+  </script>
+</body>
+
+</html>
