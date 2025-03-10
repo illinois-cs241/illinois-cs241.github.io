@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Honors</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Honors" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Honors
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_syllabus" href="#syllabus" class="fancy-link">Syllabus</a></li>
+<li><a id="toc_grading" href="#grading" class="fancy-link">Grading</a></li>
+<li><a id="toc_absences" href="#absences" class="fancy-link">Absences</a></li>
+<li><a id="toc_project" href="#project" class="fancy-link">Project</a></li>
+<li><a id="toc_presentations" href="#presentations" class="fancy-link">Presentations</a></li>
+<li><a id="toc_weekly-check-ins" href="#weekly-check-ins" class="fancy-link">Weekly Check-ins</a></li>
+<li><a id="toc_the-team" href="#the-team" class="fancy-link">The Team</a></li>
+<li><a id="toc_lectures" href="#lectures" class="fancy-link">Lectures</a></li>
+<li><a id="toc_ed" href="#ed" class="fancy-link">Ed</a></li>
+<li><a id="toc_project-ideas" href="#project-ideas" class="fancy-link">Project Ideas?</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="syllabus" class="title-text">Syllabus<a class="anchor title-text" href="#syllabus"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Couldn’t get enough systems programming from CS 341? Welcome to the honors section! This course is recommended for those who want to expand their systems knowledge with additional lectures and a semester long project in systems programming.</p>
+<p>There will be lectures throughout the semester, usually every week or every other week, given by various members of the honors course staff. These lectures are intended to expose you to advanced topics in systems that are outside the scope of CS 341. On some weeks, we will have lecture activities to complement the lectures.</p>
+<p>You are also required to propose and complete a project of your own. Your project should be related to systems programming and it should clearly demonstrate and build upon concepts learned in regular [and/or honors] CS 341 lectures. Once your project has been approved by course staff, you will be assigned a mentor who you will check in with weekly for progress reports and code review.</p>
+<p>At the end of the semester, you will present your work to your peers. The presentation will consist of a demonstration of your project along with a brief explanation of your project and results. Your presentation should include what you learned working on your project, challenges faced, results (if any), etc.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="grading" class="title-text">Grading<a class="anchor title-text" href="#grading"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Semester-Long Project
+- Project Proposal/Planning : 5%
+- Weekly Check-ins          : 10%
+- Midterm Presentation      : 15%
+- Final Deliverables        : 30%
+- Final Presentation        : 20%
+</code></pre></div></div>
+<p>We publish the same grading thresholds as the regular section of CS 341. Your project will be graded in a holistic manner against other projects in the class. Note that this does not imply only a handful of projects can receive an A; education is not a zero-sum game. Historically, grades have been assigned with a generous curve.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="absences" class="title-text">Absences<a class="anchor title-text" href="#absences"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We understand that student life is busy and schedule conflicts can arise. In exchange for requiring attendance at lectures, we will drop one lecture attendance grade, no questions asked. These drops are meant for conflicts that you have control over, such as a vacation or job interviews.</p>
+<p>If you have a required conflict (e.g. an exam in another class), please notify course staff <strong>ahead of time</strong> and we will excuse your absence. If you have a sudden illness or other personal emergencies, please refer to the <a href="/index#absences" class="fancy-link wiki-link">CS 341 absence policy</a>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="project" class="title-text">Project<a class="anchor title-text" href="#project"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Requirements:</p>
+<ul>
+  <li>Projects may be done in teams of 2 or 3 people; if you want to work alone or on a larger team, ask us first</li>
+  <li>Your project should be novel to you and your partners. We want you to explore new things!</li>
+  <li>Work on your project should take about 3 hours a week for each member of the team</li>
+  <li>Your project must relate to systems programming in a meaningful way. If you aren’t sure whether your idea meets this requirement, ask us in advance</li>
+</ul>
+<p>After the first few weeks of the course, you will be required to submit a project proposal. Your proposal should include the following:</p>
+<ul>
+  <li>Overview (Alternatively, “Explain it to me like I am five”)</li>
+  <li>Purpose (Why are you doing this? Why is it interesting?)</li>
+  <li>Expected workload distribution among group members</li>
+  <li>Projected project milestones (What will you do in the first month? Second month? etc.)</li>
+  <li>Challenges you expect will arise in working on this project</li>
+</ul>
+<p>Project proposals should be submitted as a private post on Ed by the due date (we will specify the due date in lecture and on Ed).</p>
+<p>The exact grading requirements of each project vary. You and your mentor will decide on a reasonable scope for your project at the beginning of the semester, though this target may move as appropriate throughout the semester.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="presentations" class="title-text">Presentations<a class="anchor title-text" href="#presentations"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Presentations will take place during the last week or two of class during the normal lecture time. Each group will have around 10 minutes to present their project to the class.</p>
+<p>You should be sure to touch on what your project is, what interesting systems programming concepts were involved in your project, and any challenges you encountered along the way and how you tackled them. If you have more questions about what to include in your presentation, ask your mentor.</p>
+<p>You should have some sort of visual presentation (Powerpoint, Google Slides, LaTeX beamer, etc.) to accompany your talk. Feel free to include screenshots of your project or pre-recorded demo videos. To avoid losing time to technical difficulties, live project demonstrations are not allowed; you must pre-record any demonstration you plan to give.</p>
+<p><strong>Please email your presentation to course staff by 5pm on the day you are presenting</strong> so that we have adequate time to load presentations onto one machine to reduce the overhead of switching presenting groups.</p>
+<p>Remember that you do not have to have completed your project by the time you present. However, you should make sure you briefly cover any remaining work you plan to do.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="weekly-check-ins" class="title-text">Weekly Check-ins<a class="anchor title-text" href="#weekly-check-ins"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You are required to meet with your mentor on a weekly basis. The meeting can last up to an hour and you will typically go over what you did that week, what your goals are for the next week, and any roadblocks you encountered. To get full credit, you must meet with your mentor and display satisfactory progress on your project.</p>
+<p>If your project requires research before beginning your design and implementation (i.e., figuring out what a filesystem is before implementing it), you should write up a short summary of your work for that week and share it with your mentor during your check-in. This should include what you learned that week, how it relates to your project, and what you plan to learn about going forward.</p>
+<p>When you and your group start writing code, we expect you to use git and for each group member to commit their changes using their own account. Your commit history will be used in part to determine your individual contribution to the project. Keep in mind that a group project is a group effort; the group must coordinate who is doing what and what a fair work balance is between group members. Your mentor is here to guide you through roadblocks, check in on progress, and to answer any questions you have about the project. Your mentor is <strong>not</strong> a personalized debugger, nor are they an additional group member.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-team" class="title-text">The Team<a class="anchor title-text" href="#the-team"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>| Name | NetID | Interests |
+|:—–|:——|:———-|
+| TBA | TBA | TBA |</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="lectures" class="title-text">Lectures<a class="anchor title-text" href="#lectures"> #</a>
+</h2></div>
+
+
+
+<!-- Desktop Table -->
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Lectures can be watched at any time. The table below contains a suggested cadence.</p>
+<table width="100%" class="table">
+  <thead>
+	<tr>
+	  <th>Date</th>
+	  <th>Lecture Content</th>
+	  <th>Slides</th>
+	  <th>Videos</th>
+	</tr>
+  </thead>
+  <tbody>
+
+  <tr>
+	<td scope="row">February 3</td>
+	<td>Introduction &amp; Advanced Tools</td>
+	
+	<td><a href="https://docs.google.com/presentation/d/19UowAB2bjunX4AT7ak_I1BtehE-g08zqVErwmSyEoq4/edit?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td>
+	</td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">February 10</td>
+	<td>Security (Assignment Due on May 2nd)</td>
+	
+	<td><a href="https://drive.google.com/file/d/1Qb0fBB2TOq-gj5oDiKe6cI4RmLoNQI-0/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=0053a501-9259-406b-8b90-86002418b6c7" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">February 17</td>
+	<td>Distributed Systems / Cloud / IoT</td>
+	
+	<td><a href="https://drive.google.com/file/d/14MLRcF7cDRczqoa6scECJpmBeAovHRRk/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=9e8cd16c-d45c-441a-912f-23fef637db98" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">February 24</td>
+	<td>Advanced Memory</td>
+	
+	<td><a href="https://drive.google.com/file/d/1pjvfazh8Jhab1cFLTEnWRqKsXO4AMWIg/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=2e618766-1b61-4092-965f-2cd7a9f67669" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">March 3</td>
+	<td>Kernel Programming (Assignment Due on May 2nd)</td>
+	
+	<td><a href="https://drive.google.com/file/d/1W-A_bvPt7OjLX5LA4dM1AA_P1SMV8XEX/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=d9a4d1bb-6e3b-4645-b092-71d1f272593d" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">March 10</td>
+	<td>Networking / TCP</td>
+	
+	<td><a href="https://drive.google.com/file/d/18F0LbSPuAzBJ4Bo89qUZ1jmQGmvx8v87/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=99d8efc0-3724-4053-811d-adb6f5ed7fcb" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">March 17</td>
+	<td>Concurrency / Lock Free Data Structures</td>
+	
+	<td><a href="https://drive.google.com/file/d/1sFD08xyR5FJ_89IakotTDEPfpWPXYt_F/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=d51c8615-f125-4879-8b35-6ac0e05c421d" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">March 24</td>
+	<td>Midterm Presentations</td>
+	
+	<td>
+	</td>
+	
+	
+	<td>
+	</td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">March 31</td>
+	<td>Containerization / Virtualization (Assignment Due on Reading Day)</td>
+	
+	<td><a href="https://drive.google.com/file/d/10Kw9e2Z8lXYLRUU9X7eHZUoTQOmg8X_Z/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=408b0a41-40e7-4b10-bcb4-502865845ca8" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">April 7</td>
+	<td>Embedded Programming</td>
+	
+	<td><a href="https://drive.google.com/file/d/1VC0ajlveNgj94BfNUEoX33ZGrBdqE0wE/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=492f72d3-b11c-409a-8d3a-3f77a347906e" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">April 14</td>
+	<td>Load Balancing</td>
+	
+	<td><a href="https://drive.google.com/file/d/1meQ4baWDW140Vaz_MANfUjVnCn4sTvZY/view?usp=sharing" class="fancy-link wiki-link"><img src="./images/lab-icons/animation.png" alt="Slides"></a></td>
+	
+	
+	<td><a href="https://classtranscribe.illinois.edu/video?id=82988d13-3a65-4b60-be7b-c9bfd044590a" class="fancy-link wiki-link"><img src="./images/lab-icons/video.png" alt="Video"></a></td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">April 21</td>
+	<td>TBA </td>
+	
+	<td>
+	</td>
+	
+	
+	<td>
+	</td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">April 28</td>
+	<td>TBA </td>
+	
+	<td>
+	</td>
+	
+	
+	<td>
+	</td>
+	
+  </tr>
+
+  <tr>
+	<td scope="row">May 5 (Tentative)</td>
+	<td>Final Presentations</td>
+	
+	<td>
+	</td>
+	
+	
+	<td>
+	</td>
+	
+  </tr>
+
+  </tbody>
+</table>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="ed" class="title-text">Ed<a class="anchor title-text" href="#ed"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>We will use Ed for this course to post announcements, lecture schedules, etc.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="project-ideas" class="title-text">Project Ideas?<a class="anchor title-text" href="#project-ideas"> #</a>
+</h2></div>
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Come check out what past students have created in the <a href="/past_projects" class="fancy-link wiki-link">past project page</a>.</p>
+<p>If not here are some project ideas</p>
+<ul>
+  <li>GPU/Device Programming</li>
+  <li>Networking
+    <ul>
+      <li>Decentralized Chat</li>
+      <li>Proxies/Firewalls/Encryption</li>
+      <li>Network Congestion</li>
+      <li>[Other Project] With Networking</li>
+      <li>Implementing Remote Procedure Calls</li>
+      <li>Messaging Queues</li>
+    </ul>
+  </li>
+  <li>Kernel Programming
+    <ul>
+      <li>Debugging with a Twist</li>
+      <li>Hacking the Kernel</li>
+      <li>High Performance System Calls</li>
+    </ul>
+  </li>
+  <li>Scheduling
+    <ul>
+      <li>Custom Scheduling</li>
+    </ul>
+  </li>
+  <li>MultiThreading
+    <ul>
+      <li>High Performance Threading Library with Purpose</li>
+    </ul>
+  </li>
+  <li>Memory Management
+    <ul>
+      <li>Garbage Collection</li>
+    </ul>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_pages/honors.md";
+  </script>
+</body>
+
+</html>

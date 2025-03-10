@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Honors</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Honors" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Honors
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#honors-topics" class="fancy-link wiki-link">Honors topics</a>
+    <ul>
+      <li>
+<a href="#the-linux-kernel" class="fancy-link wiki-link">The Linux Kernel</a>
+        <ul>
+          <li><a href="#what-kinds-of-kernels-are-there" class="fancy-link wiki-link">What kinds of kernels are
+there?</a></li>
+          <li><a href="#system-calls-demystified" class="fancy-link wiki-link">System Calls Demystified</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#containerization" class="fancy-link wiki-link">Containerization</a>
+        <ul>
+          <li><a href="#what-is-a-container" class="fancy-link wiki-link">What is a container?</a></li>
+          <li><a href="#linux-namespaces" class="fancy-link wiki-link">Linux Namespaces</a></li>
+          <li><a href="#building-a-container-from-scratch" class="fancy-link wiki-link">Building a container from
+scratch</a></li>
+          <li><a href="#containers-in-the-wild-software-distribution-is-a-snap" class="fancy-link wiki-link">Containers in the wild: Software distribution is a
+Snap</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>If I have seen further it is by standing on the sholders [sic] of
+Giants</strong> - <strong>Sir Isaac Newton</strong></p>
+
+<p>This chapter contains the contents of some of the honors lectures (CS
+296-41). These topics are aimed at students who want to dive deeper into
+the topics of CS 341.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-linux-kernel" class="title-text">The Linux Kernel<a class="anchor title-text" href="#the-linux-kernel"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Throughout the course of CS 341, you become familiar with system calls -
+the userspace interface to interacting with the kernel. How does this
+kernel actually work? What is a kernel? In this section, we will explore
+these questions in more detail and shed some light on various black
+boxes that you have encountered in this course. We will mostly be
+focusing on the Linux kernel in this chapter, so please assume that all
+examples pertain to the Linux kernel unless otherwise specified.</p>
+<h3 id="what-kinds-of-kernels-are-there" class="title-text">What kinds of kernels are there?</h3>
+<p>As it stands, most of you are probably familiar with the Linux kernel,
+at least in terms of interacting with it via system calls. Some of you
+may also have explored the Windows kernel, which we won’t talk about too
+much in this chapter. or <code class="language-plaintext highlighter-rouge">Darwin</code>, the UNIX-like kernel for macOS (a
+derivative of BSD). Those of you who might have done a bit more digging
+might have also encountered projects such a <code class="language-plaintext highlighter-rouge">GNU HURD</code> or <code class="language-plaintext highlighter-rouge">zircon</code>.</p>
+<p>Kernels can generally be classified into one of two categories, a
+monolithic kernel or a micro-kernel. A monolithic kernel is essentially
+a kernel and all of it’s associated services as a single program. A
+micro-kernel on the other hand is designed to have a <em>main</em> component
+which provides the bare-minimum functionality that a kernel needs. This
+involves setting up important device drivers, the root filesystem,
+paging or other functionality that is imperative for other higher-level
+features to be implemented. The higher-level features (such as a
+networking stack, other filesystems, and non-critical device drivers)
+are then implemented as separate programs that can interact with the
+kernel by some form of IPC, typically RPC. As a result of this design,
+micro-kernels have traditionally been slower than monolithic kernels due
+to the IPC overhead.</p>
+<p>We will devote our discussion from here onwards to focusing on
+monolithic kernels and unless specified otherwise, <strong>specifically</strong> the
+Linux kernel.</p>
+<h3 id="system-calls-demystified" class="title-text">System Calls Demystified</h3>
+<p>System Calls use an instruction that can be run by a program operating
+in userspace that <em>traps</em> to the kernel (by use of a signal) to complete
+the call. This includes actions such as writing data to disk,
+interacting directly with hardware in general or operations related to
+gaining or relinquishing privileges (e.g. becoming the root user and
+gaining all capabilities).</p>
+<p>In order to fulfill a user’s request, the kernel will rely on <code class="language-plaintext highlighter-rouge">kernel
+calls</code>. Kernel calls are essentially the “public” functions of the
+kernel - functions implemented by other developers for use in other
+parts of the kernel. Here is a snippet for a kernel call man page:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Name
+
+kmalloc — allocate memory
+Synopsis
+void * kmalloc (	size_t size,
+ 	gfp_t flags);
+
+Arguments
+
+size_t size
+
+    how many bytes of memory are required.
+gfp_t flags
+
+    the type of memory to allocate.
+
+Description
+
+kmalloc is the normal method of allocating memory for objects smaller than page size in the kernel.
+
+The flags argument may be one of:
+
+GFP_USER - Allocate memory on behalf of user. May sleep.
+
+GFP_KERNEL - Allocate normal kernel ram. May sleep.
+
+GFP_ATOMIC - Allocation will not sleep. May use emergency pools. For example, use this inside interrupt handlers.
+</code></pre></div></div>
+<p>You’ll note that some flags are marked as potentially causing sleeps.
+This tells us whetherwe can use those flags in special scenarios, like
+interrupt contexts, where speed is of the essence, and operations that
+may block or wait for another process may never complete.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="containerization" class="title-text">Containerization<a class="anchor title-text" href="#containerization"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>As we enter an era of unprecedented scale with around 20 billion devices
+connected to the internet in 2018, we need technologies that help us
+develop and maintain software capable of scaling upwards. Additionally,
+as software increases in complexity, and designing secure software
+becomes harder, we find that we have new constraints imposed on us as we
+develop applications. As if that wasn’t enough, efforts to simplify
+software distribution and development, like package manager systems can
+often lead to headaches of their own, leading to broken packages,
+dependencies that are impossible to resolve and other such environmental
+nightmares that have become all to common today. While these seem like
+disjoint problems at first, all of these and more can be solved by
+throwing <code class="language-plaintext highlighter-rouge">containerization</code> at the problem.</p>
+<h3 id="what-is-a-container" class="title-text">What is a container?</h3>
+<p>A container is almost like a virtual machine. In some senses, containers
+are to virtual machines as threads are to processes. A container is a
+lightweight environment that shares resources and a kernel with a host
+machine, while isolating itself from other containers or processes on
+the host. You may have encountered containers while working with
+technologies such as <code class="language-plaintext highlighter-rouge">Docker</code>, perhaps the most well-known
+implementation of containers out there.</p>
+<h3 id="linux-namespaces" class="title-text">Linux Namespaces</h3>
+<h3 id="building-a-container-from-scratch" class="title-text">Building a container from scratch</h3>
+<h3 id="containers-in-the-wild-software-distribution-is-a-snap" class="title-text">Containers in the wild: Software distribution is a Snap</h3>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Honors.md";
+  </script>
+</body>
+
+</html>
