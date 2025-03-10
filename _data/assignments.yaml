@@ -261,13 +261,13 @@ mps:
       url: "password_cracker"
       submissions:
         - title: Version 1 and 2
-          due_date: 2024-10-21 23:59
+          due_date: 2025-03-24 23:59
           graded_files:
           - cracker1.c
           - cracker2.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Parallel Make"
       releaseDate: "Week 9"
