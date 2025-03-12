@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Ideal Indirection</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Ideal Indirection" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Ideal Indirection
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-03-26 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>mmu.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_overview" href="#overview" class="fancy-link">Overview</a></li>
+<li><a id="toc_how-to-tackle-this-assignment" href="#how-to-tackle-this-assignment" class="fancy-link">How To Tackle This Assignment</a></li>
+<li><a id="toc_simulated-vs-actual-memory-spaces-typesh" href="#simulated-vs-actual-memory-spaces-typesh" class="fancy-link">Simulated vs Actual Memory Spaces (<code class="language-plaintext highlighter-rouge">types.h</code>)</a></li>
+<li><a id="toc_page-directories-and-page-tables-page_tableh" href="#page-directories-and-page-tables-page_tableh" class="fancy-link">Page Directories and Page Tables (<code class="language-plaintext highlighter-rouge">page_table.h</code>)</a></li>
+<li><a id="toc_translation-lookaside-buffer-tlbh" href="#translation-lookaside-buffer-tlbh" class="fancy-link">Translation Lookaside Buffer (<code class="language-plaintext highlighter-rouge">tlb.h</code>)</a></li>
+<li><a id="toc_segments-segmentsh" href="#segments-segmentsh" class="fancy-link">Segments (<code class="language-plaintext highlighter-rouge">segments.h</code>)</a></li>
+<li><a id="toc_kernel-kernelh" href="#kernel-kernelh" class="fancy-link">Kernel (<code class="language-plaintext highlighter-rouge">kernel.h</code>)</a></li>
+<li><a id="toc_memory-management-unit-mmuc-and-mmuh" href="#memory-management-unit-mmuc-and-mmuh" class="fancy-link">Memory Management Unit (<code class="language-plaintext highlighter-rouge">mmu.c</code> and <code class="language-plaintext highlighter-rouge">mmu.h</code>)</a></li>
+<li><a id="toc_testing" href="#testing" class="fancy-link">Testing</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Ideal Indirection are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Virtual Memory</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">The virtual address translation process</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Memory Management Unit (MMU)</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Page Tables</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Translation Lookaside Buffer (TLB)</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="overview" class="title-text">Overview<a class="anchor title-text" href="#overview"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>In this assignment, you will be working on managing a mapping of a 32-bit virtual address space to a 32-bit physical address space with 4 KB (kilobyte) pages.
+Each component of virtual memory has been split up into several files to help you build a mental model of virtual memory.
+Reading through these files will help you understand the roles of the different hardware and software involved in managing virtual memory.
+You will only have to write two functions in <code class="language-plaintext highlighter-rouge">mmu.c</code>, but it requires a good understanding of the virtual memory translation process and decent understanding of the rest of the provided code.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="how-to-tackle-this-assignment" class="title-text">How To Tackle This Assignment<a class="anchor title-text" href="#how-to-tackle-this-assignment"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>
+    <p>First, you will need to understand how the virtual memory translation process works. You will be writing functions to translate virtual addresses into physical addresses, so a good first step is to understand that process. The coursebook has details on this process, and feel free to ask about this if you are unsure.</p>
+  </li>
+  <li>
+    <p>Then, you will want to understand how we simulate the different components of a computer in this assignment. The header files describe the various structs involved in this simulation, as well as their member variables. At a minimum, you also need the following helper functions to complete the assignment:</p>
+
+    <ul>
+      <li>tlb_flush() in tlb.h</li>
+      <li>tlb_add_pte() in tlb.h</li>
+      <li>tlb_get_pte() in tlb.h</li>
+      <li>mmu_raise_segmentation_fault() in mmu.h</li>
+      <li>mmu_tlb_miss() in mmu.h</li>
+      <li>mmu_raise_page_fault() in mmu.h</li>
+      <li>ask_kernel_for_frame() in kernel.h</li>
+      <li>get_system_pointer_from_pde() in kernel.h</li>
+      <li>read_page_from_disk() in kernel.h</li>
+      <li>get_system_pointer_from_address() in kernel.h</li>
+      <li>find_segment() in segments.h</li>
+      <li>address_in_segmentations() in segments.h</li>
+    </ul>
+
+    <p>However you are free to use whichever other helper functions you’d like. The source code for these functions have been given to you; you should be able to get a grasp on the whole model just by reading the header files, but if you are interested to see how we model the different components, you can read the source code.</p>
+  </li>
+  <li>Once you have a good mental model, you will want to plan out the steps your code needs to perform. Start by following the pseudocode below:
+    <ul>
+      <li>Use pid to check for a context switch. If there was a switch, flush the TLB</li>
+      <li>Make sure that the address is in one of the segmentations. If not, raise a segfault and return</li>
+      <li>Check the TLB for the page table entry. If it’s not there:
+        <ul>
+          <li>Raise a TLB miss</li>
+          <li>Get the page directory entry. If it’s not present in memory:
+            <ul>
+              <li>Raise a page fault</li>
+              <li>Ask the kernel for a frame</li>
+              <li>Update the page directory entry’s present, read_write, and user_supervisor flags</li>
+            </ul>
+          </li>
+          <li>Get the page table using the PDE</li>
+          <li>Get the page table entry from the page table. Add the entry to the TLB</li>
+        </ul>
+      </li>
+      <li>If the page table entry is not present in memory:
+        <ul>
+          <li>Raise a page fault</li>
+          <li>Ask the kernel for a frame</li>
+          <li>Update the page table entry’s present, read_write, and user_supervisor flags</li>
+          <li>Read the page from disk</li>
+        </ul>
+      </li>
+      <li>Check that the user has permission to perform the read or write operation. If not, raise a segfault and return</li>
+      <li>Use the page table entry’s base address and the offset of the virtual address to compute the physical address. Get a physical pointer from this address</li>
+      <li>Perform the read or write operation</li>
+      <li>Mark the PTE as accessed. If writing, also mark it as dirty.</li>
+    </ul>
+  </li>
+  <li>Once you understand these steps, turn them into code. Then, test with the given test cases.</li>
+</ul>
+<p>The rest of this documentation will serve to help you understand the purpose of each file and give you a high level understanding of virtual memory.
+The implementation details of each function are documented in the header files.
+The recommended sequence of reading the provided files will follow the sequence of files introduced in this documentation.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="simulated-vs-actual-memory-spaces-typesh" class="title-text">Simulated vs Actual Memory Spaces (<code class="language-plaintext highlighter-rouge">types.h</code>)<a class="anchor title-text" href="#simulated-vs-actual-memory-spaces-typesh"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>In this assignment, we are simulating 32-bit virtual memory spaces and 32-bit physical memory spaces. All simulated memory addresses, both virtual and physical, will be stored in <code class="language-plaintext highlighter-rouge">addr32</code> variables. Note that once you translate a simulated virtual address into a simulated physical address, you will want to convert the simulated physical address into an actual memory address in your process space, so that you can read from and write to memory.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="page-directories-and-page-tables-page_tableh" class="title-text">Page Directories and Page Tables (<code class="language-plaintext highlighter-rouge">page_table.h</code>)<a class="anchor title-text" href="#page-directories-and-page-tables-page_tableh"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Each process has two levels of paging:</p>
+<p>The top level page table is known as a <code class="language-plaintext highlighter-rouge">page_directory</code> and has entries (<code class="language-plaintext highlighter-rouge">page_directory_entry</code>) that hold the base address of page tables (beginning of a <code class="language-plaintext highlighter-rouge">page_table</code>).
+Each of these <code class="language-plaintext highlighter-rouge">page_table</code>s hold entries (<code class="language-plaintext highlighter-rouge">page_table_entry</code>) that hold the base address of an actual frame in physical memory, which you will be reading from and writing to.
+Each table entry in both the <code class="language-plaintext highlighter-rouge">page_directory</code> and <code class="language-plaintext highlighter-rouge">page_table</code> contain</p>
+<ul>
+  <li>the base physical address of the lower-level paging structure</li>
+  <li>metadata bits and flags</li>
+</ul>
+<p>These metadata bits and flags are explained in detail in <code class="language-plaintext highlighter-rouge">page_table.h</code>. The actual layout is taken directly from a real 32 bit processor and operating system, which you can read more about in the <a href="http://flint.cs.yale.edu/cs422/doc/24547212.pdf#page=88" class="fancy-link wiki-link">“IA-32 Intel® Architecture Software Developer’s Manual”</a>.</p>
+<p>For illustrative purposes a Page Table Entry looks like the following:</p>
+<p class="img-paragraph"><img src="/images/assignment-docs/lab/ideal_indirection/page_table_entry.png" alt="Page Table Entry"></p>
+<p>In our simulation, each entry is represented as a struct with bit fields whose syntax you can learn about in a <a href="http://www.tutorialspoint.com/cprogramming/c_bit_fields.htm" class="fancy-link wiki-link">tutorial</a>.
+The bit fields basically allows us to squeeze multiple flags into a single 32 bit integer.</p>
+<p>For the purposes of this lab you are only responsible for knowing how the following fields works:</p>
+<ul>
+  <li>Page base address, bits 12 through 32</li>
+  <li>Present (P) flag, bit 0</li>
+  <li>Read/write (R/W) flag, bit 1</li>
+  <li>User/supervisor (U/S) flag, bit 2</li>
+  <li>Accessed (A) flag, bit 5</li>
+  <li>Dirty (D) flag, bit 6</li>
+</ul>
+<p>You will need to read and update these fields in the table entries. Here are some helpful tips for correctly setting the bits:</p>
+<ul>
+  <li>Once a <code class="language-plaintext highlighter-rouge">page_directory</code> or a <code class="language-plaintext highlighter-rouge">page_table</code> is created, it will remain in physical memory and will not be swapped to disk.</li>
+  <li>Each segmentation has a <code class="language-plaintext highlighter-rouge">permissions</code> field, and there is a permissions struct in <code class="language-plaintext highlighter-rouge">segments.h</code>. 
+If <code class="language-plaintext highlighter-rouge">permissions &amp; WRITE</code> is not <code class="language-plaintext highlighter-rouge">0</code>, then it has write permission. Same is true for <code class="language-plaintext highlighter-rouge">READ</code> and <code class="language-plaintext highlighter-rouge">EXEC</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">page_directory_entry</code>’s should always have read and write permission</li>
+  <li>For the purposes of this lab, all <code class="language-plaintext highlighter-rouge">page_table_entry</code>s and <code class="language-plaintext highlighter-rouge">page_directory_entry</code>s will have the <code class="language-plaintext highlighter-rouge">user_supervisor</code> flag
+set to <code class="language-plaintext highlighter-rouge">1</code>
+</li>
+</ul>
+<p>Note: The naming scheme of “page directory” and “page table” is unique to this assignment. Typically, we just know them as “first level page table” and so on.</p>
+<p>Note: Be careful when writing into bit fields! What happens when the value you try to write into a bit field is larger than the maximum value that bit field can store?</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="translation-lookaside-buffer-tlbh" class="title-text">Translation Lookaside Buffer (<code class="language-plaintext highlighter-rouge">tlb.h</code>)<a class="anchor title-text" href="#translation-lookaside-buffer-tlbh"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The Translation Lookaside Buffer will cache base virtual addresses to their corresponding <code class="language-plaintext highlighter-rouge">page_table_entry</code> pointers.
+The implementation and header is provided to you.
+Make note of the use of double pointers (why do we need that?). You will need to check the TLB and update it everytime you translate a simulated virtual address into a simulated physical address. You will also need to flush the TLB during context switches.</p>
+<p>The reason why our TLB caches <code class="language-plaintext highlighter-rouge">page_table_entry</code> pointers instead of physical addresses of frames is because you will need to update metadata bits when translating addresses.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="segments-segmentsh" class="title-text">Segments (<code class="language-plaintext highlighter-rouge">segments.h</code>)<a class="anchor title-text" href="#segments-segmentsh"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>A process’ virtual address space is divided into several segments. You are familiar with many of these:</p>
+<ul>
+  <li>Stack</li>
+  <li>Heap</li>
+  <li>BSS</li>
+  <li>Data</li>
+  <li>Code</li>
+</ul>
+<p>For this lab, a process’ address space is split into memory segments like so:</p>
+<p class="img-paragraph"><img src="http://static.duartes.org/img/blogPosts/linuxFlexibleAddressSpaceLayout.png" alt="Virtual Address Space Layout"></p>
+<p>Photo Cred: http://duartes.org/gustavo/blog/post/anatomy-of-a-program-in-memory/</p>
+<p>Notice how some of the memory segments like the stack and mmap have an arrow pointing down.
+This indicates that these regions “grow down” by decreasing their end boundary’s virtual address as you add elements to them.
+This is so that the stack and heap can share the same address space, but grow in different directions.
+It is now easy to see that if you put too many elements onto the stack it will eventually run into heap memory leading to the classic Stack Overflow.</p>
+<p>The reasons why this external structure is needed for this lab is to answer the question: “How do you know when an address is invalid?”.
+You cannot rely on the present bit of a page table entry, since that page may be valid, but just happens to be paged to disk.
+The solution is to check to see if an address is in any memory segment with <code class="language-plaintext highlighter-rouge">bool address_in_segmentations(vm_segmentations *segmentations, uint32_t address);</code>.
+If the address is not in any of the process’s segments, then you get the dreaded segmentation fault (segfault).</p>
+<p>Note: There is one other form of segfault. Can you determine what it is?</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="kernel-kernelh" class="title-text">Kernel (<code class="language-plaintext highlighter-rouge">kernel.h</code>)<a class="anchor title-text" href="#kernel-kernelh"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>For this assignment all the memory allocations will be abstracted by <code class="language-plaintext highlighter-rouge">kernel.c</code>.</p>
+<p>This file will maintain a global array of pages that you will use to model all of physical memory.
+That is to say that all simulated virtual addresses get translated to an address in:</p>
+<p><code class="language-plaintext highlighter-rouge">char physical_memory[PHYSICAL_MEMORY_SIZE] __attribute__((aligned(PAGE_SIZE)));</code></p>
+<p>The caveat to this lab is that it is all done in user space.
+That means you are technically mapping one virtual address to another virtual address that represents a physical address.
+However, all the concepts involved remain the same in a real operating system’s memory management software.</p>
+<p>We use a global <code class="language-plaintext highlighter-rouge">char</code> array for our physical memory as it so happens that global variables such as these are stored
+in some of the lowest addresses in memory. Because of this, the array, despite existing in a 64-bit environment, only
+needs the 32 lower bits of a 64-bit address to address it. This is great because it allows us to use 32-bit addresses to
+refer to a simulated physical memory location, despite being on a 64-bit system. The downside is that we will need to convert
+any 32-bit simulated physical memory addresses, which are stored as <code class="language-plaintext highlighter-rouge">addr32</code> variables, into 64-bit <code class="language-plaintext highlighter-rouge">void *</code> pointers before we actually try to access that memory. We have provided a few helper functions to help with this conversion:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void *get_system_pointer_from_pte(page_table_entry *entry);
+void *get_system_pointer_from_pde(page_directory_entry *entry);
+void *get_system_pointer_from_address(addr32 address);
+</code></pre></div></div>
+<p>Examples usages of these helper functions can be found in some of the implemented features in <code class="language-plaintext highlighter-rouge">mmu.c</code>.</p>
+<p>Note: Shifting signed numbers can produce unexpected behavior, as it will always extend the sign, meaning if the most significant bit is <code class="language-plaintext highlighter-rouge">1</code>, the “leftmost” bits after shifting right will all be <code class="language-plaintext highlighter-rouge">1</code>s instead of <code class="language-plaintext highlighter-rouge">0</code>s. 
+Do yourself a favor, work with unsigned values.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="memory-management-unit-mmuc-and-mmuh" class="title-text">Memory Management Unit (<code class="language-plaintext highlighter-rouge">mmu.c</code> and <code class="language-plaintext highlighter-rouge">mmu.h</code>)<a class="anchor title-text" href="#memory-management-unit-mmuc-and-mmuh"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>For this assignment you are only responsible for handling reads to and writes from virtual addresses. The functions you are to complete are:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void mmu_read_from_virtual_address(mmu *this, uintptr_t virtual_address, size_t pid, void *buffer, size_t num_bytes);
+void mmu_write_to_virtual_address(mmu *this, uintptr_t virtual_address, size_t pid, const void *buffer, size_t num_bytes);
+</code></pre></div></div>
+<p>This means you have to translate a simulated virtual address into a simulated physical address, then read from/write to that memory location.</p>
+<p>The following illustration demonstrates how to translate from a virtual address to a physical address:</p>
+<p class="img-paragraph"><img src="/images/assignment-docs/lab/ideal_indirection/virtual_address_translation.png" alt="Virtual Address Translation"></p>
+<p>This image is saying that you are to take the top 10 bits of the provided virtual address to index an entry in the page directory of the process.
+That entry should contain the base address of a page table.
+You are to then take the next 10 bits to index an entry the page table you got in the previous step, which should point to a frame in physical memory.
+Finally you are to use the last 12 bits to offset to a particular byte in the 4kb frame.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing" class="title-text">Testing<a class="anchor title-text" href="#testing"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Make sure you throughly test your code as usual. We have provided some tests cases, but we encourage you to write your own as well. Use the provided test cases as a reference to learn to create tests with good coverage.</p></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/ideal_indirection.md";
+  </script>
+</body>
+
+</html>

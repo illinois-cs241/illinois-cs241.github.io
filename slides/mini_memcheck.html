@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Memory | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/mini_memcheck">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Memory</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="why-am-i-doing-this-lab">Why am I doing this lab?</h2>
+
+<ul>
+  <li>Learn how to make a basic memory checker</li>
+  <li>Learn memory layout and how malloc/free works</li>
+  <li>How does free know how many bytes it has to free?</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="how-does-malloc-manage-allocated-memory">How does malloc() manage allocated memory?</h2>
+
+<ul>
+  <li>As you’ll encounter in this lab, one way of keeping track of memory is via metadata tags</li>
+  <li>To accomplish this, we allocate more memory than the user requests</li>
+  <li>We’ll use pointer arithmetic to make sure that we return the right pointer to the user</li>
+</ul>
+
+</section><section><h2 id="whats-in-the-tags">What’s in the #tags?</h2>
+
+<p>Information about the current block of memory:</p>
+
+<ul>
+  <li>Pointer to next link, if using a linked list</li>
+  <li>Size of block</li>
+  <li>Whatever else you want…</li>
+</ul>
+
+</section><section><h2></h2>
+
+<pre><code class="language-C"><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="k">struct</span> <span class="n">metadata</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+	<span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">metadata</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">metadata</span><span class="o">*</span> <span class="n">md</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span> <span class="o">+</span> <span class="mi">64</span><span class="p">);</span>
+	
+	<span class="n">printf</span><span class="p">(</span><span class="s">"metadata address:</span><span class="se">\t</span><span class="s">%p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">md</span><span class="p">);</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">"start of allocation:</span><span class="se">\t</span><span class="s">%p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">md</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+
+	<span class="n">free</span><span class="p">(</span><span class="n">md</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+
+</section><section><h2></h2>
+
+<pre><code class="language-C"><span class="err">$</span> <span class="n">gcc</span> <span class="n">malloc</span><span class="o">-</span><span class="n">main</span><span class="p">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">malloc</span><span class="o">-</span><span class="n">main</span>
+<span class="err">$</span> <span class="p">.</span><span class="o">/</span><span class="n">malloc</span><span class="o">-</span><span class="n">main</span>
+	<span class="n">metadata</span> <span class="n">address</span><span class="o">:</span>	<span class="mh">0x563eaaa8f2a0</span>
+	<span class="n">start</span> <span class="n">of</span> <span class="n">allocation</span><span class="o">:</span>	<span class="mh">0x563eaaa8f2b0</span>
+</code></pre>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="the-big-picture">The Big Picture</h2>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/memory/val1.png" alt="Map one"></p>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/memory/val2.png" alt="Map two"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="hints">Hints</h2>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">meta_data * head</code> : head for linked-list</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">total_memory_requested</code>: keep track of bytes used</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">total_memory_freed</code>: keep track of bytes freed</li>
+  <li>Think about how to create a linked-list and insert/remove</li>
+  <li>Insert has to be constant time, but free doesn’t</li>
+  <li>Have to catch bad calls to free and increment <code class="language-plaintext highlighter-rouge">invalid_addresses</code>
+</li>
+</ul>
+
+</section><section><h2 id="hey-shouldnt-we-not-be-able-to-do-arithmetic-with-void-pointers">Hey! Shouldn’t we not be able to do arithmetic with void pointers?</h2>
+
+<ul>
+  <li>Technically yeah, but gcc and clang treats it as a <code class="language-plaintext highlighter-rouge">char*</code>
+</li>
+  <li>In short, don’t do it because the standard doesn’t guarantee it</li>
+</ul>
+
+</section><section><h2 id="splitting-and-coalescing">Splitting and coalescing</h2>
+
+<ul>
+  <li>Reduce memory wastage!</li>
+  <li>How can we use tags to split a block?</li>
+  <li>How can we use tags to merge adjacent blocks?</li>
+</ul>
+
+<p>Understanding how to do this will be useful when you implement malloc!</p>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/memory/malloc_split.png" alt="Malloc split"></p>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/memory/malloc_double_coalesce.png" alt="Malloc merge"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="questions">Questions?</h2>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>
