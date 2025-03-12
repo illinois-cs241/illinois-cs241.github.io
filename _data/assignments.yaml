@@ -110,6 +110,7 @@ labs:
       resources: true
       worksheet: true
       visible: true
+      slides: https://docs.google.com/presentation/d/1E2OAfTItyZvXnKFBsU8qkpNWooVMXaTjjPK_OqHfzoU/edit?usp=sharing
   -
       name: "MapReduce"
       releaseDate: "Week 9"
