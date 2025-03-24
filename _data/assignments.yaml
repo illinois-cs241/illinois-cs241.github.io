@@ -276,11 +276,11 @@ mps:
       url: "parallel_make"
       submissions:
         - title: Part 1
-          due_date: 2025-04-01 23:59
+          due_date: 2025-03-31 23:59
           graded_files:
           - parmake.c
         - title: Part 2
-          due_date: 2025-04-08 23:59
+          due_date: 2025-04-07 23:59
           graded_files:
           - parmake.c
       resources: true
