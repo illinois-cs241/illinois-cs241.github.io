@@ -124,6 +124,7 @@ labs:
       resources: true
       worksheet: true
       visible: true
+      slides: https://docs.google.com/presentation/d/1zb24HSvrZ3NZEVVos1962yYlsy9jTnSxJqlNaBETqzs/edit?usp=sharing
   -
       name: "Charming Chatroom"
       releaseDate: "Week 10"
