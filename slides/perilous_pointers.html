@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Memory | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/perilous_pointers">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Memory</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="lab-time">Lab Time!</h2>
+
+</section><section><h2></h2>
+
+</section><section><h2 id="using-pointers">Using pointers</h2>
+
+<p>Where can a pointer point to?</p>
+
+</section><section><h2></h2>
+
+<p>Heap</p>
+
+<p>Stack</p>
+
+<p>Global</p>
+
+<p>Text</p>
+
+<p>…Anywhere!</p>
+
+</section><section><h2 id="what-is-a-function-pointer">What is a function pointer?</h2>
+
+<p>A pointer that stores the address of a function’s code</p>
+
+</section><section><h2></h2>
+
+<p>With this, we can pass a function as an argument</p>
+
+<p>This allows us to reuse code</p>
+
+<p>E.g., sorting an array of arbitrary objects could use a function pointer as the comparison function</p>
+
+</section><section><h2 id="pointer-arithmetic">Pointer Arithmetic</h2>
+
+<p><img src="/images/assignment-docs/lab/perilous_pointers/pointerArithmetic.drawio.png" alt="Pointer Arithmetic"></p>
+
+</section><section><h2 id="part-1">Part 1</h2>
+
+</section><section><h2></h2>
+
+<p>You will be debugging several functions that all use pointers incorrectly</p>
+
+</section><section><h2 id="part-2">Part 2</h2>
+
+</section><section><h2></h2>
+<p>-</p>
+
+<p>We’ve given you a set of functions as tools</p>
+
+<p>Your job is to use these tools in the right order to print “Illinois”</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="hints-about-the-mp">Hints about the MP</h2>
+
+</section><section><h2></h2>
+
+</section><section><h2 id="what-is-this-null-terminated-array">What is this NULL-terminated array?</h2>
+
+<p>Maybe, we don’t want to pass around the size of the array everywhere</p>
+
+<p>We know that NULL is not a valid string (but this doesn’t work for every type)</p>
+
+<pre><code class="language-C"><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">...;</span><span class="c1">// vs</span>
+<span class="kt">int</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="n">arr</span><span class="p">[</span><span class="n">len</span><span class="p">]</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// NULL = 0, meaning we have a valid element</span>
+</code></pre>
+
+</section><section><h2 id="useful-functions">Useful Functions</h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">strdup</code>: return a string copy</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">strcpy</code>,<code class="language-plaintext highlighter-rouge">strncpy</code>: copy a string to another string</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">toupper</code>, <code class="language-plaintext highlighter-rouge">tolower</code>: uppercases/lowercases an input character</li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ispunct</code>,<code class="language-plaintext highlighter-rouge">isspace</code>,<code class="language-plaintext highlighter-rouge">isalpha</code>: decide whether a character is punctuation/alphabetical/whitespace</p>
+  </li>
+  <li><strong>Not so useful: <code class="language-plaintext highlighter-rouge">strtok</code></strong></li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="debugging">Debugging</h2>
+
+</section><section><h2 id="valgrind">Valgrind</h2>
+
+<p>Valgrind is a framework for building program analysis tools. The most popular Valgrind tool is memcheck, which detects memory leaks. You will use Valgrind very often in CS 341, and the autograder will run Valgrind against your code to check for memory leaks.</p>
+
+</section><section><h2 id="usage">Usage</h2>
+<p>Given a program <code class="language-plaintext highlighter-rouge">myprog arg1 arg2</code>:</p>
+
+<p><code class="language-plaintext highlighter-rouge">valgrind --leak-check=yes myprog arg1 arg2</code></p>
+
+</section><section><h2 id="leak-types">Leak Types</h2>
+
+<ol>
+  <li>
+<em>Memory block</em>: A block of allocated, not-freed memory</li>
+  <li>
+<em>Definitely lost</em>: A memory block wasn’t freed, and no pointers point to it.</li>
+  <li>
+<em>Still reachable</em>: A memory block wasn’t freed, but there are pointers to it still left.</li>
+  <li>
+<em>Indirectly lost</em>: A memory block wasn’t freed that contained pointers to other memory blocks.</li>
+  <li>
+<em>Possibly lost</em>: A memory block wasn’t freed, and the pointer to it still exists but was moved (e.g. array)</li>
+</ol>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="questions">Questions?</h2>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>
