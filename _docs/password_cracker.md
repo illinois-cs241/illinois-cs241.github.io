@@ -255,7 +255,7 @@ When the number of threads doesn't divide the search space evenly, it's easy to 
 The functions `getSubrange()` and `setStringPosition()` are provided in `utils.h` file to assist you with this. We **require** that you use these functions to match our expected output. We cannot guarantee the correctness of code that does not utilize these functions.
 
 With all the threads working on the same task, you may want to restructure your thread synchronization a little.
-Rather than a queue, you may wish to use a barrier.
+Rather than a queue, you may wish to use a `pthread` barrier.
 
 ```
                 Startup     Task 0..............................   Task 1..............................
