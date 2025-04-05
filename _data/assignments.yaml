@@ -140,6 +140,7 @@ labs:
       resources: true
       worksheet: true
       visible: true
+      slides: https://docs.google.com/presentation/d/1-2kbnuQOnKD8IWarpQlo2MprO2L7-UBu15vtOa2s9Wo/edit?usp=sharing
   -
       name: "Deepfried dd"
       releaseDate: "Week 11"
