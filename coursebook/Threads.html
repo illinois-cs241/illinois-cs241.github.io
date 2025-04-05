@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Threads</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Threads" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Threads
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#threads" class="fancy-link wiki-link">Threads</a>
+    <ul>
+      <li><a href="#processes-vs-threads" class="fancy-link wiki-link">Processes vs threads</a></li>
+      <li><a href="#thread-internals" class="fancy-link wiki-link">Thread Internals</a></li>
+      <li><a href="#simple-usage" class="fancy-link wiki-link">Simple Usage</a></li>
+      <li><a href="#pthread-functions" class="fancy-link wiki-link">Pthread Functions</a></li>
+      <li>
+<a href="#race-conditions" class="fancy-link wiki-link">Race Conditions</a>
+        <ul>
+          <li><a href="#a-day-at-the-races" class="fancy-link wiki-link">A day at the races</a></li>
+          <li><a href="#dont-cross-the-streams" class="fancy-link wiki-link">Don’t Cross the Streams</a></li>
+          <li><a href="#embarrassingly-parallel-problems" class="fancy-link wiki-link">Embarrassingly Parallel
+Problems</a></li>
+          <li><a href="#other-problems" class="fancy-link wiki-link">Other Problems</a></li>
+          <li><a href="#advanced-lightweight-processes" class="fancy-link wiki-link">Advanced: Lightweight
+Processes?</a></li>
+          <li><a href="#further-reading" class="fancy-link wiki-link">Further Reading</a></li>
+        </ul>
+      </li>
+      <li><a href="#topics" class="fancy-link wiki-link">Topics</a></li>
+      <li><a href="#questions" class="fancy-link wiki-link">Questions</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>If you think your programs crashing before, wait until they crash ten
+times as fast</strong> - <em>**</em></p>
+
+<p>A thread is short for ‘thread-of-execution’. It represents the sequence
+of instructions that the CPU has and will execute. To remember how to
+return from function calls, and to store the values of automatic
+variables and parameters a thread uses a stack. Almost weirdly, a thread
+is a process, meaning that creating a thread is similar to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>,
+except there is <strong>no copying</strong> meaning no copy on write. What this
+allows is for a process to share the same address space, variables,
+heap, file descriptors and etc. The actual system call to create a
+thread is similar to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>. It’s <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/clone.2.html" class="fancy-link">clone</a></code>. We won’t go into the
+specifics, but you can read the
+<a href="http://man7.org/linux/man-pages/man2/clone.2.html" class="fancy-link wiki-link">http://man7.org/linux/man-pages/man2/clone.2.html</a>
+keeping in mind that it is outside the direct scope of this course. LWP
+or Lightweight Processes or threads are preferred to forking for a lot
+of scenarios because there is a lot less overhead creating them. But in
+some cases, notably python uses this, multiprocessing is the way to make
+your code faster.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="processes-vs-threads" class="title-text">Processes vs threads<a class="anchor title-text" href="#processes-vs-threads"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Creating separate processes is useful when:</p>
+<ul>
+  <li>
+    <p>When more security is desired. For example, Chrome browser uses
+different processes for different tabs.</p>
+  </li>
+  <li>
+    <p>When running an existing and complete program then a new process is
+required, for example starting ‘gcc‘.</p>
+  </li>
+  <li>
+    <p>When you are running into synchronization primitives and each
+process is operating on something in the system.</p>
+  </li>
+  <li>
+    <p>When you have too many threads – the kernel tries to schedule all
+the threads near each other which could cause more harm than good.</p>
+  </li>
+  <li>
+    <p>When you don’t want to worry about race conditions</p>
+  </li>
+  <li>
+    <p>When the amount of communication is minimal enough that simple IPC
+needs to be used.</p>
+  </li>
+</ul>
+<p>On the other hand, creating threads is more useful when:</p>
+<ul>
+  <li>
+    <p>You want to leverage the power of a multi-core system to do one task</p>
+  </li>
+  <li>
+    <p>When you can’t deal with the overhead of processes</p>
+  </li>
+  <li>
+    <p>When you want communication between the processes simplified</p>
+  </li>
+  <li>
+    <p>When you want to threads to be part of the same process</p>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="thread-internals" class="title-text">Thread Internals<a class="anchor title-text" href="#thread-internals"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Your main function and other functions has automatic variables. We will
+store them in memory using a stack and keep track of how large the stack
+is by using a simple pointer (the “stack pointer”). If the thread calls
+another function, we move our stack pointer down, so that we have more
+space for parameters and automatic variables. Once it returns from a
+function, we can move the stack pointer back up to its previous value.
+We keep a copy of the old stack pointer value - on the stack! This is
+why returning from a function is quick. It’s easy to ‘free’ the memory
+used by automatic variables because the program needs to change the
+stack pointer.</p>
+<p>In a multi-threaded program, there are multiple stacks but only one
+address space. The pthread library allocates some stack space and uses
+the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/clone.2.html" class="fancy-link">clone</a></code> function call to start the thread at that stack address.</p>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/threads/drawings/thread_stack.png" alt="Thread stack
+visualization"></p>
+<p>A program can have more than one thread running inside a process. The
+programget the first thread for free! It runs the code you write inside
+‘main’. If a program need more threads, it can call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_create.3p.html" class="fancy-link">pthread_create</a></code> to
+create a new thread using the pthread library. You’ll need to pass a
+pointer to a function so that the thread knows where to start.</p>
+<p>The threads all live inside the same virtual memory because they are
+part of the same process. Thus they can all see the heap, the global
+variables, and the program code.</p>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/threads/drawings/thread_stack_pointer.png" alt="Threads pointing to the same place in the
+heap"></p>
+<p>Thus, a program can have two (or more) CPUs working on your program at
+the same time and inside the same process. It’s up to the operating
+system to assign the threads to CPUs. If a program has more active
+threads than CPUs, the kernel will assign the thread to a CPU for a
+short duration or until it runs out of things to do and then will
+automatically switch the CPU to work on another thread. For example, one
+CPU might be processing the game AI while another thread is computing
+the graphics output.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="simple-usage" class="title-text">Simple Usage<a class="anchor title-text" href="#simple-usage"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>To use pthreads, include <code class="language-plaintext highlighter-rouge">pthread.h</code> and compile and link with
+<code class="language-plaintext highlighter-rouge">-pthread</code> or <code class="language-plaintext highlighter-rouge">-lpthread</code> compiler option. This option tells the
+compiler that your program requires threading support. To create a
+thread, use the function <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_create.3p.html" class="fancy-link">pthread_create</a></code>. This function takes four
+arguments:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">pthread_create</span><span class="p">(</span><span class="n">pthread_t</span> <span class="o">*</span><span class="kr">thread</span><span class="p">,</span> <span class="k">const</span> <span class="n">pthread_attr_t</span> <span class="o">*</span><span class="n">attr</span><span class="p">,</span>
+<span class="kt">void</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">start_routine</span><span class="p">)</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">),</span> <span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">);</span>
+</code></pre></div></div>
+<ul>
+  <li>
+    <p>The first is a pointer to a variable that will hold the id of the
+newly created thread.</p>
+  </li>
+  <li>
+    <p>The second is a pointer to attributes that we can use to tweak and
+tune some of the advanced features of pthreads.</p>
+  </li>
+  <li>
+    <p>The third is a pointer to a function that we want to run</p>
+  </li>
+  <li>
+    <p>Fourth is a pointer that will be given to our function</p>
+  </li>
+</ul>
+<p>The argument <code class="language-plaintext highlighter-rouge">void *(*start_routine) (void *)</code> is difficult to read! It
+means a pointer that takes a <code class="language-plaintext highlighter-rouge">void *</code> pointer and returns a <code class="language-plaintext highlighter-rouge">void *</code>
+pointer. It looks like a function declaration except that the name of
+the function is wrapped with <code class="language-plaintext highlighter-rouge">(* .... )</code></p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="o">*</span><span class="nf">busy</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ptr will point to "Hi"</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">"Hello World"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pthread_t</span> <span class="n">id</span><span class="p">;</span>
+  <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">id</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">busy</span><span class="p">,</span> <span class="s">"Hi"</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="o">*</span><span class="n">result</span><span class="p">;</span>
+  <span class="n">pthread_join</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>In the above example, the result will be <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/NULL.3const.html" class="fancy-link">NULL</a></code> because the busy
+function returned <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/NULL.3const.html" class="fancy-link">NULL</a></code>. We need to pass the address-of result because
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_join.3p.html" class="fancy-link">pthread_join</a></code> will be writing into the contents of our pointer.</p>
+<p>In the man pages, it warns that programmers should use <code class="language-plaintext highlighter-rouge">pthread_t</code> as an
+opaque type and not look at the internals. We do ignore that often,
+though.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="pthread-functions" class="title-text">Pthread Functions<a class="anchor title-text" href="#pthread-functions"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Here are some common pthread functions:</p>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_create.3p.html" class="fancy-link">pthread_create</a></code> creates a new thread. Every thread gets a new
+stack. If a program calls <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_create.3p.html" class="fancy-link">pthread_create</a></code> twice, Your process will
+contain three stacks - one for each thread. The first thread is
+created when the process start, the other two after the create.
+Actually, there can be more stacks than this, but let’s keep it
+simple. The important idea is that each thread requires a stack
+because the stack contains automatic variables and the old CPU PC
+register, so that it can go back to executing the calling function
+after the function is finished.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_cancel.3p.html" class="fancy-link">pthread_cancel</a></code> stops a thread. Note the thread may still continue.
+For example, it can be terminated when the thread makes an operating
+system call (e.g. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code>). In practice, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_cancel.3p.html" class="fancy-link">pthread_cancel</a></code> is rarely
+used because a thread won’t clean up open resources like files. An
+alternative implementation is to use a boolean (int) variable whose
+value is used to inform other threads that they should finish and
+clean up.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">pthread_exit(void *)</code> stops the calling thread meaning the thread
+never returns after calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_exit.3p.html" class="fancy-link">pthread_exit</a></code>. The pthread library will
+automatically finish the process if no other threads are running.
+<code class="language-plaintext highlighter-rouge">pthread_exit(...)</code> is equivalent to returning from the thread’s
+function; both finish the thread and also set the return value (void
+*pointer) for the thread. Calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_exit.3p.html" class="fancy-link">pthread_exit</a></code> in the <code class="language-plaintext highlighter-rouge">main</code>
+thread is a common way for simple programs to ensure that all
+threads finish. For example, in the following program, the <code class="language-plaintext highlighter-rouge">myfunc</code>
+threads will probably not have time to get started. On the other
+hand <code class="language-plaintext highlighter-rouge">exit()</code> exits the entire process and sets the process’ exit
+value. This is equivalent to <code class="language-plaintext highlighter-rouge">return ();</code> in the main method. All
+threads inside the process are stopped. Note the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_exit.3p.html" class="fancy-link">pthread_exit</a></code>
+version creates thread zombies; however, this is not a long-running
+process, so we don’t care.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pthread_t</span> <span class="n">tid1</span><span class="p">,</span> <span class="n">tid2</span><span class="p">;</span>
+  <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">myfunc</span><span class="p">,</span> <span class="s">"Jabberwocky"</span><span class="p">);</span>
+  <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid2</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">myfunc</span><span class="p">,</span> <span class="s">"Vorpel"</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">keep_threads_going</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span> <span class="c1">//or return 42;</span>
+  <span class="p">}</span>
+    
+  <span class="c1">// No code is run after exit</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">pthread_join()</code> waits for a thread to finish and records its return
+value. Finished threads will continue to consume resources.
+Eventually, if enough threads are created, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_create.3p.html" class="fancy-link">pthread_create</a></code> will
+fail. In practice, this is only an issue for long-running processes
+but is not an issue for simple, short-lived processes as all thread
+resources are automatically freed when the process exits. This is
+equivalent to turning your children into zombies, so keep this in
+mind for long-running processes. In the exit example, we could also
+wait on all the threads.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">// ...</span>
+<span class="kt">void</span><span class="o">*</span> <span class="n">result</span><span class="p">;</span>
+<span class="n">pthread_join</span><span class="p">(</span><span class="n">tid1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">result</span><span class="p">);</span>
+<span class="n">pthread_join</span><span class="p">(</span><span class="n">tid2</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">result</span><span class="p">);</span>
+<span class="k">return</span> <span class="mi">42</span><span class="p">;</span>
+<span class="c1">// ...</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+<p>There are many ways to exit threads. Here is a non-complete list:</p>
+<ul>
+  <li>
+    <p>Returning from the thread function</p>
+  </li>
+  <li>
+    <p>Calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_exit.3p.html" class="fancy-link">pthread_exit</a></code></p>
+  </li>
+  <li>
+    <p>Canceling the thread with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_cancel.3p.html" class="fancy-link">pthread_cancel</a></code></p>
+  </li>
+  <li>
+    <p>Terminating the process through a signal.</p>
+  </li>
+  <li>
+    <p>calling <code class="language-plaintext highlighter-rouge">exit()</code> or <code class="language-plaintext highlighter-rouge">abort()</code></p>
+  </li>
+  <li>
+    <p>Returning from <code class="language-plaintext highlighter-rouge">main</code></p>
+  </li>
+  <li>
+    <p>Executing another program</p>
+  </li>
+  <li>
+    <p>Unplugging your computer</p>
+  </li>
+  <li>
+    <p>Some undefined behavior can terminate your threads, it is undefined
+behavior</p>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="race-conditions" class="title-text">Race Conditions<a class="anchor title-text" href="#race-conditions"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Race conditions are whenever the outcome of a program is determined by
+its sequence of events determined by the processor. This means that the
+execution of the code is non-deterministic. Meaning that the same
+program can run multiple times and depending on how the kernel schedules
+the threads could produce inaccurate results. The following is the
+canonical race condition.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="o">*</span><span class="nf">thread_main</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="o">*</span><span class="n">p_int</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span> <span class="n">p</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">*</span><span class="n">p_int</span><span class="p">;</span>
+  <span class="n">x</span> <span class="o">+=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="o">*</span><span class="n">p_int</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">pthread_t</span> <span class="n">one</span><span class="p">,</span> <span class="n">two</span><span class="p">;</span>
+  <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">one</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">thread_main</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">);</span>
+  <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">two</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">thread_main</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">);</span>
+  <span class="n">pthread_join</span><span class="p">(</span><span class="n">one</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+  <span class="n">pthread_join</span><span class="p">(</span><span class="n">two</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Breaking down the assembly there are many different accesses of the
+code. We will assume that data is stored in the <code class="language-plaintext highlighter-rouge">eax</code> register. The code
+to increment is the following with no optimization (assume int_ptr
+contains eax).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mov eax, DWORD PTR [rbp-4]    ;Loads int_ptr
+add eax, eax                  ;Does the addition
+mov DWORD PTR [rbp-4], eax    ;Stores it back
+</code></pre></div></div>
+<p>Consider this access pattern.</p>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/threads/drawings/thread_nonrace_timing.png" alt="Thread access - not a race
+condition"></p>
+<p>This access pattern will cause the variable <code class="language-plaintext highlighter-rouge">data</code> to be 4. The problem
+is when the instructions are executed in parallel.</p>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/threads/drawings/thread_race_timing.png" alt="Thread access - race
+condition"></p>
+<p>This access pattern will cause the variable <code class="language-plaintext highlighter-rouge">data</code> to be 2. This is
+undefined behavior and a race condition. What we want is one thread to
+access the part of the code at a time.</p>
+<p>But when compiled with <code class="language-plaintext highlighter-rouge">-O2</code>, assembly output is a single instruction.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shl dword ptr [rdi]   # Optimized way of doing the add
+</code></pre></div></div>
+<p>Shouldn’t that fix it? It is a single assembly instruction so no
+interleaving? It doesn’t fix the problems that the <em>hardware itself</em> may
+experience a race condition because we as programmers didn’t tell the
+hardware to check for it. The easiest way is to add the <em>lock</em> prefix
+(Guide <a href="#ref-guide2011intel" class="fancy-link wiki-link">#ref-guide2011intel</a>, 1120).</p>
+<p>But we don’t want to be coding in assembly! We need to come up with a
+software solution to this problem.</p>
+<div class="pad"><div class="card">
+<h4 id="a-day-at-the-races">A day at the races</h4>
+
+<p>Here is another small race condition. The following code is supposed to
+start ten threads with the integers 0 through 9 inclusive. However, when
+run prints out <code class="language-plaintext highlighter-rouge">1 7 8 8 8 8 8 8 8 10</code>! Or seldom does it print out what
+we expect. Can you see why?</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp">
+</span><span class="kt">void</span><span class="o">*</span> <span class="nf">myfunc</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="o">*</span><span class="p">((</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">ptr</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Each thread gets a different value of i to process</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+  <span class="n">pthread_t</span> <span class="n">tid</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">myfunc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">);</span> <span class="c1">// ERROR</span>
+  <span class="p">}</span>
+  <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The above code suffers from a <code class="language-plaintext highlighter-rouge">race condition</code> - the value of i is
+changing. The new threads start later in the example output the last
+thread starts after the loop has finished. To overcome this
+race-condition, we will give each thread a pointer to its own data area.
+For example, for each thread we may want to store the id, a starting
+value and an output value. We will instead treat i as a pointer and cast
+it by value.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span><span class="o">*</span> <span class="nf">myfunc</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="p">((</span><span class="kt">int</span><span class="p">)</span> <span class="n">ptr</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d "</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Each thread gets a different value of i to process</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+  <span class="n">pthread_t</span> <span class="n">tid</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">myfunc</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">i</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Race conditions aren’t in our code. They can be in provided code Some
+functions like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/asctime.3p.html" class="fancy-link">asctime</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getenv.3p.html" class="fancy-link">getenv</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strtok.3p.html" class="fancy-link">strtok</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strerror.3p.html" class="fancy-link">strerror</a></code> not
+thread-safe. Let’s look at a simple function that is also not
+‘thread-safe’. The result buffer could be stored in global memory.
+This is good in a single-threaded program. We wouldn’t want to return a
+pointer to an invalid address on the stack, but there’s only one result
+buffer in the entire memory. If two threads were to use it at the same
+time, one would corrupt the other.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="nf">to_message</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">static</span> <span class="kt">char</span> <span class="n">result</span> <span class="p">[</span><span class="mi">256</span><span class="p">];</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="n">sprintf</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s">"%d : blah blah"</span> <span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+  <span class="k">else</span> <span class="n">strcpy</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>There are ways around this like using synchronization locks, but first
+let’s do this by design. How would you fix the function above? You can
+change any of the parameters and any return types. Here is one valid
+solution.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">to_message_r</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">nbytes</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">size_t</span> <span class="n">written</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">written</span> <span class="o">=</span> <span class="n">snprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">nbtytes</span><span class="p">,</span> <span class="s">"%d : blah blah"</span> <span class="p">,</span> <span class="n">num</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">strncpy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="s">"Unknown"</span><span class="p">,</span> <span class="n">nbytes</span><span class="p">);</span>
+    <span class="n">buf</span><span class="p">[</span><span class="n">nbytes</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>
+    <span class="n">written</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">written</span> <span class="o">&lt;=</span> <span class="n">nbytes</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Instead of making the function responsible for the memory, we made the
+caller responsible! A lot of programs, and hopefully your programs,
+have minimal communication needed. Often a malloc call is less work than
+locking a mutex or sending a message to another thread.</p>
+
+<h3 id="dont-cross-the-streams" class="title-text">Don’t Cross the Streams</h3>
+
+<p>A program can fork inside a process with multiple threads! However, the
+child process only has a single thread, which is a clone of the thread
+that called <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>. We can see this as a simple example, where the
+background threads never print out a second message in the child
+process.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+</span>
+<span class="k">static</span> <span class="n">pid_t</span> <span class="n">child</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="nf">sleepnprint</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d:%s starting up...</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">getpid</span><span class="p">(),</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">arg</span><span class="p">);</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="n">child</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);}</span> <span class="cm">/* Later we will use condition variables */</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d:%s finishing...</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">getpid</span><span class="p">(),</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">arg</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pthread_t</span> <span class="n">tid1</span><span class="p">,</span> <span class="n">tid2</span><span class="p">;</span>
+  <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid1</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">sleepnprint</span><span class="p">,</span> <span class="s">"New Thread One"</span><span class="p">);</span>
+  <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid2</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">sleepnprint</span><span class="p">,</span> <span class="s">"New Thread Two"</span><span class="p">);</span>
+
+  <span class="n">child</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">getpid</span><span class="p">(),</span> <span class="s">"fork()ing complete"</span><span class="p">);</span>
+  <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d:%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">getpid</span><span class="p">(),</span> <span class="s">"Main thread finished"</span><span class="p">);</span>
+
+  <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* Never executes */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8970:New Thread One starting up...
+8970:fork()ing complete
+8973:fork()ing complete
+8970:New Thread Two starting up...
+8970:New Thread Two finishing...
+8970:New Thread One finishing...
+8970:Main thread finished
+8973:Main thread finished
+</code></pre></div></div>
+
+<p>In practice, creating threads before forking can lead to unexpected
+errors because (as demonstrated above) the other threads are immediately
+terminated when forking. Another thread might have locked a mutex like
+by calling malloc and never unlock it again. Advanced users may find
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_atfork.3p.html" class="fancy-link">pthread_atfork</a></code> useful however we suggest a program avoid creating
+threads before forking unless you fully understand the limitations and
+difficulties of this approach.</p>
+
+<h3 id="embarrassingly-parallel-problems" class="title-text">Embarrassingly Parallel Problems</h3>
+
+<p>The study of parallel algorithms has exploded over the past few years.
+An embarrassingly parallel problem is any problem that needs little
+effort to turn parallel. A lot of them have some synchronization
+concepts with them but not always. You already know a parallelizable
+algorithm, Merge Sort!</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">merge_sort</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">arr</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">len</span><span class="p">){</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">len</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">){</span>
+    <span class="c1">// Merge Sort the left half</span>
+    <span class="c1">// Merge Sort the right half</span>
+    <span class="c1">// Merge the two halves</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>With your new understanding of threads, all you need to do is create a
+thread for the left half, and one for the right half. Given that your
+CPU has multiple real cores, you will see a speedup following
+<a href="https://en.wikipedia.org/wiki/Amdahl's_law" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Amdahl’s_law</a>.
+The time complexity analysis gets interesting here as well. The parallel
+algorithm runs in \(O(\log^3(n))\) running time because we have the
+analysis assumes that we have a lot of cores.</p>
+
+<p>In practice though, we typically do two changes. One, once the array
+gets small enough, we ditch the Parallel Merge Sort algorithm and do
+conventional sort that works fast on small arrays, usually cache
+coherency rules at this level. The other thing that we know is that CPUs
+don’t have infinite cores. To get around that, we typically keep a
+worker pool. You won’t see the speedup right away because of things like
+cache coherency and scheduling extra threads. Over the bigger pieces of
+code, though, you will start to see speedups.</p>
+
+<p>Another embarrassingly parallel problem is parallel map. Say we want to
+apply a function to an entire array, one element at a time.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="nf">map</span><span class="p">(</span><span class="kt">int</span> <span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="p">)(</span><span class="kt">int</span><span class="p">),</span> <span class="kt">int</span> <span class="o">*</span><span class="n">arr</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">len</span><span class="p">){</span>
+  <span class="kt">int</span> <span class="o">*</span><span class="n">ret</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">len</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">arr</span><span class="p">));</span>
+  <span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Since none of the elements depend on any other element, how would you go
+about parallelizing this? What do you think would be the best way to
+split up the work between threads.</p>
+
+<p>Check out thread scheduling in the appendix for more ways to schedule.</p>
+
+<h3 id="other-problems" class="title-text">Other Problems</h3>
+
+<p>From
+<a href="https://en.wikipedia.org/wiki/Embarrassingly_parallel" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Embarrassingly_parallel</a></p>
+
+<ul>
+  <li>
+    <p>Serving static files on a web server to multiple users at once.</p>
+  </li>
+  <li>
+    <p>The Mandelbrot set, Perlin noise, and similar images, where each
+point is calculated independently.</p>
+  </li>
+  <li>
+    <p>Rendering of computer graphics. In computer animation, each frame
+may be rendered independently (see parallel rendering).</p>
+  </li>
+  <li>
+    <p>Brute-force searches in cryptography.</p>
+  </li>
+  <li>
+    <p>Notable real-world examples include distributed.net and
+proof-of-work systems used in cryptocurrency.</p>
+  </li>
+  <li>
+    <p>BLAST searches in bioinformatics for multiple queries (but not for
+individual large queries)</p>
+  </li>
+  <li>
+    <p>Large scale facial recognition systems that compare thousands of
+arbitrary acquired faces (e.g., a security or surveillance video via
+closed-circuit television) with a similarly large number of
+previously stored faces (e.g., a rogues gallery or similar watch
+list).</p>
+  </li>
+  <li>
+    <p>Computer simulations comparing many independent scenarios, such as
+climate models.</p>
+  </li>
+  <li>
+    <p>Evolutionary computation meta-heuristics such as genetic algorithms.</p>
+  </li>
+  <li>
+    <p>Ensemble calculations of numerical weather prediction.</p>
+  </li>
+  <li>
+    <p>Event simulation and reconstruction in particle physics.</p>
+  </li>
+  <li>
+    <p>The marching squares algorithm</p>
+  </li>
+  <li>
+    <p>Sieving step of the quadratic sieve and the number field sieve.</p>
+  </li>
+  <li>
+    <p>Tree growth step of the random forest machine learning technique.</p>
+  </li>
+  <li>
+    <p>Discrete Fourier Transform where each harmonic is independently
+calculated.</p>
+  </li>
+</ul>
+
+<h3 id="advanced-lightweight-processes" class="title-text">Advanced: Lightweight Processes?</h3>
+
+<p>In the beginning of the chapter, we mentioned that threads are
+processes. What do we mean by that? You can create a thread like a
+process. Take a look at the example code below.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// 8 KiB stacks</span>
+<span class="cp">#define STACK_SIZE (8 * 1024 * 1024)
+</span>
+<span class="kt">int</span> <span class="nf">thread_start</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Just like the pthread function</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">"Hello Clone!"</span><span class="p">)</span>
+  <span class="c1">// This share the same heap and address space!</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Allocate stack space for the child</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">child_stack</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">STACK_SIZE</span><span class="p">);</span>
+  <span class="c1">// Remember stacks work by growing down, so we need</span>
+  <span class="c1">// to give the top of the stack</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">stack_top</span> <span class="o">=</span> <span class="n">stack</span> <span class="o">+</span> <span class="n">STACK_SIZE</span><span class="p">;</span>
+
+  <span class="c1">// clone create thread</span>
+  <span class="n">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">clone</span><span class="p">(</span><span class="n">thread_start</span><span class="p">,</span> <span class="n">stack_top</span><span class="p">,</span> <span class="n">SIGCHLD</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">perror</span><span class="p">(</span><span class="s">"clone"</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Child pid %ld</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="p">(</span><span class="kt">long</span><span class="p">)</span> <span class="n">pid</span><span class="p">);</span>
+
+  <span class="c1">// Wait like any child</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">waitpid</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">perror</span><span class="p">(</span><span class="s">"waitpid"</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>It seems pretty simple right? Why not use this functionality? First,
+there is a decent bit of boilerplate code. In addition, pthreads are
+part of the POSIX standard and have defined functionality. Pthreads let
+a program set various attributes – some that resemble the option in
+clone – to customize your thread. But as we mentioned earlier, with each
+later of abstraction for portability reasons we lose some functionality.
+clone can do some neat things like keeping different parts of your heap
+the same while creating copies of other pages. A program has finer
+control of scheduling because it is a process with the same mappings.</p>
+
+<p>At no time in this course should you be using clone. But in the future,
+know that it is a perfectly viable alternative to fork. You have to be
+careful and research edge cases.</p>
+
+<h3 id="further-reading" class="title-text">Further Reading</h3>
+
+<p>Guiding questions:</p>
+
+<ul>
+  <li>
+    <p>What is the first argument to pthread create?</p>
+  </li>
+  <li>
+    <p>What is the start routing in pthread create? How about arg?</p>
+  </li>
+  <li>
+    <p>Why might pthread create fail?</p>
+  </li>
+  <li>
+    <p>What are a few things that threads share in a process? What are a
+few things that threads have different?</p>
+  </li>
+  <li>
+    <p>How can a thread uniquely identify itself?</p>
+  </li>
+  <li>
+    <p>What are some examples of non thread safe library functions? Why
+might they not be thread safe?</p>
+  </li>
+  <li>
+    <p>How can a program stop a thread?</p>
+  </li>
+  <li>
+    <p>How can a program get back a thread’s “return
+value”?</p>
+  </li>
+</ul>
+
+<!-- end list -->
+
+<ul>
+  <li>
+    <p><a href="http://man7.org/linux/man-pages/man3/pthread_create.3.html" class="fancy-link wiki-link">http://man7.org/linux/man-pages/man3/pthread_create.3.html</a></p>
+  </li>
+  <li>
+    <p><a href="http://man7.org/linux/man-pages/man7/pthreads.7.html" class="fancy-link wiki-link">http://man7.org/linux/man-pages/man7/pthreads.7.html</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.thegeekstuff.com/2012/04/terminate-c-thread/" class="fancy-link wiki-link">http://www.thegeekstuff.com/2012/04/terminate-c-thread/</a></p>
+  </li>
+</ul>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="topics" class="title-text">Topics<a class="anchor title-text" href="#topics"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>
+    <p>pthread life-cycle</p>
+  </li>
+  <li>
+    <p>Each thread has a stack</p>
+  </li>
+  <li>
+    <p>Capturing return values from a thread</p>
+  </li>
+  <li>
+    <p>Using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_join.3p.html" class="fancy-link">pthread_join</a></code></p>
+  </li>
+  <li>
+    <p>Using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_create.3p.html" class="fancy-link">pthread_create</a></code></p>
+  </li>
+  <li>
+    <p>Using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_exit.3p.html" class="fancy-link">pthread_exit</a></code></p>
+  </li>
+  <li>
+    <p>Under what conditions will a process exit</p>
+  </li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="questions" class="title-text">Questions<a class="anchor title-text" href="#questions"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>
+    <p>What happens when a pthread gets created?</p>
+  </li>
+  <li>
+    <p>Where is each thread’s stack?</p>
+  </li>
+  <li>
+    <p>How does a program get a return value given a <code class="language-plaintext highlighter-rouge">pthread_t</code>? What are
+the ways a thread can set that return value? What happens if a
+program discards the return value?</p>
+  </li>
+  <li>
+    <p>Why is <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_join.3p.html" class="fancy-link">pthread_join</a></code> important (think stack space, registers,
+return values)?</p>
+  </li>
+  <li>
+    <p>What does <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_exit.3p.html" class="fancy-link">pthread_exit</a></code> do if it is not the last thread? What other
+functions are called when after calling pthread_exit?</p>
+  </li>
+  <li>
+    <p>Give me three conditions under which a multi-threaded process will
+exit. Are there any more?</p>
+  </li>
+  <li>
+    <p>What is an embarrassingly parallel problem?</p>
+  </li>
+</ul>
+<div id="refs" class="references">
+
+<div id="ref-guide2011intel">
+
+Guide, Part. 2011. “Intel 64 and Ia-32 Architectures Software
+Developer’s Manual.” *Volume 3B: System Programming Guide, Part* 2.
+
+</div>
+
+</div>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Threads.md";
+  </script>
+</body>
+
+</html>

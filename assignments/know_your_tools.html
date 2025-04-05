@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Know Your Tools</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Know Your Tools" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Know Your Tools
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_hw0" href="#hw0" class="fancy-link">HW0</a></li>
+<li><a id="toc_development" href="#development" class="fancy-link">Development</a></li>
+<li><a id="toc_git" href="#git" class="fancy-link">Git</a></li>
+<li><a id="toc_graded-files" href="#graded-files" class="fancy-link">Graded Files</a></li>
+<li><a id="toc_background" href="#background" class="fancy-link">Background</a></li>
+<li><a id="toc_problem-1-no-such-file" href="#problem-1-no-such-file" class="fancy-link">Problem 1: No Such File</a></li>
+<li><a id="toc_problem-2-address-space" href="#problem-2-address-space" class="fancy-link">Problem 2: Address Space</a></li>
+<li><a id="toc_entrypoint" href="#entrypoint" class="fancy-link">Entrypoint</a></li>
+<li><a id="toc_debugging-guide" href="#debugging-guide" class="fancy-link">Debugging Guide</a></li>
+<li><a id="toc_manual-testing" href="#manual-testing" class="fancy-link">Manual Testing</a></li>
+<li><a id="toc_cs-241-makefile" href="#cs-241-makefile" class="fancy-link">CS 241 Makefile</a></li>
+<li><a id="toc_the-outline" href="#the-outline" class="fancy-link">The Outline</a></li>
+<li><a id="toc_lab-attendance" href="#lab-attendance" class="fancy-link">Lab Attendance</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Know Your Tools are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Getting familiar with the tools needed for CS 341.</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="hw0" class="title-text">HW0<a class="anchor title-text" href="#hw0"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>You have already been assigned a HW0 for the class. <a href="https://goo.gl/forms/8yX0n9E5CTkSeg4v2" class="fancy-link wiki-link">Here is the HW0 submission link</a> – beware the link does not save so be ready to submit when going through. We’ll spend the first part of class going over the various questions from HW0. Your grade for this lab is partly HW0 and partly the assignment below.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="development" class="title-text">Development<a class="anchor title-text" href="#development"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Read the <a href="./development.html" class="fancy-link wiki-link">Development Guide</a>!</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="git" class="title-text">Git<a class="anchor title-text" href="#git"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>(Read the first section of the development site!) You will be using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/git.1.html" class="fancy-link">git</a></code> to submit all your assignments in this course. First go to <a href="https://edu.cs.illinois.edu/create-ghe-repo/-sp25/" class="fancy-link wiki-link">the repository creator</a>. <strong>DO NOT DO THE README TUTORIAL</strong></p>
+<p><strong>Once you are in your VM</strong>, you’ll need to set up some global defaults</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git config --global user.name "FIRST_NAME LAST_NAME"
+git config --global user.email NETID@example.com
+</span></code></pre></div></div>
+<p>Make sure to replace <code class="language-plaintext highlighter-rouge">FIRST_NAME</code> and <code class="language-plaintext highlighter-rouge">LAST_NAME</code> and <code class="language-plaintext highlighter-rouge">NETID</code> with your information. Then checkout your repository as follows</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://github-dev.cs.illinois.edu/-sp25/NETID.git
+</span></code></pre></div></div>
+<p>which will check out your entire git repo into a folder called ‘NETID’ into your current directory. Now change your directory into that folder:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd NETID
+</span></code></pre></div></div>
+<p>You’ve probably noticed the repository is empty! In order to grab the latest version of our assignment, complete the following steps.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git remote add release https://github-dev.cs.illinois.edu/-sp25/_release.git
+git pull release master
+git push origin master
+</span></code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="graded-files" class="title-text">Graded Files<a class="anchor title-text" href="#graded-files"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>One section we will have on the top of every assignment is a section called <code class="language-plaintext highlighter-rouge">graded_files</code> these are the files that we use to grade the assignment. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/git.1.html" class="fancy-link">git</a></code> does not allow us to set the rest of the files to readonly to prevent changing them (header files, Makefile). You have to be careful to avoid changing these files. We are working on a system that prevents you from accidentally committing the changes, but there is no easy way to set permissions on your local copy.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="background" class="title-text">Background<a class="anchor title-text" href="#background"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You are working for ShadyCorp Inc. Your boss commissioned your coworker to write a program. The program reads a file, overwrites it multiple times so that it is harder to recover on the hard disk, then encrypts the file, then writes it once to an output file.</p>
+<p>The head of ShadyCorp is lazy, so they want more features. They want the first five lines of the file and the last five lines of the file to be copied to the beginning. They also want the file to be wrapped to be more easily read on mobile devices. Lines should be at most 80 characters (not including the newline). If a line is longer than 80 characters, then it should be split into two or more lines, where all the but the last line has 80 characters (not including the newline). Your co-worker sighs and comes up with the following game plan.</p>
+<ol>
+  <li>Read the entire file from disk</li>
+  <li>Wrap the lines to 80 characters max</li>
+  <li>Do the rewrite and make sure the file is mangled</li>
+  <li>Find the first five and the last five lines and copy them in the front of the string</li>
+  <li>Write it to an output file</li>
+  <li>In the case where all is successful, print out the process address space. (You need to implement this)</li>
+</ol>
+<p>Usage:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>./secure_move <span class="nt">-h</span>
+<span class="go">Usage:
+
+</span><span class="gp">	./secure_move: &lt;path&gt;</span><span class="w"> </span>&lt;destination&gt;
+<span class="go">
+</span><span class="gp">./secure_move takes a file located at &lt;path&gt;</span>, copies the file into memory
+<span class="go">then wraps the file to 80 characters maximum and
+overwrites the file 3 times to prevent recovery.
+</span><span class="gp">Then it writes to the file at &lt;desination&gt;</span><span class="w"> </span>the following
+<span class="go">	- The first five lines (after wrapping)
+	- A newline
+	- The last five lines (after wrapping)
+	- A newline
+	- The whole file
+</span></code></pre></div></div>
+<p>Your boss at ShadyCorp is <em>very</em> paranoid. To test that his program, he wrote a test suite himself. Your co-worker went home sick that day. Now, he hasn’t been heard from in two weeks; you don’t ask any questions. The boss sent you an email to fix the code that your co-worker gave you. Since you are the Boss’ cousin, he gives you the test cases that you failed and promises to run the test cases every day (your mom is <em>very</em> convincing).</p>
+<p>But, he imposed a penalty. You are currently passing some test cases, but you won’t get any points for those because your co-worker wrote that code. You are failing four test cases. If you get those test cases to pass, you get full points for this lab and keep your job at ShadyCorp. If you mess any test cases that you were passing before, you will lose one point. The boss assures that the code is well sectioned, so you won’t have to even <em>look</em> at the files that aren’t related to the test case.</p>
+<p>The output of the file should be:</p>
+<pre><code class="language-C">&lt;first 5 lines&gt;
+&lt;newline&gt;
+&lt;last 5 lines&gt;
+&lt;newline&gt;
+&lt;the whole file&gt;&lt;newline&gt;
+</code></pre>
+<p>Where <code class="language-plaintext highlighter-rouge">&lt;newline&gt; = '\n'</code>.
+A line is defined as zero or more characters terminated by a newline character.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="problem-1-no-such-file" class="title-text">Problem 1: No Such File<a class="anchor title-text" href="#problem-1-no-such-file"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>If the file does not exist, the program currently doesn’t work. Instead of crashing, exit with a status <code class="language-plaintext highlighter-rouge">NO_FILE_RETURN_CODE</code> found in <code class="language-plaintext highlighter-rouge">secure_move.c</code></p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="problem-2-address-space" class="title-text">Problem 2: Address Space<a class="anchor title-text" href="#problem-2-address-space"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Due to the new <a href="https://meltdownattack.com/" class="fancy-link wiki-link">meltdown and spectre</a> vulnerabilities, your bosses are worried to no end about shadier corporations trying to get your data. There are some <a href="https://launchpad.net/ubuntu/+source/linux/4.4.0-108.131" class="fancy-link wiki-link">software patches</a> available to detect against variations of meltdown, the ones against the variation of spectre are few and far between. The security gurus have found was of detecting spectre attacks and can now track attacks against processes. They are able to get the address and all other parameters of the affected area, but they need to know what region of memory was read. For instance, if a c library function was read, then no big deal. But if one of the <code class="language-plaintext highlighter-rouge">file*</code> structs was read, ShadyCorp’s shady dealings could be uncovered. As such, they want you to print out the following in <strong>descending</strong> order.</p>
+<ul>
+  <li>The address of <code class="language-plaintext highlighter-rouge">main</code>
+</li>
+  <li>The address of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strdup.3p.html" class="fancy-link">strdup</a></code>
+</li>
+  <li>A string literal (e.g <code class="language-plaintext highlighter-rouge">char *ptr = "abs"</code>)</li>
+  <li>A malloc’d array</li>
+  <li>Address of argc</li>
+</ul>
+<p>Hint: Do you need to check the order every time? What do you know about process address spaces?</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="entrypoint" class="title-text">Entrypoint<a class="anchor title-text" href="#entrypoint"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>The driver program is in <code class="language-plaintext highlighter-rouge">secure_move.c</code>. There, we do some basic input validation, open a file, shred it, and print the output that your boss wants. I wonder where it could be going wrong…</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="debugging-guide" class="title-text">Debugging Guide<a class="anchor title-text" href="#debugging-guide"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Read <a href="./debugging.html" class="fancy-link wiki-link">this</a> to get started with debugging!</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="manual-testing" class="title-text">Manual Testing<a class="anchor title-text" href="#manual-testing"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In the end, your boss was nice enough to give you some test cases. In <code class="language-plaintext highlighter-rouge">files/</code>, there are a few files that your boss will use to test the program with. One is <code class="language-plaintext highlighter-rouge">files/blank.txt</code>, which you can use to test blank input. Another is <code class="language-plaintext highlighter-rouge">files/final.txt</code>, which is full of secret business-y type stuff. In order to run a test case, try the following commands:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>make reset <span class="c"># Make sure to do this before test cases</span>
+<span class="gp">$</span><span class="w"> </span>make
+<span class="gp">$</span><span class="w"> </span>./secure_move files/final.txt files/final_out.txt
+<span class="gp">$</span><span class="w"> </span>diff files/final_out.txt files/final_sol.txt
+<span class="gp">$</span><span class="w"> </span><span class="c"># If diff has nothing to complain about you are good!</span>
+<span class="gp">$</span><span class="w"> </span><span class="c"># You may want to make sure files/final.txt is overwritten though...</span>
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="cs-241-makefile" class="title-text">CS 241 Makefile<a class="anchor title-text" href="#cs-241-makefile"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>All the assignments in this class will use a similar makefile.</p>
+<p><strong>Note: This is not a class about makefile programming, so you will not need to know the advanced parts of makefiles (pattern matching, expansion phases, etc). Still, it is important that you know a little bit about how they work for a future assignment.</strong></p>
+<p>Here is what a typical makefile will look like:</p>
+<div class="language-make highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># directory to store object files
+</span><span class="nv">OBJS_DIR</span> <span class="o">=</span> .objs
+
+<span class="c"># define the EXES
+</span><span class="nv">EXE_SHELL</span><span class="o">=</span>shell
+<span class="nv">EXES_STUDENT</span><span class="o">=</span><span class="nv">$(EXE_SHELL)</span>
+
+<span class="nv">OBJS_SHELL</span><span class="o">=</span><span class="nv">$(EXE_SHELL)</span>.o format.o
+
+<span class="c"># set up compiler
+</span><span class="nv">CC</span> <span class="o">=</span> clang
+<span class="nv">INCLUDES</span><span class="o">=</span><span class="nt">-I</span>./includes/
+<span class="nv">WARNINGS</span> <span class="o">=</span> <span class="nt">-Wall</span> <span class="nt">-Wextra</span> <span class="nt">-Werror</span> <span class="nt">-Wno-error</span><span class="o">=</span>unused-parameter
+<span class="nv">CFLAGS_DEBUG</span>   <span class="o">=</span> <span class="nt">-O0</span> <span class="nv">$(INCLUDES)</span> <span class="nv">$(WARNINGS)</span> <span class="nt">-g</span> <span class="nt">-std</span><span class="o">=</span>c99 <span class="nt">-c</span> <span class="nt">-MMD</span> <span class="nt">-MP</span> <span class="nt">-D_GNU_SOURCE</span> <span class="nt">-DDEBUG</span>
+<span class="nv">CFLAGS_RELEASE</span> <span class="o">=</span> <span class="nt">-O2</span> <span class="nv">$(INCLUDES)</span> <span class="nv">$(WARNINGS)</span> <span class="nt">-g</span> <span class="nt">-std</span><span class="o">=</span>c99 <span class="nt">-c</span> <span class="nt">-MMD</span> <span class="nt">-MP</span> <span class="nt">-D_GNU_SOURCE</span>
+
+<span class="c"># set up linker
+</span><span class="nv">LD</span> <span class="o">=</span> clang
+<span class="nv">LDFLAGS</span> <span class="o">=</span> <span class="nt">-Llibs</span>/ <span class="nt">-lprovided</span>
+
+<span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">all</span>
+<span class="nl">all</span><span class="o">:</span> <span class="nf">release</span>
+
+<span class="c"># build types
+# run clean before building debug so that all of the release executables
+# disappear
+</span><span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">release</span>
+<span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">debug</span>
+
+<span class="nl">release</span><span class="o">:</span> <span class="nf">$(EXES_STUDENT)</span>
+<span class="nl">debug</span><span class="o">:</span> <span class="nf">clean $(EXES_STUDENT:%=%-debug)</span>
+
+<span class="c"># include dependencies
+</span><span class="k">-include</span><span class="sx"> $(OBJS_DIR)/*.d</span>
+
+<span class="nl">$(OBJS_DIR)</span><span class="o">:</span>
+<span class="err">@mkdir</span> <span class="err">-p</span> <span class="err">$(OBJS_DIR)</span>
+
+<span class="c"># patterns to create objects
+# keep the debug and release postfix for object files so that we can always
+# separate them correctly
+</span><span class="nl">$(OBJS_DIR)/%-debug.o</span><span class="o">:</span> <span class="nf">%.c | $(OBJS_DIR)</span>
+<span class="err">$(CC)</span> <span class="err">$(CFLAGS_DEBUG)</span> <span class="err">$&lt;</span> <span class="err">-o</span> <span class="err">$@</span>
+
+<span class="nl">$(OBJS_DIR)/%-release.o</span><span class="o">:</span> <span class="nf">%.c | $(OBJS_DIR)</span>
+<span class="err">$(CC)</span> <span class="err">$(CFLAGS_RELEASE)</span> <span class="err">$&lt;</span> <span class="err">-o</span> <span class="err">$@</span>
+
+<span class="c"># exes
+</span><span class="nl">$(EXE_SHELL)-debug</span><span class="o">:</span> <span class="nf">$(OBJS_SHELL:%.o=$(OBJS_DIR)/%-debug.o)</span>
+<span class="err">$(LD)</span> <span class="err">$^</span> <span class="err">$(LDFLAGS)</span> <span class="err">-o</span> <span class="err">$@</span>
+
+<span class="nl">$(EXE_SHELL)</span><span class="o">:</span> <span class="nf">$(OBJS_SHELL:%.o=$(OBJS_DIR)/%-release.o)</span>
+<span class="err">$(LD)</span> <span class="err">$^</span> <span class="err">$(LDFLAGS)</span> <span class="err">-o</span> <span class="err">$@</span>
+
+<span class="nl">.PHONY</span><span class="o">:</span> <span class="nf">clean</span>
+<span class="nl">clean</span><span class="o">:</span>
+<span class="nl">rm -rf .objs $(EXES_STUDENT) $(EXES_STUDENT</span><span class="o">:</span><span class="nf">%=%-debug)</span>
+
+</code></pre></div></div>
+<p>This looks scary, but if you Google some makefile basics and carefully read the comments it should start to make sense. These are the things you will need to know, at the minimum:</p>
+<ul>
+  <li>Compile the assignment:</li>
+</ul>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">make
+</span></code></pre></div></div>
+<ul>
+  <li>Clean up the assignment directory:</li>
+</ul>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">make clean
+</span></code></pre></div></div>
+<ul>
+  <li>Compile a debug-able version of your code that you can use gdb on:</li>
+</ul>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">make debug
+</span></code></pre></div></div>
+<ul>
+  <li>Compile a release version of your assignment that you test with:</li>
+</ul>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">make release
+</span></code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-outline" class="title-text">The Outline<a class="anchor title-text" href="#the-outline"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>Log into your VM</li>
+  <li>Clone or Update your git repository on your VM</li>
+  <li>Fix the code using test cases you develop
+    <ul>
+      <li>Look through the code in the files!</li>
+      <li>Use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code>’s!</li>
+      <li>Use valgrind!</li>
+      <li>Use GDB!</li>
+      <li>Run on the given files and see if the output is what you expect.</li>
+      <li>Problem 1: See why the file is not shredded</li>
+      <li>Problem 2: See why the program crashes on non-existent-file</li>
+      <li>Problem 3: Are there any memory errors or leaks (check valgrind?)</li>
+      <li>Problem 4: What does the address space look like?</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">git commit -a -m "My Submission"</code> (commit your work to git).</li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="lab-attendance" class="title-text">Lab Attendance<a class="anchor title-text" href="#lab-attendance"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Part of your grade in this class relies on you attending labs. Towards the end of every lab, we will ask you to swipe out (swipe your i-card). You may only leave early if you show that you have finished the lab to your lab attendant or if the lab attendant calls time. If you are more than ten minutes late to class, then your lab attendant reserves the right to not swipe you out for the day. You may never swipe yourself out without your lab attendant’s consent. Any violation will result in a zero in lab attendance for the semester.</p>
+<p>Due to seating limitations, you are required to go to the lab section you signed up for. If you wish to go to any other lab section, you may get permission from the TA of another section to go to their section, provided that either:</p>
+<ul>
+  <li>You will be working on your laptop in the room</li>
+  <li>There is seating available where registered students get priority.</li>
+</ul>
+<p>You must email the TA of that lab section beforehand.</p>
+<p>You can still get credit for attending a different section due to special or occasional circumstances by making arrangements with the graduate assistant (GA) at <a href="mailto:cs241admin@illinois.edu" class="fancy-link wiki-link">cs241admin@illinois.edu</a>. However, you must change your registered lab if you start regularly going to a different lab. Please contact Holly Bagwell in the academic office (SC 1210) to change your section without having to drop your enrollment.</p>
+<p>We will never grant exemptions for lab attendance. If you have an interview, then you are just going to have to use your lab attendance drop. You also can <em>not</em> make up lab attendance. Be warned that forgetting to swipe out is not a valid excuse—your lab attendant is not allowed to vouch for your attendance.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/know_your_tools.md";
+  </script>
+</body>
+
+</html>
