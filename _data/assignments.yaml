@@ -296,12 +296,12 @@ mps:
       url: "finding_filesystems"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-11-11 23:59
+          due_date: 2025-04-14 23:59
           graded_files:
           - minixfs.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Nonstop Networking"
       releaseDate: "Week 12"
