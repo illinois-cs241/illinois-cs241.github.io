@@ -86,7 +86,7 @@ Use the functions provided in `format.h` to print these reports. You should use 
 The following command should copy 32 blocks of size 4 kB  (a total of 128 kB) from `input.dat` to `output.dat`, skipping 2 blocks from the start of `input.dat` and 10 blocks from the start of `output.dat`
 
 ```
-$ ./dd -i input.dat -o output.dat -b 4096 -c 32 -p 2 -k 10
+$ ./dd -c 32 -p 2 -k 10 -i input.dat -o output.dat -b 4096
 32+0 records in
 32+0 records out
 131072 bytes copied, 0.000 s, 919441.220 kB/s
@@ -104,7 +104,7 @@ $ echo "Hello World" | ./dd -o output.dat
 This command should write about 2 GB of random data (from `/dev/urandom`) into a file called `random.bin`, in chunks of 1000 bytes:
 
 ```
-$ ./dd -i /dev/urandom -o random.bin -b 1000 -c 200000
+$ ./dd -c 200000 -i /dev/urandom -o random.bin -b 1000
 200000+0 records in
 200000+0 records out
 200000000 bytes copied, 1.459 s, 137094.439 kB/s
@@ -119,7 +119,7 @@ Though it is helpful to write tests that call any functions you write in `dd.c`,
 
 ```
 # create a random 32 MB file using the real dd
-dd if=/dev/urandom of=test_file.img bs=4M count=8
+dd bs=4M count=8 if=/dev/urandom of=test_file.img
 # copy to my_test_file using my own implementation of dd
 ./dd -i test_file.img -o my_test_file.img
 # print the differences between the two files, if any
