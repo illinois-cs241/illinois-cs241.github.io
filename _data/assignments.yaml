@@ -154,6 +154,7 @@ labs:
       resources: true
       worksheet: false
       visible: true
+      slides: https://docs.google.com/presentation/d/1S2DPaHoINCwUnk-nPVYcC5qKJ2AnN8ELhpl8OyIciSU/edit?usp=sharing
   -
       name: "Mad Mad Access Patterns"
       releaseDate: "Week 12"
