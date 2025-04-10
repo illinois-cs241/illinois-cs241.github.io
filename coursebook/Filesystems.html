@@ -1,0 +1,2449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Filesystems</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Filesystems" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Filesystems
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#filesystems" class="fancy-link wiki-link">Filesystems</a>
+    <ul>
+      <li>
+<a href="#what-is-a-filesystem" class="fancy-link wiki-link">What is a filesystem?</a>
+        <ul>
+          <li><a href="#the-file-api" class="fancy-link wiki-link">The File API</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#storing-data-on-disk" class="fancy-link wiki-link">Storing data on disk</a>
+        <ul>
+          <li><a href="#file-contents" class="fancy-link wiki-link">File Contents</a></li>
+          <li><a href="#directory-implementation" class="fancy-link wiki-link">Directory Implementation</a></li>
+          <li><a href="#unix-directory-conventions" class="fancy-link wiki-link">UNIX Directory Conventions</a></li>
+          <li><a href="#directory-api" class="fancy-link wiki-link">Directory API</a></li>
+          <li><a href="#linking" class="fancy-link wiki-link">Linking</a></li>
+          <li><a href="#pathing" class="fancy-link wiki-link">Pathing</a></li>
+          <li><a href="#metadata" class="fancy-link wiki-link">Metadata</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#permissions-and-bits" class="fancy-link wiki-link">Permissions and bits</a>
+        <ul>
+          <li><a href="#user-id-group-id" class="fancy-link wiki-link">User ID / Group ID</a></li>
+          <li><a href="#reading-changing-file-permissions" class="fancy-link wiki-link">Reading / Changing file
+permissions</a></li>
+          <li><a href="#understanding-the-umask" class="fancy-link wiki-link">Understanding the ‘umask’</a></li>
+          <li><a href="#the-setuid-bit" class="fancy-link wiki-link">The ‘setuid’ bit</a></li>
+          <li><a href="#the-sticky-bit" class="fancy-link wiki-link">The ‘sticky’ bit</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#virtual-filesystems-and-other-filesystems" class="fancy-link wiki-link">Virtual filesystems and other
+filesystems</a>
+        <ul>
+          <li><a href="#managing-files-and-filesystems" class="fancy-link wiki-link">Managing files and
+filesystems</a></li>
+          <li><a href="#obtaining-random-data" class="fancy-link wiki-link">Obtaining Random Data</a></li>
+          <li><a href="#copying-files" class="fancy-link wiki-link">Copying Files</a></li>
+          <li><a href="#updating-modification-time" class="fancy-link wiki-link">Updating Modification Time</a></li>
+          <li><a href="#managing-filesystems" class="fancy-link wiki-link">Managing Filesystems</a></li>
+        </ul>
+      </li>
+      <li><a href="#memory-mapped-io" class="fancy-link wiki-link">Memory Mapped IO</a></li>
+      <li>
+<a href="#reliable-single-disk-filesystems" class="fancy-link wiki-link">Reliable Single Disk
+Filesystems</a>
+        <ul>
+          <li><a href="#raid---redundant-array-of-inexpensive-disks" class="fancy-link wiki-link">RAID - Redundant Array of Inexpensive
+Disks</a></li>
+          <li><a href="#higher-levels-of-raid" class="fancy-link wiki-link">Higher Levels of RAID</a></li>
+          <li><a href="#solutions" class="fancy-link wiki-link">Solutions</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#simple-filesystem-model" class="fancy-link wiki-link">Simple Filesystem Model</a>
+        <ul>
+          <li><a href="#file-size-vs-space-on-disk" class="fancy-link wiki-link">File Size vs Space on Disk</a></li>
+          <li><a href="#performing-reads" class="fancy-link wiki-link">Performing Reads</a></li>
+          <li><a href="#performing-writes" class="fancy-link wiki-link">Performing Writes</a></li>
+          <li><a href="#adding-deletes" class="fancy-link wiki-link">Adding Deletes</a></li>
+        </ul>
+      </li>
+      <li><a href="#topics" class="fancy-link wiki-link">Topics</a></li>
+      <li><a href="#questions" class="fancy-link wiki-link">Questions</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong><code class="language-plaintext highlighter-rouge">/home</code> is where the heart is</strong> - <em>**</em></p>
+
+<p>Filesystems are important because they allow you to persist data after a
+computer is shut down, crashes, or has memory corruption. Back in the
+day, filesystems were expensive to use. Writing to the filesystem (FS)
+involved writing to magnetic tape and reading from that tape
+(“International,” <a href="#ref-iec" class="fancy-link wiki-link">#ref-iec</a>). It was slow,
+heavy, and prone to errors.</p>
+
+<p>Nowadays most of our files are stored on disk – though not all of them!
+The disk is still slower than memory by an order of magnitude at the
+least.</p>
+
+<p>Some terminology before we begin this chapter. A <strong>filesystem</strong>, as
+we’ll define more concretely later, is anything that satisfies the API
+of a filesystem. A filesystem is backed by a storage medium, such as a
+hard disk drive, solid state drive, RAM, etc. A disk is either a <strong>hard
+disk drive (HDD)</strong> which includes a spinning metallic platter and a head
+which can zap the platter to encode a 1 or a 0, or a <code class="language-plaintext highlighter-rouge">solid-state drive
+(SSD)</code> that can flip certain NAND gates on a chip or standalone drive to
+store a 1 or a 0. As of 2019, SSDs are an order of magnitude faster than
+the standard HDD. These are typical backings for a filesystem. A
+filesystem is implemented on top of this backing, meaning that we can
+either implement something like EXT, MinixFS, NTFS, FAT32, etc. on a
+commercially available hard disk. This filesystem tells the operating
+system how to organize the 1s and 0s to store file information as well
+as directory information, but more on that later. To avoid being
+pedantic, we’ll say that a filesystem like EXT or NTFS implements the
+filesystem API directly (open, close, etc). Often, operating systems
+will add a layer of abstraction and require that the operating system
+satisfy its API instead (think imaginary functions linux_open,
+linux_close etc). The two benefits are that one filesystem can be
+implemented for multiple operating system APIs and adding a new OS
+filesystem call doesn’t require all of the underlying file systems to
+change their API. For example, in the next iteration of linux if there
+was a new system call to create a backup of a file, the OS can implement
+that with the internal API rather than requiring all filesystem drivers
+to change their code.</p>
+
+<p><strong>The last piece of background is an important one.</strong> In this chapter,
+we will refer to sizes of files in the ISO-compliant KiB or Kibibyte.
+The *iB family is short for power of two storage. That means the
+following:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Prefix</th>
+      <th style="text-align: center">Byte Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">KiB</td>
+      <td style="text-align: center">1024B</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">MiB</td>
+      <td style="text-align: center">1024 * 1024 B</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GiB</td>
+      <td style="text-align: center">1024 3̂ B</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Kibibyte Values</p>
+
+<p>The standard notational prefixes mean the following:</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Prefix</th>
+      <th style="text-align: center">Byte Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">KB</td>
+      <td style="text-align: center">1000B</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">MB</td>
+      <td style="text-align: center">1000 * 1000 B</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">GB</td>
+      <td style="text-align: center">1000 3̂ B</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Kilobyte Values</p>
+
+<p>We will do this in the book and in the Networking chapter for the sake
+of consistency and to not confuse anyone. <strong>Confusingly in the real
+world, there is a different convention.</strong> That convention is that when a
+file is displayed in the operating system, <strong>KB is the same as KiB</strong>.
+When we are talking about computer networks, CDs, other storage <strong>KB is
+not the same as KiB</strong> and is the ISO / Metric Definition above. This is
+a historical quirk was brought by a clash between network developers and
+memory/hard storage developers. Hard storage and memory developers found
+that if a bit could take one of two states, it would be natural to call
+a Kilo- prefix 1024 because it was about 1000. Network developers had to
+deal with bits, real-time signal processing, and various other factors,
+so they went with the already accepted convention that Kilo- means 1000
+of something (“International,” <a href="#ref-iec" class="fancy-link wiki-link">#ref-iec</a>). What
+you need to know is if you see KB in the wild, that it may be 1024 based
+on the context. If any time in this class you see KB or any of the
+family refer to a filesystems question, you can safely infer that they
+are referring to 1024 as the base unit. Though when you are pushing
+production code, make sure to ask about the difference!</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="what-is-a-filesystem" class="title-text">What is a filesystem?<a class="anchor title-text" href="#what-is-a-filesystem"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You may have encountered the old UNIX adage, “everything is a file”. In
+most UNIX systems, file operations provide an interface to abstract many
+different operations. Network sockets, hardware devices, and data on the
+disk are all represented by file-like objects. A file-like object must
+follow the following conventions:</p>
+<ol>
+  <li>
+    <p>It must present itself to the filesystem.</p>
+  </li>
+  <li>
+    <p>It must support common filesystem operations, such as <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/open.3p.html" class="fancy-link">open</a></code>,
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/read.3p.html" class="fancy-link">read</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code>. At a minimum, it needs to be opened and closed.</p>
+  </li>
+</ol>
+<p>A filesystem is an implementation of the file interface. In this
+chapter, we will be exploring the various callbacks a filesystem
+provides, some typical functionality and associated implementation
+details. In this class, we will mostly talk about filesystems that serve
+to allow users to access data on disk, which are integral to modern
+computers.</p>
+<p>Here are some common features of a filesystem:</p>
+<ol>
+  <li>
+    <p>They deal with both storing local files and handle special devices
+that allow for safe communication between the kernel and user space.</p>
+  </li>
+  <li>
+    <p>They deal with failures, scalability, indexing, encryption,
+compression, and performance.</p>
+  </li>
+  <li>
+    <p>They handle the abstraction between a file that contains data and
+how exactly that data is stored on disk, partitioned, and protected.</p>
+  </li>
+</ol>
+<p>Before we dive into the details of a filesystem, let’s take a look at
+some examples. To clarify, a mount point is simply a mapping of a
+directory to a filesystem represented in the kernel.</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">ext4</code> Usually mounted at / on Linux systems, this is the filesystem
+that usually provides disk access as you’re used to.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">procfs</code> Usually mounted at /proc, provides information and control
+over processes.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/sysfs.2.html" class="fancy-link">sysfs</a></code> Usually mounted at /sys, a more modern version of /proc that
+also allows control over various other hardware such as network
+sockets.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">tmpfs</code> Mounted at /tmp in some systems, an in-memory filesystem to
+hold temporary files.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/sshfs.1.html" class="fancy-link">sshfs</a></code> This syncs files across the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ssh.1.html" class="fancy-link">ssh</a></code> protocol.</p>
+  </li>
+</ol>
+<p>It tells you what filesystem directory-based system calls resolve to.
+For example, <code class="language-plaintext highlighter-rouge">/</code> is resolved by the <code class="language-plaintext highlighter-rouge">ext4</code> filesystem in our case, but
+<code class="language-plaintext highlighter-rouge">/proc/2</code> is resolved by the <code class="language-plaintext highlighter-rouge">procfs</code> system even though it contains <code class="language-plaintext highlighter-rouge">/</code>
+as a subsystem.</p>
+<p>As you may have noticed, some filesystems provide an interface to things
+that aren’t “files”. Filesystems such as <code class="language-plaintext highlighter-rouge">procfs</code> are usually referred
+to as <em>virtual</em> filesystems, since they don’t provide data access in the
+same sense as a traditional filesystem would. Technically, all
+filesystems in the kernel are represented by virtual filesystems, but we
+will differentiate <em>virtual</em> filesystems as filesystems that actually
+don’t store anything on a hard disk.</p>
+<h3 id="the-file-api" class="title-text">The File API</h3>
+<p>A filesystem must provide callback functions to a variety of actions.
+Some of them are listed below:</p>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/open.3p.html" class="fancy-link">open</a></code> Opens a file for IO</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/read.3p.html" class="fancy-link">read</a></code> Read contents of a file</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> Write to a file</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/close.3p.html" class="fancy-link">close</a></code> Close a file and free associated resources</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chmod.3p.html" class="fancy-link">chmod</a></code> Modify permissions of a file</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/ioctl.3p.html" class="fancy-link">ioctl</a></code> Interact with device parameters of character devices such as
+terminals</p>
+  </li>
+</ul>
+<p>Not every filesystem supports all the possible callback functions. For
+example, many filesystems omit <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/ioctl.3p.html" class="fancy-link">ioctl</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/link.3p.html" class="fancy-link">link</a></code>. Many filesystems
+aren’t <code class="language-plaintext highlighter-rouge">seekable</code> meaning that they exclusively provide sequential
+access. A program cannot move to an arbitrary point in the file. This is
+analogous to <code class="language-plaintext highlighter-rouge">seekable stream</code>s. In this chapter, we will not be
+examining each filesystem callback. If you would like to learn more
+about this interface, try looking at the documentation for Filesystems
+at the User Space Level (FUSE).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="storing-data-on-disk" class="title-text">Storing data on disk<a class="anchor title-text" href="#storing-data-on-disk"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>To understand how a filesystem interacts with data on disk, there are
+three key terms we will be using.</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">disk block</code> A disk block is a portion of the disk that is reserved
+for storing the contents of a file or a directory.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">inode</code> An inode <em>is</em> a file or directory. This means that an inode
+contains metadata about the file as well as pointers to disk blocks
+so that the file can actually be written to or read from.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">superblock</code> A superblock contains metadata about the inodes and
+disk blocks. An example superblock can store how full each disk
+block is, which inodes are being used etc. Modern filesystems may
+actually contain multiple superblocks and a sort-of super-super
+block that keeps track of which sectors are governed by which
+superblocks. This tends to help with fragmentation.</p>
+  </li>
+</ol>
+<p>It may seem overwhelming, but by the end of this chapter, we will be
+able to make sense of every part of the filesystem.</p>
+<p>To reason about data on some form of storage – spinning disks, solid
+state drives, magnetic tape – it is common practice to first consider
+the medium of storage as a collection of <em>blocks</em>. A block can be
+thought of as a contiguous region on disk. While its size is sometimes
+determined by some property of the underlying hardware, it is more
+frequently determined based on the size of a page of memory for a given
+system, so that data from the disk can be cached in memory for faster
+access – a important feature of many filesystems.</p>
+<p>A filesystem has a special block denoted as a <em>superblock</em> that stores
+metadata about the filesystem such as a journal (which logs changes to
+the filesystem), a table of inodes, the location of the first inode on
+disk, etc. The important thing about a superblock is that it is in a
+known location on disk. If not, your computer may fail to boot!
+Consider a simple ROM programmed into your motherboard. If your
+processor can’t tell the motherboard to start reading and decipher a
+disk block to start the boot sequence, you are out of luck.</p>
+<p>The inode is the most important structure for our filesystem as it
+represents a file. Before we explore it in-depth, let’s list out the key
+information we need to have a usable file.</p>
+<ul>
+  <li>
+    <p>Name</p>
+  </li>
+  <li>
+    <p>File size</p>
+  </li>
+  <li>
+    <p>Time created, last modified, last accessed</p>
+  </li>
+  <li>
+    <p>Permissions</p>
+  </li>
+  <li>
+    <p>Filepath</p>
+  </li>
+  <li>
+    <p>Checksum</p>
+  </li>
+  <li>
+    <p>File data</p>
+  </li>
+</ul>
+<h3 id="file-contents" class="title-text">File Contents</h3>
+<p>From
+<a href="http://en.wikipedia.org/wiki/Inode" class="fancy-link wiki-link">http://en.wikipedia.org/wiki/Inode</a>:</p>
+<blockquote>
+  <p><em>In a Unix-style file system, an index node, informally referred to as
+an inode, is a data structure used to represent a filesystem object,
+which can be various things including a file or a directory. Each
+inode stores the attributes and disk block location(s) of the
+filesystem object’s data. Filesystem object attributes may include
+manipulation metadata (e.g. change, access, modify time), as well as
+owner and permission data (e.g. group-id, user-id, permissions).</em></p>
+</blockquote>
+<p>The superblock may store an array of inodes, each of which stores
+direct, and potentially several kinds of indirect pointers to disk
+blocks. Since inodes are stored in the superblock, most filesystems have
+a limit on how many inodes can exist. Since each inode corresponds to a
+file, this is also a limit on how many files that filesystem can have.
+Trying to overcome this problem by storing inodes in some other location
+greatly increases the complexity of the filesystem. Trying to reallocate
+space for the inode table is also infeasible since every byte following
+the end of the inode array would have to be shifted, a highly expensive
+operation. This isn’t to say there aren’t any solutions at all, although
+typically there is no need to increase the number of inodes since the
+number of inodes is usually sufficiently high.</p>
+<p>Big idea: Forget names of files. The ‘inode’ is the file.</p>
+<p>It is common to think of the file name as the ‘actual’ file. It’s not!
+Instead, consider the inode as the file. The inode holds the
+meta-information (last accessed, ownership, size) and points to the disk
+blocks used to hold the file contents. However, the inode does not
+usually store a filename. Filenames are usually only stored in
+directories (see below).</p>
+<p>For example, to read the first few bytes of the file, follow the first
+direct block pointer to the first direct block and read the first few
+bytes. Writing follows the same process. If a program wants to read the
+entire file, keep reading direct blocks until you’ve read several bytes
+equal to the size of the file. If the total size of the file is less
+than that of the number of direct blocks multiplied by the size of a
+block, then unused block pointers will be undefined. Similarly, if the
+size of a file is not a multiple of the size of a block, data past the
+end of the last byte in the last block will be garbage.</p>
+<p>What if a file is bigger than the maximum space addressable by its
+direct blocks? To that, we present a motto programmers take too
+seriously.</p>
+<blockquote>
+  <p>“All problems in computer science can be solved by another level of
+indirection.” - David Wheeler</p>
+</blockquote>
+<p>Except for the problem of too many layers of indirection.</p>
+<p>To solve this problem, we introduce <code class="language-plaintext highlighter-rouge">indirect blocks</code>. A single indirect
+block is a block that stores pointers to more data blocks. Similarly, a
+double indirect block stores pointers to single indirect blocks, and the
+concept can be generalized to arbitrary levels of indirection. This is a
+important concept, as inodes are stored in the superblock, or some other
+structure in a well known location with a constant amount of space,
+indirection allows exponential increases in the amount of space an inode
+can keep track of.</p>
+<p>As a worked example, suppose we divide the disk into 4KiB blocks and we
+want to address up to \(2^{32}\) blocks. The maximum disk size is
+\(4KiB *2^{32} = 16TiB\) remember \(2^{10} = 1024\). A disk block
+can store \(\frac{4KiB}{4B}\) possible pointers or 1024 pointers. Four
+byte wide pointers are needed because we want to address 32 bits worth
+of blocks. Each pointer refers to a 4KiB disk block, so you can refer up
+to \(1024*4KiB = 4MiB\) of data. For the same disk configuration, a
+double indirect block stores 1024 pointers to 1024 indirection tables.
+Thus a double-indirect block can refer up to \(1024 * 4MiB = 4GiB\) of
+data. Similarly, a triple indirect block can refer up to 4TiB of data.
+This is three times as slow for reading between blocks, due to increased
+levels of indirection. The actual intra-block reading times don’t
+change.</p>
+<h3 id="directory-implementation" class="title-text">Directory Implementation</h3>
+<p>A directory is a mapping of names to inode numbers. It is typically a
+normal file, but with some special bits set in its inode and a specific
+structure for its contents. POSIX provides a small set of functions to
+read the filename and inode number for each entry, which we will talk
+about in depth later in this chapter.</p>
+<p>Let’s think about what directories looks like in the actual file system.
+Theoretically, they are files. The disk blocks will contain <em>directory
+entries</em> or <em>dirents</em>. What that means is that our disk block can look
+like this</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| inode_num | name   | | ----------- | ------ |
+| 2043567   | hi.txt | | ... |
+</code></pre></div></div>
+<p>Each directory entry could either be a fixed size, or a variable length
+C-string. It depends on how the particular filesystem implements it at
+the lower level. To see a mapping of filenames to inode numbers on a
+POSIX system, from a shell, use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ls.1p.html" class="fancy-link">ls</a></code> with the <code class="language-plaintext highlighter-rouge">-i</code> option</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># ls -i</span>
+12983989 dirlist.c      12984068 sandwich.c
+</code></pre></div></div>
+<p>You can see later that this is a powerful abstraction. One can have a
+file be multiple different names in a directory, or exist in multiple
+directories.</p>
+<h3 id="unix-directory-conventions" class="title-text">UNIX Directory Conventions</h3>
+<p>In standard UNIX filesystems, the following entries are specially added
+on requests to read a directory.</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">.</code> represents the current directory</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">..</code> represents the parent directory</p>
+  </li>
+</ol>
+<p>Counterintuitively, <code class="language-plaintext highlighter-rouge">...</code> could be the name of a file or directory on
+disk (You can try this with <code class="language-plaintext highlighter-rouge">mkdir ...</code>), not the grandparent directory.
+Only the current directory and the parent directory have special aliases
+involving <code class="language-plaintext highlighter-rouge">.</code> (namely , <code class="language-plaintext highlighter-rouge">.</code> and <code class="language-plaintext highlighter-rouge">..</code>). Confusingly, the shell <code class="language-plaintext highlighter-rouge">zsh</code> does
+interpret <code class="language-plaintext highlighter-rouge">...</code> as a handy shortcut to the grandparent directory (should
+it exist) while expanding shell commands.</p>
+<p>Additional facts about name-related conventions:</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">~</code> is usually expanded to the home directory by the shell</p>
+  </li>
+  <li>
+    <p>Files that start with ’.’ (a period) on disk are conventionally
+considered ’hidden’ and will be omitted by programs like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ls.1p.html" class="fancy-link">ls</a></code>
+without additional flags (<code class="language-plaintext highlighter-rouge">-a</code>). This is not a feature of the
+filesystem, and programs may choose to ignore this.</p>
+  </li>
+  <li>
+    <p>Some files may also start with a NUL byte. These are usually
+<em>abstract UNIX sockets</em> and are used to prevent cluttering up the
+filesystem since they will be effectively hidden by any unexpecting
+program. They will, however, be listed by tools that detail
+information about sockets, so this is not a feature providing
+security.</p>
+  </li>
+  <li>
+    <p>If you want to annoy your neighbor, create a file with the terminal
+bell character. Every single time the file is listed (by calling
+‘ls’, for example), an audible bell will be heard.</p>
+  </li>
+</ol>
+<h3 id="directory-api" class="title-text">Directory API</h3>
+<p>While interacting with a file in C is typically done by using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/open.3p.html" class="fancy-link">open</a></code> to
+open the file and then <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/read.3p.html" class="fancy-link">read</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> to interact with the file
+before calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/close.3p.html" class="fancy-link">close</a></code> to release resources, directories have special
+calls such as, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/opendir.3p.html" class="fancy-link">opendir</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/closedir.3p.html" class="fancy-link">closedir</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/readdir.3p.html" class="fancy-link">readdir</a></code>. There is no function
+<code class="language-plaintext highlighter-rouge">writedir</code> since typically that implies creating a file or link. The
+program would use something like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/open.3p.html" class="fancy-link">open</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mkdir.3p.html" class="fancy-link">mkdir</a></code>.</p>
+<p>To explore these functions, let’s write a program to search the contents
+of a directory for a particular file. The code below has a bug, try to
+spot it!</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">exists</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">directory</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">)</span>  <span class="p">{</span>
+  <span class="k">struct</span> <span class="n">dirent</span> <span class="o">*</span><span class="n">dp</span><span class="p">;</span>
+  <span class="kt">DIR</span> <span class="o">*</span><span class="n">dirp</span> <span class="o">=</span> <span class="n">opendir</span><span class="p">(</span><span class="n">directory</span><span class="p">);</span>
+  <span class="k">while</span> <span class="p">((</span><span class="n">dp</span> <span class="o">=</span> <span class="n">readdir</span><span class="p">(</span><span class="n">dirp</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">puts</span><span class="p">(</span><span class="n">dp</span><span class="o">-&gt;</span><span class="n">d_name</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="n">dp</span><span class="o">-&gt;</span><span class="n">d_name</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="cm">/* Found */</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">closedir</span><span class="p">(</span><span class="n">dirp</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/* Not Found */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Did you find the bug? It leaks resources! If a matching filename is
+found then ‘closedir’ is never called as part of the early return. Any
+file descriptors opened and any memory allocated by opendir are never
+released. This means eventually the process will run out of resources
+and an <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/open.3p.html" class="fancy-link">open</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/opendir.3p.html" class="fancy-link">opendir</a></code> call will fail.</p>
+<p>The fix is to ensure we free up resources in every possible code path.</p>
+<p>In the above code, this means calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/closedir.3p.html" class="fancy-link">closedir</a></code> before <code class="language-plaintext highlighter-rouge">return 1</code>.
+Forgetting to release resources is a common C programming bug because
+there is no support in the C language to ensure resources are always
+released with all code paths.</p>
+<p>Given an open directory, after a call to <code class="language-plaintext highlighter-rouge">fork()</code>, either (XOR), the
+parent or the child can use <code class="language-plaintext highlighter-rouge">readdir()</code>, <code class="language-plaintext highlighter-rouge">rewinddir()</code> or <code class="language-plaintext highlighter-rouge">seekdir()</code>.
+If both the parent and the child use the above, the behavior is
+undefined.</p>
+<p>There are two main gotchas and one consideration. The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/readdir.3p.html" class="fancy-link">readdir</a></code> function
+returns “.” (current directory) and “..” (parent directory). The other
+is programs need to explicity exclude subdirectories from a search,
+otherwise the search may take a long time.</p>
+<p>For many applications, it’s reasonable to check the current directory
+first before recursively searching sub-directories. This can be achieved
+by storing the results in a linked list, or resetting the directory
+struct to restart from the beginning.</p>
+<p>The following code attempts to list all files in a directory
+recursively. As an exercise, try to identify the bugs it introduces.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">dirlist</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">struct</span> <span class="n">dirent</span> <span class="o">*</span><span class="n">dp</span><span class="p">;</span>
+  <span class="kt">DIR</span> <span class="o">*</span><span class="n">dirp</span> <span class="o">=</span> <span class="n">opendir</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+  <span class="k">while</span> <span class="p">((</span><span class="n">dp</span> <span class="o">=</span> <span class="n">readdir</span><span class="p">(</span><span class="n">dirp</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">newpath</span><span class="p">[</span><span class="n">strlen</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">+</span> <span class="n">strlen</span><span class="p">(</span><span class="n">dp</span><span class="o">-&gt;</span><span class="n">d_name</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+    <span class="n">sprintf</span><span class="p">(</span><span class="n">newpath</span><span class="p">,</span><span class="s">"%s/%s"</span><span class="p">,</span> <span class="n">newpath</span><span class="p">,</span> <span class="n">dp</span><span class="o">-&gt;</span><span class="n">d_name</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">dp</span><span class="o">-&gt;</span><span class="n">d_name</span><span class="p">);</span>
+    <span class="n">dirlist</span><span class="p">(</span><span class="n">newpath</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">dirlist</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Did you find all 5
+bugs?</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check opendir result (perhaps user gave us a path that can not be opened as a directory</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">dirp</span><span class="p">)</span> <span class="p">{</span> <span class="n">perror</span><span class="p">(</span><span class="s">"Could not open directory"</span><span class="p">);</span> <span class="k">return</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="c1">// +2 as we need space for the / and the terminating 0</span>
+<span class="kt">char</span> <span class="n">newpath</span><span class="p">[</span><span class="n">strlen</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="o">+</span> <span class="n">strlen</span><span class="p">(</span><span class="n">dp</span><span class="o">-&gt;</span><span class="n">d_name</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">];</span>
+
+<span class="c1">// Correct parameter</span>
+<span class="n">sprintf</span><span class="p">(</span><span class="n">newpath</span><span class="p">,</span><span class="s">"%s/%s"</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">dp</span><span class="o">-&gt;</span><span class="n">d_name</span><span class="p">);</span>
+
+<span class="c1">// Perform stat test (and verify) before recursing</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">stat</span><span class="p">(</span><span class="n">newpath</span><span class="p">,</span><span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">S_ISDIR</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">st_mode</span><span class="p">))</span> <span class="n">dirlist</span><span class="p">(</span><span class="n">newpath</span><span class="p">)</span>
+
+<span class="c1">// Resource leak: the directory file handle is not closed after the while loop</span>
+<span class="n">closedir</span><span class="p">(</span><span class="n">dirp</span><span class="p">);</span>
+</code></pre></div></div>
+<p>One final note of caution. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/readdir.3p.html" class="fancy-link">readdir</a></code> is not thread-safe! You shouldn’t
+use the re-entrant version of the function. Synchronizing the filesystem
+within a process is important, so use locks around <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/readdir.3p.html" class="fancy-link">readdir</a></code>.</p>
+<p>See the
+<a href="https://linux.die.net/man/3/readdir" class="fancy-link wiki-link">https://linux.die.net/man/3/readdir</a>
+for more details.</p>
+<h3 id="linking" class="title-text">Linking</h3>
+<p>Links are what force us to model a filesystem as a graph rather than a
+tree.</p>
+<p>While modeling the filesystem as a tree would imply that every inode has
+a unique parent directory, links allow inodes to present themselves as
+files in multiple places, potentially with different names, thus leading
+to an inode having multiple parent directories. There are two kinds of
+links:</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Hard Links</code> A hard link is simply an entry in a directory assigning
+some name to an inode number that already has a different name and
+mapping in either the same directory or a different one. If we
+already have a file on a file system we can create another link to
+the same inode using the <code class="language-plaintext highlighter-rouge">‘ln’</code> command:</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ln </span>file1.txt blip.txt
+</code></pre></div>    </div>
+
+    <p>However, blip.txt <em>is</em> the same file. If we edit blip, I’m editing
+the same file as ‘file1.txt!’. We can prove this by showing that
+both file names refer to the same inode.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ ls -i file1.txt blip.txt
+134235 file1.txt
+134235 blip.txt
+</code></pre></div>    </div>
+
+    <p>The equivalent C call is <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/link.3p.html" class="fancy-link">link</a></code></p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">// Function Prototype</span>
+<span class="kt">int</span> <span class="nf">link</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path2</span><span class="p">);</span>
+    
+<span class="n">link</span><span class="p">(</span><span class="s">"file1.txt"</span><span class="p">,</span> <span class="s">"blip.txt"</span><span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>For simplicity, the above examples made hard links inside the same
+directory. Hard links can be created anywhere inside the same
+filesystem.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Soft Links</code> The second kind of link is called a soft link, symbolic
+link, or symlink. A symbolic link is different because it is a file
+with a special bit set and stores a path to another file. Quite
+simply, without the special bit, it is nothing more than a text file
+with a file path inside. Note when people generally talk about a
+link without specifying hard or soft, they are referring to a hard
+link.</p>
+
+    <p>To create a symbolic link in the shell, use <code class="language-plaintext highlighter-rouge">ln -s</code>. To read the
+contents of the link as a file, use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/readlink.3p.html" class="fancy-link">readlink</a></code>. These are both
+demonstrated below.</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>$ ln -s file1.txt file2.txt
+$ ls -i file1.txt blip.txt
+134235 file1.txt
+134236 file2.txt
+134235 blip.txt
+$ cat file1.txt
+file1!
+$ cat file2.txt
+file1!
+$ cat blip.txt
+file1!
+$ echo edited file2 &gt;&gt; file2.txt # &gt;&gt; is bash syntax for append to file
+$ cat file1.txt
+file1!
+edited file2
+$ cat file2.txt
+I'm file1!
+edited file2
+$ cat blip.txt
+file1!
+edited file2
+$ readlink myfile.txt
+file2.txt
+</code></pre></div>    </div>
+
+    <p>Note that <code class="language-plaintext highlighter-rouge">file2.txt</code> and <code class="language-plaintext highlighter-rouge">file1.txt</code> have different inode numbers,
+unlike the hard link, <code class="language-plaintext highlighter-rouge">blip.txt</code>.</p>
+
+    <p>There is a C library call to create symlinks which is similar to
+link.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">symlink</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">target</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">symlink</span><span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>Some advantages of symbolic links are</p>
+
+    <ul>
+      <li>
+        <p>Can refer to files that don’t exist yet</p>
+      </li>
+      <li>
+        <p>Unlike hard links, can refer to directories as well as regular
+files</p>
+      </li>
+      <li>
+        <p>Can refer to files (and directories) that exist outside of the
+current file system</p>
+      </li>
+    </ul>
+
+    <p>However, symlinks have a key disadvantage, they as slower than
+regular files and directories. When the link’s contents are read,
+they must be interpreted as a new path to the target file, resulting
+in an additional call to open and read since the real file must be
+opened and read. Another disadvantage is that POSIX forbids hard
+linking directories where as soft links are allowed. The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ln.1p.html" class="fancy-link">ln</a></code>
+command will only allow root to do this and only if you provide the
+<code class="language-plaintext highlighter-rouge">-d</code> option. However, even root may not be able to perform this
+because most filesystems prevent it!</p>
+  </li>
+</ol>
+<p>The integrity of the file system assumes the directory structure is an
+acyclic tree that is reachable from the root directory. It becomes
+expensive to enforce or verify this constraint if directory linking is
+allowed. Breaking these assumptions can leave file integrity tools
+unable to repair the file system. Recursive searches potentially never
+terminate and directories can have more than one parent but “..” can
+only refer to a single parent. All in all, a bad idea. Soft links are
+merely ignored, which is why we can use them to reference directories.</p>
+<p>When you remove a file using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/rm.1p.html" class="fancy-link">rm</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/unlink.3p.html" class="fancy-link">unlink</a></code>, you are removing an inode
+reference from a directory. However, the inode may still be referenced
+from other directories. To determine if the contents of the file are
+still required, each inode keeps a reference count that is updated
+whenever a new link is created or destroyed. This count only tracks hard
+links, symlinks are allowed to refer to a non-existent file and thus, do
+not matter.</p>
+<p>An example use of hard links is to efficiently create multiple archives
+of a file system at different points in time. Once the archive area has
+a copy of a particular file, then future archives can re-use these
+archive files rather than creating a duplicate file. This is called an
+incremental backup. Apple’s “Time Machine” software does this.</p>
+<h3 id="pathing" class="title-text">Pathing</h3>
+<p>Now that we have definitions, and have talked about directories, we come
+across the concept of a path. A path is a sequence of directories that
+provide one with a “path” in the graph that is a filesystem. However,
+there are some nuances. It is possible to have a path called
+<code class="language-plaintext highlighter-rouge">a/b/../c/./</code>. Since <code class="language-plaintext highlighter-rouge">..</code> and <code class="language-plaintext highlighter-rouge">.</code> are special entries in directories,
+this is a valid path that actually refers to <code class="language-plaintext highlighter-rouge">a/c</code>. Most filesystem
+functions will allow uncompressed paths to be passed in. The C library
+provides a function <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/realpath.3p.html" class="fancy-link">realpath</a></code> to compress the path or get the absolute
+path. To simplify by hand, remember that <code class="language-plaintext highlighter-rouge">..</code> means ‘parent folder’ and
+that <code class="language-plaintext highlighter-rouge">.</code> means ‘current folder’. Below is an example that illustrates
+the simplification of the <code class="language-plaintext highlighter-rouge">a/b/../c/.</code> by using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cd.1p.html" class="fancy-link">cd</a></code> in a shell to
+navigate a filesystem.</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">cd a</code> (in a)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">cd b</code> (in a/b)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">cd ..</code> (in a, because .. represents ‘parent folder’)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">cd c</code> (in a/c)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">cd .</code> (in a/c, because . represents ‘current folder’)</p>
+  </li>
+</ol>
+<p>Thus, this path can be simplified to <code class="language-plaintext highlighter-rouge">a/c</code>.</p>
+<h3 id="metadata" class="title-text">Metadata</h3>
+<p>How can we distinguish between a regular file and a directory? For that
+matter, there are many other attributes that files also might contain.
+We distinguish a file type – different from the file extension i.e. png,
+svg, pdf – using fields inside the inode. How does the system know what
+type the file is?</p>
+<p>This information is stored within an inode. To access it, use the stat
+calls. For example, to find out when my ‘notes.txt’ file was last
+accessed.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">stat</span> <span class="n">s</span><span class="p">;</span>
+<span class="n">stat</span><span class="p">(</span><span class="s">"notes.txt"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"Last accessed %s"</span><span class="p">,</span> <span class="n">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">.</span><span class="n">st_atime</span><span class="p">));</span>
+</code></pre></div></div>
+<p>There are actually three versions of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stat.3type.html" class="fancy-link">stat</a></code>;</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">stat</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="k">struct</span> <span class="n">stat</span> <span class="o">*</span><span class="n">buf</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">fstat</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="k">struct</span> <span class="n">stat</span> <span class="o">*</span><span class="n">buf</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">lstat</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">path</span><span class="p">,</span> <span class="k">struct</span> <span class="n">stat</span> <span class="o">*</span><span class="n">buf</span><span class="p">);</span>
+</code></pre></div></div>
+<p>For example, a program can use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fstat.3p.html" class="fancy-link">fstat</a></code> to learn about file metadata if
+it already has a file descriptor associated with that file.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">FILE</span> <span class="o">*</span><span class="n">file</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"notes.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">fileno</span><span class="p">(</span><span class="n">file</span><span class="p">);</span> <span class="cm">/* Just for fun - extract the file descriptor from a C FILE struct */</span>
+<span class="k">struct</span> <span class="n">stat</span> <span class="n">s</span><span class="p">;</span>
+<span class="n">fstat</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">s</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"Last accessed %s"</span><span class="p">,</span> <span class="n">ctime</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">.</span><span class="n">st_atime</span><span class="p">));</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/lstat.3p.html" class="fancy-link">lstat</a></code> is almost the same as <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stat.3type.html" class="fancy-link">stat</a></code> but handles symbolic links
+differently. From the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stat.3type.html" class="fancy-link">stat</a></code> man page.</p>
+<blockquote>
+  <p>lstat() is identical to stat(), except that if pathname is a symbolic
+link, then it returns information about the link itself, not the file
+that it refers to.</p>
+</blockquote>
+<p>The stat functions make use of <code class="language-plaintext highlighter-rouge">struct stat</code>. From the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stat.3type.html" class="fancy-link">stat</a></code> man page:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">stat</span> <span class="p">{</span>
+  <span class="n">dev_t</span>     <span class="n">st_dev</span><span class="p">;</span>         <span class="cm">/* ID of device containing file */</span>
+  <span class="n">ino_t</span>     <span class="n">st_ino</span><span class="p">;</span>         <span class="cm">/* Inode number */</span>
+  <span class="n">mode_t</span>    <span class="n">st_mode</span><span class="p">;</span>        <span class="cm">/* File type and mode */</span>
+  <span class="n">nlink_t</span>   <span class="n">st_nlink</span><span class="p">;</span>       <span class="cm">/* Number of hard links */</span>
+  <span class="n">uid_t</span>     <span class="n">st_uid</span><span class="p">;</span>         <span class="cm">/* User ID of owner */</span>
+  <span class="n">gid_t</span>     <span class="n">st_gid</span><span class="p">;</span>         <span class="cm">/* Group ID of owner */</span>
+  <span class="n">dev_t</span>     <span class="n">st_rdev</span><span class="p">;</span>        <span class="cm">/* Device ID (if special file) */</span>
+  <span class="kt">off_t</span>     <span class="n">st_size</span><span class="p">;</span>        <span class="cm">/* Total size, in bytes */</span>
+  <span class="n">blksize_t</span> <span class="n">st_blksize</span><span class="p">;</span>     <span class="cm">/* Block size for filesystem I/O */</span>
+  <span class="n">blkcnt_t</span>  <span class="n">st_blocks</span><span class="p">;</span>      <span class="cm">/* Number of 512B blocks allocated */</span>
+  <span class="k">struct</span> <span class="n">timespec</span> <span class="n">st_atim</span><span class="p">;</span>  <span class="cm">/* Time of last access */</span>
+  <span class="k">struct</span> <span class="n">timespec</span> <span class="n">st_mtim</span><span class="p">;</span>  <span class="cm">/* Time of last modification */</span>
+  <span class="k">struct</span> <span class="n">timespec</span> <span class="n">st_ctim</span><span class="p">;</span>  <span class="cm">/* Time of last status change */</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">st_mode</code> field can be used to distinguish between regular files and
+directories. To accomplish this, use the macros, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/S_ISDIR.3.html" class="fancy-link">S_ISDIR</a></code> and
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/S_ISREG.3.html" class="fancy-link">S_ISREG</a></code>.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">stat</span> <span class="n">s</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span> <span class="n">stat</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%s "</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">S_ISDIR</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">st_mode</span><span class="p">))</span> <span class="n">puts</span><span class="p">(</span><span class="s">"is a directory"</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">S_ISREG</span><span class="p">(</span> <span class="n">s</span><span class="p">.</span><span class="n">st_mode</span><span class="p">))</span> <span class="n">puts</span><span class="p">(</span><span class="s">"is a regular file"</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">perror</span><span class="p">(</span><span class="s">"stat failed - are you sure we can read this file's metadata?"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="permissions-and-bits" class="title-text">Permissions and bits<a class="anchor title-text" href="#permissions-and-bits"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Permissions are a key part of the way UNIX systems provide security in a
+filesystem. You may have noticed that the <code class="language-plaintext highlighter-rouge">st_mode</code> field in <code class="language-plaintext highlighter-rouge">struct
+stat</code> contains more than the file type. It also contains the mode, a
+description detailing what a user can and can’t do with a given file.
+There are usually three sets of permissions for any file. Permissions
+for the <em>user</em>, the <em>group</em> and <em>other</em> (every user falling outside the
+first two categories). For each of the three categories, we need to keep
+track of whetherthe user is allowed to read the file, write to the file,
+and execute the file. Since there are three categories and three
+permissions, permissions are usually represented as a 3-digit octal
+number. For each digit, the least significant byte corresponds to read
+privileges, the middle one to write privileges and the final byte to
+execute privileges. They are always presented as <em>User</em>, <em>Group</em>,
+<em>Other</em> (<em>UGO</em>). Below are some common examples. Here are the bit
+conventions:</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">r</code> means that the set of people can read</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/w.1.html" class="fancy-link">w</a></code> means that the set of people can write</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">x</code> means that the set of people can execute</p>
+  </li>
+</ol>
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Octal Code</th>
+      <th style="text-align: center">User</th>
+      <th style="text-align: center">Group</th>
+      <th style="text-align: center">Others</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">755</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">rwx</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">r-x</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">r-x</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center">644</td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">rw-</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">r–</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">r–</code></td>
+    </tr>
+  </tbody>
+</table>
+<p>Permissions Table</p>
+<p>It is worth noting that the <code class="language-plaintext highlighter-rouge">rwx</code> bits have a slightly different meaning
+for directories. Write access to a directory that will allow a program
+to create or delete new files or directories inside. You can think about
+this as having write access to the directory entry (dirent) mappings.
+Read-access to a directory will allow a program to list a directory’s
+contents. This is read access to the directory entry (dirent) mapping.
+Execute will allow a program to enter the directory using cd. Without
+the execute bit, it any attempt create or remove files or directories
+will fail since you cannot access them. You can, however, list the
+contents of the directory.</p>
+<p>There are several command line utilities for interacting with a file’s
+mode. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mknod.3p.html" class="fancy-link">mknod</a></code> changes the type of the file. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chmod.3p.html" class="fancy-link">chmod</a></code> takes a number and a
+file and changes the permission bits. However, before we can discuss
+chmod in detail, we must also understand the user ID (<code class="language-plaintext highlighter-rouge">uid</code>) and group
+id (<code class="language-plaintext highlighter-rouge">gid</code>) as well.</p>
+<h3 id="user-id--group-id" class="title-text">User ID / Group ID</h3>
+<p>Every user in a UNIX system has a user ID. This is a unique number that
+can identify a user. Similarly, users can be added to collections called
+groups, and every group also has a unique identifying number. Groups
+have a variety of uses on UNIX systems. They can be assigned
+capabilities - a way of describing the level of control a user has over
+a system. For example, a group you may have run into is the <code class="language-plaintext highlighter-rouge">sudoers</code>
+group, a set of trusted users who are allowed to use the command <code class="language-plaintext highlighter-rouge">sudo</code>
+to temporarily gain higher privileges. We’ll talk more about how <code class="language-plaintext highlighter-rouge">sudo</code>
+works in this chapter. Every file, upon creation, an owner, the creator
+of the file. This owner’s user ID (<code class="language-plaintext highlighter-rouge">uid</code>) can be found inside the
+<code class="language-plaintext highlighter-rouge">st_mode</code> file of a <code class="language-plaintext highlighter-rouge">struct stat</code> with a call to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stat.3type.html" class="fancy-link">stat</a></code>. Similarly, the
+group ID (<code class="language-plaintext highlighter-rouge">gid</code>) is set as well.</p>
+<p>Every process can determine its <code class="language-plaintext highlighter-rouge">uid</code> and <code class="language-plaintext highlighter-rouge">gid</code> with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getuid.3p.html" class="fancy-link">getuid</a></code> and
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getgid.3p.html" class="fancy-link">getgid</a></code>. When a process tries to open a file with a specific mode, it’s
+<code class="language-plaintext highlighter-rouge">uid</code> and <code class="language-plaintext highlighter-rouge">gid</code> are compared with the <code class="language-plaintext highlighter-rouge">uid</code> and <code class="language-plaintext highlighter-rouge">gid</code> of the file. If
+the <code class="language-plaintext highlighter-rouge">uid</code>s match, then the process’s request to open the file will be
+compared with the bits on the user field of the file’s permissions. If
+the <code class="language-plaintext highlighter-rouge">gid</code>s match, then the process’s request will be compared with the
+group field of the permissions. If none of the IDs match, then the other
+field will apply.</p>
+<h3 id="reading--changing-file-permissions" class="title-text">Reading / Changing file permissions</h3>
+<p>Before we discuss how to change permission bits, we should be able to
+read them. In C, the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stat.3type.html" class="fancy-link">stat</a></code> family of library calls can be used. To read
+permission bits from the command line, use <code class="language-plaintext highlighter-rouge">ls -l</code>. Note, the
+permissions will output in the format ‘trwxrwxrwx’. The first character
+indicates the type of file type. Possible values for the first character
+include but aren’t limited to.</p>
+<ol>
+  <li>
+    <p>(-) regular file</p>
+  </li>
+  <li>
+    <p>(d) directory</p>
+  </li>
+  <li>
+    <p>(c) character device file</p>
+  </li>
+  <li>
+    <p>(l) symbolic link</p>
+  </li>
+  <li>
+    <p>(p) named pipe (also called FIFO)</p>
+  </li>
+  <li>
+    <p>(b) block device</p>
+  </li>
+  <li>
+    <p>(s) socket</p>
+  </li>
+</ol>
+<p>Alternatively, use the program <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stat.3type.html" class="fancy-link">stat</a></code> which presents all the information
+that one could retrieve from the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stat.3type.html" class="fancy-link">stat</a></code> library call.</p>
+<p>To change the permission bits, there is a system call, <code class="language-plaintext highlighter-rouge">int chmod(const
+char *path, mode_t mode);</code>. To simplify our examples, we will be using
+the command line utility of the same name <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chmod.3p.html" class="fancy-link">chmod</a></code> short of “change
+mode”. There are two common ways to use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chmod.3p.html" class="fancy-link">chmod</a></code>, with either an octal
+value or with a symbolic string.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod </span>644 file1
+<span class="nv">$ </span><span class="nb">chmod </span>755 file2
+<span class="nv">$ </span><span class="nb">chmod </span>700 file3
+<span class="nv">$ </span><span class="nb">chmod </span>ugo-w file4
+<span class="nv">$ </span><span class="nb">chmod </span>o-rx file4
+</code></pre></div></div>
+<p>The base-8 (‘octal’) digits describe the permissions for each role: The
+user who owns the file, the group and everyone else. The octal number is
+the sum of three values given to the three types of permission: read(4),
+write(2), execute(1)</p>
+<p>Example: <code class="language-plaintext highlighter-rouge">chmod 755 myfile</code></p>
+<ol>
+  <li>
+    <p>r + w + x = digit * user has 4+2+1, full permission</p>
+  </li>
+  <li>
+    <p>group has 4+0+1, read and execute permission</p>
+  </li>
+  <li>
+    <p>all users have 4+0+1, read and execute permission</p>
+  </li>
+</ol>
+<h3 id="understanding-the-umask" class="title-text">Understanding the ‘umask’</h3>
+<p>The umask <em>subtracts</em> (reduces) permission bits from <code class="language-plaintext highlighter-rouge">777</code> and is used
+when new files and new directories are created by open, mkdir etc. By
+default, the umask is set to <code class="language-plaintext highlighter-rouge">022</code> (octal), which means that group and
+other privileges will be exclusively readable. Each process has a
+current umask value. When forking, the child inherits the parent’s umask
+value.</p>
+<p>For example, by setting the umask to <code class="language-plaintext highlighter-rouge">077</code> in the shell, ensures that
+future file and directory creation will only be accessible to the
+current user,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">umask </span>077
+<span class="nv">$ </span><span class="nb">mkdir </span>secretdir
+</code></pre></div></div>
+<p>As a code example, suppose a new file is created with <code class="language-plaintext highlighter-rouge">open()</code> and mode
+bits <code class="language-plaintext highlighter-rouge">666</code> (write and read bits for user, group and
+other):</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">open</span><span class="p">(</span><span class="s">"myfile"</span><span class="p">,</span> <span class="n">O_CREAT</span><span class="p">,</span> <span class="n">S_IRUSR</span> <span class="o">|</span> <span class="n">S_IWUSR</span> <span class="o">|</span> <span class="n">S_IRGRP</span> <span class="o">|</span> <span class="n">S_IWGRP</span> <span class="o">|</span> <span class="n">S_IROTH</span> <span class="o">|</span> <span class="n">S_IWOTH</span><span class="p">);</span>
+</code></pre></div></div>
+<p>If umask is octal <code class="language-plaintext highlighter-rouge">022</code>, then the permissions of the created file will
+be <code class="language-plaintext highlighter-rouge">0666</code> &amp; ~<code class="language-plaintext highlighter-rouge">022</code> for example.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">S_IRUSR</span> <span class="o">|</span> <span class="n">S_IWUSR</span> <span class="o">|</span> <span class="n">S_IRGRP</span> <span class="o">|</span> <span class="n">S_IROTH</span>
+</code></pre></div></div>
+<h3 id="the-setuid-bit" class="title-text">The ‘setuid’ bit</h3>
+<p>You may have noticed an additional bit that files with execute
+permission may have set. This bit is the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/setuid.3p.html" class="fancy-link">setuid</a></code> bit. It indicated that
+when run, the program will set the uid of the user to that of the owner
+of the file. Similar, there is a <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/setgid.3p.html" class="fancy-link">setgid</a></code> bit which sets the gid of the
+executor to the gid of the owner. The canonical example of a program
+with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/setuid.3p.html" class="fancy-link">setuid</a></code> set is <code class="language-plaintext highlighter-rouge">sudo</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">sudo</code> is usually a program that is owned by the root user - a user that
+has all capabilities. By using <code class="language-plaintext highlighter-rouge">sudo</code>, an otherwise unprivileged user
+can gain access to most parts of the system. This is useful for running
+programs that may require elevated privileges, such as using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chown.3p.html" class="fancy-link">chown</a></code> to
+change ownership of a file, or to use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/mount.2.html" class="fancy-link">mount</a></code> to mount or unmount
+filesystems (an action we will discuss later in this chapter). Here are
+some examples:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>mount /dev/sda2 /stuff/mydisk
+<span class="nv">$ </span><span class="nb">sudo </span>adduser fred
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /usr/bin/sudo
+<span class="nt">-r-s--x--x</span>  1 root  wheel  327920 Oct 24 09:04 /usr/bin/sudo
+</code></pre></div></div>
+<p>When executing a process with the setuid bit, it is still possible to
+determine a user’s original uid with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getuid.3p.html" class="fancy-link">getuid</a></code>. The real action of the
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/setuid.3p.html" class="fancy-link">setuid</a></code> bit is to set the effective user ID (<code class="language-plaintext highlighter-rouge">euid</code>) which can be
+determined with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/geteuid.3p.html" class="fancy-link">geteuid</a></code>. The actions of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getuid.3p.html" class="fancy-link">getuid</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/geteuid.3p.html" class="fancy-link">geteuid</a></code> are
+described below.</p>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getuid.3p.html" class="fancy-link">getuid</a></code> returns the real user id (zero if logged in as root)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/geteuid.3p.html" class="fancy-link">geteuid</a></code> returns the effective user id (zero if acting as root,
+e.g. due to the setuid flag set on a program)</p>
+  </li>
+</ul>
+<p>These functions can allow one to write a program that can only be run by
+a privileged user by checking <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/geteuid.3p.html" class="fancy-link">geteuid</a></code> or go a step further and ensure
+that the only user who can run the code is root by using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getuid.3p.html" class="fancy-link">getuid</a></code>.</p>
+<h3 id="the-sticky-bit" class="title-text">The ‘sticky’ bit</h3>
+<p>Sticky bits as we use them today serve a different purpose from initial
+introduction. Sticky bits were a bit that could be set on an executable
+file that would allow a program’s text segment to remain in swap even
+after the end of the program’s execution. This made subsequent
+executions of the same program faster. Today, this behavior is no longer
+supported and the sticky bit only holds meaning when set on a directory,</p>
+<p>When a directory’s sticky bit is set only the file’s owner, the
+directory’s owner, and the root user can rename or delete the file. This
+is useful when multiple users have write access to a common directory. A
+common use of the sticky bit is for the shared and writable <code class="language-plaintext highlighter-rouge">/tmp</code>
+directory where many users’ files may be stored, but users should not be
+able to access files belonging to other users.</p>
+<p>To set the sticky bit, use <code class="language-plaintext highlighter-rouge">chmod +t</code>.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aneesh<span class="nv">$ </span><span class="nb">mkdir </span>sticky
+aneesh<span class="nv">$ </span><span class="nb">chmod</span> +t sticky
+aneesh<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+drwxr-xr-x  7 aneesh aneesh    4096 Nov  1 14:19 <span class="nb">.</span>
+drwxr-xr-x 53 aneesh aneesh    4096 Nov  1 14:19 ..
+drwxr-xr-t  2 aneesh aneesh    4096 Nov  1 14:19 sticky
+aneesh<span class="nv">$ </span>su newuser
+newuser<span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-rf</span> sticky
+<span class="nb">rm</span>: cannot remove <span class="s1">'sticky'</span>: Permission denied
+newuser<span class="nv">$ </span><span class="nb">exit
+</span>aneesh<span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-rf</span> sticky
+aneesh<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span>
+drwxr-xr-x  7 aneesh aneesh    4096 Nov  1 14:19 <span class="nb">.</span>
+drwxr-xr-x 53 aneesh aneesh    4096 Nov  1 14:19 ..
+</code></pre></div></div>
+<p>Note that in the example above, the username is prepended to the prompt,
+and the command <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/su.1.html" class="fancy-link">su</a></code> is used to switch users.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="virtual-filesystems-and-other-filesystems" class="title-text">Virtual filesystems and other filesystems<a class="anchor title-text" href="#virtual-filesystems-and-other-filesystems"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>POSIX systems, such as Linux and Mac OS X (which is based on BSD)
+include several virtual filesystems that are mounted (available) as part
+of the file-system. Files inside these virtual filesystems may be
+generated dynamically or stored in ram. Linux provides 3 main virtual
+filesystems.</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Device</th>
+      <th style="text-align: center">Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/dev</code></td>
+      <td style="text-align: center">A list of physical and virtual devices (for example network card, cdrom, random number generator</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/proc</code></td>
+      <td style="text-align: center">A list of resources used by each process and (by tradition) set of system information</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">/sys</code></td>
+      <td style="text-align: center">An organized list of internal kernel entities</td>
+    </tr>
+  </tbody>
+</table>
+<p>Virtual Filesystem list</p>
+<p>If we want a continuous stream of 0s, we can run <code class="language-plaintext highlighter-rouge">cat /dev/zero</code>.</p>
+<p>Another example is the file <code class="language-plaintext highlighter-rouge">/dev/null</code>, a great place to store bits
+that you never need to read. Bytes sent to <code class="language-plaintext highlighter-rouge">/dev/null/</code> are never stored
+and simply discarded. A common use of <code class="language-plaintext highlighter-rouge">/dev/null</code> is to discard standard
+output. For example,</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nb">.</span> <span class="o">&gt;</span>/dev/null
+</code></pre></div></div>
+<h3 id="managing-files-and-filesystems" class="title-text">Managing files and filesystems</h3>
+<p>Given the multitude of operations that are available to you from the
+filesystem, let’s explore some tools and techniques that can be used to
+manage files and filesystems.</p>
+<p>One example is creating a secure directory. Suppose you created your own
+directory in /tmp and then set the permissions so that only you can use
+the directory (see below). Is this secure?</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> /tmp/mystuff
+<span class="nv">$ </span><span class="nb">chmod </span>700 /tmp/mystuff
+</code></pre></div></div>
+<p>There is a window of opportunity between when the directory is created
+and when it’s permissions are changed. This leads to several
+vulnerabilities that are based on a race condition.</p>
+<p>Another user replaces <code class="language-plaintext highlighter-rouge">mystuff</code> with a hard link to an existing file or
+directory owned by the second user, then they would be able to read and
+control the contents of the <code class="language-plaintext highlighter-rouge">mystuff</code> directory. Oh no - our secrets are
+no longer secret!</p>
+<p>However in this specific example, the <code class="language-plaintext highlighter-rouge">/tmp</code> directory has the sticky
+bit set, so only the owner may delete the <code class="language-plaintext highlighter-rouge">mystuff</code> directory, and the
+simple attack scenario described above is impossible. This does not mean
+that creating the directory and then later making the directory private
+is secure! A better version is to atomically create the directory with
+the correct permissions from its inception.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-m</span> 700 /tmp/mystuff
+</code></pre></div></div>
+<h3 id="obtaining-random-data" class="title-text">Obtaining Random Data</h3>
+<p><code class="language-plaintext highlighter-rouge">/dev/random</code> is a file that contains a random number generator where
+the entropy is determined from environmental noise. Random will
+block/wait until enough entropy is collected from the environment.</p>
+<p><code class="language-plaintext highlighter-rouge">/dev/urandom</code> is like random, but differs in the fact that it allows
+for repetition (lower entropy threshold), thus won’t block.</p>
+<p>One can think of both of these as streams of characters from which a
+program can read as opposed to files with a start and end. To touch on a
+misconception, most of the time one should be using <code class="language-plaintext highlighter-rouge">/dev/urandom</code>. The
+only specific use case of <code class="language-plaintext highlighter-rouge">/dev/random</code> is when one needs
+cryptographically secure data on bootup and the system should block.
+Otherwise, there are the following reasons.</p>
+<ol>
+  <li>
+    <p>Empirically, they both produce numbers that look random enough.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">/dev/random</code> may block at an inconvenient time. If one is
+programming a service for high scalability and relies on
+<code class="language-plaintext highlighter-rouge">/dev/random</code>, an attacker can reliably exhaust the entropy pool and
+cause the service to block.</p>
+  </li>
+  <li>
+    <p>Manual page authors pose a hypothetical attack where an attacker
+exhausts the entropy pool and guesses the seeding bits, but that
+attack has yet to be implemented.</p>
+  </li>
+  <li>
+    <p>Some operating system don’t have a true <code class="language-plaintext highlighter-rouge">/dev/random</code> like MacOS.</p>
+  </li>
+  <li>
+    <p>Security experts will talk about Computational Security vs
+Information Theoretic security, more on this article
+<a href="https://www.2uo.de/myths-about-urandom" class="fancy-link wiki-link">https://www.2uo.de/myths-about-urandom</a>.
+Most encryption is computationally secure, which means
+<code class="language-plaintext highlighter-rouge">/dev/urandom</code> is as well.</p>
+  </li>
+</ol>
+<h3 id="copying-files" class="title-text">Copying Files</h3>
+<p>Use the versatile <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> command. For example, the following command
+copies 1 MiB of data from the file <code class="language-plaintext highlighter-rouge">/dev/urandom</code> to the file
+<code class="language-plaintext highlighter-rouge">/dev/null</code>. The data is copied as 1024 blocks of block size 1024 bytes.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">dd </span><span class="k">if</span><span class="o">=</span>/dev/urandom <span class="nv">of</span><span class="o">=</span>/dev/null <span class="nv">bs</span><span class="o">=</span>1k <span class="nv">count</span><span class="o">=</span>1024
+</code></pre></div></div>
+<p>Both the input and output files in the example above are virtual - they
+don’t exist on a disk. This means the speed of the transfer is
+unaffected by hardware power.</p>
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> is also commonly used to make a copy of a disk or an entire
+filesystem to create images that can either be burned on to other disks
+or to distribute data to other users.</p>
+<h3 id="updating-modification-time" class="title-text">Updating Modification Time</h3>
+<p>The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/touch.1p.html" class="fancy-link">touch</a></code> executable creates a file if it is non-existant and also
+updates the file’s last modified time to be the current time. For
+example, we can make a new private file with the current
+time:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nv">$ </span><span class="nb">umask </span>077       <span class="c"># all future new files will mask out all r,w,x bits for group and other access</span>
+        <span class="nv">$ </span><span class="nb">touch </span>file123   <span class="c"># create a file if it non-existant, and update its modified time</span>
+        <span class="nv">$ </span><span class="nb">stat </span>file123
+          File: <span class="sb">`</span>file123<span class="s1">'
+          Size: 0           Blocks: 0          IO Block: 65536  regular empty file
+        Device: 21h/33d Inode: 226148      Links: 1
+        Access: (0600/-rw-------)  Uid: (395606/ angrave)   Gid: (61019/     ews)
+        Access: 2014-11-12 13:42:06.000000000 -0600
+        Modify: 2014-11-12 13:42:06.001787000 -0600
+        Change: 2014-11-12 13:42:06.001787000 -0600
+</span></code></pre></div></div>
+<p>An example use of touch is to force make to recompile a file that is
+unchanged after modifying the compiler options inside the makefile.
+Remember that make is ‘lazy’ - it will compare the modified time of the
+source file with the corresponding output file to see if the file needs
+to be recompiled.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nv">$ </span><span class="nb">touch </span>myprogram.c   <span class="c"># force my source file to be recompiled</span>
+        <span class="nv">$ </span>make
+</code></pre></div></div>
+<h3 id="managing-filesystems" class="title-text">Managing Filesystems</h3>
+<p>To manage filesystems on your machine, use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/mount.2.html" class="fancy-link">mount</a></code>. Using mount without
+any options generates a list (one filesystem per line) of mounted
+filesystems including networked, virtual and local (spinning disk /
+SSD-based) filesystems. Here is a typical output of mount</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nv">$ </span>mount
+        /dev/mapper/cs341--server_sys-root on / <span class="nb">type </span>ext4 <span class="o">(</span>rw<span class="o">)</span>
+        proc on /proc <span class="nb">type </span>proc <span class="o">(</span>rw<span class="o">)</span>
+        sysfs on /sys <span class="nb">type </span>sysfs <span class="o">(</span>rw<span class="o">)</span>
+        devpts on /dev/pts <span class="nb">type </span>devpts <span class="o">(</span>rw,gid<span class="o">=</span>5,mode<span class="o">=</span>620<span class="o">)</span>
+        tmpfs on /dev/shm <span class="nb">type </span>tmpfs <span class="o">(</span>rw,rootcontext<span class="o">=</span><span class="s2">"system_u:object_r:tmpfs_t:s0"</span><span class="o">)</span>
+        /dev/sda1 on /boot <span class="nb">type </span>ext3 <span class="o">(</span>rw<span class="o">)</span>
+        /dev/mapper/cs341--server_sys-srv on /srv <span class="nb">type </span>ext4 <span class="o">(</span>rw<span class="o">)</span>
+        /dev/mapper/cs341--server_sys-tmp on /tmp <span class="nb">type </span>ext4 <span class="o">(</span>rw<span class="o">)</span>
+        /dev/mapper/cs341--server_sys-var on /var <span class="nb">type </span>ext4 <span class="o">(</span>rw<span class="o">)</span>rw,bind<span class="o">)</span>
+        /srv/software/Mathematica-8.0 on /software/Mathematica-8.0 <span class="nb">type </span>none <span class="o">(</span>rw,bind<span class="o">)</span>
+        engr-ews-homes.engr.illinois.edu:/fs1-homes/angrave/linux on /home/angrave <span class="nb">type </span>nfs <span class="o">(</span>rw,soft,intr,tcp,noacl,acregmin<span class="o">=</span>30,vers<span class="o">=</span>3,sec<span class="o">=</span>sys,sloppy,addr<span class="o">=</span>128.174.252.102<span class="o">)</span>
+</code></pre></div></div>
+<p>Notice that each line includes the filesystem type source of the
+filesystem and mount point. To reduce this output, we can pipe it into
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/grep.1p.html" class="fancy-link">grep</a></code> and only see lines that match a regular expression.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="o">&gt;</span>mount | <span class="nb">grep </span>proc  <span class="c"># only see lines that contain 'proc'</span>
+        proc on /proc <span class="nb">type </span>proc <span class="o">(</span>rw<span class="o">)</span>
+        none on /proc/sys/fs/binfmt_misc <span class="nb">type </span>binfmt_misc <span class="o">(</span>rw<span class="o">)</span>
+</code></pre></div></div>
+<div class="pad"><div class="card">
+<h4 id="filesystem-mounting">Filesystem Mounting</h4>
+
+<p>Suppose you had downloaded a bootable Linux disk image from the
+<a href="https://www.archlinux.org/download/" class="fancy-link wiki-link">https://www.archlinux.org/download/</a></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nv">$ </span>wget <span class="nv">$URL</span>
+</code></pre></div></div>
+
+<p>Before putting the filesystem on a CD, we can mount the file as a
+filesystem and explore its contents. Note: mount requires root access,
+so let’s run it using sudo</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="nv">$ </span><span class="nb">mkdir arch</span>
+        <span class="nv">$ </span><span class="nb">sudo </span>mount <span class="nt">-o</span> loop archlinux-2015.04.01-dual.iso ./arch
+        <span class="nv">$ </span><span class="nb">cd arch</span>
+</code></pre></div></div>
+
+<p>Before the mount command, the arch directory is new and obviously empty.
+After mounting, the contents of <code class="language-plaintext highlighter-rouge">arch/</code> will be drawn from the files and
+directories stored in the filesystem stored inside the
+<code class="language-plaintext highlighter-rouge">archlinux-2014.11.01-dual.iso</code> file. The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man4/loop.4.html" class="fancy-link">loop</a></code> option is required
+because we want to mount a regular file, not a block device such as a
+physical disk.</p>
+
+<p>The loop option wraps the original file as a block device. In this
+example, we will find out below that the file system is provided under
+<code class="language-plaintext highlighter-rouge">/dev/loop0</code>. We can check the filesystem type and mount options by
+running the mount command without any parameters. We will pipe the
+output into <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/grep.1p.html" class="fancy-link">grep</a></code> so that we only see the relevant output line(s) that
+contain ‘arch’.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mount | <span class="nb">grep arch</span>
+/home/demo/archlinux-2014.11.01-dual.iso on /home/demo/arch <span class="nb">type </span>iso9660 <span class="o">(</span>rw,loop<span class="o">=</span>/dev/loop0<span class="o">)</span>
+</code></pre></div></div>
+
+<p>The iso9660 filesystem is a read-only filesystem originally designed for
+optical storage media (i.e. CDRoms). Attempting to change the contents
+of the filesystem will fail</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">touch arch</span>/nocando
+<span class="nb">touch</span>: cannot <span class="nb">touch</span> <span class="sb">`</span>/home/demo/arch/nocando<span class="s1">': Read-only file system
+</span></code></pre></div></div>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="memory-mapped-io" class="title-text">Memory Mapped IO<a class="anchor title-text" href="#memory-mapped-io"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>While we traditionally think of reading and writing from a file as an
+operation that happens by using the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/read.3p.html" class="fancy-link">read</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> calls, there is
+an alternative, mapping a file into memory using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code>. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> can also
+be used for IPC, and you can see more about <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> as a system call that
+enables shared memory in the IPC chapter. In this chapter, we’ll briefly
+explore <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> as a filesystem operation.</p>
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> takes a file and maps its contents into memory. This allows a
+user to treat the entire file as a buffer in memory for easier semantics
+while programming, and to avoid having to read a file as discrete chunks
+explicitly.</p>
+<p>Not all filesystems support using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> for IO. Those that do have
+varying behavior. Some will simply implement <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> as a wrapper around
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/read.3p.html" class="fancy-link">read</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code>. Others will add additional optimizations by taking
+advantage of the kernel’s page cache. Of course, such optimization can
+be used in the implementation of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/read.3p.html" class="fancy-link">read</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> as well, so often
+using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> has identical performance.</p>
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> is used to perform some operations such as loading libraries and
+processes into memory. If many programs only need read-access to the
+same file, then the same physical memory can be shared between multiple
+processes. This is used for common libraries like the C standard
+library.</p>
+<p>The process to map a file into memory is as follows.</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> requires a file descriptor, so we need to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/open.3p.html" class="fancy-link">open</a></code> the file
+first</p>
+  </li>
+  <li>
+    <p>We seek to our desired size and write one byte to ensure that the
+file is sufficient length</p>
+  </li>
+  <li>
+    <p>When finished call munmap to unmap the file from memory.</p>
+  </li>
+</ol>
+<p>Here is a quick example.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;sys/stat.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;sys/mman.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;fcntl.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;errno.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>
+
+<span class="kt">int</span> <span class="nf">fail</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">filename</span><span class="p">,</span> <span class="kt">int</span> <span class="n">linenumber</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"%s:%d %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">linenumber</span><span class="p">,</span> <span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">));</span>
+  <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="cm">/*Make compiler happy */</span>
+<span class="p">}</span>
+<span class="cp">#define QUIT fail(__FILE__, __LINE__ )
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// We want a file big enough to hold 10 integers</span>
+  <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="mi">10</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="n">fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">"data"</span><span class="p">,</span> <span class="n">O_RDWR</span> <span class="o">|</span> <span class="n">O_CREAT</span> <span class="o">|</span> <span class="n">O_TRUNC</span><span class="p">,</span> <span class="mo">0600</span><span class="p">);</span> <span class="c1">//6 = read+write for me!</span>
+
+  <span class="n">lseek</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">SEEK_SET</span><span class="p">);</span>
+  <span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="s">"A"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+
+  <span class="kt">void</span> <span class="o">*</span><span class="n">addr</span> <span class="o">=</span> <span class="n">mmap</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">PROT_READ</span> <span class="o">|</span> <span class="n">PROT_WRITE</span><span class="p">,</span> <span class="n">MAP_SHARED</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Mapped at %p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">addr</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">addr</span> <span class="o">==</span> <span class="p">(</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span> <span class="o">-</span><span class="mi">1</span> <span class="p">)</span> <span class="n">QUIT</span><span class="p">;</span>
+
+  <span class="kt">int</span> <span class="o">*</span><span class="n">array</span> <span class="o">=</span> <span class="n">addr</span><span class="p">;</span>
+  <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x12345678</span><span class="p">;</span>
+  <span class="n">array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xdeadc0de</span><span class="p">;</span>
+
+  <span class="n">munmap</span><span class="p">(</span><span class="n">addr</span><span class="p">,</span><span class="n">size</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The careful reader may notice that our integers were written in
+least-significant-byte format because that is the endianness of the CPU
+that we ran this example on. We also allocated a file that is one byte
+too many! The <code class="language-plaintext highlighter-rouge">PROT_READ | PROT_WRITE</code> options specify the virtual
+memory protection. The option <code class="language-plaintext highlighter-rouge">PROT_EXEC</code> (not used here) can be set to
+allow CPU execution of instructions in memory.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="reliable-single-disk-filesystems" class="title-text">Reliable Single Disk Filesystems<a class="anchor title-text" href="#reliable-single-disk-filesystems"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Most filesystems cache significant amounts of disk data in physical
+memory. Linux, in this respect, is extreme. All unused memory is used as
+a giant disk cache. The disk cache can have a significant impact on
+overall system performance because disk I/O is slow. This is especially
+true for random access requests on spinning disks where the disk
+read-write latency is dominated by the seek time required to move the
+read-write disk head to the correct position.</p>
+<p>For efficiency, the kernel caches recently used disk blocks. For
+writing, we have to choose a trade-off between performance and
+reliability. Disk writes can also be cached (“Write-back cache”) where
+modified disk blocks are stored in memory until evicted. Alternatively,
+a ‘write-through cache’ policy can be employed where disk writes are
+sent immediately to the disk. The latter is safer as filesystem
+modifications are quickly stored to persistent media but slower than a
+write-back cache. If writes are cached then they can be delayed and
+efficiently scheduled based on the physical position of each disk block.
+Note, this is a simplified description because solid state drives (SSDs)
+can be used as a secondary write-back cache.</p>
+<p>Both solid state disks (SSD) and spinning disks have improved
+performance when reading or writing sequential data. Thus, operating
+systems can often use a read-ahead strategy to amortize the read-request
+costs and request several contiguous disk blocks per request. By issuing
+an I/O request for the next disk block before the user application
+requires the next disk block, the apparent disk I/O latency can be
+reduced.</p>
+<p>If your data is important and needs to be force written to disk, call
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sync.3p.html" class="fancy-link">sync</a></code> to request that a filesystem’s changes be written (flushed) to
+disk. However, operating systems may ignore this request. Even if the
+data is evicted from the kernel buffers, the disk firmware may use an
+internal on-disk cache or may not yet have finished changing the
+physical media. Note, you can also request that all changes associated
+with a particular file descriptor are flushed to disk using <code class="language-plaintext highlighter-rouge">fsync(int
+fd)</code>. There is a fiery debate about this call being useless, initiated
+by PostgresQL’s team
+<a href="https://lwn.net/Articles/752063/" class="fancy-link wiki-link">https://lwn.net/Articles/752063/</a></p>
+<p>If your operating system fails in the middle of an operation, most
+modern file systems do something called <strong>journaling</strong> to work around
+this. What the file system does is before it completes a potentially
+expensive operation, is that it writes what it is going to do down in a
+journal. In the case of a crash or failure, one can step through the
+journal and see which files are corrupt and fix them. This is a way to
+salvage hard disks in cases there is critical data and there is no
+apparent backup.</p>
+<p>Even though it is unlikely for your computer, programming for data
+centers means that disks fail every few seconds. Disk failures are
+measured using “Mean-Time-To-Failure (MTTF)”. For large arrays, the mean
+failure time can be surprisingly short. If the MTTF(single disk) =
+30,000 hours, then the MTTF(1000 disks)= 30000/1000=30 hours or about a
+day and a half! That’s also assuming that the failures between the
+disks are independent, which they often aren’t.</p>
+<h3 id="raid---redundant-array-of-inexpensive-disks" class="title-text">RAID - Redundant Array of Inexpensive Disks</h3>
+<p>One way to protect against this is to store the data twice! This is the
+main principle of a “RAID-1” disk array. By duplicating the writes to a
+disk with writes to another backup disk, there are exactly two copies of
+the data. If one disk fails, the other disk serves as the only copy
+until it can be re-cloned. Reading data is faster since data can be
+requested from either disk, but writes are potentially twice as slow
+because now two write commands need to be issued for every disk block
+write. Compared to using a single disk, the cost of storage per byte has
+doubled.</p>
+<p>Another common RAID scheme is RAID-0, meaning that a file could be split
+up among two disks, but if any disk fails then the files are
+irrecoverable. This has the benefit of halving write times because one
+part of the file could be writing to hard disk one and another part to
+hard disk two.</p>
+<p>It is also common to combine these systems. If you have a lot of hard
+disks, consider RAID-10. This is where you have two systems of RAID-1,
+but the systems are hooked up in RAID-0 to each other. This means you
+would get roughly the same speed from the slowdowns but now any one disk
+can fail and you can recover that disk. If two disks from opposing raid
+partitions fail, there is a chance that you can recover though we don’t
+could on it most of the time.</p>
+<h3 id="higher-levels-of-raid" class="title-text">Higher Levels of RAID</h3>
+<p>RAID-3 uses parity codes instead of mirroring the data. For each N-bits
+written, we will write one extra bit, the ‘Parity bit’ that ensures the
+total number of 1s written is even. The parity bit is written to an
+additional disk. If any disk including the parity disk is lost, then its
+contents can still be computed using the contents of the other disks.</p>
+<p>One disadvantage of RAID-3 is that whenever a disk block is written, the
+parity block will always be written too. This means that there is
+effectively a bottleneck in a separate disk. In practice, this is more
+likely to cause a failure because one disk is being used 100% of the
+time and once that disk fails then the other disks are more prone to
+failure.</p>
+<p>A single disk failure is recoverable because there is sufficient data to
+rebuild the array from the remaining disks. Data-loss will occur when
+two disks are unusable because there is no longer sufficient data to
+rebuild the array. We can calculate the probability of a two disk
+failure based on the repair time which factors both the time to insert a
+new disk and the time required to rebuild the entire contents of the
+array.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MTTF = mean time to failure
+MTTR = mean time to repair
+N = number of original disks
+
+p = MTTR / (MTTF-one-disk / (N-1))
+</code></pre></div></div>
+<p>Using typical numbers (MTTR=1day, MTTF=1000days, N-1 = 9, p=0.009)</p>
+<p>There is a 1% chance that another drive will fail during the rebuild
+process (at that point you had better hope you still have an accessible
+backup of your original data. In practice, the probability of a second
+failure during the repair process is likely higher because rebuilding
+the array is I/O-intensive (and on top of normal I/O request activity).
+This higher I/O load will also stress the disk array.</p>
+<p>RAID-5 is similar to RAID-3 except that the check block (parity
+information) is assigned to different disks for different blocks. The
+check-block is ‘rotated’ through the disk array. RAID-5 provides better
+read and write performance than RAID-3 because there is no longer the
+bottleneck of the single parity disk. The one drawback is that you need
+more disks to have this setup, and there are more complicated algorithms
+that need to be used.</p>
+<p>Failure is common. Google reports 2-10% of disks fail per year.
+Multiplying that by 60,000+ disks in a single warehouse. Services must
+survive single disk, rack of servers, or whole data center failures.</p>
+<h3 id="solutions" class="title-text">Solutions</h3>
+<p>Simple redundancy (2 or 3 copies of each file) e.g., Google GFS (2001).
+More efficient redundancy (analogous to RAID 3++) e.g.,
+<a href="http://goo.gl/LwFIy" class="fancy-link wiki-link">http://goo.gl/LwFIy</a> (~2010):
+customizable replication including Reed-Solomon codes with 1.5x
+redundancy</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="simple-filesystem-model" class="title-text">Simple Filesystem Model<a class="anchor title-text" href="#simple-filesystem-model"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Software developers need to implement filesystems all the time. If that
+is surprising to you, we encourage you to take a look at Hadoop,
+GlusterFS, Qumulo, etc. Filesystems are hot areas of research as of 2018
+because people have realized that the software models that we have
+devised don’t take full advantage of our current hardware. Additionally,
+the hardware that we use for storing information is getting better all
+the time. As such, you may end up designing a filesystem yourself
+someday. In this section, we will go over one of a fake filesystems and
+“walk through” some examples of how things work.</p>
+<p>So, what does our hypothetical filesystem look like? We will base it off
+of the <code class="language-plaintext highlighter-rouge">minixfs</code>, a simple filesystem that happens to be the first
+filesystem that Linux ran on. It is laid out sequentially on disk, and
+the first section is the superblock. The superblock stores important
+metadata about the entire filesystem. Since we want to be able to read
+this block before we know anything else about the data on disk, this
+needs to be in a well-known location so the start of the disk is a good
+choice. After the superblock, we’ll keep a map of which inodes are being
+used. The nth bit is set if the nth inode – \(0\) being the inode root
+– is being used. Similarly, we store a map recording which data blocks
+are used. Finally, we have an array of inodes followed by the rest of
+the disk - implicitly partitioned into data blocks. One data block may
+be identical to the next from the perspective of the hardware components
+of the disk. Thinking about the disk as an array of data blocks is
+simply something we do so that we have a way to describe where files
+live on disk.</p>
+<p>Below, we have an example of how an inode that describes a file may
+look. Note that for the sake of simplicity, we have drawn arrows mapping
+data block numbers in the inode to their locations on disk. These aren’t
+pointers so much as indices into an array.</p>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/filesystems/images/sample_file.png" alt="Sample file filling
+up"></p>
+<p>We will assume that a data block is 4 KiB.</p>
+<p>Note that a file will fill up each of its data blocks completely before
+requesting an additional data block. We will refer to this property as
+the file being <em>compact</em>. The file presented above is interesting since
+it uses all of its direct blocks, one of the entries for its indirect
+block and partially uses another indirect block.</p>
+<p>The following subsections will all refer to the file presented above.</p>
+<h3 id="file-size-vs-space-on-disk" class="title-text">File Size vs Space on Disk</h3>
+<p>Our file’s size must be stored in the inode. The filesystem isn’t aware
+of the actual contents of what is in a file - that data is considered
+the user’s and should only be manipulated by the user. However, we can
+compute upper and lower bounds on the filesize by only looking at how
+many blocks the file uses.</p>
+<p>There are two full direct blocks, which together store
+\(2*sizeof(data\_block)=2*4KiB=8KiB\).</p>
+<p>There are two used blocks referenced by the indirect block, which can
+store up to \(8KiB\) as calculated above.</p>
+<p>We can now add these values to get an upper bound on the file size of
+\(16KiB\).</p>
+<p>What about a lower bound? We know that we must use the two direct
+blocks, one block referenced by the indirect block and at least 1 byte
+of a second block referenced by the indirect block. With this
+information, we can work out the lower bound to be
+\(2*4KiB+4KiB+1=12KiB+1B\).</p>
+<p>Note that our calculations so far have been to determine how much data
+the user is storing on disk. What about the <em>overhead</em> of storing this
+data incurred while using this filesystem? You’ll notice that we use an
+indirect block to store the disk block numbers of blocks used beyond the
+two direct blocks. While doing our above calculations, we omitted this
+block. This would instead be counted as the overhead of the file, and
+thus the total overhead of storing this file on disk is
+\(sizeof(indirect\_block)=4KiB)\).</p>
+<p>Thinking about overhead, a related calculation could be to determine the
+max/min disk usage per file in this filesystem.</p>
+<p>Trivially a file of size \(0\) has no associated data blocks and takes
+up no space on disk (ignoring the space required for the inode since
+these are located in a fixed size array somewhere on disk). How about
+the disk usage of the smallest non-empty file? That is, consider a file
+of size \(1B\). Note that when a user writes the first byte, a data
+block will be allocated. Since each data block is \(4KiB\), we find
+that \(4KiB\) is the minimum disk usage for a non-empty file. Here, we
+observe that the file size will only be \(1B\), despite that
+\(4KiB\) of the disk is used – there is a distinction between file
+size and disk usage because of overhead!</p>
+<p>Finding maximum is slightly more involved. As we saw earlier in this
+chapter, a filesystem with this structure can have \(1024\) data block
+numbers in one indirect block. This implies that the maximum filesize
+can be \(2*4KiB + 1024*4KiB = 4MiB + 8KiB\) (after accounting for the
+direct blocks as well). However, on disk we also store the indirect
+block itself. This means that an additional \(4KiB\) of overhead will
+be used to account for the indirect block, so the total disk usage will
+be \(4MiB + 12KiB\).</p>
+<p>Note that when only using direct blocks, completely filling up a direct
+block implies that our filesize and our disk usage are the same thing!
+While it would seem like we always want this ideal scenario, it puts a
+restrictive limit on the maximum filesize. Attempting to remedy this by
+increasing the number of direct blocks seems promising, but note that
+this requires increasing the size of an inode and reducing the amount of
+space available to store user data – a tradeoff you will have to
+evaluate for yourself. Alternatively always trying to split your data up
+into chunks that never use indirect blocks is may exhaust the limited
+pool of available inodes.</p>
+<h3 id="performing-reads" class="title-text">Performing Reads</h3>
+<p>Performing reads tend to be pretty easy in our filesystem because our
+files are compact. Let’s say that we want to read the entirety of this
+particular file. What we’d start by doing is go to the inode’s direct
+struct and find the first direct data block number. In our case, it is
+#7. Then we find the 7th data block from the <em>start</em> of all data
+blocks. Then we read all of those bytes. We do the same thing for all of
+the direct nodes. What do we do after? We go to the indirect block and
+read the indirect block. We know that every 4 bytes of the indirect
+block is either a sentinel node (-1) or the number of <em>another</em> data
+block. In our particular example, the first four bytes evaluate to the
+integer 5, meaning that our data continues on the 5th data block from
+the beginning. We do the same for data block #4 and we stop after
+because we exceed the size of the inode</p>
+<p>Now, let’s think about the edge cases. How would a program start the
+read starting at an arbitrary offset of \(n\) bytes given that block
+sizes are \(4 KiBs\). How many indirect blocks should there be if the
+filesystem is correct? (Hint: <em>think about using the size of the inode</em>)</p>
+<h3 id="performing-writes" class="title-text">Performing Writes</h3>
+<div class="pad"><div class="card">
+<h4 id="writing-to-files">Writing to files</h4>
+
+<p>Performing writes fall into two categories, writes to files and writes
+to directories. First we’ll focus on files and assume that we are
+writing a byte to the \(6\)th KiB of our file. To perform a write on a
+file at a particular offset, first the filesystem must go to the data
+block would start at that offset. For this particular example we would
+have to go to the 2nd or indexed number 1 inode to perform our write. We
+would once again fetch this number from the inode, go to the root of the
+data blocks, go to the \(5\)th data block and perform our write at the
+\(2\)KiB offset from this block because we skipped the first four
+kibibytes of the file in block 7. We perform our write and go on our
+merry way.</p>
+
+<p>Some questions to consider.</p>
+
+<ul>
+  <li>
+    <p>How would a program perform a write go across data block boundaries?</p>
+  </li>
+  <li>
+    <p>How would a program perform a write after adding the offset would
+extend the length of the file?</p>
+  </li>
+  <li>
+    <p>How would a program perform a write where the offset is greater than
+the length of the original file?</p>
+  </li>
+</ul>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="writing-to-directories">Writing to directories</h4>
+
+<p>Performing a write to a directory implies that an inode needs to be
+added to a directory. If we pretend that the example above is a
+directory. We know that we will be adding at most one directory entry at
+a time. Meaning that we have to have enough space for one directory
+entry in our data blocks. Luckily the last data block that we have has
+enough free space. This means we need to find the number of the last
+data block as we did above, go to where the data ends, and write one
+directory entry. Don’t forget to update the size of the directory so
+that the next creation doesn’t overwrite your file!</p>
+
+<p>Some more questions:</p>
+
+<ul>
+  <li>
+    <p>How would would a program perform a write when the last data block
+is already full?</p>
+  </li>
+  <li>
+    <p>How about when all the direct blocks have been filled up and the
+inode doesn’t have an indirect block?</p>
+  </li>
+  <li>
+    <p>What about when the first indirect entry (#4) is full?</p>
+  </li>
+</ul>
+
+<h3 id="adding-deletes" class="title-text">Adding Deletes</h3>
+
+<p>If the inode is a file, then remove the directory entry in the parent
+directory by marking it as invalid (maybe making it point to inode -1)
+and skip it in your reads. A filesystem decreases the hard link count of
+the inode and if the count reaches zero, free the inode in the inode map
+and free all associated data blocks so they are reclaimed by the
+filesystem. In many operating systems, several fields in the inode get
+overwritten.</p>
+
+<p>If the inode is a directory, the filesystem checks if it is empty. If
+not, then the kernel will most likely mark an error.</p>
+
+<p>Be sure to check out the appendix for modern and cutting edge
+filesystems.</p>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="topics" class="title-text">Topics<a class="anchor title-text" href="#topics"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>
+    <p>Superblock</p>
+  </li>
+  <li>
+    <p>Data Block</p>
+  </li>
+  <li>
+    <p>Inode</p>
+  </li>
+  <li>
+    <p>Relative Path</p>
+  </li>
+  <li>
+    <p>File Metadata</p>
+  </li>
+  <li>
+    <p>Hard and Soft Links</p>
+  </li>
+  <li>
+    <p>Permission Bits</p>
+  </li>
+  <li>
+    <p>Mode bits</p>
+  </li>
+  <li>
+    <p>Working with Directories</p>
+  </li>
+  <li>
+    <p>Virtual File System</p>
+  </li>
+  <li>
+    <p>Reliable File Systems</p>
+  </li>
+  <li>
+    <p>RAID</p>
+  </li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="questions" class="title-text">Questions<a class="anchor title-text" href="#questions"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>
+    <p>How big can files be on a file system with 15 Direct blocks, 2
+double, 3 triple indirect, 4kb blocks and 4byte entries? (Assume
+enough infinite blocks)</p>
+  </li>
+  <li>
+    <p>What is a superblock? Inode? Data block?</p>
+  </li>
+  <li>
+    <p>How do we simplify <code class="language-plaintext highlighter-rouge">/./proc/../dev/./random</code>/</p>
+  </li>
+  <li>
+    <p>In ext2, what is stored in an inode, and what is stored in a
+directory entry?</p>
+  </li>
+  <li>
+    <p>What are /sys, /proc, /dev/random, and /dev/urandom?</p>
+  </li>
+  <li>
+    <p>What are the permission bits?</p>
+  </li>
+  <li>
+    <p>How does one use chmod to set user/group/owner read/write/execute
+permissions?</p>
+  </li>
+  <li>
+    <p>What does the “dd” command do?</p>
+  </li>
+  <li>
+    <p>What is the difference between a hard link and a symbolic link? Does
+the file need to exist?</p>
+  </li>
+  <li>
+    <p>“ls -l” shows the size of each file in a directory. Is the size
+stored in the directory or in the file’s inode?</p>
+  </li>
+</ul>
+<div id="refs" class="references">
+
+<div id="ref-iec">
+
+“International.” n.d. *IEC*. IEC.
+<a href="https://www.iec.ch/si/binary.htm" class="fancy-link wiki-link">https://www.iec.ch/si/binary.htm</a>.
+
+</div>
+
+</div>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Filesystems.md";
+  </script>
+</body>
+
+</html>

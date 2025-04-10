@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Post_Mortems</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Post_Mortems" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Post_Mortems
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#post-mortems" class="fancy-link wiki-link">Post Mortems</a>
+    <ul>
+      <li><a href="#shell-shock" class="fancy-link wiki-link">Shell Shock</a></li>
+      <li><a href="#heartbleed" class="fancy-link wiki-link">Heartbleed</a></li>
+      <li><a href="#dirty-cow" class="fancy-link wiki-link">Dirty Cow</a></li>
+      <li><a href="#meltdown" class="fancy-link wiki-link">Meltdown</a></li>
+      <li><a href="#spectre" class="fancy-link wiki-link">Spectre</a></li>
+      <li><a href="#mars-pathfinder" class="fancy-link wiki-link">Mars Pathfinder</a></li>
+      <li><a href="#mars-again" class="fancy-link wiki-link">Mars Again</a></li>
+      <li><a href="#year-2038" class="fancy-link wiki-link">Year 2038</a></li>
+      <li><a href="#northeast-blackout-of-2003" class="fancy-link wiki-link">Northeast Blackout of 2003</a></li>
+      <li><a href="#apple-ios-unicode-handling" class="fancy-link wiki-link">Apple IOS Unicode Handling</a></li>
+      <li><a href="#apple-ssl-verification" class="fancy-link wiki-link">Apple SSL Verification</a></li>
+      <li><a href="#sony-rootkit-installation" class="fancy-link wiki-link">Sony Rootkit Installation</a></li>
+      <li><a href="#civilization-and-ghandi" class="fancy-link wiki-link">Civilization and Ghandi</a></li>
+      <li><a href="#the-woes-of-shell-scripting" class="fancy-link wiki-link">The Woes of Shell Scripting</a></li>
+      <li><a href="#appnexus-double-free" class="fancy-link wiki-link">Appnexus Double Free</a></li>
+      <li><a href="#att-cascading-failures---1990" class="fancy-link wiki-link">ATT Cascading Failures - 1990</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>Hindsight is 20-20</strong> - <strong>Unknown</strong></p>
+
+<p>This chapter is meant to serve as a big “why are we learning all of
+this”. In all of your previous classes, you were learning what to do.
+How to program a data structure, how to code a for loop, how to prove
+something. This is the first class that is largely focused on what <em>not</em>
+to do. As a result, we draw experience from our past in real ways. Sit
+back and scroll through this chapter as we tell you about the problems
+of past programmers. Even if you are dealing with something much higher
+level like web-development, everything relates back to the system.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="shell-shock" class="title-text">Shell Shock<a class="anchor title-text" href="#shell-shock"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required: Appendix/Shell</p>
+<p>This was a back door into most shells. The bug allowed an attacker to
+exploit an environment variable to execute arbitrary code.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">env </span><span class="nv">x</span><span class="o">=</span><span class="s1">'() { :;}; echo vulnerable'</span> bash <span class="nt">-c</span> <span class="s2">"echo this is a test"</span>
+vulnerable...
+</code></pre></div></div>
+<p>This meant that in any system that uses environment variables and
+doesn’t sanitize their input (hint no one sanitized environment
+variable input because they saw it as safe) you can execute whatever
+code you want on other’s machines including setting up a web server.</p>
+<p>Lessons Learned: On production machines make sure that there is a
+minimal operating system (something like BusyBox with DietLibc) so that
+you can understand most of the code in the systems and their
+effectiveness. Put in multiple layers of abstraction and checks to make
+sure that data isn’t leaked. For example the above is a problem insofar
+as getting information back to the attackers if it is allowed to
+communicate with them. This means that you can harden your machine ports
+by disallowing connections on all but a few ports. Also, you can harden
+your system to never perform exec calls to perform tasks (i.e. perform
+an exec call to update a value) and instead do it in C or your favorite
+programming language of choice. Although you don’t have flexibility, you
+have peace of mind what you allow users to do.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="heartbleed" class="title-text">Heartbleed<a class="anchor title-text" href="#heartbleed"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required: Intro to C</p>
+<p>To put it simply, there were no bounds on buffer checking. The SSL
+Heartbeat is super simple. A server sends a string of a certain length,
+and the second server is supposed to send the string of the length back.
+The problem is someone can maliciously change the size of the request to
+larger than what they sent (i.e. send “cat” but request 500 bytes) and
+get crucial information like passwords from the server. There is a
+<a href="https://xkcd.com/1354/" class="fancy-link wiki-link">https://xkcd.com/1354/</a> on it.</p>
+<p>Lessons Learned: Check your buffers! Know the difference between a
+buffer and a string.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="dirty-cow" class="title-text">Dirty Cow<a class="anchor title-text" href="#dirty-cow"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required: Processes/Virtual
+Memory</p>
+<p><a href="https://en.wikipedia.org/wiki/Dirty_COW" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Dirty_COW</a></p>
+<p>A process usually has access to a set of read-only mappings of memory
+that if they try to write to they get a segfault. Dirty COW is a
+vulnerability where a bunch of threads attempts to access the same piece
+of memory at the same time hoping that one of the threads flips the NX
+bit and the writable bit. After that, an attacker can modify the page.
+This can be done to the effective user id bit and the process can
+pretend it was running as root and spawn a root shell, allowing access
+to the system from a normal shell.</p>
+<p>Lessons Learned: Spinlocks in the kernel are hard.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="meltdown" class="title-text">Meltdown<a class="anchor title-text" href="#meltdown"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>There is an example of this in the background section</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="spectre" class="title-text">Spectre<a class="anchor title-text" href="#spectre"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Check in the security section.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="mars-pathfinder" class="title-text">Mars Pathfinder<a class="anchor title-text" href="#mars-pathfinder"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required sections: Synchronization and a bit of
+Scheduling</p>
+<p><a href="https://www.microsoft.com/en-us/research/people/mbj/#!just-for-fun" class="fancy-link wiki-link">https://www.microsoft.com/en-us/research/people/mbj/#!just-for-fun</a></p>
+<p>The mars pathfinder was a mission that tried to collect climate data on
+Mars. The finder uses a single bus to communicate with different parts.
+Since this was 1997, the hardware itself didn’t have advanced features
+like efficient locking so it was up to the operating system developers
+to regulate that with mutexes. The architecture was pretty simple. There
+was a thread that controlled data along the information bus,
+communications thread, and data collection thread in with high, regular,
+and low priorities with respect to scheduling. The other caveat is that
+if an interrupt happened at some interval and a task is running and a
+task is to be scheduled, the task that has the higher priority wins.</p>
+<p>The pattern that caused everything to start failing was the data
+collection thread starts writing to the bus, the information bus thread
+is waiting on the data. Then out the communication thread comes in to
+preempt the other lower priority thread <strong>while the lower priority
+thread still held the mutex</strong>. This means when the regular priority
+thread tried to lock the bus, the rover would deadlock. After some time
+the system would reset but isn’t good to leave to chance.</p>
+<p>Moral of the lesson? Don’t have the applications themselves deal with
+the synchronization. Define a module that handles mutex locking and have
+the module communicate through files, IPC, etc.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="mars-again" class="title-text">Mars Again<a class="anchor title-text" href="#mars-again"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections:
+Malloc</p>
+<p><a href="https://www.computerworld.com/article/2574759/data-storage-solutions/out-of-memory-problem-caused-mars-rover-s-glitch.html" class="fancy-link wiki-link">https://www.computerworld.com/article/2574759/data-storage-solutions/out-of-memory-problem-caused-mars-rover-s-glitch.html</a></p>
+<p>The short of it is that they ran out of memory. The long of it is that
+they ran out of memory, disk space, and swap space. The moral of the
+story? Make sure to write code that can handle file failures and can
+handle files when they close and go out of memory, so the operating
+system can hot swap files to free up memory. Also clean up files, assume
+that your temp directory is roughly a hundredth or a thousandth of the
+total size and use that.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="year-2038" class="title-text">Year 2038<a class="anchor title-text" href="#year-2038"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required sections: Intro to
+C</p>
+<p><a href="https://en.wikipedia.org/wiki/Year_2038_problem" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Year_2038_problem</a></p>
+<p>This is issue that hasn’t happened yet. Unix timestamps are kept as the
+number of seconds from a particular day (Jan 1st 1970). This is stored
+as a 32 bit signed integer. In March of 2038, this number will overflow.
+This isn’t a problem for most modern operating system who store 64 bit
+signed integers which is enough to keep us going until the end of time,
+but it is a problem for embedded devices that we can’t change the
+internal hardware to. Stay tuned to see what happens.</p>
+<p>Lessons learned: Plan like your application will be huge one day.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="northeast-blackout-of-2003" class="title-text">Northeast Blackout of 2003<a class="anchor title-text" href="#northeast-blackout-of-2003"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections:
+Synchronization</p>
+<p><a href="https://en.wikipedia.org/wiki/Northeast_blackout_of_2003" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Northeast_blackout_of_2003</a></p>
+<p>A race condition triggered a series of undefined events in a system that
+caused the blackout of most of the northeastern part of North America
+for quite some time. This bug also turned off or caused the backup
+system and logging systems to fail so people didn’t even know of the bug
+for an hour. The exact bits that were flipped are unknown, but patches
+have been put into place.</p>
+<p>Lessons Learned: Modularize your code to localize failures (i.e. keeping
+race conditions different between processes). If you need to synchronize
+among processes make sure your failure detection system is not
+interlaced with your system.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="apple-ios-unicode-handling" class="title-text">Apple IOS Unicode Handling<a class="anchor title-text" href="#apple-ios-unicode-handling"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections: Intro to
+C</p>
+<p><a href="http://appleinsider.com/articles/15/05/26/bug-in-ios-notifications-handling-crashes-iphones-with-a-simple-text" class="fancy-link wiki-link">http://appleinsider.com/articles/15/05/26/bug-in-ios-notifications-handling-crashes-iphones-with-a-simple-text</a></p>
+<p>Wonder why we teach string parsing? Because it is a hard thing to do
+even for professional software developers. This bug allowed a lot of
+undefined behavior when trying to parse a series of unicode characters.
+Apple probably knows why this happened, but our guess is that the
+parsing of the string happens somewhere inside the kernel and a segfault
+is reached. When you get a segfault in the kernel, your kernel panics,
+and the entire device reboots. Undefined behavior means anything though,
+and a lot of varied things did happen with this bug.</p>
+<p>Lessons Learned: Fuzz your kernel</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="apple-ssl-verification" class="title-text">Apple SSL Verification<a class="anchor title-text" href="#apple-ssl-verification"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections: Intro to
+C</p>
+<p><a href="https://en.wikipedia.org/wiki/Unreachable_code#Examples" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Unreachable_code#Examples</a></p>
+<p>Due to a stray goto in Apple’s code, a function always returned that an
+SSL certificate was valid. Naturally, hackers were able to get away with
+some pretty crazy site names.</p>
+<p>Lessons Learned: Always bracket if statements, use gotos sparingly.
+Chances are if you need to use a goto, write another function or a
+switch statement with fall throughs (still bad).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="sony-rootkit-installation" class="title-text">Sony Rootkit Installation<a class="anchor title-text" href="#sony-rootkit-installation"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections: Intro to
+C/Processes</p>
+<p><a href="https://en.wikipedia.org/wiki/Sony_BMG_copy_protection_rootkit_scandal" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Sony_BMG_copy_protection_rootkit_scandal</a></p>
+<p>Picture this. It’s 2005, Limewire came a few years prior, the internet
+was a growing pool of illegal activities – not to say that is fixed now.
+Sony knew that it didn’t have the computing power to police all the
+interwebs or get around the various technologies people were using to
+get around copyright protection. So what did they do? With 22 million
+Music CDs, they required users to install a rootkit on their operating
+system, so Sony can monitor the device for unethical activities.</p>
+<p>Privacy concerns aside, and believe me there are a lot of them, the big
+problem was that this rootkit is a backdoor for everyone’s systems if
+programmed incorrectly. A rootkit is a piece of code usually installed
+kernel-side that keeps track of almost anything that a user does. What
+websites visited, what clicks or keys typed etc. If a hacker finds out
+about this and there is a way to access that API from the user space
+level, that means any program can find out important information about
+your device. Needless to say, people were angry.</p>
+<p>Lessons Learned: Get an antivirus and/or apparmor and make sure that an
+application is only requesting permissions that make sense. If you are
+torn, try something like Windows sandbox or keep a Sacrificial VM around
+to see if installing it makes your computer horrible. Don’t trust
+certificates trust code.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="civilization-and-ghandi" class="title-text">Civilization and Ghandi<a class="anchor title-text" href="#civilization-and-ghandi"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections: Intro to
+C</p>
+<p><a href="https://www.geek.com/games/why-gandhi-is-always-a-warmongering-jerk-in-civilization-1608515/" class="fancy-link wiki-link">https://www.geek.com/games/why-gandhi-is-always-a-warmongering-jerk-in-civilization-1608515/</a></p>
+<p>This is probably well known to gamers why someone as (in real life)
+non-violent as Ghandi was aggressive in the video game civilization. In
+the original, the game kept aggressiveness as an unsigned integer.
+During the game, the integer could be decremented and then the problem
+ensued because Ghandi was already at zero. This caused him to become the
+most aggressive character in the game.</p>
+<p>Lessons Learned: The take away from this is <strong>never</strong> use unsigned
+numbers unless you have an express written reason for it (reasons
+include you need to know about the overflow behavior, you are bit
+shifting, you are bit masking). In every other case, cast it.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-woes-of-shell-scripting" class="title-text">The Woes of Shell Scripting<a class="anchor title-text" href="#the-woes-of-shell-scripting"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections: Intro to
+C/Appending</p>
+<p><a href="https://www.pcworld.com/article/2871653/scary-steam-for-linux-bug-erases-all-the-personal-files-on-your-pc.html" class="fancy-link wiki-link">https://www.pcworld.com/article/2871653/scary-steam-for-linux-bug-erases-all-the-personal-files-on-your-pc.html</a></p>
+<p>There was a simple bug in Steam that caused Steam to remove all of your
+files in the form of something like this</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ ROOT</span><span class="o">=</span><span class="si">$(</span><span class="nb">cd</span> <span class="nv">$0</span>/<span class="p">;</span> <span class="nb">echo</span> <span class="nv">$PWD</span><span class="si">)</span><span class="p">;</span>
+<span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-rf</span> <span class="nv">$ROOT</span>
+</code></pre></div></div>
+<p>What happens if $0 or the first parameter passed into a script doesn’t
+exist? You move to root, and you delete your entire computer.</p>
+<p>Lessons Learned: Do parameter checks, always always always <code class="language-plaintext highlighter-rouge">set -e</code> on a
+script and if you expect a command to fail, explicitly list it. You can
+also alias rm to mv and then delete the trash later.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="appnexus-double-free" class="title-text">Appnexus Double Free<a class="anchor title-text" href="#appnexus-double-free"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections: Intro to
+C/Malloc</p>
+<p><a href="https://techblog.appnexus.com/2013-09-17-outage-postmortem-586b19ae4307" class="fancy-link wiki-link">https://techblog.appnexus.com/2013-09-17-outage-postmortem-586b19ae4307</a></p>
+<p>Appnexus uses an asynchronous garbage collector that reclaims different
+parts of the heap when it believes that objects are unused. The
+architecture is that an element is in the unavailable list and then it
+is taken out to a to-be-freed list. After a certain time if that element
+was unused, it is freed and added to the free list. This is fine until
+two thread try to delete the same object at once, adding to the list
+twice. After less time, one of the objects was deleted, the delete was
+announced to other computers.</p>
+<p>Lessons Learned: Avoid making hacky software if you need to. Modularize,
+and set memory limits, and monitor different parts of your code and
+optimize by hand. There is no general catch-all garbage collector that
+fits everyone. Even highly tested ones like the JVM need some nudges if
+you want to get performance out of them.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="att-cascading-failures---1990" class="title-text">ATT Cascading Failures - 1990<a class="anchor title-text" href="#att-cascading-failures---1990"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Required Sections: Intro to
+C</p>
+<p><a href="http://users.csc.calpoly.edu/~jdalbey/SWE/Papers/att_collapse.html" class="fancy-link wiki-link">http://users.csc.calpoly.edu/~jdalbey/SWE/Papers/att_collapse.html</a></p>
+<p>The bug is explained well at the link above. We recommend reading to
+learn more. A series of network delays that caused some telephone
+switches across the country to think that other switches were operable
+when they weren’t. When the switches came back online, they realized
+they had a huge backlog of calls to route and began doing so. Other
+routing failures and restarts only compounded the problem.</p>
+<p>Lessons Learned: Not using C would’ve actually helped here because of
+more rigorous fuzzing (though C++ in this day and age would be worse
+with its language constructs). The real moral of the story is networks
+are random and expect any jump at any point in your code. That means
+writing simulations and running them with random delays to figure out
+bugs before they happen.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Post_Mortems.md";
+  </script>
+</body>
+
+</html>
