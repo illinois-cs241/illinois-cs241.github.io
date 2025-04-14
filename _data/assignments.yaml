@@ -310,20 +310,20 @@ mps:
       url: "networking_mp"
       submissions:
         - title: Part 1 The Client
-          due_date: 2024-11-18 23:59
+          due_date: 2025-04-21 23:59
           graded_files:
           - client.c
           - common.c
           - common.h
         - title: Part 2 The Server Part 1
-          due_date: 2024-12-02 23:59
+          due_date: 2025-04-28 23:59
           graded_files:
           - client.c
           - server.c
           - common.c
           - common.h
         - title: Part 3 The Server Part 2
-          due_date: 2024-12-09 23:59
+          due_date: 2025-05-05 23:59
           graded_files:
           - client.c
           - server.c
@@ -331,7 +331,7 @@ mps:
           - common.h
       resources: true
       worksheet: false
-      visible: false
+      visible: true
 honors:
   -
       name: "Advanced C"
