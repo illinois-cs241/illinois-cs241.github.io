@@ -77,11 +77,13 @@ Grading issues should be raised with your TA during section or by email. Missing
 ### Regrades
 At the end of the semester there will be a last chance regrade option for three weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a "perfect" (we define) attendance grade after the drops.
 
-When will this start? For Fall semesters, it will be around the middle of April; for Spring semesters, it will start around the Thanksgiving week.
+When will this start? For Fall semesters, it will start around the Thanksgiving week. for Spring semesters, it will be around the middle of April. 
 
-How many assignments can be regraded? 3 weeks of assignments. We may provide some bonus if you attend >= 9/13 labs.
+Can we use the autograder at this time? Yes! During the regrade period, the autograder will open for every assignment. You will be able to use one pre-deadline autograder run per day on each assignment (i.e. you can run the autograder on different assignments on the same day). Running the autograder on an assignment does not use a regrade. 
 
-More info? We will announce the regrade policy on [Ed](https://edstem.org/us/dashboard) later in the semester.
+How do I specify what assignments I want regraded? Regrades are determined by a file released during this period where you indicate what assignments you want to use your regrades on. We trigger deadline autograder runs for only these assignments, which determines the final grade.
+
+More info? We will announce the regrade policy on the course forum later in the semester.
 
 Please note that the score for each regrade will be capped at 90%. For the assignment's final grade, we will **automatically** use your higher score between the regrade score and the original score.
 
