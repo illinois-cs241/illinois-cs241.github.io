@@ -20,16 +20,28 @@ If you are not on the campus network you will need to install and use the campus
 
 The VM number will be included in the email you received.
 
-On Linux / Mac, you can do something like
+If you use VS Code, please follow [this tutorial](https://cs341.cs.illinois.edu/tutorials/vscode). Otherwise:
+* On Linux / Mac, you can do something like
 ```console
 $ ssh <NETID>@{{site.data.constants.semester }}-{{ site.data.constants.department_code }}{{ site.data.constants.course_number }}-<NUM>.cs.illinois.edu
 ```
 
-On Windows, you can use an SSH client like [PuTTY](https://www.putty.org/).
+* On Windows, you can use an SSH client like [PuTTY](https://www.putty.org/).
 
 Note that if you are not connected to on-campus internet, you will need to use a Virtual Private Network (VPN) to connect to your VM. Instructions on downloading and using the UIUC VPN can be found [here](https://answers.uillinois.edu/illinois/98773).
 
-An alternative to using the UIUC VPN is to SSH twice. You can first SSH into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag!
+An alternative to using the UIUC VPN is to SSH twice. You can first SSH into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag. If you are using the VS Code SSH client, setup your .ssh config like this:
+```console
+Host 341-VM
+  HostName sp25-cs341-<Your VM Number>.cs.illinois.edu
+  User <NetID>
+  ProxyCommand ssh ews -W %h:%p
+
+Host ews
+  HostName linux.ews.illinois.edu
+  User <NetID>
+```
+If you want further information on what this is actually doing, you can read [this tutorial](ttps://www.cyberciti.biz/faq/linux-unix-ssh-proxycommand-passing-through-one-host-gateway-server/) on proxying.
 
 Additionally, make sure your VM is on and running, which can be done [at the VM dashboard](https://vc.cs.illinois.edu/). Use this [page](https://csid-basic-apps.cs.illinois.edu/) to lookup your VM name if needed.  
 **Note: Both of the above links also require campus wifi or a VPN**

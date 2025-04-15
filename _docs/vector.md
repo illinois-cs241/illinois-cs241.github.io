@@ -42,7 +42,7 @@ In case a fellow employee asks what you learned in CS 225, here's some review:
 
 Since this vector is generic, it will have to call custom constructor, destructor, and default constructor functions when objects are added or removed. (How is this better than a single function which handles all possible types?) Thus, your vector structure will contain pointers to your constructor or destructor routines, and you can initialize the vector by passing pointers to these functions as parameters.
 
-What you'll end up with is a useful general-purpose vector, capable of dynamically expanding. (No more fixed-sized buffers!). If you get confused about the callback typedefs (i.e. what a copy constructor is) take a look at `callbacks.h`. You can also learn more about callbacks and how to use them [here](https://www.geeksforgeeks.org/callbacks-in-c/) or [here](https://www.tutorialspoint.com/callbacks-in-c).
+What you'll end up with is a useful general-purpose vector, capable of dynamically expanding. (No more fixed-sized buffers!). If you get confused about the callback typedefs (i.e. what a copy constructor is) take a look at `callbacks.h`. 
 
 Note: Remember that vector size (the number of actual objects held in the vector) and capacity (size of the storage space currently allocated for the vector) are two different things. Refer to documentation in vector.h and vector.c for more information.
 
@@ -85,6 +85,10 @@ strcmp(const char *s1, const char *s2) {
 ## `INITIAL_CAPACITY`
 
 `INITIAL_CAPACITY` is the starting capacity of the vector, initialized to 8. Do not modify this field, as doing so may cause you to fail tests. 
+
+## Callbacks 
+
+A set of callback functions representing copy constructors, default constructors, and destructors for different types have been provided in `callbacks.h`. Please read `callbacks.h` and `callbacks.c` carefully, especially the function documentation, to understand when to use each one accordingly. The function pointers defined in the vector struct can store function pointers to the defined callback functions, which allows for flexibility and emulation of Object-Oriented Programming in C. You can also learn more about callbacks and how to use them [here](https://www.geeksforgeeks.org/callbacks-in-c/) or [here](https://www.tutorialspoint.com/callbacks-in-c).
 
 ## Writing test cases
 

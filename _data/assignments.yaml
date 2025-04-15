@@ -34,13 +34,13 @@ labs:
       url: "utilities_unleashed"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-09-18 23:59
+          due_date: 2025-02-12 23:59
           graded_files:
           - env.c
           - time.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Mini Memcheck"
       releaseDate: "Week 4"
@@ -48,12 +48,12 @@ labs:
       url: "mini_memcheck"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-09-25 23:59
+          due_date: 2025-02-19 23:59
           graded_files:
           - mini_memcheck.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Teaching Threads"
       releaseDate: "Week 5"
@@ -61,12 +61,13 @@ labs:
       url: "teaching_threads"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-10-2 23:59
+          due_date: 2025-02-26 23:59
           graded_files:
           - par_reduce.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
+      slides: https://docs.google.com/presentation/d/1zdh2QgI40KssmoIhcJqZJoxfVB8euOXyx8-H1lV0NhA/edit?usp=sharing
   -
       name: "Critical Concurrency"
       releaseDate: "Week 6"
@@ -74,14 +75,14 @@ labs:
       url: "critical_concurrency"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-10-09 23:59
+          due_date: 2025-03-05 23:59
           graded_files:
           - barrier.c
           - queue.c
           - semamore.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
   -
       name: "Deadlock Demolition"
       releaseDate: "Week 7"
@@ -89,12 +90,13 @@ labs:
       url: "deadlock_demolition"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-10-16 23:59
+          due_date: 2025-03-12 23:59
           graded_files:
           - libdrm.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
+      slides: https://docs.google.com/presentation/d/1hxcaWj8jig9_74TVsI6Cq2_KdLDI2tlCwg93XxDGCAc/edit?usp=sharing
   -
       name: "Ideal Indirection"
       releaseDate: "Week 8"
@@ -102,12 +104,13 @@ labs:
       url: "ideal_indirection"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-10-23 23:59
+          due_date: 2025-03-26 23:59
           graded_files:
           - mmu.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
+      slides: https://docs.google.com/presentation/d/1E2OAfTItyZvXnKFBsU8qkpNWooVMXaTjjPK_OqHfzoU/edit?usp=sharing
   -
       name: "MapReduce"
       releaseDate: "Week 9"
@@ -115,12 +118,13 @@ labs:
       url: "mapreduce"
       submissions:
         - title: MapReduce
-          due_date: 2024-10-30 23:59
+          due_date: 2025-04-02 23:59
           graded_files:
           - mapreduce.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
+      slides: https://docs.google.com/presentation/d/1zb24HSvrZ3NZEVVos1962yYlsy9jTnSxJqlNaBETqzs/edit?usp=sharing
   -
       name: "Charming Chatroom"
       releaseDate: "Week 10"
@@ -128,14 +132,15 @@ labs:
       url: "charming_chatroom"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-11-06 23:59
+          due_date: 2025-04-09 23:59
           graded_files:
           - client.c
           - server.c
           - utils.c
       resources: true
       worksheet: true
-      visible: false
+      visible: true
+      slides: https://docs.google.com/presentation/d/1-2kbnuQOnKD8IWarpQlo2MprO2L7-UBu15vtOa2s9Wo/edit?usp=sharing
   -
       name: "Deepfried dd"
       releaseDate: "Week 11"
@@ -143,12 +148,13 @@ labs:
       url: "deepfried_dd"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-11-13 23:59
+          due_date: 2025-04-16 23:59
           graded_files:
           - dd.c
       resources: true
-      worksheet: false
-      visible: false
+      worksheet: true
+      visible: true
+      slides: https://docs.google.com/presentation/d/1S2DPaHoINCwUnk-nPVYcC5qKJ2AnN8ELhpl8OyIciSU/edit?usp=sharing
   -
       name: "Mad Mad Access Patterns"
       releaseDate: "Week 12"
@@ -225,16 +231,16 @@ mps:
       url: "shell"
       submissions:
         - title: Part 1
-          due_date: 2024-09-23 23:59
+          due_date: 2025-02-17 23:59
           graded_files:
           - shell.c
         - title: Part 2
-          due_date: 2024-09-30 23:59
+          due_date: 2025-02-24 23:59
           graded_files:
           - shell.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Malloc"
       releaseDate: "Week 6"
@@ -242,16 +248,16 @@ mps:
       url: "malloc"
       submissions:
         - title: Part 1 # 18
-          due_date: 2024-10-8 23:59
+          due_date: 2025-03-03 23:59
           graded_files:
           - alloc.c
         - title: Part 2
-          due_date: 2024-10-15 23:59
+          due_date: 2025-03-10 23:59
           graded_files:
           - alloc.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Password Cracker"
       releaseDate: "Week 8"
@@ -259,13 +265,13 @@ mps:
       url: "password_cracker"
       submissions:
         - title: Version 1 and 2
-          due_date: 2024-10-21 23:59
+          due_date: 2025-03-24 23:59
           graded_files:
           - cracker1.c
           - cracker2.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Parallel Make"
       releaseDate: "Week 9"
@@ -273,16 +279,16 @@ mps:
       url: "parallel_make"
       submissions:
         - title: Part 1
-          due_date: 2024-10-28 23:59
+          due_date: 2025-03-31 23:59
           graded_files:
           - parmake.c
         - title: Part 2
-          due_date: 2023-11-04 23:59
+          due_date: 2025-04-07 23:59
           graded_files:
           - parmake.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
       slides: https://docs.google.com/presentation/d/1vOdlHMjhpBXmLosPW2wVIe5dhBCIeC3E0esYxdw3GvE/edit?usp=sharing
   -
       name: "Finding Filesystems"
@@ -291,12 +297,12 @@ mps:
       url: "finding_filesystems"
       submissions:
         - title: Entire Assignment
-          due_date: 2024-11-11 23:59
+          due_date: 2025-04-14 23:59
           graded_files:
           - minixfs.c
       resources: true
       worksheet: false
-      visible: false
+      visible: true
   -
       name: "Nonstop Networking"
       releaseDate: "Week 12"
@@ -304,20 +310,20 @@ mps:
       url: "networking_mp"
       submissions:
         - title: Part 1 The Client
-          due_date: 2024-11-18 23:59
+          due_date: 2025-04-21 23:59
           graded_files:
           - client.c
           - common.c
           - common.h
         - title: Part 2 The Server Part 1
-          due_date: 2024-12-02 23:59
+          due_date: 2025-04-28 23:59
           graded_files:
           - client.c
           - server.c
           - common.c
           - common.h
         - title: Part 3 The Server Part 2
-          due_date: 2024-12-09 23:59
+          due_date: 2025-05-05 23:59
           graded_files:
           - client.c
           - server.c
@@ -325,7 +331,7 @@ mps:
           - common.h
       resources: true
       worksheet: false
-      visible: false
+      visible: true
 honors:
   -
       name: "Advanced C"
