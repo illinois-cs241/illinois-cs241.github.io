@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Syllabus</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Syllabus" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Syllabus
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_formal-course-description" href="#formal-course-description" class="fancy-link">Formal Course Description</a></li>
+<li><a id="toc_learning-goalsskills" href="#learning-goalsskills" class="fancy-link">Learning Goals/Skills</a></li>
+<li><a id="toc_grading" href="#grading" class="fancy-link">Grading</a></li>
+<li><a id="toc_quizzes" href="#quizzes" class="fancy-link">Quizzes</a></li>
+<li><a id="toc_coding-assignments" href="#coding-assignments" class="fancy-link">Coding Assignments</a></li>
+<li><a id="toc_autograding-policy" href="#autograding-policy" class="fancy-link">Autograding Policy</a></li>
+<li><a id="toc_getting-help--extensions" href="#getting-help--extensions" class="fancy-link">Getting Help &amp; Extensions</a></li>
+<li><a id="toc_absences" href="#absences" class="fancy-link">Absences</a></li>
+<li><a id="toc_use-of-large-language-models-code-assistants--and-generative-ai-models" href="#use-of-large-language-models-code-assistants--and-generative-ai-models" class="fancy-link">Use of Large Language Models, Code Assistants,  and generative AI Models</a></li>
+<li><a id="toc_academic-integrity" href="#academic-integrity" class="fancy-link">Academic Integrity</a></li>
+<li><a id="toc_land-acknowledgment-statement" href="#land-acknowledgment-statement" class="fancy-link">Land Acknowledgment Statement</a></li>
+<li><a id="toc_sexual-misconduct-policy-and-reporting-statement" href="#sexual-misconduct-policy-and-reporting-statement" class="fancy-link">Sexual Misconduct Policy and Reporting Statement</a></li>
+<li><a id="toc_diversity-statement" href="#diversity-statement" class="fancy-link">Diversity Statement</a></li>
+<li><a id="toc_mental-health-statement" href="#mental-health-statement" class="fancy-link">Mental Health Statement</a></li>
+<li><a id="toc_cs-cares-statement" href="#cs-cares-statement" class="fancy-link">CS Cares Statement</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="formal-course-description" class="title-text">Formal Course Description<a class="anchor title-text" href="#formal-course-description"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This course is an introduction to System Programming. System Programming refers to writing code that prioritizes operating system support for programmers. A computer needs an operating system to manage its resources and provide support for common functions, such as accessing peripherals. There are two categories of “customers” that an operating system must support.</p>
+<p>The first category is the community of users. We have all used computers, and you may recognize operating systems’ functions such as creating folders (directories) and moving files around. These are examples of operating system support for users. User support is not the objective of this course.</p>
+<p>The second category of users is programmers. This course addresses this category. When you write a program, it may have to interact with physical hardware (memory, flash storage, screen, network, etc.). For example, you may want to get input from a keyboard or mouse; you may want to read some configuration file stored on disk; you may want to output data to a screen or printer; or you may want to access a remote server across a network.</p>
+<p>The operating system presents common interfaces for programmers to perform these functions. It also provides useful abstractions such as “tasks” (also called processes), “threads”, and “semaphores”. You can make the computer multi-task by creating new tasks or new threads. You can make these tasks coordinate and synchronize by using semaphores. You can tell the computer the order in which you want tasks to be executed by using a scheduling policy. Finally, you can manage computer memory by calling on the function for memory management.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="learning-goalsskills" class="title-text">Learning Goals/Skills<a class="anchor title-text" href="#learning-goalsskills"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>Identify the basic components of an operating system, describe their purpose, and explain how they function.</li>
+  <li>Write, compile, debug, and execute C programs that correctly use system interfaces provided by UNIX or a UNIX-like operating system.</li>
+  <li>Be familiar with important UNIX system calls and invoke them correctly from within C programs.</li>
+  <li>Describe the difference between programs, processes, and threads.</li>
+  <li>Write a memory allocator or <a href="/malloc_hall_of_fame" class="fancy-link wiki-link">malloc</a>.</li>
+  <li>Explain the meaning and purpose of process control blocks and other mechanisms that the operating system uses to implement the process and thread abstractions.</li>
+  <li>Write, compile, debug, and execute C programs that create, manage and terminate processes and threads on UNIX.</li>
+  <li>Define concurrency and explain the problems that may arise because of concurrent execution of multiple processes or threads. Explain how these problems can be avoided. Write code that avoids these problems.</li>
+  <li>Define semaphores, mutexes, and other synchronization primitives. Also, explain their purpose, and describe their internal implementation.</li>
+  <li>Describe possible problems that arise from improper use of synchronization primitives (such as deadlocks) and present their solutions.</li>
+  <li>Write, compile, debug, and execute C programs that use UNIX synchronization primitives.</li>
+  <li>Describe operating system scheduling and use UNIX interfaces to set and modify scheduling policy parameters.</li>
+  <li>Define UNIX signals and signal handlers, and describe their use.</li>
+  <li>Write, compile, debug, and execute C programs with processes and threads that interact by invoking and catching signals.</li>
+  <li>Describe the concepts of I/O devices, files, directories.</li>
+  <li>Explain the internal implementation of files systems and operating system I/O.</li>
+  <li>Write, compile, debug, and execute C programs that use files and I/O on UNIX.</li>
+  <li>Describe the machine memory hierarchy, describe its components such as caches and virtual memory, and explain memory management mechanisms pertaining to these components such as paging and segmentation.</li>
+  <li>Write, compile, debug, and execute C programs that make use of memory management functions.</li>
+  <li>Describe the protocols (such as TCP and IP) and interfaces (such as sockets) used for communication among different computers.</li>
+  <li>Write distributed applications that communicate across a network.</li>
+  <li>Understands and uses system security mechanisms to build secure programs.</li>
+  <li>By the end of this course, you should be proficient at writing programs that take full advantage of operating system support.</li>
+  <li>Can analyze how a specific security error (e.g. buffer overflow, file access control, page access control) impacts the Confidentiality, Integrity and/or Availability of data or service.</li>
+  <li>Can identify multiple development practices (e.g. design reviews, code reviews, testing) as important practices to build secure programs.</li>
+  <li>Can briefly describe well-known security case studies (e.g. network protocol implementation errors, CPU side channel attacks) and how they comprise the Confidentiality, Integrity and/or Availability of data or service.</li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="grading" class="title-text">Grading<a class="anchor title-text" href="#grading"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The following is subject to minor changes:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Final Exam : 20 - 23% (see notes)
+Quizzes: 15%
+
+MP Programming Assignments : 45%
+Lab Programming Assignments: 17%
+
+Lab Attendance &amp; other items: see below
+</code></pre></div></div>
+<p>We publish the following thresholds:</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Points</th>
+      <th>Minimum Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[90 - 100]</td>
+      <td>A-</td>
+    </tr>
+    <tr>
+      <td>[80 - 90)</td>
+      <td>B-</td>
+    </tr>
+    <tr>
+      <td>[70 - 80)</td>
+      <td>C-</td>
+    </tr>
+  </tbody>
+</table>
+<p>All lab programming assignments are equally weighted. MP programming assignments are weighted by the time given to complete them. This means that three week MPs are worth triple one week. For grading, we will drop your lowest lab score, and two lab attendance grades. Some examples: you slept in late; your dog ate your homework; you destroyed the internet.</p>
+<p>The final is take-home, 3 hours and will be available online. The exam can be completed at any time over a 3 day period during exam week. More details will be published at the end of the semester. Early exams will not be offered. The exam will be available on the first Sunday after reading day and closes 3 days later, Wednesday 11 pm.</p>
+<p>Opportunities for a small amount of extra credit may be offered and will be annouced during the semester.</p>
+<p>Grading issues should be raised with your TA during section or by email. Missing scores need to be reported within 3 days of being published.</p>
+<h3 id="regrades" class="title-text">Regrades</h3>
+<p>At the end of the semester there will be a last chance regrade option for three weeks of machine problem or lab grades. To be able to take advantage of this opportunity you will need to have a “perfect” (we define) attendance grade after the drops.</p>
+<p>When will this start? For Fall semesters, it will start around the Thanksgiving week. for Spring semesters, it will be around the middle of April.</p>
+<p>Can we use the autograder at this time? Yes! During the regrade period, the autograder will open for every assignment. You will be able to use one pre-deadline autograder run per day on each assignment (i.e. you can run the autograder on different assignments on the same day). Running the autograder on an assignment does not use a regrade.</p>
+<p>How do I specify what assignments I want regraded? Regrades are determined by a file released during this period where you indicate what assignments you want to use your regrades on. We trigger deadline autograder runs for only these assignments, which determines the final grade.</p>
+<p>More info? We will announce the regrade policy on the course forum later in the semester.</p>
+<p>Please note that the score for each regrade will be capped at 90%. For the assignment’s final grade, we will <strong>automatically</strong> use your higher score between the regrade score and the original score.</p>
+<h3 id="lab-attendance" class="title-text">Lab Attendance</h3>
+<p>Chicago students will have their own online lab (arranged with the TA). Urbana-Champaign students have in-person labs in Siebel. Labs are required and there is also a small reward for in-person attendance: Your final exam contribution (23%) can be reduced to 20% by attending all labs. Partial attendance of in-person labs will be prorated. For example, if after allowing for 2 drops, you attended 6 of 9 in-person labs (11 labs in total after drops <strong>in real</strong>) then your final exam will be worth 21%, and you will have 2% of full course credit.</p>
+<p>What this means: If you choose to complete this course virtually, or are sick and unable to attend labs, or do not wish to be in close contact with other students you can still succeed and earn a high grade.</p>
+<p>For those that need it: There is still a small carrot to encourage you to leave your dorm and make it to Siebel! But don’t get anxious about loosing points if you can’t attend.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="quizzes" class="title-text">Quizzes<a class="anchor title-text" href="#quizzes"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Each quiz covers approximately 2 weeks of content. They can be completed multiple times (highest score is used) at any time. They are due by last day of instruction (i.e. before reading day).
+No quizes are dropped; you should complete all 7 of them.</p>
+<p>Quizzes will be online using <a href="https://prairielearn.org" class="fancy-link wiki-link">Prairie Learn</a>. Please see the Quiz topics page for more information.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="coding-assignments" class="title-text">Coding Assignments<a class="anchor title-text" href="#coding-assignments"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>There are two different types of coding assignments in this course labs and machine problems.</p>
+<p>Labs are primarily teaching exercises designed either to prepare you for the machine problems or to allow you to explore a topic of systems in a hands on manner. Labs may be done in a collaborative manner. You are allowed to work with each other so as to learn in the best manner for you. This can include sharing code, debugging each other’s code, and discussing the assignment at any level. You still may not publicly publish either your solutions or our code. Finally you should have a comment block with any students or other resources you used in the completion of your lab assignments. This block will not be used for grading but is needed the same way that citing your sources is required when writing a paper.</p>
+<p>Machine Problems are different. While they are a key learning experience MPs are also a key assessment of your skills. These are solo exercises and you must work alone. For MPs, you may not share code in any way. This includes show, share, email, or debug each others code. You may have high level discussions with each other on the ideas in the assignments but that is it. You are responsible for keeping the code for you machine problems private this includes not letting people view your code. You may not publish your code on any open website.</p>
+<p>No late submissions will be accepted.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="autograding-policy" class="title-text">Autograding Policy<a class="anchor title-text" href="#autograding-policy"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You walk into the investor meeting ready to show your demo. You ship your code ready for a million Internet of things. You deploy your code to the Internet backbone. It had better compile and be functional.</p>
+<p>Forgot to commit or your committed code that does not compile? Zero. The basic headline is that you’re not in Kansas anymore (to quote Dorothy). Don’t leave it until the last minute.</p>
+<p>There are two kinds of autograder runs:</p>
+<ul>
+  <li>Pre-deadline runs: <strong>You are responsible for starting these.</strong> Our team has worked really hard to improve our grading system and make it more reliable and flexible. Now, you can schedule your pre-deadline autograder runs using the on-demand grading system, that you can find on the <code class="language-plaintext highlighter-rouge">Assignments</code> page! You have to log in with your GitHub Enterprise account. Assignments will become visible on the web app as we release them. You will get one AG run a day which you can trigger at your disposal. Please be careful in using these. <strong>These pre-deadline runs do not roll over.</strong> We recommend that you develop and work on your assignments every day to make the best of this system. Once you click “Grade Now”, your code will start getting tested on our grading machines. You can expect to see feedback in your CS 341 repository’s <code class="language-plaintext highlighter-rouge">_feedback</code> branch in a few minutes. In rare circumstances, the grading process might fail (if your code made our Docker containers crash). In this scenario, there will be no visible feedback. You should make a private post in the course forums and we will deal with this on a per-student basis. Use these runs for feedback as you work on the assignment. <strong>Students are 100% responsible for the pre-deadline runs and they have no effect on your grade for the assignment.</strong>
+</li>
+  <li>Deadline runs: These will be triggered by us and the grades you get on these will be counted towards your final grades. The results will show up in the <code class="language-plaintext highlighter-rouge">_feedback</code> branch as usual.</li>
+</ul>
+<p>Labs:</p>
+<ul>
+  <li>Released every Wednesday</li>
+  <li>Pre-deadline runs: Available every day from Wednesday to Wednesday (you will get to start these!)</li>
+  <li>Deadline AG run on Wednesday at 11:59 pm</li>
+</ul>
+<p>MPs:</p>
+<ul>
+  <li>Released on Mondays (for multi-week MPs, the entire assignment is released at once)</li>
+  <li>Pre-deadline runs: Available every day from Tuesday to Monday (you will get to start these!)</li>
+  <li>Deadline run on Monday at 11:59 pm</li>
+</ul>
+<p>We will test your code on a multi-core machine; testing on your own laptop is insufficient. Don’t be surprised if race conditions that go undetected on a different machine cause your code to fail. We encourage you to develop and test your code on your CS 341 VM, which is near-identical to the grading machine. We will attempt to give you some partial credit if your code passes the tests.</p>
+<p>If you have a question about your personal autograder results after the final autograde run, then feel free to make a private post in the course forums titled “&lt;assignment name&gt; Autograde Question” with the folders/tags/labels <code class="language-plaintext highlighter-rouge">&lt;MP or Lab&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;assignment name&gt;</code> selected.</p>
+<ul>
+  <li>It will take time to go through autograder questions, so please do not expect an immediate (or even same day or same week) response. We will try to answer you as quickly as possible.</li>
+  <li><em>You must show us your test cases first. If they are not close to exhaustive, we reserve to right to not answer your question.</em></li>
+  <li>We will not tell you the details of specific tests, beyond what the test description already says.</li>
+  <li>These questions should be for “I have exhaustive test cases for <em>X</em>, so how am I failing <em>Y</em>?”</li>
+  <li>Please mention your NetID in the post, so we can look up your code if needed.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="getting-help--extensions" class="title-text">Getting Help &amp; Extensions<a class="anchor title-text" href="#getting-help--extensions"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>It’s important to say physically and mentally healthy. Please see the links below for mental health resources.</p>
+<ul>
+  <li>Office hours and peer mentoring for course staff will be posted in the forums. Office hours will start the second full week of the semester</li>
+  <li>For unusual administrative items (e.g. sickness preventing you from working, DRES, 1% issues, problems with your TA) then please email (<a href="mailto:cs341admin@cs.illinois.edu" class="fancy-link wiki-link">cs341admin@cs.illinois.edu</a>) and explain your scenario.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="absences" class="title-text">Absences<a class="anchor title-text" href="#absences"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>If you are in an exceptional situation – i.e. family emergency, sickness, please email (<a href="mailto:cs341admin@cs.illinois.edu" class="fancy-link wiki-link">cs341admin@cs.illinois.edu</a>) and we will deal with your situation on a case-by-case basis via the course admin (<a href="mailto:cs341admin@cs.illinois.edu" class="fancy-link wiki-link">cs341admin@cs.illinois.edu</a>). For illness-related excuses, you will need a doctor’s note of some kind verifying your illness. <em>No</em> illness-related excuses will be accepted without a dated <a href="http://odos.illinois.edu/community-of-care/student-assistance-center/" class="fancy-link wiki-link">Emergency Dean’s</a> note stating that you contacted the Emergency Dean.</p>
+<p>Lab attendance credit will <em>not</em> be given unless you are physically present in lab (there is no point asking the admin for this if you are sick or away). Lab attendance reduces the fraction contribution from your final exam by a small amount. This is a small reward for attending.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="use-of-large-language-models-code-assistants--and-generative-ai-models" class="title-text">Use of Large Language Models, Code Assistants,  and generative AI Models<a class="anchor title-text" href="#use-of-large-language-models-code-assistants--and-generative-ai-models"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You may use Large Language AI  Models (e.g. Github Copilot, ChatGPT, and other models) in this class with the following conditions-</p>
+<ul>
+  <li>You must document their use in your code. Clearly describe which parts of your submitted code were developed with the help of generative AI.</li>
+  <li>Document when you used an AI model as part of your development process and how well it worked. Specifically, in your code comments describe if you used an AI model to assist in your initial design, initial implementation, developing test code, debugging code or other software development process.</li>
+  <li>Unless explicitly allowed by the assignment or exam, you may NOT use generative AI to complete (large portions of) assignments for you. Please see the Academic Integrity section below.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="academic-integrity" class="title-text">Academic Integrity<a class="anchor title-text" href="#academic-integrity"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>CS 341 is considered a critical step in your ability to create useful programs for your later classes and beyond. Unfortunately for grading purposes, a minority of students submit code that was created by others. Cheating is taken very seriously, and all cases of cheating will be brought to the University, your department, and your college. You should understand how <a href="https://wiki.cites.illinois.edu/wiki/display/undergradProg/Honor+Code" class="fancy-link wiki-link">academic integrity</a> applies to Computer Science courses.</p>
+<p><strong>Rule of Thumb:</strong> If at any point you submit an assignment that does not reflect your understanding of the material, then you have probably cheated.</p>
+<p>In the cases of labs, you are allowed to collaborate with others in the class, which includes detailed debugging and code sharing. All you need to do is put your partners’ netid at the top.</p>
+<p>This does <em>not</em> mean that will you share the same grade for the assignment, and each group member must submit a solution to receive credit.</p>
+<p><strong>EVERY MACHINE PROBLEM IS A SOLO ASSIGNMENT IN THIS CLASS!</strong></p>
+<p>This means you are not allowed to split the work with a partner.
+You are, however, allowed to discuss the assignments at a very high level.
+You can even share testing scripts!
+If you are found to have shared code work on any machine problem, you will receive a zero on that assignment and a 10% sanction in the course for each infraction where you are found to have used material that is not yours.
+Intentional obfuscation of code (e.g., adding dead code, no-op functions, non-standard formatting, and deceptive naming conventions) also constitutes a violation of the course policy.</p>
+<p>You may not publish your solutions or leave them in “plain view”, thereby leaving your programs open to copying, which constitutes cheating.
+If your code (or a variation of it) is found publicly accessible, then you will receive a letter grade reduction in the class for each infraction.
+Do not put your code anywhere besides your private course repository and take measures to ensure that nobody can copy your code, so that you are not charged with a violation.</p>
+<p>In the case of quizzes in the CBTF, it is a violation of our course policy to access or provide access to the quiz material outside your registered window.
+Cheating at CBTF may also result in immediate failure of the course and further action by the college of engineering.
+If you are found to have done so you will receive a zero on the quiz and a 10% sanction in the course.
+This includes seeking descriptions of the questions from students who have taken the quiz, as well as any other method that would give you access to the quiz outside your scheduled time.
+If there is prep material provided in lecture or on the course forums, you are welcome to share that material freely.</p>
+<p>We want you to get the most out your education, and cheating not only affects your peers, but also your level of knowledge and ability.</p>
+<p>You may use AI and other code-assist tools - see AI statement above.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="land-acknowledgment-statement" class="title-text">Land Acknowledgment Statement<a class="anchor title-text" href="#land-acknowledgment-statement"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Please see our important Diversity Statement <a href="/statements#LandAcknowledgementStatement" class="fancy-link wiki-link">here</a>.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="sexual-misconduct-policy-and-reporting-statement" class="title-text">Sexual Misconduct Policy and Reporting Statement<a class="anchor title-text" href="#sexual-misconduct-policy-and-reporting-statement"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Please see our important Diversity Statement <a href="/statements#SexualMisconductPolicyStatement" class="fancy-link wiki-link">here</a>.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="diversity-statement" class="title-text">Diversity Statement<a class="anchor title-text" href="#diversity-statement"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Please see our important Diversity Statement <a href="/statements#InclusivityStatement" class="fancy-link wiki-link">here</a>.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="mental-health-statement" class="title-text">Mental Health Statement<a class="anchor title-text" href="#mental-health-statement"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Please see our important Mental Health Statement <a href="/statements#MentalHealthStatement" class="fancy-link wiki-link">here</a>.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="cs-cares-statement" class="title-text">CS Cares Statement<a class="anchor title-text" href="#cs-cares-statement"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Please see our important CS Cares Statement <a href="/statements#CSCaresStatement" class="fancy-link wiki-link">here</a>.</p></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_pages/syllabus.md";
+  </script>
+</body>
+
+</html>

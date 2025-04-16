@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Deepfried dd</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Deepfried dd" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Deepfried dd
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-04-16 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>dd.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_lore" href="#lore" class="fancy-link">Lore</a></li>
+<li><a id="toc_introduction" href="#introduction" class="fancy-link">Introduction</a></li>
+<li><a id="toc_implementing-dd" href="#implementing-dd" class="fancy-link">Implementing dd</a></li>
+<li><a id="toc_testing" href="#testing" class="fancy-link">Testing</a></li>
+<li><a id="toc_grading" href="#grading" class="fancy-link">Grading</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Deepfried dd are: <br>
+    </p>
+<ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Working with files</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">fseek() and fread()</span>
+        </li>
+      
+    </ul>
+  
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="lore" class="title-text">Lore<a class="anchor title-text" href="#lore"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>The year is 3072. Other than being the sum of two consecutive powers of two, nothing was particularly special about this year. That is, until you came across an ancient laptop washed up on the sides of Boneyard Creek. Opening the laptop, you were delighted to find the block I and CS 125 stickers still firmly attached to the keyboard. Of course, you’d heard the stories. Before humanity had found a way to implant knowledge in each other via electromagnetic gimmicks, so-called “students” used to attend “classes” where “professors” disperesed their knowledge in oral and visual form. CS 125 had been such a class - oh, the wonder it must have been! The stickers alone, ancient relics of a past society, went for millions of dollars these days. Looking around to make sure no one else had laid eyes upon your lottery ticket, you hurried away to your apartment to have a closer look at the laptop. After some research on how ancient laptops were powered (turns out quantum resonance charging wasn’t discovered until 2048!), you quickly splice together a compatible laptop “charger” that would make any fire marshall wince, and finally hit the one thousand year old power button. After a few moments, you see a password prompt. Thinking for a moment on anything that could unite two CS @ Illinois nerds across a millenium, you smile and enter “imaginebeinganECEmajor”. Almost unsurprisingly, the laptop unlocks. And inside it, you find something even more enticing than the CS 125 sticker - four years worth of ancient homework assignments, practice exams, and even the infamous MPs of old. Almost eight hours pass before you look at the clock again, having quenched your insatiable curiosity for the ways of ancient societies. How did such a primitive world build such advanced exercises for their school children? And what was “PraireLearn”? Thousands of questions go through your head, but before you can answer you realize what you must do first: make a backup of this quaint laptop’s disks, so you can meticulously dissect its contents later on your own computer without threat of burning an entire building down. Luckily, you have a USB-C flash drive you purchased from a museum gift store, but how do you go about making a copy of the laptop’s entire disk? There’s no tool you could possibly download, since surely the networking stack won’t be able to connect with any modern network. Luckily, you notice that the laptop has a C IDE already installed. Somehow, C survived all the way from the 1980s to the present day. Almost gleefully, you realize you’ll have to code a C utility on this ancient relic of a laptop in order to make an image of the drive - just like the CS students of old would have done. You put on your hacking gloves, and get to work.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="introduction" class="title-text">Introduction<a class="anchor title-text" href="#introduction"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> is a command-line utility used to copy data to and from files. Since Linux treats many external devices (including USB drives) as files, this makes <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> very powerful. For example, the tool can be used to create a backup image of your hard drive and store it as a file which can be uploaded to cloud storage. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> could also be used to directly clone one drive to another, write a bootable iso image to a USB drive, and much more.</p>
+<p>For example, the following command would write an .img file (<code class="language-plaintext highlighter-rouge">if</code>) to a USB drive represented as /dev/disk4 (<code class="language-plaintext highlighter-rouge">of</code>), in chunks of 4 MB blocks (<code class="language-plaintext highlighter-rouge">bs</code>).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dd if=/path/to/bootable.img of=/dev/disk4 bs=4M
+</code></pre></div></div>
+<p>See the man pages for dd <a href="http://man7.org/linux/man-pages/man1/dd.1.html" class="fancy-link wiki-link">here</a>, and example usage <a href="https://linoxide.com/linux-command/linux-dd-command-create-1gb-file/" class="fancy-link wiki-link">here</a>. We suggest you get a feel of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> by using it to copy a file from one folder to another. Be careful, however! dd can easily be used to (accidentally or on purpose) to corrupt and entirely wipe disk drives and partitions, so make sure you know exactly what a <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> command is going to do before running it! We recommend you make a testing folder on your VM and only use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> with paths pointing to that folder, so there’s virtually no chance of overwriting something you don’t want to.</p>
+<p>Note that Linux will automatically prevent you (usually) from writing to physical devices unless you run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> as root (i.e. via sudo).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="implementing-dd" class="title-text">Implementing dd<a class="anchor title-text" href="#implementing-dd"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>For this assignment, you will be implementing the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> utility in C. Your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> implementation will copy data from an input file to an output file in a manner specified by its arguments.</p>
+<h3 id="background-blocks" class="title-text">Background: Blocks</h3>
+<p>A block is simply a unit measuring the number of bytes that are read or written at one time. For example, modern hard drives have a sector (block) size of 4 kB - reads or writes to the disk can only address 4 kB portions at a time. If you write a 64 kB file to the disk, it will be broken down into 16 writes of 4 kB each. Because <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> is a file manipulation tool, it supports reading/writing with a configurable block size. For example, if we run <code class="language-plaintext highlighter-rouge">./dd -i input_file -o output_file -b 128</code>, we are telling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> to copy <code class="language-plaintext highlighter-rouge">input_file</code> to <code class="language-plaintext highlighter-rouge">output_file</code>, 128 bytes at a time. Your code should write the first 128 bytes of <code class="language-plaintext highlighter-rouge">input_file</code> to <code class="language-plaintext highlighter-rouge">output_file</code>, then the next 128, and so on and so forth in a loop until the <code class="language-plaintext highlighter-rouge">input_file</code> is exhausted (as opposed to copying the entire file in one go). The arguments of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> along with more example usage can be found below.</p>
+<h3 id="arguments" class="title-text">Arguments</h3>
+<p>You must implement the following arguments from the real <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code>. Since it is $CURRENT_YEAR, we won’t be using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code>’s style of arguments (<code class="language-plaintext highlighter-rouge">if=file</code>, etc), and instead use the standard style (<code class="language-plaintext highlighter-rouge">-i file</code>, etc). You <strong>should</strong> use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getopt.3p.html" class="fancy-link">getopt</a></code> to parse these arguments, just as you did in the Shell MP.</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">-i &lt;file&gt;</code>: input file (defaults to stdin)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-o &lt;file&gt;</code>: output file (defaults to stdout)
+    <ul>
+      <li>You should create this file if does not already exist.</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-b &lt;size&gt;</code>: block size, the number of bytes copied at a time (defaults to 512)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-c &lt;count&gt;</code>: total number of <strong>blocks</strong> copied (defaults to the entire file)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-p &lt;count&gt;</code>: number of <strong>blocks</strong> to skip at the start of the input file (defaults to 0)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-k &lt;count&gt;</code>: number of <strong>blocks</strong> to skip at the start of the output file (defaults to 0)
+    <ul>
+      <li>The <a href="https://pubs.opengroup.org/onlinepubs/009695399/functions/fopen.html" class="fancy-link wiki-link">documentation</a> on the <code class="language-plaintext highlighter-rouge">mode</code> parameter of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fopen.3p.html" class="fancy-link">fopen</a></code> may be useful here.</li>
+    </ul>
+  </li>
+  <li>For any other arguments, you should exit with code 1. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getopt.3p.html" class="fancy-link">getopt</a></code> will automatically print an error message for you.</li>
+</ul>
+<p>Your code will be compiled into an executable and run via the command line.</p>
+<p><img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"> WARNING: Note that some of these arguments refer to <strong>blocks</strong>, not <strong>bytes</strong>.</p>
+<h3 id="reading-from-stdin" class="title-text">Reading from <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdin.3p.html" class="fancy-link">stdin</a></code>
+</h3>
+<p>If implemented optimally, there is no need to specially handle the case where the input file defaults to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdin.3p.html" class="fancy-link">stdin</a></code>, instead of a “real” file. Keep in mind that you <strong>don’t</strong> need to know the size of the entire input file in order to copy the full thing: <a href="https://linux.die.net/man/3/feof" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">feof</code></a> is a useful function. When copying from <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdin.3p.html" class="fancy-link">stdin</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> should write bytes until the user enters Control+D (i.e. end of file) into their terminal. You can see this functionality by running the real <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code>: simply run <code class="language-plaintext highlighter-rouge">dd of=my_file</code> in your terminal, write some text, and press Control+D. <code class="language-plaintext highlighter-rouge">my_file</code> will then contain the text you typed into the terminal.</p>
+<p><strong>Note that <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fseek.3p.html" class="fancy-link">fseek</a></code> is not meant to be used on streams such as stdin and stdout! As such, we will not be testing the -p or -k functionality when the input or output files are set to stdin or stdout respectively.</strong></p>
+<h3 id="status-reports" class="title-text">Status Reports</h3>
+<p>You must print a status report after dd finishes, similar to the real dd. An example is below:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./dd [...parameters]
+1182465+1 records in
+1182465+1 records out
+605422080 bytes copied, 4.354 s, 139034.891 kB/s
+</code></pre></div></div>
+<p>In addition, your dd should be able to give a “live” status report. You should catch SIGUSR1 and print a status report when the signal is triggered:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./dd -i my_file.txt -o my_file2.txt &amp; # start as a background process
+$ kill -n SIGUSR1 &lt;pid of dd&gt; # send SIGUSR1 to dd
+1182465+0 records in
+1182465+0 records out
+605422080 bytes copied, 4.354 s, 139034.891 kB/s
+</code></pre></div></div>
+<p>Use the functions provided in <code class="language-plaintext highlighter-rouge">format.h</code> to print these reports. You should use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/clock_gettime.3p.html" class="fancy-link">clock_gettime</a></code> to time the execution of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code>.</p>
+<p><img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"> WARNING: <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> (among other functions) is not safe to call in a signal handler, since it is not reentrant. Ensure your signal handler does not call these functions, <strong>including</strong> any function in <code class="language-plaintext highlighter-rouge">format.h</code>, and instead indicates to your program to print this status report elsewhere.</p>
+<h3 id="example-usage" class="title-text">Example Usage</h3>
+<p>The following command should copy 32 blocks of size 4 kB  (a total of 128 kB) from <code class="language-plaintext highlighter-rouge">input.dat</code> to <code class="language-plaintext highlighter-rouge">output.dat</code>, skipping 2 blocks from the start of <code class="language-plaintext highlighter-rouge">input.dat</code> and 10 blocks from the start of <code class="language-plaintext highlighter-rouge">output.dat</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./dd -c 32 -p 2 -k 10 -i input.dat -o output.dat -b 4096
+32+0 records in
+32+0 records out
+131072 bytes copied, 0.000 s, 919441.220 kB/s
+</code></pre></div></div>
+<p>This command should dump the output of <code class="language-plaintext highlighter-rouge">echo "Hello, World!"</code> into a file called <code class="language-plaintext highlighter-rouge">output.dat</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "Hello World" | ./dd -o output.dat
+0+1 records in
+0+1 records out
+12 bytes copied, 0.000 s, 1861.039 kB/s
+</code></pre></div></div>
+<p>This command should write about 2 GB of random data (from <code class="language-plaintext highlighter-rouge">/dev/urandom</code>) into a file called <code class="language-plaintext highlighter-rouge">random.bin</code>, in chunks of 1000 bytes:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./dd -c 200000 -i /dev/urandom -o random.bin -b 1000
+200000+0 records in
+200000+0 records out
+200000000 bytes copied, 1.459 s, 137094.439 kB/s
+</code></pre></div></div>
+<h3 id="errors" class="title-text">Errors</h3>
+<p>If the input or output file given to your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code> is invalid, use the functions in <code class="language-plaintext highlighter-rouge">format.h</code> to print the corresponding error and exit with return code <code class="language-plaintext highlighter-rouge">1</code>. Any other invalid inputs (e.g. negative block sizes) are considered undefined behavior.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing" class="title-text">Testing<a class="anchor title-text" href="#testing"> #</a>
+</h2></div>
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Though it is helpful to write tests that call any functions you write in <code class="language-plaintext highlighter-rouge">dd.c</code>, because your code will be run as a command line utility, we recommend testing in the command line as well. You can assemble a series of calls to your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dd.1p.html" class="fancy-link">dd</a></code>  executable in a bash script, and use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/diff.1p.html" class="fancy-link">diff</a></code>/<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/md5sum.1.html" class="fancy-link">md5sum</a></code> along with spot checks to ensure correct functionality. For example, the following shell script would print nothing if your dd implementation is correct:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># create a random 32 MB file using the real dd
+dd bs=4M count=8 if=/dev/urandom of=test_file.img
+# copy to my_test_file using my own implementation of dd
+./dd -i test_file.img -o my_test_file.img
+# print the differences between the two files, if any
+diff test_file.img my_test_file.img
+</code></pre></div></div>
+<p>We included a Makefile target to automatically generate a few files of different sizes in the <code class="language-plaintext highlighter-rouge">test_files</code> directory. You can build it by running <code class="language-plaintext highlighter-rouge">make test-data</code> inside the assignment directory on your VM.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="grading" class="title-text">Grading<a class="anchor title-text" href="#grading"> #</a>
+</h2></div>
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Your code will be auto-graded on all of the parameters listed above. We will also be testing your status reports, both while dd is running (via <code class="language-plaintext highlighter-rouge">SIGUSR1</code>) and after it completes. Note that a handful of tests depend on various aspects of your progress report working.</p>
+<p><img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"> WARNING: <strong>Make sure</strong> to remove all print statements from your code (except calls to functions in format.h) before running the autograder!</p>
+<p><img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"> WARNING: You will fail the assignment if you use use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/system.3p.html" class="fancy-link">system</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code>, or similar.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/deepfried_dd.md";
+  </script>
+</body>
+
+</html>

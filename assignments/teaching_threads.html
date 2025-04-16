@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Teaching Threads</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Teaching Threads" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Teaching Threads
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-02-26 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>par_reduce.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_reduce" href="#reduce" class="fancy-link">reduce()</a></li>
+<li><a id="toc_par_reduce" href="#par_reduce" class="fancy-link">par_reduce()</a></li>
+<li><a id="toc_testing-your-code" href="#testing-your-code" class="fancy-link">Testing your code</a></li>
+<li><a id="toc_examples" href="#examples" class="fancy-link">Examples</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Teaching Threads are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Introduction to pthreads</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Introduction to concurrency</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Introduction to synchronization</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="reduce" class="title-text">reduce()<a class="anchor title-text" href="#reduce"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In functional programming, there is an operation called <a href="https://en.wikipedia.org/wiki/Fold_(higher-order_function)" class="fancy-link wiki-link"><em>reduce</em></a>. <code class="language-plaintext highlighter-rouge">reduce</code> takes three parameters: an input list, a function to apply to the elements of that list, and an initial value (or base case). The function takes two inputs and returns a value. It is first applied to the base case and the first element, and from then on, the function is repeatedly applied to the cumulative result and the next element. <code class="language-plaintext highlighter-rouge">reduce</code> then returns the “reduced” value of the entire list. Depending on which direction this is applied, this is sometimes called a <em>left-fold</em> or <em>right-fold</em>. In this problem, the functions are associative, so it does not matter.</p>
+<p>Here’s a concrete example. Say we have the input list <code class="language-plaintext highlighter-rouge">[1, 2, 3]</code>, a callback function <code class="language-plaintext highlighter-rouge">int add(int elem1, int elem2)</code> which takes two numbers and returns their sum, and a base case of 0. If we call <code class="language-plaintext highlighter-rouge">reduce</code>, the resulting value would be <code class="language-plaintext highlighter-rouge">add(add(add(0, 1), 2), 3) = 6</code>.</p>
+<p>In C code, it looks something like this (you can find this in <code class="language-plaintext highlighter-rouge">reduce.c</code>):</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">reduce</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">list</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">length</span><span class="p">,</span> <span class="n">reducer</span> <span class="n">reduce_func</span><span class="p">,</span>
+           <span class="kt">int</span> <span class="n">base_case</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">base_case</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">reduce_func</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Notice that this is basically a for-loop on the list. There are no fancy algorithms we can use to improve runtime, since the callback function is essentially a black box. So, how can we make it faster? Parallelism to the rescue!</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="par_reduce" class="title-text">par_reduce()<a class="anchor title-text" href="#par_reduce"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Since we guarantee that all the given functions are commutative and associative, <code class="language-plaintext highlighter-rouge">reduce</code> becomes <a href="https://en.wikipedia.org/wiki/Embarrassingly_parallel" class="fancy-link wiki-link">embarrassingly parallel</a>, which means that:</p>
+<ul>
+  <li>it is easy to divide the problem into subproblems, and</li>
+  <li>none of the subproblems depend on each other.</li>
+</ul>
+<p>Given an input list <code class="language-plaintext highlighter-rouge">[1, 2, 3, 4, 5, 6]</code> and <code class="language-plaintext highlighter-rouge">add()</code>, we can meet the requirements for “embarrassingly parallel” by doing the following with 2 threads:</p>
+<ul>
+  <li>Thread 1: evaluate <code class="language-plaintext highlighter-rouge">reduce([1, 2, 3])</code>
+</li>
+  <li>Thread 2: evaluate <code class="language-plaintext highlighter-rouge">reduce([4, 5, 6])</code>
+</li>
+  <li>Thread 1: write <code class="language-plaintext highlighter-rouge">reduce([1, 2, 3])</code> into index 0 of the new list</li>
+  <li>Thread 2: write <code class="language-plaintext highlighter-rouge">reduce([4, 5, 6])</code> into index 1 of the new list</li>
+  <li>Join the threads</li>
+  <li>Main thread: evaluate <code class="language-plaintext highlighter-rouge">reduce(new_list)</code> = <code class="language-plaintext highlighter-rouge">reduce([6, 15])</code>
+</li>
+</ul>
+<p>Finally, we should have our answer of 21. Notice that the size of the list in the last call in the main thread is exactly the number of threads used, because we have one result from each thread. In this case, the final list is of size 2.</p>
+<p>Also, note that none of these subproblems depend on each other to evaluate due to our guarantees on the associative property, so they can safely be done concurrently.</p>
+<p>Now, it would be unfortunate if someone had to manually figure out the assignment of jobs to each thread every time some aspect of the problem changed, such as the size of the input list, the callback function, the number of threads, or the base case. To alleviate that, we are providing our users with a nice <code class="language-plaintext highlighter-rouge">par_reduce()</code> function that takes in an input list, callback function, base case, and the number of threads (not including the main thread). The end goal is that <code class="language-plaintext highlighter-rouge">par_reduce()</code> does exactly what <code class="language-plaintext highlighter-rouge">reduce()</code> does (in the case that the given functions are associative) except in parallel, with multiple threads. To the user, it’s the same old <code class="language-plaintext highlighter-rouge">reduce()</code> function—just faster!</p>
+<p>For this lab, you are responsible for implementing <code class="language-plaintext highlighter-rouge">par_reduce()</code> in <code class="language-plaintext highlighter-rouge">par_reduce.c</code>.</p>
+<p>Some food for thought:</p>
+<ul>
+  <li>What does <code class="language-plaintext highlighter-rouge">int pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine) (void *), void *arg);</code> do?
+    <ul>
+      <li>What are <code class="language-plaintext highlighter-rouge">start_routine</code> and <code class="language-plaintext highlighter-rouge">arg</code>?</li>
+    </ul>
+  </li>
+  <li>What information does each thread need to know in order to do its job?</li>
+  <li>How would you divide the problem among your threads?
+    <ul>
+      <li>What happens when <code class="language-plaintext highlighter-rouge">num_threads</code> does not divide <code class="language-plaintext highlighter-rouge">list_len</code>?</li>
+    </ul>
+  </li>
+  <li>What does <code class="language-plaintext highlighter-rouge">int pthread_join(pthread_t thread, void **retval);</code> do?
+    <ul>
+      <li>What is <code class="language-plaintext highlighter-rouge">retval</code>?</li>
+    </ul>
+  </li>
+</ul>
+<p>We expect your <code class="language-plaintext highlighter-rouge">par_reduce()</code> to not spawn unnecessary worker threads. Each worker thread you spawn should process at least one element of the input list. Therefore, you should only spawn <code class="language-plaintext highlighter-rouge">min(num_threads, list_len)</code> worker threads.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing-your-code" class="title-text">Testing your code<a class="anchor title-text" href="#testing-your-code"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We have provided a makefile that will compile your code along with our framework. We recommend that you read through <code class="language-plaintext highlighter-rouge">main.c</code> so that you understand how we are calling your <code class="language-plaintext highlighter-rouge">par_reduce</code> in <code class="language-plaintext highlighter-rouge">par_reduce.c</code>.</p>
+<p>After running <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code>, you can run the executable as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./par_reduce &lt;reducer_name&gt; &lt;list_len&gt; &lt;num_threads&gt;
+</code></pre></div></div>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">&lt;reducer_name&gt;</code> is one of the following: “add”, “mult”, or “slow”.
+    <ul>
+      <li>“add” adds every element with a base case of 0.</li>
+      <li>“mult” multiplies every element with a base case of 1.</li>
+      <li>“slow” doesn’t perform any computation, but sleeps a small amount each time it is called. You may notice that add and multiply might get slower the more threads you use–this is because starting new threads takes time, and sometimes the extra time needed to spawn new threads exceeds the time saved in computation, especially for extremely quick ones like addition. So, we’ve given you a “slow” reducer that will let you test to make sure that running with <code class="language-plaintext highlighter-rouge">n</code> threads will take around <code class="language-plaintext highlighter-rouge">1/n</code> time.</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">&lt;list_len&gt;</code> is the number of elements in the list of random integers we’ll pass to your par_reduce.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">&lt;num_threads&gt;</code> is the number of threads to use.</li>
+</ul>
+<p>You can also run <code class="language-plaintext highlighter-rouge">make debug</code> and run the debugging executable with the same arguments:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./par_reduce-debug &lt;reducer_name&gt; &lt;list_len&gt; &lt;num_threads&gt;
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="examples" class="title-text">Examples<a class="anchor title-text" href="#examples"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="add" class="title-text">add</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./par_reduce add 20 3
+par_reduce ran in 0.000123 seconds
+Congratulations you have succesfully ran par_reduce with add on a list with 20 elements, and 3 threads
+</code></pre></div></div>
+<h3 id="mult" class="title-text">mult</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./par_reduce mult 20 3
+par_reduce ran in 0.000126 seconds
+Congratulations you have succesfully ran par_reduce with mult on a list with 20 elements, and 3 threads
+</code></pre></div></div>
+<h3 id="slow-example-1" class="title-text">slow [example 1]</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./par_reduce slow 20 3
+par_reduce ran in 0.010734 seconds
+Congratulations you have succesfully ran par_reduce with slow on a list with 20 elements, and 3 threads
+</code></pre></div></div>
+<h3 id="slow-example-2" class="title-text">slow [example 2]</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./par_reduce slow 2000 3
+par_reduce ran in 0.713017 seconds
+Congratulations you have succesfully ran par_reduce with slow on a list with 2000 elements, and 3 threads
+</code></pre></div></div>
+<h3 id="slow-example-3" class="title-text">slow [example 3]</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./par_reduce slow 2000 300
+par_reduce ran in 0.341993 seconds
+Congratulations you have succesfully ran par_reduce with slow on a list with 2000 elements, and 300 threads
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/teaching_threads.md";
+  </script>
+</body>
+
+</html>

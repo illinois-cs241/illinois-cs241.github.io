@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Nonstop Networking</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Nonstop Networking" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Nonstop Networking
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Part 1 The Client</b> due <b>2025-04-21 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>client.c</li>
+                
+                <li>common.c</li>
+                
+                <li>common.h</li>
+                
+              </ul>
+              
+              
+              <b>Part 2 The Server Part 1</b> due <b>2025-04-28 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>client.c</li>
+                
+                <li>server.c</li>
+                
+                <li>common.c</li>
+                
+                <li>common.h</li>
+                
+              </ul>
+              
+              
+              <b>Part 3 The Server Part 2</b> due <b>2025-05-05 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>client.c</li>
+                
+                <li>server.c</li>
+                
+                <li>common.c</li>
+                
+                <li>common.h</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_warning" href="#warning" class="fancy-link">Warning!</a></li>
+<li><a id="toc_threads-start-wearing-out" href="#threads-start-wearing-out" class="fancy-link">Threads start wearing out</a></li>
+<li><a id="toc_non-blocking-io" href="#non-blocking-io" class="fancy-link">Non blocking I/O</a></li>
+<li><a id="toc_epoll-basics" href="#epoll-basics" class="fancy-link">Epoll basics</a></li>
+<li><a id="toc_the-problem" href="#the-problem" class="fancy-link">The Problem</a></li>
+<li><a id="toc_the-protocol" href="#the-protocol" class="fancy-link">The Protocol</a></li>
+<li><a id="toc_specifics-examples" href="#specifics-examples" class="fancy-link">Specifics: Examples</a></li>
+<li><a id="toc_specifics-the-client" href="#specifics-the-client" class="fancy-link">Specifics: The Client</a></li>
+<li><a id="toc_specifics-the-server" href="#specifics-the-server" class="fancy-link">Specifics: The Server</a></li>
+<li><a id="toc_logging" href="#logging" class="fancy-link">Logging</a></li>
+<li><a id="toc_testing" href="#testing" class="fancy-link">Testing</a></li>
+<li><a id="toc_grading" href="#grading" class="fancy-link">Grading</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Nonstop Networking are: <br>
+    </p>
+<ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Implementing a simple text based protocol</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">epoll and non-blocking I/O</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Network error handling</span>
+        </li>
+      
+    </ul>
+  
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="warning" class="title-text">Warning!<a class="anchor title-text" href="#warning"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We strongly recommend reading this entire document at least twice to make sure you understand what the exact requirements of the assignment are. This is a three week MP (over one fifth of your MP grade!), and it may be long and painstaking. We strongly recommend starting early.</p>
+<p>Make sure you also read the grading portion, as it is different than the standard multi-week MP grading scheme.</p>
+<p><strong>Note</strong>: <em>do not use threads</em> for this assignment. Any code that uses the <code class="language-plaintext highlighter-rouge">pthread</code> library automatically gets a zero.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="threads-start-wearing-out" class="title-text">Threads start wearing out<a class="anchor title-text" href="#threads-start-wearing-out"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>One of the common ways of handling multiple clients at a time is to use threads. Sounds simple enough. A client connects, we spawn a new thread to handle it, and then that thread can clean up after itself once it’s done. What’s the catch?</p>
+<p>Well, that usually works okay up until a point. After that, your server won’t scale as fast. And in the modern world, you have to do things web scale (TM).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="non-blocking-io" class="title-text">Non blocking I/O<a class="anchor title-text" href="#non-blocking-io"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Well, what can we do about this? Maybe we could keep a thread pool, that is, have a fixed number of threads, and have them service the connections. However, it’s an M:N mapping this time (M connections, N threads). But wait, how do I multiplex all these different connections, and handle all those threads?</p>
+<p>Non-blocking I/O is your friend here. Remember how regular calls to read(), accept() etc. block until there’s data or a new connection available? (If you don’t, try it out! Trace how your server code blocks in read() until your client sends some data!). Well, non-blocking I/O does exactly what it says, you structure your application in such a way that works with the data that’s already present (in the TCP buffers), not block for data that may or may not arrive! Functions that help you with this are <code class="language-plaintext highlighter-rouge">select()</code>, <code class="language-plaintext highlighter-rouge">poll()</code>, and <code class="language-plaintext highlighter-rouge">epoll()</code>.</p>
+<p>Think of it as an event driven system. At a high level, you maintain a set of file descriptors (could map to files, pipes, network sockets, etc.) that you’re interested in, and call the appropriate wait() function on that set of descriptors. Your program waits until one (or more) of those descriptors have some data available (in a server scenario, when a client has actually sent data). When data is available, it’s like an ‘event’ occurred, so your program exits the wait() call, and can iterate over the descriptors that have data, process each of them, and then go back to wait()-ing for additional data to arrive.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="epoll-basics" class="title-text">Epoll basics<a class="anchor title-text" href="#epoll-basics"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><code class="language-plaintext highlighter-rouge">epoll()</code> arose out of the inefficiencies of <code class="language-plaintext highlighter-rouge">select()</code> and <code class="language-plaintext highlighter-rouge">poll()</code> (O(N) waiting is so 20th century) (Check out the <a href="https://en.wikipedia.org/wiki/C10k_problem" class="fancy-link wiki-link">C10k problem</a> for more information). It provides two modes of operation, edge triggered (ET) and level triggered (LT). Think of it as follows, you have a tank (the descriptor) that you want a notification for whenever there’s water (data) in it. Edge triggered mode would wake up your program once and expect you to empty out the entire tank (process all the data). If you only process half of it and call <code class="language-plaintext highlighter-rouge">epoll_wait()</code> again, your process will block (that’s not good - there is data waiting to be processed and other connections to handle).</p>
+<p>On the other hand, level triggered will wake up your <code class="language-plaintext highlighter-rouge">epoll_wait()</code> call any time there is any data in the descriptor. In this case, if you process half, and then call <code class="language-plaintext highlighter-rouge">epoll_wait()</code> again, it’ll immediately return with a notification about that descriptor.</p>
+<p>So why would we ever want to use edge triggered behavior? Well, consider what happens when there are multiple threads blocking on the same epoll descriptor (yes, we can do that; yes, people do that). Some data arrives on a socket, a thread wakes up and starts processing it. But there’s still data, so another thread might accidentally get woken up and start processing data for the same descriptor. That’s bad, very bad.</p>
+<p>Edge triggered mode (together with the <code class="language-plaintext highlighter-rouge">EPOLLONESHOT</code> flag) guarantees that a single thread will handle all the data that arrived on that given socket, so (although with some additional code complexity) it’s not possible that two threads accidentally ‘steal’ the file descriptor data from each other.</p>
+<p>The above overview is also available as a <a href="../media/epoll-edgelevel.mp3" class="fancy-link wiki-link">song</a> (<a href="../media/epoll-edgelevel.txt" class="fancy-link wiki-link">lyrics</a>) introduction.</p>
+<p><strong>Note</strong>: You <strong>must</strong> use <code class="language-plaintext highlighter-rouge">epoll()</code> for this assignment. If you do not, you will get a 0 on all tests that use your server.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-problem" class="title-text">The Problem<a class="anchor title-text" href="#the-problem"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You’ll be writing the client and server for a simplified file sharing application. TCP is used for everything here, so reliability is taken care of. The server uses non-blocking I/O (with epoll) to handle concurrent requests. The application supports four basic operations - <code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">PUT</code>, <code class="language-plaintext highlighter-rouge">LIST</code> and <code class="language-plaintext highlighter-rouge">DELETE</code>. Their functions are as follows:</p>
+<p><code class="language-plaintext highlighter-rouge">GET</code> - Client downloads (GETs) a file from the server
+<code class="language-plaintext highlighter-rouge">PUT</code> - Client uploads (PUTs) a file to the server
+<code class="language-plaintext highlighter-rouge">LIST</code> - Client receives a list of files from the server
+<code class="language-plaintext highlighter-rouge">DELETE</code> - Client deletes a file from the server</p>
+<p>For simplicity, you can assume that there are no conflicting requests (that is, nobody will upload a file while someone else is downloading or deleting it, etc.)</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-protocol" class="title-text">The Protocol<a class="anchor title-text" href="#the-protocol"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This is a text-based protocol (similar to HTTP and FTP). The client sends plaintext requests along with some binary data (depending on the operation), and then the server responds with plaintext containing either error messages or optional binary data. The binary data in this case is the file being transferred, if it is a <code class="language-plaintext highlighter-rouge">GET</code> or <code class="language-plaintext highlighter-rouge">PUT</code> request. The maximum header length (header is part before data) for both the request and response is 1024 bytes.  The format for the protocol is as follows:</p>
+<h3 id="client-request" class="title-text">Client request</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>VERB [filename]\n
+[File size][Binary Data]
+</code></pre></div></div>
+<ul>
+  <li>VERB can be any one of ‘<code class="language-plaintext highlighter-rouge">GET</code>’, ‘<code class="language-plaintext highlighter-rouge">PUT</code>’, ‘<code class="language-plaintext highlighter-rouge">DELETE</code>’ or ‘<code class="language-plaintext highlighter-rouge">LIST</code>’ (<em>Case sensitive</em> - VERB must be capitalized).</li>
+  <li>‘\n’ is the newline character (a single byte).</li>
+  <li>There is a space character in between VERB and [filename].</li>
+  <li>[filename] is limited to 255 bytes.</li>
+  <li>File size and binary data are only present for a PUT operation (since the client is trying to upload a file). File size is a <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/size_t.3type.html" class="fancy-link">size_t</a></code> which indicates how many bytes are present in the binary data in the request. For example, if file size is 32, then the server should expect 32 bytes of binary data to be in the request from the client. For this binary data, we will be using the Little Endian form of byte ordering (the system used by Intel hardware) while sending size_t over the network. Because of this, you do not need to convert the byte ordering in either the client or server.</li>
+  <li>On PUT, if local file does not exist, simply exiting is okay.</li>
+</ul>
+<p>If VERB is “LIST”, then only the newline after will be present (no space, file size, or data).</p>
+<h3 id="server-response" class="title-text">Server response</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>RESPONSE\n
+[Error Message]\n
+[File size][Binary Data]
+</code></pre></div></div>
+<p>RESPONSE can be either OK or ERROR, depending on how the request went (details on error handling are in a later section).
+Error message and the newline after it are only present if and only if the RESPONSE is ERROR.</p>
+<p>File size and binary data are only present in GET or LIST responses, and refer to the number of bytes (size_t, same way the client sent size_t in a PUT request) of binary data that follows. If it’s a GET request, the binary data is the data in the file being requested. If it’s a LIST request, the binary data is a series of filenames, separated by newlines, referring to files currently stored on the server. For example, if a server is hosting files ‘you.txt’, ‘gonna.log’, ‘give.avi’, ‘never.mp3’, and ‘up.mov’, the response to a LIST might look like this-</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OK\n\&lt;10 + 10 + 9 + 8 + 6, expressed as a size_t\&gt;
+never.mp3\n
+gonna.log\n
+give.avi\n
+you.txt\n
+up.mov
+</code></pre></div></div>
+<p>The large size_t referred to comes from the length of the filenames, plus the newlines between filenames (there is no newline after the last file, or before the first one) - the value is broken down into a sum on a per line basis for ease of understanding. In that example, the actual value that would be sent would be 43.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="specifics-examples" class="title-text">Specifics: Examples<a class="anchor title-text" href="#specifics-examples"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In all four examples, the first line represents how we call the client in the command line, followed by the client’s request to the server, and finally followed by the server’s response. Notice how we <strong>always</strong> send all <code class="language-plaintext highlighter-rouge">sizeof(size_t)</code> as raw bytes. That is, in each below, <code class="language-plaintext highlighter-rouge">[size]</code> is 8 bytes that represent the number of bytes the binary data that follows should be.  You did something similar to this in chatroom.  While you’re looking at these examples, think about what parts of the request and response you want to print (if any), depending on request and response types.</p>
+<ul>
+  <li>GET</li>
+</ul>
+<p>Here, the client is GET’ing the file “The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4” and saving it locally as “social_network.mp4”.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./client server:port GET The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4 social_network.mp4
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GET The.Social.Network.2010.1080p.BluRay.x265.10bit-z97.mp4\n
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OK\n
+[size]...
+</code></pre></div></div>
+<ul>
+  <li>PUT</li>
+</ul>
+<p>In this example, the client is PUT’ing the file “Prison.Break.S05E01.WEB-DL.x264-FUM[ettv].mp4” (local to the client) on the server as “prison_break_s05_e01.mp4”.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./client server:port PUT prison_break_s05_e01.mp4 Prison.Break.S05E01.WEB-DL.x264-FUM[ettv].mp4
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PUT prison_break_s05_e01.mp4\n
+[size]some call it prison break others call it privilege escalation ...
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OK\n
+</code></pre></div></div>
+<ul>
+  <li>DELETE</li>
+</ul>
+<p>In this case, the client DELETE’s the file “prison_break_s05_e01.mp4” from the server.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./client server:port DELETE prison_break_s05_e01.mp4
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE prison_break_s05_e01.mp4\n
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OK\n
+</code></pre></div></div>
+<ul>
+  <li>LIST</li>
+</ul>
+<p>In LIST requests, the client LIST’s all available files on the server.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./client server:port LIST
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LIST\n
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>OK\n[size]
+logan.mp3\n
+laura.log\n
+live.avi\n
+man.txt\n
+is.mov
+</code></pre></div></div>
+<p>Notice there is no new line at the end of the list.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="specifics-the-client" class="title-text">Specifics: The Client<a class="anchor title-text" href="#specifics-the-client"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The client’s job is simple: execute a single request. The usage is as follows:</p>
+<p><code class="language-plaintext highlighter-rouge">./client &lt;server IP&gt;:&lt;server port&gt; VERB [remote] [local]</code></p>
+<p>Where remote is the filename used in the request and local is the filename that the client uses while uploading/downloading. For example:</p>
+<p><code class="language-plaintext highlighter-rouge">./client 127.0.0.1:9001 GET remotefile localfile</code></p>
+<p>That would download the file ‘remotefile’ from the server and store it as ‘localfile’.</p>
+<p>The client runs a single command (GET, PUT, LIST or DELETE) with the chosen arguments, makes sure the file it’s trying to upload (if it is uploading one) actually exists, connects to the server, sends the request (and file data, if needed), and finally prints out any error messages to STDOUT. Once the client has sent all the data to the server, it should perform a ‘half close’ by closing the write half of the socket (hint: <code class="language-plaintext highlighter-rouge">shutdown()</code>). This ensures that the server will eventually realize that the client has stopped sending data, and can move forward with processing the request.</p>
+<p>For LIST, binary data from the server should be printed to STDOUT, each file on a separate line.
+For GET, binary data should be written to the <code class="language-plaintext highlighter-rouge">[local]</code> file specified when the user ran the command.  If not created, create the file.  If it exists, truncate the file.  You should create the file with all permissions set (r-w-x for all users groups).</p>
+<p>Your client is allowed to use blocking I/O, since clients don’t really care about scaling. However, there are a few important things to keep in mind:</p>
+<p>1) Use the provided argument checkers. In the starter files, we provide you with two functions called <code class="language-plaintext highlighter-rouge">check_args</code> and <code class="language-plaintext highlighter-rouge">parse_args</code>, used to validate and parse arguments, respectively. If you choose to write your own argument checkers, make sure they behave exactly the same as the ones provided — no more or less strict.</p>
+<p>2) Parse the response carefully. When you’re reading, you may accidentally read into the application binary data without realizing it (since you don’t have fixed size fields in the responses).</p>
+<p>3) <code class="language-plaintext highlighter-rouge">write(fd, buffer, n)</code> may not always write n bytes for various reasons. Buffers may become full, signals may arrive, the Skynet revolution might begin. None of which are excuses for not sending the correct amount of data to the server. Good practice is to wrap your read/write calls in a loop that runs until the specified number of bytes are read, the connection is closed, or an error (with the exception of EINTR) occurs.</p>
+<p>4) Your client needs to be able to handle large files (more than physical RAM) and should do so efficiently.</p>
+<h3 id="error-handling" class="title-text">Error Handling</h3>
+<p>Your client should handle the following errors and use the appropriate function in <code class="language-plaintext highlighter-rouge">format.h</code>:</p>
+<ul>
+  <li>Received too much or too little data from server.</li>
+  <li>Invalid response from server (malformed or nonexistent STATUS).</li>
+  <li>Print any ERROR message from the server.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="specifics-the-server" class="title-text">Specifics: The Server<a class="anchor title-text" href="#specifics-the-server"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The real fun lies here. As discussed, you’ll be using epoll to allow non-blocking I/O. As you know, epoll allows you to add various descriptors to the epoll set to be ‘monitored’ for events. After that, when you call epoll_wait(), it will block until there are events on one or more epoll descriptors (either indicating data is available or that data can be written to the socket).</p>
+<p>The server usage is as follows:</p>
+<p><code class="language-plaintext highlighter-rouge">./server &lt;port&gt;</code></p>
+<h3 id="request-states" class="title-text">Request states</h3>
+<p>One way to reason about connections in a nonblocking server is to visualize each one as a traversal of a finite state machine. That is, there is some initial state (probably when the connection was created), and you transition between the different states depending on what action occurred (the type of request, whether there was an error or not, etc.).</p>
+<p>A suggested flowchart for the server automata:</p>
+<p class="img-paragraph"><img src="../images/assignment-docs/mp/nonstop_networking/networking_server_flowchart.png" alt="Server Flowchart"></p>
+<h3 id="maintaining-persistent-connection-state" class="title-text">Maintaining persistent connection state</h3>
+<p>New connections arrive and old connections close all the time. Your server needs to know what the current status of the command it’s serving is. One suggested way is to maintain a mapping from socket handle to connection state (you are provided a dictionary data structure for this purpose). When a connection arrives, this state is allocated on the heap and added to the dictionary. When the server is handling epoll events, it can check the descriptor of the event that occurred, and quickly find out the underlying state of the request. Information that might go into a connection state could be:</p>
+<ul>
+  <li>What state in the DFA you’re in</li>
+  <li>The request VERB</li>
+  <li>Various buffers and offsets</li>
+  <li>Filenames</li>
+  <li>Anything else you’d like to put in there, really, this is your design decision</li>
+</ul>
+<h3 id="global-data-structures" class="title-text">Global data structures</h3>
+<p>You should maintain the file list (server-side) with a global vector that gets appended to every time a file is added (using push_back()). Entries are removed one file at a time, by using vector_erase() with the appropriate index.</p>
+<p>You might also want to maintain a map from file descriptor to connection state, as discussed above. Remember to clean up any state when you’re done serving a single connection!</p>
+<h3 id="memory-limits" class="title-text">Memory limits</h3>
+<p>Since your server is expected to be able to serve a large number of clients multiple (possibly large) files concurrently, you cannot assume that the files will entirely fit in memory (that is, you cannot read the entire file data into one giant buffer). Instead, you should maintain some (reasonably) fixed size buffers (say, 1024 bytes), and reuse these buffers as you send or receive data over time. You may use different buffers for different kinds of data (for instance, the request header, the file list, the file being sent/received) if you wish. It is also okay to keep different buffers for different connections.</p>
+<h3 id="file-storage" class="title-text">File Storage</h3>
+<p>You should create a temporary directory using the <code class="language-plaintext highlighter-rouge">mkdtemp()</code> function (make sure you follow this convention exactly!). Your server will store all uploaded files in this directory. <strong>Immediately</strong> after creating your directory, you <strong>must</strong> print it out using <code class="language-plaintext highlighter-rouge">print_temp_directory</code> (found in format.h) from the current directory (do not cd into another directory and then call <code class="language-plaintext highlighter-rouge">print_temp_directory</code> - if you don’t follow this rule, do not expect to pass any of the autograder tests.</p>
+<p>When your server exits, it should clean up any files stored in this directory, and then delete the directory itself. <code class="language-plaintext highlighter-rouge">unlink()</code> and <code class="language-plaintext highlighter-rouge">rmdir()</code> might be helpful here.</p>
+<p><em>Note:</em> Be sure to use the directory name that <code class="language-plaintext highlighter-rouge">mkdtemp(char \*template)</code> gives you. Additionally, make sure that your template is <em>exactly</em> 6 X’s, as in <code class="language-plaintext highlighter-rouge">XXXXXX</code>.</p>
+<h3 id="exiting-the-server" class="title-text">Exiting the server</h3>
+<p>Your server should exit on receiving SIGINT. You might find <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigaction.3p.html" class="fancy-link">sigaction</a></code> useful.</p>
+<p><em>Note:</em> Do not store the newlines in your filenames. There will be no whitespace or slashes in filenames at all.</p>
+<h3 id="error-handling-1" class="title-text">Error handling</h3>
+<p>Your server is expected to be able to handle misbehaving/stark raving mad clients. That means you can never assume the request is formatted the way the protocol says it should be. While handling a request, as you read data from the connected socket into your local buffers, you should parse the command to make sure it is well-formed (the legal verb, the number of arguments is as expected, etc.)</p>
+<p>Another thing to keep in mind is that if you try writing data to a client that has disconnected for any reason (they close()d the socket, for instance), your server might receive a SIGPIPE - you should setup your program to ignore that signal. This may also result in write() calls returning -1 with errno set to EPIPE. If this happens, your server should also close the connection and clean up any associated state.</p>
+<p>Your server should handle these errors:</p>
+<ul>
+  <li>Bad request (malformed or nonexistent verb)</li>
+  <li>Bad file size (too much or too little data from client)</li>
+  <li>No such file (GET/DELETE on nonexistent file)</li>
+</ul>
+<p>Notes:</p>
+<ul>
+  <li>If a PUT request fails, delete the file.</li>
+  <li>If a PUT request is called with an existing file. overwrite the file.</li>
+  <li>You should use the error messaged defined in <code class="language-plaintext highlighter-rouge">format.h</code>
+</li>
+</ul>
+<h3 id="writing-your-server-code" class="title-text">Writing your server code</h3>
+<p>Keep things modular! Write functions for everything. This has multiple advantages. First, it lets you debug your code in small, incremental units, rather than writing a huge monolith of code and trying to figure out which part of it is broken through trial and error. Secondly, you’d be surprised how much code you can end up reusing if you design your application appropriately. Third, it’ll be helpful while debugging or discussing your approach with course staff - it’s really hard to tell what your code is supposed to be doing, otherwise.</p>
+<h3 id="reusable-addresses-and-ports" class="title-text">Reusable Addresses and Ports</h3>
+<p>Make sure you use <code class="language-plaintext highlighter-rouge">SO_REUSEADDR</code> and <code class="language-plaintext highlighter-rouge">SO_REUSEPORT</code> to ensure <code class="language-plaintext highlighter-rouge">bind()</code> doesn’t fail in the event that your server or client crashes. This will enable faster debugging for you (otherwise, you would have to wait for the kernel to reopen the source address and port). We will be making sure that your socket is set up with these options (look into <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/setsockopt.3p.html" class="fancy-link">setsockopt</a></code>) so please make sure you use both options! If you don’t, you will not pass this assignment.</p>
+<p>See <a href="https://stackoverflow.com/questions/14388706/how-do-so-reuseaddr-and-so-reuseport-differ" class="fancy-link wiki-link">this StackOverflow question</a> for more information on the differences between the two and why they are necessary.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="logging" class="title-text">Logging<a class="anchor title-text" href="#logging"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This assignment is challenging enough, and debugging it is even more so. We recommend that you constantly log state as your client/server program executes. You might want to log at the beginning/end of function calls, entry and exit of loops etc. and maybe log the values of key variables, pointers, file descriptors etc. to sanity check what’s going on with your code.</p>
+<p>We provide a simple <code class="language-plaintext highlighter-rouge">LOG()</code> macro, if you’re interested in that. Or, you could play around with writing one of your own (ours is just a wrapper around <code class="language-plaintext highlighter-rouge">fprintf()</code>). If you decide not to use this macro, ensure you log only to stderr. The stdout of your client and server implementation are used for testing purposes so writing to stdout should be deliberate. Any unwarranted new line characters or extraneous logging within stdout could result in a test failure.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing" class="title-text">Testing<a class="anchor title-text" href="#testing"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Testing networking programs can always be challenging. There are a few ways we suggest going about this:</p>
+<p>Client - You could write a toy server in any language of your choice that logs the adheres to the protocol above (even if it doesn’t do multithreading, nonblocking I/O etc.)</p>
+<p>Server - By the time you start your server, you will (hopefully) have a working client implementation. Use that to test your server! In addition, feel free to setup a server and have each others’ clients try connecting to them (As long as you’re not sharing any code/design decisions) - this is a good way to stress test your own implementation. Another way to simulate multiple clients could be to write a program that fork()s a bunch of times, each child calling exec() on your client executable and sending a request (no fork bombing, please!).</p>
+<p>Alternatively, if higher level languages are more your thing, you could try writing a script in some other language (say, Python or Ruby). As long as you strictly adhere to the specified protocol, it should work fine (be careful about the width and byte ordering of types in other languages, though!). The catch is, you have to be sure your mock client/server actually works as expected, since you’ll end up debugging programs in different languages at this point, which is never fun. On the bright side, this lets you practice multilingualism.</p>
+<p><img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"> We will also be providing a reference client and server. These print out helpful logging messages to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stderr.3p.html" class="fancy-link">stderr</a></code> that you do <strong>not</strong> need to mirror in your code. These might also not be perfect, so please report things to us (they do pass our tests though).</p>
+<p>An instructive example of how to run the server-reference and client-reference with some example files:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./server-reference 12345 <span class="c"># Runs a localhost server on port 12345</span>
+<span class="nv">$ </span>./client-reference 127.0.0.1:12345 PUT remote-image.png my-local-image.png <span class="c"># PUTs my-local-image.png onto the server as remote-image.png</span>
+<span class="nv">$ </span>./client-reference 127.0.0.1:12345 GET remote-image.png new-local-image.png <span class="c"># GETs remote-image.png from the server and downloads it as new-local-image.png</span>
+
+</code></pre></div></div>
+<p>It is important to note that the client-reference and server-reference output some text to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdout.3p.html" class="fancy-link">stdout</a></code>, and some text to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stderr.3p.html" class="fancy-link">stderr</a></code>. To view only the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdout.3p.html" class="fancy-link">stdout</a></code> content of the reference client or server, we recommend using <a href="https://www.man7.org/linux/man-pages/man1/bash.1.html#REDIRECTION" class="fancy-link wiki-link">redirection</a>. For example, the command below will run server and redirect any error (<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stderr.3p.html" class="fancy-link">stderr</a></code>) messages to <code class="language-plaintext highlighter-rouge">/dev/null</code>, essentially discarding them. As a result, this command will only print <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdout.3p.html" class="fancy-link">stdout</a></code> content.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./server-reference 12345 2&gt; /dev/null
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="grading" class="title-text">Grading<a class="anchor title-text" href="#grading"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>There are <strong>three</strong> parts for this assignment:</p>
+<ul>
+  <li>Part 1: The Client</li>
+</ul>
+<p>Part 1 requires <strong>full</strong> client functionality, and is due at the first deadline (i.e. one week after the assignment is released). We will refer to this score as <code class="language-plaintext highlighter-rouge">part1_orig</code>.</p>
+<ul>
+  <li>Part 2: The Server Part 1</li>
+</ul>
+<p>Part 2 requires you to begin implementing your server. We will run the full server-client autograder for this week (except for the stress test).
+Obtaining 50% of the points is a 100% on week 2, 45% yields a 90%, 40% an 80%, and so on. You may choose which parts of the server you wish to implement first. This is due at the second deadline (i.e. two weeks after the assignment is released). We will refer to this score as <code class="language-plaintext highlighter-rouge">part2_orig</code>.</p>
+<ul>
+  <li>Part 3: The Server Part 2</li>
+</ul>
+<p>Part 3 is full server-client functionality. All tests will run, including the stress test. This is due at the third deadline (i.e. three weeks after the assignment is released). We will refer to this score as <code class="language-plaintext highlighter-rouge">part3</code>.</p>
+<p>To compute your final grade:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>part1_final = part1_orig
+if part1_orig &gt; 0:
+  part1_final = max(part1_orig, part3)
+else:
+  part1_final = max(part1_orig, .8 * part3)
+
+part2_orig = min(100, part2_orig * 2)
+if part2_orig &gt; 0:
+  part2_final = max(part2_orig, part3)
+else:
+  part2_final = max(part2_orig, .8 * part3)
+  
+networking_score = (part1_final + part2_final + part3) / 3
+</code></pre></div></div>
+<p>During week 1, the autograder will test exclusively your client, whereas we will add server-related tests in week 2. In week 3, we will add the stress test. The purpose of the stress test is to gauge the performance of your server in handling many clients concurrently.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/networking_mp.md";
+  </script>
+</body>
+
+</html>
