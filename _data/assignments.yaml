@@ -168,6 +168,7 @@ labs:
           - lookup2.c
       resources: true
       worksheet: true
+      slides: https://docs.google.com/presentation/d/1dobdY-hm-13hL6PqUlpXo3E4tBKRDBNFvwiL4dTFvG8/edit?usp=sharing
       visible: true
   -
       name: "Savvy Scheduler"
