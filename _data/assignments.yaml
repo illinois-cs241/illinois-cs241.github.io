@@ -181,6 +181,7 @@ labs:
           - libscheduler.c
       resources: true
       worksheet: true
+      slides: https://docs.google.com/presentation/d/1zoYlWc7AKAjZpsDLEq2SH8oTujfhThsUXX0rXu2kg4U/edit?usp=sharing
       visible: true
   -
       name: "Lovable Linux"
