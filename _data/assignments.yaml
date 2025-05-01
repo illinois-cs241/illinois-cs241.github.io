@@ -197,6 +197,7 @@ labs:
       resources: true
       worksheet: true
       visible: true
+      slides: https://docs.google.com/presentation/d/1PZC1Msxdv2r0vDHcZo-M6I5-gfhjSn2_I_shQzdrjjs/edit?usp=sharing
 mps:
   -
       name: "Extreme Edge Cases"
