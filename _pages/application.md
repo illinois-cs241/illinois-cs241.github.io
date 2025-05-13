@@ -16,6 +16,7 @@ We have the following teams that you can join, and we will ask you to choose one
 ### Primary
 - Front Facing
 - Assignment Development
+- PrairieLearn
 - Infrastructure
 - Honors
 
@@ -88,6 +89,21 @@ We are also looking to automate the routine tasks that the staff team has to per
 ### Expected Time Obligations
 * Team Meetings (1 hr / week) - You will need to meet with the rest of the staff team to talk about your progress, and see what new projects might pop up as new tasks get created.
 * Working on the projects (2-4 hr / week)
+* Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Ditto
+
+## PrairieLearn 
+
+[PrairieLearn](https://prairielearn.readthedocs.io/en/latest/) (PL) is a web-assignment platform developed at UIUC. The CS341 PL team is concerned with creating and deploying extra-credit assignments called Pre-Labs. The goal is to make labs more educational, intuitive, and interactive -- because sometimes programming is not a good replacement for conceptual knowledge (e.g. MMAP lab). We envision that the Lab slides contain the intuitive information, and PL supplements this with neat problems for students to learn from. If you are someone who believes some assignments are lacking and wants to do something about it, then this team is for you.    
+### Skills 
+
+* Understanding of course content at detailed level. Being able to create thoughtful problems requires more knowledge than being able to simply get-by with the course content. 
+* Being able to "fill in the gaps". Not only should you have a solid foundation in Systems Programming, but also the ability to pick up on nuance and details, because some of the content we will be targeting will have been overlooked in past semesters.  
+* Be vocal, and be a team player. Ultimately, the TA's and professor decide which content gets through to PL, so it is up to you to discuss with them and plan out the exciting future of this course. Additionally, you are expected to work as a team to pump out assignments during the semester. This is going to require you to be on top of things as a group.  
+* Lastly, you should be able to read PrairieLearn documentation. Bonus points if you understand Python, HTML, and Javascript - but these can be learned as you go along.
+### Expected Time Obligations
+
+* Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page. Meetings also serve as a means for more experienced course staff members to give less experienced course staff members advice.
+* Working on PrairieLearn (2-4 hr / week)
 * Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Ditto
 
 ## Honors
