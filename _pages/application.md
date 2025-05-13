@@ -93,7 +93,7 @@ We are also looking to automate the routine tasks that the staff team has to per
 
 ## PrairieLearn 
 
-[PrairieLearn](https://prairielearn.readthedocs.io/en/latest/) (PL) is a web-assignment platform developed at UIUC. The CS341 PL team is concerned with creating and deploying extra-credit assignments called Pre-Labs. The goal is to make labs more educational, intuitive, and interactive -- because sometimes programming is not a good replacement for conceptual knowledge (e.g. MMAP lab). We envision that the Lab slides contain the intuitive information, and PL supplements this with neat problems for students to learn from. If you are someone who believes some assignments are lacking and wants to do something about it, then this team is for you.    
+[PrairieLearn](https://prairielearn.readthedocs.io/en/latest/) (PL) is a web-assignment platform developed at UIUC. The CS341 PL team is concerned with creating and deploying extra-credit assignments called Pre-Labs (for now!). The goal is to make labs more educational, intuitive, and interactive -- because sometimes programming is not a good replacement for conceptual knowledge (e.g. MMAP lab). We envision that the Lab slides contain the intuitive information, and PL supplements this with neat problems for students to learn from. If you think this course has future potential with PL, or you believe some assignments are lacking and want to do something about it, then this team is for you.    
 ### Skills 
 
 * Understanding of course content at detailed level. Being able to create thoughtful problems requires more knowledge than being able to simply get-by with the course content. 
