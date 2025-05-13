@@ -100,6 +100,7 @@ We are also looking to automate the routine tasks that the staff team has to per
 * Being able to "fill in the gaps". Not only should you have a solid foundation in Systems Programming, but also the ability to pick up on nuance and details, because some of the content we will be targeting will have been overlooked in past semesters.  
 * Be vocal, and be a team player. Ultimately, the TA's and professor decide which content gets through to PL, so it is up to you to discuss with them and plan out the exciting future of this course. Additionally, you are expected to work as a team to pump out assignments during the semester. This is going to require you to be on top of things as a group.  
 * Lastly, you should be able to read PrairieLearn documentation. Bonus points if you understand Python, HTML, and Javascript - but these can be learned as you go along.
+
 ### Expected Time Obligations
 
 * Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page. Meetings also serve as a means for more experienced course staff members to give less experienced course staff members advice.
