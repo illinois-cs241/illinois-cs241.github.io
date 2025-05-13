@@ -55,7 +55,7 @@ Last but not least, the front facing team is the eyes and ears of the entire sta
 
 ## Assignment Development
 
-Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course. You will be responsible for improving existing assignments and fixing any issue that pops up, and occasioanlly creating brand new assignments.
+Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course. You will be responsible for improving existing assignments and fixing any issue that pops up, ~~and occasioanlly creating brand new assignments~~ (assignment creation has been migrated to the [PrairieLearn](#prairielearn) section).
 
 Writing assignments involves coming up with a meaningful tasks where students can master the learning objectives. Writing these assignments involves a lot of time spent drafting on white boards and bouncing ideas around. As you are writing these assignments, you will have to ask yourself, "What am I trying to have the students learn?".
 
@@ -72,7 +72,7 @@ Finally, with any good assignment comes excellent documentation that is clear, c
 
 * Team Meetings (1 hr / week) - You will need to meet with the rest of the assignment development team frequently. This is an excellent time for the team to separate out work for a divide-and-conquer strategy, since you will constantly be up against a deadline. These meetings will also be an excellent time to learn from course staff more experienced than you.
 * Development and Testing (2-4 hr / week) - You will need to develop meaningful assignments, and doing so takes a lot of effort. Even after the team has written documentation and a TA solution, you will need to test the provided code thoroughly. This is to ensure the assignment is solid and understandable, and hopefully catch any potential bugs.
-* Office Hours (0-2 hrs / week) - Although assisting students directly is not your main responsibility, office hours are an excellent venue to spot bugs and issues with the assignments. Leads and co-leads of the assignment development team will be expected to hold office hours to get first hand feedback.
+* ~~Office Hours (0-2 hrs / week) - Although assisting students directly is not your main responsibility, office hours are an excellent venue to spot bugs and issues with the assignments. Leads and co-leads of the assignment development team will be expected to hold office hours to get first hand feedback.~~
 * Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Ditto
 
 ## Infrastructure
