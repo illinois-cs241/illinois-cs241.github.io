@@ -55,24 +55,22 @@ Last but not least, the front facing team is the eyes and ears of the entire sta
 
 ## Assignment Development
 
-Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course. You will be responsible for improving existing assignments and fixing any issue that pops up, ~~and occasioanlly creating brand new assignments~~ (assignment creation has been migrated to the [PrairieLearn](#prairielearn) section).
-
-Writing assignments involves coming up with a meaningful tasks where students can master the learning objectives. Writing these assignments involves a lot of time spent drafting on white boards and bouncing ideas around. As you are writing these assignments, you will have to ask yourself, "What am I trying to have the students learn?".
+Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course. You will be responsible for improving existing assignments and fixing any issue that pops up, as well as managing assignment documentation, ~~and occasioanlly creating brand new assignments~~ (assignment creation has been migrated to the [PrairieLearn](#prairielearn) section).
 
 Finally, with any good assignment comes excellent documentation that is clear, concise, contextual, and correct. Also, the documentation should mirror what we are looking for in the autograder. One huge shift you'll have to get used to is writing code for an assignment must be perfect or near-perfect. Instead of passing our ~30 test cases, you'll have to be resilient against 300 students' edge cases.
 
 ### Skills Required
 
 * Firm Knowledge of C and System Programming - As an assignment developer, you must really understand the things you write, since writing a bug in your MP is equivalent to writing 400+ bugs that get deployed to students. Any race conditions or memory leaks left in the provided code you write will be deployed to 400+ students. In class, you only need to get the test cases working, here you need to make sure that your code is resilient against all test cases, or you will end up with a bug in the assignment.
-* Extensive Knowledge of Linux - As an assignment developer, you will need to be comfortable working in a Linux environment beyond a level that was required as a student. You may need to write makefiles, be prepared for obscure kernel conditions, understand process groups, and so on. Don't worry, we can teach you many of these!
+* Experience with developing unit tests and quality assurance work. Skill with adversarial testing, being able to spot and plug testing holes, and ability to make informative test cases to help other developers narrow down where an issue is.
 * Written Communication - Clear specifications and informative examples are the distinction between a challenging but satisfying MP and an infuriating MP. The same can be said about test descriptions and error messages. You should be able to describe what we expect from students' code accurately and succintly, and be sensitive to ambiguities in the writing.
 * Team-Oriented - If you don't mind the buzzword, we have a team of assignment developers that work on each assignment. You will need to collaborate with them in order to get your ideas and code across pull requests.
 
 ### Expected Time Obligations
 
 * Team Meetings (1 hr / week) - You will need to meet with the rest of the assignment development team frequently. This is an excellent time for the team to separate out work for a divide-and-conquer strategy, since you will constantly be up against a deadline. These meetings will also be an excellent time to learn from course staff more experienced than you.
-* Development and Testing (2-4 hr / week) - You will need to develop meaningful assignments, and doing so takes a lot of effort. Even after the team has written documentation and a TA solution, you will need to test the provided code thoroughly. This is to ensure the assignment is solid and understandable, and hopefully catch any potential bugs.
-* ~~Office Hours (0-2 hrs / week) - Although assisting students directly is not your main responsibility, office hours are an excellent venue to spot bugs and issues with the assignments. Leads and co-leads of the assignment development team will be expected to hold office hours to get first hand feedback.~~
+* Development and Testing (2-4 hr / week) - You will need to investigate and solve assignment-related issues, and improving quality of the backend through testing. 
+* Office Hours (0-2 hrs / week) - Although assisting students directly is not your main responsibility, office hours are an excellent venue to spot bugs and issues with the assignments. Leads and co-leads of the assignment development team will be expected to hold office hours to get first hand feedback.
 * Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Ditto
 
 ## Infrastructure
@@ -94,12 +92,18 @@ We are also looking to automate the routine tasks that the staff team has to per
 ## PrairieLearn 
 
 [PrairieLearn](https://prairielearn.readthedocs.io/en/latest/) (PL) is a web-assignment platform developed at UIUC. The CS341 PL team is concerned with creating and deploying extra-credit assignments called Pre-Labs (for now!). The goal is to make labs more educational, intuitive, and interactive -- because sometimes programming is not a good replacement for conceptual knowledge (e.g. MMAP lab). We envision that the Lab slides contain the intuitive information, and PL supplements this with neat problems for students to learn from. If you think this course has future potential with PL, or you believe some assignments are lacking and want to do something about it, then this team is for you.    
+
+Writing assignments involves coming up with a meaningful tasks where students can master the learning objectives. Writing these assignments involves a lot of time spent drafting on white boards and bouncing ideas around. As you are writing these assignments, you will have to ask yourself, "What am I trying to have the students learn?".
+
 ### Skills 
 
-* Understanding of course content at detailed level. Being able to create thoughtful problems requires more knowledge than being able to simply get-by with the course content. 
-* Being able to "fill in the gaps". Not only should you have a solid foundation in Systems Programming, but also the ability to pick up on nuance and details, because some of the content we will be targeting will have been overlooked in past semesters.  
+* Understanding of course content beyond content in the assignments. Being able to create thoughtful problems requires more knowledge than being able to simply get-by with the course content.
+* Strong opinions about course, and what material we should teach. 
+* Creativity and interest in pedagogy. We foresee that PL work this semester will be a lot of brainstorming and outlining plans for pre-labs, with the ultimate goal of reworking the existing labs eventually. What makes a good lab? What are labs supposed to teach? What do students retain? What makes a frustrating question? Did we give too many or not enough hints? If you are interested in creative, higher level questions such as these, then look no further. 
 * Be vocal, and be a team player. Ultimately, the TA's and professor decide which content gets through to PL, so it is up to you to discuss with them and plan out the exciting future of this course. Additionally, you are expected to work as a team to pump out assignments during the semester. This is going to require you to be on top of things as a group.  
-* Lastly, you should be able to read PrairieLearn documentation. Bonus points if you understand Python, HTML, and Javascript - but these can be learned as you go along.
+* Autonomy. Even though there is a team, it will not be very big. You are expected to have personal initiative, which goes back to being able to dig into content that may be on the border of what is covered in the course.
+* Prior experience with PrairieLearn. Take a look at [the documentation](https://prairielearn.readthedocs.io/en/latest/). If you have experience or are familiar with PL development, please mention it in your applications! 
+
 
 ### Expected Time Obligations
 
