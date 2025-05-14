@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Course Staff Application</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Course Staff Application" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Course Staff Application
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_introduction" href="#introduction" class="fancy-link">Introduction</a></li>
+<li><a id="toc_teams" href="#teams" class="fancy-link">Teams</a></li>
+<li><a id="toc_primary-roles" href="#primary-roles" class="fancy-link">Primary Roles</a></li>
+<li><a id="toc_front-facing-including-lab" href="#front-facing-including-lab" class="fancy-link">Front Facing (Including Lab)</a></li>
+<li><a id="toc_assignment-development" href="#assignment-development" class="fancy-link">Assignment Development</a></li>
+<li><a id="toc_infrastructure" href="#infrastructure" class="fancy-link">Infrastructure</a></li>
+<li><a id="toc_prairielearn" href="#prairielearn" class="fancy-link">PrairieLearn</a></li>
+<li><a id="toc_honors" href="#honors" class="fancy-link">Honors</a></li>
+<li><a id="toc_secondary-roles" href="#secondary-roles" class="fancy-link">Secondary Roles</a></li>
+<li><a id="toc_data-analytics-and-research" href="#data-analytics-and-research" class="fancy-link">Data Analytics and Research</a></li>
+<li><a id="toc_academic-integrity" href="#academic-integrity" class="fancy-link">Academic Integrity</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="introduction" class="title-text">Introduction<a class="anchor title-text" href="#introduction"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Do you want to know how broadway works behind the curtain? Is there one MP that you think just isn’t fair and could be made better? Do you want to flip the roles and mentor an honors project? Or perhaps you just can’t get enough of system programming? Then consider becoming a course assistant for CS 341!</p>
+<p>To apply, we will ask you to submit an application via google form (link at the bottom of this page). We will go over the applications after the deadline, and send out interview offers soon after. After all the interviews are complete, the offers will be sent out before the end of the break!</p>
+<p>We have the following teams that you can join, and we will ask you to choose one or two primary team that interest you the most in your application. However, you will not be locked into the team you initially signed up for, and many of our best staff end up working in areas they did not start out in!</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="teams" class="title-text">Teams<a class="anchor title-text" href="#teams"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="primary" class="title-text">Primary</h3>
+<ul>
+  <li>Front Facing</li>
+  <li>Assignment Development</li>
+  <li>PrairieLearn</li>
+  <li>Infrastructure</li>
+  <li>Honors</li>
+</ul>
+<h3 id="secondary" class="title-text">Secondary</h3>
+<ul>
+  <li>Data Analytics and Research</li>
+  <li>Academic Integrity</li>
+</ul>
+<p>We want to be completely transparent about what we look in our applicants. We are not simply looking for A+ students. A good grade is neither necessary nor sufficient to be a good course assistant. Different teams look for different set of skills in the applicants, which will be described in greater details below. However, we expect everyone to be passionate about system programming, be willing to learn about new systems and tools, and most importantly be a good communicator - whether it be collaborating with your teammates, creating and amending code documentations, or talking to the students.</p>
+<p>Your responsibilities and time commitment will depend on the team too. In general, every CA will be expected to hold at least one lab section (1.5 hours / week), perform 2-4 hours of team specific work, and participate in meetings (up to 1 hour).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="primary-roles" class="title-text">Primary Roles<a class="anchor title-text" href="#primary-roles"> #</a>
+</h2></div>
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="front-facing-including-lab" class="title-text">Front Facing (Including Lab)<a class="anchor title-text" href="#front-facing-including-lab"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Illinois Computer Science has a wide variety of talent, ranging from those who know as much as our instructors, to those who are still learning to use the terminal. At some point, almost all of these students come to office hours and lab sections to get extra help. Whether it be drawing figures on the white board or stepping through GDB, the fruits of an instructor’s labor are priceless. In fact, few things are more rewarding than helping a student understand and develop a passion for the subject you teach. This is the main responsibility of the front facing team.</p>
+<p>In lab section, you will be helping run lab activities, helping students out with the labs, and explaining concepts at a high level. During office hours, we have a team of staff ready and eager to answer student questions. You will be hosting your own round-robin office hours, answering questions and clarifying concepts. In addition, you will be asked to monitor Edstem to ensure that student questions get answered.</p>
+<p>Last but not least, the front facing team is the eyes and ears of the entire staff team. We learn about ambiguities in asssignments and bugs in the autograder from student feedback, and you will be the one relaying them to the rest of the team.</p>
+<h3 id="skills-required" class="title-text">Skills Required</h3>
+<ul>
+  <li>Patience and empathy - Most of the time, you can fill the gap in a student’s understanding of the material just by remembering why you struggled with the material and what helped you understand it. However, some students might not get the material even after the third time you explain it to them. You’ll need to be patient and try different methods of explanation.</li>
+  <li>A friendly personality and demeanor - Students will most likely be stressed and upset after debugging for several hours and waiting on a long queue. A lot of this tension is easily alleviated if you approach them nicely. It is important to never appear condescending or annoyed.</li>
+  <li>Communication and teaching ability - Understanding is only half the battle to being an effective teacher. It helps to understand the material well and be comfortable with it, but you must be able to communicate the material well. You also have to be adaptable in the ways you explain things, since how you understand the problem might not be how your students best understand a problem.</li>
+  <li>Debugging - It should go without saying that debugging is a critical skill to have when helping students. Most bugs can be found by effectively using GDB, Valgrind, and print statements. You should be able to look at a failed test case, and know what tools you could use to trace back to the bug at fault, and you should be able to walk a student through the steps.</li>
+  <li>Assignment knowledge - Students will mainly come into office hours needing help interpreting the documentation or debugging code. You must be familiar with the assignments before you an help students master them.</li>
+</ul>
+<h3 id="expected-time-obligations" class="title-text">Expected Time Obligations</h3>
+<ul>
+  <li>Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page, and for everyone to be present to make key decisions. For front facing specifically, this is the time for summarizing student feedback and brainstorming improvements that can be made.</li>
+  <li>Office Hours (2 hrs / week) - It should go without saying that as an front facing course assistant you will be hosting office hours. This is the time where you will put yourself on the queue and help students.</li>
+  <li>Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Most lab sections will run about an hour and twenty minutes. You are expected to have read the documentation already and at a high level know how to solve the assignment. In the bulk of lab time, you will be going around helping students with the assignment. For the more challening MPs, you will also walk through the high level design and pitfalls with students using our slides.</li>
+  <li>Edstem (1 hr / week) - It is also important to answer questions on Edstem, since labs and office hours are not available 24/7. Answering one question well on Edstem can potentially resolve a problem for the entire class.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="assignment-development" class="title-text">Assignment Development<a class="anchor title-text" href="#assignment-development"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course. You will be responsible for improving existing assignments and fixing any issue that pops up, as well as managing assignment documentation, <del>and occasioanlly creating brand new assignments</del> (assignment creation has been migrated to the <a href="#prairielearn" class="fancy-link wiki-link">PrairieLearn</a> section). Instead, we are looking for people who can help clean up the autograder backend, and to make life easy for other developers.</p>
+<p>Finally, with any good assignment comes excellent documentation that is clear, concise, contextual, and correct. Also, the documentation should mirror what we are looking for in the autograder. One huge shift you’ll have to get used to is writing code for an assignment must be perfect or near-perfect. Instead of passing our ~30 test cases, you’ll have to be resilient against 300 students’ edge cases.</p>
+<h3 id="skills-required-1" class="title-text">Skills Required</h3>
+<ul>
+  <li>Firm Knowledge of C and System Programming - As an assignment developer, you must really understand the things you write, since writing a bug in your MP is equivalent to writing 400+ bugs that get deployed to students. Any race conditions or memory leaks left in the provided code you write will be deployed to 400+ students. In class, you only need to get the test cases working, here you need to make sure that your code is resilient against all test cases, or you will end up with a bug in the assignment.</li>
+  <li>Experience with developing unit tests and quality assurance work. Skill with adversarial testing, being able to spot and plug testing holes, and ability to make informative test cases to help other developers narrow down where an issue is.</li>
+  <li>Written Communication - Clear specifications and informative examples are the distinction between a challenging but satisfying MP and an infuriating MP. The same can be said about test descriptions and error messages. You should be able to describe what we expect from students’ code accurately and succintly, and be sensitive to ambiguities in the writing.</li>
+  <li>Team-Oriented - If you don’t mind the buzzword, we have a team of assignment developers that work on each assignment. You will need to collaborate with them in order to get your ideas and code across pull requests.</li>
+</ul>
+<h3 id="expected-time-obligations-1" class="title-text">Expected Time Obligations</h3>
+<ul>
+  <li>Team Meetings (1 hr / week) - You will need to meet with the rest of the assignment development team frequently. This is an excellent time for the team to separate out work for a divide-and-conquer strategy, since you will constantly be up against a deadline. These meetings will also be an excellent time to learn from course staff more experienced than you.</li>
+  <li>Development and Testing (2-4 hr / week) - You will need to investigate and solve assignment-related issues, and improving quality of the backend through testing.</li>
+  <li>Office Hours (0-2 hrs / week) - Although assisting students directly is not your main responsibility, office hours are an excellent venue to spot bugs and issues with the assignments. Leads and co-leads of the assignment development team will be expected to hold office hours to get first hand feedback.</li>
+  <li>Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Ditto</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="infrastructure" class="title-text">Infrastructure<a class="anchor title-text" href="#infrastructure"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We need a lot of code to support our code. Welcome to infrastructure, where the autograder is developed along with tools and scripts that the rest of the staff uses. You will be working on challenging problems in the domain of distributed systems by working on our course’s very own Broadway-on-Demand auto-grader. We are always looking to add more features, and make this tool easier to use for students and staff.</p>
+<p>We are also looking to automate the routine tasks that the staff team has to perform, such as managing permissions to codebase and material, deploying assignments, granting extensions and regrades, etc. There is plenty of projects that you can participate in.</p>
+<h3 id="skills-required-2" class="title-text">Skills Required</h3>
+<ul>
+  <li>Programming ability - You will most likely need a variety of skills. A little bit of Web development, and some knowledge of scripting knowledge (Python, shell scripting etc.). You also must have an aptitude for picking up skills independently as projects mature. In addition, we plan the software structures we build, and keep up with maintenance. Imagine this as a good combination of software engineer and project manager.</li>
+  <li>Self-Directedness - Most of the work will be self directed. We will have a few meetings, but you will need to deliver a polished project by coming up with specifications, executing based on the best possible technologies and maintaining the project. You can receive help, but most of the work and success is on your own.</li>
+  <li>Working in a team - Although most of the work is self directed, a few projects involve extensive collaboration either synchronously or asynchronously with other course staffs. You’ll need to make sure that most of your work is readable to people who have not looked at your code as well as explainable at a high level to people who are just trying to understand the project.</li>
+</ul>
+<h3 id="expected-time-obligations-2" class="title-text">Expected Time Obligations</h3>
+<ul>
+  <li>Team Meetings (1 hr / week) - You will need to meet with the rest of the staff team to talk about your progress, and see what new projects might pop up as new tasks get created.</li>
+  <li>Working on the projects (2-4 hr / week)</li>
+  <li>Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Ditto</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="prairielearn" class="title-text">PrairieLearn<a class="anchor title-text" href="#prairielearn"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><a href="https://prairielearn.readthedocs.io/en/latest/" class="fancy-link wiki-link">PrairieLearn</a> (PL) is a web-assignment platform developed at UIUC. The CS341 PL team is concerned with creating and deploying extra-credit assignments called Pre-Labs (for now!). The goal is to make labs more educational, intuitive, and interactive – because sometimes programming is not a good replacement for conceptual knowledge (e.g. MMAP lab). We envision that the Lab slides contain the intuitive information, and PL supplements this with neat problems for students to learn from. If you think this course has future potential with PL, or you believe some assignments are lacking and want to do something about it, then this team is for you.</p>
+<p>Writing assignments involves coming up with a meaningful tasks where students can master the learning objectives. Writing these assignments involves a lot of time spent drafting on white boards and bouncing ideas around. As you are writing these assignments, you will have to ask yourself, “What am I trying to have the students learn?”.</p>
+<h3 id="skills" class="title-text">Skills</h3>
+<ul>
+  <li>Understanding of course content beyond content in the assignments. Being able to create thoughtful problems requires more knowledge than being able to simply get-by with the course content.</li>
+  <li>Strong opinions about course, and what material we should teach.</li>
+  <li>Creativity and interest in pedagogy. We foresee that PL work this semester will be a lot of brainstorming and outlining plans for pre-labs, with the ultimate goal of reworking the existing labs eventually. What makes a good lab? What are labs supposed to teach? What do students retain? What makes a frustrating question? Did we give too many or not enough hints? If you are interested in creative, higher level questions such as these, then look no further.</li>
+  <li>Be vocal, and be a team player. Ultimately, the TA’s and professor decide which content gets through to PL, so it is up to you to discuss with them and plan out the exciting future of this course. Additionally, you are expected to work as a team to pump out assignments during the semester. This is going to require you to be on top of things as a group.</li>
+  <li>Autonomy. Even though there is a team, it will not be very big. You are expected to have personal initiative, which goes back to being able to dig into content that may be on the border of what is covered in the course.</li>
+  <li>Prior experience with PrairieLearn. Take a look at <a href="https://prairielearn.readthedocs.io/en/latest/" class="fancy-link wiki-link">the documentation</a>. If you have experience or are familiar with PL development, please mention it in your applications!</li>
+</ul>
+<h3 id="expected-time-obligations-3" class="title-text">Expected Time Obligations</h3>
+<ul>
+  <li>Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page. Meetings also serve as a means for more experienced course staff members to give less experienced course staff members advice.</li>
+  <li>Working on PrairieLearn (2-4 hr / week)</li>
+  <li>Lab Sections (1 or 2 sections = 1.5-3 hrs / week) - Ditto</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="honors" class="title-text">Honors<a class="anchor title-text" href="#honors"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>If you have a deep passion for systems and want to instill that passion in the course’s one-percent, then this is the position for you. You get to mentor highly talented and passionate students in a semester-long project of their choosing. Note: It is not required for you to have taken CS 341 Honors (CS 199-341) to work on Honors staff.</p>
+<h3 id="expected-time-obligations-4" class="title-text">Expected Time Obligations</h3>
+<ul>
+  <li>Team Meetings (1 hr / week) - It is important for everyone on staff to be on the same page. Meetings also serve as a means for more experienced course staff members to give less experienced course staff members advice.</li>
+  <li>Mentoring meetings (2 - 2.5 hrs / week) - The honors section has weekly one-hour meetings, and you will be expected to have two or three 30 minutee meetings with your assigned groups. The meeting will primarily cover what happened this past week and prepare for the next week.</li>
+  <li>Lecture Development (4 - 6 hrs / week per lecture week) - You will be helping out prepare and deliver part of a lecture to honors students. This lecture needs to be well-documented, well-researched, and expertly given. Not every Honors CA will be helping out with the lecture every week, but the weeks you choose to teach spike the time spent on development.</li>
+  <li>Lab Sections (1 or 2 sections = 1.5 - 3 hrs / week) - Ditto</li>
+</ul>
+<h3 id="skills-1" class="title-text">Skills</h3>
+<ul>
+  <li>Mentoring Ability - Students need guidance in the honors section, and it is your job to provide that! You will help students with their projects. Since topics vary widely, it’s useful to be a jack-of-all-trades with respect to system programming topics, and you should have an excellent ability to advise and oversee groups of students.</li>
+  <li>Deep Systems Programming Knowledge - These aren’t surface level lectures. You need to either have or be willing to put in the time to understand these topics at an in-depth level. Think of it like taking an oral examination for a PhD. You need to know the topics you help out with in the utmost detail.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="secondary-roles" class="title-text">Secondary Roles<a class="anchor title-text" href="#secondary-roles"> #</a>
+</h2></div>
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="data-analytics-and-research" class="title-text">Data Analytics and Research<a class="anchor title-text" href="#data-analytics-and-research"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You will be doing exploratory data analysis, creating visualizations, and mining patterns from all of the data we collect as course staff. This roles is very open-ended, but you will get direction from senior staff members. Past projects have involved creating network visualizations for lab assignment partners, generating lab partners, graphing performance on assignments over time, studying factors that lead to student success in the course (such as commit timestamps, VM logins etc.). You will have the opportunity to work with Prof. Lawrence Angrave on research projects, which will look great on a graduate school application.</p>
+<h3 id="skills-required-3" class="title-text">Skills Required</h3>
+<ul>
+  <li>Programming skills - Python, R, MATLAB/Octave, Scala, and JavaScript are the dominant programming languages in data analysis and machine learning today. Experience with data analysis packages, such as pandas, matplotlib, numpy, d3.js etc. is a bonus!</li>
+  <li>Statistics - Knowledge of basic statistics is invaluable especially if you are attempting to create a model, or estimate a distribution.</li>
+  <li>Research experience - Past research experience, especially if it involved quantitative analysis will be extremely relevant for the tasks you will be performing.</li>
+</ul>
+<h3 id="expected-time-obligations-5" class="title-text">Expected Time Obligations</h3>
+<ul>
+  <li>Varies by project</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="academic-integrity" class="title-text">Academic Integrity<a class="anchor title-text" href="#academic-integrity"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We take academic integrity seriously in this course, and screen every MP submission for signs of plagiarism. Your will be looking at suspicious submissions, and using your knowledge of the assignment to deduce whether plagiarism is actually happening.</p>
+<h3 id="skills-required-4" class="title-text">Skills Required</h3>
+<ul>
+  <li>Assignment Knowledge - The way MPs are structured means that successful student solutions will inevitably share similar design patterns, especially when starter codes are involved. You need to be able to sense when the similarity can be attributed to convergent ideas, and when it is indicative of work being copied.</li>
+  <li>Familiarity of ChatGPT - We are seeing a trend of ChatGPT being used to generate code snippets that get submited as students’ original work, although they might not even understand why the snippets work (or do not work). Therefore, we are exploring what we could do to detect this, and how should we handle this situation</li>
+</ul>
+<h3 id="expected-time-obligations-6" class="title-text">Expected Time Obligations</h3>
+<ul>
+  <li>Varies by projects</li>
+</ul>
+<form action="https://forms.gle/4fGWJkhePsYQEKHy9">
+    <button type="submit" class="apply-button">
+        Apply
+    </button>
+</form>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_pages/application.md";
+  </script>
+</body>
+
+</html>

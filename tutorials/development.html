@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Development Guide</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Development Guide" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Development Guide
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_development-in-cs-341" href="#development-in-cs-341" class="fancy-link">Development in CS 341</a></li>
+<li><a id="toc_creating-your-course-repository" href="#creating-your-course-repository" class="fancy-link">Creating your course repository</a></li>
+<li><a id="toc_install-compiler-and-cs341-tools" href="#install-compiler-and-cs341-tools" class="fancy-link">Install compiler and CS341 tools</a></li>
+<li><a id="toc_installing-other-stuff" href="#installing-other-stuff" class="fancy-link">Installing Other Stuff</a></li>
+<li><a id="toc_cant-login-or-turn-on-your-vm" href="#cant-login-or-turn-on-your-vm" class="fancy-link">Can’t login or turn on your VM?</a></li>
+<li><a id="toc_still-have-vm-issues" href="#still-have-vm-issues" class="fancy-link">Still have VM issues?</a></li>
+<li><a id="toc_provisioning-a-local-vm-using-vagrant-optional" href="#provisioning-a-local-vm-using-vagrant-optional" class="fancy-link">Provisioning a local VM using Vagrant (optional)</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Development Guide are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Using the tools needed for CS 341</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="development-in-cs-341" class="title-text">Development in CS 341<a class="anchor title-text" href="#development-in-cs-341"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In this course, we use Virtual Machines (VMs) for all our development. We will not support development in any other environment (e.g. EWS). We would like to stress that no matter what method you use to develop code for CS 341, test all your final code on your VM. The autograding environment is similar to your VM. Thus even though your code “works” on your machine, it may not work on the VMs and thus for the autograder.</p>
+<h3 id="connecting-to-your-vm" class="title-text">Connecting to your VM</h3>
+<p>For all registered students in the course, you will receive a VM in the CS Department’s VM Farm provisioned by EngrIT. When your VM is provisioned you should receive an email about your VM. If you registered late, please email the CS 341 Admin (you can find the email on our <a href="/staff" class="fancy-link wiki-link">staff page</a>).</p>
+<p>Approximately 12-24 hours aftering registering for the course your VM host name should also be on this <a href="https://csid-basic-apps.cs.illinois.edu/" class="fancy-link wiki-link">page</a> - so that’s another way to lookup your VM name.(VPN needed).</p>
+<p>Once you have received your VM, you can connect to your VM via SSH. 
+If you are not on the campus network you will need to install and use the campus VPN.</p>
+<p>The VM number will be included in the email you received.</p>
+<p>If you use VS Code, please follow <a href="https://cs341.cs.illinois.edu/tutorials/vscode" class="fancy-link wiki-link">this tutorial</a>. Otherwise:</p>
+<ul>
+  <li>On Linux / Mac, you can do something like
+    <div class="language-console highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>ssh &lt;NETID&gt;@sp25-cs341-&lt;NUM&gt;.cs.illinois.edu
+</code></pre></div>    </div>
+  </li>
+  <li>On Windows, you can use an SSH client like <a href="https://www.putty.org/" class="fancy-link wiki-link">PuTTY</a>.</li>
+</ul>
+<p>Note that if you are not connected to on-campus internet, you will need to use a Virtual Private Network (VPN) to connect to your VM. Instructions on downloading and using the UIUC VPN can be found <a href="https://answers.uillinois.edu/illinois/98773" class="fancy-link wiki-link">here</a>.</p>
+<p>An alternative to using the UIUC VPN is to SSH twice. You can first SSH into your EWS account and then into your personal VM. Just remember that this causes potentially double the network lag. If you are using the VS Code SSH client, setup your .ssh config like this:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">Host 341-VM
+</span><span class="gp">  HostName sp25-cs341-&lt;Your VM Number&gt;</span>.cs.illinois.edu
+<span class="gp">  User &lt;NetID&gt;</span><span class="w">
+</span><span class="go">  ProxyCommand ssh ews -W %h:%p
+
+Host ews
+  HostName linux.ews.illinois.edu
+</span><span class="gp">  User &lt;NetID&gt;</span><span class="w">
+</span></code></pre></div></div>
+<p>If you want further information on what this is actually doing, you can read <a href="ttps://www.cyberciti.biz/faq/linux-unix-ssh-proxycommand-passing-through-one-host-gateway-server/" class="fancy-link wiki-link">this tutorial</a> on proxying.</p>
+<p>Additionally, make sure your VM is on and running, which can be done <a href="https://vc.cs.illinois.edu/" class="fancy-link wiki-link">at the VM dashboard</a>. Use this <a href="https://csid-basic-apps.cs.illinois.edu/" class="fancy-link wiki-link">page</a> to lookup your VM name if needed.<br>
+<strong>Note: Both of the above links also require campus wifi or a VPN</strong></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="creating-your-course-repository" class="title-text">Creating your course repository<a class="anchor title-text" href="#creating-your-course-repository"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You will get the starter code for all the labs and MPs through <code class="language-plaintext highlighter-rouge">Git</code> and Github, and submit your solutions to be graded in the same way.</p>
+<p>Click on <a href="https://edu.cs.illinois.edu/create-gh-repo/sp25_cs341/" class="fancy-link wiki-link">the repository creator</a> and follow the instructions to create your own CS 341 repository. This process will also add you to the <code class="language-plaintext highlighter-rouge">illinois-cs-coursework</code> organization and thus give you permission to our release repository.</p>
+<h3 id="configuring-git" class="title-text">Configuring Git</h3>
+<p><strong>Once you are in your VM</strong>, you’ll need to set up some global defaults. The name and email you input here will be used to mark your commits.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git config --global user.name "FIRST_NAME LAST_NAME"
+git config --global user.email NETID@example.com
+</span></code></pre></div></div>
+<p>Make sure to replace <code class="language-plaintext highlighter-rouge">FIRST_NAME</code> and <code class="language-plaintext highlighter-rouge">LAST_NAME</code> and <code class="language-plaintext highlighter-rouge">NETID@example.com</code> with your information. For example:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git config --global user.name "Lawrence Angrave"
+git config --global user.email "angrave@illinois.edu"
+</span></code></pre></div></div>
+<h3 id="cloning-your-course-repository" class="title-text">Cloning your course repository</h3>
+<p>Checkout your repository as follows:</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://github.com/illinois-cs-coursework/sp25_cs341_NETID.git
+</span></code></pre></div></div>
+<p>Unfortunately, cloning a repository is not so easy. If you follow git’s prompt and submit your username and password, you will likely see an error message like the following. If so, continue to the instructions in <a href="#authenticating-with-github" class="fancy-link wiki-link">Authenticating with GitHub</a>.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">remote: Support for password authentication was removed on August 13, 2021.
+</span><span class="gp">remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#</span>cloning-with-https-urls <span class="k">for </span>information on currently recommended modes of authentication.
+<span class="go">fatal: Authentication failed for 'https://github.com/illinois-cs-coursework/sp25_cs341_NETID.git'
+</span></code></pre></div></div>
+<h3 id="authenticating-with-github" class="title-text">Authenticating with GitHub</h3>
+<p>There are three ways that we recommend for authenticating with GitHub</p>
+<div class="pad"><div class="card">
+<h4 id="option-1-using-the-gh-auth-tool-recommended">Option 1: Using the GH Auth tool (<strong>Recommended</strong>)</h4>
+
+<p><code class="language-plaintext highlighter-rouge">gh</code> is Github’s official command line interface. Almost anything you can do through the Github website, you can do through <code class="language-plaintext highlighter-rouge">gh</code>, and this includes authenticating your Git:</p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">sudo apt update &amp;&amp; sudo apt install gh</code> on your VM to install <code class="language-plaintext highlighter-rouge">gh</code>.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">gh auth login</code>, choose <code class="language-plaintext highlighter-rouge">Github.com</code> for account type, <code class="language-plaintext highlighter-rouge">HTTPS</code> for protocol, and <code class="language-plaintext highlighter-rouge">Y</code> for authenticating Git, then follow its instruction to complete authentication.</li>
+</ol>
+
+<p>You can learn more about what <code class="language-plaintext highlighter-rouge">gh</code> can do <a href="https://cli.github.com/manual/" class="fancy-link wiki-link">here</a>.</p>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="option-2-using-a-personal-access-token">Option 2: Using a Personal Access Token</h4>
+
+<p>You can think of a personal access token as a password with limited privileges and an expiration date. To create a token, go to <a href="https://github.com/settings/tokens" class="fancy-link wiki-link">Github settings</a>, and click <strong>Generate new token (classic)</strong>.</p>
+
+<p>We recommend only giving your new token <strong>repo</strong> scope, as that is all you need to push and pull from your repos.</p>
+
+<p>Once the token is generated (be sure to save it somewhere), you <strong>must</strong> further authorize the token with your NetID to access your CS 341 repos with it. See GitHub’s docs <a href="https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on" class="fancy-link wiki-link">here</a>.</p>
+
+<p>Finally, you can run <code class="language-plaintext highlighter-rouge">git clone</code> again and use your newly generated token in place of your password. If you’re using VSCode, you may need to log out of Github in VSCode (Using <strong>Accounts</strong> button at bottom left) and log in again.</p>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="option-3-using-ssh-keys">Option 3: Using <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" class="fancy-link wiki-link">SSH keys</a>
+</h4>
+
+<ol>
+  <li>Create an SSH key on your VM. Currently, we recommend the EdDSA key algorithm. You can create an EdDSA key with the command <code class="language-plaintext highlighter-rouge">ssh-keygen -t ed25519 -a 100</code>. This command generates a private and public key in the directory <code class="language-plaintext highlighter-rouge">~/.ssh</code>, where <code class="language-plaintext highlighter-rouge">~</code> denotes your home directory. It will prompt you to enter a name for the file storing your private key, and will generate a .pub file for your public key. It’s not necessary to enter a password for the key.</li>
+  <li>Copy the <strong><em>public</em></strong> key to your clipboard. This is usually stored at a path like <code class="language-plaintext highlighter-rouge">~/.ssh/*.pub</code>, where <code class="language-plaintext highlighter-rouge">~</code> denotes your home directory. You can print out the public key to the terminal with the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cat.1p.html" class="fancy-link">cat</a></code> command.</li>
+  <li>Log into your GitHub account, navigate to Settings-&gt;SSH Keys, and follow the prompts to add a new SSH key by pasting in the <strong><em>public</em></strong> key on your clipboard.</li>
+</ol>
+
+<p><em>Please keep in mind that if you use this method, you will need to use SSH protocol URLs (e.g. <code class="language-plaintext highlighter-rouge">git@github.com:&lt;repo&gt;</code>) when you pull from / push to Github, not HTTPS protocol URLs (e.g. <code class="language-plaintext highlighter-rouge">https://github.com/&lt;repo&gt;</code>)</em>.</p>
+
+<h3 id="fetching-from-_release" class="title-text">Fetching from <code class="language-plaintext highlighter-rouge">_release</code>
+</h3>
+
+<p>Change your directory into your repo folder:</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cd sp25_cs341_NETID
+</span></code></pre></div></div>
+
+<p>You’ve probably noticed the repository is empty! In order to access the assignments, complete the following steps. This adds the <code class="language-plaintext highlighter-rouge">_release</code> repository as an extra remote, and this step must be completed every time you want to initialize your repository on a new machine.</p>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git remote add release https://github.com/illinois-cs-coursework/sp25_cs341_.release.git
+git pull release main --allow-unrelated-histories --no-rebase
+git push origin main
+</span></code></pre></div></div>
+
+<p>Whenever you start an assignment, you will need to run <code class="language-plaintext highlighter-rouge">git pull release main</code> to retrieve the starter code for the assignment.</p>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="install-compiler-and-cs341-tools" class="title-text">Install compiler and CS341 tools<a class="anchor title-text" href="#install-compiler-and-cs341-tools"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><em>Your VM should already be provisioned with the required tools. This section is for reference in case you need to reinstall specific tools, e.g. in the case where your VM must be reset</em></p>
+<p>Here is the script used to provision the VMs this semester:</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># update sources and install basic tools</span>
+<span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    apt-get <span class="nb">install</span> <span class="nt">-y</span> <span class="se">\</span>
+      software-properties-common <span class="se">\</span>
+      wget <span class="se">\</span>
+      bzip2 <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    add-apt-repository ppa:deadsnakes/ppa <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    apt-get update
+
+<span class="c"># install python3.6</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> python3.10 python3-pip python2-dev python3.10-dev cmake iproute2 <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    <span class="nb">rm</span> /usr/bin/python3 <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    <span class="nb">ln</span> <span class="nt">-s</span> python3.10 /usr/bin/python3 <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    <span class="nb">ln</span> <span class="nt">-s</span> <span class="nt">-f</span> /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/liblibc.a
+
+<span class="c"># install bulid-related tools</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> <span class="se">\</span>
+        <span class="nv">clang</span><span class="o">=</span>1:14.0-55~exp2 <span class="se">\</span>
+        libncurses5-dev<span class="o">=</span>6.3-2ubuntu0.1 <span class="se">\</span>
+        <span class="nv">rpcbind</span><span class="o">=</span>1.2.6-2build1 <span class="se">\</span>
+        <span class="nv">git</span><span class="o">=</span>1:2.34.1-1ubuntu1.10 <span class="se">\</span>
+        <span class="nv">strace</span><span class="o">=</span>5.16-0ubuntu3 <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    <span class="nb">rm</span> <span class="nt">-rf</span> /var/lib/apt/lists/<span class="k">*</span>
+
+<span class="c"># install the latest version of valgrind</span>
+wget https://sourceware.org/pub/valgrind/valgrind-3.21.0.tar.bz2 <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">echo</span> <span class="s2">"b8b89b327732c12191306c3d31cfd4b1 *./valgrind-3.21.0.tar.bz2"</span> | <span class="nb">md5sum</span> <span class="nt">-c</span> - <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  bunzip2 valgrind-3.21.0.tar.bz2 <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  <span class="nb">tar </span>xf valgrind-3.21.0.tar
+<span class="nb">cd</span> ./valgrind-3.21.0
+./configure <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  make <span class="o">&amp;&amp;</span> <span class="se">\</span>
+  make <span class="nb">install
+cd</span> ..
+<span class="nb">rm</span> <span class="nt">-rf</span> valgrind-3.21.0
+
+<span class="c"># valgrind fix: install debug symbols for libc</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> libc6-dbg
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="installing-other-stuff" class="title-text">Installing Other Stuff<a class="anchor title-text" href="#installing-other-stuff"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This is your VM! You can <code class="language-plaintext highlighter-rouge">sudo</code> and install whatever you want on it (given that it is school appropriate and compliant with <a href="https://answers.uillinois.edu/illinois.engineering/page.php?id=104597" class="fancy-link wiki-link">VM Farm policies</a>)</p>
+<p>You can install <code class="language-plaintext highlighter-rouge">vim</code> or <code class="language-plaintext highlighter-rouge">emacs</code>. If you’ve ever wanted to become terminal-savvy, this is definitely the course to do it! If you don’t feel like learning a new language and want to stick to GUIs, you can also <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ssh.1.html" class="fancy-link">ssh</a></code> into your machine and work on your code through VSCode, which is covered in greater detail in <a href="https://cs341.cs.illinois.edu/tutorials/vscode" class="fancy-link wiki-link">this guide</a>.</p>
+<p>If anything is unclear, either post on the course forums or ask your TAs/CAs/fellow students! <strong>Be careful about messing up your VM.</strong> If your VM ever gets into an unusable state, please make a private post in the course forums <strong>with your VM number</strong>, and we will try to resolve it.</p>
+<p>You may find ssh-copy-id useful (A web search using Google/Duck Duck Go is useful). You can also configure MS Code and other GUI editors to work remotely. However some people still use ‘out of the box’ terminal-based editors like vi/vim that you can find (or install) on even the smallest of Linux distributions, and work even on low-bandwidth connections.</p>
+<p>Have fun! In the worst case we can reset your VM back to its initial state.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="cant-login-or-turn-on-your-vm" class="title-text">Can’t login or turn on your VM?<a class="anchor title-text" href="#cant-login-or-turn-on-your-vm"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>If you can’t connect -</p>
+<ol>
+  <li>
+    <p>Check the helpful instructions at <a href="https://go.illinois.edu/csvmfarmpoweron" class="fancy-link wiki-link">this IT page</a></p>
+  </li>
+  <li>
+    <p>Not on the campus network? You will need to use the University VPN, <a href="https://answers.uillinois.edu/illinois/page.php?id=47507" class="fancy-link wiki-link">Cisco AnyConnect</a></p>
+  </li>
+  <li>
+    <p>Check the status of your VM on the <a href="https://vc.cs.illinois.edu/" class="fancy-link wiki-link">VSphere console</a> and start/restart it if necessary. The VMs are shutdown daily at 5am, or perhaps you created a fork-bomb while working on the Shell MP.</p>
+  </li>
+  <li>
+    <p>Check <a href="https://status.engineering.illinois.edu/announcements.asp" class="fancy-link wiki-link">EngrIT Annoucements</a> and slow loading <a href="https://status.engineering.illinois.edu/" class="fancy-link wiki-link">Status Page</a> and the class forum</p>
+  </li>
+</ol>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="still-have-vm-issues" class="title-text">Still have VM issues?<a class="anchor title-text" href="#still-have-vm-issues"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>If you are sure that you follow the setup guidance correctly and you are on either the Campus VPN or the IllinoisNet WiFi but you still have VM issues (e.g. cannot access vc.cs.illinois.edu, cannot ssh into VM), then the fastest resolution will come from directly contacting EngrIT with your issue using their <a href="https://go.illinois.edu/ewshelp" class="fancy-link wiki-link">form</a>. In the form, under the “Which lab(s) or remote resource(s) is your request about?”, you can type “CS VM Farm”.</p>
+<p>You can contact IT by directly emailing  <a href="mail:cs-vmfarm-help@illinois.edu" class="fancy-link wiki-link">cs-vmfarm-help@illinois.edu</a>. This a  bit faster than the known ‘standard’ emails, <a href="mail:ews@illinois.edu" class="fancy-link wiki-link">ews@illinois.edu</a>, and <a href="mail:engrit-help@illinois.edu" class="fancy-link wiki-link">engrit-help@illinois.edu</a> because these last two need an extra manual step to get your request to the right support people.</p>
+<p><strong>Include as many details as possible (Course number, your VM hostname, time of error, type of error, and description of what you’ve tried.</strong></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="provisioning-a-local-vm-using-vagrant-optional" class="title-text">Provisioning a local VM using Vagrant (optional)<a class="anchor title-text" href="#provisioning-a-local-vm-using-vagrant-optional"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>If you are taking the course remotely and have a slow internet connection when using the Campus VPN, you can set up a VM locally (on your own computer) using Vagrant. <a href="/tutorials/development_vagrant" class="fancy-link wiki-link">This page</a> has instructions on how to do that.</p>
+<p><strong>Note: Your EngrIT-provisioned VM is still the authoritative place for final testing. Your local Vagrant VM is just a way to help remote students with development.</strong></p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_tutorials/development.md";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Schedule</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Schedule" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Schedule
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc"><li><a id="toc_course-schedule" href="#course-schedule" class="fancy-link">Course Schedule</a></li></ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper"><div class="pad"><div class="card">
+<div class="title"><h2 id="course-schedule" class="title-text">Course Schedule<a class="anchor title-text" href="#course-schedule"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><strong>If you added late, check <a href="/late_add" class="fancy-link wiki-link">this page</a> to get caught up.</strong></p>
+<p>The general structure of the course has MP assignments due on Mondays at 11:59 PM and Lab assignments due on Wednesdays at 11:59 PM. These repeat weekly - some MPs are multi-week but have checkpoints weekly.</p>
+<h3 id="week-1" class="title-text">Week 1</h3>
+<p>Highlights: Read the course book background. Work on Homework 0. Sign up Quiz 1 slot. Watch online lectures 2 and 3 when they are published. First lab on Thursday.</p>
+<ul>
+  <li>
+    <p>Mon 01/14. Lecture 1. We met in person at ECEB1002 8am for the first <em>and only</em> Monday lecture.</p>
+  </li>
+  <li>Wed 01/16. Lecture 2 (available online). “See C Crash” 14 minivideos at <a href="https://classtranscribe.ncsa.illinois.edu" class="fancy-link wiki-link">classtranscribe.ncsa.illinois.edu</a>. 
+Supplemental code and handouts are at https://github-dev.cs.illinois.edu/angrave/cs241-lectures</li>
+  <li>
+    <p>Wed 01/16. Angrave’s Optional review section/Office Hours in ECEB1002 8am - 9am; Additional Angrave office hours 9-9:30 ECEB atrium.</p>
+  </li>
+  <li>
+    <p>Thu 01/17. Lab sections in Siebel Basement SC0218/SC0222. <a href="https://courses.illinois.edu/schedule/2019/spring/CS/241" class="fancy-link wiki-link">Schedule</a></p>
+  </li>
+  <li>
+    <p>Fri 01/18. Lecture 3 “A Day At The C side”” (available 1/18 on classtranscribe). No physical lecture or meeting in ECEB1002.</p>
+  </li>
+  <li>
+    <p><a href="https://cbtf.engr.illinois.edu/" class="fancy-link wiki-link">Sign up</a> this week your 50 minute slot for next week’s CBTF <a href="/quiz_topics" class="fancy-link wiki-link">Quiz 1</a></p>
+  </li>
+  <li>Weekend target: Finish HW0. Finish Chapters 2 (Background) and 3 (C Programming Language). This will ensure you are ready for the first quiz (see the quiz page for topics)</li>
+</ul>
+<h3 id="week-2" class="title-text">Week 2</h3>
+<ul>
+  <li>
+    <p>Mon 01/21. Martin Luther King Day. No meetings. No CBTF.</p>
+  </li>
+  <li>
+    <p>Tues 01/22 - Thu 01/24. Quiz 1 at CBTF (see the quiz page for details)</p>
+  </li>
+  <li>
+    <p>Wed 01/23. Online Lecture 4 “Reading data and text”</p>
+  </li>
+  <li>
+    <p>Wed 01/23. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>HW0 due 2025-01-29 23:59. Lab Assignment due</p>
+  </li>
+  <li>
+    <p>Thur 01/24. Labs</p>
+  </li>
+  <li>
+    <p>Fri 01/25. Online Lecture 5 “Exec, Fork, and environment variables”</p>
+  </li>
+</ul>
+<h3 id="week-3" class="title-text">Week 3</h3>
+<ul>
+  <li>
+    <p>Mon 01/28. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 01/28. MP Assignment Due 2025-02-03 23:59</p>
+  </li>
+  <li>
+    <p>Mon 01/28 - Fri 02/1 (Not Wednesday). Quiz 2 at CBTF. <em>Extended to Friday due to weather</em></p>
+  </li>
+  <li>
+    <p>Wed 01/30. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 01/30. <em>Angrave’s ECEB office hours cancelled due to Martian climate</em></p>
+  </li>
+  <li>
+    <p>Wed 01/30. Lab Assignment due 2025-02-05 23:59</p>
+  </li>
+  <li>
+    <p>Thur 01/31. Labs</p>
+  </li>
+  <li>
+    <p>Fri 02/01. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="week-4" class="title-text">Week 4</h3>
+<ul>
+  <li>
+    <p>Week’s Reading: Processes</p>
+  </li>
+  <li>
+    <p>Mon 02/04. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 02/04. MP Assignment Due 2025-02-10 23:59</p>
+  </li>
+  <li>
+    <p>Wed 02/06. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 02/06. Lab Assignment due 2025-02-12 23:59</p>
+  </li>
+  <li>
+    <p>Thur 02/07. Labs</p>
+  </li>
+  <li>
+    <p>Fri 02/08. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="week-5" class="title-text">Week 5</h3>
+<ul>
+  <li>
+    <p>Week’s Reading: Malloc and Signals</p>
+  </li>
+  <li>
+    <p>Mon 02/11. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 02/11. MP Assignment Due 2025-02-17 23:59</p>
+  </li>
+  <li>
+    <p>Mon 02/11 - Wed 02/06. CBTF Quiz 3</p>
+  </li>
+  <li>
+    <p>Wed 02/13. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 02/13. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 02/13. Lab Assignment due</p>
+  </li>
+  <li>
+    <p>Thur 02/14. Labs</p>
+  </li>
+  <li>
+    <p>Fri 02/15. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="week-6" class="title-text">Week 6</h3>
+<ul>
+  <li>
+    <p>Week’s Reading: Threads</p>
+  </li>
+  <li>
+    <p>Mon 02/18. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 02/18. MP Assignment Due 2025-02-24 23:59</p>
+  </li>
+  <li>
+    <p>Wed 02/20. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 02/20. Angrave Office Hours (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 02/20. Lab Assignment due 2025-02-26 23:59</p>
+  </li>
+  <li>
+    <p>Thur 02/21. Labs</p>
+  </li>
+  <li>
+    <p>Fri 02/22. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="week-7" class="title-text">Week 7</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Synchronization</p>
+  </li>
+  <li>
+    <p>Mon 02/25. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 02/25. MP Assignment Due 2025-03-03 23:59</p>
+  </li>
+  <li>
+    <p>Mon 02/25 - Wed 02/07. CBTF Quiz 4</p>
+  </li>
+  <li>
+    <p>Wed 02/27. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 02/27. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 02/27. Lab Assignment due 2025-03-05 23:59</p>
+  </li>
+  <li>
+    <p>Thur 02/28. Labs</p>
+  </li>
+  <li>
+    <p>Fri 03/01. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="week-8" class="title-text">Week 8</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Deadlock</p>
+  </li>
+  <li>
+    <p>Mon 03/04. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 03/04. MP Assignment Due 2025-03-10 23:59</p>
+  </li>
+  <li>
+    <p>Wed 03/06. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 03/06. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 03/06. Lab Assignment due</p>
+  </li>
+  <li>
+    <p>Thur 03/07. Labs</p>
+  </li>
+  <li>
+    <p>Fri 03/08. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="week-9" class="title-text">Week 9</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Interprocess Communication</p>
+  </li>
+  <li>
+    <p>Mon 03/11. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 03/11. MP Assignment Due 2025-03-24 23:59</p>
+  </li>
+  <li>
+    <p>Mon 03/11 - Mon 03/13. CBTF Quiz 5</p>
+  </li>
+  <li>
+    <p>Wed 03/13. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 03/13. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 03/13. Lab Assignment due 2025-03-26 23:59</p>
+  </li>
+  <li>
+    <p>Thur 03/14. Labs</p>
+  </li>
+  <li>
+    <p>Fri 03/15. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="heads-up-week-10" class="title-text">Heads-up Week 10</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Scheduling</p>
+  </li>
+  <li>
+    <p>Mon 03/25. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 03/25. MP Assignment Due 2025-03-31 23:59</p>
+  </li>
+  <li>
+    <p>Wed 03/27. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 03/27. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 03/27. Lab Assignment due 2025-04-02 23:59</p>
+  </li>
+  <li>
+    <p>Thur 03/28. Labs</p>
+  </li>
+  <li>
+    <p>Fri 03/29. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="heads-up-week-11" class="title-text">Heads-up Week 11</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Networking</p>
+  </li>
+  <li>
+    <p>Mon 04/01. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 04/01. MP Assignment Due 2025-04-07 23:59</p>
+  </li>
+  <li>
+    <p>Mon 04/01 - Wed 04/03.  CBTF Quiz 6</p>
+  </li>
+  <li>
+    <p>Wed 04/03. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 04/03. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 04/03. Lab Assignment due 2025-04-09 23:59</p>
+  </li>
+  <li>
+    <p>Thur 04/04. Labs</p>
+  </li>
+  <li>
+    <p>Fri 04/05. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="heads-up-week-12" class="title-text">Heads-up Week 12</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Filesystems</p>
+  </li>
+  <li>
+    <p>Mon 04/08. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 04/08. MP Assignment Due 2025-04-14 23:59</p>
+  </li>
+  <li>
+    <p>Wed 04/10. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 04/10. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 04/10. Lab Assignment due 2025-04-23 23:59</p>
+  </li>
+  <li>
+    <p>Thur 04/11. Labs</p>
+  </li>
+  <li>
+    <p>Fri 04/12. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="heads-up-week-13" class="title-text">Heads-up Week 13</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Signals</p>
+  </li>
+  <li>
+    <p>Mon 04/15. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 04/15. MP Assignment Due 2025-04-21 23:59</p>
+  </li>
+  <li>
+    <p>Mon 04/15 - Wed 04/17. CBTF Quiz 7</p>
+  </li>
+  <li>
+    <p>Wed 04/17. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 04/17. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 04/17. Lab Assignment due 2025-04-30 23:59</p>
+  </li>
+  <li>
+    <p>Thur 04/18. Labs</p>
+  </li>
+  <li>
+    <p>Fri 04/19. No lecture (in lieu of CBTF time)</p>
+  </li>
+</ul>
+<h3 id="heads-up-week-14" class="title-text">Heads-up Week 14</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Review!</p>
+  </li>
+  <li>
+    <p>Mon 04/22. No lecture (in lieu of CBTF time)g</p>
+  </li>
+  <li>
+    <p>Mon 04/22. MP Assignment Due 2025-04-28 23:59</p>
+  </li>
+  <li>
+    <p>Wed 04/24. Online Lecture</p>
+  </li>
+  <li>
+    <p>Wed 04/24. Angrave World’s-Largest-Office Hours? (Optional) ECEB1002 8am-9am, then ECEB Atrium until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 04/24. Lab Assignment due</p>
+  </li>
+  <li>
+    <p>Thur 04/25. Labs</p>
+  </li>
+  <li>
+    <p>Fri 04/26. Online Lecture</p>
+  </li>
+</ul>
+<h3 id="heads-up-week-15" class="title-text">Heads-up Week 15</h3>
+<ul>
+  <li>
+    <p>Week’s Readings: Review!</p>
+  </li>
+  <li>
+    <p>Mon 04/29. Online Lecture</p>
+  </li>
+  <li>
+    <p>Mon 04/29. MP Assignment Due 2025-05-05 23:59</p>
+  </li>
+  <li>
+    <p>Mon 04/29 - 05/01. CBTF Quiz 8</p>
+  </li>
+  <li>
+    <p>Wed 05/01. Last Lecture in ECEB 1002 8am.</p>
+  </li>
+  <li>
+    <p>Wed 05/01. Office HOurs ECEB Atrium 9:00 until 9:30</p>
+  </li>
+  <li>
+    <p>Wed 05/01. Lab Assignment due 1987-12-11 23:59</p>
+  </li>
+  <li>
+    <p>Wed 05/01. Regrades are due</p>
+  </li>
+</ul>
+<h3 id="cbtf-quiz-summary-these-are-usually-available-monday---wednesday" class="title-text">CBTF Quiz summary. These are usually available Monday - Wednesday.</h3>
+<ul>
+  <li>Mon 01/28. CBTF Quiz 2</li>
+  <li>Mon 02/11. CBTF Quiz 3</li>
+  <li>Mon 02/25. CBTF Quiz 4</li>
+  <li>Mon 03/11. CBTF Quiz 5</li>
+  <li>Mon 04/1.  CBTF Quiz 6</li>
+  <li>Mon 04/15. CBTF Quiz 7</li>
+  <li>Mon 04/29  CBTF Quiz 8</li>
+</ul>
+</div></div></div>
+</div></div></div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_pages/past/scheduleSP19.md";
+  </script>
+</body>
+
+</html>

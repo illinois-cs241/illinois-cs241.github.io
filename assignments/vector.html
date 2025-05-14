@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Vector</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Vector" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Vector
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-02-10 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>vector.c</li>
+                
+                <li>sstring.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_groundwork-for-shell" href="#groundwork-for-shell" class="fancy-link">Groundwork For Shell</a></li>
+<li><a id="toc_vector" href="#vector" class="fancy-link">Vector</a></li>
+<li><a id="toc_sstring" href="#sstring" class="fancy-link">sstring</a></li>
+<li><a id="toc_managing-memory" href="#managing-memory" class="fancy-link">Managing memory</a></li>
+<li><a id="toc_undefined-behavior" href="#undefined-behavior" class="fancy-link">Undefined behavior</a></li>
+<li><a id="toc_initial_capacity" href="#initial_capacity" class="fancy-link"><code class="language-plaintext highlighter-rouge">INITIAL_CAPACITY</code></a></li>
+<li><a id="toc_callbacks" href="#callbacks" class="fancy-link">Callbacks</a></li>
+<li><a id="toc_writing-test-cases" href="#writing-test-cases" class="fancy-link">Writing test cases</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Vector are: <br>
+    </p>
+<ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Implementing a C++ style Vector in C</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Using Dynamic/Heap Memory</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Using malloc(), free(), calloc(), realloc()</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Function Pointers</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">OOP in C</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">String manipulation in C</span>
+        </li>
+      
+    </ul>
+  
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="groundwork-for-shell" class="title-text">Groundwork For Shell<a class="anchor title-text" href="#groundwork-for-shell"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You are an intern at Macrohard, where you’ll be writing a shell for everyone on your team.</p>
+<p>These projects will take you several weeks, and your mentor has decided on the following timetable:</p>
+<ul>
+  <li>Week A: Vector and Sstream</li>
+  <li>Week B+C: Shell</li>
+</ul>
+<p>The <em>Shell</em> is a terminal. Like all good terminals, your shell will need to remember what processes are running.</p>
+<p>However, after hearing tales of your talent, and with vectors being all the rage, other team leads have asked for vectors that they can use in their own projects. One option would be to write a vector for each team. However, being a good programmer, you know that code duplication is bad. Also, you’re a lazy programmer, so you want to write as little code as possible to accomplish everything. You decide to implement a generic vector, something that every team can use with minimal changes.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="vector" class="title-text">Vector<a class="anchor title-text" href="#vector"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>A vector is an array that grows as a user adds and removes items from it. (Since CS 225 was a prerequisite, you probably knew all of that already.) However, your vector will need to be feature-rich enough for someone to easily create a document from it, or anything else the other sneaky teams want for their projects.</p>
+<p>Your implementation should go in <code class="language-plaintext highlighter-rouge">vector.c</code>, which is the only file that will be sent to your team lead for review. As an intern looking to become a full-time employee, you should create test cases in <code class="language-plaintext highlighter-rouge">vector_test.c</code> to show you are a responsible programmer. Your mentor has left notes in <code class="language-plaintext highlighter-rouge">vector.h</code> guiding your implementation.</p>
+<p>In case a fellow employee asks what you learned in CS 225, here’s some review:</p>
+<ul>
+  <li><a href="https://courses.engr.illinois.edu/cs225/fa2022/pages/lectures.html" class="fancy-link wiki-link">Lectures</a></li>
+  <li><a href="https://courses.engr.illinois.edu/cs225/sp2022/assets/lectures/slides/cs225sp22-10-ArrayList-slides.pdf" class="fancy-link wiki-link">Array Resizing</a></li>
+  <li><a href="https://mediaspace.illinois.edu/playlist/dedicated/177553201/1_rvqb894w/1_q0tn10fm" class="fancy-link wiki-link">Lecture Recording</a></li>
+</ul>
+<p>Since this vector is generic, it will have to call custom constructor, destructor, and default constructor functions when objects are added or removed. (How is this better than a single function which handles all possible types?) Thus, your vector structure will contain pointers to your constructor or destructor routines, and you can initialize the vector by passing pointers to these functions as parameters.</p>
+<p>What you’ll end up with is a useful general-purpose vector, capable of dynamically expanding. (No more fixed-sized buffers!). If you get confused about the callback typedefs (i.e. what a copy constructor is) take a look at <code class="language-plaintext highlighter-rouge">callbacks.h</code>.</p>
+<p>Note: Remember that vector size (the number of actual objects held in the vector) and capacity (size of the storage space currently allocated for the vector) are two different things. Refer to documentation in vector.h and vector.c for more information.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="sstring" class="title-text">sstring<a class="anchor title-text" href="#sstring"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>sstring is a wrapper around C-strings which makes dealing with strings easier
+with higher-level functions. We have not specified the definition of the sstring
+struct, and left that up to you! You can find the specification for the sstring 
+functions in the <code class="language-plaintext highlighter-rouge">sstring.h</code> header file.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="managing-memory" class="title-text">Managing memory<a class="anchor title-text" href="#managing-memory"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Remember, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/index.html" class="fancy-link">man</a></code> is man’s best friend. Since you’re working with dynamic memory, there are quite a few functions you should be familiar with before you proceed. <code class="language-plaintext highlighter-rouge">malloc()</code>, <code class="language-plaintext highlighter-rouge">free()</code>, <code class="language-plaintext highlighter-rouge">realloc()</code>,  <code class="language-plaintext highlighter-rouge">calloc()</code>, <code class="language-plaintext highlighter-rouge">memmove()</code> are your friends; don’t shy away!</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">man 3 malloc</code></li>
+  <li><code class="language-plaintext highlighter-rouge">man 3 free</code></li>
+  <li>…there’s a pattern here</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="undefined-behavior" class="title-text">Undefined behavior<a class="anchor title-text" href="#undefined-behavior"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><em>Undefined behavior</em> is a scenario or edge case for which there is no documentation describing how the code should react. For example, man pages do not describe what happens when you feed <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/NULL.3const.html" class="fancy-link">NULL</a></code> into <code class="language-plaintext highlighter-rouge">strcmp()</code>. Your mentor will not answer questions like “What if my user wants an element past the end of the vector?”, because that is undefined behavior.</p>
+<p>So, for the entirety of this MP, you should use <code class="language-plaintext highlighter-rouge">assert()</code> statements to check that your user is passing valid input to your function before operating on the input. For example, if you were implementing <code class="language-plaintext highlighter-rouge">strcmp(const char *s1, const char *s2)</code>, then your code might look like this:</p>
+<pre><code class="language-C">#include &lt;assert.h&gt;
+
+strcmp(const char *s1, const char *s2) {
+    assert(s1 != NULL &amp;&amp; s2 != NULL);
+    // Compare the two strings
+    .
+    .
+    .
+    return rv;
+}
+</code></pre>
+<p><img class="emoji" title=":bangbang:" alt=":bangbang:" src="https://github.githubassets.com/images/icons/emoji/unicode/203c.png" height="20" width="20"> <strong>A note about asserts:</strong> <code class="language-plaintext highlighter-rouge">SIGABRT</code> is a signal that will kill any process. It can be called by writing <code class="language-plaintext highlighter-rouge">abort()</code>, and is often used by <code class="language-plaintext highlighter-rouge">libc</code> implementations when unrecoverable errors occur. For example if you damage <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>’s internal structure via heap overflow, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> will call <code class="language-plaintext highlighter-rouge">abort()</code> and your program will exit immediately. Processes will also be terminated via <code class="language-plaintext highlighter-rouge">SIGABRT</code> if an <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/assert.3p.html" class="fancy-link">assert</a></code> fails. <code class="language-plaintext highlighter-rouge">SIGABRT</code> is also known as “signal 6” - if you see this pop up on the autograder, your implementation is either incorrect (or failing your own <code class="language-plaintext highlighter-rouge">asserts</code>) and causing the autograder to crash.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="initial_capacity" class="title-text">
+<code class="language-plaintext highlighter-rouge">INITIAL_CAPACITY</code><a class="anchor title-text" href="#initial_capacity"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p><code class="language-plaintext highlighter-rouge">INITIAL_CAPACITY</code> is the starting capacity of the vector, initialized to 8. Do not modify this field, as doing so may cause you to fail tests.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="callbacks" class="title-text">Callbacks<a class="anchor title-text" href="#callbacks"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>A set of callback functions representing copy constructors, default constructors, and destructors for different types have been provided in <code class="language-plaintext highlighter-rouge">callbacks.h</code>. Please read <code class="language-plaintext highlighter-rouge">callbacks.h</code> and <code class="language-plaintext highlighter-rouge">callbacks.c</code> carefully, especially the function documentation, to understand when to use each one accordingly. The function pointers defined in the vector struct can store function pointers to the defined callback functions, which allows for flexibility and emulation of Object-Oriented Programming in C. You can also learn more about callbacks and how to use them <a href="https://www.geeksforgeeks.org/callbacks-in-c/" class="fancy-link wiki-link">here</a> or <a href="https://www.tutorialspoint.com/callbacks-in-c" class="fancy-link wiki-link">here</a>.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="writing-test-cases" class="title-text">Writing test cases<a class="anchor title-text" href="#writing-test-cases"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Just to emphasize how important test cases are, this lab spec will repeat itself and remind you that as good programmers, you are expected to write your own test cases for sstring and vector.</p></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/vector.md";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Mad Mad Access Pattern</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Mad Mad Access Pattern" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Mad Mad Access Pattern
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-04-23 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>lookup1.c</li>
+                
+                <li>lookup2.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_mapping-inventory" href="#mapping-inventory" class="fancy-link">Mapping Inventory</a></li>
+<li><a id="toc_data-file-structure" href="#data-file-structure" class="fancy-link">Data File Structure</a></li>
+<li><a id="toc_files" href="#files" class="fancy-link">Files</a></li>
+<li><a id="toc_version-1-fseek--fread" href="#version-1-fseek--fread" class="fancy-link">Version 1: fseek / fread</a></li>
+<li><a id="toc_version-2-mmap" href="#version-2-mmap" class="fancy-link">Version 2: mmap</a></li>
+<li><a id="toc_sample-usage" href="#sample-usage" class="fancy-link">Sample usage</a></li>
+<li><a id="toc_testing-notes" href="#testing-notes" class="fancy-link">Testing notes</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Mad Mad Access Pattern are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Working with files</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">mmap()</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">fseek() and fread()</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="mapping-inventory" class="title-text">Mapping Inventory<a class="anchor title-text" href="#mapping-inventory"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Here’s the <a href="../media/madmadaccess-country.mp3" class="fancy-link wiki-link">BlueGrass Song</a> (<a href="../media/madmadaccess-country.txt" class="fancy-link wiki-link">Description and Lyrics</a>) introduction to this assignment.</p>
+<p>You’ve landed an internship at <strong><em>Zing!</em></strong>, a search engine
+start-up.  Your first project is to develop a keyword advertisement
+inventory tool.</p>
+<p>Advertisers can “buy” keywords such that their ad is shown whenever
+a user does a search that contains one of their keywords. For example,
+if a user searches for “stapler”, they will see ads for an office supply
+company who bought that keyword.</p>
+<p>Before buying a keyword, advertisers want to know, “How much will this
+cost me?”  To compute that, they’ll need to know how often the keyword
+is searched for, and how valuable the word is.  For example “how” is
+a very common word but has little value. “Donate” is less common but
+highly valuable, because a user searching for “donate” is probably willing
+to do so.</p>
+<p>The intern before you scanned through a large volume of search logs
+to determine the frequency and value of each word.  Your job is to
+perform efficient searches on the data file she created. This file is
+expected to grow to be very large, larger than will fit in memory, so
+you will need to access it without reading it all into memory.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="data-file-structure" class="title-text">Data File Structure<a class="anchor title-text" href="#data-file-structure"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The file is structured like a binary search tree, where each tree node
+is an instance of this structure:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>typedef struct {
+uint32_t left_child;  // offset of node containing left child
+uint32_t right_child; // offset of node containing right child
+
+// Offsets are relative to the beginning of the file.
+// An offset of zero means the child does not exist.
+
+uint32_t count;  // number of times the word occurs in the data set
+float price;     // price of the word
+
+char word[0];    // contents of the word, null-terminated
+} BinaryTreeNode;
+</code></pre></div></div>
+<p>The first 4 bytes of the input file are the letters “BTRE”. Any
+file which does not start with these 4 bytes is an invalid data file.
+The root node is stored at offset 4 in the file. Each uint32_t and
+float is stored in little-endian format (the same as the processors
+your VMs use, so no conversion will be necessary). “word” is an array
+of ASCII characters at the end of each structure, and it is a
+null-terminated string.  There is no limit on the length of a word in
+the file or the length of the words your program will look up.</p>
+<p>Remember the properties of a binary search tree: if a node has a left
+child, that child’s value is less than the node. If it has a right child,
+that child’s value is greater than the node.</p>
+<p>Comparison among nodes in this assignment is defined by their <code class="language-plaintext highlighter-rouge">word</code>’s  <code class="language-plaintext highlighter-rouge">int strcmp(const char *s1, const char *s2)</code>. In other words:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>BinaryTreeNode *node = ...a node from the file...
+
+if (node-&gt;left_child) {
+  BinaryTreeNode *left = ...load node at node-&gt;left_child...
+  assert(strcmp(left-&gt;word, node-&gt;word) &lt; 0);
+}
+
+if (node-&gt;right_child) {
+  BinaryTreeNode *right = ...load node at node-&gt;right_child...
+  assert(strcmp(right-&gt;word, node-&gt;word) &gt; 0);
+}
+</code></pre></div></div>
+<p class="img-paragraph"><img src="../images/assignment-docs/lab/mad_mad_access_patterns/241_memory_mapped_madness_diagram.png" alt="BTRE"></p>
+<p>Note that none of the binary search trees we give you will have duplicate keys.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="files" class="title-text">Files<a class="anchor title-text" href="#files"> #</a>
+</h2></div>
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You’ll be given:</p>
+<ul>
+  <li>tree.h - contains the struct definition above and a detailed description
+   of the data in sample.data</li>
+  <li>Makefile - the makefile you should use to build lookup1 and lookup2</li>
+  <li>sample.data - a small file containing the words “sample”,
+   “word”, “list”, “for”, “this”, and “program”</li>
+  <li>utils.h - Printing functions for you to use</li>
+  <li>input_file - Sample input to create_file executable.</li>
+  <li>create_file - Creates binary tree structured data file corresponding to input_file. This will be used for your test cases.</li>
+  <li>print_file - Prints out human readable form of binary tree structured file from above.</li>
+</ul>
+<p>Make two versions of your program. Both should produce the
+same results, but using different file access methods.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="version-1-fseek--fread" class="title-text">Version 1: fseek / fread<a class="anchor title-text" href="#version-1-fseek--fread"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>When reading a node from the file, use <strong>fseek()</strong> to jump to the
+correct position and read the node with <strong>fread() and/or fgetc()</strong>.
+You may not use mmap() for this part.</p>
+<p>Put the code for this in lookup1.c.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="version-2-mmap" class="title-text">Version 2: mmap<a class="anchor title-text" href="#version-2-mmap"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Use <strong>mmap()</strong> to map the entire file into memory without
+reading any part of the file directly. When reading a node from the memory mapped file, use
+pointer arithmetic to jump to the correct position and read the node
+using regular pointer dereferencing.</p>
+<p><a href="http://cs341.cs.illinois.edu/coursebook/Ipc#mmap" class="fancy-link wiki-link">mmap Introduction</a></p>
+<p>Put the code for this in lookup2.c.</p>
+<p><strong>Notice that you can use only mmap() to map the WHOLE file</strong> for this version. Do not use other functions to read files.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="sample-usage" class="title-text">Sample usage<a class="anchor title-text" href="#sample-usage"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lookup1 &lt;data_file&gt; &lt;keyword&gt; [&lt;keyword&gt; ...]
+lookup2 &lt;data_file&gt; &lt;keyword&gt; [&lt;keyword&gt; ...]
+
+% ./lookup1 sample.data list sample werd
+list: 12 at $0.04
+sample: 25 at $10.60
+werd not found
+
+% ./lookup2 sample.data list sample werd
+list: 12 at $0.04
+sample: 25 at $10.60
+werd not found
+</code></pre></div></div></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing-notes" class="title-text">Testing notes<a class="anchor title-text" href="#testing-notes"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>You are given reference files! Compare your outputs with ./lookup1-reference and ./lookup2-reference :)</li>
+  <li>Write your test cases to include comparison of performance between the two versions (lookup1 and lookup2). Think about which one is faster and why.</li>
+  <li>In order to generate different binary tree structured data files based on input required for each test case, use the <code class="language-plaintext highlighter-rouge">create_data</code> executable.
+See <code class="language-plaintext highlighter-rouge">input_file</code> for sample input to this executable.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">print_file</code> executable will provide a human readable form of a binary tree structured data file generated from <code class="language-plaintext highlighter-rouge">create_data</code>.</li>
+</ul>
+<p>Error cases:</p>
+<ul>
+  <li>If run with less than 2 arguments, your program should print an error
+message describing the arguments it expects and exit with error code 1.</li>
+  <li>If the data file cannot be read or the first 4 bytes are not
+“BTRE”, print a helpful error message and exit with error code 2.</li>
+  <li>If a call to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code> fails (for version 2), print a helpful error message
+and exit with error code 3.</li>
+  <li>Helper functions for the above error cases can be found in <code class="language-plaintext highlighter-rouge">utils.h</code>.</li>
+</ul>
+<p>For each word that is found, print its count and its price, where the
+price is always printed with exactly two digits to the right of the decimal
+point.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/mad_mad_access_pattern.md";
+  </script>
+</body>
+
+</html>

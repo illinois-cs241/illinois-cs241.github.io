@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Past_projects</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Past_projects" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+<body>
+<!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <h1>Past Projects</h1>
+    
+      <h2>Fall 2017</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <th scope="row">SSHFS</th>
+              <td>Distributed filesystem and task executor using FUSE</td>
+              <td>
+                
+                  <a href="https://github.com/zd-project/sshfs_cs241honor">Github</a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">TeaTime</th>
+              <td>Real time file synchronization tool</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">GummyWorm</th>
+              <td>Android phone remote desktop tool</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">BitMesh</th>
+              <td>Distributed system library</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">File Compressor</th>
+              <td>Custom file compression server</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      <h2>Fall 2016</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <th scope="row">Distributed FUZE</th>
+              <td>Distributed filesystem using FUSE</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Hermes</th>
+              <td>Online real-time text editor</td>
+              <td>
+                
+                  <a href="https://github.com/Horizon-Blue/Hermes">GitHub</a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Kernel Filesystem</th>
+              <td>Kernel module virtual filesystem</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Root Kit</th>
+              <td>Spying on your kernel</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Fluid Simulator</th>
+              <td>2D fluid simulation that takes advantage of GPU architecture</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Steganography Toolset</th>
+              <td>Toolset capable of encoding information in images/audio/code and subsequently decoding it</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Remote Desktop Client</th>
+              <td>Remote client for your desktop</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">ShadowPager</th>
+              <td>Hacking around firewalls</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Multiplayer Tron Game</th>
+              <td>An implementation of the video game Tron entirely in the terminal</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+      <h2>Spring 2016</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <th scope="row">Super Debugger</th>
+              <td>GDB-Like Debugger From Scratch</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">C Garbage Collector</th>
+              <td>A garbage collector for C code that supports multithreading</td>
+              <td>
+                
+                  <a href="https://github.com/faisalabujabal/gc4c/">GitHub</a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">LocChat</th>
+              <td>Location-based app where nearby users can talk to each other based on common interests</td>
+              <td>
+                
+                  <a href="https://github.com/crkainrath/CS296Project">GitHub</a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Chess Engine</th>
+              <td>Engine to compute optimal moves in a game of chess</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">High Frequency Sports Gambling</th>
+              <td>Analyzes and places bets on sports games in real-time</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">TCP Network Encryption</th>
+              <td>A network encryption tool that implements the Serpent cipher</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Webcam Theremin</th>
+              <td>Theremin simulation using a webcam and video processing</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Spacecluster.io</th>
+              <td>Remake of Agai.io in space</td>
+              <td>
+                
+                  <a href="https://github.com/dylanplecki/spacecluster.io">GitHub</a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">EDF Schedluing Policy</th>
+              <td>Implementation of the earliest-deadline first scheduling policy as a Linux kernel module</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Win Debugger</th>
+              <td>A gdb-like Windows C debugger written in C++</td>
+              <td>
+                
+                  <a href="https://www.youtube.com/watch?v=4u8ArJTRFsl">YouTube</a>
+                
+              </td>
+            </tr>
+          
+            <tr>
+              <th scope="row">Personalized Trash Control</th>
+              <td>A feature-rich trash can for Linux that supports compression and remote storage of trash</td>
+              <td>
+                
+              </td>
+            </tr>
+          
+        </tbody>
+      </table>
+    
+  </div>
+</div>
+</div>
+</body>
+</html>
