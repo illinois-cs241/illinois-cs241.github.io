@@ -150,7 +150,7 @@ We take academic integrity seriously in this course, and screen every MP submiss
 ### Expected Time Obligations
 * Varies by projects
 
-<form action="https://forms.gle/ERJkCYbMrwTdj7kGA">
+<form action="https://forms.gle/FZv5mkryWHAsZE3u9">
     <button type="submit" class="apply-button">
         Apply
     </button>
