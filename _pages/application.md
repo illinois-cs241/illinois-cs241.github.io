@@ -55,7 +55,7 @@ Last but not least, the front facing team is the eyes and ears of the entire sta
 
 ## Assignment Development
 
-Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course. You will be responsible for improving existing assignments and fixing any issue that pops up, as well as managing assignment documentation, ~~and occasioanlly creating brand new assignments~~ (assignment creation has been migrated to the [PrairieLearn](#prairielearn) section).
+Machine Problems and Labs are the meat and cheese of any programming course. These assignments are supposed to be rigorous enough so that students can fully apply their knowledge of systems, and interesting enough so that they have a memorable experience in the course. You will be responsible for improving existing assignments and fixing any issue that pops up, as well as managing assignment documentation, ~~and occasioanlly creating brand new assignments~~ (assignment creation has been migrated to the [PrairieLearn](#prairielearn) section). Instead, we are looking for people who can help clean up the autograder backend, and to make life easy for other developers. 
 
 Finally, with any good assignment comes excellent documentation that is clear, concise, contextual, and correct. Also, the documentation should mirror what we are looking for in the autograder. One huge shift you'll have to get used to is writing code for an assignment must be perfect or near-perfect. Instead of passing our ~30 test cases, you'll have to be resilient against 300 students' edge cases.
 
@@ -150,7 +150,7 @@ We take academic integrity seriously in this course, and screen every MP submiss
 ### Expected Time Obligations
 * Varies by projects
 
-<form action="https://forms.gle/UmQSBYAXJt1ppQwMA">
+<form action="https://forms.gle/ERJkCYbMrwTdj7kGA">
     <button type="submit" class="apply-button">
         Apply
     </button>
