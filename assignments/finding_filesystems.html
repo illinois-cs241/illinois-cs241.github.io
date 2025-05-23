@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Finding Filesystems</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Finding Filesystems" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Finding Filesystems
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-04-14 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>minixfs.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_introduction--backstory" href="#introduction--backstory" class="fancy-link">Introduction / Backstory</a></li>
+<li><a id="toc_minixfs" href="#minixfs" class="fancy-link">minixfs</a></li>
+<li><a id="toc_fakefs-interface" href="#fakefs-interface" class="fancy-link">fakefs interface</a></li>
+<li><a id="toc_helper-functionsmacros" href="#helper-functionsmacros" class="fancy-link">Helper Functions/Macros</a></li>
+<li><a id="toc_so-what-do-i-need-to-do" href="#so-what-do-i-need-to-do" class="fancy-link">So what do I need to do?</a></li>
+<li><a id="toc_some-notes-on-minixfs_create_inode_for_path" href="#some-notes-on-minixfs_create_inode_for_path" class="fancy-link">Some notes on <code class="language-plaintext highlighter-rouge">minixfs_create_inode_for_path</code></a></li>
+<li><a id="toc_virtual-filesystem" href="#virtual-filesystem" class="fancy-link">Virtual Filesystem</a></li>
+<li><a id="toc_testing" href="#testing" class="fancy-link">Testing</a></li>
+<li><a id="toc_other-edge-cases" href="#other-edge-cases" class="fancy-link">Other Edge Cases</a></li>
+<li><a id="toc_helpful-hints-and-notes" href="#helpful-hints-and-notes" class="fancy-link">Helpful Hints and Notes</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Finding Filesystems are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Learn how inodes are represented in the kernel</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">How to write callbacks for filesystem operations</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Traverse singly indirect blocks</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Modifying permissions on files</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="introduction--backstory" class="title-text">Introduction / Backstory<a class="anchor title-text" href="#introduction--backstory"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>So you’ve been doing well at Macrohard. Your turbo malloc really impressed your boss and you also went on to work on the infamous password cracker and parmake programs. However, your bosses have been looking for a way to store data in a proprietary format so that they can easily share chunks of data without having to first compress it. They have the following requirements:</p>
+<ul>
+  <li>The data must be stored in a single file so that it’s easy to share - however, to keep the file within the company the format must be proprietary</li>
+  <li>Current tools like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cp.1p.html" class="fancy-link">cp</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ls.1p.html" class="fancy-link">ls</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/touch.1p.html" class="fancy-link">touch</a></code>, etc must work with this data format for easy usage</li>
+</ul>
+<p>Sounds tough. That second requirement really throws a spin on things. It’s such an arbitrary requirement. Almost as if it was just thrown in as a TA’s lazy writing to motivate an MP or something. Lame!</p>
+<p>Of course, as a student of CS341, you know exactly what they’re asking for - a loopback filesystem! After doing some research, you decide that a good filesystem to base your implementation off of is minixfs. Your friendly coworkers have already made some progress on this project and created a filesystem wrapper, fakefs, that can load a mininxfs image. It’s now your job to implement a few filesystem operations for minix.</p>
+<p>In this MP, you will be implementing several callbacks to file system operations, namely, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chmod.3p.html" class="fancy-link">chmod</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chown.3p.html" class="fancy-link">chown</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/read.3p.html" class="fancy-link">read</a></code>, and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code>. To do this you will be exploring how metadata is stored in the inode and how data is stored in the data blocks. You will also be exploring the idea of virtual filesystems and how they can be used to present metadata about a system.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="minixfs" class="title-text">minixfs<a class="anchor title-text" href="#minixfs"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>ext2 is good filesystem, but to keep things simple, we will be using a modified version of its predecessor (the <a href="https://en.wikipedia.org/wiki/MINIX_file_system" class="fancy-link wiki-link">MINIX filesystem</a>) in this MP.</p>
+<h3 id="file_system-struct" class="title-text">file_system struct</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>typedef struct {
+	superblock* meta;
+	inode* inode_root;
+	data_block* data_root;
+} file_system;
+
+</code></pre></div></div>
+<p class="img-paragraph"><img src="../images/assignment-docs/mp/finding_filesystems/map.png" alt="Finding Map"></p>
+<p>The <code class="language-plaintext highlighter-rouge">file_system</code> struct keeps track of the metadata, the root inode (where <code class="language-plaintext highlighter-rouge">fs-&gt;inode_root[0]</code> is the root <code class="language-plaintext highlighter-rouge">"/"</code> inode), and the root of the <code class="language-plaintext highlighter-rouge">data_block</code>s.</p>
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/meta.3x.html" class="fancy-link">meta</a></code> pointer points to the start of the file system, which includes the superblock.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">inode_root</code> points to the start of the inodes as in the picture.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">data_root</code> points to the start of the <code class="language-plaintext highlighter-rouge">data_blocks</code> as in the picture, right after the inodes.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">data_map</code> keeps track of which blocks are used and is placed at the end of the filesystem which makes it easy to resize the filesystem (although resizing is not supported by your implementation). Remember from class that inodes become free when their hard link count reaches zero, but data blocks need some kind of bitmap or sentinel to indicate if they are being used. <code class="language-plaintext highlighter-rouge">data_map</code> is a variable-sized array that holds this information. <strong>You don’t need to worry about these abstractions, they are taken care of for you</strong>.</li>
+</ul>
+<p>The inodes and data blocks are laid sequentially out so you can treat them like an array. Think about how you could get a pointer to the nth <code class="language-plaintext highlighter-rouge">data_block</code>.</p>
+<h3 id="superblock" class="title-text">Superblock</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>typedef struct {
+	uint64_t size;
+	uint64_t inode_count;
+	uint64_t dblock_count;
+} superblock;
+</code></pre></div></div>
+<p>The superblock stores information like the size of the filesystem, the number of inodes, and the number of data blocks.</p>
+<h3 id="inodes" class="title-text">Inodes</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>typedef struct {
+  uid_t uid;
+  gid_t gid;
+  uint16_t mode;
+  uint32_t nlink;
+  struct timespec atim;
+  struct timespec mtim;
+  struct timespec ctim;
+  uint64_t size;
+  data_block_number direct[NUM_DIRECT_BLOCKS];
+  data_block_number indirect;
+} inode;
+</code></pre></div></div>
+<p>This is the famous inode struct that you have been learning about! Here are a breakdown of the variables:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">uid</code> is the user ID of the inode owner.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">gid</code> is the ID of the inode group (does not have to include the owner).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">mode</code> is a bitmask. The bottom 9 bits are read-write-execute for owner-group-others. Bits 11-10 are the type of the file. <code class="language-plaintext highlighter-rouge">(mode &gt;&gt; 9)</code> corresponds to a particular type. We have given you two functions, <code class="language-plaintext highlighter-rouge">is_file</code> and <code class="language-plaintext highlighter-rouge">is_directory</code>, that tell you whether or not the inode represents a directory or file. There are no other types in our filesystem.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">nlink</code> is the hard link count which is the number of directories that the file is linked to from (directories can’t be hard linked).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">atim</code> is access time, which is the time of last access or the last time a file was <code class="language-plaintext highlighter-rouge">read(2)</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">mtim</code> is the last modification time, or in other words, the last time the file was changed with <code class="language-plaintext highlighter-rouge">write(2)</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ctim</code> is the last change time, or in other words, the last time the file’s metadata was changed.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/size.1.html" class="fancy-link">size</a></code> is the size of the file in bytes</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">direct</code> is an array where  <code class="language-plaintext highlighter-rouge">direct[i]</code> is the <code class="language-plaintext highlighter-rouge">i</code>th data block’s offset ( <code class="language-plaintext highlighter-rouge">data_block_number</code>) from the <code class="language-plaintext highlighter-rouge">data_root</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">indirect</code> is the offset number (<code class="language-plaintext highlighter-rouge">data_block_number</code>) of a data block, which contains <code class="language-plaintext highlighter-rouge">NUM_INDIRECT_BLOCKS</code> number of <code class="language-plaintext highlighter-rouge">data_block_number</code>’s.</li>
+</ul>
+<p>We are using the direct and indirect members of the inode to index our data blocks, which works like so.</p>
+<p class="img-paragraph"><img src="../images/assignment-docs/mp/finding_filesystems/iNodeDiagram.png" alt="iNode Diagram"></p>
+<h3 id="data-blocks" class="title-text">Data blocks</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>typedef struct {
+	char data[16 * KILOBYTE];
+} data_block;
+
+</code></pre></div></div>
+<p>Data blocks are currently defined to be 16 kilobytes. Nothing fancy here.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="fakefs-interface" class="title-text">fakefs interface<a class="anchor title-text" href="#fakefs-interface"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You do not need to modify or read any of the code in <code class="language-plaintext highlighter-rouge">fakefs_src/</code>.</p>
+<p>To make this MP possible, we’ve developed our own userspace filesystem interface which we’re calling fakefs. Normally, filesystems are a piece of code which you load into your kernel and must provide a few things. It needs a constructor, destructor, callbacks for all system calls involving files and file descriptors within your filesystem. However, writing kernel code is a bit more cumbersome than writing normal code since you need additional security checks among other things, and can even lead to instability in your operating system. To avoid this, there are various ways to implment a filesystem in userspace. The most common (and preferred) method is to use a library called FUSE (Filesystems in USErspace). FUSE allows you to implement your file operations in userspace, but still interacts with the kernel to provide it’s functionality. While this allows you to mount the filesystem and use it like any other filesystem, there are a few reasons why we chose not to use it for this MP. A major reason is that if a FUSE callback crashes while it is mounted, it renders the mounted partition unusable and in some cases, you won’t be able to even unmount the partition without rebooting the machine. To prevent making this MP annoying and tedious, we’ve made our own way of implementing filesystems in userspace by <code class="language-plaintext highlighter-rouge">hooking</code> filesystem operations.</p>
+<p>If you take a look at <code class="language-plaintext highlighter-rouge">fakefs_src/fakefs.c</code> you’ll see that we’ve overridden most of <code class="language-plaintext highlighter-rouge">glibc</code>’s filesystem operations. Note that this only hooks functions from code or programs that were either written in <code class="language-plaintext highlighter-rouge">C</code> or in something that compiles to <code class="language-plaintext highlighter-rouge">C</code>. Running a program written in assembly will not be affected by these hooks.</p>
+<p>Note that not all programs will work with fakefs. At the least, we guarantee that <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ls.1p.html" class="fancy-link">ls</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cat.1p.html" class="fancy-link">cat</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mkdir.3p.html" class="fancy-link">mkdir</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/unlink.3p.html" class="fancy-link">unlink</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cp.1p.html" class="fancy-link">cp</a></code> work. <code class="language-plaintext highlighter-rouge">vim</code> and <code class="language-plaintext highlighter-rouge">neovim</code> seem to work although you might run into some weird bugs using these programs within fakefs.</p>
+<p>TL;DR: running a program with fakefs will replace  <code class="language-plaintext highlighter-rouge">glibc</code>’s filesystem operations with your own functions. Make sure you use this when testing your code.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="helper-functionsmacros" class="title-text">Helper Functions/Macros<a class="anchor title-text" href="#helper-functionsmacros"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>There are some functions that you are going to need to know in order to finish this MP.</p>
+<h3 id="get_inode" class="title-text"><code class="language-plaintext highlighter-rouge">get_inode</code></h3>
+<p>This function takes a string name like <code class="language-plaintext highlighter-rouge">/path/to/file</code> and returns the inode corresponding to the file at the end of that path. <code class="language-plaintext highlighter-rouge">get_inode</code> returns NULL when the intended file does not exist or the file is invalid.</p>
+<h3 id="is_file--is_directory" class="title-text">
+<code class="language-plaintext highlighter-rouge">is_file</code> / <code class="language-plaintext highlighter-rouge">is_directory</code>
+</h3>
+<p>Call <code class="language-plaintext highlighter-rouge">is_file</code> or <code class="language-plaintext highlighter-rouge">is_directory</code> on an inode to tell whether it is a directory or a file. You don’t need to consider other inode types.</p>
+<h3 id="is_virtual_path" class="title-text"><code class="language-plaintext highlighter-rouge">is_virtual_path</code></h3>
+<p>Call <code class="language-plaintext highlighter-rouge">is_virtual_path</code> on a path to see if it’s a path in the virtual component. If it is, this function will return a path relative to the virtual directory. Returns <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/NULL.3const.html" class="fancy-link">NULL</a></code> otherwise.</p>
+<h3 id="minixfs_min_blockcount" class="title-text"><code class="language-plaintext highlighter-rouge">minixfs_min_blockcount</code></h3>
+<p>Call <code class="language-plaintext highlighter-rouge">minixfs_min_blockcount</code> to ensure that an inode has a certain minimum number of data blocks directly, or indirectly, associated with it.</p>
+<h3 id="num_direct_blocks" class="title-text"><code class="language-plaintext highlighter-rouge">NUM_DIRECT_BLOCKS</code></h3>
+<p><code class="language-plaintext highlighter-rouge">NUM_DIRECT_BLOCKS</code> is the number of direct <code class="language-plaintext highlighter-rouge">data_block</code> nodes in a single inode. The <code class="language-plaintext highlighter-rouge">indirect</code> array also has this many entries (for the sake of simplicity).</p>
+<h3 id="unassigned_node" class="title-text"><code class="language-plaintext highlighter-rouge">UNASSIGNED_NODE</code></h3>
+<p>You may not need to use this macro, but if you choose to, then any <code class="language-plaintext highlighter-rouge">data_block</code> or <code class="language-plaintext highlighter-rouge">inode</code> that is not currently being used will have this number.</p>
+<h3 id="other-useful-functions" class="title-text">Other useful functions</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">make_string_from_dirent</code></li>
+  <li><code class="language-plaintext highlighter-rouge">add_single_indirect_block</code></li>
+  <li><code class="language-plaintext highlighter-rouge">add_data_block_to_indirect_block</code></li>
+  <li><code class="language-plaintext highlighter-rouge">add_data_block_to_inode</code></li>
+  <li><code class="language-plaintext highlighter-rouge">parent_directory</code></li>
+  <li><code class="language-plaintext highlighter-rouge">init_inode</code></li>
+</ul>
+<p>You can find information about these in <code class="language-plaintext highlighter-rouge">minixfs.h</code> and <code class="language-plaintext highlighter-rouge">minixfs_utils.h</code>. It’s also a good idea to read through the provided functions briefly (at least the headers) to get an idea of what tools we provide you with.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="so-what-do-i-need-to-do" class="title-text">So what do I need to do?<a class="anchor title-text" href="#so-what-do-i-need-to-do"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You will need to implement the following 5 functions</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int minixfs_chmod(file_system *fs, char *path, int new_permissions)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">int minixfs_chown(file_system *fs, char *path, uid_t owner, gid_t group)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">inode *minixfs_create_inode_for_path(file_system *fs, const char *path)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ssize_t minixfs_read(file_system *fs, const char *path, void *buf, size_t req, off_t *off)</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ssize_t minixfs_write(file_system *fs, const char *path, const void *buf, size_t count, off_t *off)</code></li>
+</ul>
+<p>And you will need to implement a virtual file <code class="language-plaintext highlighter-rouge">/virtual/info</code>. For more information about that, scroll down to the virtual filesystem section.</p>
+<p>You can find more information about the required functions in <code class="language-plaintext highlighter-rouge">minixfs.h</code>. Remember to set <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/errno.3p.html" class="fancy-link">errno</a></code> on errors in your code!! We will be checking errno while grading.</p>
+<p>Note that for all functions where you need to update times, you should use <code class="language-plaintext highlighter-rouge">clock_gettime(CLOCK_REALTIME, variable_to_update);</code>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="some-notes-on-minixfs_create_inode_for_path" class="title-text">Some notes on <code class="language-plaintext highlighter-rouge">minixfs_create_inode_for_path</code><a class="anchor title-text" href="#some-notes-on-minixfs_create_inode_for_path"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Since we’ve had many students ask about this function, this section will
+contain some hints.</p>
+<p>Note that the parent directory of a path passed in will always exist when we
+test your code.</p>
+<p>A valid file path is absolute, unique, and links to a directory containing a file with a valid filename.</p>
+<p>When you find an unused inode, you will need to use <code class="language-plaintext highlighter-rouge">init_inode</code> to initialize
+it.</p>
+<p><code class="language-plaintext highlighter-rouge">make_string_from_dirent</code> will write the contents of a  <code class="language-plaintext highlighter-rouge">minixfs_dirent</code> to the <code class="language-plaintext highlighter-rouge">char *</code>  you provide.</p>
+<p>The number of bytes written by calling <code class="language-plaintext highlighter-rouge">make_string_from_dirent</code> will be equal to
+<code class="language-plaintext highlighter-rouge">FILE_NAME_ENTRY</code> as defined in <code class="language-plaintext highlighter-rouge">minixfs.h</code></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="virtual-filesystem" class="title-text">Virtual Filesystem<a class="anchor title-text" href="#virtual-filesystem"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In order to quickly get meta-information about the filesystem, we’re going to implement a virtual filesystem. Virtual filesystems are filesystems that present file-like objects, but don’t provide access to data in the traditional sense that you would expect from a filesystem. Some examples are <code class="language-plaintext highlighter-rouge">procfs</code> (usually mounted at <code class="language-plaintext highlighter-rouge">/proc</code>) that gives a user information about running processes, and also has some special files that can control various system parameters or provide debugging information about a running machine, or <code class="language-plaintext highlighter-rouge">devfs</code> (usually mounted at <code class="language-plaintext highlighter-rouge">/dev</code>) that provides information about devices and presents some virtual devices such as <code class="language-plaintext highlighter-rouge">dev/zero</code>, <code class="language-plaintext highlighter-rouge">/dev/random</code> and <code class="language-plaintext highlighter-rouge">/dev/null</code> which have special actions when being read or written to.</p>
+<p>The virtual filesystem we will be baking into our mininxfs implementation will live at <code class="language-plaintext highlighter-rouge">/virtual</code> with respect to the root of your minix filesystem. There will be at least one file inside, <code class="language-plaintext highlighter-rouge">info</code>. You do not need to implement writing to <code class="language-plaintext highlighter-rouge">/virtual/info</code>, but do need to support read. When read from, <code class="language-plaintext highlighter-rouge">/virtual/info</code> will return a string with the following format:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Free blocks: [number of free blocks]
+Used blocks: [number of used blocks]
+</code></pre></div></div>
+<p>Note that there is a new line at the end of each line above. You will need to compute the number of free and used blocks to insert into the data. Also note that you will need to support reading the virtual file from an offset, and must not copy more bytes to the user’s buffer than requested (just like a normal read).</p>
+<p>To simplify your implementation we recommend first generating the data above as a string and then copying a certain number of bytes of the string from a desired offset to the user buffer.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing" class="title-text">Testing<a class="anchor title-text" href="#testing"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><strong>Testing is ungraded, but highly recommended</strong></p>
+<p>You can grab the test filesystem using <code class="language-plaintext highlighter-rouge">make testfs</code>. <strong>Do not commit this file. If you overwrite it and want the original version just <code class="language-plaintext highlighter-rouge">rm test.fs</code> and do <code class="language-plaintext highlighter-rouge">make testfs</code> again</strong></p>
+<p>You will probably want to reset your <code class="language-plaintext highlighter-rouge">test.fs</code> file frequently while testing your write functionality.</p>
+<p>Note: There’s a small chance that <code class="language-plaintext highlighter-rouge">make testfs</code> can fail - in this case <code class="language-plaintext highlighter-rouge">rm test.fs</code> and <code class="language-plaintext highlighter-rouge">make testfs</code> again.</p>
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> will generate the minixfs_test executable that you can use for testing. We strongly recommend writing your own testcases in <code class="language-plaintext highlighter-rouge">minixfs_test.c</code> and not just using the output of commands like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ls.1p.html" class="fancy-link">ls</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cat.1p.html" class="fancy-link">cat</a></code> (which we describe how to test with below). This is because subtle bugs in your code can make the output look right, but have random unprintable characters as well.</p>
+<p>The <code class="language-plaintext highlighter-rouge">goodies</code> directory is also included and can also be used to check against the /goodies directory in test.fs.
+For example, the output of:
+<code class="language-plaintext highlighter-rouge">./fakefs test.fs cat test.fs/goodies/hello.txt</code> should be the same as <code class="language-plaintext highlighter-rouge">cat ./goodies/hello.txt</code></p>
+<p>Here are some sample (and not comprehensive) testcases!</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./fakefs test.fs cat test.fs/goodies/hello.txt
+Hello World!
+$
+</code></pre></div></div>
+<p>You can even cat directories!</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./fakefs test.fs cat test.fs/
+you00000001got00000002ls!00000003congrats00000004 [...]
+$
+</code></pre></div></div>
+<p>So that’s what really is going on under the hood?</p>
+<p>You can also use the /goodies directory in <code class="language-plaintext highlighter-rouge">minixfs_test.c</code>. Here’s an example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>char * buffer = calloc(1, 13);
+file_system *fs = open_fs("test.fs");
+off_t off = 0;
+char buf[13];
+ssize_t bytes_read = minixfs_read(fs, "/goodies/hello.txt", buf, 13, &amp;off);
+char *expected[13];
+//open /goodies/hello.txt with open() or fopen() and read the contents way you normally would
+assert(!strcmp(buf, expected));
+close_fs(&amp;fs);
+</code></pre></div></div>
+<p>Want something fun?</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./fakefs test.fs cat test.fs/goodies/dog.png &gt; dog.png
+$ xdg-open dog.png
+
+</code></pre></div></div>
+<p>You can store anything on filesystems. See what we hid around the testfs filesystem for you…</p>
+<p>You can also test by generating your own filesystems. Simply run ./fakefs mkfs <em>filename</em> to generate a filesystem with the filename <em>filename</em>. If you’ve implemented the write functionality, you can use commands like ./fakefs cp <em>file1</em> <em>filename</em>/ to copy files over. programs like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mkdir.3p.html" class="fancy-link">mkdir</a></code> should work as well.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="other-edge-cases" class="title-text">Other Edge Cases<a class="anchor title-text" href="#other-edge-cases"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>You do need to update <code class="language-plaintext highlighter-rouge">atim</code> and the <code class="language-plaintext highlighter-rouge">ctim</code>!</li>
+  <li>You don’t need to worry about data corruption or checksums or anything fancy, the filesystem will be valid. (Unless your write has bugs in it)</li>
+  <li>Make sure all the files you cat out in <code class="language-plaintext highlighter-rouge">/goodies</code> look correct when you <code class="language-plaintext highlighter-rouge">xdg-open</code> them. Make sure you can get the PNGs and the PDFs to print out correctly.</li>
+  <li>Make sure your output is the same size as the files inside the filesystem. You can check this by running stat on the files inside the filesystem(<code class="language-plaintext highlighter-rouge">./fakefs test.fs stat test.fs/FILE_PATH</code>), and wc -c on the on output of running cat on the file (<code class="language-plaintext highlighter-rouge">./fakefs test.fs cat test.fs/FILE_PATH | wc -c</code>) to check that the number of bytes is the same.</li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="helpful-hints-and-notes" class="title-text">Helpful Hints and Notes<a class="anchor title-text" href="#helpful-hints-and-notes"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>Handle the edge conditions. You can assume that size will be valid. What is the code supposed to do when you get to a singly indirect block?</li>
+  <li>Draw pictures! Understand what each of the things in the structs mean.</li>
+  <li>Review your pointer arithmetic.</li>
+  <li>
+<strong>Only</strong> change<code class="language-plaintext highlighter-rouge">minixfs.c</code>.</li>
+</ul></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/finding_filesystems.md";
+  </script>
+</body>
+
+</html>

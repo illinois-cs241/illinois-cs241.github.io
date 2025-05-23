@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Processes</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Processes" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Processes
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#processes" class="fancy-link wiki-link">Processes</a>
+    <ul>
+      <li><a href="#file-descriptors" class="fancy-link wiki-link">File Descriptors</a></li>
+      <li><a href="#processes-1" class="fancy-link wiki-link">Processes</a></li>
+      <li>
+<a href="#process-contents" class="fancy-link wiki-link">Process Contents</a>
+        <ul>
+          <li><a href="#memory-layout" class="fancy-link wiki-link">Memory Layout</a></li>
+          <li><a href="#other-contents" class="fancy-link wiki-link">Other Contents</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#intro-to-fork" class="fancy-link wiki-link">Intro to Fork</a>
+        <ul>
+          <li><a href="#a-word-of-warning" class="fancy-link wiki-link">A word of warning</a></li>
+          <li><a href="#fork-functionality" class="fancy-link wiki-link">Fork Functionality</a></li>
+          <li><a href="#fork-bomb" class="fancy-link wiki-link">Fork Bomb</a></li>
+          <li><a href="#signals" class="fancy-link wiki-link">Signals</a></li>
+          <li><a href="#posix-fork-details" class="fancy-link wiki-link">POSIX Fork Details</a></li>
+          <li><a href="#fork-and-files" class="fancy-link wiki-link">Fork and FILEs</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#waiting-and-executing" class="fancy-link wiki-link">Waiting and Executing</a>
+        <ul>
+          <li><a href="#exit-statuses" class="fancy-link wiki-link">Exit statuses</a></li>
+          <li><a href="#zombies-and-orphans" class="fancy-link wiki-link">Zombies and Orphans</a></li>
+          <li><a href="#advanced-asynchronously-waiting" class="fancy-link wiki-link">Advanced: Asynchronously
+Waiting</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#exec" class="fancy-link wiki-link">exec</a>
+        <ul>
+          <li><a href="#posix-exec-details" class="fancy-link wiki-link">POSIX Exec Details</a></li>
+          <li><a href="#shortcuts" class="fancy-link wiki-link">Shortcuts</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#the-fork-exec-wait-pattern" class="fancy-link wiki-link">The fork-exec-wait Pattern</a>
+        <ul>
+          <li><a href="#environment-variables" class="fancy-link wiki-link">Environment Variables</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#further-reading" class="fancy-link wiki-link">Further Reading</a>
+        <ul>
+          <li><a href="#topics" class="fancy-link wiki-link">Topics</a></li>
+        </ul>
+      </li>
+      <li><a href="#questionsexercises" class="fancy-link wiki-link">Questions/Exercises</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>Who needs process isolation?</strong> - <strong>Intel Marketing on Meltdown and
+Spectre</strong></p>
+
+<p>To understand what a process is, you need to understand what an
+operating system is. An operating system is a program that provides an
+interface between hardware and user software as well as providing a set
+of tools that the software can use. The operating system manages
+hardware and gives user programs a uniform way of interacting with
+hardware as long as the operating system can be installed on that
+hardware. Although this idea sounds like it is the end-all, we know that
+there are many different operating systems with their own quirks and
+standards. As a solution to that, there is another layer of abstraction:
+POSIX or portable operating systems interface. This is a standard (or
+many standards now) that an operating system must implement to be POSIX
+compatible – most systems that we’ll be studying are almost POSIX
+compatible due more to political reasons.</p>
+
+<p>Before we talk about POSIX systems, we should understand what the idea
+of a kernel is generally. In an operating system (OS), there are two
+spaces: kernel space and user space. Kernel space is a power operating
+mode that allows the system to interact with the hardware and has the
+potential to destroy your machine. User space is where most applications
+run because they don’t need this level of power for every operation.
+When a user space program needs additional power, it interacts with the
+hardware through a system call that is conducted by the kernel. This
+adds a layer of security so that normal user programs can’t destroy your
+entire operating system. For the purposes of our class, we’ll talk about
+single machine multiple user operating systems. This is where there is a
+central clock on a standard laptop or desktop. Other OSes relax the
+central clock requirement (distributed) or the “standardness” of the
+hardware (embedded systems). Other invariants make sure events happen at
+particular times too.</p>
+
+<p>The operating system is made up of many different pieces. There may be a
+program running to handle incoming USB connections, another one to stay
+connected to the network, etc. The most important one is the kernel –
+although it might be a set of processes – which is the heart of the
+operating system. The kernel has many important tasks. The first of
+which is booting.</p>
+
+<ol>
+  <li>
+    <p>The computer hardware executes code from read-only memory, called
+firmware.</p>
+  </li>
+  <li>
+    <p>The firmware executes a bootloader, which often conforms to the
+Extensible Firmware Interface (<code class="language-plaintext highlighter-rouge">EFI</code>), which is an interface between
+the system firmware and the operating system.</p>
+  </li>
+  <li>
+    <p>The bootloader’s boot manager loads the operating system kernels,
+based on the boot settings.</p>
+  </li>
+  <li>
+    <p>Your kernel executes <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/init.1.html" class="fancy-link">init</a></code> to
+<a href="https://en.wikipedia.org/wiki/Bootstrapping" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Bootstrapping</a>
+itself from nothing.</p>
+  </li>
+  <li>
+    <p>The kernel executes startup scripts like starting networking and USB
+handling.</p>
+  </li>
+  <li>
+    <p>The kernel executes userland scripts like starting a desktop, and
+you get to use your computer!</p>
+  </li>
+</ol>
+
+<p>When a program is executing in user space, the kernel provides some
+important services to programs in User space.</p>
+
+<ul>
+  <li>
+    <p>Scheduling processes and threads</p>
+  </li>
+  <li>
+    <p>Handling synchronization primitives (futexes, mutexes, semaphores,
+etc.)</p>
+  </li>
+  <li>
+    <p>Providing system calls such as <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/read.3p.html" class="fancy-link">read</a></code></p>
+  </li>
+  <li>
+    <p>Managing virtual memory and low-level binary devices such as <code class="language-plaintext highlighter-rouge">USB</code>
+drivers</p>
+  </li>
+  <li>
+    <p>Managing filesystems</p>
+  </li>
+  <li>
+    <p>Handling communication over networks</p>
+  </li>
+  <li>
+    <p>Handling communication between processes</p>
+  </li>
+  <li>
+    <p>Dynamically linking libraries</p>
+  </li>
+  <li>
+    <p>The list goes on and on.</p>
+  </li>
+</ul>
+
+<p>The kernel creates the first process <code class="language-plaintext highlighter-rouge">init.d</code> (an alternative is
+system.d). <em>init.d</em> boots up programs such as graphical user interfaces,
+terminals, etc – by default, this is the only process explicitly created
+by the system. All other processes are instantiated by using the system
+calls <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> from that single process.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="file-descriptors" class="title-text">File Descriptors<a class="anchor title-text" href="#file-descriptors"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Although these were mentioned in the last chapter, we are going to give
+a quick reminder about file descriptors. A zine from Julia Evans gives
+some more details (Evans <a href="#ref-evans_2018" class="fancy-link wiki-link">#ref-evans_2018</a>).</p>
+<p>The kernel keeps track of the file descriptors and what they point to.
+Later we will learn two things: that file descriptors point to more than
+files and that the operating system keeps track of them.</p>
+<p>Notice that file descriptors may be reused between processes, but inside
+of a process, they are unique. File descriptors may have a notion of
+position. These are known as seekable streams. A program can read a file
+on disk completely because the OS keeps track of the position in the
+file, an attribute that belongs to your process as well.</p>
+<p>Other file descriptors point to network sockets and various other pieces
+of information, that are unseekable streams.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="processes-1" class="title-text">Processes<a class="anchor title-text" href="#processes-1"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>A process is an instance of a computer program that may be running.
+Processes have many resources at their disposal. At the start of each
+program, a program gets one process, but each program can make more
+processes. A program consists of the following:</p>
+<ul>
+  <li>
+    <p>A binary format: This tells the operating system about the various
+sections of bits in the binary – which parts are executable, which
+parts are constants, which libraries to include etc.</p>
+  </li>
+  <li>
+    <p>A set of machine instructions</p>
+  </li>
+  <li>
+    <p>A number denoting which instruction to start from</p>
+  </li>
+  <li>
+    <p>Constants</p>
+  </li>
+  <li>
+    <p>Libraries to link and where to fill in the address of those
+libraries</p>
+  </li>
+</ul>
+<p>Processes are powerful, but they are isolated!</p>
+<p>That means that by default, no process can communicate with another
+process.</p>
+<p>This is important because in complex systems (like the University of
+Illinois Engineering Workstations), it is likely that different
+processes will have different privileges. One certainly doesn’t want the
+average user to be able to bring down the entire system, by either
+purposely or accidentally modifying a process. As most of you have
+realized by now, if you stuck the following code snippet into a program,
+the variables are unshared between two parallel invocations of the
+program.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">secrets</span><span class="p">;</span>
+<span class="n">secrets</span><span class="o">++</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">secrets</span><span class="p">);</span>
+</code></pre></div></div>
+<p>On two different terminals, they would both print out 1 not 2. Even if
+we changed the code to attempt to affect other process instances, there
+would be no way to change another process’ state unintentionally.
+However, there are other intentional ways to change the program states
+of other processes.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="process-contents" class="title-text">Process Contents<a class="anchor title-text" href="#process-contents"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="memory-layout" class="title-text">Memory Layout</h3>
+<p>When a process starts, it gets its own address space. Each process gets
+the following.</p>
+<ul>
+  <li>
+    <p><strong>A Stack</strong></p>
+
+    <p>The stack is the place where automatically allocated variables and
+function call return addresses are stored. Every time a new variable
+is declared, the program moves the stack pointer down to reserve
+space for the variable. This segment of the stack is writable but
+not executable. This behavior is controlled by the no-execute (NX)
+bit, sometimes called the W^X (write XOR execute) bit, which helps
+prevent malicious code, such as <code class="language-plaintext highlighter-rouge">shellcode</code> from being run on the
+stack.</p>
+
+    <p>If the stack grows too far – meaning that it either grows beyond a
+preset boundary or intersects the heap – the program will stack
+overflow error, most likely resulting in a SEGFAULT. <strong>The stack is
+statically allocated by default; there is only a certain amount of
+space to which one can write.</strong></p>
+  </li>
+  <li>
+    <p><strong>A Heap</strong></p>
+
+    <p>The heap is a contiguous, expanding region of memory (“Overview of
+Malloc” <a href="#ref-mallocinternals" class="fancy-link wiki-link">#ref-mallocinternals</a>). If
+a program wants to allocate an object whose lifetime is manually
+controlled or whose size cannot be determined at compile-time, it
+would want to create a heap variable.</p>
+
+    <p>The heap starts at the top of the text segment and grows upward,
+meaning <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> may push the heap boundary – called the program
+break – upward.</p>
+
+    <p>We will explore this in more depth in our chapter on memory
+allocation. This area is also writable but not executable. One can
+run out of heap memory if the system is constrained or if a program
+run out of addresses, a phenomenon that is more common on a 32-bit
+system.</p>
+  </li>
+  <li>
+    <p><strong>A Data Segment</strong></p>
+
+    <p>This segment contains two parts, an initialized data segment, and an
+uninitialized segment. Furthermore, the initialized data segment is
+divided into a readable and writable section.</p>
+
+    <ul>
+      <li>
+        <p><strong>Initialized Data Segment</strong> This contains all of a program’s
+globals and any other static variables.</p>
+
+        <p>This section starts at the end of the text segment and starts at
+a constant size because the number of globals is known at
+compile time. The end of the data segment is called the <code class="language-plaintext highlighter-rouge">program
+break</code> and can be extended via the use of brk / sbrk.</p>
+
+        <p>This section is writable (Van der Linden
+<a href="#ref-van1994expert" class="fancy-link wiki-link">#ref-van1994expert</a> P. 124).
+Most notably, this section contains variables that were
+initialized with a static initializer, as follows:</p>
+
+        <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">global</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p><strong>Uninitialized Data Segment / BSS</strong> BSS stands for an old
+assembler operator known as Block Started by Symbol.</p>
+
+        <p>This contains all of your globals and any other static duration
+variables that are implicitly zeroed out.</p>
+
+        <p>Example:</p>
+
+        <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">assumed_to_be_zero</span><span class="p">;</span>
+</code></pre></div>        </div>
+
+        <p>This variable will be zeroed; otherwise, we would have a
+security risk involving isolation from other processes. They get
+put in a different section to speed up process start up time.
+This section starts at the end of the data segment and is also
+static in size because the amount of globals is known at compile
+time. Currently, both the initialized and BSS data segments are
+combined and referred to as the data segment (Van der Linden
+<a href="#ref-van1994expert" class="fancy-link wiki-link">#ref-van1994expert</a> P. 124),
+despite being somewhat different in purpose.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>A Text Segment</strong></p>
+
+    <p>This is where all executable instructions are stored, and is
+readable (function pointers) but not writable. The program counter
+moves through this segment executing instructions one after the
+other. It is important to note that this is the only executable
+section of the program, by default. If a program’s code while it’s
+running, the program most likely will SEGFAULT. There are ways
+around it, but we will not be exploring these in this course. Why
+doesn’t it always start at zero? This is because of a security
+feature called
+<a href="https://en.wikipedia.org/wiki/Address_space_layout_randomization" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Address_space_layout_randomization</a>.
+The reasons for and explanation about this is outside the scope of
+this class, but it is good to know about its existence. Having said
+that, this address can be made constant, if a program is compiled
+with the DEBUG flag.</p>
+  </li>
+</ul>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/processes/drawings/address_space.png" alt="Process address
+space"></p>
+<h3 id="other-contents" class="title-text">Other Contents</h3>
+<p>To keep track of all these processes, your operating system gives each
+process a number called the process ID (PID). Processes are also given
+the PID of their parent process, called parent process ID (<code class="language-plaintext highlighter-rouge">PPID</code>).
+Every process has a parent, that parent could be <code class="language-plaintext highlighter-rouge">init.d</code>.</p>
+<p>Processes could also contain the following information:</p>
+<ul>
+  <li>
+    <p><strong>Running State</strong> - Whether a process is getting ready, running,
+stopped, terminated, etc. (more on this is covered in the chapter on
+Scheduling).</p>
+  </li>
+  <li>
+    <p><strong>File Descriptors</strong> - A list of mappings from integers to real
+devices (files, USB flash drives, sockets)</p>
+  </li>
+  <li>
+    <p><strong>Permissions</strong> - What <code class="language-plaintext highlighter-rouge">user</code> the file is running on and what
+<code class="language-plaintext highlighter-rouge">group</code> the process belongs to. The process can then only perform
+operations based on the permissions given to the <code class="language-plaintext highlighter-rouge">user</code> or <code class="language-plaintext highlighter-rouge">group</code>,
+such as accessing files. There are tricks to make a program take a
+different user than who started the program (e.g., <code class="language-plaintext highlighter-rouge">sudo</code> takes a
+program that a <code class="language-plaintext highlighter-rouge">user</code> starts and executes it as <code class="language-plaintext highlighter-rouge">root</code>). More
+specifically, a process has a real user ID (identifies the owner of
+the process), an effective user ID (used for non-privileged users
+trying to access files only accessible by superusers), and a saved
+user ID (used when privileged users perform non-privileged actions).</p>
+  </li>
+  <li>
+    <p><strong>Arguments</strong> - a list of strings that tell your program what
+parameters to run under.</p>
+  </li>
+  <li>
+    <p><strong>Environment Variables</strong> - a list of key-value pair strings in the
+form <code class="language-plaintext highlighter-rouge">NAME=VALUE</code> that one can modify. These are often used to
+specify paths to libraries and binaries, program configuration
+settings, etc.</p>
+  </li>
+</ul>
+<p>According to the POSIX specification, a process only needs a thread and
+address space, but most kernel developers and users know that only these
+aren’t enough (“Definitions”
+<a href="#ref-process_def" class="fancy-link wiki-link">#ref-process_def</a>).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="intro-to-fork" class="title-text">Intro to Fork<a class="anchor title-text" href="#intro-to-fork"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="a-word-of-warning" class="title-text">A word of warning</h3>
+<p>Process forking is a powerful and dangerous tool. If you make a mistake
+resulting in a fork bomb, <strong>you can bring down an entire system</strong>. To
+reduce the chances of this, limit your maximum number of processes to a
+small number e.g. 40 by typing <code class="language-plaintext highlighter-rouge">ulimit -u 40</code> into a command line. Note,
+this limit is only for the user, which means if you fork bomb, then you
+won’t be able to kill all created process since calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/killall.1.html" class="fancy-link">killall</a></code>
+requires your shell to <code class="language-plaintext highlighter-rouge">fork()</code>. Quite unfortunate. One solution is to
+spawn another shell instance as another user (for example root)
+beforehand and kill processes from there.</p>
+<p>Another is to use the built-in <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> command to kill all the user
+processes (you only have one attempt at this).</p>
+<p>Finally, you could reboot the system, but you only have one shot at this
+with the exec function.</p>
+<p>When testing fork() code, ensure that you have either root and/or
+physical access to the machine involved. If you must work on fork() code
+remotely, remember that <strong>kill -9 -1</strong> will save you in the event of an
+emergency. Fork can be <strong>extremely</strong> dangerous if you aren’t prepared
+for it. <strong>You have been warned.</strong></p>
+<h3 id="fork-functionality" class="title-text">Fork Functionality</h3>
+<p>The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code> system call clones the current process to create a new
+process, called a child process. This occurs by duplicating the state of
+the existing process with a few minor differences.</p>
+<ul>
+  <li>
+    <p>The child process executes the next line after the <code class="language-plaintext highlighter-rouge">fork()</code> as the
+parent process does.</p>
+  </li>
+  <li>
+    <p>Just as a side remark, in older UNIX systems, the entire address
+space of the parent process was directly copied regardless of
+whether the resource was modified or not. The current behavior is
+for the kernel to perform a
+<a href="https://en.wikipedia.org/wiki/Copy-on-write" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Copy-on-write</a>,
+which saves a lot of resources, while being time efficient (Bovet
+and Cesati
+<a href="#ref-Bovet:2005:ULK:1077084" class="fancy-link wiki-link">#ref-Bovet:2005:ULK:1077084</a>
+Copy-on-write section).</p>
+  </li>
+</ul>
+<p>Here is a simple example:</p>
+<pre><code class="language-C">printf("I'm printed once!\n");
+fork();
+// Now two processes running if fork succeeded
+// and each process will print out the next line.
+printf("This line twice!\n");
+</code></pre>
+<p>Here is a simple example of this address space cloning. The following
+program may print out 42 twice - but the <code class="language-plaintext highlighter-rouge">fork()</code> is after the
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code>!? Why?</p>
+<pre><code class="language-C">#include &lt;unistd.h&gt; /*fork declared here*/
+#include &lt;stdio.h&gt; /* printf declared here*/
+int main() {
+  int answer = 84 &gt;&gt; 1;
+  printf("Answer: %d", answer);
+  fork();
+  return 0;
+}
+</code></pre>
+<p>The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> line <em>is</em> executed only once however notice that the
+printed contents are not flushed to standard out. There’s no newline
+printed, we didn’t call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fflush.3p.html" class="fancy-link">fflush</a></code>, or change the buffering mode. The
+output text is therefore still in process memory waiting to be sent.
+When <code class="language-plaintext highlighter-rouge">fork()</code> is executed the entire process memory is duplicated
+including the buffer. Thus, the child process starts with a non-empty
+output buffer which may be flushed when the program exits. We say may
+because the contents may be unwritten given a bad program exit as well.</p>
+<p>To write code that is different for the parent and child process, check
+the return value of <code class="language-plaintext highlighter-rouge">fork()</code>. If <code class="language-plaintext highlighter-rouge">fork()</code> returns -1, that implies
+something went wrong in the process of creating a new child. One should
+check the value stored in <em>errno</em> to determine what kind of error
+occurred. Common errors include <code class="language-plaintext highlighter-rouge">EAGAIN</code> and <code class="language-plaintext highlighter-rouge">ENOENT</code> Which are
+essentially “try again – resource temporarily unavailable”, and “no such
+file or directory”.</p>
+<p>Similarly, a return value of 0 indicates that we are operating in the
+context of the child process, whereas a positive integer shows that we
+are in the context of the parent process.</p>
+<p>The positive value returned by <code class="language-plaintext highlighter-rouge">fork()</code> is the process id (<em>pid</em>) of the
+child.</p>
+<p>A way to remember what is represented by the return value of fork is,
+that the child process can find its parent - the original process that
+was duplicated - by calling <code class="language-plaintext highlighter-rouge">getppid()</code> - so does not need any
+additional return information from <code class="language-plaintext highlighter-rouge">fork()</code>. However, the parent process
+may have many child processes, and therefore needs to be explicitly
+informed of its child PIDs.</p>
+<p>According to the POSIX standard, every process only has a single parent
+process.</p>
+<p>The parent process can only know the PID of the new child process from
+the return value of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>:</p>
+<pre><code class="language-C">pid_t id = fork();
+if (id == -1) exit(1); // fork failed
+if (id &gt; 0) {
+  // Original parent
+  // A child process with id 'id'
+  // Use waitpid to wait for the child to finish
+} else { // returned zero
+  // Child Process
+}
+</code></pre>
+<p>A slightly silly example is shown below. What will it print? Try running
+this program with multiple arguments.</p>
+<pre><code class="language-C">#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+int main(int argc, char **argv) {
+  pid_t id;
+  int status;
+  while (--argc &amp;&amp; (id=fork())) {
+    waitpid(id,&amp;status,0); /* Wait for child*/
+  }
+  printf("%d:%s\n", argc, argv[argc]);
+  return 0;
+}
+</code></pre>
+<p>Another example is below. This is the amazing parallel apparent-O(N)
+<em>sleepsort</em> is today’s silly winner. First published on
+<a href="https://dis.4chan.org/read/prog/1295544154" class="fancy-link wiki-link">https://dis.4chan.org/read/prog/1295544154</a>.
+A version of this awful but amusing sorting algorithm is shown below.
+This sorting algorithm may fail to produce the correct output.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="p">(</span><span class="o">--</span><span class="n">c</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">fork</span><span class="p">());</span>
+  <span class="kt">int</span> <span class="n">val</span>  <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">c</span><span class="p">]);</span>
+  <span class="n">sleep</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Imagine that we ran this program like so</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./ssort 1 3 2 4
+</code></pre></div></div>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/processes/drawings/sleepsort_timing.png" alt="Timing of sorting 1, 3, 2,
+4"></p>
+<p>The algorithm isn’t actually O(N) because of how the system scheduler
+works. In essence, this program outsources the actual sorting to the
+operating system.</p>
+<h3 id="fork-bomb" class="title-text">Fork Bomb</h3>
+<p>A ‘fork bomb’ is what we warned you about earlier. This occurs when
+there is an attempt to create an infinite number of processes. This will
+often bring a system to a near-standstill, as it attempts to allocate
+CPU time and memory to a large number of processes that are ready to
+run. System administrators don’t like them and may set upper limits on
+the number of processes each user can have, or revoke login rights
+because they create disturbances in the Force for other users’ programs.
+A program can limit the number of child processes created by using
+<code class="language-plaintext highlighter-rouge">setrlimit()</code>.</p>
+<p>Fork bombs are not necessarily malicious - they occasionally occur due
+to programming errors. Below is a simple example that is malicious.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="n">fork</span><span class="p">();</span>
+</code></pre></div></div>
+<p>It is easy to cause one, if you are careless while calling fork,
+especially in a loop. Can you spot the fork bomb here?</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+#define HELLO_NUMBER 10
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+  <span class="n">pid_t</span> <span class="n">children</span><span class="p">[</span><span class="n">HELLO_NUMBER</span><span class="p">];</span>
+  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">HELLO_NUMBER</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">pid_t</span> <span class="n">child</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">child</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">child</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// Child</span>
+      <span class="n">execlp</span><span class="p">(</span><span class="s">"ehco"</span><span class="p">,</span> <span class="s">"echo"</span><span class="p">,</span> <span class="s">"hello"</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span><span class="p">{</span>
+      <span class="c1">// Parent</span>
+      <span class="n">children</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">child</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kt">int</span> <span class="n">j</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+    <span class="n">waitpid</span><span class="p">(</span><span class="n">children</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>We misspelled <code class="language-plaintext highlighter-rouge">ehco</code>, so the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> call fails. What does this mean?
+Instead of creating 10 processes, we created <em>1024 processes, fork
+bombing our machine</em>. <strong>How could we prevent this? Add an exit right
+after exec, so that if exec fails, we won’t end up calling fork an
+unbounded number of times.</strong> There are various other ways. What if we
+removed the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/echo.3x.html" class="fancy-link">echo</a></code> binary? What if the binary itself creates a fork
+bomb?</p>
+<h3 id="signals" class="title-text">Signals</h3>
+<p>We won’t fully explore signals until the end of the course, but it is
+relevant to broach the subject now because various semantics related to
+fork and other function calls detail what a signal is.</p>
+<p>A signal can be thought of as a software interrupt. This means that a
+process that receives a signal stops the execution of the current
+program and makes the program respond to the signal.</p>
+<p>There are various signals defined by the operating system, two of which
+you may already know: SIGSEGV and SIGINT. The first is caused by an
+illegal memory access, and the second is sent by a user wanting to
+terminate a program. In each case, the program jumps from the current
+line being executed to the signal handler. If no signal handler is
+supplied by the program, a default handler is executed – such as
+terminating the program, or ignoring the signal.</p>
+<p>Here is an example of a simple user-defined signal handler:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">handler</span><span class="p">(</span><span class="kt">int</span> <span class="n">signum</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"signaled!"</span><span class="p">,</span> <span class="mi">9</span><span class="p">);</span>
+  <span class="c1">// we don't need the signum because we are only catching SIGINT</span>
+  <span class="c1">// if you want to use the same piece of code for multiple</span>
+  <span class="c1">// signals, check the signum</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">handler</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">;</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>A signal has four stages in its life cycle: generated, pending, blocked,
+and received state. These refer to when a process generates a signal,
+the kernel is about to deliver a signal, the signal is blocked, and when
+the kernel delivers a signal, each of which requires some time to
+complete. Read more in the introduction to the Signals chapter.</p>
+<p>The terminology is important because fork and exec require different
+operations based on the state a signal is in.</p>
+<p>To note, it is generally poor programming practice to use signals in
+program logic, which is to send a signal to perform a certain operation.
+The reason: signals have no time frame of delivery and no assurance that
+they will be delivered. There are better ways to communicate between two
+processes.</p>
+<p>If you want to read more, feel free to skip ahead to the chapter on
+POSIX signals and read it over. It isn’t long and gives you the long and
+short about how to deal with signals in processes.</p>
+<h3 id="posix-fork-details" class="title-text">POSIX Fork Details</h3>
+<p>POSIX determines the standards of fork (“Fork”
+<a href="#ref-fork_2018" class="fancy-link wiki-link">#ref-fork_2018</a>). You can read the previous
+citation, but do note that it can be quite verbose. Here is a summary of
+what is relevant:</p>
+<ol>
+  <li>
+    <p>Fork will return a non-negative integer on success.</p>
+  </li>
+  <li>
+    <p>A child will inherit any open file descriptors of the parent. That
+means if a parent reads half of the file and forks, the child will
+start at that offset. A read on the child’s end will shift the
+parent’s offset by the same amount. Any other flags are also carried
+over.</p>
+  </li>
+  <li>
+    <p>Pending signals are not inherited. This means that if a parent has a
+pending signal and creates a child, the child will not receive that
+signal unless another process signals the child.</p>
+  </li>
+  <li>
+    <p>The process will be created with one thread (more on that later. The
+general consensus is to not create processes and threads at the same
+time).</p>
+  </li>
+  <li>
+    <p>Since we have copy on write (COW), read-only memory addresses are
+shared between processes.</p>
+  </li>
+  <li>
+    <p>If a program sets up certain regions of memory, they can be shared
+between processes.</p>
+  </li>
+  <li>
+    <p>Signal handlers are inherited but can be changed.</p>
+  </li>
+  <li>
+    <p>The process’ current working directory (often abbreviated to CWD) is
+inherited but can be changed.</p>
+  </li>
+  <li>
+    <p>Environment variables are inherited but can be changed.</p>
+  </li>
+</ol>
+<p>Key differences between the parent and the child include:</p>
+<ul>
+  <li>
+    <p>The process id returned by <code class="language-plaintext highlighter-rouge">getpid()</code>. The parent process id
+returned by <code class="language-plaintext highlighter-rouge">getppid()</code>.</p>
+  </li>
+  <li>
+    <p>The parent is notified via a signal, SIGCHLD, when the child process
+finishes but not vice versa.</p>
+  </li>
+  <li>
+    <p>The child does not inherit pending signals or timer alarms. For a
+complete list see the
+<a href="http://man7.org/linux/man-pages/man2/fork.2.html" class="fancy-link wiki-link">http://man7.org/linux/man-pages/man2/fork.2.html</a></p>
+  </li>
+  <li>
+    <p>The child has its own set of environment variables.</p>
+  </li>
+</ul>
+<h3 id="fork-and-files" class="title-text">Fork and FILEs</h3>
+<p>There are some tricky edge cases when it comes to using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/FILE.3type.html" class="fancy-link">FILE</a></code> and
+forking. First, we have to make a technical distinction. A <strong>File
+Description</strong> is the struct that a file descriptor points to. File
+descriptors can point to many different structs, but for our purposes,
+they’ll point to a struct that represents a file on a filesystem. This
+file description contains elements like paths, how far the descriptor
+has read into the file, etc. A file descriptor points to a file
+description. This is important because when a process is forked, only
+the file descriptor is cloned, not the description. The following
+snippet contains only one description.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kt">int</span> <span class="n">file</span> <span class="o">=</span> <span class="n">open</span><span class="p">(...);</span>
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fork</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">...);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">...);</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>One process will read one part of the file, the other process will read
+another part of the file. In the following example, there are two
+descriptions caused by two different file handles.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fork</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">file</span> <span class="o">=</span> <span class="n">open</span><span class="p">(...);</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">...);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">file</span> <span class="o">=</span> <span class="n">open</span><span class="p">(...);</span>
+    <span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="p">...);</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+<p>Let’s consider our motivating example.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>test.txt
+A
+B
+C
+</code></pre></div></div>
+<p>Take a look at this code, what does it do?</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">size_t</span> <span class="n">buffer_cap</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span> <span class="n">buffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="kt">ssize_t</span> <span class="n">nread</span><span class="p">;</span>
+<span class="kt">FILE</span> <span class="o">*</span> <span class="n">file</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"test.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="p">((</span><span class="n">nread</span> <span class="o">=</span> <span class="n">getline</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buffer_cap</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">fork</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">wait</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The initial thought may be that it prints the file line by line with
+some extra forking. It is actually undefined behavior because we didn’t
+prepare the file descriptors. To make a long story short, here is what
+to do to avoid the example.</p>
+<ol>
+  <li>
+    <p>You as the programmer need to make sure that all of your file
+descriptors are prepared before forking.</p>
+  </li>
+  <li>
+    <p>If it is a file descriptor or an unbuffered <code class="language-plaintext highlighter-rouge">FILE*</code>, it is already
+prepared.</p>
+  </li>
+  <li>
+    <p>If the <code class="language-plaintext highlighter-rouge">FILE*</code> is open for reading and has been read fully, it is
+already prepared.</p>
+  </li>
+  <li>
+    <p>Otherwise, the <code class="language-plaintext highlighter-rouge">FILE*</code> <strong>must</strong> be <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fflush.3p.html" class="fancy-link">fflush</a></code>’ed or closed to be
+prepared.</p>
+  </li>
+  <li>
+    <p>If the file descriptor is prepared, it must unactive in the parent
+process if the child process is using it or vice versa. A process is
+using it if it is read or written or if that process <em>for whatever
+reason</em> calls <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code>. If a process uses it when the other process is
+as well, the whole application’s behavior is undefined.</p>
+  </li>
+</ol>
+<p>So how would we fix the code? We would have to flush the file before
+forking and refrain from using it until after the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code> call – more on
+the specifics of this next section.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">size_t</span> <span class="n">buffer_cap</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span> <span class="n">buffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="kt">ssize_t</span> <span class="n">nread</span><span class="p">;</span>
+<span class="kt">FILE</span> <span class="o">*</span> <span class="n">file</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"test.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="p">((</span><span class="n">nread</span> <span class="o">=</span> <span class="n">getline</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buffer_cap</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span>
+  <span class="n">fflush</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">fork</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">wait</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>What if the parent process and the child process need to perform
+asynchronously and need to keep the file handle open? Due to event
+ordering, we need to make sure that parent process knows that the child
+is finished using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code>. We’ll talk about Inter-Process communication
+in a later chapter, but now we can use the double fork method.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//... </span>
+<span class="n">fflush</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="n">pid_t</span> <span class="n">child</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="n">child</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="n">fclose</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">fork</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do asynchronous work</span>
+    <span class="c1">// Safe exit, this child doesn't know about</span>
+    <span class="c1">// the file descriptor</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">waitpid</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div></div>
+<p>If you are interested in how this works, check out the appendix for a
+description of the Fork-file problem.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="waiting-and-executing" class="title-text">Waiting and Executing<a class="anchor title-text" href="#waiting-and-executing"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>If the parent process wants to wait for the child to finish, it must use
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/waitpid.3p.html" class="fancy-link">waitpid</a></code> (or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code>), both of which wait for a child to change process
+states, which can be one of the following:</p>
+<ol>
+  <li>
+    <p>The child terminated</p>
+  </li>
+  <li>
+    <p>The child was stopped by a signal</p>
+  </li>
+  <li>
+    <p>The child was resumed by a signal</p>
+  </li>
+</ol>
+<p>Note that waitpid can be set to be non-blocking, which means they will
+return immediately, letting a program know if the child has exited.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pid_t</span> <span class="n">child_id</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">child_id</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="n">perror</span><span class="p">(</span><span class="s">"fork"</span><span class="p">);</span> <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">child_id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// We have a child! Get their exit code</span>
+  <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+  <span class="n">waitpid</span><span class="p">(</span> <span class="n">child_id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">,</span> <span class="mi">0</span> <span class="p">);</span>
+  <span class="c1">// code not shown to get exit status from child</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// In child ...</span>
+  <span class="c1">// start calculation</span>
+  <span class="n">exit</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code> is a simpler version of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/waitpid.3p.html" class="fancy-link">waitpid</a></code>. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code> accepts a pointer to an
+integer and waits on any child process. After the first one changes
+state, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code> returns. Here is the behavior of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/waitpid.3p.html" class="fancy-link">waitpid</a></code>:</p>
+<p>A program <em>can</em> wait on a specific process, or it can pass in special
+values for the <code class="language-plaintext highlighter-rouge">pid</code> to do different things (check the man pages).</p>
+<p>The last parameter to waitpid is an option parameter. The options are
+listed below:</p>
+<p>WNOHANG - Return whetherthe searched process has exited</p>
+<p>WNOWAIT - Wait, but leave the child wait-able by another wait call</p>
+<p>WEXITED - Wait for exited children</p>
+<p>WSTOPPED - Wait for stopped children</p>
+<p>WCONTINUED - Wait for continued children</p>
+<p>Exit statuses or the value stored in the integer pointer for both of the
+calls above are explained below.</p>
+<h3 id="exit-statuses" class="title-text">Exit statuses</h3>
+<p>To find the return value of <code class="language-plaintext highlighter-rouge">main()</code> or value included in <code class="language-plaintext highlighter-rouge">exit()</code> from
+a child process, use the <code class="language-plaintext highlighter-rouge">Wait macros</code>. Typically, a program will use
+<code class="language-plaintext highlighter-rouge">WIFEXITED</code> and <code class="language-plaintext highlighter-rouge">WEXITSTATUS</code>. See <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code>/<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/waitpid.3p.html" class="fancy-link">waitpid</a></code> man page for more
+information.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+<span class="n">pid_t</span> <span class="n">child</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">child</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//Failed</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">child</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Parent, wait for child to finish</span>
+  <span class="n">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">waitpid</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">WIFEXITED</span><span class="p">(</span><span class="n">status</span><span class="p">))</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">exit_status</span> <span class="o">=</span> <span class="n">WEXITSTATUS</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"Process %d returned %d"</span> <span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">exit_status</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="c1">// Child, do something interesting</span>
+  <span class="n">execl</span><span class="p">(</span><span class="s">"/bin/ls"</span><span class="p">,</span> <span class="s">"/bin/ls"</span><span class="p">,</span> <span class="s">"."</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">// "ls ."</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>A process can only have 256 return values, the rest of the bits are
+informational, and the information is extracted with bit shifting.
+However, the kernel has an internal way of keeping track of signaled,
+exited, or stopped processes. This API is abstracted so that that the
+kernel developers are free to change it at will. Remember: these macros
+only make sense if the precondition is met. For example, a process’ exit
+status won’t be defined if the process isn’t signaled. The macros will
+not do the checking for the program, so it’s up to the programmer to
+make sure the logic is correct. As an example above, the program should
+use the <code class="language-plaintext highlighter-rouge">WIFSTOPPED</code> to check if a process was stopped and then the
+<code class="language-plaintext highlighter-rouge">WSTOPSIG</code> to find the signal that stopped it. As such, there is no need
+to memorize the following. This is a high-level overview of how
+information is stored inside the status variables. From the <code class="language-plaintext highlighter-rouge">sys/wait.h</code>
+of an old Berkeley Standard Distribution(BSD) kernel (“Source to
+Sys/Wait.h,” <a href="#ref-sys/wait.h" class="fancy-link wiki-link">#ref-sys/wait.h</a>):</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* If WIFEXITED(STATUS), the low-order 8 bits of the status. */</span>
+<span class="cp">#define _WSTATUS(x) (_W_INT(x) &amp; 0177)
+#define _WSTOPPED 0177    </span><span class="cm">/* _WSTATUS if process is stopped */</span><span class="cp">
+#define WIFSTOPPED(x) (_WSTATUS(x) == _WSTOPPED)
+#define WSTOPSIG(x) (_W_INT(x) &gt;&gt; 8)
+#define WIFSIGNALED(x)  (_WSTATUS(x) != _WSTOPPED &amp;&amp; _WSTATUS(x) != 0)
+#define WTERMSIG(x) (_WSTATUS(x))
+#define WIFEXITED(x)  (_WSTATUS(x) == 0)
+</span></code></pre></div></div>
+<p>There is a convention about exit codes. If the process exited normally
+and everything was successful, then a zero should be returned. Beyond
+that, there aren’t too many widely accepted conventions. If a program
+specifies return codes to mean certain conditions, it may be able to
+make more sense of the 256 error codes. For example, a program could
+return <code class="language-plaintext highlighter-rouge">1</code> if the program went to stage 1 (like writing to a file) <code class="language-plaintext highlighter-rouge">2</code>
+if it did something else, etc. Usually, UNIX programs are not designed
+to follow this policy, for the sake of simplicity.</p>
+<h3 id="zombies-and-orphans" class="title-text">Zombies and Orphans</h3>
+<p>It is good practice to wait on your process’ children. If a parent
+doesn’t wait on your children they become, what are called zombies.
+Zombies are created when a child terminates and then takes up a spot in
+the kernel process table for your process. The process table keeps track
+of the following information about a process: PID, status, and how it
+was killed. The only way to get rid of a zombie is to wait on your
+children. If a long-running parent never waits for your children, it may
+lose the ability to fork.</p>
+<p>Having said that, a program doesn’t always need to wait for your
+children! Your parent process can continue to execute code without
+having to wait for the child process. If a parent dies without waiting
+on its children, a process can orphan its children. Once a parent
+process completes, any of its children will be assigned to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/init.1.html" class="fancy-link">init</a></code> - the
+first process, whose PID is 1. Therefore, these children would see
+<code class="language-plaintext highlighter-rouge">getppid()</code> return a value of 1. These orphans will eventually finish
+and for a brief moment become a zombie. The init process automatically
+waits for all of its children, thus removing these zombies from the
+system.</p>
+<h3 id="advanced-asynchronously-waiting" class="title-text">Advanced: Asynchronously Waiting</h3>
+<p>Warning: This section uses signals which are partially introduced. The
+parent gets the signal SIGCHLD when a child completes, so the signal
+handler can wait for the process. A slightly simplified version is shown
+below.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pid_t</span> <span class="n">child</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">cleanup</span><span class="p">(</span><span class="kt">int</span> <span class="n">signal</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+  <span class="n">waitpid</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s">"cleanup!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Register signal handler BEFORE the child can finish</span>
+  <span class="n">signal</span><span class="p">(</span><span class="n">SIGCHLD</span><span class="p">,</span> <span class="n">cleanup</span><span class="p">);</span> <span class="c1">// or better - sigaction</span>
+  <span class="n">child</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">child</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">child</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do background stuff e.g. call exec</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="cm">/* I'm the parent! */</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// so we can see the cleanup</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s">"Parent is done"</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>However, the above example misses a couple of subtle points.</p>
+<ol>
+  <li>
+    <p>More than one child may have finished but the parent will only get
+one SIGCHLD signal (signals are not queued)</p>
+  </li>
+  <li>
+    <p>SIGCHLD signals can be sent for other reasons (e.g. a child process
+has temporarily stopped)</p>
+  </li>
+  <li>
+    <p>It uses the deprecated <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/signal.3p.html" class="fancy-link">signal</a></code> code, instead of the more portable
+sigaction.</p>
+  </li>
+</ol>
+<p>A more robust code to reap zombies is shown below.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">cleanup</span><span class="p">(</span><span class="kt">int</span> <span class="n">signal</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">waitpid</span><span class="p">((</span><span class="n">pid_t</span><span class="p">)</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">WNOHANG</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="exec" class="title-text">exec<a class="anchor title-text" href="#exec"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>To make the child process execute another program, use one of the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code>
+functions after forking. The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> set of functions replaces the
+process image with that of the specified program. This means that any
+lines of code after the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> call are replaced with those of the
+executed program. Any other work a program wants the child process to do
+should be done before the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> call. The naming schemes can be
+shortened mnemonically.</p>
+<ol>
+  <li>
+    <p>e – An array of pointers to environment variables is explicitly
+passed to the new process image.</p>
+  </li>
+  <li>
+    <p>l – Command-line arguments are passed individually (a list) to the
+function.</p>
+  </li>
+  <li>
+    <p>p – Uses the PATH environment variable to find the file named in the
+file argument to be executed.</p>
+  </li>
+  <li>
+    <p>v – Command-line arguments are passed to the function as an array
+(vector) of pointers.</p>
+  </li>
+</ol>
+<p>Note that if the information is passed via an array, the last element
+must be followed by a NULL element to terminate the array.</p>
+<p>An example of this code is below. This code executes <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ls.1p.html" class="fancy-link">ls</a></code></p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;sys/wait.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">pid_t</span> <span class="n">child</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">child</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">EXIT_FAILURE</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">child</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+    <span class="n">waitpid</span><span class="p">(</span><span class="n">child</span> <span class="p">,</span> <span class="o">&amp;</span><span class="n">status</span> <span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// Other versions of exec pass in arguments as arrays</span>
+    <span class="c1">// Remember first arg is the program name</span>
+    <span class="c1">// Last arg must be a char pointer to NULL</span>
+
+    <span class="n">execl</span><span class="p">(</span><span class="s">"/bin/ls"</span><span class="p">,</span> <span class="s">"/bin/ls"</span><span class="p">,</span> <span class="s">"-alh"</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="nb">NULL</span><span class="p">);</span>
+
+    <span class="c1">// If we get to this line, something went wrong!</span>
+    <span class="n">perror</span><span class="p">(</span><span class="s">"exec failed!"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Try to decode the following example</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;fcntl.h&gt;</span><span class="c1"> // O_CREAT, O_APPEND etc. defined here</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">close</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// close standard out</span>
+  <span class="n">open</span><span class="p">(</span><span class="s">"log.txt"</span><span class="p">,</span> <span class="n">O_RDWR</span> <span class="o">|</span> <span class="n">O_CREAT</span> <span class="o">|</span> <span class="n">O_APPEND</span><span class="p">,</span> <span class="n">S_IRUSR</span> <span class="o">|</span> <span class="n">S_IWUSR</span><span class="p">);</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">"Captain's log"</span><span class="p">);</span>
+  <span class="n">chdir</span><span class="p">(</span><span class="s">"/usr/include"</span><span class="p">);</span>
+  <span class="c1">// execl( executable,  arguments for executable including program name and NULL at the end)</span>
+
+  <span class="n">execl</span><span class="p">(</span><span class="s">"/bin/ls"</span><span class="p">,</span> <span class="cm">/* Remaining items sent to ls*/</span> <span class="s">"/bin/ls"</span><span class="p">,</span> <span class="s">"."</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">// "ls ."</span>
+  <span class="n">perror</span><span class="p">(</span><span class="s">"exec failed"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The example writes “Captain’s Log” to a file then prints everything in
+/usr/include to the same file. There’s no error checking in the above
+code (we assume close, open, chdir etc. work as expected).</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/open.3p.html" class="fancy-link">open</a></code> – will use the lowest available file descriptor (i.e. 1), so
+standard out (stdout) is now redirected to the log file.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chdir.3p.html" class="fancy-link">chdir</a></code> – Change the current directory to /usr/include.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/execl.3p.html" class="fancy-link">execl</a></code> – Replace the program image with /bin/ls and call its main()
+method.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/perror.3p.html" class="fancy-link">perror</a></code> – We don’t expect to get here - if we did then <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code>
+failed.</p>
+  </li>
+  <li>
+    <p>We need the “return 0;” because compilers complain if we don’t have
+it.</p>
+  </li>
+</ol>
+<h3 id="posix-exec-details" class="title-text">POSIX Exec Details</h3>
+<p>POSIX details all of the semantics that exec needs to cover (“Exec”
+<a href="#ref-exec_2018" class="fancy-link wiki-link">#ref-exec_2018</a>). Note the following:</p>
+<ol>
+  <li>
+    <p>File descriptors are preserved after an exec. That means if a
+program open a file and doesn’t to close it, it remains open in the
+child. This is a problem because usually the child doesn’t know
+about those file descriptors. Nevertheless, they take up a slot in
+the file descriptor table and could possibly prevent other processes
+from accessing the file. The one exception to this is if the file
+descriptor has the Close-On-Exec flag set (O_CLOEXEC) – we will go
+over setting flags later.</p>
+  </li>
+  <li>
+    <p>Various signal semantics: the executed processes preserve the signal
+mask and the pending signal set but do not preserve the signal
+handlers since it is a different program.</p>
+  </li>
+  <li>
+    <p>Environment variables are preserved unless using an environ version
+of exec.</p>
+  </li>
+  <li>
+    <p>The operating system may open up 0, 1, 2 – stdin, stdout, stderr, if
+they are closed after exec; most of the time they leave them closed.</p>
+  </li>
+  <li>
+    <p>The executed process runs as the same PID and has the same parent
+and process group as the previous process.</p>
+  </li>
+  <li>
+    <p>The executed process is run on the same user and group with the same
+working directory.</p>
+  </li>
+</ol>
+<h3 id="shortcuts" class="title-text">Shortcuts</h3>
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/system.3p.html" class="fancy-link">system</a></code> pre-packs the above code (Jones
+<a href="#ref-jones2010wg14" class="fancy-link wiki-link">#ref-jones2010wg14</a> P. 371). The
+following is a snippet of how to use system.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">system</span><span class="p">(</span><span class="s">"ls"</span><span class="p">);</span> <span class="c1">// execl("/bin/sh", "/bin/sh", "-c", "\\"ls\\"")</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/system.3p.html" class="fancy-link">system</a></code> call will fork, execute the command passed by parameter and
+the original parent process will wait for this to finish. This also
+means that <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/system.3p.html" class="fancy-link">system</a></code> is a blocking call. The parent process can’t
+continue until the process started by <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/system.3p.html" class="fancy-link">system</a></code> exits. Also, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/system.3p.html" class="fancy-link">system</a></code>
+actually creates a shell that is then given the string, which is more
+overhead than using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> directly. The standard shell will use the
+<code class="language-plaintext highlighter-rouge">PATH</code> environment variable to search for a filename that matches the
+command. Using system will usually be sufficient for many simple
+run-this-command problems but can quickly become limiting for more
+complex or subtle problems, and it hides the mechanics of the
+fork-exec-wait pattern, so we encourage you to learn and use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/waitpid.3p.html" class="fancy-link">waitpid</a></code> instead. It also tends to be a huge security risk.
+By allowing someone to access a shell version of the environment, the
+program can run into all sorts of problems:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span><span class="n">argv</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">to_exec</span> <span class="o">=</span> <span class="n">asprintf</span><span class="p">(</span><span class="s">"ls %s"</span><span class="p">,</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="n">system</span><span class="p">(</span><span class="n">to_exec</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Passing something along the lines of argv[1] = “; sudo su” is a huge
+security risk called
+<a href="https://en.wikipedia.org/wiki/Privilege_escalation" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Privilege_escalation</a>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-fork-exec-wait-pattern" class="title-text">The fork-exec-wait Pattern<a class="anchor title-text" href="#the-fork-exec-wait-pattern"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>A common programming pattern is to call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code> followed by <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> and
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code>. The original process calls fork, which creates a child process.
+The child process then uses exec to start the execution of a new
+program. Meanwhile, the parent uses <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code> (or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/waitpid.3p.html" class="fancy-link">waitpid</a></code>) to wait for
+the child process to finish.</p>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/processes/drawings/fork_exec_wait.png" alt="Fork, exec, wait
+diagram"></p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// fork failure</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">pid</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">status</span><span class="p">;</span>
+    <span class="n">waitpid</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">status</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">execl</span><span class="p">(</span><span class="s">"/bin/ls"</span><span class="p">,</span> <span class="s">"/bin/ls"</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// For safety.</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Why not execute ls directly? The reason is that now we have a monitor
+program – our parent that can do other things. It can proceed and
+execute another function, or it can also modify the state of the system
+or read the output of the function call.</p>
+<h3 id="environment-variables" class="title-text">Environment Variables</h3>
+<p>Environment variables are variables that the system keeps for all
+processes to use. Your system has these set up right now! In Bash, some
+are already defined.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$HOME</span>
+/home/user
+<span class="nv">$ </span><span class="nb">echo</span> <span class="nv">$PATH</span>
+/usr/local/sbin:/usr/bin:...
+</code></pre></div></div>
+<p>How would a program later these in C? They can call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getenv.3p.html" class="fancy-link">getenv</a></code> and
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/setenv.3p.html" class="fancy-link">setenv</a></code> function respectively.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">*</span> <span class="n">home</span> <span class="o">=</span> <span class="n">getenv</span><span class="p">(</span><span class="s">"HOME"</span><span class="p">);</span> <span class="c1">// Will return /home/user</span>
+<span class="n">setenv</span><span class="p">(</span><span class="s">"HOME"</span><span class="p">,</span> <span class="s">"/home/user"</span><span class="p">,</span> <span class="mi">1</span> <span class="cm">/*set overwrite to true*/</span> <span class="p">);</span>
+</code></pre></div></div>
+<p>Environment variables are important because they are inherited between
+processes and can be used to specify a standard set of behaviors
+(“Environment Variables”
+<a href="#ref-env_std_2018" class="fancy-link wiki-link">#ref-env_std_2018</a>), although you don’t
+need to memorize the options. Another security related concern is that
+environment variables cannot be read by an outside process, whereas argv
+can be.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="further-reading" class="title-text">Further Reading<a class="anchor title-text" href="#further-reading"> #</a>
+</h2></div>
+
+
+
+
+
+<!-- end list -->
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Read the man pages and the POSIX groups above! Here are some guiding
+questions. Note that we aren’t expecting you to memorize the man page.</p>
+<ul>
+  <li>
+    <p>What is one reason fork may fail?</p>
+  </li>
+  <li>
+    <p>Does fork copy all pages to the child?</p>
+  </li>
+  <li>
+    <p>Are file descriptors cloned between parent and child?</p>
+  </li>
+  <li>
+    <p>Are file descript<strong>ions</strong> cloned between parent and child?</p>
+  </li>
+  <li>
+    <p>What is the difference between exec calls ending in an <code class="language-plaintext highlighter-rouge">e</code>?</p>
+  </li>
+  <li>
+    <p>What is the difference between l and v in an exec call? How about
+<code class="language-plaintext highlighter-rouge">p</code>?</p>
+  </li>
+  <li>
+    <p>When does exec error? What happens?</p>
+  </li>
+  <li>
+    <p>Does wait only notify if a child has exited?</p>
+  </li>
+  <li>
+    <p>Is it an error to pass a negative value into wait?</p>
+  </li>
+  <li>
+    <p>How does one extract information out of the status?</p>
+  </li>
+  <li>
+    <p>Why may wait fail?</p>
+  </li>
+  <li>
+    <p>What happens when a parent doesn’t wait on their
+children?</p>
+  </li>
+</ul>
+<ul>
+  <li>
+    <p><a href="http://man7.org/linux/man-pages/man2/fork.2.html" class="fancy-link wiki-link">http://man7.org/linux/man-pages/man2/fork.2.html</a></p>
+  </li>
+  <li>
+    <p><a href="http://man7.org/linux/man-pages/man3/exec.3.html" class="fancy-link wiki-link">http://man7.org/linux/man-pages/man3/exec.3.html</a></p>
+  </li>
+  <li>
+    <p><a href="http://man7.org/linux/man-pages/man2/wait.2.html" class="fancy-link wiki-link">http://man7.org/linux/man-pages/man2/wait.2.html</a></p>
+  </li>
+</ul>
+<h3 id="topics" class="title-text">Topics</h3>
+<ul>
+  <li>
+    <p>Correct use of fork, exec and waitpid</p>
+  </li>
+  <li>
+    <p>Using exec with a path</p>
+  </li>
+  <li>
+    <p>Understanding what fork and exec and waitpid do. E.g. how to use
+their return values.</p>
+  </li>
+  <li>
+    <p>SIGKILL vs SIGSTOP vs SIGINT.</p>
+  </li>
+  <li>
+    <p>What signal is sent when press CTRL-C at a terminal?</p>
+  </li>
+  <li>
+    <p>Using kill from the shell or the kill POSIX call.</p>
+  </li>
+  <li>
+    <p>Process memory isolation.</p>
+  </li>
+  <li>
+    <p>Process memory layout (where is the heap, stack etc; invalid memory
+addresses).</p>
+  </li>
+  <li>
+    <p>What is a fork bomb, zombie and orphan? How to create/remove them.</p>
+  </li>
+  <li>
+    <p>getpid vs getppid</p>
+  </li>
+  <li>
+    <p>How to use the WAIT exit status macros WIFEXITED etc.</p>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="questionsexercises" class="title-text">Questions/Exercises<a class="anchor title-text" href="#questionsexercises"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>
+    <p>What is the difference between execs with a p and without a p? What
+does the operating system</p>
+  </li>
+  <li>
+    <p>How does a program pass in command line arguments to <code class="language-plaintext highlighter-rouge">execl*</code>? How
+about <code class="language-plaintext highlighter-rouge">execv*</code>? What should be the first command line argument by
+convention?</p>
+  </li>
+  <li>
+    <p>How does a program know if <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code> failed?</p>
+  </li>
+  <li>
+    <p>What is the <code class="language-plaintext highlighter-rouge">int status</code> pointer passed into wait? When does wait
+fail?</p>
+  </li>
+  <li>
+    <p>What are some differences between <code class="language-plaintext highlighter-rouge">SIGKILL</code>, <code class="language-plaintext highlighter-rouge">SIGSTOP</code>, <code class="language-plaintext highlighter-rouge">SIGCONT</code>,
+<code class="language-plaintext highlighter-rouge">SIGINT</code>? What are the default behaviors? Which ones can a program
+set up a signal handler for?</p>
+  </li>
+  <li>
+    <p>What signal is sent when you press <code class="language-plaintext highlighter-rouge">CTRL-C</code>?</p>
+  </li>
+  <li>
+    <p>My terminal is anchored to PID = 1337 and has become unresponsive.
+Write me the terminal command and the C code to send <code class="language-plaintext highlighter-rouge">SIGQUIT</code> to
+it.</p>
+  </li>
+  <li>
+    <p>Can one process alter another processes memory through normal means?
+Why?</p>
+  </li>
+  <li>
+    <p>Where is the heap, stack, data, and text segment? Which segments can
+a program write to? What are invalid memory addresses?</p>
+  </li>
+  <li>
+    <p>Code up a fork bomb in C (please don’t run it).</p>
+  </li>
+  <li>
+    <p>What is an orphan? How does it become a zombie? What should a parent
+do to avoid this?</p>
+  </li>
+  <li>
+    <p>Don’t you hate it when your parents tell you that you can’t do
+something? Write a program that sends <code class="language-plaintext highlighter-rouge">SIGSTOP</code> to a parent process.</p>
+  </li>
+  <li>
+    <p>Write a function that fork exec waits an executable, and using the
+wait macros tells me if the process exited normally or if it was
+signaled. If the process exited normally, then print that with the
+return value. If not, then print the signal number that caused the
+process to terminate.</p>
+  </li>
+</ul>
+<div id="refs" class="references">
+
+<div id="ref-Bovet:2005:ULK:1077084">
+
+Bovet, Daniel, and Marco Cesati. 2005. *Understanding the Linux Kernel*.
+Oreilly &amp; Associates Inc.
+
+</div>
+
+<div id="ref-process_def">
+
+“Definitions.” 2018. *The Open Group Base Specifications Issue 7, 2018
+Edition*. The Open Group/IEEE.
+<a href="http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_210" class="fancy-link wiki-link">http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_210</a>.
+
+</div>
+
+<div id="ref-env_std_2018">
+
+“Environment Variables.” 2018. *Environment Variables*. The Open
+Group/IEEE.
+<a href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html" class="fancy-link wiki-link">https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap08.html</a>.
+
+</div>
+
+<div id="ref-evans_2018">
+
+Evans, Julia. 2018. “File Descriptors.” *Julia’s Drawings*. Julia Evans.
+<a href="https://drawings.jvns.ca/file-descriptors/" class="fancy-link wiki-link">https://drawings.jvns.ca/file-descriptors/</a>.
+
+</div>
+
+<div id="ref-exec_2018">
+
+“Exec.” 2018. *Exec*. The Open Group/IEEE.
+<a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/exec.html" class="fancy-link wiki-link">https://pubs.opengroup.org/onlinepubs/9699919799/functions/exec.html</a>.
+
+</div>
+
+<div id="ref-fork_2018">
+
+“Fork.” 2018. *Fork*. The Open Group/IEEE.
+<a href="https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html" class="fancy-link wiki-link">https://pubs.opengroup.org/onlinepubs/9699919799/functions/fork.html</a>.
+
+</div>
+
+<div id="ref-jones2010wg14">
+
+Jones, Larry. 2010. “WG14 N1539 Committee Draft Iso/Iec 9899: 201x.”
+International Standards Organization.
+
+</div>
+
+<div id="ref-mallocinternals">
+
+“Overview of Malloc.” 2018. *MallocInternals - Glibc Wiki*. Free
+Software Foundation.
+<a href="https://sourceware.org/glibc/wiki/MallocInternals" class="fancy-link wiki-link">https://sourceware.org/glibc/wiki/MallocInternals</a>.
+
+</div>
+
+<div id="ref-sys/wait.h">
+
+“Source to Sys/Wait.h.” n.d. *Sys/Wait.h Source*. superglobalmegacorp.
+<a href="http://unix.superglobalmegacorp.com/Net2/newsrc/sys/wait.h.html" class="fancy-link wiki-link">http://unix.superglobalmegacorp.com/Net2/newsrc/sys/wait.h.html</a>.
+
+</div>
+
+<div id="ref-van1994expert">
+
+Van der Linden, Peter. 1994. *Expert c Programming: Deep c Secrets*.
+Prentice Hall Professional.
+
+</div>
+
+</div>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Processes.md";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Introduction</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Introduction" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Introduction
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#introduction" class="fancy-link wiki-link">Introduction</a>
+    <ul>
+      <li><a href="#authors" class="fancy-link wiki-link">Authors</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>To thy happy children of the future, those of the past send
+greetings.</strong> - <strong>Alma Mater</strong></p>
+
+<p>At the University of Illinois at Urbana-Champaign, We fundamentally
+believe that we have a right to make the university better for all
+future students. It is a message etched into our Alma Mater and makes up
+the DNA of our course staff. As such, we created the coursebook. The
+coursebook is a free and open systems programming textbook that anyone
+can read, contribute to, and modify for now and forever. We don’t think
+information should be behind a walled garden, and we truly believe that
+complex concepts can be explained simply and fully, for anyone to
+understand. The goal of this book is to teach you the basics and give
+you some intuition into the complexities of systems programming.</p>
+
+<p>Like any good book, it isn’t complete. We still have plenty of examples,
+ideas, typos, and chapters to work on. If you find any issues, please
+file an
+<a href="https://github.com/illinois-cs241/coursebook/issues" class="fancy-link wiki-link">https://github.com/illinois-cs241/coursebook/issues</a>
+or email a list of typos to
+<a href="http://cs341.cs.illinois.edu/staff" class="fancy-link wiki-link">http://cs341.cs.illinois.edu/staff</a>,
+and we’ll be happy to work on it. We are constantly trying to make the
+book better for students a year and ten years from now.</p>
+
+<p>This work is based on the original coursebook located at
+<a href="https://github.com/angrave/SystemProgramming/wiki" class="fancy-link wiki-link">https://github.com/angrave/SystemProgramming/wiki</a>.
+All these peoples’ hard work is included in the section below.</p>
+
+<p>Oh and the duck? Keep reading until synchronization :).</p>
+
+<p>Thanks again and happy reading!</p>
+
+<p>– Bhuvy</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="authors" class="title-text">Authors<a class="anchor title-text" href="#authors"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bhuvan Venkatesh <span class="nv">&lt;bhuvan.venkatesh21@gmail.com&gt;</span>
+Lawrence Angrave <span class="nv">&lt;angrave@illinois.edu&gt;</span>
+joebenassi <span class="nv">&lt;joebenassi@gmail.com&gt;</span>
+jakebailey <span class="nv">&lt;zikaeroh@gmail.com&gt;</span>
+Ebrahim Byagowi <span class="nv">&lt;ebrahim@gnu.org&gt;</span>
+Alex Kizer <span class="nv">&lt;the.alex.kizer@gmail.com&gt;</span>
+dimyr7 <span class="nv">&lt;dimyr7.puma@gmail.com&gt;</span>
+Ed K <span class="nv">&lt;ed.karrels@gmail.com&gt;</span>
+ace-n <span class="nv">&lt;nassri2@illinois.edu&gt;</span>
+josephmilla <span class="nv">&lt;jjtmilla@gmail.com&gt;</span>
+Thomas Liu <span class="nv">&lt;thomasliu02@gmail.com&gt;</span>
+Johnny Chang <span class="nv">&lt;johnny@johnnychang.com&gt;</span>
+goldcase <span class="nv">&lt;johnny@johnnychang.com&gt;</span>
+vassimladenov <span class="nv">&lt;vassi1995@icloud.com&gt;</span>
+SurtaiHan <span class="nv">&lt;surtai.han@gmail.com&gt;</span>
+Brandon Chong <span class="nv">&lt;bchong95@users.noreply.github.com&gt;</span>
+Ben Kurtovic <span class="nv">&lt;ben.kurtovic@gmail.com&gt;</span>
+dprorok2 <span class="nv">&lt;dprorok2@illinois.edu&gt;</span>
+anchal-agrawal <span class="nv">&lt;aagrawa4@illinois.edu&gt;</span>
+Lawrence Angrave <span class="nv">&lt;angrave@illinois.eduuutoomanyu&gt;</span>
+daeyun <span class="nv">&lt;daeyunshin@gmail.com&gt;</span>
+bchong95 <span class="nv">&lt;bschong2@illinois.edu&gt;</span>
+rushingseas8 <span class="nv">&lt;georgealeks@hotmail.com&gt;</span>
+lukspdev <span class="nv">&lt;lllluuukke@gmail.com&gt;</span>
+hilalh <span class="nv">&lt;habashi2@illinois.edu&gt;</span>
+dimyr7 <span class="nv">&lt;dimyr7@hotmail.com&gt;</span>
+Azrakal <span class="nv">&lt;genxswordsman@hotmail.com&gt;</span>
+G. Carl Evans <span class="nv">&lt;gcevans@gmail.com&gt;</span>
+Cornel Punga <span class="nv">&lt;cornel.punga@gmail.com&gt;</span>
+vikasagartha <span class="nv">&lt;vikasagartha@gmail.com&gt;</span>
+dyarbrough93 <span class="nv">&lt;dyarbrough93@yahoo.com&gt;</span>
+berwin7996 <span class="nv">&lt;berwin7996@gmail.com&gt;</span>
+Sudarshan Govindaprasad <span class="nv">&lt;SudarshanGp@users.noreply.github.com&gt;</span>
+NMyren <span class="nv">&lt;ntmyren@gmail.com&gt;</span>
+Ankit Gohel <span class="nv">&lt;ankitgohel1996@gmail.com&gt;</span>
+vha-weh-shh <span class="nv">&lt;bhaweshchhetri1@gmail.com&gt;</span>
+sasankc <span class="nv">&lt;sasank.chundi@gmail.com&gt;</span>
+rishabhjain2795 <span class="nv">&lt;rishabhjain2795@gmail.com&gt;</span>
+nickgarfield <span class="nv">&lt;nickgarfield@icloud.com&gt;</span>
+by700git <span class="nv">&lt;aaabox@yeah.net&gt;</span>
+bw-vbnm <span class="nv">&lt;bwang19@illinois.edu&gt;</span>
+Navneeth Jayendran <span class="nv">&lt;jayndrn2@illinois.edu&gt;</span>
+Joe Benassi <span class="nv">&lt;joebenassi@gmail.com&gt;</span>
+Harpreet Singh <span class="nv">&lt;hshssingh4@gmail.com&gt;</span>
+FenixFeather <span class="nv">&lt;thomasliu02@gmail.com&gt;</span>
+EntangledLight <span class="nv">&lt;bdelapor@illinois.edu&gt;</span>
+Bliss Chapman <span class="nv">&lt;bliss.chapman@gmail.com&gt;</span>
+zikaeroh <span class="nv">&lt;zikaeroh@gmail.com&gt;</span>
+time bandit <span class="nv">&lt;radicalrafi@gmail.com&gt;</span>
+paultgibbons <span class="nv">&lt;paultgibbons@gmail.com&gt;</span>
+kevinwang <span class="nv">&lt;kevin@kevinwang.com&gt;</span>
+cPolaris <span class="nv">&lt;cPolaris@users.noreply.github.com&gt;</span>
+Zecheng (張澤成) <span class="nv">&lt;zzhan147@illinois.edu&gt;</span>
+Wieschie <span class="nv">&lt;supernova190@gmail.com&gt;</span>
+WeiL <span class="nv">&lt;z920631580@gmail.com&gt;</span>
+Graham Dyer <span class="nv">&lt;gdyer2@illinois.edu&gt;</span>
+Arun Prakash Jana <span class="nv">&lt;engineerarun@gmail.com&gt;</span>
+Ankit Goel <span class="nv">&lt;ankitgoel616@gmail.com&gt;</span>
+Allen Kleiner <span class="nv">&lt;akleiner24@gmail.com&gt;</span>
+Abhishek Deep Nigam <span class="nv">&lt;adn5327@users.noreply.github.com&gt;</span>
+zmmille2 <span class="nv">&lt;zmmille2@gmail.com&gt;</span>
+sidewallme <span class="nv">&lt;sidewallme@gmail.com&gt;</span>
+raych05 <span class="nv">&lt;raymondcheng05@gmail.com&gt;</span>
+mmahes <span class="nv">&lt;malinixmahes@gmail.com&gt;</span>
+mass <span class="nv">&lt;amass1212@gmail.com&gt;</span>
+kovaka <span class="nv">&lt;jakelagrou@gmail.com&gt;</span>
+gmag23 <span class="nv">&lt;gmag23@gmail.com&gt;</span>
+ejian2 <span class="nv">&lt;ejian2@illinois.edu&gt;</span>
+cerutii <span class="nv">&lt;marc.ceruti@gmail.com&gt;</span>
+briantruong777 <span class="nv">&lt;briantruong777@gmail.com&gt;</span>
+adevar <span class="nv">&lt;adevar2@illinois.edu&gt;</span>
+Yuxuan Zou (Sean) <span class="nv">&lt;yzouac@connect.ust.hk&gt;</span>
+Xikun Zhang <span class="nv">&lt;xikunz2@illinois.edu&gt;</span>
+Vishal Disawar <span class="nv">&lt;disawar2@illinois.edu&gt;</span>
+Taemin Shin <span class="nv">&lt;cprayer@naver.com&gt;</span>
+Sujay Patwardhan <span class="nv">&lt;sujay.patwardhan@gmail.com&gt;</span>
+SufeiZ <span class="nv">&lt;sufeizhang92@gmail.com&gt;</span>
+Sufei Zhang <span class="nv">&lt;sufeizhang92@gmail.com&gt;</span>
+Steven Shang <span class="nv">&lt;sstevenshang@users.noreply.github.com&gt;</span>
+Steve Zhu <span class="nv">&lt;st.zhu1@gmail.com&gt;</span>
+Sibo Wang <span class="nv">&lt;sibowsb@gmail.com&gt;</span>
+Shane Ryan <span class="nv">&lt;shane1027@users.noreply.github.com&gt;</span>
+Scott Bigelow <span class="nv">&lt;epheph@gmail.com&gt;</span>
+Riyad Shauk <span class="nv">&lt;riyadshauk@users.noreply.github.com&gt;</span>
+Nathan Somers <span class="nv">&lt;nsomers2@illinois.edu&gt;</span>
+LieutenantChips <span class="nv">&lt;vkaraku2@illinois.edu&gt;</span>
+Jacob K LaGrou <span class="nv">&lt;jakelagrou@gmail.com&gt;</span>
+George <span class="nv">&lt;ruan3@illinois.edu&gt;</span>
+David Levering <span class="nv">&lt;dmlevering@gmail.com&gt;</span>
+Bernard Lim <span class="nv">&lt;bernlim93@users.noreply.github.com&gt;</span>
+zwang180 <span class="nv">&lt;zshwang0809@gmail.com&gt;</span>
+xuanwang91 <span class="nv">&lt;LilyBiology2010@gmail.com&gt;</span>
+xin-0 <span class="nv">&lt;xintong2@illinois.edu&gt;</span>
+wchill <span class="nv">&lt;wchill1337@gmail.com&gt;</span>
+vishnui <span class="nv">&lt;vishnui@gmail.com&gt;</span>
+tvarun2013 <span class="nv">&lt;tvarun2013@gmail.com&gt;</span>
+sstevenshang <span class="nv">&lt;sstevenshang@users.noreply.github.com&gt;</span>
+ssquirrel <span class="nv">&lt;lxl_zhang@Hotmail.com&gt;</span>
+smeenai <span class="nv">&lt;shoaib.meenai@gmail.com&gt;</span>
+shrujancheruku <span class="nv">&lt;shrujancheruku@gmail.com&gt;</span>
+ruiqili2 <span class="nv">&lt;ruiqili2@users.noreply.github.com&gt;</span>
+rchwlsk2 <span class="nv">&lt;rchwlsk2@illinois.edu&gt;</span>
+ralphchung <span class="nv">&lt;ralphchung2005@gmail.com&gt;</span>
+nikioftime <span class="nv">&lt;ncwells2@illinois.edu&gt;</span>
+mosaic0123 <span class="nv">&lt;truffer@live.com&gt;</span>
+majiasheng <span class="nv">&lt;jiasheng.ma@yahoo.com&gt;</span>
+m <span class="nv">&lt;cheonghiuwaa@gmail.com&gt;</span>
+li820970 <span class="nv">&lt;li820970@gmail.com&gt;</span>
+kuck1 <span class="nv">&lt;kuck1@illinois.edu&gt;</span>
+kkgomez2 <span class="nv">&lt;kkgomez2@users.noreply.github.com&gt;</span>
+jjames34 <span class="nv">&lt;James_Jerry1@yahoo.com&gt;</span>
+jargals2 <span class="nv">&lt;jargals2@ilinois.edu&gt;</span>
+hzding621 <span class="nv">&lt;hzding621@users.noreply.github.com&gt;</span>
+hzding621 <span class="nv">&lt;hzding621@gmail.com&gt;</span>
+hsingh23 <span class="nv">&lt;hisingh1@gmail.com&gt;</span>
+denisdemaisbr <span class="nv">&lt;denis@roo.com.br&gt;</span>
+daishengliang <span class="nv">&lt;daishengliang@gmail.com&gt;</span>
+cucumbur <span class="nv">&lt;bomblolism@gmail.com&gt;</span>
+codechao999 <span class="nv">&lt;brianweis@comcast.net&gt;</span>
+chrisshroba <span class="nv">&lt;chrisshroba@gmail.com&gt;</span>
+cesarcastmore <span class="nv">&lt;cesar.cast.more@gmail.com&gt;</span>
+briantruong777 <span class="nv">&lt;briantruong777@users.noreply.github.com&gt;</span>
+botengHY <span class="nv">&lt;tengbo1992@gmail.com&gt;</span>
+blapalp <span class="nv">&lt;pzkmmmh@gmail.com&gt;</span>
+bchhetri1 <span class="nv">&lt;bhaweshchhetri1@gmail.com&gt;</span>
+anadella96 <span class="nv">&lt;aisha.nadella@gmail.com&gt;</span>
+akleiner2 <span class="nv">&lt;akleiner24@gmail.com&gt;</span>
+aRatnam12 <span class="nv">&lt;ansh.ratnam@gmail.com&gt;</span>
+Yash Sharma <span class="nv">&lt;yashosharma@gmail.com&gt;</span>
+Xiangbin Hu <span class="nv">&lt;xhu27@illinois.edu&gt;</span>
+WininWin <span class="nv">&lt;ezoneid@gmail.com&gt;</span>
+William Klock <span class="nv">&lt;william.klock@gmail.com&gt;</span>
+WenhanZ <span class="nv">&lt;marinebluee@hotmail.com&gt;</span>
+Vivek Pandya <span class="nv">&lt;vivekvpandya@gmail.com&gt;</span>
+Vineeth Puli <span class="nv">&lt;vpuli98@gmail.com&gt;</span>
+Vangelis Tsiatsianas <span class="nv">&lt;vangelists@users.noreply.github.com&gt;</span>
+Vadiml1024 <span class="nv">&lt;vadim@mbdsys.com&gt;</span>
+Utsav2 <span class="nv">&lt;ukshah2@illinois.edu&gt;</span>
+Thirumal Venkat <span class="nv">&lt;zapstar@users.noreply.github.com&gt;</span>
+TheEntangledLight <span class="nv">&lt;bdelapor@illinois.edu&gt;</span>
+SudarshanGp <span class="nv">&lt;SudarshanGp@users.noreply.github.com&gt;</span>
+Sudarshan Konge <span class="nv">&lt;6025419+sudk1896@users.noreply.github.com&gt;</span>
+Slix <span class="nv">&lt;slixpk@gmail.com&gt;</span>
+Sasank Chundi <span class="nv">&lt;sasank.chundi@gmail.com&gt;</span>
+SachinRaghunathan <span class="nv">&lt;srghnth2@illinois.edu&gt;</span>
+Rémy Léone <span class="nv">&lt;remy.leone@gmail.com&gt;</span>
+RusselLuo <span class="nv">&lt;russelluo@gmail.com&gt;</span>
+Roman Vaivod <span class="nv">&lt;littlewhywhat@gmail.com&gt;</span>
+Rohit Sarathy <span class="nv">&lt;rohit@sarathy.org&gt;</span>
+Rick Sheahan <span class="nv">&lt;bomblolism@gmail.com&gt;</span>
+Rakhim Davletkaliyev <span class="nv">&lt;freetonik@gmail.com&gt;</span>
+Punitvara <span class="nv">&lt;punitvara@gmail.com&gt;</span>
+Phillip Quy Le <span class="nv">&lt;pitlv2109@gmail.com&gt;</span>
+Pavle Simonovic <span class="nv">&lt;simonov2@illinois.edu&gt;</span>
+Paul Hindt <span class="nv">&lt;phindt@gmail.com&gt;</span>
+Nishant Maniam <span class="nv">&lt;nishant.maniam@gmail.com&gt;</span>
+Mustafa Altun <span class="nv">&lt;gmail@mustafaaltun.com&gt;</span>
+Mohammed Sadik P. K <span class="nv">&lt;sadiqpkp@gmail.com&gt;</span>
+Mingchao Zhang <span class="nv">&lt;43462732+mingchao-zhang@users.noreply.github.com&gt;</span>
+Michael Vanderwater <span class="nv">&lt;vndrwtr2@users.noreply.github.com&gt;</span>
+Maxiwell Luo <span class="nv">&lt;maxluoXIII@gmail.com&gt;</span>
+LunaMystic <span class="nv">&lt;suxianghan@outlook.com&gt;</span>
+Liam Monahan <span class="nv">&lt;liam@liammonahan.com&gt;</span>
+Joshua Wertheim <span class="nv">&lt;joshwertheim@gmail.com&gt;</span>
+John Pham <span class="nv">&lt;newhope11134@gmail.com&gt;</span>
+Johannes Scheuermann <span class="nv">&lt;johscheuer@users.noreply.github.com&gt;</span>
+Joey Bloom <span class="nv">&lt;15joeybloom@users.noreply.github.com&gt;</span>
+Jimmy Zhang <span class="nv">&lt;midnight.vivian@gmail.com&gt;</span>
+Jeffrey Foster <span class="nv">&lt;jmfoste2@illinois.edu&gt;</span>
+James Daniel <span class="nv">&lt;james-daniel@users.noreply.github.com&gt;</span>
+Jake Bailey <span class="nv">&lt;zikaeroh@gmail.com&gt;</span>
+JACKHAHA363 <span class="nv">&lt;luyuchen.paul@gmail.com&gt;</span>
+Hydrosis <span class="nv">&lt;badda2k@gmail.com&gt;</span>
+Hong <span class="nv">&lt;plantvsbird@gmail.com&gt;</span>
+Grant Wu <span class="nv">&lt;grantwu2@gmail.com&gt;</span>
+EvanFabry <span class="nv">&lt;Evan.Fabry@gmail.com&gt;</span>
+EddieVilla <span class="nv">&lt;EddieVilla@users.noreply.github.com&gt;</span>
+Deepak Nagaraj <span class="nv">&lt;n.deepak@gmail.com&gt;</span>
+Daniel Meir Doron <span class="nv">&lt;danielmeirdoron@gmail.com&gt;</span>
+Daniel Le <span class="nv">&lt;GreenRecycleBin@gmail.com&gt;</span>
+Daniel Jamrozik <span class="nv">&lt;djamro2@illinois.edu&gt;</span>
+Daniel Carballal <span class="nv">&lt;danielenriquecarballal@gmail.com&gt;</span>
+Daniel <span class="nv">&lt;DTV96Calibre@users.noreply.github.com&gt;</span>
+Daeyun Shin <span class="nv">&lt;daeyun@daeyunshin.com&gt;</span>
+Creyslz <span class="nv">&lt;creyslz@gmail.com&gt;</span>
+Christian Cygnus <span class="nv">&lt;gamer00@att.net&gt;</span>
+CharlieMartell <span class="nv">&lt;charliecmartell@gmail.com&gt;</span>
+Caleb Bassi <span class="nv">&lt;calebjbassi@gmail.com&gt;</span>
+Brian Kurek <span class="nv">&lt;brkurek@gmail.com&gt;</span>
+Brendan Wilson <span class="nv">&lt;brendan.x.wilson@gmail.com&gt;</span>
+Bo Liu <span class="nv">&lt;boliu1@illinois.edu&gt;</span>
+Ayush Ranjan <span class="nv">&lt;ayushr2@illinois.edu&gt;</span>
+Atul kumar Agrawal <span class="nv">&lt;ms.atul1303@gmail.com&gt;</span>
+Artur Sak <span class="nv">&lt;artursak1981@gmail.com&gt;</span>
+Ankush Agarwal <span class="nv">&lt;ankushagarwal@users.noreply.github.com&gt;</span>
+Angelino <span class="nv">&lt;angelino_m@outlook.com&gt;</span>
+Andrey Zaytsev <span class="nv">&lt;andzaytsev@gmail.com&gt;</span>
+Alex Yang <span class="nv">&lt;alyx.yang@gmail.com&gt;</span>
+Alex Cusack <span class="nv">&lt;cusackalex@gmail.com&gt;</span>
+Aidan Epstein <span class="nv">&lt;aidan@jmad.org&gt;</span>
+Ace Nassri <span class="nv">&lt;ace.nassri@gmail.com&gt;</span>
+Abdullahi Abdalla <span class="nv">&lt;abdalla6@illinois.edu&gt;</span>
+Aneesh Durg <span class="nv">&lt;durg2@illinois.edu&gt;</span>
+Assassin Eclipse <span class="nv">&lt;hungwoei96@hotmail.com&gt;</span>
+Eric Cao <span class="nv">&lt;eric7252000@gmail.com&gt;</span>
+Raphael Long <span class="nv">&lt;rafilong42@gmail.com&gt;</span>
+WeiL <span class="nv">&lt;z920631580@gmail.com&gt;</span>
+williamsentosa95 <span class="nv">&lt;38774380+williamsentosa95@users.noreply.github.com&gt;</span>
+Pradyumna Shome <span class="nv">&lt;pradyumna.shome@gmail.com&gt;</span>
+Benjamin West Pollak <span class="nv">&lt;benjaminwpollak@gmail.com&gt;</span>
+姜芃越 Pengyue Jiang <span class="nv">&lt;pengyue3@illinois.edu&gt;</span>
+Andrew Orals <span class="nv">&lt;aorals2@illinois.edu&gt;</span>
+Elijah Mock <span class="nv">&lt;emock3@illinois.edu&gt;</span>
+</code></pre></div></div></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Introduction.md";
+  </script>
+</body>
+
+</html>

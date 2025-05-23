@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Processes | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/utilities_unleashed">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Processes</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="processes">Processes!</h2>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>
+    <p>A process is an instance of a computer program that may be running.</p>
+  </li>
+  <li>
+    <p>At the start of each program, a program gets one process, but each program can make more processes.</p>
+  </li>
+  <li>
+    <p>Powerful, but isolated! Can only communicate with each other by explicit means.</p>
+  </li>
+</ul>
+
+</section><section><h2 id="contents-of-a-process-memory-space">Contents of a Process Memory Space</h2>
+
+<ul>
+  <li>Stack: Where declared variables live, grows down, <strong>r</strong>eadable &amp; <strong>w</strong>riteable (rw)</li>
+  <li>Heap: Where malloc’d memory lives, grows up, rw</li>
+  <li>Data segment: globals, static vars, some parts rw, some parts read-only</li>
+  <li>Text segment: program instructions, the only e<strong>x</strong>ecutable (x) part of a program</li>
+</ul>
+
+</section><section><h2 id="address-space-of-a-process">Address Space of a Process</h2>
+
+<p><img src="/images/assignment-docs/lab/slides/fork/address_space.png" alt="Proc Address Space"></p>
+
+</section><section><h2 id="forking">Forking</h2>
+
+<p><code class="language-plaintext highlighter-rouge">fork</code> clones the current process to create a new process, called a child process.</p>
+
+<p>it copies the state of the existing process with a few minor differences</p>
+
+</section><section><h2 id="what-is-copied-over">What is Copied Over?</h2>
+
+<ul>
+  <li>the address space</li>
+  <li>parent’s open file descriptors</li>
+  <li>parent’s open directory streams</li>
+  <li>parent’s pid (see <code class="language-plaintext highlighter-rouge">getppid()</code>)</li>
+  <li>Environment variables</li>
+  <li>Signal Handlers</li>
+  <li>Synchronization Primitives</li>
+</ul>
+
+</section><section><h2 id="what-is-not-copied-over">What is NOT Copied over?</h2>
+
+<ul>
+  <li>process id (every child has their own)</li>
+  <li>pending signals</li>
+  <li>threads</li>
+  <li>termination signal (<code class="language-plaintext highlighter-rouge">SIGCHLD</code>)</li>
+</ul>
+
+</section><section><h2 id="forkbomb">Forkbomb</h2>
+
+<p>occurs when there is an attempt to create an infinite number of processes.</p>
+
+<p>This will often bring a system to a near-standstill</p>
+
+<p>You do NOT want to do this (or else your VM will be difficult to recover)</p>
+
+</section><section><h2></h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#define PROC 100
+int main() {
+	pid_t processes[PROC];
+	for (int i = 0; i &lt; PROC; ++i) {
+		processes[i] = fork();
+		if (!processes[i]) {
+			execlp("ruby", "ruby", "file.rb", (char*)
+				NULL);
+		}
+	}
+	for (int i = 0; i &lt; PROC; ++i) {
+		waitpid(processes[i], NULL, 0);
+  }
+}
+</code></pre></div></div>
+
+</section><section><h2 id="process-flowchart">Process Flowchart</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int main() { 
+    pid_t child1 = fork(); 
+    if (!child1) { 
+        pid_t child2 = fork(); 
+        if (!child2) { 
+            while (1) {} 
+        } 
+        pid_t child3 = fork(); 
+        if (!child3) { 
+            printf("Hello!"); 
+            exit(2); 
+        } 
+        waitpid(child3, NULL, 0); 
+        waitpid(child2, NULL, 0); 
+        exit(1); } 
+        waitpid(child1, NULL, 0); }
+</code></pre></div></div>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/fork/program_flowchart.png" alt="program flowchart"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="utilities-unleashed">Utilities Unleashed</h2>
+
+</section><section><h2 id="what-are-you-going-to-learn">What are you going to learn?</h2>
+
+<ul>
+  <li>What the fork-exec-wait pattern is.</li>
+  <li>Why we use it.</li>
+  <li>String Manipulation.</li>
+</ul>
+
+</section><section><h2 id="all-fork-exec-wait-code">All Fork-Exec-Wait Code</h2>
+
+<pre><code class="language-C"><span class="n">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">){</span>
+	<span class="c1">//fork failed</span>
+<span class="p">}</span><span class="k">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">){</span>
+	<span class="c1">//I am the child</span>
+	<span class="n">exec</span><span class="p">(...)</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+	<span class="c1">//I Am the parent</span>
+	<span class="n">waitpid</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="p">...);</span>
+<span class="p">}</span>
+</code></pre>
+
+</section><section><h2 id="fork"><a href="https://www.man7.org/linux/man-pages/man2/fork.2.html"><code class="language-plaintext highlighter-rouge">fork()</code></a></h2>
+
+<p>creates a child process</p>
+
+<p>On success, the PID of the child process is returned in the
+parent, and 0 is returned in the child.</p>
+
+<p>On failure, -1 is
+returned in the parent, no child process is created</p>
+
+</section><section><h2 id="waitpidpid-"><a href="https://www.man7.org/linux/man-pages/man2/waitpid.2.html"><code class="language-plaintext highlighter-rouge">waitpid(pid, ...)</code></a></h2>
+
+<p>wait for state changes in a child of the calling process</p>
+
+<p>A state change is considered to be:</p>
+
+<ul>
+  <li>child terminated</li>
+  <li>child stopped by signal</li>
+  <li>child resumed by signal</li>
+</ul>
+
+<p>wait allows the system to release the resources associated with the child</p>
+
+<p>otherwise the terminated child remains in a “zombie” state</p>
+
+</section><section><h2 id="exec-family">
+<a href="https://www.man7.org/linux/man-pages/man3/exec.3.html"><code class="language-plaintext highlighter-rouge">Exec</code></a> Family</h2>
+
+<p>replaces the current process image with a new process image</p>
+
+<ul>
+  <li>There are three modifiers/mnemonic
+    <ul>
+      <li>Either past a <strong>l</strong>ist or arg<strong>v</strong> (null terminated array) of arguments</li>
+      <li>Search for the executable either in the current directory or in the <strong>p</strong>ath</li>
+      <li>Use the parent’s environment variables or use an <strong>e</strong>nvironment setting</li>
+    </ul>
+  </li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="time">time</h2>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">./time &lt;command&gt; &lt;args&gt; ...</code></li>
+  <li>Try measuring the time of running <code class="language-plaintext highlighter-rouge">sleep 2</code>
+</li>
+  <li>Should use fork-exec scheme.</li>
+  <li>Should take care of programs do not terminate successfully.</li>
+  <li>Command line arguments are not limited to one.</li>
+  <li>Use the format.h functions to print out time/etc.</li>
+</ul>
+
+</section><section><h2 id="time-workflow">time Workflow</h2>
+
+<p><img src="/images/assignment-docs/lab/slides/fork/time_workflow.png" alt="Workflow for time"></p>
+
+</section><section><h2 id="helper-functions">Helper Functions</h2>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">struct timespec</code>
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">time_t tv_sec</code>;</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">long tv_nsec</code>;</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">tv_sec = 10</code>, <code class="language-plaintext highlighter-rouge">tv_nsec = 992300000</code> -&gt; <code class="language-plaintext highlighter-rouge">10.9923 sec</code>
+</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">int clock_gettime(clockid_t, timespec *)</code>;
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">clockid_t</code>: should use CLOCK_MONOTONIC in this lab</li>
+    </ul>
+  </li>
+  <li>return 0 when success, -1 otherwise</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="env">env</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">./env [key=val1] [key2=val1] ... -- cmd [args] ..</code></li>
+  <li>
+<code class="language-plaintext highlighter-rouge">./env TZ=EST5EDT -- date</code> - execute date under enviornment TZ=EST5EDT</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">./env TEMP=EST5EDT TZ=%TEMP -- date</code> - why is this the same as above?</li>
+</ul>
+
+</section><section><h2 id="env-workflow">env Workflow</h2>
+
+<p><img src="/images/assignment-docs/lab/slides/fork/env_workflow.png" alt="Environment Workflow"></p>
+
+</section><section><h2 id="helper-functions-1">Helper Functions</h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">int setenv(const char* name, const char* value,</code> <br>
+  <code class="language-plaintext highlighter-rouge">int overwrite)</code>
+</li>
+  <li><code class="language-plaintext highlighter-rouge">char *getenv(const char *name)</code></li>
+</ul>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>Write a function that can find all <code class="language-plaintext highlighter-rouge">%notation</code> in a string</li>
+  <li>Extend that function to replace variables with environment variables</li>
+  <li>Use getenv to get environment variables</li>
+  <li>Be familiar with: return array of strings, clear an array of strings-&gt; camelCasers</li>
+</ul>
+
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

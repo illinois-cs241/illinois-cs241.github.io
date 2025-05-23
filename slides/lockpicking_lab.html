@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Welcome to CS 341 | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/lockpicking_lab">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Welcome to CS 341</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="whats-lab-gonna-be-like">What’s Lab Gonna Be Like?</h2>
+
+</section><section><h2 id="rules">Rules</h2>
+
+<ul>
+  <li>Labs will begin with slides followed by a worksheet/Kahoot-style quiz.</li>
+  <li>You should work on your lab assignment for the rest of class time.</li>
+</ul>
+
+</section><section><h2 id="lab-attendance">Lab Attendance</h2>
+
+<ul>
+  <li>Ten minute rule: if you aren’t here in the first ten minutes of class, you don’t get credit.</li>
+  <li>Your total attendance grade will be credited towards the final exam, up to 3%.</li>
+  <li>Near the end of every lab, we will ask you to swipe out. You may only leave early if you show us that you have finished the lab.</li>
+  <li>Email the GA (cs341admin@cs.illinois.edu) if you need an exemption for lab attendance.</li>
+</ul>
+
+</section><section><h2 id="different-lab-sections">Different Lab Sections</h2>
+
+<ul>
+  <li>Due to seating limitations, you are required to go to the lab section you signed up for.</li>
+  <li>Labs will be in-person.</li>
+  <li>If you need to miss a lab, you may be able to switch labs to make up the attendance.
+    <ul>
+      <li>You must email the TA in charge of your assigned lab and the TA for the lab to which you are going.</li>
+    </ul>
+  </li>
+  <li>There will be no attendance taken for week 1.</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="utilities">Utilities</h2>
+
+</section><section><h2 id="virtual-machines">Virtual Machines</h2>
+
+</section><section><h2 id="what-are-they">What are they?</h2>
+
+<ul>
+  <li>A computer running on top of another computer via an emulation system.</li>
+  <li>Ex) running a Linux virtual machine on top of a Windows OS using a software like Virtualbox, which creates a virtualized version of Linux “inside” of the Windows OS.</li>
+  <li>In this class, you will be assigned a Linux (Ubuntu) virtual machine that has all the prerequisite software for compiling and running the assignments.</li>
+</ul>
+
+</section><section><h2></h2>
+
+<pre><code class="language-C"><span class="n">ssh</span> <span class="o">&lt;</span><span class="n">NETID</span><span class="o">&gt;</span><span class="err">@</span><span class="n">sp25</span><span class="o">-</span><span class="n">cs341</span><span class="o">-&lt;</span><span class="n">xxx</span><span class="o">&gt;</span><span class="p">.</span><span class="n">cs</span><span class="p">.</span><span class="n">illinois</span><span class="p">.</span><span class="n">edu</span>
+</code></pre>
+<p>where <code class="language-plaintext highlighter-rouge">xxx</code> is the VM number assigned to you.</p>
+
+</section><section><h2 id="vm-use">VM Use</h2>
+
+<p>We will only help you with your assignments on your VM. We will not debug code running elsewhere.</p>
+
+</section><section><h2 id="note">Note</h2>
+
+<p>You are going to need to be on the campus network to be able to access your VM. If you want to make it work at home, make sure to log in to the campus VPN first before ssh’ing. See the <a href="http://cs341.cs.illinois.edu/tutorials/development">development guide</a> for details.</p>
+
+</section><section><h2 id="late-adds">Late Adds</h2>
+
+<p>If enrolled in the class recently, you should be getting an email soon about accessing your VM. Everyone else should already have received an email with their VM’s details.</p>
+
+</section><section><h2 id="what-is-ssh">What is ssh?</h2>
+
+<p>SSH is short for secure shell (secure sh). SSH is a network protocol that leverages public key cryptography in order to connect to another computer. You may have used SSH in other classes to connect to EWS.</p>
+
+</section><section><h2 id="what-is-sudo">What is sudo?</h2>
+
+<p>All of you have probably heard of sudo before - it is short for super-user do, and lets you execute any command as root. You have that ability on your VM. Be careful: there is no way to faster crash your VM that throwing sudo around. VMs can only be rebooted or re-imaged by staff.</p>
+
+</section><section><h2 id="what-is-git">What is git?</h2>
+
+<p><code class="language-plaintext highlighter-rouge">git</code> is a version control system. That means it keeps track of changes in code, allows you to group changes into a commit, and provides tools to manipulate commits.</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="gdb">GDB</h2>
+
+</section><section><h2 id="a-lot-of-you-are-afraid--dont-be">A lot of you are afraid – don’t be!</h2>
+
+</section><section><h2 id="what-is-gdb">What is GDB?</h2>
+
+<ul>
+  <li>GDB is a program that allows you to see “inside” a program as it executes.</li>
+  <li>From the <a href="https://www.gnu.org/software/gdb/">GDB site</a>, GDB helps you catch bugs by enabled you to:
+    <ul>
+      <li>Start your program, specifying anything that might affect its behavior.</li>
+      <li>Make your program stop on specified conditions.</li>
+      <li>Examine what has happened, when your program has stopped.</li>
+      <li>Change things within in your program</li>
+    </ul>
+  </li>
+</ul>
+
+</section><section><h2 id="gdb-commands">GDB Commands</h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">layout src</code> gives you a text-based GUI</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">break &lt;file:line|function&gt; [if condition]</code>: You can make powerful breakpoints by giving a line, but only under certain circumstances.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">watch (type *)0xADDRESS</code>: Watches an address for a read or write and tells you when it has changed – useful for locating bugs.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">backtrace</code>, <code class="language-plaintext highlighter-rouge">bt</code> to see what functions you are in</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">up</code>, <code class="language-plaintext highlighter-rouge">down</code> goes up and down a stack frame</li>
+</ul>
+
+</section><section><h2 id="navigation">Navigation</h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">print</code> prints a variable (aliased <code class="language-plaintext highlighter-rouge">p</code>). You can use <code class="language-plaintext highlighter-rouge">p/x</code> to print in hex.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">next</code> executes the line and goes to the next line, runs functions without stopping.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">finish</code> finishes the function and breaks.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">step</code> executes the line and goes to the next line. If there is a function, gdb steps into the function.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">continue</code> resumes execution of your program.</li>
+</ul>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Review</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Review" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Review
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#review" class="fancy-link wiki-link">Review</a>
+    <ul>
+      <li>
+<a href="#c" class="fancy-link wiki-link">C</a>
+        <ul>
+          <li><a href="#memory-and-strings" class="fancy-link wiki-link">Memory and Strings</a></li>
+          <li><a href="#printing" class="fancy-link wiki-link">Printing</a></li>
+          <li><a href="#input-parsing" class="fancy-link wiki-link">Input parsing</a></li>
+        </ul>
+      </li>
+      <li><a href="#processes" class="fancy-link wiki-link">Processes</a></li>
+      <li><a href="#memory" class="fancy-link wiki-link">Memory</a></li>
+      <li><a href="#threading-and-synchronization" class="fancy-link wiki-link">Threading and Synchronization</a></li>
+      <li><a href="#deadlock" class="fancy-link wiki-link">Deadlock</a></li>
+      <li><a href="#ipc" class="fancy-link wiki-link">IPC</a></li>
+      <li><a href="#filesystems" class="fancy-link wiki-link">Filesystems</a></li>
+      <li><a href="#networking" class="fancy-link wiki-link">Networking</a></li>
+      <li><a href="#security" class="fancy-link wiki-link">Security</a></li>
+      <li><a href="#signals" class="fancy-link wiki-link">Signals</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p>A non-comprehensive list of topics is below.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="c" class="title-text">C<a class="anchor title-text" href="#c"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="memory-and-strings" class="title-text">Memory and Strings</h3>
+<ol>
+  <li>
+    <p>In the example below, which variables are guaranteed to print the
+value of zero?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+    
+<span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">d</span><span class="p">;</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d %d %d %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">d</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In the example below, which variables are guaranteed to print the
+value of zero?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span><span class="o">*</span> <span class="n">ptr1</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+  <span class="kt">int</span><span class="o">*</span> <span class="n">ptr2</span> <span class="o">=</span> <span class="n">realloc</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+  <span class="kt">int</span><span class="o">*</span> <span class="n">ptr3</span> <span class="o">=</span> <span class="n">calloc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+  <span class="kt">int</span><span class="o">*</span> <span class="n">ptr4</span> <span class="o">=</span> <span class="n">calloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+    
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d %d %d %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="o">*</span><span class="n">ptr1</span><span class="p">,</span><span class="o">*</span><span class="n">ptr2</span><span class="p">,</span><span class="o">*</span><span class="n">ptr3</span><span class="p">,</span><span class="o">*</span><span class="n">ptr4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Explain the error in the following attempt to copy a string.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">*</span> <span class="nf">copy</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">char</span><span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="n">strlen</span><span class="p">(</span><span class="n">src</span><span class="p">)</span> <span class="p">);</span>
+  <span class="n">strcpy</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Why does the following attempt to copy a string sometimes work and
+sometimes fail?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">*</span> <span class="nf">copy</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">char</span><span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="n">strlen</span><span class="p">(</span><span class="n">src</span><span class="p">)</span> <span class="o">+</span><span class="mi">1</span> <span class="p">);</span>
+  <span class="n">strcat</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Explain the two errors in the following code that attempts to copy a
+string.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">*</span> <span class="nf">copy</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">result</span><span class="p">[</span><span class="k">sizeof</span><span class="p">(</span><span class="n">src</span><span class="p">)];</span>
+  <span class="n">strcpy</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">src</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Which of the following is legal?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span> <span class="n">strcpy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s">"World"</span><span class="p">);</span>
+<span class="kt">char</span> <span class="n">b</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span> <span class="n">strcpy</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s">"World12345"</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="kt">char</span><span class="o">*</span> <span class="n">c</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span> <span class="n">strcpy</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="s">"World"</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Complete the function pointer typedef to declare a pointer to a
+function that takes a void* argument and returns a void*. Name
+your type ‘pthread_callback’</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="n">______________________</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>In addition to the function arguments what else is stored on a
+thread’s stack?</p>
+  </li>
+  <li>
+    <p>Implement a version of <code class="language-plaintext highlighter-rouge">char* strcat(char*dest, const char*src)</code>
+using only <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strcpy.3p.html" class="fancy-link">strcpy</a></code> <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strlen.3p.html" class="fancy-link">strlen</a></code> and pointer arithmetic</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">*</span> <span class="nf">mystrcat</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+    
+  <span class="o">?</span> <span class="n">Use</span> <span class="n">strcpy</span> <span class="n">strlen</span> <span class="n">here</span>
+    
+  <span class="k">return</span> <span class="n">dest</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Implement version of size_t strlen(const char*) using a loop and
+no function calls.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">size_t</span> <span class="nf">mystrlen</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span><span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Identify the three bugs in the following implementation of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strcpy.3p.html" class="fancy-link">strcpy</a></code>.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">*</span> <span class="nf">strcpy</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="o">*</span><span class="n">src</span><span class="p">)</span> <span class="p">{</span> <span class="o">*</span><span class="n">dest</span><span class="o">++</span> <span class="o">=</span> <span class="o">*</span><span class="n">src</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+  <span class="k">return</span> <span class="n">dest</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+<h3 id="printing" class="title-text">Printing</h3>
+<ol>
+  <li>
+    <p>Spot the two errors!</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">fprintf</span><span class="p">(</span><span class="s">"You scored 100%"</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Complete the following code to print to a file. Print the name, a
+comma and the score to the file ‘result.txt’</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">*</span> <span class="n">name</span> <span class="o">=</span> <span class="p">.....;</span>
+<span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="p">......</span>
+<span class="kt">FILE</span> <span class="o">*</span><span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"result.txt"</span><span class="p">,</span><span class="n">_____</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">_____</span>
+<span class="p">}</span>
+<span class="n">fclose</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>How would you print the values of the variables <code class="language-plaintext highlighter-rouge">a</code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/mesg.1p.html" class="fancy-link">mesg</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/val.1p.html" class="fancy-link">val</a></code>
+and <code class="language-plaintext highlighter-rouge">ptr</code> to a string? Print a as an integer, mesg as C string, val
+as a double val and ptr as a hexadecimal pointer. You may assume the
+mesg points to a short C string(&lt;50 characters). Bonus: How would
+you make this code more robust or able to cope with?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">*</span> <span class="nf">toString</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span><span class="n">mesg</span><span class="p">,</span> <span class="kt">double</span> <span class="n">val</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">char</span><span class="o">*</span> <span class="n">result</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span> <span class="n">strlen</span><span class="p">(</span><span class="n">mesg</span><span class="p">)</span> <span class="o">+</span> <span class="mi">50</span><span class="p">);</span>
+  <span class="n">_____</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+<h3 id="input-parsing" class="title-text">Input parsing</h3>
+<ol>
+  <li>
+    <p>Why should you check the return value of sscanf and scanf? ## Q
+5.2 Why is ‘gets’ dangerous?</p>
+  </li>
+  <li>
+    <p>Write a complete program that uses <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getline.3p.html" class="fancy-link">getline</a></code>. Ensure your program
+has no memory leaks.</p>
+  </li>
+  <li>
+    <p>When would you use calloc instead of malloc? When would realloc be
+useful?</p>
+  </li>
+  <li>
+    <p>What mistake did the programmer make in the following code? Is it
+possible to fix it</p>
+
+    <p>i) using heap memory? ii) using global (static) memory?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">int</span> <span class="n">id</span><span class="p">;</span>
+    
+<span class="kt">char</span><span class="o">*</span> <span class="nf">next_ticket</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">id</span> <span class="o">++</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">result</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+  <span class="n">sprintf</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="s">"%d"</span><span class="p">,</span><span class="n">id</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="processes" class="title-text">Processes<a class="anchor title-text" href="#processes"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>What is a process?</p>
+  </li>
+  <li>
+    <p>What attributes are carried over from a process on fork? How about
+on a successful exec call?</p>
+  </li>
+  <li>
+    <p>What is a fork bomb? How can we avoid one?</p>
+  </li>
+  <li>
+    <p>What is the wait system call used for?</p>
+  </li>
+  <li>
+    <p>What is a zombie? How do we avoid them?</p>
+  </li>
+  <li>
+    <p>What is an orphan? What happens to them?</p>
+  </li>
+  <li>
+    <p>How do we check the status of a process that has exited?</p>
+  </li>
+  <li>
+    <p>What is a common pattern of processes?</p>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="memory" class="title-text">Memory<a class="anchor title-text" href="#memory"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>What are the calls in C to allocate memory?</p>
+  </li>
+  <li>
+    <p>What must malloc memory be aligned to? Why is it important?</p>
+  </li>
+  <li>
+    <p>What is Knuth’s Allocation Scheme?</p>
+  </li>
+  <li>
+    <p>How would you handle a request in a buddy allocation scheme?</p>
+  </li>
+  <li>
+    <p>What is a free list?</p>
+  </li>
+  <li>
+    <p>What are some different ways of inserting into a free list?</p>
+  </li>
+  <li>
+    <p>What are the benefits and drawbacks to first fit, worst fit, best
+fit?</p>
+  </li>
+  <li>
+    <p>When would a trivial malloc implementation</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="o">*</span><span class="nf">malloc</span><span class="p">(</span><span class="kt">int</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">sbrk</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>Be acceptable?</p>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="threading-and-synchronization" class="title-text">Threading and Synchronization<a class="anchor title-text" href="#threading-and-synchronization"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>What is a thread? What do threads share?</p>
+  </li>
+  <li>
+    <p>How does one create a thread?</p>
+  </li>
+  <li>
+    <p>Where are the stacks for a thread located in memory?</p>
+  </li>
+  <li>
+    <p>What is a mutex? What problem does it solve?</p>
+  </li>
+  <li>
+    <p>What is a condition variable? What problem does it solve?</p>
+  </li>
+  <li>
+    <p>Write a thread safe linked list that supports insert front, back,
+pop front, and pop back. Make sure it doesn’t busy wait!</p>
+  </li>
+  <li>
+    <p>What is Peterson’s Solution to the critical section problem? How
+about Dekker’s?</p>
+  </li>
+  <li>
+    <p>Is the following code thread-safe? Redesign the following code to be
+thread-safe. Hint: A mutex is unnecessary if the message memory is
+unique to each call.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="kt">char</span> <span class="n">message</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<span class="n">pthread_mutex_t</span> <span class="n">mutex</span> <span class="o">=</span> <span class="n">PTHREAD_MUTEX_INITIALIZER</span><span class="p">;</span>
+    
+<span class="kt">void</span> <span class="o">*</span><span class="nf">format</span><span class="p">(</span><span class="kt">int</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+  <span class="n">sprintf</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="s">":%d:"</span> <span class="p">,</span><span class="n">v</span><span class="p">);</span>
+  <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">mutex</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">message</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Which one of the following may leave a process in running?</p>
+
+    <ol>
+      <li>
+        <p>Returning from the pthread’s starting function in the last
+running thread.</p>
+      </li>
+      <li>
+        <p>The original thread returning from main.</p>
+      </li>
+      <li>
+        <p>Any thread causing a segmentation fault.</p>
+      </li>
+      <li>
+        <p>Any thread calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code>.</p>
+      </li>
+      <li>
+        <p>Calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_exit.3p.html" class="fancy-link">pthread_exit</a></code> in the main thread with other threads
+still running.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Write a mathematical expression for the number of “W” characters
+that will be printed by the following program. Assume a,b,c,d are
+small positive integers. Your answer may use a ‘min’ function that
+returns its lowest valued argument.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="p">...,</span><span class="n">b</span><span class="o">=</span><span class="p">...,</span><span class="n">c</span><span class="o">=</span><span class="p">...,</span><span class="n">d</span><span class="o">=</span><span class="p">...;</span>
+    
+<span class="kt">void</span><span class="o">*</span> <span class="nf">func</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">m</span> <span class="o">=</span> <span class="o">*</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="n">ptr</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="sc">'P'</span><span class="p">)</span> <span class="n">sem_post</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="sc">'W'</span><span class="p">)</span> <span class="n">sem_wait</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="n">putchar</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+    
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argv</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">sem_init</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">b</span><span class="o">--</span><span class="p">)</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="s">"W"</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">c</span><span class="o">--</span><span class="p">)</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="s">"P"</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">d</span><span class="o">--</span><span class="p">)</span> <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="s">"W"</span><span class="p">);</span>
+  <span class="n">pthread_exit</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+  <span class="cm">/*Process will finish when all threads have exited */</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Complete the following code. The following code is supposed to print
+alternating <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">B</code>. It represents two threads that take turns
+to execute. Add condition variable calls to <code class="language-plaintext highlighter-rouge">func</code> so that the
+waiting thread need not to continually check the <code class="language-plaintext highlighter-rouge">turn</code> variable. Q:
+Is pthread_cond_broadcast necessary or is pthread_cond_signal
+sufficient?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">pthread_cond_t</span> <span class="n">cv</span> <span class="o">=</span> <span class="n">PTHREAD_COND_INITIALIZER</span><span class="p">;</span>
+<span class="n">pthread_mutex_t</span> <span class="n">m</span> <span class="o">=</span> <span class="n">PTHREAD_MUTEX_INITIALIZER</span><span class="p">;</span>
+    
+<span class="kt">void</span><span class="o">*</span> <span class="n">turn</span><span class="p">;</span>
+    
+<span class="kt">void</span><span class="o">*</span> <span class="nf">func</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">mesg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Add mutex lock and condition variable calls ...</span>
+    
+    <span class="k">while</span><span class="p">(</span><span class="n">turn</span> <span class="o">==</span> <span class="n">mesg</span><span class="p">)</span> <span class="p">{</span>
+      <span class="cm">/* poll again ... Change me - This busy loop burns CPU time! */</span>
+    <span class="p">}</span>
+    
+    <span class="cm">/* Do stuff on this thread */</span>
+    <span class="n">puts</span><span class="p">(</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">mesg</span><span class="p">);</span>
+    <span class="n">turn</span> <span class="o">=</span> <span class="n">mesg</span><span class="p">;</span>
+    
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+    
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">){</span>
+  <span class="n">pthread_t</span> <span class="n">tid1</span><span class="p">;</span>
+  <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="s">"A"</span><span class="p">);</span>
+  <span class="n">func</span><span class="p">(</span><span class="s">"B"</span><span class="p">);</span> <span class="c1">// no need to create another thread - use the main thread</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Identify the critical sections in the given code. Add mutex locking
+to make the code thread safe. Add condition variable calls so that
+<code class="language-plaintext highlighter-rouge">total</code> never becomes negative or above 1000. Instead the call
+should block until it is safe to proceed. Explain why
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_cond_broadcast.3p.html" class="fancy-link">pthread_cond_broadcast</a></code> is necessary.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">total</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+  <span class="n">total</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">sub</span><span class="p">(</span><span class="kt">int</span> <span class="n">value</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">value</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+  <span class="n">total</span> <span class="o">-=</span> <span class="n">value</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>An thread unsafe data structure has <code class="language-plaintext highlighter-rouge">size()</code> <code class="language-plaintext highlighter-rouge">enq</code> and <code class="language-plaintext highlighter-rouge">deq</code>
+methods. Use condition variable and mutex lock to complete the
+thread-safe, blocking versions.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">enqueue</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// should block if the size() would become greater than 256</span>
+  <span class="n">enq</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="o">*</span> <span class="nf">dequeue</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// should block if size() is 0</span>
+  <span class="k">return</span> <span class="n">deq</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Your startup offers path planning using the latest traffic
+information. Your overpaid intern has created a thread unsafe data
+structure with two functions: <code class="language-plaintext highlighter-rouge">shortest</code> (which uses but does not
+modify the graph) and <code class="language-plaintext highlighter-rouge">set_edge</code> (which modifies the graph).</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">graph_t</span><span class="o">*</span> <span class="nf">create_graph</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">);</span> <span class="c1">// called once</span>
+    
+<span class="c1">// returns a new heap object that is the shortest path from vertex i to j</span>
+<span class="n">path_t</span><span class="o">*</span> <span class="nf">shortest</span><span class="p">(</span><span class="n">graph_t</span><span class="o">*</span> <span class="n">graph</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">);</span>
+    
+<span class="c1">// updates edge from vertex i to j</span>
+<span class="kt">void</span> <span class="nf">set_edge</span><span class="p">(</span><span class="n">graph_t</span><span class="o">*</span> <span class="n">graph</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">double</span> <span class="n">time</span><span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>For performance, multiple threads must be able to call <code class="language-plaintext highlighter-rouge">shortest</code> at
+the same time but the graph can only be modified by one thread when
+no threads other are executing inside <code class="language-plaintext highlighter-rouge">shortest</code> or <code class="language-plaintext highlighter-rouge">set_edge</code>.</p>
+  </li>
+  <li>
+    <p>Use mutex lock and condition variables to implement a reader-writer
+solution. An incomplete attempt is shown below. Though this attempt
+is thread safe (thus sufficient for demo day!), it does not allow
+multiple threads to calculate <code class="language-plaintext highlighter-rouge">shortest</code> path at the same time and
+will not have sufficient throughput.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">path_t</span><span class="o">*</span> <span class="nf">shortest_safe</span><span class="p">(</span><span class="n">graph_t</span><span class="o">*</span> <span class="n">graph</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+  <span class="n">path_t</span><span class="o">*</span> <span class="n">path</span> <span class="o">=</span> <span class="n">shortest</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+  <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">path</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">set_edge_safe</span><span class="p">(</span><span class="n">graph_t</span><span class="o">*</span> <span class="n">graph</span><span class="p">,</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">,</span> <span class="kt">double</span> <span class="n">dist</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">pthread_mutex_lock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+  <span class="n">set_edge</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">dist</span><span class="p">);</span>
+  <span class="n">pthread_mutex_unlock</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>How many of the following statements are true for the reader-writer
+problem?</p>
+
+    <ul>
+      <li>
+        <p>There can be multiple active readers</p>
+      </li>
+      <li>
+        <p>There can be multiple active writers</p>
+      </li>
+      <li>
+        <p>When there is an active writer the number of active readers must
+be zero</p>
+      </li>
+      <li>
+        <p>If there is an active reader the number of active writers must
+be zero</p>
+      </li>
+      <li>
+        <p>A writer must wait until the current active readers have
+finished</p>
+      </li>
+    </ul>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="deadlock" class="title-text">Deadlock<a class="anchor title-text" href="#deadlock"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>What do each of the Coffman conditions and what do they mean? Can
+you provide a definition of each one and an example of breaking them
+using mutexes?</p>
+  </li>
+  <li>
+    <p>Give a real life example of breaking each Coffman condition in turn.
+A situation to consider: Painters, paint and paint brushes.</p>
+
+    <ol>
+      <li>
+        <p>Hold and wait</p>
+      </li>
+      <li>
+        <p>Circular wait</p>
+      </li>
+      <li>
+        <p>No preemption</p>
+      </li>
+      <li>
+        <p>Mutual exclusion</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Identify when Dining Philosophers code causes a deadlock (or not).
+For example, if you saw the following code snippet which Coffman
+condition is not satisfied?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">// Get both locks or none.</span>
+<span class="n">pthread_mutex_lock</span><span class="p">(</span> <span class="n">a</span> <span class="p">);</span>
+<span class="k">if</span><span class="p">(</span> <span class="n">pthread_mutex_trylock</span><span class="p">(</span> <span class="n">b</span> <span class="p">)</span> <span class="p">)</span> <span class="p">{</span> <span class="cm">/*failed*/</span>
+  <span class="n">pthread_mutex_unlock</span><span class="p">(</span> <span class="n">a</span> <span class="p">);</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>How many processes are blocked?</p>
+
+    <ul>
+      <li>
+        <p>P1 acquires R1</p>
+      </li>
+      <li>
+        <p>P2 acquires R2</p>
+      </li>
+      <li>
+        <p>P1 acquires R3</p>
+      </li>
+      <li>
+        <p>P2 waits for R3</p>
+      </li>
+      <li>
+        <p>P3 acquires R5</p>
+      </li>
+      <li>
+        <p>P1 acquires R4</p>
+      </li>
+      <li>
+        <p>P3 waits for R1</p>
+      </li>
+      <li>
+        <p>P4 waits for R5</p>
+      </li>
+      <li>
+        <p>P5 waits for R1</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>What are the pros and cons for the following solutions to dining
+philosophers</p>
+
+    <ol>
+      <li>
+        <p>Arbitrator</p>
+      </li>
+      <li>
+        <p>Dijkstra</p>
+      </li>
+      <li>
+        <p>Stalling’s</p>
+      </li>
+      <li>
+        <p>Trylock</p>
+      </li>
+    </ol>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="ipc" class="title-text">IPC<a class="anchor title-text" href="#ipc"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>What are the following and what is their purpose?</p>
+
+    <ol>
+      <li>
+        <p>Translation Lookaside Buffer</p>
+      </li>
+      <li>
+        <p>Physical Address</p>
+      </li>
+      <li>
+        <p>Memory Management Unit</p>
+      </li>
+      <li>
+        <p>The dirty bit</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>How do you determine how many bits are used in the page offset?</p>
+  </li>
+  <li>
+    <p>20 ms after a context switch the TLB contains all logical addresses
+used by your numerical code which performs main memory access 100%
+of the time. What is the overhead (slowdown) of a two-level page
+table compared to a single-level page table?</p>
+  </li>
+  <li>
+    <p>Explain why the TLB must be flushed when a context switch occurs
+(i.e. the CPU is assigned to work on a different process).</p>
+  </li>
+  <li>
+    <p>Fill in the blanks to make the following program print 123456789. If
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cat.1p.html" class="fancy-link">cat</a></code> is given no arguments it simply prints its input until EOF.
+Bonus: Explain why the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/close.3p.html" class="fancy-link">close</a></code> call below is necessary.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span><span class="p">(</span><span class="o">++</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pid_t</span> <span class="n">pid</span> <span class="o">=</span> <span class="n">fork</span><span class="p">();</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">pid</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* child */</span>
+      <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+      <span class="n">sprintf</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">______</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+      <span class="kt">int</span> <span class="n">fds</span><span class="p">[</span> <span class="n">______</span><span class="p">];</span>
+      <span class="n">pipe</span><span class="p">(</span><span class="n">fds</span><span class="p">);</span>
+      <span class="n">write</span><span class="p">(</span><span class="n">fds</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">______</span><span class="p">,</span><span class="n">______</span> <span class="p">);</span> <span class="c1">// Write the buffer into the pipe</span>
+      <span class="n">close</span><span class="p">(</span><span class="n">______</span><span class="p">);</span>
+      <span class="n">dup2</span><span class="p">(</span><span class="n">fds</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">______</span><span class="p">);</span>
+      <span class="n">execlp</span><span class="p">(</span><span class="s">"cat"</span><span class="p">,</span> <span class="s">"cat"</span><span class="p">,</span>  <span class="n">______</span><span class="p">);</span>
+      <span class="n">perror</span><span class="p">(</span><span class="s">"exec"</span><span class="p">);</span> <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">waitpid</span><span class="p">(</span><span class="n">pid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Use POSIX calls <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code> <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pipe.3p.html" class="fancy-link">pipe</a></code> <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/dup2.3p.html" class="fancy-link">dup2</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/close.3p.html" class="fancy-link">close</a></code> to implement an
+autograding program. Capture the standard output of a child process
+into a pipe. The child process should <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> the program <code class="language-plaintext highlighter-rouge">./test</code>
+with no additional arguments (other than the process name). In the
+parent process read from the pipe: Exit the parent process as soon
+as the captured output contains the ! character. Before exiting the
+parent process send SIGKILL to the child process. Exit 0 if the
+output contained a !. Otherwise if the child process exits causing
+the pipe write end to be closed, then exit with a value of 1. Be
+sure to close the unused ends of the pipe in the parent and child
+process</p>
+  </li>
+  <li>
+    <p>This advanced challenge uses pipes to get an “AI player” to play
+itself until the game is complete. The program <code class="language-plaintext highlighter-rouge">tic tac toe</code> accepts
+a line of input - the sequence of turns made so far, prints the same
+sequence followed by another turn, and then exits. A turn is
+specified using two characters. For example “A1” and “C3” are two
+opposite corner positions. The string <code class="language-plaintext highlighter-rouge">B2A1A3</code> is a game of 3
+turns/plys. A valid response is <code class="language-plaintext highlighter-rouge">B2A1A3C1</code> (the C1 response blocks
+the diagonal B2 A3 threat). The output line may also include a
+suffix <code class="language-plaintext highlighter-rouge">-I win</code> <code class="language-plaintext highlighter-rouge">-You win</code> <code class="language-plaintext highlighter-rouge">-invalid</code> or <code class="language-plaintext highlighter-rouge">-draw</code> Use pipes to
+control the input and output of each child process created. When the
+output contains a <code class="language-plaintext highlighter-rouge">-</code>, print the final output line (the entire game
+sequence and the result) and exit.</p>
+  </li>
+  <li>
+    <p>Write a function that uses fseek and ftell to replace the middle
+character of a file with an ‘X’</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">xout</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">filename</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">FILE</span> <span class="o">*</span><span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">____</span> <span class="p">);</span>
+    
+  <span class="c1">// Your code here ...</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What is an MMU? What are the drawbacks to using it versus a direct
+memory system?</p>
+  </li>
+  <li>
+    <p>What is a pipe?</p>
+  </li>
+  <li>
+    <p>What are the pros and cons between named and unnamed pipes?</p>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="filesystems" class="title-text">Filesystems<a class="anchor title-text" href="#filesystems"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>What is the file API?</p>
+  </li>
+  <li>
+    <p>Where are the names of the files stored?</p>
+  </li>
+  <li>
+    <p>What is contained in an inode?</p>
+  </li>
+  <li>
+    <p>What are the two special file names in every directory</p>
+  </li>
+  <li>
+    <p>How do you resolve the following path <code class="language-plaintext highlighter-rouge">a/../b/./c/../../c</code></p>
+  </li>
+  <li>
+    <p>What are the rwx groups?</p>
+  </li>
+  <li>
+    <p>What is an UID? GID? What is the difference between UID and
+Effective UID?</p>
+  </li>
+  <li>
+    <p>What is umask?</p>
+  </li>
+  <li>
+    <p>What is the sticky bit?</p>
+  </li>
+  <li>
+    <p>What is a virtual file system?</p>
+  </li>
+  <li>
+    <p>What is RAID?</p>
+  </li>
+  <li>
+    <p>In an <code class="language-plaintext highlighter-rouge">ext2</code> filesystem how many inodes are read from disk to access
+the first byte of the file <code class="language-plaintext highlighter-rouge">/dir1/subdirA/notes.txt</code> ? Assume the
+directory names and inode numbers in the root directory (but not the
+inodes themselves) are already in memory.</p>
+  </li>
+  <li>
+    <p>In an <code class="language-plaintext highlighter-rouge">ext2</code> filesystem what is the minimum number of disk blocks
+that must be read from disk to access the first byte of the file
+<code class="language-plaintext highlighter-rouge">/dir1/subdirA/notes.txt</code> ? Assume the directory names and inode
+numbers in the root directory and all inodes are already in memory.</p>
+  </li>
+  <li>
+    <p>In an <code class="language-plaintext highlighter-rouge">ext2</code> filesystem with 32 bit addresses and 4KiB disk blocks,
+an inode can store 10 direct disk block numbers. What is the minimum
+file size required to require a single indirection table? ii) a
+double direction table?</p>
+  </li>
+  <li>
+    <p>Fix the shell command <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/chmod.3p.html" class="fancy-link">chmod</a></code> below to set the permission of a file
+<code class="language-plaintext highlighter-rouge">secret.txt</code> so that the owner can read,write,and execute
+permissions the group can read and everyone else has no access.</p>
+
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod </span>000 secret.txt
+</code></pre></div>    </div>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="networking" class="title-text">Networking<a class="anchor title-text" href="#networking"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>What is a socket?</p>
+  </li>
+  <li>
+    <p>What are the different layers of the internet?</p>
+  </li>
+  <li>
+    <p>What is IP? What is an IP address?</p>
+  </li>
+  <li>
+    <p>What is TCP? What is UDP? What are the differences?</p>
+  </li>
+  <li>
+    <p>Create a TCP client that send “Hello” to a server.</p>
+  </li>
+  <li>
+    <p>Create a simple TCP echo server. This is a server that reads bytes
+from a client until it closes and echoes the bytes back to the
+client.</p>
+  </li>
+  <li>
+    <p>Create a UDP client that would send a flood of packets to a hostname
+at argv[1].</p>
+  </li>
+  <li>
+    <p>What is HTTP?</p>
+  </li>
+  <li>
+    <p>What is DNS?</p>
+  </li>
+  <li>
+    <p>Why do we use non-blocking IO for networking?</p>
+  </li>
+  <li>
+    <p>What is an RPC?</p>
+  </li>
+  <li>
+    <p>What is special about listening on port 1000 vs port 2000?</p>
+
+    <ul>
+      <li>
+        <p>Port 2000 is twice as slow as port 1000</p>
+      </li>
+      <li>
+        <p>Port 2000 is twice as fast as port 1000</p>
+      </li>
+      <li>
+        <p>Port 1000 requires root privileges</p>
+      </li>
+      <li>
+        <p>Nothing</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Describe one significant difference between IPv4 and IPv6?</p>
+  </li>
+  <li>
+    <p>When and why would you use ntohs?</p>
+  </li>
+  <li>
+    <p>If a host address is 32 bits which IP scheme am I most likely using?
+128 bits?</p>
+  </li>
+  <li>
+    <p>Which common network protocol is packet based and may not
+successfully deliver the data?</p>
+  </li>
+  <li>
+    <p>Which common protocol is stream-based and will resend data if
+packets are lost?</p>
+  </li>
+  <li>
+    <p>What is the SYN ACK ACK-SYN handshake?</p>
+  </li>
+  <li>
+    <p>Which one of the following is NOT a feature of TCP?</p>
+
+    <ol>
+      <li>
+        <p>Packet reordering</p>
+      </li>
+      <li>
+        <p>Flow control</p>
+      </li>
+      <li>
+        <p>Packet retranmission</p>
+      </li>
+      <li>
+        <p>Simple error detection</p>
+      </li>
+      <li>
+        <p>Encryption</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>What protocol uses sequence numbers? What is their initial value?
+And why?</p>
+  </li>
+  <li>
+    <p>What are the minimum network calls are required to build a TCP
+server? What is their correct order?</p>
+  </li>
+  <li>
+    <p>What are the minimum network calls are required to build a TCP
+client? What is their correct order?</p>
+  </li>
+  <li>
+    <p>When would you call bind on a TCP client?</p>
+  </li>
+  <li>
+    <p>What is the purpose of socket bind listen accept ?</p>
+  </li>
+  <li>
+    <p>Which of the above calls can block, waiting for a new client to
+connect?</p>
+  </li>
+  <li>
+    <p>What is DNS? What does it do for you? Which of the CS241 network
+calls will use it for you?</p>
+  </li>
+  <li>
+    <p>For getaddrinfo, how do you specify a server socket?</p>
+  </li>
+  <li>
+    <p>Why may getaddrinfo generate network packets?</p>
+  </li>
+  <li>
+    <p>Which network call specifies the size of the allowed backlog?</p>
+  </li>
+  <li>
+    <p>Which network call returns a new file descriptor?</p>
+  </li>
+  <li>
+    <p>When are passive sockets used?</p>
+  </li>
+  <li>
+    <p>When is epoll a better choice than select? When is select a better
+choice than epoll?</p>
+  </li>
+  <li>
+    <p>Will <code class="language-plaintext highlighter-rouge">write(fd, data, 5000)</code> always send 5000 bytes of data? When
+can it fail?</p>
+  </li>
+  <li>
+    <p>How does Network Address Translation (NAT) work?</p>
+  </li>
+  <li>
+    <p>Assuming a network has a 20ms One Way Transit Time between Client
+and Server, how much time would it take to establish a TCP
+Connection?</p>
+
+    <ol>
+      <li>
+        <p>20ms</p>
+      </li>
+      <li>
+        <p>40ms</p>
+      </li>
+      <li>
+        <p>100ms</p>
+      </li>
+      <li>
+        <p>60ms</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>What are some of the differences between HTTP 1.0 and HTTP 1.1? How
+many ms will it take to transmit 3 files from server to client if
+the network has a 20ms transmit time? How does the time taken differ
+between HTTP 1.0 and HTTP 1.1?</p>
+  </li>
+  <li>
+    <p>Writing to a network socket may not send all of the bytes and may be
+interrupted due to a signal. Check the return value of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> to
+implement <code class="language-plaintext highlighter-rouge">write_all</code> that will repeatedly call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> with any
+remaining data. If <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> returns -1 then immediately return -1
+unless the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/errno.3p.html" class="fancy-link">errno</a></code> is <code class="language-plaintext highlighter-rouge">EINTR</code> - in which case repeat the last
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> attempt. You will need to use pointer
+arithmetic.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">// Returns -1 if write fails (unless EINTR in which case it recalls write</span>
+<span class="c1">// Repeated calls write until all of the buffer is written.</span>
+<span class="kt">ssize_t</span> <span class="nf">write_all</span><span class="p">(</span><span class="kt">int</span> <span class="n">fd</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">nbyte</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">ssize_t</span> <span class="n">nb</span> <span class="o">=</span> <span class="n">write</span><span class="p">(</span><span class="n">fd</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="n">nbyte</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">nb</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Implement a multithreaded TCP server that listens on port 2000. Each
+thread should read 128 bytes from the client file descriptor and
+echo it back to the client, before closing the connection and ending
+the thread.</p>
+  </li>
+  <li>
+    <p>Implement a UDP server that listens on port 2000. Reserve a buffer
+of 200 bytes. Listen for an arriving packet. Valid packets are 200
+bytes or less and start with four bytes 0x65 0x66 0x67 0x68. Ignore
+invalid packets. For valid packets add the value of the fifth byte
+as an unsigned value to a running total and print the total so far.
+If the running total is greater than 255 then exit.</p>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="security" class="title-text">Security<a class="anchor title-text" href="#security"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>What are the three measures for data security?</p>
+  </li>
+  <li>
+    <p>What is stack smashing?</p>
+  </li>
+  <li>
+    <p>What is buffer overflows?</p>
+  </li>
+  <li>
+    <p>How does an operating system provide security? What are some
+examples from Networking and Filesystems?</p>
+  </li>
+  <li>
+    <p>What security features does TCP provide?</p>
+  </li>
+  <li>
+    <p>Is DNS secure?</p>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="signals" class="title-text">Signals<a class="anchor title-text" href="#signals"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>Give the names of two signals that are normally generated by the
+kernel</p>
+  </li>
+  <li>
+    <p>Give the name of a signal that can not be caught by a signal</p>
+  </li>
+  <li>
+    <p>Why is it unsafe to call any function (something that it is not
+signal handler safe) in a signal handler?</p>
+  </li>
+  <li>
+    <p>Write brief code that uses SIGACTION and a SIGNALSET to create a
+SIGALRM handler.</p>
+  </li>
+  <li>
+    <p>What is the difference between a disposition, mask, and pending
+signal set?</p>
+  </li>
+  <li>
+    <p>What attributes are passed over to process children? How about
+exececuted processes?</p>
+  </li>
+</ol></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Review.md";
+  </script>
+</body>
+
+</html>

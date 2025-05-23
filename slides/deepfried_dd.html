@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Deepfried_DD | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/deepfried_dd">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Deepfried_DD</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="the-real-dd">The Real dd</h2>
+
+<ul>
+  <li>A highly configurable command-line utility used to convert and copy files</li>
+  <li>Performs block level I/O, as opposed to filesystem-level I/O for increased performance</li>
+</ul>
+
+</section><section><h2 id="what-is-a-block">What is a Block?</h2>
+
+<ul>
+  <li>A sequence of bytes with a predefined size</li>
+  <li>Hard drives / SSDs typically have a sector (block) size of 4 kB</li>
+  <li>This means read/write operations to the disk can only address 4 kB portions at a time.</li>
+  <li>If you write a 64 kB file to the disk, it will be broken down into 16 writes of 4 kB each</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="real-dd-usage">Real dd Usage</h2>
+
+<p>Some notable parameters:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">if=FILE</code>: read from <code class="language-plaintext highlighter-rouge">FILE</code> instead of <code class="language-plaintext highlighter-rouge">stdin</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">of=FILE</code>: write to <code class="language-plaintext highlighter-rouge">FILE</code> instead of <code class="language-plaintext highlighter-rouge">stdout</code>
+</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">bs=BYTES</code>: <code class="language-plaintext highlighter-rouge">bs</code> is the block size; read and write up to <code class="language-plaintext highlighter-rouge">BYTES</code> bytes at a time (default: 512);</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">count=N</code>: copy only N input blocks</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">seek=N</code>: skip <code class="language-plaintext highlighter-rouge">N</code> obs-sized blocks at start of output</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">skip=N</code>: skip <code class="language-plaintext highlighter-rouge">N</code> ibs-sized blocks at start of input</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="applications-of-dd">Applications of <code class="language-plaintext highlighter-rouge">dd</code>
+</h2>
+
+<ul>
+  <li>Data transfer, and in-place modification of files</li>
+  <li>Wiping disks for security (e.g. prior to recycling hardware)
+    <ul>
+      <li>Contents of a file are not necessarily overwritten on regular deletion</li>
+    </ul>
+  </li>
+  <li>Generating files with random data (will be useful for testing in upcoming Networking MP)</li>
+  <li>“Flashing” / installing custom ROMs (enhanced versions of vanilla OS) on Android devices</li>
+</ul>
+
+</section><section><h2 id="advanced-applications">Advanced Applications</h2>
+
+<ul>
+  <li>Kernel profiling (measure the speed of <code class="language-plaintext highlighter-rouge">dd if=/dev/zero of=/dev/null</code>)</li>
+  <li>Obtaining a finite data subsection of an infinite data stream</li>
+  <li>Implementing conversion/analysis tools (e.g. <code class="language-plaintext highlighter-rouge">hexdump</code>)</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="warnings">Warnings</h2>
+
+<p><code class="language-plaintext highlighter-rouge">dd</code> misuse can cause interesting errors:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">bs</code> and <code class="language-plaintext highlighter-rouge">count</code> definition errors can lead to <em>infinite size files</em>
+    <ul>
+      <li>This can break password login on your machine!</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">of</code> definition errors can overwrite endpoints:
+    <ul>
+      <li>Worst case: it can corrupt your hard disk/SSD</li>
+    </ul>
+  </li>
+</ul>
+
+<p>So define each parameter carefully, especially if running as root!</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="our-implementation-of-dd">Our Implementation of dd</h2>
+
+<p>You will use:</p>
+<ul>
+  <li>File-level I/O (<code class="language-plaintext highlighter-rouge">fread</code>, <code class="language-plaintext highlighter-rouge">fwrite</code>, etc.) to copy data</li>
+  <li>Interrupts (<code class="language-plaintext highlighter-rouge">signal</code> on <code class="language-plaintext highlighter-rouge">SIGUSR1</code>) to get status reports</li>
+</ul>
+
+</section><section><h2 id="our-dds-parameters">Our dd’s parameters</h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">-i &lt;file&gt;</code>: input file (defaults to stdin)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-o &lt;file&gt;</code>: output file (defaults to stdout)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-b &lt;size&gt;</code>: block size, the number of bytes copied at a time (defaults to 512)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-c &lt;count&gt;</code>: total number of <strong>blocks</strong> copied (defaults to the entire file)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-p &lt;count&gt;</code>: number of <strong>blocks</strong> to skip at the start of the input file (defaults to 0)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">-k &lt;count&gt;</code>: number of <strong>blocks</strong> to skip at the start of the output file (defaults to 0)</li>
+</ul>
+
+</section><section><h2 id="argument-parsing-getopt">Argument Parsing: <code class="language-plaintext highlighter-rouge">getopt()</code>
+</h2>
+
+<ul>
+  <li>getopt parses function arguments passed through the command line.</li>
+  <li>Specify and handle all special case function parameters.</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">getopt(argc, argv, "i:o:b:c:p:k:")</code></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="example-usage">Example Usage</h2>
+
+<p><code class="language-plaintext highlighter-rouge">./dd -i input_file -o output_file -b 256 -c 1</code></p>
+<ul>
+  <li>Defines block size to be 256 bytes</li>
+  <li>Copies 1 block from offset 0 of <code class="language-plaintext highlighter-rouge">input_file</code> to offset 0 of <code class="language-plaintext highlighter-rouge">output_file</code>
+</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="questions">Questions?</h2>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

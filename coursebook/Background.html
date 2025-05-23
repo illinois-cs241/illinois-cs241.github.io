@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · $ ./a.out</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="$ ./a.out" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              $ ./a.out
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#background" class="fancy-link wiki-link">Background</a>
+    <ul>
+      <li>
+<a href="#systems-architecture" class="fancy-link wiki-link">Systems Architecture</a>
+        <ul>
+          <li><a href="#assembly" class="fancy-link wiki-link">Assembly</a></li>
+          <li><a href="#atomic-operations" class="fancy-link wiki-link">Atomic Operations</a></li>
+          <li><a href="#caching" class="fancy-link wiki-link">Caching</a></li>
+          <li><a href="#interrupts" class="fancy-link wiki-link">Interrupts</a></li>
+          <li><a href="#optional-hyperthreading" class="fancy-link wiki-link">Optional: Hyperthreading</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#debugging-and-environments" class="fancy-link wiki-link">Debugging and Environments</a>
+        <ul>
+          <li><a href="#ssh" class="fancy-link wiki-link">ssh</a></li>
+          <li><a href="#git" class="fancy-link wiki-link">git</a></li>
+          <li><a href="#editors" class="fancy-link wiki-link">Editors</a></li>
+          <li><a href="#clean-code" class="fancy-link wiki-link">Clean Code</a></li>
+          <li><a href="#asserts" class="fancy-link wiki-link">Asserts</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#valgrind" class="fancy-link wiki-link">Valgrind</a>
+        <ul>
+          <li><a href="#tsan" class="fancy-link wiki-link">TSAN</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#gdb" class="fancy-link wiki-link">GDB</a>
+        <ul>
+          <li><a href="#setting-breakpoints-programmatically" class="fancy-link wiki-link">Setting breakpoints
+programmatically</a></li>
+          <li><a href="#checking-memory-content" class="fancy-link wiki-link">Checking memory content</a></li>
+          <li><a href="#involved-gdb-example" class="fancy-link wiki-link">Involved gdb example</a></li>
+          <li><a href="#shell" class="fancy-link wiki-link">Shell</a></li>
+          <li><a href="#undefined-behavior-sanitizer" class="fancy-link wiki-link">Undefined Behavior
+Sanitizer</a></li>
+          <li><a href="#clang-static-build-tools" class="fancy-link wiki-link">Clang Static Build Tools</a></li>
+          <li><a href="#strace-and-ltrace" class="fancy-link wiki-link">strace and ltrace</a></li>
+          <li><a href="#printfs" class="fancy-link wiki-link">printfs</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#homework-0" class="fancy-link wiki-link">Homework 0</a>
+        <ul>
+          <li><a href="#so-you-want-to-master-system-programming-and-get-a-better-grade-than-b" class="fancy-link wiki-link">So you want to master System Programming? And get a better
+grade than
+B?</a></li>
+          <li><a href="#watch-the-videos-and-write-up-your-answers-to-the-following-questions" class="fancy-link wiki-link">Watch the videos and write up your answers to the following
+questions</a></li>
+          <li><a href="#chapter-1" class="fancy-link wiki-link">Chapter 1</a></li>
+          <li><a href="#chapter-2" class="fancy-link wiki-link">Chapter 2</a></li>
+          <li><a href="#chapter-3" class="fancy-link wiki-link">Chapter 3</a></li>
+          <li><a href="#chapter-4" class="fancy-link wiki-link">Chapter 4</a></li>
+          <li><a href="#chapter-5" class="fancy-link wiki-link">Chapter 5</a></li>
+          <li><a href="#c-development" class="fancy-link wiki-link">C Development</a></li>
+          <li><a href="#optional-just-for-fun" class="fancy-link wiki-link">Optional: Just for fun</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#university-of-illinois-specific-guidelines" class="fancy-link wiki-link">University of Illinois Specific
+Guidelines</a>
+        <ul>
+          <li><a href="#the-class-forum" class="fancy-link wiki-link">The class forum</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>Sometimes the journey of a thousand steps begins by learning to walk</strong></p>
+<ul>
+  <li>
+    <hr>
+  </li>
+</ul>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="systems-architecture" class="title-text">Systems Architecture<a class="anchor title-text" href="#systems-architecture"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This section is a short review of System Architecture topics that you’ll
+need for System Programming.</p>
+<h3 id="assembly" class="title-text">Assembly</h3>
+<p>What is assembly? Assembly is the lowest that you’ll get to machine
+language without writing 1’s and 0’s. Each computer has an architecture,
+and that architecture has an associated assembly language. Each assembly
+command has a 1:1 mapping to a set of 1’s and 0’s that tell the computer
+exactly what to do. For example, the following in the widely used x86
+Assembly language add one to the memory address 20 (Wikibooks
+<a href="#ref-wiki:xxx" class="fancy-link wiki-link">#ref-wiki:xxx</a>) – you can also look in (Guide
+<a href="#ref-guide2011intel" class="fancy-link wiki-link">#ref-guide2011intel</a>) Section 2A under
+the add instruction though it is more verbose.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>add BYTE PTR [0x20], 1
+</code></pre></div></div>
+<p>Why do we mention this? Because it is important that although you are
+going to be doing most of this class in C, that this is what the code is
+translated into. Serious implications arise for race conditions and
+atomic operations.</p>
+<h3 id="atomic-operations" class="title-text">Atomic Operations</h3>
+<p>An operation is atomic if no other processor should interrupt it. Take
+for example the above assembly code to add one to a register. In the
+architecture, it may actually have a few different steps on the circuit.
+The operation may start by fetching the value of the memory from the
+stick of ram, then storing it in the cache or a register, and then
+finally writing back (Schweizer, Besta, and Hoefler
+<a href="#ref-schweizer2015evaluating" class="fancy-link wiki-link">#ref-schweizer2015evaluating</a>)
+– under the description for <em>fetch-and-add</em> though your
+micro-architecture may vary. Or depending on performance operations, it
+may keep that value in cache or in a register which is local to that
+process – try dumping the <code class="language-plaintext highlighter-rouge">-O2</code> optimized assembly of incrementing a
+variable. The problem comes in if two processors try to do it at the
+same time. The two processors could at the same time copy the value of
+the memory address, add one, and store the same result back, resulting
+in the value only being incremented once. That is why we have a special
+set of instructions on modern systems called atomic operations. If an
+instruction is atomic, it makes sure that only one processor or thread
+performs any intermediate step at a time. With x86 this is done by the
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/lock.2.html" class="fancy-link">lock</a></code> prefix (Guide
+<a href="#ref-guide2011intel" class="fancy-link wiki-link">#ref-guide2011intel</a>, 1120).</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lock add BYTE PTR [0x20], 1
+</code></pre></div></div>
+<p>Why don’t we do this for everything? It makes commands slower! If every
+time a computer does something it has to make sure that the other cores
+or processors aren’t doing anything, it’ll be much slower. Most of the
+time we differentiate these with special consideration. Meaning, we will
+tell you when we use something like this. Most of the time you can
+assume the instructions are unlocked.</p>
+<h3 id="caching" class="title-text">Caching</h3>
+<p>Ah yes, Caching. One of computer science’s greatest problems. The
+caching that we are referring to is processor caching. If a particular
+address is already in the cache when reading or writing, the processor
+will perform the operation on the cache, such as adding and update the
+actual memory, later because updating memory is slow (Intel
+<a href="#ref-intel2015improving" class="fancy-link wiki-link">#ref-intel2015improving</a> Section
+3.4). If it isn’t, the processor requests a chunk of memory from the
+memory chip and stores it in the cache, kicking out the least recently
+used page – this depends on caching policy, but Intel’s does use this.
+This is done because the l3 processor cache is roughly three times
+faster to reach than the memory in terms of time (Levinthal
+<a href="#ref-levinthal2009performance" class="fancy-link wiki-link">#ref-levinthal2009performance</a>,
+22) though exact speeds will vary based on the clock speed and
+architecture. Naturally, this leads to problems because there are two
+different copies of the same value, in the cited paper this refers to an
+unshared line. This isn’t a class about caching, but you should know how
+this could impact your code. A short but non-complete list could be</p>
+<ol>
+  <li>
+    <p>Race Conditions! If a value is stored in two different processor
+caches, then that value should be accessed by a single thread.</p>
+  </li>
+  <li>
+    <p>Speed. With a cache, your program may look faster mysteriously. Just
+assume that reads and writes that either happened recently or are
+next to each other in memory are fast.</p>
+  </li>
+  <li>
+    <p>Side effects. Every read or write affects the cache state. While
+most of the time this doesn’t help or hurt, it is important to know.
+Check the Intel programmer guide on the lock prefix for more
+information.</p>
+  </li>
+</ol>
+<h3 id="interrupts" class="title-text">Interrupts</h3>
+<p>Interrupts are an important part of system programming. An interrupt is
+internally an electrical signal that is delivered to the processor when
+something happens – this is a hardware interrupt (“Chapter 3. Hardware
+Interrupts,”
+<a href="#ref-redhat_hardware_int" class="fancy-link wiki-link">#ref-redhat_hardware_int</a>). Then
+the hardware decides if this is something that it should handle (e.g.,
+handling keyboard or mouse input for older keyboard and mouses) or it
+should pass to the operating system. The operating system then decides
+if this is something that it should handle (e.g., paging a memory table
+from disk) or something the application should handle (e.g., a
+SEGFAULT). If the operating system decides that this is something that
+the process or program should take care of, it sends a <strong>software
+fault</strong> and that software fault is then propagated. The application then
+decides if it is an error (SEGFAULT) or not (SIGPIPE for example) and
+reports to the user. Applications can also send signals to the kernel
+and to the hardware as well. This is an oversimplification because there
+are certain hardware faults that can’t be ignored or masked away, but
+this class isn’t about teaching you to build an operating system.</p>
+<p>An important application of this is how system calls are served! There
+is a well-established set of registers that the arguments go in
+according to the kernel as well as a system call “number” again defined
+by the kernel. Then the operating system triggers an interrupt which the
+kernel catches and serves the system call (Garg
+<a href="#ref-garg_2006" class="fancy-link wiki-link">#ref-garg_2006</a>).</p>
+<p>Operating system developers and instruction set developers alike didn’t
+like the overhead of causing an interrupt on a system call. Now, systems
+use <code class="language-plaintext highlighter-rouge">SYSENTER</code> and <code class="language-plaintext highlighter-rouge">SYSEXIT</code> which has a cleaner way of transferring
+control safely to the kernel and safely back. What safely means is
+obvious out of the scope for this class, but it persists.</p>
+<h3 id="optional-hyperthreading" class="title-text">Optional: Hyperthreading</h3>
+<p>Hyperthreading is a new technology and is in no way shape or form
+multithreading. Hyperthreading allows one physical core to appear as
+many virtual cores to the operating system (Guide
+<a href="#ref-guide2011intel" class="fancy-link wiki-link">#ref-guide2011intel</a>, P.51). The
+operating system can then schedule processes on these virtual cores and
+one core will execute them. Each core interleaves processes or threads.
+While the core is waiting for one memory access to complete, it may
+perform a few instructions of another process thread. The overall result
+is more instructions executed in a shorter time. This potentially means
+that you can divide the number of cores you need to power smaller
+devices.</p>
+<p>There be dragons here, though. With hyperthreading, you must be wary of
+optimizations. A famous hyperthreading bug caused programs to crash if
+at least two processes were scheduled on a physical core, using specific
+registers, in a tight loop. The actual problem is better explained
+through an architecture lens. But, the actual application was found
+through systems programmers working on OCaml’s mainline (Leroy
+<a href="#ref-leroy_2017" class="fancy-link wiki-link">#ref-leroy_2017</a>).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="debugging-and-environments" class="title-text">Debugging and Environments<a class="anchor title-text" href="#debugging-and-environments"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>I’m going to tell you a secret about this course: it is about working
+smarter <em>not</em> harder. The course can be time-consuming but the reason
+that so many people see it as such (and why so many students don’t see
+it as such) is the relative familiarity of people with their tools.
+Let’s go through some of the common tools that you’ll be working on
+and need to be familiar with.</p>
+<h3 id="ssh" class="title-text">ssh</h3>
+<p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ssh.1.html" class="fancy-link">ssh</a></code> is short for the Secure Shell (“Ssh(1),”
+<a href="#ref-openbsd_ssh" class="fancy-link wiki-link">#ref-openbsd_ssh</a>). It is a network
+protocol that allows you to spawn a shell on a remote machine. Most of
+the times in this class you will need to ssh into your VM like this</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh netid@sem-cs341-VM.cs.illinois.edu
+</code></pre></div></div>
+<p>If you don’t want to type your password out every time, you can generate
+an ssh key that uniquely identifies your machine. If you already have a
+key pair, you can skip to the copy id stage.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> ssh-keygen <span class="nt">-t</span> rsa <span class="nt">-b</span> 4096
+<span class="c"># Do whatever keygen tells you</span>
+<span class="c"># Don't feel like you need a passcode if your login password is secure</span>
+<span class="o">&gt;</span> ssh-copy-id netid@sem-cs341-VM.cs.illinois.edu
+<span class="c"># Enter your password for maybe the final time</span>
+<span class="o">&gt;</span> ssh  netid@sem-cs341-VM.cs.illinois.edu
+</code></pre></div></div>
+<p>If you still think that that is too much typing, you can always alias
+hosts. You may need to restart your VM or reload sshd for this to take
+effect. The config file is available on Linux and Mac distros. For
+Windows, you’ll have to use the Windows Linux Subsystem or configure any
+aliases in PuTTY</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> <span class="nb">cat</span> ~/.ssh/config
+Host vm
+  User          netid
+  HostName      sem-cs341-VM.cs.illinois.edu
+<span class="o">&gt;</span> ssh vm
+</code></pre></div></div>
+<h3 id="git" class="title-text">git</h3>
+<p>What is ‘git‘? Git is a version control system. What that means is git
+stores the entire history of a directory. We refer to the directory as a
+repository. So what do you need to know is a few things. First, create
+your repository with the repo creator. If you haven’t already signed
+into enterprise GitHub, make sure to do so otherwise your repository
+won’t be created for you. After that, your repository is created on
+the server. Git is a decentralized version control system, meaning that
+you’ll need to get a repository onto your VM. We can do this with a
+clone. Whatever you do, <strong>do not go through the README.md tutorial</strong>.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/illinois-cs-coursework/fa23_cs341_&lt;netid&gt;
+</code></pre></div></div>
+<p>This will create a local repository. The workflow is you make a change
+on your local repository, add the changes to a current commit, actually
+commit, and push the changes to the server.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="c"># edit the file, maybe using vim</span>
+<span class="nv">$ </span>git add &lt;file&gt;
+<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"Committing my file"</span>
+<span class="nv">$ </span>git push origin master
+</code></pre></div></div>
+<p>Now to explain git well, you need to understand that git for our
+purposes will look like a linked list. You will always be at the head of
+master, and you will do the edit-add-commit-push loop. We have a
+separate branch on Github that we push feedback to under a specific
+branch which you can view on Github website. The markdown file will have
+information on the test cases and results (like standard out).</p>
+<p>Every so often git can break. Here is a list of commands you probably
+won’t need to fix your repo</p>
+<ol>
+  <li>
+    <p>git-cherry-pick</p>
+  </li>
+  <li>
+    <p>git-pack</p>
+  </li>
+  <li>
+    <p>git-gc</p>
+  </li>
+  <li>
+    <p>git-clean</p>
+  </li>
+  <li>
+    <p>git-rebase</p>
+  </li>
+  <li>
+    <p>git-stash/git-apply/git-pop</p>
+  </li>
+  <li>
+    <p>git-branch</p>
+  </li>
+</ol>
+<p>If you are currently on a branch, and you don’t see either</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status
+On branch master
+Your branch is up-to-date with <span class="s1">'origin/master'</span><span class="nb">.</span>
+nothing to commit, working directory clean
+</code></pre></div></div>
+<p>or</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status
+On branch master
+Your branch is up-to-date with <span class="s1">'origin/master'</span><span class="nb">.</span>
+Changes not staged <span class="k">for </span>commit:
+  <span class="o">(</span>use <span class="s2">"git add &lt;file&gt;..."</span> to update what will be committed<span class="o">)</span>
+  <span class="o">(</span>use <span class="s2">"git checkout -- &lt;file&gt;..."</span> to discard changes <span class="k">in </span>working directory<span class="o">)</span>
+
+        modified:   &lt;FILE&gt;
+        ...
+
+no changes added to commit <span class="o">(</span>use <span class="s2">"git add"</span> and/or <span class="s2">"git commit -a"</span><span class="o">)</span>
+</code></pre></div></div>
+<p>And something like</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git status
+HEAD detached at 4bc4426
+nothing to commit, working directory clean
+</code></pre></div></div>
+<p>Don’t panic, but your repository may be in an unworkable state. If you
+aren’t nearing a deadline, come to office hours or ask your question on
+Edstem, and we’d be happy to help. In an emergency scenario, delete your
+repository and re-clone (you’ll have to add the <code class="language-plaintext highlighter-rouge">release</code> as above).
+<strong>This will lose any local uncommitted changes. Make sure to copy any
+files you were working on outside the directory, remove and copy them
+back in</strong></p>
+<p>If you want to learn more about git, there are all but an endless number
+of tutorials and resources online that can help you. Here are some links
+that can help you
+    out</p>
+<ol>
+  <li>
+    <p><a href="https://git-scm.com/docs/gittutorial" class="fancy-link wiki-link">https://git-scm.com/docs/gittutorial</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.atlassian.com/git/tutorials/what-is-version-control" class="fancy-link wiki-link">https://www.atlassian.com/git/tutorials/what-is-version-control</a></p>
+  </li>
+  <li>
+    <p><a href="https://thenewstack.io/tutorial-git-for-absolutely-everyone/" class="fancy-link wiki-link">https://thenewstack.io/tutorial-git-for-absolutely-everyone/</a></p>
+  </li>
+</ol>
+<h3 id="editors" class="title-text">Editors</h3>
+<p>Some people take this as an opportunity to learn a new editor, others
+not so much. The first part is those of you who want to learn a new
+editor. In the editor war that spans decades, we have come to the battle
+of vim vs emacs.</p>
+<p>Vim is a text editor and a Unix-like utility. You enter vim by typing
+<code class="language-plaintext highlighter-rouge">vim [file]</code>, which takes you into the editor. There are three most
+commonly used modes: normal mode, insert mode, and command mode. You
+start off in normal mode. In this mode, you can move around with many
+keys with the most common ones being <code class="language-plaintext highlighter-rouge">hjkl</code> (corresponding to left,
+down, up, and right, respectively). To run commands in vim, you can
+first type <code class="language-plaintext highlighter-rouge">:</code> and then a command after it. For instance, to quit vim,
+simply type <code class="language-plaintext highlighter-rouge">:q</code> (q stands for quit). If you have any unsaved edits, you
+must either save them <code class="language-plaintext highlighter-rouge">:w</code>, save and quit <code class="language-plaintext highlighter-rouge">:wq</code>, or quit and discard
+changes <code class="language-plaintext highlighter-rouge">:q!</code>. To make edits you can either type <code class="language-plaintext highlighter-rouge">i</code> to change you into
+insert mode or <code class="language-plaintext highlighter-rouge">a</code> to change to insert mode <strong>a</strong>fter the cursor. This
+is the basics when it comes to vim. In addition to the countless great
+resources out there on the internet, vim also has its own built-in
+tutorials set up for beginners. To access the interactive tutorial,
+enter <code class="language-plaintext highlighter-rouge">vimtutor</code> in the command line (not inside of vim), and you are
+all set!</p>
+<p>Emacs is more of a way of life, and I don’t mean that figuratively. A
+lot of people say that emacs is a powerful operating system lacking a
+decent text editor. This means emacs can house a terminal, gdb session,
+ssh session, code and a whole lot more. It would not be fitting any
+other way to introduce you to the gnu-emacs any other way than the
+gnu-docs
+<a href="https://www.gnu.org/software/emacs/tour/" class="fancy-link wiki-link">https://www.gnu.org/software/emacs/tour/</a>.
+Just note that emacs is <em>insanely</em> powerful. You can do almost anything
+with it. There are a fair number of students who like the IDE-aspect of
+other programming languages. Know that you can set up emacs to be an
+IDE, but you have to learn a bit of Lisp
+<a href="http://martinsosic.com/development/emacs/2017/12/09/emacs-cpp-ide.html" class="fancy-link wiki-link">http://martinsosic.com/development/emacs/2017/12/09/emacs-cpp-ide.html</a>.</p>
+<p>Then there are those of you who like to use your own editors. That is
+completely fine. For this, we require sshfs which has ports on many
+different machines.</p>
+<ol>
+  <li>
+    <p>Windows
+<a href="https://github.com/billziss-gh/sshfs-win" class="fancy-link wiki-link">https://github.com/billziss-gh/sshfs-win</a></p>
+  </li>
+  <li>
+    <p>Mac
+<a href="https://github.com/osxfuse/osxfuse/wiki/SSHFS" class="fancy-link wiki-link">https://github.com/osxfuse/osxfuse/wiki/SSHFS</a></p>
+  </li>
+  <li>
+    <p>Linux
+<a href="https://help.ubuntu.com/community/SSHFS" class="fancy-link wiki-link">https://help.ubuntu.com/community/SSHFS</a></p>
+  </li>
+</ol>
+<p>At that point, the files on your VM are synced with the files on your
+machine and edits can be made and will be synced.</p>
+<p>At the time of writing, an author likes to use spacemacs
+<a href="http://spacemacs.org/" class="fancy-link wiki-link">http://spacemacs.org/</a> which marries
+both vim and emacs and both of their difficulties. I’ll give my soapbox
+for why I like it, but be warned that if you are starting from
+absolutely no vim or emacs experience the learning curve along with this
+course may be too much.</p>
+<ol>
+  <li>
+    <p>Extensible. Spacemacs has a clean design written in lisp. There are
+100s of packages ready to be installed by editing your spacemacs
+config and reloading that do everything from syntax checking,
+automatic static analyzing, etc.</p>
+  </li>
+  <li>
+    <p>Most of the good parts from vim and emacs. Emacs is good at doing
+everything by being a fast editor. Vim is good at making fast edits
+and moving around. Spacemacs is the best of both worlds allowing vim
+keybindings to all the emacs goodness underneath.</p>
+  </li>
+  <li>
+    <p>Lots of preconfiguration done. As opposed with a fresh emacs
+install, a lot of the configurations with language and projects are
+done for you like neotree, helm, various language layers. All that
+you have to do is navigate neotree to the base of your project and
+emacs will turn into an IDE for that programming language.</p>
+  </li>
+</ol>
+<p>But obviously to each his or her own. Many people will argue that editor
+gurus spend more time editing their editors and actually editing.</p>
+<h3 id="clean-code" class="title-text">Clean Code</h3>
+<p>Make your code modular using helper functions. If there is a repeated
+task (getting the pointers to contiguous blocks in the malloc MP, for
+example), make them helper functions. And make sure each function does
+one thing well so that you don’t have to debug twice. Let’s say that we
+are doing selection sort by finding the minimum element each iteration
+like so,</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="n">len</span><span class="p">){</span>
+     <span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="n">len</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">){</span>
+         <span class="kt">long</span> <span class="n">max_index</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+         <span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="n">j</span> <span class="o">=</span> <span class="n">len</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">j</span><span class="p">){</span>
+             <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">max_index</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]){</span>
+                  <span class="n">max_index</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+             <span class="p">}</span>
+         <span class="p">}</span>
+         <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+         <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">max_index</span><span class="p">];</span>
+         <span class="n">a</span><span class="p">[</span><span class="n">max_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+     <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Many can see the bug in the code, but it can help to refactor the above
+method into</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">long</span> <span class="nf">max_index</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="n">start</span><span class="p">,</span> <span class="kt">long</span> <span class="n">end</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="n">idx1</span><span class="p">,</span> <span class="kt">long</span> <span class="n">idx2</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">selection_sort</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="n">len</span><span class="p">);</span>
+</code></pre></div></div>
+<p>And the error is specifically in one function. In the end, this class is
+about writing system programs, not a class about refactoring/debugging
+your code. In fact, most kernel code is so atrocious that you don’t want
+to read it – the defense there is that it needs to be. But for the sake
+of debugging, it may benefit you in the long run to adopt some of these
+practices.</p>
+<h3 id="asserts" class="title-text">Asserts</h3>
+<p>Use assertions to make sure your code works up to a certain point – and
+importantly, to make sure you don’t break it later. For example, if your
+data structure is a doubly-linked list, you can do something like
+<code class="language-plaintext highlighter-rouge">assert(node == node-&gt;next-&gt;prev)</code> to assert that the next node has a
+pointer to the current node. You can also check the pointer is pointing
+to an expected range of memory address, non-null, -&gt;size is reasonable,
+etc. The <code class="language-plaintext highlighter-rouge">DEBUG</code> macro will disable all assertions, so don’t forget to
+set that once you finish debugging (“Assert,”
+<a href="#ref-cplusplus_assert" class="fancy-link wiki-link">#ref-cplusplus_assert</a>).</p>
+<p>Here is a quick example with an assert. Let’s say that we are writing
+code using memcpy. We would want to put an assert before that checks
+whether my two memory regions overlap. If they do overlap, memcpy runs
+into undefined behavior, so we want to discover that problem sooner
+rather than
+later.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">assert</span><span class="p">(</span> <span class="n">src</span><span class="o">+</span><span class="n">n</span> <span class="o">&lt;</span> <span class="n">dest</span> <span class="o">||</span> <span class="n">src</span> <span class="o">&gt;=</span> <span class="n">dest</span> <span class="o">+</span> <span class="n">n</span><span class="p">);</span> <span class="c1">// source should finish before the destination or the source starts after the end of destination</span>
+<span class="n">memcpy</span><span class="p">(</span><span class="n">dest</span><span class="p">,</span> <span class="n">src</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</code></pre></div></div>
+<p>This check can be turned off at compile-time, but will save you <strong>tons</strong>
+of trouble debugging!</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="valgrind" class="title-text">Valgrind<a class="anchor title-text" href="#valgrind"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Valgrind is a suite of tools designed to provide debugging and profiling
+tools to make your programs more correct and detect some runtime issues
+(“4. Memcheck: A Memory Error Detector,”
+<a href="#ref-valgrind" class="fancy-link wiki-link">#ref-valgrind</a>). The most used of these tools
+is Memcheck, which can detect many memory-related errors that are common
+in C and C++ programs and that can lead to crashes and unpredictable
+behavior (for example, unfreed memory buffers). To run Valgrind on your
+program:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">valgrind</span> <span class="o">--</span><span class="n">leak</span><span class="o">-</span><span class="n">check</span><span class="o">=</span><span class="n">full</span> <span class="o">--</span><span class="n">show</span><span class="o">-</span><span class="n">leak</span><span class="o">-</span><span class="n">kinds</span><span class="o">=</span><span class="n">all</span> <span class="n">myprogram</span> <span class="n">arg1</span> <span class="n">arg2</span>
+</code></pre></div></div>
+<p>Arguments are optional and the default tool that will run is Memcheck.
+The output will be presented in the form: the number of allocations,
+frees, and errors. Suppose we have a simple program like this:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>
+<span class="kt">void</span> <span class="nf">dummy_function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">x</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="n">x</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        <span class="c1">// error 1: Out of bounds write, as you can see here we write to an out of bound memory address.</span>
+<span class="p">}</span>                    <span class="c1">// error 2: Memory Leak, x is allocated at function exit.</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">dummy_function</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>This program compiles and runs with no errors. Let’s see what Valgrind
+will output.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">Memcheck</span><span class="p">,</span> <span class="n">a</span> <span class="n">memory</span> <span class="n">error</span> <span class="n">detector</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">2002</span><span class="o">-</span><span class="mi">2015</span><span class="p">,</span> <span class="n">and</span> <span class="n">GNU</span> <span class="n">GPL</span><span class="err">'</span><span class="n">d</span><span class="p">,</span> <span class="n">by</span> <span class="n">Julian</span> <span class="n">Seward</span> <span class="n">et</span> <span class="n">al</span><span class="p">.</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">Using</span> <span class="n">Valgrind</span><span class="o">-</span><span class="mi">3</span><span class="p">.</span><span class="mi">11</span><span class="p">.</span><span class="mi">0</span> <span class="n">and</span> <span class="n">LibVEX</span><span class="p">;</span> <span class="n">rerun</span> <span class="n">with</span> <span class="o">-</span><span class="n">h</span> <span class="k">for</span> <span class="n">copyright</span> <span class="n">info</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">Command</span><span class="o">:</span> <span class="p">.</span><span class="o">/</span><span class="n">a</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">Invalid</span> <span class="n">write</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">4</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>    <span class="n">at</span> <span class="mh">0x400544</span><span class="o">:</span> <span class="n">dummy_function</span> <span class="p">(</span><span class="n">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">rafi</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">exocpp</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>    <span class="n">by</span> <span class="mh">0x40055A</span><span class="o">:</span> <span class="n">main</span> <span class="p">(</span><span class="n">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">rafi</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">exocpp</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>  <span class="n">Address</span> <span class="mh">0x5203068</span> <span class="n">is</span> <span class="mi">0</span> <span class="n">bytes</span> <span class="n">after</span> <span class="n">a</span> <span class="n">block</span> <span class="n">of</span> <span class="n">size</span> <span class="mi">40</span> <span class="n">alloc</span><span class="err">'</span><span class="n">d</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>    <span class="n">at</span> <span class="mh">0x4C2DB8F</span><span class="o">:</span> <span class="n">malloc</span> <span class="p">(</span><span class="n">in</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">valgrind</span><span class="o">/</span><span class="n">vgpreload_memcheck</span><span class="o">-</span><span class="n">amd64</span><span class="o">-</span><span class="n">linux</span><span class="p">.</span><span class="n">so</span><span class="p">)</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>    <span class="n">by</span> <span class="mh">0x400537</span><span class="o">:</span> <span class="n">dummy_function</span> <span class="p">(</span><span class="n">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">rafi</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">exocpp</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>    <span class="n">by</span> <span class="mh">0x40055A</span><span class="o">:</span> <span class="n">main</span> <span class="p">(</span><span class="n">in</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">rafi</span><span class="o">/</span><span class="n">projects</span><span class="o">/</span><span class="n">exocpp</span><span class="o">/</span><span class="n">a</span><span class="p">)</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">HEAP</span> <span class="n">SUMMARY</span><span class="o">:</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>     <span class="n">in</span> <span class="n">use</span> <span class="n">at</span> <span class="n">exit</span><span class="o">:</span> <span class="mi">40</span> <span class="n">bytes</span> <span class="n">in</span> <span class="mi">1</span> <span class="n">blocks</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>   <span class="n">total</span> <span class="n">heap</span> <span class="n">usage</span><span class="o">:</span> <span class="mi">1</span> <span class="n">allocs</span><span class="p">,</span> <span class="mi">0</span> <span class="n">frees</span><span class="p">,</span> <span class="mi">40</span> <span class="n">bytes</span> <span class="n">allocated</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">LEAK</span> <span class="n">SUMMARY</span><span class="o">:</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>    <span class="n">definitely</span> <span class="n">lost</span><span class="o">:</span> <span class="mi">40</span> <span class="n">bytes</span> <span class="n">in</span> <span class="mi">1</span> <span class="n">blocks</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>    <span class="n">indirectly</span> <span class="n">lost</span><span class="o">:</span> <span class="mi">0</span> <span class="n">bytes</span> <span class="n">in</span> <span class="mi">0</span> <span class="n">blocks</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>      <span class="n">possibly</span> <span class="n">lost</span><span class="o">:</span> <span class="mi">0</span> <span class="n">bytes</span> <span class="n">in</span> <span class="mi">0</span> <span class="n">blocks</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>    <span class="n">still</span> <span class="n">reachable</span><span class="o">:</span> <span class="mi">0</span> <span class="n">bytes</span> <span class="n">in</span> <span class="mi">0</span> <span class="n">blocks</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>         <span class="n">suppressed</span><span class="o">:</span> <span class="mi">0</span> <span class="n">bytes</span> <span class="n">in</span> <span class="mi">0</span> <span class="n">blocks</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">Rerun</span> <span class="n">with</span> <span class="o">--</span><span class="n">leak</span><span class="o">-</span><span class="n">check</span><span class="o">=</span><span class="n">full</span> <span class="n">to</span> <span class="n">see</span> <span class="n">details</span> <span class="n">of</span> <span class="n">leaked</span> <span class="n">memory</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">For</span> <span class="n">counts</span> <span class="n">of</span> <span class="n">detected</span> <span class="n">and</span> <span class="n">suppressed</span> <span class="n">errors</span><span class="p">,</span> <span class="n">rerun</span> <span class="n">with</span><span class="o">:</span> <span class="o">-</span><span class="n">v</span>
+<span class="o">==</span><span class="mi">29515</span><span class="o">==</span> <span class="n">ERROR</span> <span class="n">SUMMARY</span><span class="o">:</span> <span class="mi">1</span> <span class="n">errors</span> <span class="n">from</span> <span class="mi">1</span> <span class="n">contexts</span> <span class="p">(</span><span class="n">suppressed</span><span class="o">:</span> <span class="mi">0</span> <span class="n">from</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>Invalid write</strong>: It detected our heap block overrun, writing outside
+of an allocated block.</p>
+<p><strong>Definitely lost</strong>: Memory leak — you probably forgot to free a memory
+block.</p>
+<p>Valgrind is a effective tool to check for errors at runtime. C is
+special when it comes to such behavior, so after compiling your program
+you can use Valgrind to fix errors that your compiler may miss and that
+usually happens when your program is running.</p>
+<p>For more information, you can refer to the manual (“4. Memcheck: A
+Memory Error Detector,” <a href="#ref-valgrind" class="fancy-link wiki-link">#ref-valgrind</a>)</p>
+<h3 id="tsan" class="title-text">TSAN</h3>
+<p>ThreadSanitizer is a tool from Google, built into clang and gcc, to help
+you detect race conditions in your code (“ThreadSanitizerCppManual”
+<a href="#ref-threadsanitizercppmanual_2018" class="fancy-link wiki-link">#ref-threadsanitizercppmanual_2018</a>).
+Note, that running with tsan will slow your code down a bit. Consider
+the following code.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;pthread.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">int</span> <span class="n">global</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="nf">Thread1</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">global</span><span class="o">++</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">pthread_t</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+    <span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">Thread1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+    <span class="n">global</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="n">pthread_join</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// compile with gcc -fsanitize=thread -pie -fPIC -ltsan -g simple_race.c</span>
+</code></pre></div></div>
+<p>We can see that there is a race condition on the variable <code class="language-plaintext highlighter-rouge">global</code>. Both
+the main thread and created thread will try to change the value at the
+same time. But, does ThreadSantizer catch it?</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./a.out
+<span class="o">==================</span>
+WARNING: ThreadSanitizer: data race <span class="o">(</span><span class="nv">pid</span><span class="o">=</span>28888<span class="o">)</span>
+  Read of size 4 at 0x7f73ed91c078 by thread T1:
+    <span class="c">#0 Thread1 /home/zmick2/simple_race.c:7 (exe+0x000000000a50)</span>
+    <span class="c">#1  :0 (libtsan.so.0+0x00000001b459)</span>
+
+  Previous write of size 4 at 0x7f73ed91c078 by main thread:
+    <span class="c">#0 main /home/zmick2/simple_race.c:14 (exe+0x000000000ac8)</span>
+
+  Thread T1 <span class="o">(</span><span class="nv">tid</span><span class="o">=</span>28889, running<span class="o">)</span> created by main thread at:
+    <span class="c">#0  :0 (libtsan.so.0+0x00000001f6ab)</span>
+    <span class="c">#1 main /home/zmick2/simple_race.c:13 (exe+0x000000000ab8)</span>
+
+SUMMARY: ThreadSanitizer: data race /home/zmick2/simple_race.c:7 Thread1
+<span class="o">==================</span>
+ThreadSanitizer: reported 1 warnings
+</code></pre></div></div>
+<p>If we compiled with the debug flag, then it would give us the variable
+name as well.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="gdb" class="title-text">GDB<a class="anchor title-text" href="#gdb"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>GDB is short for the GNU Debugger. GDB is a program that helps you track
+down errors by interactively debugging them (“GDB: The Gnu Project
+Debugger” <a href="#ref-gdb" class="fancy-link wiki-link">#ref-gdb</a>). It can start and stop your
+program, look around, and put in ad hoc constraints and checks. Here are
+a few examples.</p>
+<div class="pad"><div class="card">
+<h5 id="setting-breakpoints-programmatically">Setting breakpoints programmatically</h5>
+
+<p>A breakpoint is a line of code where you want the execution to stop and
+give control back to the debugger. A useful trick when debugging complex
+C programs with GDB is setting breakpoints in the source code.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+    <span class="n">asm</span><span class="p">(</span><span class="s">"int $3"</span><span class="p">);</span> <span class="c1">// set a breakpoint here</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gcc main.c <span class="nt">-g</span> <span class="nt">-o</span> main
+<span class="nv">$ </span>gdb <span class="nt">--args</span> ./main
+<span class="o">(</span>gdb<span class="o">)</span> r
+<span class="o">[</span>...]
+Program received signal SIGTRAP, Trace/breakpoint trap.
+main <span class="o">()</span> at main.c:6
+6     val <span class="o">=</span> 7<span class="p">;</span>
+<span class="o">(</span>gdb<span class="o">)</span> p val
+<span class="nv">$1</span> <span class="o">=</span> 42
+</code></pre></div></div>
+
+<p>You can also set breakpoints programmatically. Assume that we have no
+optimization and the line numbers are as follows</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. int main<span class="o">()</span> <span class="o">{</span>
+2.     int val <span class="o">=</span> 1<span class="p">;</span>
+3.     val <span class="o">=</span> 42<span class="p">;</span>
+4.     val <span class="o">=</span> 7<span class="p">;</span>
+5. <span class="o">}</span>
+</code></pre></div></div>
+
+<p>We can now set the breakpoint before the program starts.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gcc main.c <span class="nt">-g</span> <span class="nt">-o</span> main
+<span class="nv">$ </span>gdb <span class="nt">--args</span> ./main
+<span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break </span>main.c:4
+<span class="o">[</span>...]
+<span class="o">(</span>gdb<span class="o">)</span> p val
+<span class="nv">$1</span> <span class="o">=</span> 42
+</code></pre></div></div>
+
+</div></div>
+<div class="pad"><div class="card">
+<h5 id="checking-memory-content">Checking memory content</h5>
+
+<p>We can also use gdb to check the content of different pieces of memory.
+For example,</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">bad_string</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">'C'</span><span class="p">,</span> <span class="sc">'a'</span><span class="p">,</span> <span class="sc">'t'</span><span class="p">};</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">bad_string</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Compiled we get</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gcc main.c <span class="nt">-g</span> <span class="nt">-o</span> main <span class="o">&amp;&amp;</span> ./main
+<span class="nv">$ </span>Cat ZVQ� <span class="err">$</span>
+</code></pre></div></div>
+
+<p>We can now use gdb to look at specific bytes of the string and reason
+about when the program should’ve stopped running</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>gdb<span class="o">)</span> l
+1 <span class="c">#include &lt;stdio.h&gt;</span>
+2 int main<span class="o">()</span> <span class="o">{</span>
+3     char bad_string[3] <span class="o">=</span> <span class="o">{</span><span class="s1">'C'</span>, <span class="s1">'a'</span>, <span class="s1">'t'</span><span class="o">}</span><span class="p">;</span>
+4     <span class="nb">printf</span><span class="o">(</span><span class="s2">"%s"</span>, bad_string<span class="o">)</span><span class="p">;</span>
+5 <span class="o">}</span>
+<span class="o">(</span>gdb<span class="o">)</span> b 4
+Breakpoint 1 at 0x100000f57: file main.c, line 4.
+<span class="o">(</span>gdb<span class="o">)</span> r
+<span class="o">[</span>...]
+Breakpoint 1, main <span class="o">()</span> at main.c:4
+4     <span class="nb">printf</span><span class="o">(</span><span class="s2">"%s"</span>, bad_string<span class="o">)</span><span class="p">;</span>
+<span class="o">(</span>gdb<span class="o">)</span> x/16xb bad_string
+0x7fff5fbff9cd: 0x63  0x61  0x74  0xe0  0xf9  0xbf  0x5f  0xff
+0x7fff5fbff9d5: 0x7f  0x00  0x00  0xfd  0xb5  0x23  0x89  0xff
+<span class="o">(</span>gdb<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Here, by using the <code class="language-plaintext highlighter-rouge">x</code> command with parameters <code class="language-plaintext highlighter-rouge">16xb</code>, we can see that
+starting at memory address <code class="language-plaintext highlighter-rouge">0x7fff5fbff9c</code> (value of <code class="language-plaintext highlighter-rouge">bad_string</code>),
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> would actually see the following sequence of bytes as a string
+because we provided a malformed string without a null terminator.</p>
+
+<h3 id="involved-gdb-example" class="title-text">Involved gdb example</h3>
+
+<p>Here is how one of your TAs would go through and debug a simple program
+that is going wrong. First, the source code of the program. If you can
+see the error immediately, please bear with us.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="kt">double</span> <span class="nf">convert_to_radians</span><span class="p">(</span><span class="kt">int</span> <span class="n">deg</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">deg</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">deg</span> <span class="o">&gt;</span> <span class="mi">360</span><span class="p">;</span> <span class="o">++</span><span class="n">deg</span><span class="p">){</span>
+        <span class="kt">double</span> <span class="n">radians</span> <span class="o">=</span> <span class="n">convert_to_radians</span><span class="p">(</span><span class="n">deg</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">"%d. %f</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">deg</span><span class="p">,</span> <span class="n">radians</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">convert_to_radians</span><span class="p">(</span><span class="kt">int</span> <span class="n">deg</span><span class="p">){</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="mi">31415</span> <span class="o">/</span> <span class="mi">1000</span> <span class="p">)</span> <span class="o">*</span> <span class="n">deg</span> <span class="o">/</span> <span class="mi">180</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>How can we use gdb to debug? First we ought to load GDB.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gdb <span class="nt">--args</span> ./main
+<span class="o">(</span>gdb<span class="o">)</span> layout src<span class="p">;</span> <span class="c"># If you want a GUI type</span>
+<span class="o">(</span>gdb<span class="o">)</span> run
+<span class="o">(</span>gdb<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Want to take a look at the source?</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>gdb<span class="o">)</span> l
+1   <span class="c">#include &lt;stdio.h&gt;</span>
+2   
+3   double convert_to_radians<span class="o">(</span>int deg<span class="o">)</span><span class="p">;</span>
+4   
+5   int main<span class="o">(){</span>
+6       <span class="k">for</span> <span class="o">(</span>int deg <span class="o">=</span> 0<span class="p">;</span> deg <span class="o">&gt;</span> 360<span class="p">;</span> ++deg<span class="o">){</span>
+7           double radians <span class="o">=</span> convert_to_radians<span class="o">(</span>deg<span class="o">)</span><span class="p">;</span>
+8           <span class="nb">printf</span><span class="o">(</span><span class="s2">"%d. %f</span><span class="se">\n</span><span class="s2">"</span>, deg, radians<span class="o">)</span><span class="p">;</span>
+9       <span class="o">}</span>
+10      <span class="k">return </span>0<span class="p">;</span>
+<span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break </span>7 <span class="c"># break &lt;file&gt;:line or break &lt;file&gt;:function</span>
+<span class="o">(</span>gdb<span class="o">)</span> run
+<span class="o">(</span>gdb<span class="o">)</span>
+</code></pre></div></div>
+
+<p>From running the code, the breakpoint didn’t even trigger, meaning the
+code never got to that point. That’s because of the comparison! Okay,
+flip the sign it should work now right?</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>gdb<span class="o">)</span> run
+350. 60.000000
+351. 60.000000
+352. 60.000000
+353. 60.000000
+354. 60.000000
+355. 61.000000
+356. 61.000000
+357. 61.000000
+358. 61.000000
+359. 61.000000
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>gdb<span class="o">)</span> <span class="nb">break </span>14 <span class="k">if </span>deg <span class="o">==</span> 359 <span class="c"># Let's check the last iteration only</span>
+<span class="o">(</span>gdb<span class="o">)</span> run
+...
+<span class="o">(</span>gdb<span class="o">)</span> print/x deg <span class="c"># print the hex value of degree</span>
+<span class="nv">$1</span> <span class="o">=</span> 0x167
+<span class="o">(</span>gdb<span class="o">)</span> print <span class="o">(</span>31415/1000<span class="o">)</span>
+<span class="nv">$2</span> <span class="o">=</span> 0x31
+<span class="o">(</span>gdb<span class="o">)</span> print <span class="o">(</span>31415/1000.0<span class="o">)</span>
+<span class="nv">$3</span> <span class="o">=</span> 201.749
+<span class="o">(</span>gdb<span class="o">)</span> print <span class="o">(</span>31415.0/10000.0<span class="o">)</span>
+<span class="nv">$4</span> <span class="o">=</span> 3.1414999999999999
+</code></pre></div></div>
+
+<p>That was only the bare minimum, though most of you will get by with
+that. There are a whole load more resources on the web, here are a few
+specific ones that can help you get
+    started.</p>
+
+<ol>
+  <li>
+    <p><a href="http://www.cs.cmu.edu/~gilpin/tutorial/" class="fancy-link wiki-link">http://www.cs.cmu.edu/~gilpin/tutorial/</a></p>
+  </li>
+  <li>
+    <p><a href="https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html" class="fancy-link wiki-link">https://ftp.gnu.org/old-gnu/Manuals/gdb/html_node/gdb_toc.html</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.youtube.com/watch?v=PorfLSr3DDI" class="fancy-link wiki-link">https://www.youtube.com/watch?v=PorfLSr3DDI</a></p>
+  </li>
+</ol>
+
+<h3 id="shell" class="title-text">Shell</h3>
+
+<p>What do you actually use to run your program? A shell! A shell is a
+programming language that is running inside your terminal. A terminal is
+merely a window to input commands. Now, on POSIX we usually have one
+shell called <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/sh.1p.html" class="fancy-link">sh</a></code> that is linked to a POSIX compliant shell called
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dash.1.html" class="fancy-link">dash</a></code>. Most of the time, you use a shell called <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/bash.1.html" class="fancy-link">bash</a></code> that is somewhat
+POSIX compliant but has some nifty built-in features. If you want to be
+even more advanced, <code class="language-plaintext highlighter-rouge">zsh</code> has some more powerful features like tab
+complete on programs and fuzzy patterns.</p>
+
+<h3 id="undefined-behavior-sanitizer" class="title-text">Undefined Behavior Sanitizer</h3>
+
+<p>The undefined behavior sanitizer is a wonderful tool provided by the
+llvm project. It allows you to compile code with a runtime checker to
+make sure that you don’t do undefined behavior for various categories.
+We will try to include it into our projects, but requires support form
+all the external libraries that we use so we may not get around to all
+of them.
+<a href="https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html" class="fancy-link wiki-link">https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html</a></p>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="undefined-behavior---why-we-cant-solve-it-in-general">Undefined behavior - why we can’t solve it in general</h4>
+
+<p>Also please please read Chris Lattner’s 3 Part blog post on undefined
+behavior. It can shed light on debug builds and the mystery of compiler
+optimization.</p>
+
+<p><a href="http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html" class="fancy-link wiki-link">http://blog.llvm.org/2011/05/what-every-c-programmer-should-know.html</a></p>
+
+<h3 id="clang-static-build-tools" class="title-text">Clang Static Build Tools</h3>
+
+<p>Clang provides a great drop-in replacement tools for compiling programs.
+If you want to see if there is an error that may cause a race condition,
+casting error, etc, all you need to do is the following.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>scan-build make
+</code></pre></div></div>
+
+<p>And in addition to the make output, you will get static build warnings.</p>
+
+<h3 id="strace-and-ltrace" class="title-text">strace and ltrace</h3>
+
+<p>strace and ltrace are two programs that trace the system calls and
+library calls, respectively, of a running program or command. These may
+be missing on your system, so to install, run the following:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>strace ltrace
+</code></pre></div></div>
+
+<p>Debugging with ltrace can be as simple as figuring out what was the
+return call of the last library call that failed.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">FILE</span> <span class="o">*</span><span class="n">fp</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"I don't exist"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s">"a"</span><span class="p">);</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> ltrace ./a.out
+ __libc_start_main<span class="o">(</span>0x8048454, 1, 0xbfc19db4, 0x80484c0, 0x8048530 &lt;unfinished ...&gt;
+ fopen<span class="o">(</span><span class="s2">"I don't exist"</span>, <span class="s2">"r"</span><span class="o">)</span>                          <span class="o">=</span> 0x0
+ fwrite<span class="o">(</span><span class="s2">"Invalid Write</span><span class="se">\n</span><span class="s2">"</span>, 1, 14, 0x0 &lt;unfinished ...&gt;
+ <span class="nt">---</span> SIGSEGV <span class="o">(</span>Segmentation fault<span class="o">)</span> <span class="nt">---</span>
+ +++ killed by SIGSEGV +++
+</code></pre></div></div>
+
+<p>ltrace output can clue you in to weird things your program is doing
+live. Unfortunately, ltrace can’t be used to inject faults, meaning that
+ltrace can tell you what is happening, but it can’t tamper with what is
+already happening.</p>
+
+<p>strace on the other hand could modify your program. Debugging with
+strace is amazing. The basic usage is running strace with a program, and
+it’ll get you a complete list of system call parameters.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>strace <span class="nb">head </span>README.md
+execve<span class="o">(</span><span class="s2">"/usr/bin/head"</span>, <span class="o">[</span><span class="s2">"head"</span>, <span class="s2">"README.md"</span><span class="o">]</span>, 0x7ffff28c8fa8 /<span class="k">*</span> 60 vars <span class="k">*</span>/<span class="o">)</span> <span class="o">=</span> 0
+brk<span class="o">(</span>NULL<span class="o">)</span>                               <span class="o">=</span> 0x7ffff5719000
+access<span class="o">(</span><span class="s2">"/etc/ld.so.nohwcap"</span>, F_OK<span class="o">)</span>      <span class="o">=</span> <span class="nt">-1</span> ENOENT <span class="o">(</span>No such file or directory<span class="o">)</span>
+access<span class="o">(</span><span class="s2">"/etc/ld.so.preload"</span>, R_OK<span class="o">)</span>      <span class="o">=</span> <span class="nt">-1</span> ENOENT <span class="o">(</span>No such file or directory<span class="o">)</span>
+openat<span class="o">(</span>AT_FDCWD, <span class="s2">"/etc/ld.so.cache"</span>, O_RDONLY|O_CLOEXEC<span class="o">)</span> <span class="o">=</span> 3
+fstat<span class="o">(</span>3, <span class="o">{</span><span class="nv">st_mode</span><span class="o">=</span>S_IFREG|0644, <span class="nv">st_size</span><span class="o">=</span>32804, ...<span class="o">})</span> <span class="o">=</span> 0
+...
+</code></pre></div></div>
+
+<p>If the output is too verbose, you can use trace= with a command
+delimited list of syscalls to filter all but those calls.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>strace <span class="nt">-e</span> <span class="nv">trace</span><span class="o">=</span><span class="nb">read</span>,write <span class="nb">head </span>README.md
+<span class="nb">read</span><span class="o">(</span>3, <span class="s2">"</span><span class="se">\1</span><span class="s2">77ELF</span><span class="se">\2\1\1\3\0\0\0\0\0\0\0\0\3\0</span><span class="s2">&gt;</span><span class="se">\0\1\0\0\0\2</span><span class="s2">60</span><span class="se">\3</span><span class="s2">4</span><span class="se">\2\0\0\0\0\0</span><span class="s2">"</span>..., 832<span class="o">)</span> <span class="o">=</span> 832
+<span class="nb">read</span><span class="o">(</span>3, <span class="s2">"# Locale name alias data base.</span><span class="se">\n</span><span class="s2">#"</span>..., 4096<span class="o">)</span> <span class="o">=</span> 2995
+<span class="nb">read</span><span class="o">(</span>3, <span class="s2">""</span>, 4096<span class="o">)</span>                       <span class="o">=</span> 0
+<span class="nb">read</span><span class="o">(</span>3, <span class="s2">"# C Datastructures</span><span class="se">\n\n</span><span class="s2">[![Build Sta"</span>..., 8192<span class="o">)</span> <span class="o">=</span> 1250
+write<span class="o">(</span>1, <span class="s2">"# C Datastructures</span><span class="se">\n</span><span class="s2">"</span>, 19# C Datastructures
+</code></pre></div></div>
+
+<p>You can also trace files or targets.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>strace <span class="nt">-e</span> <span class="nv">trace</span><span class="o">=</span><span class="nb">read</span>,write <span class="nt">-P</span> README.md <span class="nb">head </span>README.md
+strace: Requested path <span class="s1">'README.md'</span> resolved into <span class="s1">'/mnt/c/Users/user/personal/libds/README.md'</span>
+<span class="nb">read</span><span class="o">(</span>3, <span class="s2">"# C Datastructures</span><span class="se">\n\n</span><span class="s2">[![Build Sta"</span>..., 8192<span class="o">)</span> <span class="o">=</span> 1250
+</code></pre></div></div>
+
+<p>Newer versions of strace can actually inject faults into your program.
+This is useful when you want to occasionally make reads and writes fail
+for example in a networking application, which your program should
+handle. The problem is as of early 2019, that version is missing from
+Ubuntu repositories. Meaning that you’ll have to install it from the
+source.</p>
+
+<h3 id="printfs" class="title-text">printfs</h3>
+
+<p>When all else fails, print! Each of your functions should have an idea
+of what it is going to do. You want to test that each of your functions
+is doing what it set out to do and see exactly where your code breaks.
+In the case with race conditions, tsan may be able to help, but having
+each thread print out data at certain times could help you identify the
+race condition.</p>
+
+<p>To make printfs useful, try to have a macro that fills in the context by
+which the printf was called – a log statement if you will. A simple
+useful but untested log statement could be as follows. Try to make a
+test and figure out something that is going wrong, then log the state of
+your variables.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="cp">#include</span> <span class="cpf">&lt;execinfo.h&gt;</span><span class="cp">
+</span>  <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>  <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span>  <span class="cp">#include</span> <span class="cpf">&lt;stdarg.h&gt;</span><span class="cp">
+</span>  <span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+</span>
+  <span class="c1">// bt is print backtrace</span>
+  <span class="k">const</span> <span class="kt">int</span> <span class="n">num_stack</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="nf">__log</span><span class="p">(</span><span class="kt">int</span> <span class="n">line</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">file</span><span class="p">,</span> <span class="kt">int</span> <span class="n">bt</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">fmt</span><span class="p">,</span> <span class="p">...)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">bt</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kt">void</span> <span class="o">*</span><span class="n">raw_trace</span><span class="p">[</span><span class="n">num_stack</span><span class="p">];</span>
+      <span class="kt">size_t</span> <span class="n">size</span> <span class="o">=</span> <span class="n">backtrace</span><span class="p">(</span><span class="n">raw_trace</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">raw_trace</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">raw_trace</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+      <span class="kt">char</span> <span class="o">**</span><span class="n">syms</span> <span class="o">=</span> <span class="n">backtrace_symbols</span><span class="p">(</span><span class="n">raw_trace</span><span class="p">,</span> <span class="n">size</span><span class="p">);</span>
+
+      <span class="k">for</span><span class="p">(</span><span class="kt">ssize_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"|%s:%d| %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">syms</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+      <span class="p">}</span>
+      <span class="n">free</span><span class="p">(</span><span class="n">syms</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"|%s:%d| "</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">);</span>
+    <span class="kt">va_list</span> <span class="n">args</span><span class="p">;</span>
+    <span class="n">va_start</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">fmt</span><span class="p">);</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">vfprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+    <span class="n">va_end</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="cp">#ifdef DEBUG
+</span>  <span class="cp">#define log(...) __log(__LINE__, __FILE__, 0, __VA_ARGS__)
+</span>  <span class="cp">#define bt(...) __log(__LINE__, __FILE__, 1, __VA_ARGS__)
+</span>  <span class="cp">#else
+</span>  <span class="cp">#define log(...)
+</span>  <span class="cp">#define bt(...)
+</span>  <span class="cp">#endif
+</span>
+  <span class="c1">//Use as log(args like printf) or bt(args like printf) to either log or get backtrace</span>
+
+  <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">log</span><span class="p">(</span><span class="s">"Hello Log"</span><span class="p">);</span>
+    <span class="n">bt</span><span class="p">(</span><span class="s">"Hello Backtrace"</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>And then use as appropriately. Check out the compiling and linking
+section in the appendix if you have any questions on how a C program
+gets translated to machine
+code.</p>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="homework-0" class="title-text">Homework 0<a class="anchor title-text" href="#homework-0"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// First, can you guess which lyrics have been transformed into this C-like system code?</span>
+<span class="kt">char</span> <span class="n">q</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Do you wanna build a C99 program?"</span><span class="p">;</span>
+<span class="cp">#define or "go debugging with gdb?"
+</span><span class="k">static</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">or</span><span class="p">)</span> <span class="o">!=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">or</span><span class="p">);</span>
+<span class="kt">char</span><span class="o">*</span> <span class="n">ptr</span> <span class="o">=</span> <span class="s">"lathe"</span><span class="p">;</span>
+<span class="kt">size_t</span> <span class="n">come</span> <span class="o">=</span> <span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span><span class="s">"%s door"</span><span class="p">,</span> <span class="n">ptr</span><span class="o">+</span><span class="mi">2</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">away</span> <span class="o">=</span> <span class="o">!</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="o">*</span> <span class="s">""</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="o">*</span> <span class="n">shared</span> <span class="o">=</span> <span class="n">mmap</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">),</span> <span class="n">PROT_READ</span> <span class="o">|</span> <span class="n">PROT_WRITE</span><span class="p">,</span> <span class="n">MAP_SHARED</span> <span class="o">|</span> <span class="n">MAP_ANONYMOUS</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<span class="n">munmap</span><span class="p">(</span><span class="n">shared</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">));</span>
+
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fork</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">execlp</span><span class="p">(</span><span class="s">"man"</span><span class="p">,</span><span class="s">"man"</span><span class="p">,</span><span class="s">"-3"</span><span class="p">,</span><span class="s">"ftell"</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="mi">0</span><span class="p">);</span> <span class="n">perror</span><span class="p">(</span><span class="s">"failed"</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">fork</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">execlp</span><span class="p">(</span><span class="s">"make"</span><span class="p">,</span><span class="s">"make"</span><span class="p">,</span> <span class="s">"snowman"</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="mi">0</span><span class="p">);</span> <span class="n">execlp</span><span class="p">(</span><span class="s">"make"</span><span class="p">,</span><span class="s">"make"</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span><span class="mi">0</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div></div>
+<h3 id="so-you-want-to-master-system-programming-and-get-a-better-grade-than-b" class="title-text">So you want to master System Programming? And get a better grade than B?</h3>
+<pre><code class="language-C">int main(int argc, char** argv) {
+    puts("Great! We have plenty of useful resources for you, but it's up to you to");
+    puts(" be an active learner and learn how to solve problems and debug code.");
+    puts("Bring your near-completed answers the problems below");
+    puts(" to the first lab to show that you've been working on this.");
+    printf("A few \"don't knows\" or \"unsure\" is fine for lab 1.\n");
+    puts("Warning: you and your peers will work hard in this class.");
+    puts("This is not CS225; you will be pushed much harder to");
+    puts(" work things out on your own.");
+    fprintf(stdout,"This homework is a stepping stone to all future assignments.\n");
+    char p[] = "So, you will want to clear up any confusions or misconceptions.\n";
+    write(1, p, strlen(p) );
+    char buffer[1024];
+    sprintf(buffer,"For grading purposes, this homework 0 will be graded as part of your lab %d work.\n", 1);
+    write(1, buffer, strlen(buffer));
+    printf("Press Return to continue\n");
+    read(0, buffer, sizeof(buffer));
+    return 0;
+}
+</code></pre>
+<h3 id="watch-the-videos-and-write-up-your-answers-to-the-following-questions" class="title-text">Watch the videos and write up your answers to the following questions</h3>
+<p><strong>Important!</strong></p>
+<p>The virtual machine-in-your-browser and the videos you need for HW0 are
+here:</p>
+<p><a href="http://cs-education.github.io/sys/" class="fancy-link wiki-link">http://cs-education.github.io/sys/</a></p>
+<p>Questions? Comments? Use the current semester’s CS341 Edstem:
+<a href="https://edstem.org/us/courses/61021/discussion/" class="fancy-link wiki-link">https://edstem.org/us/courses/61021/discussion/</a></p>
+<p>The in-browser virtual machine runs entirely in JavaScript and is
+fastest in Chrome. Note the VM and any code you write is reset when you
+reload the page, <strong>so copy your code to a separate document.</strong> The
+post-video challenges are not part of homework 0, but you learn the most
+by doing rather than passively watching. You have some fun with each
+end-of-video challenge.</p>
+<p>HW0 questions are below. Copy your answers into a text document because
+you’ll need to submit them later in the course.</p>
+<h3 id="chapter-1" class="title-text">Chapter 1</h3>
+<p>In which our intrepid hero battles standard out, standard error, file
+descriptors and writing to files</p>
+<ol>
+  <li>
+    <p><strong>Hello, World! (system call style)</strong> Write a program that uses
+<code class="language-plaintext highlighter-rouge">write()</code> to print out “Hi! My name is &lt;Your Name&gt;”.</p>
+  </li>
+  <li>
+    <p><strong>Hello, Standard Error Stream!</strong> Write a function to print out a
+triangle of height <code class="language-plaintext highlighter-rouge">n</code> to standard error. Your function should have
+the signature <code class="language-plaintext highlighter-rouge">void write_triangle(int n)</code> and should use <code class="language-plaintext highlighter-rouge">write()</code>.
+The triangle should look like this, for n = 3:</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="o">*</span>
+<span class="o">**</span>
+<span class="o">***</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Writing to files</strong> Take your program from “Hello, World!” modify
+it write to a file called <code class="language-plaintext highlighter-rouge">hello_world.txt</code>. Make sure to use
+correct flags and a correct mode for <code class="language-plaintext highlighter-rouge">open()</code> (<code class="language-plaintext highlighter-rouge">man 2 open</code> is your
+friend).</p>
+  </li>
+  <li>
+    <p><strong>Not everything is a system call</strong> Take your program from “Writing
+to files” and replace <code class="language-plaintext highlighter-rouge">write()</code> with <code class="language-plaintext highlighter-rouge">printf()</code>. <em>Make sure to print
+to the file instead of standard out!</em></p>
+  </li>
+  <li>
+    <p>What are some differences between <code class="language-plaintext highlighter-rouge">write()</code> and <code class="language-plaintext highlighter-rouge">printf()</code>?</p>
+  </li>
+</ol>
+<h3 id="chapter-2" class="title-text">Chapter 2</h3>
+<p>Sizing up C types and their limits, <code class="language-plaintext highlighter-rouge">int</code> and <code class="language-plaintext highlighter-rouge">char</code> arrays, and
+incrementing pointers</p>
+<ol>
+  <li>
+    <p>How many bits are there in a byte?</p>
+  </li>
+  <li>
+    <p>How many bytes are there in a <code class="language-plaintext highlighter-rouge">char</code>?</p>
+  </li>
+  <li>
+    <p>How many bytes the following are on your machine? <code class="language-plaintext highlighter-rouge">int</code>, <code class="language-plaintext highlighter-rouge">double</code>,
+<code class="language-plaintext highlighter-rouge">float</code>, <code class="language-plaintext highlighter-rouge">long</code>, and <code class="language-plaintext highlighter-rouge">long long</code></p>
+  </li>
+  <li>
+    <p>On a machine with 8 byte integers, the declaration for the variable
+<code class="language-plaintext highlighter-rouge">data</code> is <code class="language-plaintext highlighter-rouge">int data[8]</code>. If the address of data is <code class="language-plaintext highlighter-rouge">0x7fbd9d40</code>,
+then what is the address of <code class="language-plaintext highlighter-rouge">data+2</code>?</p>
+  </li>
+  <li>
+    <p>What is <code class="language-plaintext highlighter-rouge">data[3]</code> equivalent to in C? Hint: what does C convert
+<code class="language-plaintext highlighter-rouge">data[3]</code> to before dereferencing the address? Remember, the type of
+a string constant <code class="language-plaintext highlighter-rouge">"abc"</code> is an array.</p>
+  </li>
+  <li>
+    <p>Why does this SEGFAULT?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">"hello"</span><span class="p">;</span>
+<span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="sc">'J'</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What is the value of the variable <code class="language-plaintext highlighter-rouge">str_size</code>?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">ssize_t</span> <span class="n">str_size</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="s">"Hello</span><span class="se">\0</span><span class="s">World"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What is the value of the variable <code class="language-plaintext highlighter-rouge">str_len</code></p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">ssize_t</span> <span class="n">str_len</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="s">"Hello</span><span class="se">\0</span><span class="s">World"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Give an example of X such that <code class="language-plaintext highlighter-rouge">sizeof(X)</code> is 3.</p>
+  </li>
+  <li>
+    <p>Give an example of Y such that <code class="language-plaintext highlighter-rouge">sizeof(Y)</code> might be 4 or 8 depending
+on the machine.</p>
+  </li>
+</ol>
+<h3 id="chapter-3" class="title-text">Chapter 3</h3>
+<p>Program arguments, environment variables, and working with character
+arrays (strings)</p>
+<ol>
+  <li>
+    <p>What are at least two ways to find the length of <code class="language-plaintext highlighter-rouge">argv</code>?</p>
+  </li>
+  <li>
+    <p>What does <code class="language-plaintext highlighter-rouge">argv[0]</code> represent?</p>
+  </li>
+  <li>
+    <p>Where are the pointers to environment variables stored (on the
+stack, the heap, somewhere else)?</p>
+  </li>
+  <li>
+    <p>On a machine where pointers are 8 bytes, and with the following
+code:</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>What are the values of <code class="language-plaintext highlighter-rouge">sizeof(ptr)</code> and <code class="language-plaintext highlighter-rouge">sizeof(array)</code>? Why?</p>
+  </li>
+  <li>
+    <p>What data structure manages the lifetime of automatic variables?</p>
+  </li>
+</ol>
+<h3 id="chapter-4" class="title-text">Chapter 4</h3>
+<p>Heap and stack memory, and working with structs</p>
+<ol>
+  <li>
+    <p>If I want to use data after the lifetime of the function it was
+created in ends, where should I put it? How do I put it there?</p>
+  </li>
+  <li>
+    <p>What are the differences between heap and stack memory?</p>
+  </li>
+  <li>
+    <p>Are there other kinds of memory in a process?</p>
+  </li>
+  <li>
+    <p>Fill in the blank: “In a good C program, for every malloc, there is
+a ___”.</p>
+  </li>
+  <li>
+    <p>What is one reason <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> can fail?</p>
+  </li>
+  <li>
+    <p>What are some differences between <code class="language-plaintext highlighter-rouge">time()</code> and <code class="language-plaintext highlighter-rouge">ctime()</code>?</p>
+  </li>
+  <li>
+    <p>What is wrong with this code snippet?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">free</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+<span class="n">free</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What is wrong with this code snippet?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">free</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>How can one avoid the previous two mistakes?</p>
+  </li>
+  <li>
+    <p>Create a <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/struct.3.html" class="fancy-link">struct</a></code> that represents a <code class="language-plaintext highlighter-rouge">Person</code>. Then make a <code class="language-plaintext highlighter-rouge">typedef</code>,
+so that <code class="language-plaintext highlighter-rouge">struct Person</code> can be replaced with a single word. A person
+should contain the following information: their name (a string),
+their age (an integer), and a list of their friends (stored as a
+pointer to an array of pointers to <code class="language-plaintext highlighter-rouge">Person</code>s).</p>
+  </li>
+  <li>
+    <p>Now, make two persons on the heap, “Agent Smith” and “Sonny Moore”,
+who are 128 and 256 years old respectively and are friends with each
+other. Create functions to create and destroy a Person (Person’s and
+their names should live on the heap).</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">create()</code> should take a name and age. The name should be copied
+onto the heap. Use malloc to reserve sufficient memory for everyone
+having up to ten friends. Be sure initialize all fields (why?).</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">destroy()</code> should free up both the memory of the person struct and
+all of its attributes that are stored on the heap. Destroying one
+person keeps other people in tact any other.</p>
+  </li>
+</ol>
+<h3 id="chapter-5" class="title-text">Chapter 5</h3>
+<p>Text input and output and parsing using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getchar.3p.html" class="fancy-link">getchar</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/gets.3p.html" class="fancy-link">gets</a></code>, and
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getline.3p.html" class="fancy-link">getline</a></code>.</p>
+<ol>
+  <li>
+    <p>What functions can be used for getting characters from <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdin.3p.html" class="fancy-link">stdin</a></code> and
+writing them to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdout.3p.html" class="fancy-link">stdout</a></code>?</p>
+  </li>
+  <li>
+    <p>Name one issue with <code class="language-plaintext highlighter-rouge">gets()</code>.</p>
+  </li>
+  <li>
+    <p>Write code that parses the string “Hello 5 World” and initializes 3
+variables to “Hello”, 5, and “World”.</p>
+  </li>
+  <li>
+    <p>What does one need to define before including <code class="language-plaintext highlighter-rouge">getline()</code>?</p>
+  </li>
+  <li>
+    <p>Write a C program to print out the content of a file line-by-line
+using <code class="language-plaintext highlighter-rouge">getline()</code>.</p>
+  </li>
+</ol>
+<h3 id="c-development" class="title-text">C Development</h3>
+<p>These are general tips for compiling and developing using a compiler and
+git. Some web searches will be useful here</p>
+<ol>
+  <li>
+    <p>What compiler flag is used to generate a debug build?</p>
+  </li>
+  <li>
+    <p>You fix a problem in the Makefile and type <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> again. Explain why
+this may be insufficient to generate a new build.</p>
+  </li>
+  <li>
+    <p>Are tabs or spaces used to indent the commands after the rule in a
+Makefile?</p>
+  </li>
+  <li>
+    <p>What does <code class="language-plaintext highlighter-rouge">git commit</code> do? What’s a <code class="language-plaintext highlighter-rouge">sha</code> in the context of git?</p>
+  </li>
+  <li>
+    <p>What does <code class="language-plaintext highlighter-rouge">git log</code> show you?</p>
+  </li>
+  <li>
+    <p>What does <code class="language-plaintext highlighter-rouge">git status</code> tell you and how would the contents of
+<code class="language-plaintext highlighter-rouge">.gitignore</code> change its output?</p>
+  </li>
+  <li>
+    <p>What does <code class="language-plaintext highlighter-rouge">git push</code> do? Why is it insufficient to commit with ` git
+commit -m ’fixed all bugs’  `?</p>
+  </li>
+  <li>
+    <p>What does a non-fast-forward error <code class="language-plaintext highlighter-rouge">git push</code> reject mean? What is
+the most common way of dealing with this?</p>
+  </li>
+</ol>
+<h3 id="optional-just-for-fun" class="title-text">Optional: Just for fun</h3>
+<ul>
+  <li>
+    <p>Convert a song lyrics into System Programming and C code covered in
+this wiki book and share on the class forum.</p>
+  </li>
+  <li>
+    <p>Find, in your opinion, the best and worst C code on the web and post
+the link to the class forum.</p>
+  </li>
+  <li>
+    <p>Write a short C program with a deliberate subtle C bug and post it
+on the class forum to see if others can spot your bug.</p>
+  </li>
+  <li>
+    <p>Do you have any cool/disastrous system programming bugs you’ve heard
+about? Feel free to share with your peers and the course staff on
+the class forum.</p>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="university-of-illinois-specific-guidelines" class="title-text">University of Illinois Specific Guidelines<a class="anchor title-text" href="#university-of-illinois-specific-guidelines"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="the-class-forum" class="title-text">The class forum</h3>
+<p>TAs and student assistants get a ton of questions. Some are
+well-researched, and some are not. This is a handy guide that’ll help
+you move away from the latter and towards the former. Oh, and did I
+mention that this is an easy way to score points with your internship
+managers? Ask yourself…</p>
+<ol>
+  <li>
+    <p>Am I running on my Virtual Machine?</p>
+  </li>
+  <li>
+    <p><strong>Did I check the man pages?</strong></p>
+  </li>
+  <li>
+    <p>Have I searched for similar questions/followups on the class forum?</p>
+  </li>
+  <li>
+    <p>Have I read the MP/Lab specification completely?</p>
+  </li>
+  <li>
+    <p>Have I watched all of the videos?</p>
+  </li>
+  <li>
+    <p>Did I Google the error message and a few permutations thereof if
+necessary? How about StackOverflow.</p>
+  </li>
+  <li>
+    <p>Did I try commenting out, printing, and/or stepping through parts of
+the code bit by bit to find out precisely where the error occurs?</p>
+  </li>
+  <li>
+    <p><strong>Did I commit my code to git in case the TAs need more context?</strong></p>
+  </li>
+  <li>
+    <p>Did I include the console/GDB/Valgrind output **AND** code
+surrounding the bug in my the class forum post?</p>
+  </li>
+  <li>
+    <p>Have I fixed other segmentation faults unrelated to the issue I’m
+having?</p>
+  </li>
+  <li>
+    <p>Am I following good programming practice? (i.e. encapsulation,
+functions to limit repetition, etc)</p>
+  </li>
+</ol>
+<p>The biggest tip that we can give you when asking a question on the class
+forum if you want a swift answer is to <strong>ask your question like you were
+trying to answer it</strong>. Like before you ask a question, try to answer it
+yourself. If you are thinking about posting</p>
+<blockquote>
+  <p>Hi, My code got a 50</p>
+</blockquote>
+<p>Sounds good and courteous, but course staff would much much prefer a
+post resembling the following</p>
+<blockquote>
+  <p>Hi, I recently failed test X, Y, Z which is about half the tests on
+this current assignment. I noticed that they all have something to do
+with networking and epoll, but couldn’t figure out what was linking
+them together, or I may be completely off track. So to test my idea, I
+tried spawning 1000 clients with various get and put requests and
+verifying the files matched their originals. I couldn’t get it to fail
+while running normally, the debug build, or valgrind or tsan. I have
+no warnings and none of the pre-syntax checks showed me anything.
+Could you tell me if my understanding of the failure is correct and
+what I could do to modify my tests to better reflect X, Y, Z? netid:
+bvenkat2</p>
+</blockquote>
+<p>You don’t need to be as courteous, though we’d appreciate it, this will
+get a faster response time hand over foot. If you were trying to answer
+this question, you’d have everything you need in the question body.</p>
+<div id="refs" class="references">
+
+<div id="ref-valgrind">
+
+“4. Memcheck: A Memory Error Detector.” n.d. *Valgrind*.
+<a href="http://valgrind.org/docs/manual/mc-manual.html" class="fancy-link wiki-link">http://valgrind.org/docs/manual/mc-manual.html</a>.
+
+</div>
+
+<div id="ref-cplusplus_assert">
+
+“Assert.” n.d. *Cplusplus.com*. cplusplus.com.
+<a href="http://www.cplusplus.com/reference/cassert/assert/" class="fancy-link wiki-link">http://www.cplusplus.com/reference/cassert/assert/</a>.
+
+</div>
+
+<div id="ref-redhat_hardware_int">
+
+“Chapter 3. Hardware Interrupts.” n.d. *Chapter 3. Hardware Interrupts*.
+Red Hat.
+<a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Reference_Guide/chap-Realtime_Reference_Guide-Hardware_interrupts.html" class="fancy-link wiki-link">https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Reference_Guide/chap-Realtime_Reference_Guide-Hardware_interrupts.html</a>.
+
+</div>
+
+<div id="ref-garg_2006">
+
+Garg, Manu. 2006. “Sysenter Based System Call Mechanism in Linux 2.6.”
+*Manu’s Public Articles and Projects*.
+<a href="http://articles.manugarg.com/systemcallinlinux2_6.html" class="fancy-link wiki-link">http://articles.manugarg.com/systemcallinlinux2_6.html</a>.
+
+</div>
+
+<div id="ref-gdb">
+
+“GDB: The Gnu Project Debugger.” 2019. *GDB: The GNU Project Debugger*.
+Free Software Foundation.
+<a href="https://www.gnu.org/software/gdb/" class="fancy-link wiki-link">https://www.gnu.org/software/gdb/</a>.
+
+</div>
+
+<div id="ref-guide2011intel">
+
+Guide, Part. 2011. “Intel 64 and Ia-32 Architectures Software
+Developer’s Manual.” *Volume 3B: System Programming Guide, Part* 2.
+
+</div>
+
+<div id="ref-intel2015improving">
+
+Intel, CAT. 2015. “Improving Real-Time Performance by Utilizing Cache
+Allocation Technology.” *Intel Corporation, April*.
+
+</div>
+
+<div id="ref-leroy_2017">
+
+Leroy, Xavier. 2017. “How I Found a Bug in Intel Skylake Processors.”
+*How I Found a Bug in Intel Skylake Processors*.
+<a href="http://gallium.inria.fr/blog/intel-skylake-bug/" class="fancy-link wiki-link">http://gallium.inria.fr/blog/intel-skylake-bug/</a>.
+
+</div>
+
+<div id="ref-levinthal2009performance">
+
+Levinthal, David. 2009. “Performance Analysis Guide for Intel Core I7
+Processor and Intel Xeon 5500 Processors.” *Intel Performance Analysis
+Guide* 30: 18.
+
+</div>
+
+<div id="ref-schweizer2015evaluating">
+
+Schweizer, Hermann, Maciej Besta, and Torsten Hoefler. 2015. “Evaluating
+the Cost of Atomic Operations on Modern Architectures.” In *2015
+International Conference on Parallel Architecture and Compilation
+(Pact)*, 445–56. IEEE.
+
+</div>
+
+<div id="ref-openbsd_ssh">
+
+“Ssh(1).” n.d. *OpenBSD Manual Pages*. OpenBSD.
+<a href="https://man.openbsd.org/ssh.1" class="fancy-link wiki-link">https://man.openbsd.org/ssh.1</a>.
+
+</div>
+
+<div id="ref-threadsanitizercppmanual_2018">
+
+“ThreadSanitizerCppManual.” 2018. *ThreadSanitizerCppManual*. Google.
+<a href="https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual" class="fancy-link wiki-link">https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual</a>.
+
+</div>
+
+<div id="ref-wiki:xxx">
+
+Wikibooks. 2018. “X86 Assembly — Wikibooks, the Free Textbook Project.”
+<a href="https://en.wikibooks.org/w/index.php?title=X86_Assembly&amp;oldid=3477563" class="fancy-link wiki-link">https://en.wikibooks.org/w/index.php?title=X86_Assembly&amp;oldid=3477563</a>.
+
+</div>
+
+</div>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Background.md";
+  </script>
+</body>
+
+</html>

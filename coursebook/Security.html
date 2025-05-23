@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Security</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Security" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Security
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#security" class="fancy-link wiki-link">Security</a>
+    <ul>
+      <li>
+<a href="#security-terminology-and-ethics" class="fancy-link wiki-link">Security Terminology and
+Ethics</a>
+        <ul>
+          <li><a href="#cia-triad" class="fancy-link wiki-link">CIA Triad</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#security-in-c-programs" class="fancy-link wiki-link">Security in C Programs</a>
+        <ul>
+          <li><a href="#stack-smashing" class="fancy-link wiki-link">Stack Smashing</a></li>
+          <li><a href="#buffer-overflow" class="fancy-link wiki-link">Buffer Overflow</a></li>
+          <li><a href="#out-of-order-instructions-spectre" class="fancy-link wiki-link">Out of order instructions &amp;
+Spectre</a></li>
+          <li><a href="#operating-systems-security" class="fancy-link wiki-link">Operating Systems Security</a></li>
+          <li><a href="#virtualization-security" class="fancy-link wiki-link">Virtualization Security</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#cyber-security" class="fancy-link wiki-link">Cyber Security</a>
+        <ul>
+          <li><a href="#security-at-the-tcp-level" class="fancy-link wiki-link">Security at the TCP Level</a></li>
+          <li><a href="#security-at-the-dns-level" class="fancy-link wiki-link">Security at the DNS Level</a></li>
+        </ul>
+      </li>
+      <li><a href="#topics" class="fancy-link wiki-link">Topics</a></li>
+      <li><a href="#review" class="fancy-link wiki-link">Review</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>Hackers Are Like Artists, Who Wake Up In A Good Mood &amp; Start
+Painting</strong> - <strong>Vladimir Putin</strong></p>
+
+<p>Computer security is the protection of hardware and software from
+unauthorized access or modification. Even if you don’t work directly in
+the computer security field, the concepts are important to learn because
+all systems will have attackers given enough time. Even though this is
+introduced as a different chapter, it is important to note that most of
+these concepts and code examples have already been introduced at
+different points in the course. We won’t go in depth about all of the
+common ways of attack and defense nor will we go into how to perform all
+of these attacks in an arbitrary system. Our goal is to introduce you to
+the field of making programs do what you want to do.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="security-terminology-and-ethics" class="title-text">Security Terminology and Ethics<a class="anchor title-text" href="#security-terminology-and-ethics"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>There is some terminology that needs to be explained to get someone who
+has little to no experience in computer security up to speed</p>
+<ol>
+  <li>
+    <p>An <strong>Attacker</strong> is typically the user who is trying to break into
+the system. Breaking into the system means performing an action that
+the developer of the system didn’t intend. It could also mean
+accessing a system you shouldn’t have access to.</p>
+  </li>
+  <li>
+    <p>A <strong>Defender</strong> is typically the user who is preventing the attacker
+from breaking into the system. This may be the developer of the
+system.</p>
+  </li>
+  <li>
+    <p>There are different types of attackers. There are <strong>white hat</strong>
+hackers who attempt to hack a defender with their consent. This is
+commonly a form of pre-emptive testing – in case a not-so-friendly
+attack comes along. The <strong>black hat</strong> hackers are hackers who hack
+without permission and the intent to use the information obtained
+for any purpose. Gray hat hacking differs because the hacker’s
+intent is to inform the defender of the vulnerability – though this
+can be hard to judge at times.</p>
+  </li>
+</ol>
+<p><strong>Danger Will Robinson</strong> Before we let you go much further, it is
+important that we talk about ethics. Before you skip over this section,
+know that your career quite literally can be terminated over an
+unethical decision that you might make. The computer fraud and security
+act is a broad, and arguably terrible law, that casts any non-authorized
+use of a ‘protected computer’ of a computer as a felony. Since most
+computers are involved in some interstate/international commerce (the
+internet) most computers fall under this category. It is important to
+think about your actions and have some ladder of accountability before
+executing any attack or defense. To be more concrete, make sure
+supervisors in your organization have given you their blessing before
+trying to execute an attack.</p>
+<p>First if at all possible, get written permission from one of your
+superiors. We do realize that this is a cop-out and this puts the blame
+up a level, but at the risk of sounding cynical organizations will often
+put blame on an individual employee to avoid damages TODO: <strong>Citation
+Needed</strong>. If not possible, try to go through the engineering steps</p>
+<ol>
+  <li>
+    <p>Figure out what the problem is that you are trying to solve. You
+can’t solve a problem that you don’t fully understand.</p>
+  </li>
+  <li>
+    <p>Determine whetheryou need to “hack” the system. A hack is defined
+generally as trying to use a system unintendedly. First, you should
+determine if your use is intended or unintended or somewhere in the
+middle – get a decision for them. If you can’t get that, make a
+reasonable judgement as to what the intended use.</p>
+  </li>
+  <li>
+    <p>Figure out a reasonable estimate of what the cost is to “hacking”
+the system. Get that reasonable estimate checked out with a few
+engineers so they can highlight things that you may have missed. Try
+to get someone to sign off on the plan.</p>
+  </li>
+  <li>
+    <p>Execute the plan with caution. If at any point something seems
+wrong, weigh the risks and execute the plan.</p>
+  </li>
+</ol>
+<p>If there isn’t a certain ethical guideline for the current application,
+then create some. This is often called a <code class="language-plaintext highlighter-rouge">policy vacuum</code>. This may seem
+like busy work and more on the “business side” than computer scientists
+are used to, but your career is at stake here. It is up to you as a
+computing professional to assess the risk and to decide whether to
+execute. Courts generally like sitting on precedent, but you can easily
+say that you aren’t a legal scholar. In lieu, you must be able to say
+that you reacted as a “reasonable” engineer would react.</p>
+<p>TODO: <strong>Link to some case studies of real engineers having to decide</strong></p>
+<h3 id="cia-triad" class="title-text">CIA Triad</h3>
+<p>There are three commonly accepted goals to help understand if a system
+is secure.</p>
+<ol>
+  <li>
+    <p>Information Confidentiality means that only authorized parties are
+allowed to see a piece of information</p>
+  </li>
+  <li>
+    <p>Information Integrity means that only authorized parties are allowed
+the modify a piece of information, regardless of whether they are
+allowed to see it. It ensures that information remains in complete
+during transit.</p>
+  </li>
+  <li>
+    <p>Information Availability means information, or a service, is
+available when it is needed.</p>
+  </li>
+  <li>
+    <p>The triad above forms the Confidentiality, Integrity, and
+Availability (CIA) triad, often authenticity is added as well.</p>
+  </li>
+</ol>
+<p>If any of these are broken, the security of a system (either a service
+or piece of information) has been compromised.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="security-in-c-programs" class="title-text">Security in C Programs<a class="anchor title-text" href="#security-in-c-programs"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="stack-smashing" class="title-text">Stack Smashing</h3>
+<p>Consider the following code snippet</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">greeting</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+  <span class="n">strcpy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">name</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Hello, %s!</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">){</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">greeting</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>There is no checking on the bounds of strcpy! This means that we could
+potentially pass in a large string and get the program to do something
+unintended, usually via replacing the return address of the function
+with the address of malicious code. Most strings will cause the program
+to exit with a segmentation fault</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./a.out john
+Hello, john!
+$ ./a.out JohnAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...
+Program received signal SIGSEGV, Segmentation fault.
+...
+</code></pre></div></div>
+<p>If we manipulate the bytes in certain ways and the program was compiled
+with the correct flags, we can actually get access to a shell! Consider
+if that file is owned by root, we put in some valid bytecode (binary
+instructions) as the string. What will happen is we’ll try to execute
+<code class="language-plaintext highlighter-rouge">execve(’/bin/sh’, ’/bin/sh’, NULL , NULL)</code> that is compiled to the
+bytecode of the operating system and pass it as part of our string. With
+some luck, we will get access to a root shell.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./a.out &lt;payload&gt;
+root#
+</code></pre></div></div>
+<p>The question arises, which parts of the triad does this break? Try to
+answer that question yourself. So how would we go about fixing this? We
+could ingrain into most programmers at the C level to use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strncpy.3p.html" class="fancy-link">strncpy</a></code> or
+<code class="language-plaintext highlighter-rouge">strlcpy</code> on OpenBSD systems. Turning on stack canaries as explained
+later will fix this issue as well.</p>
+<h3 id="buffer-overflow" class="title-text">Buffer Overflow</h3>
+<p>Most of you are already familiar with Buffer Overflows! A lot of time
+they are fairly tame, leading to simple program crashes or funny
+mistakes. Here is a complete example</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; cat main.c
+#include &lt;stdio.h&gt;
+
+int main() {
+    char out[10];
+    char in[10];
+    fscanf(stdin, "%s", in);
+    out[0] = 'a';
+    out[9] = '\0';
+    printf("%s\n", out);
+
+    return 0;
+}
+&gt; gcc main.c -fno-stack-protector # need the special flag otherwise won't work
+# Stack protectors are explained later.
+&gt; ./a.out
+hello
+a
+&gt; ./a.out
+hellloooooooo
+aoo
+&gt;
+</code></pre></div></div>
+<p>What happens here should be clear if you recall the c memory model. Out
+and in are both next to each other in memory. If you read in a string
+from standard input that overflows in, then you end up printing aoo. It
+gets a little more serious if the snippet starts out as</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">pass_hash</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+  <span class="kt">char</span> <span class="n">in</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+  <span class="n">read_user_password</span><span class="p">(</span><span class="n">pass_hash</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="out-of-order-instructions--spectre" class="title-text">Out of order instructions &amp; Spectre</h3>
+<p>Out of order execution is an amazing development that has been recently
+adopted by many hardware vendors (think 1990s) TODO: <strong>citation
+needed</strong>. Processors now instead of executing a sequence of instructions
+(let’s say assigning a variable and then another variable) execute
+instructions before the current one is done (Guide
+<a href="#ref-guide2011intel" class="fancy-link wiki-link">#ref-guide2011intel</a> P. 45). This is
+because modern processors spend a lot of time waiting for memory
+accesses and other I/O driven applications. This means that a processor,
+while it is waiting for an operation to complete, will execute the next
+few operations. If any of the operations would possibly alter the final
+result, there is a barrier, or if the re-ordering violates the data
+dependencies of the instructions, the processor keep the instructions in
+the stated order (Guide
+<a href="#ref-guide2011intel" class="fancy-link wiki-link">#ref-guide2011intel</a> P. 296).</p>
+<p>Naturally, this allowed CPUs to become more energy-efficient while
+executing more instructions in real-time and increased security risks
+from complex architectures. What system programmers are worried about is
+that operation with mutex locks among threads are out of order – meaning
+that a pure software implementation of a mutex will fail without copious
+memory barriers. Therefore, the programmer has to acknowledge that
+updates may be missed among a series of threads, given that there is no
+barrier, on modern processors.</p>
+<p>One of the most prominent bugs concerning this is Spectre (Kocher et al.
+<a href="#ref-kocher2018spectre" class="fancy-link wiki-link">#ref-kocher2018spectre</a>). Spectre is
+a bug where instructions that otherwise wouldn’t be executed are
+speculatively executed due to out-of-order instruction execution. The
+following snippet is a high-level proof of concept.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">calloc</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xCAFE</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// This will be in a register</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// This will be in main memory</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">,</span> <span class="o">--</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">val</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Let’s analyze this code. The first loop allocates 9 elements through a
+valid malloc. The last element is <code class="language-plaintext highlighter-rouge">0xCAFE</code>, meaning a dereference should
+result in a SEGFAULT. For the first 9 iterations, the branch is taken
+and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/val.1p.html" class="fancy-link">val</a></code> is assigned to a valid value. The interesting part happens in
+the last iteration. The resulting behavior of the program is to skip the
+last iteration. Therefore, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/val.1p.html" class="fancy-link">val</a></code> never gets assigned to the last value.</p>
+<p>But under the right compilation conditions and compiler flags, the
+instructions will be speculatively executed. The processor thinks that
+the branch will be taken, since it has been taken in the last 9
+iterations. As such, the processor will fetch those instructions. Due to
+out-of-order instruction execution, while the value of <em>i</em> is being
+fetched from memory, we have to force it not to be in a register. Then,
+the processor will try to dereference that address. This should result
+in a SEGFAULT. Since the address was never logically reached by the
+program, the result is discarded.</p>
+<p>Now here is the trick. Even though the value of the calculation would
+have resulted in a SEGFAULT, the bug doesn’t clear the cache that refers
+to the physical memory where 0xCAFE is located. This is an inexact
+explanation, but essentially how it works. Since it is still in the
+cache, if you again trick the processor to read form the cache using
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/val.1p.html" class="fancy-link">val</a></code> then you will read a memory value that you wouldn’t be able to
+read normally. This could include important information such as
+passwords, payment information, etc.</p>
+<h3 id="operating-systems-security" class="title-text">Operating Systems Security</h3>
+<ol>
+  <li>
+    <p>Permissions. In POSIX systems, we have permissions everywhere. There
+are directories that you can and can’t access, files that you can
+and can’t access. Each user account is given access to each file and
+directory through the read-write-execute (RWX) bits. The user gets
+matched with either the owner, the group, or ‘everyone else’, and
+their access to the file is limited using these bits. Note that
+permissions work slightly differently on directories compared to
+files.</p>
+  </li>
+  <li>
+    <p>Capabilities. In addition to permissions on files, each user has a
+certain set of permissions that they can do. For a full list, you
+can check capabilities(7). In short, allowing a capability allows a
+user to perform a set of actions. Some examples include controlling
+networking devices, creating special files, and peering into IPC or
+interprocess communication.</p>
+  </li>
+  <li>
+    <p>Address Space Layout Randomization (ASLR). ASLR causes the address
+spaces of important sections of a process, including the base
+address of the executable and the positions of the stack, heap and
+libraries, to start at randomized values, on every run. This is so
+that an attacker with a running executable has to randomly guess
+where sensitive information could be hidden. For example, an
+attacker may use this to easily perform a <code class="language-plaintext highlighter-rouge">return-to-libc</code> attack.</p>
+  </li>
+  <li>
+    <p>Stack Protectors. Let’s say you’ve programmed a buffer overflow as
+above. In most cases, what happens? Unless specifically turned off,
+the compiler will put in stack protectors or stack canaries. This is
+a value that resides in the stack and must remain constant for the
+duration of the function call. If that protector is overwritten at
+the end of the function call, the run time will abort and report to
+the user that stack smashing was detected.</p>
+  </li>
+  <li>
+    <p>Write xor Execute, also known as <code class="language-plaintext highlighter-rouge">Data Execution Prevention</code> (DEP).
+This is a protection that was covered in the IPC section that
+distinguishes code from data. A page can either be written to or
+executed but not both. This is to prevent buffer overflows where
+attackers write arbitrary code, often stored on the stack or heap,
+and execute with the user’s permissions.</p>
+  </li>
+  <li>
+    <p>Firewall. The Linux kernel provides the netfilter module as a way of
+deciding whetheran incoming connection should be allowed and various
+other restrictions on connections. This can help with a DDOS attack
+(explained later).</p>
+  </li>
+  <li>
+    <p>AppArmor. AppArmor is a suite of operating system tools at the
+userspace level to restrict applications to certain operations.</p>
+  </li>
+</ol>
+<p>OpenBSD is an arguably better system for security. It has many security
+oriented features. Some of these features have been touched upon
+earlier. An exhaustive list of features is at
+<a href="https://www.openbsd.org/innovations.html" class="fancy-link wiki-link">https://www.openbsd.org/innovations.html</a></p>
+<ol>
+  <li>
+    <p>pledge. Pledge is a powerful command that restricts system calls.
+This means if you have a simple program like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/cat.1p.html" class="fancy-link">cat</a></code> which only reads
+to and from files, one can reasonably restrict all network access,
+pipe access, and write access to files. This is known as the process
+of “hardening” an executable or system, giving the smallest amount
+of permissions to the least number of executables needed to run a
+system. Pledge is also useful in case one tries to perform an
+injection attack.</p>
+  </li>
+  <li>
+    <p>unveil. Unveil is a system call that restricts the access of a
+current program to a few directories. Those permissions apply to all
+forked programs as well. This means if you have a suspicious
+executable that you want to run whose description is “creates a new
+file and outputs random words” one could use this call to restrict
+access to a safe subdirectory and watch it receive the SIGKILL
+signal if it tries to access system files in the root directory, for
+example. This could be useful for your program as well. If you want
+to ensure that no user data is lost during an update (which is what
+happened with a Steam system update), then the system could only
+reveal the program’s installation directory. If an attacker manages
+to find an exploit in the executable, it can only compromise the
+installation directory.</p>
+  </li>
+  <li>
+    <p>sudo. Sudo is an openBSD project that runs everywhere! Before to
+run commands as root, one would have to drop to a root shell. Some
+times that would also mean giving users scary system capabilities.
+Sudo gives you access to perform commands as root for one-offs
+without giving a long list of capabilities to all of your users.</p>
+  </li>
+</ol>
+<h3 id="virtualization-security" class="title-text">Virtualization Security</h3>
+<p>Virtualization is the act of creating a virtual version of an
+environment for a program to run on. Though that definition might be
+bent a little with the advent of new-age bare metal Virtual Machines,
+the abstraction is still there. One can imagine a single Operating
+System per motherboard. Virtualization in the software sense is
+providing “virtual” motherboard features like USB ports or monitors that
+another program (the bridge) communicates with the actual hardware to
+perform a task. A simple example is running a virtual machine on your
+host desktop! One can spin up an entirely different operating system
+whose instructions are fed through another program and executed on the
+host system. There are many forms of virtualization that we use today.
+We will discuss two popular forms below. One form is virtual machines.
+These programs emulate <em>all</em> forms of motherboard peripherals to create
+a full machine. Another form is containers. Virtual machines are good
+but are often bulky and programs only need a certain level of
+protection. Containers are virtual machines that don’t emulate all
+motherboard peripherals and instead share with the host operating
+system, adding in additional layers of security.</p>
+<p>Now, you can’t have proper virtualization without security. One of the
+reasons to have virtualization is to ensure that the virtualized
+environment doesn’t maliciously leak back into the host environment. We
+say maliciously because there are intended ways of communication that we
+want to keep in check. Here are some simple examples of security
+provided through virtualization</p>
+<ol>
+  <li>
+    <p>chroot is a contrived way of creating a virtualization environment.
+chroot is short for change root. This changes where a program
+believes that (/) is mounted on the system. For example with chroot,
+one can make a hello world program believe <code class="language-plaintext highlighter-rouge">/home/user/</code> is actually
+the root directory. This is useful because no other files are
+exposed. This is contrived because Linux still needs additional
+tools (think the c standard library) to come from different
+directories such as <code class="language-plaintext highlighter-rouge">/usr/lib</code> which means those could still be
+vulnerable.</p>
+  </li>
+  <li>
+    <p>namespaces are Linux’s better way to create a virtualization
+environment. We won’t go into this too much, just know that they
+exist.</p>
+  </li>
+  <li>
+    <p>Hardware virtualization technology. Hardware vendors have become
+increasingly aware that physical protections are needed when
+emulating instructions. As such, there can be switches enabled by
+the user that allows the operating system to flip into a
+virtualization mode where instructions are run as normal but are
+monitored for malicious activity. This helps the performance and
+increases the security of virtualized environments.</p>
+  </li>
+</ol>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="cyber-security" class="title-text">Cyber Security<a class="anchor title-text" href="#cyber-security"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Cyber Security is arguably the most popular area of security. More and
+more of our systems are hacked over the web, it is important to
+understand how we can protect against these attacks</p>
+<h3 id="security-at-the-tcp-level" class="title-text">Security at the TCP Level</h3>
+<ol>
+  <li>
+    <p>Encryption. <strong>TCP is unencrypted!</strong> This means any data that is
+sent over a TCP connection is in plain text. If one needs to send
+encrypted data, one needs to use a higher level protocol such as
+HTTPs or develop their own.</p>
+  </li>
+  <li>
+    <p>Identity Verification. In TCP, there is no way to verify the
+identity of who the program is connecting to. There are no checks or
+federated databases in place. One just has to trust the DNS server
+gave a reasonable response which is almost always the incorrect
+answer. Apart from systems that have an approved white list or a
+“secret” connection protocol, there is little at the TCP level
+that one can do to stop.</p>
+  </li>
+  <li>
+    <p>Syn-Ack Sequence Number. This is a security improvement. TCP
+features what we call sequence numbers. That means that during the
+SYN-SYN/ACK-ACK dance, a connection starts at a random integer. This
+is important because if an attacker is trying to spoof packets
+(pretend those packets are coming from your program) that means that
+the attacker must either correctly guess – which is hard – or be in
+the route that your packet takes to the destination – much more
+likely. ISPs help out with the destination problem because it may
+send a connection through varying routers which makes it hard for an
+attacker to sit anywhere and be sure that they will receive your
+packets – this is why security experts usually advise against using
+coffee shop wifi for sensitive tasks.</p>
+  </li>
+  <li>
+    <p>Syn-Flood. Before the first synchronization packet is acknowledged,
+there is no connection. That means a malicious attacker can write a
+bad TCP implementation that sends out a flood of SYN packets to a
+hapless server. The SYN flood is easily mitigated by using IPTABLES
+or another netfilter module to drop all incoming connections from an
+IP address after a certain volume of traffic is reached for a
+certain period.</p>
+  </li>
+  <li>
+    <p>Denial of Service, Distributed Denial of Service is the hardest form
+of attack to stop. Companies today are still trying to find good
+ways to ease these attacks. This involves sending all sorts of
+network traffic forward to servers in the hopes that the traffic
+will clog them up and slow down the servers. In big systems, this
+can lead to cascading failures. If a system is engineered poorly,
+one server’s failure causes all the other servers to pick up more
+work which increases the probability that they will fail and so on
+and so forth.</p>
+  </li>
+</ol>
+<h3 id="security-at-the-dns-level" class="title-text">Security at the DNS Level</h3>
+<p>As of 2019, the United States Department of Homeland Security released a
+directive to switch all services from DNS to DNSSec
+<a href="https://cyber.dhs.gov/assets/report/ed-19-01.pdf" class="fancy-link wiki-link">https://cyber.dhs.gov/assets/report/ed-19-01.pdf</a>.
+This directive is an inherent flaw of the DNS system. First, DNS doesn’t
+offer any sort of verification on domain name requests. That is, it is
+easy to spoof DNS nameservers such that they point your browser to
+potentially malicious servers. Remember that DNS requests are sent as
+unsecured UDP packets, which are prone to tampering. This means that if
+an attacker snags a plain-text request for a DNS server, that attacker
+can now send the result back to the requester. More commonly instead of
+just attacking one person, they will connect to a public wifi station
+and poison the cache of the router – meaning that all who are connected
+will get a bad IP address when requesting a domain name. This can get
+into serious spoofing attacks if one tries to pretend they are a major
+bank.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="topics" class="title-text">Topics<a class="anchor title-text" href="#topics"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li>
+    <p>Security Terminology</p>
+  </li>
+  <li>
+    <p>Security in local C programs</p>
+  </li>
+  <li>
+    <p>Security in CyberSpace</p>
+  </li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="review" class="title-text">Review<a class="anchor title-text" href="#review"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ol>
+  <li>
+    <p>What is a chmod statement to break only the confidentiality of your
+data?</p>
+  </li>
+  <li>
+    <p>What is a chmod statement to break only the confidentiality and
+availability of your data?</p>
+  </li>
+  <li>
+    <p>An attacker gains root access on a Linux system that you use to
+store private information. Does this affect confidentiality,
+integrity, or availability of your information, or all three?</p>
+  </li>
+  <li>
+    <p>Hackers brute force your git username and password. Who is affected?</p>
+  </li>
+  <li>
+    <p>Why is privilege separation useful in RPC applications?</p>
+  </li>
+  <li>
+    <p>Is it easier to forge a UDP or TCP packet and why?</p>
+  </li>
+  <li>
+    <p>Why are TCP sequence numbers initialized to a random number?</p>
+  </li>
+  <li>
+    <p>What is the impact if the RAM used to hold a shared library (e.g.
+the C standard library) was writable by any process?</p>
+  </li>
+  <li>
+    <p>Is creating and implementing client-server protocols that are secure
+and invulnerable to malicious attackers easy?</p>
+  </li>
+  <li>
+    <p>Which is harder to defend against: Syn-Flooding or Distributed
+Denial of Service?</p>
+  </li>
+  <li>
+    <p>Does deadlock affect the availability of a service?</p>
+  </li>
+  <li>
+    <p>Do buffer overflows / underflows affect the integrity of a data?</p>
+  </li>
+  <li>
+    <p>Why shouldn’t stack memory be executable.</p>
+  </li>
+  <li>
+    <p>HeartBleed is an example of what kind of security issue? Which
+one(s) of the triad does it break?</p>
+  </li>
+  <li>
+    <p>Meltdown and Spectre is an example of what kind of security issue?
+Which one(s) of the triad does it break?</p>
+  </li>
+</ol>
+<div id="refs" class="references">
+
+<div id="ref-guide2011intel">
+
+Guide, Part. 2011. “Intel 64 and Ia-32 Architectures Software
+Developer’s Manual.” *Volume 3B: System Programming Guide, Part* 2.
+
+</div>
+
+<div id="ref-kocher2018spectre">
+
+Kocher, Paul, Daniel Genkin, Daniel Gruss, Werner Haas, Mike Hamburg,
+Moritz Lipp, Stefan Mangard, Thomas Prescher, Michael Schwarz, and Yuval
+Yarom. 2018. “Spectre Attacks: Exploiting Speculative Execution.” *arXiv
+Preprint arXiv:1801.01203*.
+
+</div>
+
+</div>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Security.md";
+  </script>
+</body>
+
+</html>

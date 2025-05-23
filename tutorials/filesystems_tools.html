@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Finding Filesystems Tools and Tips</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Finding Filesystems Tools and Tips" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Finding Filesystems Tools and Tips
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_cat" href="#cat" class="fancy-link">cat</a></li>
+<li><a id="toc_cp" href="#cp" class="fancy-link">cp</a></li>
+<li><a id="toc_cmp" href="#cmp" class="fancy-link">cmp</a></li>
+<li><a id="toc_diff" href="#diff" class="fancy-link">diff</a></li>
+<li><a id="toc_hexdump" href="#hexdump" class="fancy-link">hexdump</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Finding Filesystems Tools and Tips are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Introducing some tools students may find useful for Finding Filesystems</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<p>Provided below are some tools that can come in handy when writing and debugging the Finding Filesystems MP. You won’t need to understand these to complete the MP, but they can streamline your workflow.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="cat" class="title-text">cat<a class="anchor title-text" href="#cat"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>cat is generally used to view contents of a file e.g. cat ‘filename’. As you might’ve seen in lecture, cat can also be used to create files from the commandline, with ctrl+D (EOF) sent to end.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">cat</span> <span class="o">&gt;</span>file.txt
+<span class="go">Perched on the very precipice of oblivion...teetering on the brink, facing the abyss...dazed, reeling, about to break...
+</span></code></pre></div></div>
+<p>cat can also be used to write (&gt;) which can overwrite, and append (») to files. The below example produces a file named other_file.txt that contains two copies of the contents of file.txt.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>file.txt <span class="o">&gt;</span> other_file.txt
+<span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>file.txt <span class="o">&gt;&gt;</span> other_file.txt
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="cp" class="title-text">cp<a class="anchor title-text" href="#cp"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>cp copies a file from a source destination and creates a copy at a target destination.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">cp </span>file.txt corrupted_file.txt
+</code></pre></div></div>
+<p>The above command creates a copy of the file file.txt, called corrupted_file.txt, in the current directory.</p>
+<p>You can also use cp with directories. For example, to copy the contents of one directory to a target directory.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">cp</span> <span class="nt">-R</span> source_dir dest_dir
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="cmp" class="title-text">cmp<a class="anchor title-text" href="#cmp"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>cmp compares two different files byte-by-byte and outputs the difference. Say for example that we modified the following file at the words “teetering”, “facing”, and “reeling”.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>file.txt
+<span class="go">Perched on the very precipice of oblivion...teetering on the brink, facing the abyss...dazed, reeling, about to break...
+</span><span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>corrupted_file.txt
+<span class="gp">Perched on the very precipice of oblivion...teete&gt;</span><span class="o">&gt;</span>ng on the brink, faCing the abyss...dazed, 7~eling, about to break..
+</code></pre></div></div>
+<p>Running cmp on these two files would inform us of the first conflict relative to the first file, which we can see in detail with -b.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>cmp file.txt corrupted_file.txt
+<span class="gp">file.txt corrupted_file.txt differ: byte 50, line 1 is 162 r  76 &gt;</span><span class="w">
+</span></code></pre></div></div>
+<p>However, there are multiple conflicts in this case, and to see them all, we use the -l flag for verbosity. It may help to limit the range by over which we compare via -n ‘LIMIT’, and specify a better starting point by skipping over a number of bytes via -i ‘SKIP’.</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>cmp file.txt corrupted_file.txt <span class="nt">-b</span> <span class="nt">-l</span> <span class="nt">-n</span> 75
+<span class="go">20 162 r     67 7
+21 145 e    176 ~
+</span></code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="diff" class="title-text">diff<a class="anchor title-text" href="#diff"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>diff operates similar to cmp in that it compares the differences in files, but has the addition of informing which lines have to be modified and in which way to make the files identical (a problem of edit distance).</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="hexdump" class="title-text">hexdump<a class="anchor title-text" href="#hexdump"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>hexdump dumps the content of a file in hexadecimal (or a base of your choosing).</p>
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span><span class="nb">cat </span>file.txt
+<span class="go">Perched on the very precipice of oblivion...teetering on the brink, facing the abyss...dazed, reeling, about to break...
+</span><span class="gp">$</span><span class="w"> </span>./hexdump file.txt
+<span class="go">0000000 6550 6372 6568 2064 6e6f 7420 6568 7620
+0000010 7265 2079 7270 6365 7069 6369 2065 666f
+0000020 6f20 6c62 7669 6f69 2e6e 2e2e 6574 7465
+0000030 7265 6e69 2067 6e6f 7420 6568 6220 6972
+0000040 6b6e 202c 6166 6963 676e 7420 6568 6120
+0000050 7962 7373 2e2e 642e 7a61 6465 202c 6572
+0000060 6c65 6e69 2c67 6120 6f62 7475 7420 206f
+0000070 7262 6165 2e6b 2e2e 000a
+0000079
+</span></code></pre></div></div>
+<p>The leftmost column of numbers index the output in hex, while the values themselves are on the right.</p>
+<p>This can be useful, especially when debugging large files where indirect block behavior needs to be observed. For example, if you copy a file out the fs and see that is corrupted via cmp, you can use the –skip ‘offset’ flag to ignore the first ‘offset’ bytes of input advance you to where the difference occurs. The –length ‘length’ flag may also be useful for limiting and surpressing output beyond ‘length’ bytes.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_tutorials/filesystems_tools.md";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Utilities Unleashed</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Utilities Unleashed" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Utilities Unleashed
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-02-12 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>env.c</li>
+                
+                <li>time.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_overview" href="#overview" class="fancy-link">Overview</a></li>
+<li><a id="toc_warning" href="#warning" class="fancy-link">WARNING!</a></li>
+<li><a id="toc_formatc-and-h" href="#formatc-and-h" class="fancy-link">format.c and .h</a></li>
+<li><a id="toc_time" href="#time" class="fancy-link">time</a></li>
+<li><a id="toc_env" href="#env" class="fancy-link">env</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Utilities Unleashed are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Fork, Exec, Wait</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Environment Variables</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Writing a C Program</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Using argv, argc</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Introduction to core utils</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="overview" class="title-text">Overview<a class="anchor title-text" href="#overview"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In this lab, you will be implementing the following C utilities:</p>
+<ul>
+  <li><a href="#time" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">time</code></a></li>
+  <li><a href="#env" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">env</code></a></li>
+</ul>
+<p>Notes:</p>
+<ul>
+  <li>Do not worry about flags or features that we do not mention.</li>
+  <li>Do not print any of your debug information out for your final submission.</li>
+  <li>All printing (except env vars) should be handled with <code class="language-plaintext highlighter-rouge">format.h</code>.</li>
+  <li>A common issue is double printouts. If this happens to you, try flushing stdout before you fork/exec. If this solves your issue, ask yourself why.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="warning" class="title-text">WARNING!<a class="anchor title-text" href="#warning"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>If you fork bomb on <em>any</em> autograder run, you will receive a zero on this assignment.</p>
+<p>To prevent you from fork bombing your own VM, we recommend looking into <a href="https://ss64.com/bash/ulimit.html" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">ulimit</code></a>. This will allow you to set a limit for various operations on your system, including how many files you can open concurrently or how many times you can fork. The side effect is that a poorly chosen limit may throttle your system’s operations (e.g. setting the fork limit too low may make your terminal unable to execute commands!).</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="formatc-and-h" class="title-text">format.c and .h<a class="anchor title-text" href="#formatc-and-h"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Since this lab requires your programs to print messages to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdout.3p.html" class="fancy-link">stdout</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stderr.3p.html" class="fancy-link">stderr</a></code>, we have provided you with <code class="language-plaintext highlighter-rouge">format.c</code> and <code class="language-plaintext highlighter-rouge">format.h</code>. You should not be printing out to stdout and stderr at all. Instead, you should be using the provided functions. You can find documentation for each function in <code class="language-plaintext highlighter-rouge">format.h</code>. Please <em>read</em> the documentation in <code class="language-plaintext highlighter-rouge">format.h</code> <em>multiple</em> times to determine when each function should be used. This is our way of ensuring that you do not lose points for formatting issues, but it also means that you are responsible for handling any errors mentioned in <code class="language-plaintext highlighter-rouge">format.c</code> and <code class="language-plaintext highlighter-rouge">format.h</code>.</p>
+<p>It is common for students to fail certain test cases on this assignment with seemingly functional code, it is almost always because of improper usage of <code class="language-plaintext highlighter-rouge">format.h</code>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="time" class="title-text">time<a class="anchor title-text" href="#time"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In this lab, you will be implementing <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/time.3p.html" class="fancy-link">time</a></code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>time – run a program and report how long it took
+</code></pre></div></div>
+<p>So if a user enters:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./time sleep 2
+</code></pre></div></div>
+<p>then time will run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sleep.3p.html" class="fancy-link">sleep</a></code> with the argument <code class="language-plaintext highlighter-rouge">2</code> and print how long it took in seconds:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sleep 2 took 2.002345 seconds
+</code></pre></div></div>
+<p>For more examples, you can play with Linux’s builtin <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/time.3p.html" class="fancy-link">time</a></code> command by typing <code class="language-plaintext highlighter-rouge">time YOURCOMMAND</code> (<code class="language-plaintext highlighter-rouge">time ls -l</code>, for example) in your terminal. Be sure to add <code class="language-plaintext highlighter-rouge">./</code> to the beginning (or use the full path to your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/time.3p.html" class="fancy-link">time</a></code> executable file if you are in another directory), otherwise the builtin <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/time.3p.html" class="fancy-link">time</a></code> will be called.</p>
+<p>We’ve also provided a test executable to run basic tests on your time implementation. Note that although these tests are similar to those that will be run on the autograder they are not identical, so passing locally does not guarantee you will receive full credit. It is still your responsibility to ensure you have functional code.</p>
+<p>Note that we only care about <a href="https://en.wikipedia.org/wiki/Wall-clock_time" class="fancy-link wiki-link">wall-clock time</a>, and we recommend using <a href="http://linux.die.net/man/3/clock_gettime" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">clock_gettime</code></a> with <code class="language-plaintext highlighter-rouge">CLOCK_MONOTONIC</code>.</p>
+<p>Pro tip: 1 second == 1,000,000,000 nanoseconds.</p>
+<h3 id="nota-bene" class="title-text">Nota bene:</h3>
+<ul>
+  <li>You <strong>may not</strong> use the existing <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/time.3p.html" class="fancy-link">time</a></code> program.</li>
+  <li>You must use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code>, and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code> (no other solutions will be accepted).</li>
+  <li>If the child process does not terminate successfully (where its exit status is non-zero), you should exit with status 1 <em>without</em> printing the time.</li>
+  <li>We will only run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/time.3p.html" class="fancy-link">time</a></code> with one program.</li>
+  <li>The commands we will run can take any number of arguments.</li>
+  <li>Do your time computations with double-precision floating pointer numbers (<code class="language-plaintext highlighter-rouge">double</code>) rather that single-precision (<code class="language-plaintext highlighter-rouge">float</code>).</li>
+  <li>We have provided functions in <code class="language-plaintext highlighter-rouge">format.h</code> that we expect you to use wherever appropriate.</li>
+</ul>
+<h3 id="useful-resources" class="title-text">Useful Resources</h3>
+<ul>
+  <li><a href="http://cs-education.github.io/sys/#chapter/2/section/0/activity/0" class="fancy-link wiki-link">Program arguments: argc &amp; argv</a></li>
+  <li><a href="http://cs341.cs.illinois.edu/coursebook/Processes#the-fork-exec-wait-pattern" class="fancy-link wiki-link">fork, exec, wait</a></li>
+  <li><a href="http://cs-education.github.io/sys/#chapter/5/section/1/activity/0" class="fancy-link wiki-link">fork and waitpid</a></li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="env" class="title-text">env<a class="anchor title-text" href="#env"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In this lab, you will be implementing a special version of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>env – run a program in modified environments
+</code></pre></div></div>
+<p>Usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./env [key=val1] [key2=val1] ... -- cmd [args] ..
+</code></pre></div></div>
+<p>Please re-read this section <em>multiple</em> times before starting:</p>
+<ul>
+  <li>Each variable is in the form of <code class="language-plaintext highlighter-rouge">NAME=v1</code>, separated by spaces.</li>
+  <li>Values may contain references to environment variables in the form <code class="language-plaintext highlighter-rouge">%NAME</code>, including variables that were set earlier. As a result, variables should be processed from left to right.</li>
+  <li>Each reference should be replaced with its value.</li>
+  <li>The names of variables (both in <code class="language-plaintext highlighter-rouge">key</code> and in <code class="language-plaintext highlighter-rouge">value</code>) only contain letters, numbers, or underscore characters.</li>
+  <li>For each environment variable <code class="language-plaintext highlighter-rouge">key</code>/<code class="language-plaintext highlighter-rouge">value</code> pair, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code> will assign <code class="language-plaintext highlighter-rouge">value</code> to <code class="language-plaintext highlighter-rouge">key</code> in the child environment.</li>
+  <li>Each execution must be done with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>, <code class="language-plaintext highlighter-rouge">exec,</code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code>.</li>
+  <li>The last variable/value(s) pairing is followed by a <code class="language-plaintext highlighter-rouge">--</code>.</li>
+  <li>
+<em>Everything</em> following the <code class="language-plaintext highlighter-rouge">--</code> is the command and any arguments that will be executed by env.</li>
+  <li>Invalid input should result in the usage being printed. Invalid usage includes:
+    <ul>
+      <li>Cannot find <code class="language-plaintext highlighter-rouge">--</code> in arguments</li>
+      <li>Cannot find <code class="language-plaintext highlighter-rouge">=</code> in an variable argument</li>
+      <li>Cannot find <code class="language-plaintext highlighter-rouge">cmd</code> after <code class="language-plaintext highlighter-rouge">--</code>
+</li>
+    </ul>
+  </li>
+</ul>
+<p>This is the canonical example and a practical use case:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./env TZ=EST5EDT -- date
+Sat Sep  9 19:19:42 EDT 2017
+$ 
+</code></pre></div></div>
+<p>Alternatively:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./env TZ=EST5EDT -- date
+Sat 09 Sep 2017 07:19:42 PM EDT
+$
+</code></pre></div></div>
+<p>Example of using references to other variables:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./env TEMP=EST5EDT TZ=%TEMP -- date
+Sat Sep  9 19:19:42 EDT 2017
+$
+</code></pre></div></div>
+<p>Accordingly:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./env TEMP=EST5EDT TZ=%TEMP -- date
+Sat 09 Sep 2017 07:19:42 PM EDT
+$
+</code></pre></div></div>
+<p>This has the exact same behavior as before, because <code class="language-plaintext highlighter-rouge">TEMP</code> is first set to <code class="language-plaintext highlighter-rouge">EST5EDT</code>, and then when <code class="language-plaintext highlighter-rouge">TZ</code> is set to <code class="language-plaintext highlighter-rouge">%TEMP</code>, the value of <code class="language-plaintext highlighter-rouge">EST5EDT</code> is retrieved and then <code class="language-plaintext highlighter-rouge">TZ</code> is set to that. Notice that the variables are set sequentially, or else it wouldn’t work.</p>
+<p>We have provided you with a reference executable <code class="language-plaintext highlighter-rouge">env-reference</code> for you to test your understanding of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code>’s expected behavior. You can also use it to see if your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code>’s output matches the expected output.</p>
+<p>Again like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/time.3p.html" class="fancy-link">time</a></code>, you can play with Linux’s builtin <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code> command by typing <code class="language-plaintext highlighter-rouge">env &lt;var-list&gt; &lt;command-name&gt;</code> (<code class="language-plaintext highlighter-rouge">env MYVAR=CS341 printenv</code>, for example) in your terminal. Again, remember to add <code class="language-plaintext highlighter-rouge">./</code> to the beginning (or the full path to your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code> executable file if you are in another directory), otherwise the builtin <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code> will be called. <strong>Do not use the built-in env, or you will immediately fail the assignment</strong></p>
+<p>In addition, keep in mind that the builtin <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code> uses <code class="language-plaintext highlighter-rouge">$</code> instead of <code class="language-plaintext highlighter-rouge">%</code> to denote environment variables. In practice, it can be very useful to change some environment variables when running certain commands.</p>
+<h3 id="extra-why-env" class="title-text">Extra: Why Env?</h3>
+<p>For example, you may notice people write <code class="language-plaintext highlighter-rouge">#!/usr/bin/env python</code> on the first line of their Python script. This line ensures the Python interpreter used is the first one on user’s environment <code class="language-plaintext highlighter-rouge">$PATH</code>. However, users may want to use another version of Python, and it may not be the first one on <code class="language-plaintext highlighter-rouge">$PATH</code>. Say, your desired location is <code class="language-plaintext highlighter-rouge">/usr/local/bin</code> for instance.</p>
+<p>One way to solve this is by exporting <code class="language-plaintext highlighter-rouge">$PATH</code> to the correct position in your terminal, however, this may mess up other commands or executable under the same session.</p>
+<p>An alternative and better way is to use our <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code>, and enter:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./env PATH=/usr/local/bin -- ./XXX.py
+</code></pre></div></div>
+<p>then it runs the script with the desired Python interpreter.</p>
+<h3 id="nota-bene-1" class="title-text">Nota bene</h3>
+<ul>
+  <li>You <strong>may not</strong> use the existing <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code> program. (Our specification is different than the existing <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/env.1p.html" class="fancy-link">env</a></code> program.)</li>
+  <li>You <strong>may not</strong> replace <code class="language-plaintext highlighter-rouge">%</code> with <code class="language-plaintext highlighter-rouge">$</code> or use <code class="language-plaintext highlighter-rouge">wordexp(3)</code>.</li>
+  <li>You <strong>may not</strong> use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/execvpe.3.html" class="fancy-link">execvpe</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/execve.3p.html" class="fancy-link">execve</a></code>, or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/execle.3p.html" class="fancy-link">execle</a></code>.</li>
+  <li>All changes in environment variables and execution must happen only in the child process.</li>
+  <li>You must use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>/<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code>/<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/wait.3p.html" class="fancy-link">wait</a></code>.</li>
+  <li>If a variable doesn’t exist, interpret its value as a zero-length string.</li>
+  <li>
+<strong>Do not fork bomb the autograder!</strong> You will fail if you forkbomb the AG. (See the <a href="#warning" class="fancy-link wiki-link">warning</a>.)</li>
+</ul>
+<h3 id="useful-resources-1" class="title-text">Useful Resources</h3>
+<ul>
+  <li><a href="http://cs-education.github.io/sys/#chapter/2/section/1/activity/0" class="fancy-link wiki-link">Environment variables</a></li>
+  <li><a href="http://www.gnu.org/software/libc/manual/html_node/Environment-Variables.html" class="fancy-link wiki-link">Environment variable functions</a></li>
+  <li><a href="http://man7.org/linux/man-pages/man3/string.3.html" class="fancy-link wiki-link">string.h</a></li>
+  <li><a href="https://www.quora.com/How-do-you-write-a-C-program-to-split-a-string-by-a-delimiter" class="fancy-link wiki-link">Split a string by a delimiter</a></li>
+</ul>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/utilities_unleashed.md";
+  </script>
+</body>
+
+</html>

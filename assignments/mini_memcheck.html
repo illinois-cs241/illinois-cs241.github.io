@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Mini Memcheck</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Mini Memcheck" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Mini Memcheck
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-02-19 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>mini_memcheck.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_overview" href="#overview" class="fancy-link">Overview</a></li>
+<li><a id="toc_main-concepts" href="#main-concepts" class="fancy-link">Main Concepts</a></li>
+<li><a id="toc_mini_memcheckc" href="#mini_memcheckc" class="fancy-link">mini_memcheck.c</a></li>
+<li><a id="toc_testing" href="#testing" class="fancy-link">Testing</a></li>
+<li><a id="toc_example" href="#example" class="fancy-link">Example</a></li>
+<li><a id="toc_optional-fun-sentinel-value" href="#optional-fun-sentinel-value" class="fancy-link">Optional Fun: Sentinel Value!</a></li>
+<li><a id="toc_behind-the-scenes" href="#behind-the-scenes" class="fancy-link">Behind the Scenes</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Mini Memcheck are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Using metadata for memory bookkeeping</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Memory management and linked lists</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Learning what Valgrind does</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Preparation for the Malloc MP</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="overview" class="title-text">Overview<a class="anchor title-text" href="#overview"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>For this lab, you will be implementing a small version of <a href="http://valgrind.org/docs/manual/quick-start.html" class="fancy-link wiki-link">Valgrind</a> called <code class="language-plaintext highlighter-rouge">mini_memcheck</code>. Valgrind is a great tool for monitoring memory usage, and you have likely used it earlier in this class. Your version will print out a summary of the memory leaks in a particular C program. This lab is meant in part as preparation for your Malloc MP, introducing some topics and techniques which you will find helpful there.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="main-concepts" class="title-text">Main Concepts<a class="anchor title-text" href="#main-concepts"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The main concept of this lab is that we can track each block of memory using some extra space before each allocation (called <em>metadata</em>). We have provided you with a struct <code class="language-plaintext highlighter-rouge">meta_data</code> in <code class="language-plaintext highlighter-rouge">mini_memcheck.h</code>. The metadata is set up as a linked list of nodes which store information for each allocated block. Each node stores the amount of memory requested, the filename and location of the instruction that made the request, and a pointer to the next allocated block.</p>
+<p>Here’s an illustration:</p>
+<p class="img-paragraph"><img src="/images/assignment-docs/lab/mini_valgrind/mini_valgrind.jpg" alt="meta_data_linked_list"></p>
+<p>When the program is about to exit, we can look at this metadata list to see what the user hasn’t freed. These are your memory leaks.</p>
+<p>If you feel that you need a refresher on linked lists or other prerequisite concepts, feel free to ask a CA or TA one-on-one.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="mini_memcheckc" class="title-text">mini_memcheck.c<a class="anchor title-text" href="#mini_memcheckc"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We have set up <code class="language-plaintext highlighter-rouge">mini_memcheck</code> to dynamically replace every call to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/calloc.3p.html" class="fancy-link">calloc</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/realloc.3p.html" class="fancy-link">realloc</a></code>, and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/free.3p.html" class="fancy-link">free</a></code> in the user’s program with a call to <code class="language-plaintext highlighter-rouge">mini_malloc</code>, <code class="language-plaintext highlighter-rouge">mini_calloc</code>, <code class="language-plaintext highlighter-rouge">mini_realloc</code>, and <code class="language-plaintext highlighter-rouge">mini_free</code>, respectively. You will be implementing these four functions in order to track the memory the user allocates.</p>
+<p>Inside <code class="language-plaintext highlighter-rouge">mini_memcheck.c</code>, it is safe to call the real versions of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> and related functions. You should <em>not</em> be writing your own implementation of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/sbrk.2.html" class="fancy-link">sbrk</a></code> or related system calls.</p>
+<p>See the <code class="language-plaintext highlighter-rouge">mini_memcheck.h</code> header file for details.</p>
+<h3 id="global-variables" class="title-text">Global Variables</h3>
+<p>In addition to the four functions above, you’ll need to maintain the following global variables:</p>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/head.1p.html" class="fancy-link">head</a></code>: a pointer to the head of a linked list storing all the metadata corresponding to allocated memory blocks</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">total_memory_requested</code>: stores the total number of bytes of memory requested by the user throughout the lifetime of the program (excluding metadata)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">total_memory_freed</code>: stores the total number of bytes of memory freed by the user throughout the lifetime of the program</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">invalid_addresses</code>: stores the number of times the user has tried to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/realloc.3p.html" class="fancy-link">realloc</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/free.3p.html" class="fancy-link">free</a></code> an invalid pointer</p>
+  </li>
+</ul>
+<p>Since we keep track of this data, we can show the user how much memory they’ve allocated, just like the real Valgrind. We can also find out how much memory a user might be leaking, by subtracting <code class="language-plaintext highlighter-rouge">total_memory_freed</code> from <code class="language-plaintext highlighter-rouge">total_memory_requested</code>.</p>
+<p>If you look in <code class="language-plaintext highlighter-rouge">mini_memcheck.h</code>, you’ll notice that these are declared as <code class="language-plaintext highlighter-rouge">extern</code> variables. This allows variables to live somewhere else beside the line where you are ‘declaring’ them, pushing the responsibility of providing a real location in memory for these variables elsewhere and letting the <a href="https://stackoverflow.com/questions/3322911/what-do-linkers-do" class="fancy-link wiki-link">linker</a> resolve the variable name to where memory is actually reserved. This <a href="https://stackoverflow.com/questions/496448/how-to-correctly-use-the-extern-keyword-in-c" class="fancy-link wiki-link">link</a> has a nice explanation of how to use this. <strong>In order to prevent your code from crashing, you will have to declare these variables as globals in <code class="language-plaintext highlighter-rouge">mini_memcheck.c</code></strong>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing" class="title-text">Testing<a class="anchor title-text" href="#testing"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You’ll want to test your <code class="language-plaintext highlighter-rouge">mini_memcheck</code> thoroughly.</p>
+<p>We’ve provided you with a <code class="language-plaintext highlighter-rouge">test.c</code> file that you can put test cases in. Running <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> will generate a <code class="language-plaintext highlighter-rouge">./test</code> executable alongside <code class="language-plaintext highlighter-rouge">mini_memcheck</code>. You can use it like the regular Valgrind:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./mini_memcheck ./test
+</code></pre></div></div>
+<p>The output should look familiar!</p>
+<p>Note that we always build <code class="language-plaintext highlighter-rouge">./test</code> with debugging symbols (<code class="language-plaintext highlighter-rouge">clang -g</code>), so <code class="language-plaintext highlighter-rouge">mini_memcheck</code> can find the line numbers corresponding to memory leaks.</p>
+<p>To debug <code class="language-plaintext highlighter-rouge">mini_memcheck</code> itself, you can use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/gdb.1.html" class="fancy-link">gdb</a></code> like usual. Use <code class="language-plaintext highlighter-rouge">make debug</code> to generate a version of <code class="language-plaintext highlighter-rouge">mini_memcheck</code> with debugging symbols:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gdb --args ./mini_memcheck-debug ./test
+</code></pre></div></div>
+<h3 id="warning-printf" class="title-text">Warning: printf()</h3>
+<p>Be careful with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> in Mini Memcheck! By default, stdout is buffered, so <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> calls <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> internally to create a buffer.</p>
+<p>If you call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> inside of <code class="language-plaintext highlighter-rouge">mini_malloc</code>, it will allocate its buffer using the <em>real</em> <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> (since calls to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> inside <code class="language-plaintext highlighter-rouge">mini_memcheck.c</code> use the real version), <strong>but then free it using</strong> <strong><em>your</em></strong> <code class="language-plaintext highlighter-rouge">mini_free</code> since the cleanup happens outside of <code class="language-plaintext highlighter-rouge">mini_memcheck.c</code>. As you can imagine, this results in unexpected behavior.</p>
+<p>Instead, you can use <code class="language-plaintext highlighter-rouge">fprintf(stderr, ...)</code>, which is unbuffered, or use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code>, but the easiest solution may be to turn off buffering for stdout:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">setvbuf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">_IONBF</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div></div>
+<h3 id="warning-extra-free-call" class="title-text">Warning: extra free() call</h3>
+<p>Note that there will be some extra calls to your <code class="language-plaintext highlighter-rouge">mini_free</code> function at the end of the program.</p>
+<p>This is an unfortunate side effect of how we implement mini_memcheck internally. In mini_hacks.c, we call a cleanup function defined in the C library (<code class="language-plaintext highlighter-rouge">__libc_freeres</code>) at the end of the program, which calls <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/free.3p.html" class="fancy-link">free</a></code> several times to deallocate any internal buffer created by the C library. Here is an example of what the backtrace looks like in gdb:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Breakpoint 1, mini_free (payload=0x0) at mini_memcheck.c:142
+(gdb) bt
+#0  mini_free (payload=0x0) at mini_memcheck.c:142
+#1  0x00007ffff7bd3d4a in free (ptr=0x0) at mini_hacks.c:193
+#2  0x00007ffff797c380 in __GI___libc_freeres () at set-freeres.c:42
+#3  0x00007ffff7bd44ba in finalize () at mini_hacks.c:334
+#4  0x00007ffff7bd3fa0 in print_leak_info () at mini_hacks.c:365
+...
+</code></pre></div></div>
+<p>This should not affect your implementation of <code class="language-plaintext highlighter-rouge">mini_free</code>. However, do be aware of the extra free calls when you’re debugging your program, just so that you’re not confused about where they’re coming from.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="example" class="title-text">Example<a class="anchor title-text" href="#example"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Here’s a basic test case to check your progress.</p>
+<p>Say you had the following in your <code class="language-plaintext highlighter-rouge">test.c</code> file:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">40</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">p3</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">mini_memcheck</code>’s output should look like this (of course, your process ID and addresses might be different):</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>==25219== Mini-Memcheck
+==25219==
+==25219== LEAK REPORT:
+==25219==    Leak origin: main (test.c:5)
+==25219==    Leak size: 50 bytes
+==25219==    Leak memory address: 0x1009790
+==25219==
+==25219==    Leak origin: main (test.c:3)
+==25219==    Leak size: 30 bytes
+==25219==    Leak memory address: 0x10096f0
+==25219==
+==25219== Program made 0 bad call(s) to free or realloc.
+==25219==
+==25219== HEAP SUMMARY:
+==25219==    Total memory requested: 120 bytes
+==25219==    Total memory freed: 40 bytes
+==25219==    Total leak: 80 bytes
+</code></pre></div></div>
+<p>Notice that leaks are reported most-recent-first. This is because we insert new metadata at the head of the linked list.</p>
+<h3 id="other-programs" class="title-text">Other Programs</h3>
+<p>You can also run <code class="language-plaintext highlighter-rouge">mini_memcheck</code> on other programs, like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/echo.3x.html" class="fancy-link">echo</a></code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./mini_memcheck echo 'Hello, world!'
+==19506== Mini-Memcheck
+Hello, world!
+==19506==
+==19506== Program made 0 bad call(s) to free or realloc.
+==19506==
+==19506== HEAP SUMMARY:
+==19506==    Total memory requested: 1068 bytes
+==19506==    Total memory freed: 1068 bytes
+==19506==    No leaks, all memory freed. Congratulations!
+</code></pre></div></div>
+<p>It should work on most standard utilities, but just be aware that it won’t work on everything. You’ll notice it may generate different output than Valgrind or may even crash when run on complex software like <code class="language-plaintext highlighter-rouge">python</code>. <em>This is okay; writing a memory checker is hard!</em> You only need to implement what we’ve described above and in <code class="language-plaintext highlighter-rouge">mini_memcheck.h</code>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="optional-fun-sentinel-value" class="title-text">Optional Fun: Sentinel Value!<a class="anchor title-text" href="#optional-fun-sentinel-value"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This part of the assignment in this section is <strong>not graded</strong>. However, sentinel value is a pretty cool concept and we encourage you to try to implement it.</p>
+<p>So, suppose that our users of <code class="language-plaintext highlighter-rouge">mini_memcheck</code> are terrible at coding. They wrote past the end of their allocation (buffer overflow) and corrupted the memory beyond what’s allocated to them. Can we detect this kind of memory corruption and warn them? The answer is yes, by using sentinel value!</p>
+<p>Sentinel value is a chunck of <em>pre-defined bits</em> at the end of an allocated memory. In other word, each allocation would look like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[meta_data][---actual data---][sentinel_value]
+</code></pre></div></div>
+<p>On every operation, we would check that the sentinel value is still the same as it was pre-defined. If the sentinel value has changed, then we know for certain that the user has corrupted memory.</p>
+<p>In your <code class="language-plaintext highlighter-rouge">mini_memcheck</code>, you will use the <a href="https://en.wikipedia.org/wiki/Magic_number_(programming)" class="fancy-link wiki-link">magic number</a> <code class="language-plaintext highlighter-rouge">0xDEADBEEF</code> for the sentinel value.</p>
+<p>Implementation:</p>
+<ul>
+  <li>Add the bits <code class="language-plaintext highlighter-rouge">0xDEADBEEF</code> to the end of every allocation. (Do you need to do it for <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/realloc.3p.html" class="fancy-link">realloc</a></code>?)</li>
+  <li>Check if the sentinel value of a previously allocated buffer has changed in <code class="language-plaintext highlighter-rouge">mini_realloc</code> and <code class="language-plaintext highlighter-rouge">mini_free</code>.</li>
+  <li>If so, print out a warning to the user with <code class="language-plaintext highlighter-rouge">fprintf(stderr, ...)</code>. (Do not print to stdout!)</li>
+</ul>
+<p>If you want to test out your implementation, you can add the following code to your <code class="language-plaintext highlighter-rouge">test.c</code> and see if you get any warning when running <code class="language-plaintext highlighter-rouge">./mini_memcheck ./test</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>char* ptr = malloc(10);
+*(ptr + 10) = 'a';
+free(ptr);
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="behind-the-scenes" class="title-text">Behind the Scenes<a class="anchor title-text" href="#behind-the-scenes"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This section describes some details of how we’ve implemented <code class="language-plaintext highlighter-rouge">mini_memcheck</code>. You are encouraged, but not required, to understand this.</p>
+<p>We compile your <code class="language-plaintext highlighter-rouge">mini_</code> functions, along with some extra code from <code class="language-plaintext highlighter-rouge">mini_hacks.c</code>, into a <a href="https://en.wikipedia.org/wiki/Library_%28computing%29#Shared_libraries" class="fancy-link wiki-link"><em>shared object</em></a> called <code class="language-plaintext highlighter-rouge">mini_memcheck.so</code>.</p>
+<p><code class="language-plaintext highlighter-rouge">mini_hacks.c</code> has two main jobs:</p>
+<ul>
+  <li>Create wrappers around <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> and the other functions to make sure they use your replacement functions when the user’s program calls them, while still letting you use the real versions within your code</li>
+  <li>Print out leak info at program exit</li>
+</ul>
+<p>The actual <code class="language-plaintext highlighter-rouge">./mini_memcheck</code> program is implemented in <code class="language-plaintext highlighter-rouge">mini_main.c</code>. When you run <code class="language-plaintext highlighter-rouge">./mini_memcheck ./test</code>, we use an environment variable called <a href="https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-ld_preload-to-cheat-inject-features-and-investigate-programs/" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">LD_PRELOAD</code></a> to run the <code class="language-plaintext highlighter-rouge">./test</code> program using the code in <code class="language-plaintext highlighter-rouge">mini_memcheck.so</code>. Essentially, it replaces normal references to the built-in <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> with references to our version.</p>
+<p><em>“But,”</em> you may ask, <em>“how do we call the real version of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> if we’ve replaced it with our own version of it?”</em> The trick is a function called <a href="https://linux.die.net/man/3/dlsym" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">dlsym</code></a>, which allows us to bypass <code class="language-plaintext highlighter-rouge">LD_PRELOAD</code> and ask for a function pointer to the real <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>. This is all handled within <code class="language-plaintext highlighter-rouge">mini_hacks.c</code>.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/mini_memcheck.md";
+  </script>
+</body>
+
+</html>

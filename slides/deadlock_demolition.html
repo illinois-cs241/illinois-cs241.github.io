@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Deadlock Demolition | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/deadlock_demolition">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Deadlock Demolition</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="deadlock">Deadlock</h2>
+
+</section><section><h2></h2>
+
+<p><img src="/images/assignment-docs/lab/slides/dining/traffic.gif" alt="Traffic Jam"></p>
+
+</section><section><h2 id="what-is-deadlock">What is deadlock?</h2>
+
+<p>From wikipedia:</p>
+<blockquote>
+  <p>In an operating system, a deadlock occurs when a process or thread enters a waiting state because a requested system resource is held by another waiting process, which in turn is waiting for another resource held by another waiting process.</p>
+</blockquote>
+
+</section><section><h2 id="coffman-conditions">Coffman Conditions</h2>
+
+<p>Conditions on the system and its resources that are necessary and sufficient for deadlock to <em>possibly</em> occur.</p>
+
+<p>So violating <em>any</em> condition = preventing deadlock!</p>
+
+</section><section><h2></h2>
+
+<ol>
+  <li>
+<em>Mutual Exclusion</em>: No two processes can own a resource at the same time.</li>
+  <li>
+<em>Circular Wait</em>: There is a ‘cyclic dependency’ in processes owning and waiting for resources.</li>
+  <li>
+<em>Hold and Wait</em>: Once a process owns a resource, it retains that ownership, even while waiting for another.</li>
+  <li>
+<em>Lack of Preemption</em>: Processes cannot be forced to give up owned resources.</li>
+</ol>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="dining-philosophers">Dining philosophers</h2>
+
+<p>A good example of deadlock is the dining philosophers problem. In this problem, there are <em>n</em> philosophers trying to have dinner with <em>n</em> chopsticks. Each requires two chopsticks to eat. How can we allocate the chopsticks such that every philosopher gets to eat?</p>
+
+<p><img src="/images/assignment-docs/lab/slides/dining/dining.gif" alt="Deadlock Dining"></p>
+
+</section><section><h2 id="whos-a-good-dining-philosopher">Who’s a good dining philosopher?</h2>
+
+<p><img src="/images/assignment-docs/lab/slides/dining/dogdining.gif" alt="Dog Philosopher"></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="solutions-to-the-dining-philsophers-problem">Solutions to the dining philsophers problem</h2>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="arbitrator">Arbitrator</h2>
+
+</section><section><h2></h2>
+
+<p>Have one authority (e.g. a mutex). Have each philosopher grab that authority and only when they have the authority can they pick up their forks and eat. They eat, put the arbitrator and the forks down and move on to the next philosopher (can be random or sequential).</p>
+
+</section><section><h2 id="tradeoffs">Tradeoffs</h2>
+
+<ul>
+  <li>Very slow</li>
+  <li>Only one thread running at a time</li>
+  <li>Python’s global interpreter lock is implemented this way</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="leave-the-table-stallings">Leave the table (Stallings)</h2>
+
+</section><section><h2></h2>
+
+<p>Consider the case of the dining philosophers with <em>n</em>-chopsticks and <em>n</em>-philosophers. Reduce the number of philosophers currently allowed at the table to <em>n-1</em> using a semaphore. Have them eat. Cycle out the philosophers.</p>
+
+</section><section><h2 id="tradeoffs-1">Tradeoffs</h2>
+
+<ul>
+  <li>Very heavy on context switches for a process</li>
+  <li>Needs way of “pausing” a philosopher (SIGSTOP for linux kernel)</li>
+  <li>Need a “fair” cycling algorithm</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="partial-ordering-dijkstra">Partial Ordering (Dijkstra)</h2>
+
+</section><section><h2></h2>
+
+<p>Order the chopsticks <em>1..n</em>. For each philosopher have them pick up the lower number chopstick. Then, only if they can pick up the lower chopstick, pick up the higher chopstick. Why does this work?</p>
+
+</section><section><h2 id="tradeoffs-2">Tradeoffs</h2>
+
+<ul>
+  <li>Needs to be able to order the resources</li>
+  <li>Doesn’t livelock but often leads one thread working at a time for large applications (databases)</li>
+  <li>But good for dining philosophers!</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="bonus-cleandirty-chandymisra">BONUS: Clean/Dirty (Chandy/Misra)</h2>
+
+</section><section><h2></h2>
+
+<p>(Beyond 341 scope) If you want a reeallly fast solution, given many philosophers numbered <em>1..n</em>.</p>
+
+<p>Relax problem assumptions– let philosophers talk to each other only to ask for chopsticks.</p>
+
+<p>Chopsticks can be dirty or clean. Initially all start as dirty. For each pair of philosophers, assign the chopstick between them to the philosopher with the lower id. When one wants to eat, they ask their neighbor for a chopstick. If the neighbor’s chopstick is clean (they haven’t eaten yet), they keep the chopstick. Otherwise, they clean and relinquish it.</p>
+
+</section><section><h2 id="tradeoffs-3">Tradeoffs</h2>
+
+<ul>
+  <li>Ensures priority is given to the philosopher that has least recently eaten (starvation prevention).</li>
+  <li>Requires philosopher communication, so is not an exact instance of Dining Philosophers.</li>
+  <li>Requires careful resource ordering to avoid an initial deadlock.</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="a-good-overview-of-solutions">A good overview of solutions</h2>
+
+<p><a href="http://adit.io/posts/2013-05-11-The-Dining-Philosophers-Problem-With-Ron-Swanson.html">Read the Ron Swanson version here</a></p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="resource-allocation-graph">Resource allocation graph</h2>
+
+<p>We can model resource allocation by having resources and processes represented as vertices
+and use edges to show ownership of a resource. A cycle in the
+resource allocation graph implies that we can have deadlock (assuming other Coffman Conditions hold).</p>
+
+</section><section><h2 id="example-rag">Example RAG</h2>
+
+<p><img src="/images/assignment-docs/lab/slides/dining/rag.png" alt="Deadlock RAG"></p>
+
+</section><section><h2 id="relation-to-dining-philosophers">Relation to Dining Philosophers</h2>
+
+<p>The Dining Philosophers provide a more general view of preventing deadlock, and RAG analysis can be applied to some of our previous solutions. Replace ‘philosopher’ with ‘process’ and consider how our solutions stop a cycle.</p>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>Arbitrator: The central authority is now the only dependency (forms a ‘star’ graph).</li>
+  <li>Stallings: Remove a ‘process’, creating a path instead of a cycle.</li>
+  <li>Ordering Solutions: Ensure that at least one ‘process’ always can get all resources through ordering (creates a sink node).</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="questions">Questions?</h2>
+
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

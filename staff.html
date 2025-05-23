@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Staff</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Staff" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+    <h1 class="heading">
+        Course Staff
+    </h1>
+    <section class="center">
+        <p>
+            Most questions should be asked on our Q &amp; A Forum, so that answers can benefit the entire class.
+            Please acquaint yourself with our <a href="https://cs341.cs.illinois.edu/resources.html#forum-q-and-a-search-first-dont-post">Forum policy!</a>
+        </p>
+        <p>
+            However, if you have a sensitive issue feel free to make a private note on the forum, or email course staff
+            directly.
+        </p>
+    </section>
+    <!-- A bit janky: assumes zero or one instructors. Why can't Jekyll have stable sort??? :( -->
+    
+    
+    
+    
+    <section class="gallery">
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:angrave@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="angrave" data-toggle="tooltip" data-placement="bottom"
+                    title="Captain, Lecturer, Teaching Professor interested in Systems and CS Education and has been on staff for Fall 2006 - Spring 2008, Fall 2014 - Fall 2016, Spring 2018 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/current/angrave.jpg);">
+                </div>
+                <div class="staff-name">
+                    Lawrence Angrave
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:akhilnb2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="akhilnb2" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Assignment Development  and has been on staff for Fall 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Akhil Bharanidhar
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:alexy3@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="alexy3" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Honors  and has been on staff for Fall 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Alex Yang
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:ananthm3@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="ananthm3" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours / Infrastructure (previously Assignment Development)  and has been on staff for Fall 2023 - Spring 2024"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Ananth Madan
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:as156@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="as156" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Anthony Smykalov
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:breidys2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="breidys2" data-toggle="tooltip" data-placement="bottom"
+                    title="Teaching Assistant interested in  and has been on staff for Spring 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/current/breidys2.jpg);">
+                </div>
+                <div class="staff-name">
+                    Benjamin Reidys
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:billjz2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="billjz2" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Bill Zhang
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:cs341admin@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="cs341admin" data-toggle="tooltip" data-placement="bottom"
+                    title="Assistance for exceptional items that cannot be handled by your section TA (e.g. exam sickness, DRES) interested in Exceptional Issues and has been on staff for "
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    CS 341 Admin
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:cbeve2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="cbeve2" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/current/cbeve2.jpg);">
+                </div>
+                <div class="staff-name">
+                    Caleb Beversdorf
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:youn13@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="youn13" data-toggle="tooltip" data-placement="bottom"
+                    title="Teaching Assistant interested in  and has been on staff for Spring 2024, Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Christina Youn
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:dsingh14@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="dsingh14" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Infrastructure  and has been on staff for Fall 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/current/dsingh14.jpg);">
+                </div>
+                <div class="staff-name">
+                    Dev Singh
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:eishap2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="eishap2" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Honors  and has been on staff for Fall 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Eisha Peyyeti
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:ied2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="ied2" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Ian Doherty
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:jinghao7@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="jinghao7" data-toggle="tooltip" data-placement="bottom"
+                    title="Teaching Assistant interested in  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Jinghao Jia
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:kande30@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="kande30" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Assignment Development  and has been on staff for Fall 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Knud Anderson
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:porat2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="porat2" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Leor Porat
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:che27@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="che27" data-toggle="tooltip" data-placement="bottom"
+                    title="Teaching Assistant interested in  and has been on staff for Fall 2023 - Spring 2024"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Leslie He
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:marial5@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="marial5" data-toggle="tooltip" data-placement="bottom"
+                    title="Teaching Assistant interested in  and has been on staff for Fall 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Maria Lusardi
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:kraay2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="kraay2" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Front Facing  and has been on staff for Fall 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Mark Kraay
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:navidt@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="navidt" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Navid Tajkhorshid
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:qhng2@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="qhng2" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Quanhao Ng
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:menezes4@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="menezes4" data-toggle="tooltip" data-placement="bottom"
+                    title="Teaching Assistant, previously Course Assistant Lead  and has been on staff for Spring 2021 - Spring 2024"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Rishabh Menezes
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:tdg3@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="tdg3" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Infrastructure  and has been on staff for Fall 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Timothy Gonazles
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:ou14@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="ou14" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2024 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    William Ou
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:yanniz3@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="yanniz3" data-toggle="tooltip" data-placement="bottom"
+                    title="Lab / Office Hours  and has been on staff for Spring 2025"
+                    style="background-image: url(/images/staffPhotos/current/yanniz3.jpg);">
+                </div>
+                <div class="staff-name">
+                    Yanni Zhuang
+                </div>
+            </a>
+        </section>
+        
+        
+        
+        <section class="staff-container">
+            <a href="mailto:yifan24@illinois.edu?Subject=CS%20341%20Student" alt="Mail Student">
+                <div class="staff-image" id="yifan24" data-toggle="tooltip" data-placement="bottom"
+                    title="Course Assistant Lead, previously Assignment Development  and has been on staff for Fall 2023 - Spring 2025"
+                    style="background-image: url(/images/staffPhotos/default.jpg);">
+                </div>
+                <div class="staff-name">
+                    Yifan Zhu
+                </div>
+            </a>
+        </section>
+        
+    </section>
+    </main>
+    <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+
+</html>

@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Parallel Make</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Parallel Make" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Parallel Make
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Part 1</b> due <b>2025-03-31 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>parmake.c</li>
+                
+              </ul>
+              
+              
+              <b>Part 2</b> due <b>2025-04-07 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>parmake.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_introduction" href="#introduction" class="fancy-link">Introduction</a></li>
+<li><a id="toc_resource-allocation-graphs" href="#resource-allocation-graphs" class="fancy-link">Resource Allocation Graphs</a></li>
+<li><a id="toc_program-inputs" href="#program-inputs" class="fancy-link">Program Inputs</a></li>
+<li><a id="toc_process-the-makefile" href="#process-the-makefile" class="fancy-link">Process the Makefile</a></li>
+<li><a id="toc_graph-data-structure" href="#graph-data-structure" class="fancy-link">Graph Data Structure</a></li>
+<li><a id="toc_graph-searching-and-cycle-detection" href="#graph-searching-and-cycle-detection" class="fancy-link">Graph Searching and Cycle Detection</a></li>
+<li><a id="toc_satisfy-the-rules" href="#satisfy-the-rules" class="fancy-link">Satisfy the rules</a></li>
+<li><a id="toc_parallelize-part-2-only" href="#parallelize-part-2-only" class="fancy-link">Parallelize! (Part 2 Only)</a></li>
+<li><a id="toc_example" href="#example" class="fancy-link">Example</a></li>
+<li><a id="toc_compiling-and-running" href="#compiling-and-running" class="fancy-link">Compiling and Running</a></li>
+<li><a id="toc_grading" href="#grading" class="fancy-link">Grading</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Parallel Make are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Parallel Programming with Dependencies</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Using a Threadsafe Data structure</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Resource Allocation Graphs (RAG)</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Deadlock Detection</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Synchronization</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="introduction" class="title-text">Introduction<a class="anchor title-text" href="#introduction"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>More and more programs today are being programmed as multithreaded applications.
+The goal of this MP is to give you more practice writing multithreaded applications and to expose common pitfalls that occur while designing a program to work in a parallel manner.
+Additionally, you will need to make use of synchronization primitives to protect the memory shared amongst the threads.</p>
+<p>You are given a task of writing an application which will imitate the common <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> utility.
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> is a utility that automatically builds executable programs from source code by reading files called <code class="language-plaintext highlighter-rouge">Makefiles</code> which specify how to derive the program.
+You have encountered Makefiles in CS 341 MPs as well as in your previous undergraduate CS classes and should be familiar with them.</p>
+<p>We have provided the code to parse a <code class="language-plaintext highlighter-rouge">Makefile</code> and list the dependencies and commands specified in the file.
+Once the file is parsed, you will need to perform the actions specified by the <code class="language-plaintext highlighter-rouge">Makefile</code> following the rules specified later in the docs.
+Using a fixed pool of threads, you will parallelize this execution process such that all commands are executed as soon as their dependencies are satisfied.</p>
+<p>Before starting you should read the Wikipedia article on <a href="http://en.wikipedia.org/wiki/Make_(software)" class="fancy-link wiki-link">Make</a>.</p>
+<p>You might also want to look <a href="https://web.archive.org/web/20170202011246/http://www.cs.umd.edu/class/fall2002/cmsc214/Tutorial/makefile.html" class="fancy-link wiki-link">here</a> for some notes that explain makefiles really well.
+(They start with some C++ specific details but you can skip to the ‘Now, makefiles’ section. Also, do note that the makefile for this MP does NOT use makefile macros.)</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="resource-allocation-graphs" class="title-text">Resource Allocation Graphs<a class="anchor title-text" href="#resource-allocation-graphs"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>A good way to think about this MP at a high level is by using a model <a href="http://cs341.cs.illinois.edu/coursebook/Deadlock#resource-allocation-graphs" class="fancy-link wiki-link">covered in lecture</a>, Resource Allocation Graphs. You can think of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> rules as nodes in the graph and dependency relations as directed edges that point from rules to dependencies. This visualization comes in handy when we are dealing with programs that may encounter deadlock. Given that a <code class="language-plaintext highlighter-rouge">Makefile</code> may contain a circular dependency (what are the required conditions for a program to deadlock?), keep this model at the back of your mind when building your solution.</p>
+<p>Here is an example Makefile:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d: a c
+	echo D
+a: b
+	echo A
+b: a
+	echo B
+c:
+	echo C
+</code></pre></div></div>
+<p>The following graph represents the above Makefile. Note that ‘a’ and ‘b’ form a cycle (-&gt; ‘b’ -&gt; ‘a’ -&gt;).</p>
+<p class="img-paragraph"><img src="../images/assignment-docs/mp/parallel_make/ColorfulDeadlock.svg" alt="Makefile Graph"></p>
+<p>Note that not all Makefiles form RAG-like graphs, so your cycle detection from <code class="language-plaintext highlighter-rouge">deadlock_demolition</code> may not work here! Does the graph below have a cycle?</p>
+<p class="img-paragraph"><img src="../images/assignment-docs/mp/parallel_make/makefile_cross_edge2.svg" alt="Makefile Graph Alternate"></p>
+<p>Some more resources on RAGs &amp; Deadlock: <a href="https://en.wikipedia.org/wiki/Deadlock" class="fancy-link wiki-link">Wikipedia</a>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="program-inputs" class="title-text">Program Inputs<a class="anchor title-text" href="#program-inputs"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The input for this MP will be in the following form:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./path/to/parmake [-f path/to/makefile] [-j positive-integer] [targets ...]
+</code></pre></div></div>
+<p>The input parsing step is already handled for you in <code class="language-plaintext highlighter-rouge">parmake_main.c</code>. The Makefile, thread count, and target list will be provided as arguments to the <code class="language-plaintext highlighter-rouge">parmake()</code> function, which you will have to implement.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="process-the-makefile" class="title-text">Process the Makefile<a class="anchor title-text" href="#process-the-makefile"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The first thing you will need to do is to parse the Makefile into a dependency graph.</p>
+<p>The Makefile will always consist of one or more rules of the form:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>target [target ...]: [dependency ...]
+    [command 1]
+    .
+    .
+    [command n]
+</code></pre></div></div>
+<p>For example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule1: rule2 rule3
+    commandtoberun withargs
+    commandtoberun2 withargs
+
+rule2:
+    othercommand
+
+rule3 rule4:
+    finalcommand
+</code></pre></div></div>
+<p>You may want to take a look at the <a href="https://en.wikipedia.org/wiki/Make_(software)" class="fancy-link wiki-link">Wikipedia page</a> if you do not know how to read or write a basic Makefile. However, you will not need to parse the Makefile yourself. Instead,
+you must use the <code class="language-plaintext highlighter-rouge">parser_parse_makefile()</code> function to represent the Makefile as a dependency graph.</p>
+<p><code class="language-plaintext highlighter-rouge">parser_parse_makefile()</code> takes the filename and a <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/NULL.3const.html" class="fancy-link">NULL</a></code>-terminated array of strings as inputs.</p>
+<p>The array of strings specify the targets you are planning to run. Remember, if the array is null or empty, the parser will use the first target found in the Makefile. The parser returns a graph data structure containing all rules and dependencies in the <code class="language-plaintext highlighter-rouge">Makefile</code>, <em>including those that do not need to be executed</em>.</p>
+<p>For example, suppose we have the following Makefile:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a: b c
+    echo A
+b: c
+    echo B
+c:
+    echo C
+d:
+    echo D
+</code></pre></div></div>
+<p>The parser will return a graph containing 5 vertices, once each for rule ‘a’, ‘b’, ‘c’, and ‘d’, as well as one sentinel (labeled as an empty string) whose neighbor is rule ‘a’ (i.e. the only <a href="https://www.gnu.org/software/make/manual/html_node/Goals.html" class="fancy-link wiki-link">goal</a> rule).</p>
+<p>Those curious of the implementation can view the source in <code class="language-plaintext highlighter-rouge">parser.c</code> although this is not necessary.</p>
+<p>We have provided an implementation of a vector, a set, a dictionary, a graph, and a thread-safe queue. This is the same queue from luscious locks and the same vector you’ve used in prior assignments. The set, graph, and dictionary are new data structures from the CS 341 provided library.
+You can view the header information in <code class="language-plaintext highlighter-rouge">includes/</code>.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="graph-data-structure" class="title-text">Graph Data Structure<a class="anchor title-text" href="#graph-data-structure"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Since a Makefile is a representation of a dependency graph, our parser returns a directed graph data structure. You may find the graph API in <code class="language-plaintext highlighter-rouge">includes/graph.h</code>. To access Makefile rules from this graph, you would use</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule_t * rule = (rule_t *)graph_get_vertex_value(dependency_graph, target)
+</code></pre></div></div>
+<p>where <code class="language-plaintext highlighter-rouge">target</code> is a string labelling a rule. To get a list of all targets, use</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vector *targets = graph_vertices(dependency_graph)
+</code></pre></div></div>
+<p>To get a list of all the dependencies of a rule with a given target, use</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vector *dependencies = graph_neighbors(dependency_graph, target)
+</code></pre></div></div>
+<p>The graph returned from the <code class="language-plaintext highlighter-rouge">parmake</code> parser will contain all the vertices and edges depicting rules and dependencies in a Makefile. In addition, it will contain an empty sentinel rule (with key “”) whose neighbors are the goal rules. <em>Do not execute this rule</em>. Instead, you should only work on rules that descend from this rule (i.e. the goal rules and all their descendants). Here, “B descends from A” means that ‘A’ implicitly depends on ‘B’ to run.</p>
+<p>See <code class="language-plaintext highlighter-rouge">rule.h</code> for a description of the <code class="language-plaintext highlighter-rouge">rule_t</code> API. And read <code class="language-plaintext highlighter-rouge">parser.h</code> for more usage details on the dependency graph.</p>
+<p><strong>USAGE WARNINGS</strong>:</p>
+<ul>
+  <li>
+    <p>Any vectors returned from graph functions must be destroyed manually to prevent memory leaks. Destroying these vectors will not destroy anything in the actual graph.</p>
+  </li>
+  <li>Destroying the graph or removing vertices from the graph will completely destroy all associated targets (i.e. rule labels), rules, and edges. So copy anything you need for later use before removal or destruction.</li>
+  <li>
+    <p>You should not add new vertices to the graph. If you choose to do this using <code class="language-plaintext highlighter-rouge">graph_set_vertex()</code>, keep in mind that both the key and value must be <em>strings</em>, since the graph’s value copy constructor transforms strings to new <code class="language-plaintext highlighter-rouge">rule_t</code> structs. Read <code class="language-plaintext highlighter-rouge">parser.c</code> in order to understand the dependency graph’s memory management scheme.</p>
+  </li>
+  <li>
+<strong>The graph and vector classes are <em>not</em> thread-safe!</strong> You must enforce mutual exclusion if multiple threads are to concurrently modify and access these structures.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="graph-searching-and-cycle-detection" class="title-text">Graph Searching and Cycle Detection<a class="anchor title-text" href="#graph-searching-and-cycle-detection"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>GNU <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> handles cyclical dependencies by attempting to delete edges that cause cycles. If you tried to call <code class="language-plaintext highlighter-rouge">make d</code> on the example Makefile shown earlier, GNU <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> would essentially attempt to convert that Makefile to this one:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>d: a c
+	echo D
+a: b
+	echo A
+b:  #a (comment out 'a': no more cycles if you remove this edge!)
+	echo B
+c:
+	echo C
+</code></pre></div></div>
+<p>To highlight the importance of cycle detection in resource allocation schemes, we also require that you explicitly handle cycles. However, <em>your implementation of parmake will ignore all goal rules whose descendants belong to cycles</em>. That is, calling <code class="language-plaintext highlighter-rouge">./parmake d</code> on this makefile would execute nothing, since ‘d’ cannot be satisfied due to the cyclical dependency (-&gt; ‘a’ -&gt; ‘b’ -&gt;). However, calling <code class="language-plaintext highlighter-rouge">./parmake c</code> will still execute <code class="language-plaintext highlighter-rouge">echo C</code>, since the (nonexistent) descendants of ‘c’ don’t belong to cycles.</p>
+<p>Moreover, you must announce any goal rules that are dropped due to existence of cyclical dependencies using the function <code class="language-plaintext highlighter-rouge">print_cycle_failure()</code> found in <code class="language-plaintext highlighter-rouge">format.h</code>. Read the header file for usage information.</p>
+<p>Since this MP requires you to implement some graph algorithms, you may want to consult <a href="http://www.cs.cornell.edu/courses/cs2112/2012sp/lectures/lec24/lec24-12sp.html" class="fancy-link wiki-link">this resource</a> to jog your CS 225 memory.</p>
+<p>Note: You do NOT have to parallelize cycle detection and essential rule extraction. You only need to parallelize the execution of commands.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="satisfy-the-rules" class="title-text">Satisfy the rules<a class="anchor title-text" href="#satisfy-the-rules"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Each rule depends on a (possibly empty) set of other rules. It is important to note that every dependency will be a rule, even if the dependency isn’t explicitly defined in the Makefile. For example, these two Makefiles are equivalent:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Makefile 1
+a: b
+	echo A
+# Makefile 2
+a: b
+    echo A
+b:
+</code></pre></div></div>
+<p>Some rules might also be files on the disk. A rule can be satisfied if and only if all of rules that it depends on have been satisfied and none of them have failed (See what determines a failed rule in Running Commands).</p>
+<p>Note that you shouldn’t try to satisfy rules that aren’t “good” goal rules and don’t have any “good” goal rules as ancestors. Specifically, you should not try to satisfy a rule if any of the following is true:</p>
+<ol>
+  <li>the rule is a goal rule, but is involved in a cycle, i.e. there exists a path from the rule to itself in the dependency graph</li>
+  <li>the rule is a goal rule, but at least one of its descendants, i.e. any rule in the dependency graph reachable from the goal rule, is involved in a cycle</li>
+  <li>the rule is not a goal rule, and it has no ancestors that are goal rules</li>
+  <li>the rule is not a goal rule, and all of its goal rule ancestors fall under <em>(1)</em> or <em>(2)</em>
+</li>
+</ol>
+<p>Basically, there is no need to satisfy a rule if it isn’t necessary to satisfy the goal rules or if we already know that all the goal rules it might satisfy are doomed to fail due to cycles. Trying to satisfying any of them would be impossible at worst or a waste of time at best.</p>
+<p>When a rule is ready to be satisfied, we must determine if we actually need to run the rule’s commands. We run its commands if and only if at least one of the following is true:</p>
+<ul>
+  <li>The name of the rule is not the name of a file on disk.
+<strong>Example:</strong>
+</li>
+</ul>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>clean :
+    rm -rf *
+</code></pre></div></div>
+<p>or</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>makenewfile:
+    touch newfile
+</code></pre></div></div>
+<ul>
+  <li>The rule depends on another rule that is not the name of a file on disk.
+<strong>Example:</strong>
+</li>
+</ul>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>clean : take_backup
+    rm -rf *
+take_backup :
+    cp -r * ../backup
+</code></pre></div></div>
+<ul>
+  <li>The rule is the name of a file on disk, and it depends on another file with a NEWER change time than the change time of the file which corresponds to the name of the rule. To determine whether a file is NEWER, you should use stat and difftime to determine if it is newer. The differences in time will have a granularity of 1 second.</li>
+</ul>
+<p>If neither of these is true, then the rule is already satisfied and does not need its commands executed. Otherwise, the rule is unsatisfied and available to be run. Once a rule is satisfied, it shouldn’t be run again.</p>
+<h3 id="running-the-commands" class="title-text">Running the commands</h3>
+<p>You can use <code class="language-plaintext highlighter-rouge">system()</code> to run the commands associated with each rule. There are a few conditions to think about when running these commands:</p>
+<ul>
+  <li>The rule’s commands need to be run sequentially in the order they appear in the command vector</li>
+  <li>If any of a rule’s commands fail while evaluating that rule, then the rule should “fail” and no more of its commands should be run</li>
+  <li>If a rule fails, its parent rules (rules which have this rule as a dependency) should fail as well. Note that this is not necessarily true for the converse (i.e. if a parent fails, its children may still be satisfied)</li>
+</ul>
+<p>For your convenience these rules are captured in the following flow chart:</p>
+<p class="img-paragraph"><img src="../images/assignment-docs/mp/parallel_make/parmake_flowchart.svg" alt="Flow Chart"></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="parallelize-part-2-only" class="title-text">Parallelize! (Part 2 Only)<a class="anchor title-text" href="#parallelize-part-2-only"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><code class="language-plaintext highlighter-rouge">parmake</code> must satisfy all of the rules needed to build the specified targets correctly and as quickly as possible. Because we want maximum runtime performance, you need to be running a rule on each worker thread whenever possible. Threads should not stay idle when there are rules that are available for execution. A rule is defined as available when all of its dependencies have been satisfied and it is not already satisfied (see “Satisfy the rules”).</p>
+<p>There are two important parallelism requirements:</p>
+<ul>
+  <li>You should NOT run any rule unless its dependencies have been satisfied (all dependent rules have been run and none have failed; see the previous section)</li>
+  <li>If a thread is available (not doing useful work), and there is at least one rule that is available to be executed, the available thread should work on executing that rule.</li>
+</ul>
+<p>The exact type of work that your worker threads perform will generally depend on your implementation. But for the purposes of this MP, you <em>must</em> parallelize the actual execution of commands. If any rule is ready to have its commands executed, a worker thread should do so as soon as possible (i.e. within several milliseconds) unless all worker threads are already executing commands.</p>
+<p>If a rule is available because all its dependencies have been satisfied, and some of your threads are still not executing any rules, then you probably haven’t achieved maximum parallelization.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="example" class="title-text">Example<a class="anchor title-text" href="#example"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Suppose we have <code class="language-plaintext highlighter-rouge">makefile</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a: b c
+    echo A
+b: c
+    echo B
+c:
+    echo C
+</code></pre></div></div>
+<p>Running <code class="language-plaintext highlighter-rouge">./parmake</code> should output:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C
+B
+A
+</code></pre></div></div>
+<p>There are many more examples provided in your MP folder.</p>
+<h3 id="notes" class="title-text">Notes</h3>
+<ul>
+  <li>Only make changes in <code class="language-plaintext highlighter-rouge">parmake.c</code>.</li>
+  <li>Note that Makefiles require tabs for indentation, so do not use spaces or modify tabs in editor settings if you plan on directly editing a <code class="language-plaintext highlighter-rouge">Makefile</code>. <code class="language-plaintext highlighter-rouge">cat -T</code> may be useful for detecting errors.</li>
+  <li>You will receive 0 points if your implementation uses <code class="language-plaintext highlighter-rouge">sleep()</code>, <code class="language-plaintext highlighter-rouge">usleep()</code>, or any other form of timed waiting (e.g. <code class="language-plaintext highlighter-rouge">sem_timedwait()</code>).</li>
+  <li>For full points, avoid busy-waiting. i.e. threads should not be burning CPU when they aren’t doing useful work.</li>
+  <li>You must only ever launch <code class="language-plaintext highlighter-rouge">T+1</code> threads, where <code class="language-plaintext highlighter-rouge">T</code> is the number of worker threads (+1 comes from the main thread). Do not keep re-spawning new threads for every rule.</li>
+  <li>We will try to artificially create spurious wakeups, so think about how you would resolve those.</li>
+  <li>To achieve a perfect score, you should maximize parallelization by ensuring that every given rule that can be run at a given time is being run.</li>
+  <li>Because rules should be run as soon as they are available, there will sometimes be a well-defined, optimal order of rule execution when multiple threads are used. Think about why that might be the case.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="compiling-and-running" class="title-text">Compiling and Running<a class="anchor title-text" href="#compiling-and-running"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>As usual, we have provided you with a Makefile which will compile your code in a variety of ways.
+Unfortunately, you can’t use <code class="language-plaintext highlighter-rouge">parmake</code> to compile <code class="language-plaintext highlighter-rouge">parmake</code>, because our parser does not support variables and variable expansions.</p>
+<p>To compile in release mode, run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code>, for debug mode, use <code class="language-plaintext highlighter-rouge">make debug.</code></p>
+<p>If you want to write more test cases yourself (which we highly recommend!) in VSCode, make sure you <strong>turn off</strong> <code class="language-plaintext highlighter-rouge">Editor: Insert Spaces</code> <strong>in the settings</strong> first, or you will get the <code class="language-plaintext highlighter-rouge">missing separator</code> error when you try to run parmake on them. This is because the makefile parser expects tab characters instead of space characters at the beginning of indented lines for <a href="https://retrocomputing.stackexchange.com/questions/20292/why-does-make-only-accept-tab-indentation" class="fancy-link wiki-link">historical reasons</a>.</p>
+<h3 id="threadsanitizer" class="title-text">ThreadSanitizer</h3>
+<p>The provided <code class="language-plaintext highlighter-rouge">Makefile</code> also builds a ThreadSanitizer instrumented version of your code.
+The tsan executable is <code class="language-plaintext highlighter-rouge">parmake-tsan</code>.
+You can run this (instead of <code class="language-plaintext highlighter-rouge">parmake</code>) to use the ThreadSanitizer race condition detection tool with parmake.
+For a tsan example, see <a href="https://clang.llvm.org/docs/ThreadSanitizer.html" class="fancy-link wiki-link">the tsan docs</a></p>
+<p><strong>We will be using ThreadSanitizer to grade your code! If the autograder detects a data race, you won’t automatically get 0 points, but a few points will be deducted.</strong></p>
+<h3 id="almost-a-reference-implementation" class="title-text">(Almost) a reference implementation</h3>
+<p>You can use the real GNU <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> to check your implementation. However, it differs from <code class="language-plaintext highlighter-rouge">parmake</code> in certain substantive aspects that may or may not be resolved. Here is a partial list of differences:</p>
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> usually prints every command it runs. Run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> with the flag <code class="language-plaintext highlighter-rouge">-s</code> (for silent) to suppress these.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> deals with cycles differently than <code class="language-plaintext highlighter-rouge">parmake</code>, so do not use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> as a reference for cycle handling.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> kills the program immediately after a rule fails. Run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> with the flag <code class="language-plaintext highlighter-rouge">-k</code> (for keep going) to continue satisfying rules that aren’t doomed to fail.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> requires every dependency to either be explicitly declared in the Makefile or present as a file on the disk. To get <code class="language-plaintext highlighter-rouge">parmake</code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> to work the same way, define every rule explicitly.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> spits out error messages when commands fail, even when the flag <code class="language-plaintext highlighter-rouge">-k</code> is used. <code class="language-plaintext highlighter-rouge">parmake</code> will not do this.</li>
+</ul>
+<p>Example “good” Makefile:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#testfile
+
+a: maybefile b c
+	echo "a"
+b:
+	cat / # always fails
+	echo "I should not print out."
+c:
+	echo "c"
+maybefile:
+</code></pre></div></div>
+<p>Example commands:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ ./parmake -f testfile -j 2
+</code></pre></div></div>
+<p>This should generate the same output as:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    $ make -s -k -f testfile -j 2
+</code></pre></div></div>
+<p>except maybe for some printouts that <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code> emits when ‘b’ fails. Remember that you don’t need to implement any GNU Make features that aren’t prescribed in these docs.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="grading" class="title-text">Grading<a class="anchor title-text" href="#grading"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Here is the grading breakdown:</p>
+<ul>
+  <li>Part 1 (50%): Create a single-threaded version of <code class="language-plaintext highlighter-rouge">parmake</code> (so just <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/make.1p.html" class="fancy-link">make</a></code>). This version should:
+    <ul>
+      <li>identify cycles in the dependency graph returned by the parser and remove goal rules that depend on them</li>
+      <li>attempt to run all other goal rules by running all their descendants (i.e. implicit dependencies) and <em>only</em> their descendants</li>
+      <li>identify whether or not to run a rule as per the flowchart recipe and run it once possible (or reject it if not possible)</li>
+    </ul>
+  </li>
+  <li>Part 2 (50%): Create the full multi-threaded version of <code class="language-plaintext highlighter-rouge">parmake</code> (so <code class="language-plaintext highlighter-rouge">par</code>). This version should:
+    <ul>
+      <li>perform the same functions as in Part 1</li>
+      <li>run with 2-4 threads (excluding the main thread) for any given Makefile</li>
+      <li>concurrently run all rules whose dependencies have been satisfied, subject to the thread limit</li>
+      <li>avoid deadlock, data races, livelock, and busy-waiting</li>
+      <li>create performant code that doesn’t incur excessive overhead (e.g &gt; 10 ms per rule)</li>
+    </ul>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/parallel_make.md";
+  </script>
+</body>
+
+</html>

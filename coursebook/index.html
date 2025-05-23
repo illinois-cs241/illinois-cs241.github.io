@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Home</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Home" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Home
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/duck-alpha-cropped.png" width="50%" class="emoji">
+</p>
+
+<p>This coursebook is being built by students and faculty from the University of Illinois. It is based on a crowd-source authoring wikibook experiment by Lawrence Angrave from CS @ Illinois, but is now its own .tex based project. Its source code is located at <a href="https://github.com/illinois-cs241/coursebook" class="fancy-link wiki-link">the Github link</a> which you can find a pdf version of the book as well.</p>
+
+<p>This book is an introduction to programming in C, and system programming (processes, threads, synchronization, networking and more!). We assume you’ve already had some programming experience, in an earlier computer science course. If you have any typos to report or content to request, feel free to file an issue at the link above. Happy Reading!</p>
+
+<h3 id="one-big-pdf" class="title-text"><a href="https://github.com/illinois-cs241/coursebook/tree/pdf_deploy/main.pdf?raw=true" alt="PDF Version" class="wiki-link">One Big PDF<img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" style="margin-left: 10px;" width="auto" height="50px"> </a></h3>
+
+<h3 id="one-big-epub" class="title-text"><a href="https://github.com/illinois-cs241/coursebook/tree/epub_deploy/main.epub?raw=true" alt="Epub Versions" class="wiki-link">One Big EPUB<img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/epub_icon.png" style="margin-left: 10px;" width="auto" height="50px"> </a></h3>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="1-introduction-" class="title-text">1. <a href="./Introduction" class="fancy-link wiki-link">Introduction</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/introduction.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#1-introduction-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Introduction#authors" class="fancy-link wiki-link">Authors</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="2-background-" class="title-text">2. <a href="./Background" class="fancy-link wiki-link">Background</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/background.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#2-background-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Background#systems-architecture" class="fancy-link wiki-link">Systems Architecture</a></li>
+  <li><a href="./Background#debugging-and-environments" class="fancy-link wiki-link">Debugging and Environments</a></li>
+  <li><a href="./Background#valgrind" class="fancy-link wiki-link">Valgrind</a></li>
+  <li><a href="./Background#gdb" class="fancy-link wiki-link">GDB</a></li>
+  <li><a href="./Background#homework-0" class="fancy-link wiki-link">Homework 0</a></li>
+  <li><a href="./Background#university-of-illinois-specific-guidelines" class="fancy-link wiki-link">University of Illinois Specific Guidelines</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="3-the-c-programming-language-" class="title-text">3. <a href="./Introc" class="fancy-link wiki-link">The C Programming Language</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/introc.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#3-the-c-programming-language-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Introc#history-of-c" class="fancy-link wiki-link">History of C</a></li>
+  <li><a href="./Introc#crash-course-introduction-to-c" class="fancy-link wiki-link">Crash course introduction to C</a></li>
+  <li><a href="./Introc#language-facilities" class="fancy-link wiki-link">Language Facilities</a></li>
+  <li><a href="./Introc#the-c-and-linux" class="fancy-link wiki-link">The C and Linux</a></li>
+  <li><a href="./Introc#common-c-functions" class="fancy-link wiki-link">Common C Functions</a></li>
+  <li><a href="./Introc#c-memory-model" class="fancy-link wiki-link">C Memory Model</a></li>
+  <li><a href="./Introc#pointers" class="fancy-link wiki-link">Pointers</a></li>
+  <li><a href="./Introc#common-bugs" class="fancy-link wiki-link">Common Bugs</a></li>
+  <li><a href="./Introc#logic-and-program-flow-mistakes" class="fancy-link wiki-link">Logic and Program flow mistakes</a></li>
+  <li><a href="./Introc#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Introc#questions/exercises" class="fancy-link wiki-link">Questions/Exercises</a></li>
+  <li><a href="./Introc#rapid-fire:-pointer-arithmetic" class="fancy-link wiki-link">Rapid Fire: Pointer Arithmetic</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="4-processes-" class="title-text">4. <a href="./Processes" class="fancy-link wiki-link">Processes</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/processes.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#4-processes-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Processes#file-descriptors" class="fancy-link wiki-link">File Descriptors</a></li>
+  <li><a href="./Processes#processes" class="fancy-link wiki-link">Processes</a></li>
+  <li><a href="./Processes#process-contents" class="fancy-link wiki-link">Process Contents</a></li>
+  <li><a href="./Processes#intro-to-fork" class="fancy-link wiki-link">Intro to Fork</a></li>
+  <li><a href="./Processes#waiting-and-executing" class="fancy-link wiki-link">Waiting and Executing</a></li>
+  <li><a href="./Processes#exec" class="fancy-link wiki-link">exec</a></li>
+  <li><a href="./Processes#the-fork-exec-wait-pattern" class="fancy-link wiki-link">The fork-exec-wait Pattern</a></li>
+  <li><a href="./Processes#further-reading" class="fancy-link wiki-link">Further Reading</a></li>
+  <li><a href="./Processes#questions/exercises" class="fancy-link wiki-link">Questions/Exercises</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="5-memory-allocators-" class="title-text">5. <a href="./Malloc" class="fancy-link wiki-link">Memory Allocators</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/malloc.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#5-memory-allocators-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Malloc#introduction" class="fancy-link wiki-link">Introduction</a></li>
+  <li><a href="./Malloc#c-memory-allocation-api" class="fancy-link wiki-link">C Memory Allocation API</a></li>
+  <li><a href="./Malloc#intro-to-allocating" class="fancy-link wiki-link">Intro to Allocating</a></li>
+  <li><a href="./Malloc#memory-allocator-tutorial" class="fancy-link wiki-link">Memory Allocator Tutorial</a></li>
+  <li><a href="./Malloc#case-study:-buddy-allocator,-an-example-of-a-segregated-list" class="fancy-link wiki-link">Case Study: Buddy Allocator, an example of a segregated list</a></li>
+  <li><a href="./Malloc#case-study:-slub-allocator,-slab-allocation" class="fancy-link wiki-link">Case Study: SLUB Allocator, Slab allocation</a></li>
+  <li><a href="./Malloc#further-reading" class="fancy-link wiki-link">Further Reading</a></li>
+  <li><a href="./Malloc#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Malloc#questions/exercises" class="fancy-link wiki-link">Questions/Exercises</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="6-threads-" class="title-text">6. <a href="./Threads" class="fancy-link wiki-link">Threads</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/threads.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#6-threads-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Threads#processes-vs-threads" class="fancy-link wiki-link">Processes vs threads</a></li>
+  <li><a href="./Threads#thread-internals" class="fancy-link wiki-link">Thread Internals</a></li>
+  <li><a href="./Threads#simple-usage" class="fancy-link wiki-link">Simple Usage</a></li>
+  <li><a href="./Threads#pthread-functions" class="fancy-link wiki-link">Pthread Functions</a></li>
+  <li><a href="./Threads#race-conditions" class="fancy-link wiki-link">Race Conditions</a></li>
+  <li><a href="./Threads#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Threads#questions" class="fancy-link wiki-link">Questions</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="7-synchronization-" class="title-text">7. <a href="./Synchronization" class="fancy-link wiki-link">Synchronization</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/synchronization.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#7-synchronization-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Synchronization#mutex" class="fancy-link wiki-link">Mutex</a></li>
+  <li><a href="./Synchronization#condition-variables" class="fancy-link wiki-link">Condition Variables</a></li>
+  <li><a href="./Synchronization#thread-safe-data-structures" class="fancy-link wiki-link">Thread-Safe Data Structures</a></li>
+  <li><a href="./Synchronization#software-solutions-to-the-critical-section" class="fancy-link wiki-link">Software Solutions to the Critical Section</a></li>
+  <li><a href="./Synchronization#working-solutions" class="fancy-link wiki-link">Working Solutions</a></li>
+  <li><a href="./Synchronization#implementing-counting-semaphore" class="fancy-link wiki-link">Implementing Counting Semaphore</a></li>
+  <li><a href="./Synchronization#barriers" class="fancy-link wiki-link">Barriers</a></li>
+  <li><a href="./Synchronization#ring-buffer" class="fancy-link wiki-link">Ring Buffer</a></li>
+  <li><a href="./Synchronization#extra:-process-synchronization" class="fancy-link wiki-link">Extra: Process Synchronization</a></li>
+  <li><a href="./Synchronization#external-resources" class="fancy-link wiki-link">External Resources</a></li>
+  <li><a href="./Synchronization#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Synchronization#questions" class="fancy-link wiki-link">Questions</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="8-deadlock-" class="title-text">8. <a href="./Deadlock" class="fancy-link wiki-link">Deadlock</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/deadlock.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#8-deadlock-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Deadlock#resource-allocation-graphs" class="fancy-link wiki-link">Resource Allocation Graphs</a></li>
+  <li><a href="./Deadlock#coffman-conditions" class="fancy-link wiki-link">Coffman Conditions</a></li>
+  <li><a href="./Deadlock#approaches-to-solving-livelock-and-deadlock" class="fancy-link wiki-link">Approaches to Solving Livelock and Deadlock</a></li>
+  <li><a href="./Deadlock#dining-philosophers" class="fancy-link wiki-link">Dining Philosophers</a></li>
+  <li><a href="./Deadlock#viable-solutions" class="fancy-link wiki-link">Viable Solutions</a></li>
+  <li><a href="./Deadlock#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Deadlock#questions" class="fancy-link wiki-link">Questions</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="9-virtual-memory-and-interprocess-communication-" class="title-text">9. <a href="./Ipc" class="fancy-link wiki-link">Virtual Memory and Interprocess Communication</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/ipc.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#9-virtual-memory-and-interprocess-communication-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Ipc#translating-addresses" class="fancy-link wiki-link">Translating Addresses</a></li>
+  <li><a href="./Ipc#mmap" class="fancy-link wiki-link">mmap</a></li>
+  <li><a href="./Ipc#pipes" class="fancy-link wiki-link">Pipes</a></li>
+  <li><a href="./Ipc#named-pipes" class="fancy-link wiki-link">Named Pipes</a></li>
+  <li><a href="./Ipc#files" class="fancy-link wiki-link">Files</a></li>
+  <li><a href="./Ipc#ipc-alternatives" class="fancy-link wiki-link">IPC Alternatives</a></li>
+  <li><a href="./Ipc#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Ipc#questions" class="fancy-link wiki-link">Questions</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="10-scheduling-" class="title-text">10. <a href="./Scheduling" class="fancy-link wiki-link">Scheduling</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/scheduling.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#10-scheduling-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Scheduling#high-level-scheduler-overview" class="fancy-link wiki-link">High Level Scheduler Overview</a></li>
+  <li><a href="./Scheduling#measurements" class="fancy-link wiki-link">Measurements</a></li>
+  <li><a href="./Scheduling#measures-of-efficiency" class="fancy-link wiki-link">Measures of Efficiency</a></li>
+  <li><a href="./Scheduling#scheduling-algorithms" class="fancy-link wiki-link">Scheduling Algorithms</a></li>
+  <li><a href="./Scheduling#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Scheduling#questions" class="fancy-link wiki-link">Questions</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="11-networking-" class="title-text">11. <a href="./Networking" class="fancy-link wiki-link">Networking</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/networking.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#11-networking-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Networking#the-osi-model" class="fancy-link wiki-link">The OSI Model</a></li>
+  <li><a href="./Networking#layer-3:-the-internet-protocol" class="fancy-link wiki-link">Layer 3: The Internet Protocol</a></li>
+  <li><a href="./Networking#layer-4:-tcp-and-client" class="fancy-link wiki-link">Layer 4: TCP and Client</a></li>
+  <li><a href="./Networking#layer-4:-tcp-server" class="fancy-link wiki-link">Layer 4: TCP Server</a></li>
+  <li><a href="./Networking#layer-4:-udp" class="fancy-link wiki-link">Layer 4: UDP</a></li>
+  <li><a href="./Networking#layer-7:-http" class="fancy-link wiki-link">Layer 7: HTTP</a></li>
+  <li><a href="./Networking#non-blocking-io" class="fancy-link wiki-link">Non-Blocking IO</a></li>
+  <li><a href="./Networking#remote-procedure-calls" class="fancy-link wiki-link">Remote Procedure Calls</a></li>
+  <li><a href="./Networking#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Networking#questions" class="fancy-link wiki-link">Questions</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="12-filesystems-" class="title-text">12. <a href="./Filesystems" class="fancy-link wiki-link">Filesystems</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/filesystems.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#12-filesystems-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Filesystems#what-is-a-filesystem?" class="fancy-link wiki-link">What is a filesystem?</a></li>
+  <li><a href="./Filesystems#storing-data-on-disk" class="fancy-link wiki-link">Storing data on disk</a></li>
+  <li><a href="./Filesystems#permissions-and-bits" class="fancy-link wiki-link">Permissions and bits</a></li>
+  <li><a href="./Filesystems#virtual-filesystems-and-other-filesystems" class="fancy-link wiki-link">Virtual filesystems and other filesystems</a></li>
+  <li><a href="./Filesystems#memory-mapped-io" class="fancy-link wiki-link">Memory Mapped IO</a></li>
+  <li><a href="./Filesystems#reliable-single-disk-filesystems" class="fancy-link wiki-link">Reliable Single Disk Filesystems</a></li>
+  <li><a href="./Filesystems#simple-filesystem-model" class="fancy-link wiki-link">Simple Filesystem Model</a></li>
+  <li><a href="./Filesystems#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Filesystems#questions" class="fancy-link wiki-link">Questions</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="13-signals-" class="title-text">13. <a href="./Signals" class="fancy-link wiki-link">Signals</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/signals.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#13-signals-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Signals#the-deep-dive-of-signals" class="fancy-link wiki-link">The Deep Dive of Signals</a></li>
+  <li><a href="./Signals#sending-signals" class="fancy-link wiki-link">Sending Signals</a></li>
+  <li><a href="./Signals#handling-signals" class="fancy-link wiki-link">Handling Signals</a></li>
+  <li><a href="./Signals#blocking-signals" class="fancy-link wiki-link">Blocking Signals</a></li>
+  <li><a href="./Signals#signals-in-child-processes-and-threads" class="fancy-link wiki-link">Signals in Child Processes and Threads</a></li>
+  <li><a href="./Signals#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Signals#questions" class="fancy-link wiki-link">Questions</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="14-security-" class="title-text">14. <a href="./Security" class="fancy-link wiki-link">Security</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/security.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#14-security-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Security#security-terminology-and-ethics" class="fancy-link wiki-link">Security Terminology and Ethics</a></li>
+  <li><a href="./Security#security-in-c-programs" class="fancy-link wiki-link">Security in C Programs</a></li>
+  <li><a href="./Security#cyber-security" class="fancy-link wiki-link">Cyber Security</a></li>
+  <li><a href="./Security#topics" class="fancy-link wiki-link">Topics</a></li>
+  <li><a href="./Security#review" class="fancy-link wiki-link">Review</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="15-review-" class="title-text">15. <a href="./Review" class="fancy-link wiki-link">Review</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/review.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#15-review-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Review#c" class="fancy-link wiki-link">C</a></li>
+  <li><a href="./Review#processes" class="fancy-link wiki-link">Processes</a></li>
+  <li><a href="./Review#memory" class="fancy-link wiki-link">Memory</a></li>
+  <li><a href="./Review#threading-and-synchronization" class="fancy-link wiki-link">Threading and Synchronization</a></li>
+  <li><a href="./Review#deadlock" class="fancy-link wiki-link">Deadlock</a></li>
+  <li><a href="./Review#ipc" class="fancy-link wiki-link">IPC</a></li>
+  <li><a href="./Review#filesystems" class="fancy-link wiki-link">Filesystems</a></li>
+  <li><a href="./Review#networking" class="fancy-link wiki-link">Networking</a></li>
+  <li><a href="./Review#security" class="fancy-link wiki-link">Security</a></li>
+  <li><a href="./Review#signals" class="fancy-link wiki-link">Signals</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="16-honors-topics-" class="title-text">16. <a href="./Honors" class="fancy-link wiki-link">Honors topics</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/honors.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#16-honors-topics-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Honors#the-linux-kernel" class="fancy-link wiki-link">The Linux Kernel</a></li>
+  <li><a href="./Honors#containerization" class="fancy-link wiki-link">Containerization</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="17-appendix-" class="title-text">17. <a href="./Appendix" class="fancy-link wiki-link">Appendix</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/appendix.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#17-appendix-"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Appendix#shell" class="fancy-link wiki-link">Shell</a></li>
+  <li><a href="./Appendix#stack-smashing" class="fancy-link wiki-link">Stack Smashing</a></li>
+  <li><a href="./Appendix#compiling-and-linking" class="fancy-link wiki-link">Compiling and Linking</a></li>
+  <li><a href="./Appendix#banker%E2%80%99s-algorithm" class="fancy-link wiki-link">Banker’s Algorithm</a></li>
+  <li><a href="./Appendix#clean/dirty-forks-(chandy/misra-solution)" class="fancy-link wiki-link">Clean/Dirty Forks (Chandy/Misra Solution)</a></li>
+  <li><a href="./Appendix#actor-model" class="fancy-link wiki-link">Actor Model</a></li>
+  <li><a href="./Appendix#includes-and-conditionals" class="fancy-link wiki-link">Includes and conditionals</a></li>
+  <li><a href="./Appendix#threads.h" class="fancy-link wiki-link">threads.h</a></li>
+  <li><a href="./Appendix#modern-filesystems" class="fancy-link wiki-link">Modern Filesystems</a></li>
+  <li><a href="./Appendix#linux-scheduling" class="fancy-link wiki-link">Linux Scheduling</a></li>
+  <li><a href="./Appendix#the-curious-case-of-spurious-wakeups" class="fancy-link wiki-link">The Curious Case of Spurious Wakeups</a></li>
+  <li><a href="./Appendix#condition-wait-example" class="fancy-link wiki-link">Condition Wait Example</a></li>
+  <li><a href="./Appendix#implementing-cvs-with-mutexes-alone" class="fancy-link wiki-link">Implementing CVs with Mutexes Alone</a></li>
+  <li><a href="./Appendix#higher-order-models-of-synchronization" class="fancy-link wiki-link">Higher Order Models of Synchronization</a></li>
+  <li><a href="./Appendix#actor-model-and-goroutines" class="fancy-link wiki-link">Actor Model and Goroutines</a></li>
+  <li><a href="./Appendix#scheduling-conceptually" class="fancy-link wiki-link">Scheduling Conceptually</a></li>
+  <li><a href="./Appendix#networking-extra" class="fancy-link wiki-link">Networking Extra</a></li>
+  <li><a href="./Appendix#assorted-man-pages" class="fancy-link wiki-link">Assorted Man Pages</a></li>
+  <li><a href="./Appendix#system-programming-jokes" class="fancy-link wiki-link">System Programming Jokes</a></li>
+</ol></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="18-post-mortems-" class="title-text">18. <a href="./Post_Mortems" class="fancy-link wiki-link">Post Mortems</a> <a href="https://github.com/illinois-cs241/coursebook/blob/pdf_deploy/post_mortems.pdf" class="fancy-link wiki-link"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/_images/pdf_icon.png" width="auto" height="50px"></a><a class="anchor title-text" href="#18-post-mortems-"> #</a>
+</h2></div>
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ol>
+  <li><a href="./Post_Mortems#shell-shock" class="fancy-link wiki-link">Shell Shock</a></li>
+  <li><a href="./Post_Mortems#heartbleed" class="fancy-link wiki-link">Heartbleed</a></li>
+  <li><a href="./Post_Mortems#dirty-cow" class="fancy-link wiki-link">Dirty Cow</a></li>
+  <li><a href="./Post_Mortems#meltdown" class="fancy-link wiki-link">Meltdown</a></li>
+  <li><a href="./Post_Mortems#spectre" class="fancy-link wiki-link">Spectre</a></li>
+  <li><a href="./Post_Mortems#mars-pathfinder" class="fancy-link wiki-link">Mars Pathfinder</a></li>
+  <li><a href="./Post_Mortems#mars-again" class="fancy-link wiki-link">Mars Again</a></li>
+  <li><a href="./Post_Mortems#year-2038" class="fancy-link wiki-link">Year 2038</a></li>
+  <li><a href="./Post_Mortems#northeast-blackout-of-2003" class="fancy-link wiki-link">Northeast Blackout of 2003</a></li>
+  <li><a href="./Post_Mortems#apple-ios-unicode-handling" class="fancy-link wiki-link">Apple IOS Unicode Handling</a></li>
+  <li><a href="./Post_Mortems#apple-ssl-verification" class="fancy-link wiki-link">Apple SSL Verification</a></li>
+  <li><a href="./Post_Mortems#sony-rootkit-installation" class="fancy-link wiki-link">Sony Rootkit Installation</a></li>
+  <li><a href="./Post_Mortems#civilization-and-ghandi" class="fancy-link wiki-link">Civilization and Ghandi</a></li>
+  <li><a href="./Post_Mortems#the-woes-of-shell-scripting" class="fancy-link wiki-link">The Woes of Shell Scripting</a></li>
+  <li><a href="./Post_Mortems#appnexus-double-free" class="fancy-link wiki-link">Appnexus Double Free</a></li>
+  <li><a href="./Post_Mortems#att-cascading-failures---1990" class="fancy-link wiki-link">ATT Cascading Failures - 1990</a></li>
+</ol></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/index.md";
+  </script>
+</body>
+
+</html>

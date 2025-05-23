@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Emacs Tutorial</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Emacs Tutorial" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Emacs Tutorial
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_introduction" href="#introduction" class="fancy-link">Introduction</a></li>
+<li><a id="toc_emacs-commands" href="#emacs-commands" class="fancy-link">Emacs Commands</a></li>
+<li><a id="toc_your-emacs-file" href="#your-emacs-file" class="fancy-link">Your ~/.emacs File</a></li>
+<li><a id="toc_custom-hotkeys" href="#custom-hotkeys" class="fancy-link">Custom Hotkeys</a></li>
+<li><a id="toc_language-specific-customizations" href="#language-specific-customizations" class="fancy-link">Language-Specific Customizations</a></li>
+<li><a id="toc_more-general-preferences" href="#more-general-preferences" class="fancy-link">More General Preferences</a></li>
+<li><a id="toc_mouse-mode" href="#mouse-mode" class="fancy-link">Mouse Mode</a></li>
+<li><a id="toc_more-help" href="#more-help" class="fancy-link">More Help</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="introduction" class="title-text">Introduction<a class="anchor title-text" href="#introduction"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>This course provides a great opportunity to learn how to program straight out of the terminal, using either vim or emacs.  Since I am an emacs user and have already come across students in lab asking questions on how to use and customize it, I am creating this basics guide.  For vim help, I’m afraid you’ll have to look elsewhere, as I only know how to quit out of vim without saving.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="emacs-commands" class="title-text">Emacs Commands<a class="anchor title-text" href="#emacs-commands"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Here are some of the most commonly used default emacs key bindings.  For a full list, look <a href="http://wttools.sourceforge.net/emacs-stuff/emacs-keybindings.html" class="fancy-link wiki-link">here</a> or <a href="https://www.cs.colostate.edu/helpdocs/emacs-bindings" class="fancy-link wiki-link">here</a>:</p>
+<p>(As an example, C-x C-s means hold Ctrl and press x, then hold Ctrl and press s.  Also, the Meta key, denoted as M, is usually either left-Alt or Esc by default.  On a Mac it is most likely going to be Esc.)</p>
+<p>Use arrow keys to move around the file</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C-g       Abort a command in progress (useful if you mistype)
+C-x o     Switch to other window, if there is another open
+C-x C-s   Save (or "Save buffer")
+C-x C-c   Close (if you have made changes, it will as if you want to 
+            save, and you can type y or n or a few other options, 
+            and if you hit n, it will ask you to confirm with yes 
+            or no)
+C-a       Move cursor to beginning of line
+C-e       Move cursor to end of line
+C-p       Move cursor to previous line
+C-n       Move cursor to next line
+M-f       Move cursor forward one word
+M-b       Move cursor backward one word
+M-d       Delete word (starting at cursor)
+C-k       Delete line/Kill line (uses kill-buffer) (starting at 
+            cursor point)
+C-s       Search forward (prompts for search string)
+C-r       Search backwards (prompts for search string)
+M-%       Replace (prompts for a search string and a string 
+            with which to replace it)
+C-_       Undo (this is the minus key, but written as underscore)
+C-x u     Also undo
+C-@       Set mark
+C-w       Cut (from kill-buffer)
+M-w       Copy (from kill-buffer)
+C-y       Paste/Yank (from kill-buffer)
+</code></pre></div></div>
+<p>A note about the “kill-buffer” when cutting/copying/pasting (and actually, when undoing too):
+In order to copy/cut a region of text, move your cursor to the start of the region and set the mark (C-@), then move the cursor to the end of the region and use cut or copy (C-w or M-w), then move the cursor to the location you would like to paste to, and then press (C-y).
+(Deleting a whole line with C-k also can be used to cut a line and then paste it, and undoing interacts with the same kill-buffer.)</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="your-emacs-file" class="title-text">Your ~/.emacs File<a class="anchor title-text" href="#your-emacs-file"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Most customization for emacs will be done in your ~/.emacs file, which may exist when you first use emacs, but may also not, which is fine.  All of the commands I will describe below can be added in any order in the file. Although if a customization requires multiple lines, the order of those lines may matter.  I have not tested this theory, but I also believe if you make multiple conflicting changes, the last change is the one which will take effect.</p>
+<p>When editing this file, I actually tend to use emacs, so I would type the command</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>emacs ~/.emacs
+</code></pre></div></div>
+<p>into my terminal.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="custom-hotkeys" class="title-text">Custom Hotkeys<a class="anchor title-text" href="#custom-hotkeys"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>One of the most useful customizations, I find, is creating your own hotkeys to make your most-often used commands more intuitive.  Do remember not to override coding commands such as C-c, which you’ll need when actually coding.  Other ones to not overwrite include C-d and C-z, which you may use later.</p>
+<p>The command to add a new hotkey looks like this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(global-set-key (kbd "insert your hotkey here") 'this_is_what_the_hotkey_does)
+</code></pre></div></div>
+<p>When I write a hotkey, I always leave myself a comment, using ;; to denote a comment, in order to remember what the hotkey does if it is not obvious.  I also use this to divide sections in my .emacs file as well.</p>
+<p>The two hotkeys I have set up on my personal machine now are these:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;; custom keys
+(global-set-key (kbd "C-g") 'goto-line)
+(global-set-key (kbd "C-u") 'undo-only)
+</code></pre></div></div>
+<p>In order to find more actions you can do besides goto-line, which jumps to a line number which you enter, or undo-only, which is, predictably, the undo command for emacs, I recommend Google.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="language-specific-customizations" class="title-text">Language-Specific Customizations<a class="anchor title-text" href="#language-specific-customizations"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This next section describes a few commands I have found useful, and each only take effect for certain languages.</p>
+<p>First, and relevant to this class, addresses block comments.  This is a style choice I adapted due to the coding standards of my workplace last summer, but I have kept it since.  The command below ensures that each time I begin a new line of a block comment in the C language, the new line begins with a “* “.  In other words, this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* This is an
+example of a block
+comment. */
+</code></pre></div></div>
+<p>becomes this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* This is an
+ * example of a block
+ * comment. */
+</code></pre></div></div>
+<p>The code to make this change is as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;; make C block comments continue with stars on each new line
+(setq c-block-comment-prefix "* ")
+</code></pre></div></div>
+<p>Another C customization I use is this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;; when in c mode, use 4 spaces for an indent
+(setq c-default-style "gnu"
+      c-basic-offset 4)
+</code></pre></div></div>
+<p>Which replaces a tab with four spaces, as the comment suggests.  You could also change this to two spaces or any other number you prefer, just make sure your code is still readable.</p>
+<p>Similarly, because I also code in Python on a regular basis, I do the same thing for Python with the following lines as well:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(custom-set-variables
+'(python-guess-indent nil)
+'(python-indent 4))
+</code></pre></div></div>
+<p>Also thinking ahead to CS421, if you take it in OCaml, it’s worth noting that you can adapt emacs to color your code correctly for filetypes it doesn’t normally know how to handle, if someone has created the setup to do so, or you could do this yourself. This typically requires downloading a file, so keep in mind this filepath won’t likely be the same if you use it, but this is my command for that process:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;; syntax highlighting for files ending with .ml
+;; note that the path below is on my computer, and probably will not be the same on yours
+(load
+   "&lt;insert path on your computer&gt;/.opam/4.03.0/share/emacs/site-lisp/tuareg-site-file")
+(setq electric-indent-mode nil)
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="more-general-preferences" class="title-text">More General Preferences<a class="anchor title-text" href="#more-general-preferences"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Here are a few more miscellaneous customizations I use, with comments to explain their usage:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;; skip the startup message and display first buffer directly
+;; (if you use linux, this is that large, annoying block of text
+;;  which appears at the bottom of the pop-out emacs window, so
+;;  this command makes that stop appearing when you load emacs)
+(setq inhibit-startup-message t)
+
+;; always display column number
+(setq column-number-mode t)
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="mouse-mode" class="title-text">Mouse Mode<a class="anchor title-text" href="#mouse-mode"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>One popular mode which I choose not to use, but I have already been asked about, is enabling mouse mode in emacs, essentially making it much more similar to a text editor.  This means you can use your mouse to select where to insert new characters, mark a region, and use the scroll wheel.</p>
+<p>(Note: Since I don’t use this mode, I found these commands on StackOverflow.)</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>;; enable mouse support
+(unless window-system
+  (require 'mouse)
+  (xterm-mouse-mode t)
+  (global-set-key [mouse-4] (lambda ()
+                              (interactive)
+                              (scroll-down 1)))
+  (global-set-key [mouse-5] (lambda ()
+                              (interactive)
+                              (scroll-up 1)))
+  (defun track-mouse (e))
+  (setq mouse-sel-mode t)
+)
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="more-help" class="title-text">More Help<a class="anchor title-text" href="#more-help"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>For more information and various manuals on the use of emacs, look at <a href="https://www.gnu.org/software/emacs/manual/" class="fancy-link wiki-link">this site</a>.</p></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_tutorials/emacs.md";
+  </script>
+</body>
+
+</html>

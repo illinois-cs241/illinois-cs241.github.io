@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Savvy Scheduler | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/savvy_scheduler">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Savvy Scheduler</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="scheduling">Scheduling</h2>
+
+<ul>
+  <li>Must efficiently select which process must be run</li>
+  <li>For the sake of simplicity: Only considering single process/single thread single core systems</li>
+</ul>
+
+<p>i.e. one thing running at a time</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="key-terms---timestamps">Key Terms - timestamps</h2>
+
+<ul>
+  <li>Arrival Time</li>
+  <li>Start Time</li>
+  <li>End Time</li>
+</ul>
+
+</section><section><h2 id="key-terms---durations">Key Terms - durations</h2>
+
+<ul>
+  <li>Response time = start time - arrival time</li>
+  <li>Turnaround time = end time - arrival time</li>
+  <li>Wait time = turnaround time - run time</li>
+</ul>
+
+</section><section><h2 id="measures-of-efficiency">Measures of efficiency</h2>
+
+<ul>
+  <li>
+    <p>Lowest average turnaround time</p>
+  </li>
+  <li>
+    <p>Lowest wait time</p>
+  </li>
+  <li>
+    <p>Latency</p>
+  </li>
+</ul>
+
+</section><section><h2 id="process-state">Process State</h2>
+
+<ul>
+  <li>R - Running or Runnable</li>
+  <li>S - Interruptible Sleeping (waiting on an event)</li>
+  <li>D - Uninterruptable Sleep (IO typically, still on the CPU)</li>
+  <li>T - Stopped</li>
+  <li>Z - Zombie process (terminated, but not reaped)</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="ready-queue">Ready Queue</h2>
+<p>A queue of runnable processes, not waiting for resources, ready to be executed</p>
+
+</section><section><h2 id="why-might-a-process-or-thread-be-placed-on-the-ready-queue">Why might a process (or thread) be placed on the ready queue?</h2>
+
+<p>A process is placed on the ready queue when it is able to use a CPU. Some examples include:</p>
+
+<ul>
+  <li>A process was blocked waiting a <a href="https://linux.die.net/man/3/read"><strong>read</strong></a> from storage or socket to complete and data is now available.</li>
+  <li>A new process has been created and is ready to start.</li>
+</ul>
+
+</section><section><h2 id="other-situations">Other situations</h2>
+
+<ul>
+  <li>A process thread was blocked on a synchronization primitive (condition variable, semaphore, <code class="language-plaintext highlighter-rouge">mutex</code> lock) but is now able to continue.</li>
+  <li>A process is blocked waiting for a system call to complete but a signal has been delivered and the signal handler needs to run.</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="common-scheduling-algorithms">Common Scheduling Algorithms</h2>
+
+<ul>
+  <li>Shortest Job First</li>
+  <li>Priority queue</li>
+  <li>First Come First Served</li>
+  <li>Round Robin
+    <ul>
+      <li>Quantum = 500ms (for example)</li>
+    </ul>
+  </li>
+</ul>
+
+</section><section><h2 id="which-schedulers-suffer-from-starvation">Which schedulers suffer from starvation?</h2>
+
+<ul>
+  <li>Example: Shortest Job First with continuous stream of short processes</li>
+</ul>
+
+</section><section><h2 id="convoy-effect">Convoy Effect</h2>
+
+<p>Convoy of processes following a CPU-intensive process, with potentially smaller resource requirements.</p>
+
+<p>Affects IO-intensive operations. FCFS suffers from this.</p>
+
+</section><section><h2 id="what-is-pre-emption">What is pre-emption?</h2>
+
+<p>When a more preferable (multiple criteria) process is ready, the CPU can suspend the current process (think <code class="language-plaintext highlighter-rouge">SIGSTOP</code>), and can switch in the new process. Later, the process that was pre-empted can be scheduled (<code class="language-plaintext highlighter-rouge">SIGCONT</code>)</p>
+
+<p>Without pre-emption processes will run until they are unable to utilize the CPU any further!</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="questions">Questions</h2>
+
+<!-- use vertical tag to get a vertical slide without a header -->
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

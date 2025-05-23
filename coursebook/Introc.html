@@ -1,0 +1,3026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Introc</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Introc" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Introc
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#the-c-programming-language" class="fancy-link wiki-link">The C Programming Language</a>
+    <ul>
+      <li>
+<a href="#history-of-c" class="fancy-link wiki-link">History of C</a>
+        <ul>
+          <li><a href="#features" class="fancy-link wiki-link">Features</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#crash-course-introduction-to-c" class="fancy-link wiki-link">Crash course introduction to
+C</a>
+        <ul>
+          <li><a href="#preprocessor" class="fancy-link wiki-link">Preprocessor</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#language-facilities" class="fancy-link wiki-link">Language Facilities</a>
+        <ul>
+          <li><a href="#keywords" class="fancy-link wiki-link">Keywords</a></li>
+          <li><a href="#c-data-types" class="fancy-link wiki-link">C data types</a></li>
+          <li><a href="#operators" class="fancy-link wiki-link">Operators</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#the-c-and-linux" class="fancy-link wiki-link">The C and Linux</a>
+        <ul>
+          <li><a href="#everything-is-a-file" class="fancy-link wiki-link">Everything is a file</a></li>
+          <li><a href="#system-calls" class="fancy-link wiki-link">System Calls</a></li>
+          <li><a href="#c-system-calls" class="fancy-link wiki-link">C System Calls</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#common-c-functions" class="fancy-link wiki-link">Common C Functions</a>
+        <ul>
+          <li><a href="#handling-errors" class="fancy-link wiki-link">Handling Errors</a></li>
+          <li><a href="#input-output" class="fancy-link wiki-link">Input / Output</a></li>
+          <li><a href="#stdin-oriented-functions" class="fancy-link wiki-link">stdin oriented functions</a></li>
+          <li><a href="#string.h" class="fancy-link wiki-link">string.h</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#c-memory-model" class="fancy-link wiki-link">C Memory Model</a>
+        <ul>
+          <li><a href="#structs" class="fancy-link wiki-link">Structs</a></li>
+          <li><a href="#strings-in-c" class="fancy-link wiki-link">Strings in C</a></li>
+          <li><a href="#places-for-strings" class="fancy-link wiki-link">Places for strings</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#pointers" class="fancy-link wiki-link">Pointers</a>
+        <ul>
+          <li><a href="#pointer-basics" class="fancy-link wiki-link">Pointer Basics</a></li>
+          <li><a href="#pointer-arithmetic" class="fancy-link wiki-link">Pointer Arithmetic</a></li>
+          <li><a href="#so-what-is-a-void-pointer" class="fancy-link wiki-link">So what is a void pointer?</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#common-bugs" class="fancy-link wiki-link">Common Bugs</a>
+        <ul>
+          <li><a href="#nul-bytes" class="fancy-link wiki-link">Nul Bytes</a></li>
+          <li><a href="#double-frees" class="fancy-link wiki-link">Double Frees</a></li>
+          <li><a href="#returning-pointers-to-automatic-variables" class="fancy-link wiki-link">Returning pointers to automatic
+variables</a></li>
+          <li><a href="#insufficient-memory-allocation" class="fancy-link wiki-link">Insufficient memory
+allocation</a></li>
+          <li><a href="#buffer-overflow-underflow" class="fancy-link wiki-link">Buffer overflow/ underflow</a></li>
+          <li><a href="#strings-require-strlens1-bytes" class="fancy-link wiki-link">Strings require strlen(s)+1
+bytes</a></li>
+          <li><a href="#using-uninitialized-variables" class="fancy-link wiki-link">Using uninitialized
+variables</a></li>
+          <li><a href="#assuming-uninitialized-memory-will-be-zeroed" class="fancy-link wiki-link">Assuming Uninitialized memory will be
+zeroed</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#logic-and-program-flow-mistakes" class="fancy-link wiki-link">Logic and Program flow
+mistakes</a>
+        <ul>
+          <li><a href="#equal-vs.-equality" class="fancy-link wiki-link">Equal vs. Equality</a></li>
+          <li><a href="#undeclared-or-incorrectly-prototyped-functions" class="fancy-link wiki-link">Undeclared or incorrectly prototyped
+functions</a></li>
+          <li><a href="#extra-semicolons" class="fancy-link wiki-link">Extra Semicolons</a></li>
+        </ul>
+      </li>
+      <li><a href="#topics" class="fancy-link wiki-link">Topics</a></li>
+      <li><a href="#questionsexercises" class="fancy-link wiki-link">Questions/Exercises</a></li>
+      <li>
+<a href="#rapid-fire-pointer-arithmetic" class="fancy-link wiki-link">Rapid Fire: Pointer Arithmetic</a>
+        <ul>
+          <li><a href="#rapid-fire-solutions" class="fancy-link wiki-link">Rapid Fire Solutions</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>If you want to teach systems, don’t drum up the programmers, sort the
+issues, and make PRs. Instead, teach them to yearn for the vast and
+endless C.</strong> - <strong>Antoine de Saint-Exupéry (With edits)</strong></p>
+
+<p>Note: This chapter is long and goes into a lot of detail. Feel free to
+gloss over parts with which you have experience in.</p>
+
+<p>C is the de-facto programming language to do serious system serious
+programming. Why? Most kernels have their API accessible through C. The
+Linux kernel (Love <a href="#ref-Love" class="fancy-link wiki-link">#ref-Love</a>) and the XNU kernel
+(Inc. <a href="#ref-xnukernel" class="fancy-link wiki-link">#ref-xnukernel</a>) of which MacOS is
+based on are written in C and have C API - Application Programming
+Interface. The Windows Kernel uses C++, but doing system programming on
+that is much harder on windows that UNIX for novice system programmers.
+C doesn’t have abstractions like classes and Resource Acquisition Is
+Initialization (RAII) to clean up memory. C also gives you much more of
+an opportunity to shoot yourself in the foot, but it lets you do things
+at a much more fine-grained level.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="history-of-c" class="title-text">History of C<a class="anchor title-text" href="#history-of-c"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>C was developed by Dennis Ritchie and Ken Thompson at Bell Labs back in
+1973 (Ritchie
+<a href="#ref-Ritchie:1993:DCL:155360.155580" class="fancy-link wiki-link">#ref-Ritchie:1993:DCL:155360.155580</a>).
+Back then, we had gems of programming languages like Fortran, ALGOL, and
+LISP. The goal of C was two-fold. Firstly, it was made to target the
+most popular computers at the time, such as the PDP-7. Secondly, it
+tried to remove some of the lower-level constructs (managing registers,
+and programming assembly for jumps), and create a language that had the
+power to express programs procedurally (as opposed to mathematically
+like LISP) with readable code. All this while still having the ability
+to interface with the operating system. It sounded like a tough feat. At
+first, it was only used internally at Bell Labs along with the UNIX
+operating system.</p>
+<p>The first “real” standardization was with Brian Kernighan and Dennis
+Ritchie’s book (Kernighan and Ritchie
+<a href="#ref-kernighan1988c" class="fancy-link wiki-link">#ref-kernighan1988c</a>). It is still
+widely regarded today as the only portable set of C instructions. The
+K\&amp;R book is known as the de-facto standard for learning C. There were
+different standards of C from ANSI to ISO, though ISO largely won out as
+a language specification. We will be mainly focusing on is the POSIX C
+library which extends ISO. Now to get the elephant out of the room, the
+Linux kernel is fails to be POSIX compliant. Mostly, this is so because
+the Linux developers didn’t want to pay the fee for compliance. It is
+also because they did not want to be fully compliant with a multitude of
+different standards because that meant increased development costs to
+maintain compliance.</p>
+<p>We will aim to use C99, as it is the standard that most computers
+recognize, but sometimes use some of the newer C11 features. We will
+also talk about some off-hand features like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getline.3p.html" class="fancy-link">getline</a></code> because they are
+so widely used with the GNU C library. We’ll begin by providing a fairly
+comprehensive overview of the language with language facilities. Feel
+free to gloss over if you have already worked with a C based language.</p>
+<h3 id="features" class="title-text">Features</h3>
+<ul>
+  <li>
+    <p>Speed. There is little separating a program and the system.</p>
+  </li>
+  <li>
+    <p>Simplicity. C and its standard library comprise a simple set of
+portable functions.</p>
+  </li>
+  <li>
+    <p>Manual Memory Management. C gives a program the ability to manage
+its memory. However, this can be a downside if a program has memory
+errors.</p>
+  </li>
+  <li>
+    <p>Ubiquity. Through foreign function interfaces (FFI) and language
+bindings of various types, most other languages can call C functions
+and vice versa. The standard library is also everywhere. C has stood
+the test of time as a popular language, and it doesn’t look like it
+is going anywhere.</p>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="crash-course-introduction-to-c" class="title-text">Crash course introduction to C<a class="anchor title-text" href="#crash-course-introduction-to-c"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<!-- end list -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The canonical way to start learning C is by starting with the hello
+world program. The original example that Kernighan and Ritchie proposed
+way back when hasn’t changed.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Hello World</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ol>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">#include</code> directive takes the file <code class="language-plaintext highlighter-rouge">stdio.h</code> (which stands for
+<strong>st</strong>an<strong>d</strong>ard <strong>i</strong>nput and <strong>o</strong>utput) located somewhere in your
+operating system, copies the text, and substitutes it where the
+<code class="language-plaintext highlighter-rouge">#include</code> was.</p>
+  </li>
+  <li>
+    <p>The <code class="language-plaintext highlighter-rouge">int main(void)</code> is a function declaration. The first word <code class="language-plaintext highlighter-rouge">int</code>
+tells the compiler the return type of the function. The part before
+the parenthesis (<code class="language-plaintext highlighter-rouge">main</code>) is the function name. In C, no two
+functions can have the same name in a single compiled program,
+although shared libraries may be able. Then, the parameter list
+comes after. When we provide the parameter list for regular
+functions <code class="language-plaintext highlighter-rouge">(void)</code> that means that the compiler should produce an
+error if the function is called with a non-zero number of arguments.
+For regular functions having a declaration like <code class="language-plaintext highlighter-rouge">void func()</code> means
+that the function can be called like <code class="language-plaintext highlighter-rouge">func(1, 2, 3)</code>, because there
+is no delimiter. <code class="language-plaintext highlighter-rouge">main</code> is a special function. There are many ways
+of declaring <code class="language-plaintext highlighter-rouge">main</code> but the standard ones are <code class="language-plaintext highlighter-rouge">int main(void)</code>, <code class="language-plaintext highlighter-rouge">int
+main()</code>, and <code class="language-plaintext highlighter-rouge">int main(int argc, char *argv[])</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">printf("Hello World");</code> is what a function call. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> is
+defined as a part of <code class="language-plaintext highlighter-rouge">stdio.h</code>. The function has been compiled and
+lives somewhere else on our machine - the location of the C standard
+library. Just remember to include the header and call the function
+with the appropriate parameters (a string literal <code class="language-plaintext highlighter-rouge">"Hello World"</code>).
+If the newline isn’t included, the buffer will not be flushed (i.e.
+the write will not complete immediately).</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">return 0</code>. <code class="language-plaintext highlighter-rouge">main</code> has to return an integer. By convention,
+<code class="language-plaintext highlighter-rouge">return 0</code> means success and anything else means failure. Here are
+some exit codes / statuses with special meaning:
+<a href="http://tldp.org/LDP/abs/html/exitcodes.html" class="fancy-link wiki-link">http://tldp.org/LDP/abs/html/exitcodes.html</a>.
+In general, assume 0 means success.</p>
+  </li>
+</ol>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>gcc main.c <span class="nt">-o</span> main
+<span class="nv">$ </span>./main
+Hello World
+<span class="err">$</span>
+</code></pre></div></div>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/gcc.1.html" class="fancy-link">gcc</a></code> is short for the GNU Compiler Collection which has a host of
+compilers ready for use. The compiler infers from the extension that
+you are trying to compile a .c file.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">./main</code> tells your shell to execute the program in the current
+directory called main. The program then prints out “hello world”.</p>
+  </li>
+</ol>
+<p>If systems programming was as easy as writing hello world though, our
+jobs would be much easier.</p>
+<h3 id="preprocessor" class="title-text">Preprocessor</h3>
+<p>What is the preprocessor? Preprocessing is a copy and paste operation
+that the compiler performs <strong>before</strong> actually compiling the program.
+The following is an example of substitution</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Before preprocessing</span>
+<span class="cp">#define MAX_LENGTH 10
+</span><span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="n">MAX_LENGTH</span><span class="p">]</span>
+
+<span class="c1">// After preprocessing</span>
+<span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+</code></pre></div></div>
+<p>There are side effects to the preprocessor though. One problem is that
+the preprocessor needs to be able to tokenize properly, meaning trying
+to redefine the internals of the C language with a preprocessor may be
+impossible. Another problem is that they can’t be nested infinitely -
+there is a bounded depth where they need to stop. Macros are also simple
+text substitutions, without semantics. For example, look at what can
+happen if a macro tries to perform an inline modification.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define min(a,b) a &lt; b ? a : b
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">min</span><span class="p">(</span><span class="n">x</span><span class="o">++</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="n">printf</span><span class="p">(</span><span class="s">"%d is six"</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Macros are simple text substitution so the above example expands to</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span><span class="o">++</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="o">?</span> <span class="n">x</span><span class="o">++</span> <span class="o">:</span> <span class="mi">5</span>
+</code></pre></div></div>
+<p>In this case, it is opaque what gets printed out, but it will be 6. Can
+you try to figure out why? Also, consider the edge case when operator
+precedence comes into play.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">99</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">min</span><span class="p">(</span><span class="mi">99</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// r is 100!</span>
+<span class="c1">// This is what it is expanded to</span>
+<span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">+</span> <span class="mi">99</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="o">?</span> <span class="mi">99</span> <span class="o">:</span> <span class="mi">100</span>
+<span class="c1">// Which means</span>
+<span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">+</span> <span class="mi">99</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">100</span> <span class="o">?</span> <span class="mi">99</span> <span class="o">:</span> <span class="mi">100</span>
+</code></pre></div></div>
+<p>There are also logical problems with the flexibility of certain
+parameters. One common source of confusion is with static arrays and the
+<code class="language-plaintext highlighter-rouge">sizeof</code> operator.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define ARRAY_LENGTH(A) (sizeof((A)) / sizeof((A)[0]))
+</span><span class="kt">int</span> <span class="n">static_array</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span> <span class="c1">// ARRAY_LENGTH(static_array) = 10</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">dynamic_array</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">// ARRAY_LENGTH(dynamic_array) = 2 or 1 consistently</span>
+</code></pre></div></div>
+<p>What is wrong with the macro? Well, it works if a static array is passed
+in because <code class="language-plaintext highlighter-rouge">sizeof</code> a static array returns the number of bytes that
+array takes up and dividing it by the <code class="language-plaintext highlighter-rouge">sizeof(an_element)</code> would give
+the number of entries. But if passed a pointer to a piece of memory,
+taking the sizeof the pointer and dividing it by the size of the first
+entry won’t always give us the size of the array.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="language-facilities" class="title-text">Language Facilities<a class="anchor title-text" href="#language-facilities"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="keywords" class="title-text">Keywords</h3>
+<p>C has an assortment of keywords. Here are some constructs that you
+should know briefly as of C99.</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/break.2.html" class="fancy-link">break</a></code> is a keyword that is used in case statements or looping
+statements. When used in a case statement, the program jumps to the
+end of the block.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="cm">/* Goes to this switch */</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s">"1"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span> <span class="cm">/* Jumps to the end of the block */</span>
+  <span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="cm">/* Ignores this program */</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s">"2"</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span> <span class="cm">/* Continues here */</span>
+</code></pre></div>    </div>
+
+    <p>In the context of a loop, using it breaks out of the inner-most
+loop. The loop can be either a <code class="language-plaintext highlighter-rouge">for</code>, <code class="language-plaintext highlighter-rouge">while</code>, or <code class="language-plaintext highlighter-rouge">do-while</code>
+construct</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">while</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">break</span><span class="p">;</span> <span class="cm">/* Breaks out of while(2) */</span>
+  <span class="p">}</span> <span class="cm">/* Jumps here */</span>
+  <span class="k">break</span><span class="p">;</span> <span class="cm">/* Breaks out of while(1) */</span>
+<span class="p">}</span> <span class="cm">/* Continues here */</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">const</code> is a language level construct that tells the compiler that
+this data should remain constant. If one tries to change a const
+variable, the program will fail to compile. <code class="language-plaintext highlighter-rouge">const</code> works a little
+differently when put before the type, the compiler re-orders the
+first type and const. Then the compiler uses a
+<a href="https://en.wikipedia.org/wiki/Operator_associativity" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Operator_associativity</a>.
+Meaning that whatever is left of the pointer is constant. This is
+known as const-correctness.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Same as "int const i = 0"</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="p">...;</span> <span class="c1">// Mutable pointer to a mutable string</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">const_str</span> <span class="o">=</span> <span class="p">...;</span> <span class="c1">// Mutable pointer to a constant string</span>
+<span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">const_str2</span> <span class="o">=</span> <span class="p">...;</span> <span class="c1">// Same as above</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">const_ptr_str</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="c1">// Constant pointer to a constant string</span>
+</code></pre></div>    </div>
+
+    <p>But, it is important to know that this is a compiler imposed
+restriction only. There are ways of getting around this, and the
+program will run fine with defined behavior. In systems programming,
+the only type of memory that you can’t write to is system
+write-protected memory.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Same as "int const i = 0"</span>
+<span class="p">(</span><span class="o">*</span><span class="p">((</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">i</span><span class="p">))</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// i == 1 now</span>
+<span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">"hi"</span><span class="p">;</span>
+<span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span> <span class="c1">// Will cause a Segmentation Violation</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/continue.1p.html" class="fancy-link">continue</a></code> is a control flow statement that exists only in loop
+constructions. Continue will skip the rest of the loop body and set
+the program counter back to the start of the loop before.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span> <span class="cm">/* This gets triggered */</span>
+  <span class="o">*</span><span class="p">((</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="nb">NULL</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span> <span class="cm">/* Then reaches the end of the while loop */</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">do {} while();</code> is another loop construct. These loops execute the
+body and then check the condition at the bottom of the loop. If the
+condition is zero, the next statement is executed – the program
+counter is set to the first instruction after the loop. Otherwise,
+the loop body is executed.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">do</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="o">--</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">)</span> <span class="cm">/* Only executed once */</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">enum</code> is to declare an enumeration. An enumeration is a type that
+can take on many, finite values. If you have an enum and don’t
+specify any numerics, the C compiler will generate a unique number
+for that enum (within the context of the current enum) and use that
+for comparisons. The syntax to declare an instance of an enum is
+<code class="language-plaintext highlighter-rouge">enum &lt;type&gt; varname</code>. The added benefit to this is that the
+compiler can type check these expressions to make sure that you are
+only comparing alike types.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="n">day</span><span class="p">{</span> <span class="n">monday</span><span class="p">,</span> <span class="n">tuesday</span><span class="p">,</span> <span class="n">wednesday</span><span class="p">,</span>
+  <span class="n">thursday</span><span class="p">,</span> <span class="n">friday</span><span class="p">,</span> <span class="n">saturday</span><span class="p">,</span> <span class="n">sunday</span><span class="p">};</span>
+    
+<span class="kt">void</span> <span class="nf">process_day</span><span class="p">(</span><span class="k">enum</span> <span class="n">day</span> <span class="n">foo</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">monday</span><span class="p">:</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">"Go home!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>It is completely possible to assign enum values to either be
+different or the same. It is not advisable to rely on the compiler
+for consistent numbering, if you assign numbers. If you are going to
+use this abstraction, try not to break it.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="n">day</span><span class="p">{</span>
+  <span class="n">monday</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">tuesday</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">wednesday</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="n">thursday</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="n">friday</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="n">saturday</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="n">sunday</span> <span class="o">=</span> <span class="mi">0</span><span class="p">};</span>
+    
+<span class="kt">void</span> <span class="nf">process_day</span><span class="p">(</span><span class="k">enum</span> <span class="n">day</span> <span class="n">foo</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">switch</span><span class="p">(</span><span class="n">foo</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">monday</span><span class="p">:</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">"Go home!</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span> <span class="k">break</span><span class="p">;</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">extern</code> is a special keyword that tells the compiler that the
+variable may be defined in another object file or a library, so the
+program compiles on missing variable because the program will
+reference a variable in the system or another file.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">// file1.c</span>
+<span class="k">extern</span> <span class="kt">int</span> <span class="n">panic</span><span class="p">;</span>
+    
+<span class="kt">void</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">panic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"NONONONONO"</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"This is fine"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+    
+<span class="c1">//file2.c</span>
+    
+<span class="kt">int</span> <span class="n">panic</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">for</code> is a keyword that allows you to iterate with an initialization
+condition, a loop invariant, and an update condition. This is meant
+to be equivalent to a while loop, but with differing syntax.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="n">initialization</span><span class="p">;</span> <span class="n">check</span><span class="p">;</span> <span class="n">update</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//...</span>
+<span class="p">}</span>
+    
+<span class="c1">// Typically</span>
+<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//...</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>As of the C89 standard, one cannot declare variables inside the
+<code class="language-plaintext highlighter-rouge">for</code> loop initialization block. This is because there was a
+disagreement in the standard for how the scoping rules of a variable
+defined in the loop would work. It has since been resolved with more
+recent standards, so people can use the for loop that they know and
+love today</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div>    </div>
+
+    <p>The order of evaluation for a <code class="language-plaintext highlighter-rouge">for</code> loop is as follows</p>
+
+    <ol>
+      <li>
+        <p>Perform the initialization statement.</p>
+      </li>
+      <li>
+        <p>Check the invariant. If false, terminate the loop and execute
+the next statement. If true, continue to the body of the loop.</p>
+      </li>
+      <li>
+        <p>Perform the body of the loop.</p>
+      </li>
+      <li>
+        <p>Perform the update statement.</p>
+      </li>
+      <li>
+        <p>Jump to checking the invariant step.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">goto</code> is a keyword that allows you to do conditional jumps. Do not
+use <code class="language-plaintext highlighter-rouge">goto</code> in your programs. The reason being is that it makes your
+code infinitely more hard to understand when strung together with
+multiple chains, which is called spaghetti code. It is acceptable to
+use in some contexts though, for example, error checking code in the
+Linux kernel. The keyword is usually used in kernel contexts when
+adding another stack frame for cleanup isn’t a good idea. The
+canonical example of kernel cleanup is as below.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<span class="n">Doe</span> <span class="o">*</span><span class="n">deer</span><span class="p">;</span>
+<span class="n">Ray</span> <span class="o">*</span><span class="n">drop</span><span class="p">;</span>
+<span class="n">Mi</span> <span class="o">*</span><span class="n">myself</span><span class="p">;</span>
+    
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">setupdoe</span><span class="p">(</span><span class="n">deer</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">goto</span> <span class="n">finish</span><span class="p">;</span>
+<span class="p">}</span>
+    
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">setupray</span><span class="p">(</span><span class="n">drop</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">goto</span> <span class="n">cleanupdoe</span><span class="p">;</span>
+<span class="p">}</span>
+    
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">setupmi</span><span class="p">(</span><span class="n">myself</span><span class="p">))</span> <span class="p">{</span>
+  <span class="k">goto</span> <span class="n">cleanupray</span><span class="p">;</span>
+<span class="p">}</span>
+    
+<span class="n">perform_action</span><span class="p">(</span><span class="n">deer</span><span class="p">,</span> <span class="n">drop</span><span class="p">,</span> <span class="n">myself</span><span class="p">);</span>
+    
+<span class="nl">cleanupray:</span>
+<span class="n">cleanup</span><span class="p">(</span><span class="n">drop</span><span class="p">);</span>
+<span class="nl">cleanupdoe:</span>
+<span class="n">cleanup</span><span class="p">(</span><span class="n">deer</span><span class="p">);</span>
+<span class="nl">finish:</span>
+<span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">if else else-if</code> are control flow keywords. There are a few ways to
+use these (1) A bare if (2) An if with an else (3) an if with an
+else-if (4) an if with an else if and else. Note that an else is
+matched with the most recent if. A subtle bug related to a
+mismatched if and else statement, is the
+<a href="https://en.wikipedia.org/wiki/Dangling_else" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Dangling_else</a>.
+The statements are always executed from the if to the else. If any
+of the intermediate conditions are true, the if block performs that
+action and goes to the end of that block.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">// (1)</span>
+    
+<span class="k">if</span> <span class="p">(</span><span class="n">connect</span><span class="p">(...))</span>
+  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    
+<span class="c1">// (2)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">connect</span><span class="p">(...))</span> <span class="p">{</span>
+  <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Connected!"</span><span class="p">);</span>
+<span class="p">}</span>
+    
+<span class="c1">// (3)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">connect</span><span class="p">(...))</span> <span class="p">{</span>
+  <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">bind</span><span class="p">(..))</span> <span class="p">{</span>
+  <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+    
+<span class="c1">// (1)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">connect</span><span class="p">(...))</span> <span class="p">{</span>
+  <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">bind</span><span class="p">(..))</span> <span class="p">{</span>
+  <span class="n">exit</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Successfully bound!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">inline</code> is a compiler keyword that tells the compiler it’s okay to
+omit the C function call procedure and “paste” the code in the
+callee. Instead, the compiler is hinted at substituting the function
+body directly into the calling function. This is not always
+recommended explicitly as the compiler is usually smart enough to
+know when to <code class="language-plaintext highlighter-rouge">inline</code> a function for you.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kr">inline</span> <span class="kt">int</span> <span class="nf">max</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">b</span> <span class="o">?</span> <span class="n">a</span> <span class="o">:</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+    
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"Max %d"</span><span class="p">,</span> <span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+  <span class="c1">// printf("Max %d", a &lt; b ? a : b);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">restrict</code> is a keyword that tells the compiler that this particular
+memory region shouldn’t overlap with all other memory regions. The
+use case for this is to tell users of the program that it is
+undefined behavior if the memory regions overlap. Note that memcpy
+has undefined behavior when memory regions overlap. If this might be
+the case in your program, consider using
+memmove.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">memcpy</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span> <span class="kr">restrict</span> <span class="n">dest</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="kr">restrict</span> <span class="n">src</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">bytes</span><span class="p">);</span>
+    
+<span class="kt">void</span> <span class="nf">add_array</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span> <span class="kr">restrict</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+  <span class="o">*</span><span class="n">a</span> <span class="o">+=</span> <span class="o">*</span><span class="n">c</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="nf">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">));</span>
+<span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">add_array</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// Well defined</span>
+<span class="n">add_array</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="c1">// Undefined</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/return.1p.html" class="fancy-link">return</a></code> is a control flow operator that exits the current function.
+If the function is <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/void.3type.html" class="fancy-link">void</a></code> then it simply exits the functions.
+Otherwise, another parameter follows as the return value.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">process</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">connect</span><span class="p">(...))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">bind</span><span class="p">(...))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">2</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">signed</code> is a modifier which is rarely used, but it forces a type to
+be signed instead of unsigned. The reason that this is so rarely
+used is because types are signed by default and need to have the
+<code class="language-plaintext highlighter-rouge">unsigned</code> modifier to make them unsigned but it may be useful in
+cases where you want the compiler to default to a signed type such
+as below.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">count_bits_and_sign</span><span class="p">(</span><span class="kt">signed</span> <span class="n">representation</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//...</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">sizeof</code> is an operator that is evaluated at compile-time, which
+evaluates to the number of bytes that the expression contains. When
+the compiler infers the type the following code changes as follows.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%zu"</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="o">++</span><span class="p">));</span>
+</code></pre></div>    </div>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%zu"</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>Which then the compiler is allowed to operate on further. The
+compiler must have a complete definition of the type at compile-time</p>
+    <ul>
+      <li>not link time - or else you may get an odd error. Consider the
+following</li>
+    </ul>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">// file.c</span>
+<span class="k">struct</span> <span class="n">person</span><span class="p">;</span>
+    
+<span class="n">printf</span><span class="p">(</span><span class="s">"%zu"</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">person</span><span class="p">));</span>
+    
+<span class="c1">// file2.c</span>
+    
+<span class="k">struct</span> <span class="n">person</span> <span class="p">{</span>
+  <span class="c1">// Declarations</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>This code will not compile because sizeof is not able to compile
+<code class="language-plaintext highlighter-rouge">file.c</code> without knowing the full declaration of the <code class="language-plaintext highlighter-rouge">person</code>
+struct. That is typically why programmers either put the full
+declaration in a header file or we abstract the creation and the
+interaction away so that users cannot access the internals of our
+struct. Additionally, if the compiler knows the full length of an
+array object, it will use that in the expression instead of having
+it decay into a pointer.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"will be 11"</span><span class="p">;</span>
+<span class="kt">char</span><span class="o">*</span> <span class="n">str2</span> <span class="o">=</span> <span class="s">"will be 8"</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span> <span class="c1">//11 because it is an array</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span> <span class="c1">//8 because it is a pointer</span>
+</code></pre></div>    </div>
+
+    <p>Be careful, using sizeof for the length of a string!</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">static</code> is a type specifier with three meanings.</p>
+
+    <ol>
+      <li>
+        <p>When used with a global variable or function declaration it
+means that the scope of the variable or the function is only
+limited to the file.</p>
+      </li>
+      <li>
+        <p>When used with a function variable, that declares that the
+variable has static allocation – meaning that the variable is
+allocated once at program startup not every time the program is
+run, and its lifetime is extended to that of the program.</p>
+      </li>
+    </ol>
+
+    <!-- end list -->
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c1">// visible to this file only</span>
+<span class="k">static</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+<span class="k">static</span> <span class="kt">int</span> <span class="nf">_perform_calculation</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+    
+<span class="kt">char</span> <span class="o">*</span><span class="nf">print_time</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">static</span> <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">200</span><span class="p">];</span> <span class="c1">// Shared every time a function is called</span>
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/struct.3.html" class="fancy-link">struct</a></code> is a keyword that allows you to pair multiple types
+together into a new structure. C-structs are contiguous regions of
+memory that one can access specific elements of each memory as if
+they were separate variables. Note that there might be padding
+between elements, such that each variable is memory-aligned (starts
+at a memory address that is a multiple of its size).</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">hostname</span> <span class="p">{</span>
+  <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">port</span><span class="p">;</span>
+  <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
+  <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">resource</span><span class="p">;</span>
+<span class="p">};</span> <span class="c1">// You need the semicolon at the end</span>
+<span class="c1">// Assign each individually</span>
+<span class="k">struct</span> <span class="n">hostname</span> <span class="n">facebook</span><span class="p">;</span>
+<span class="n">facebook</span><span class="p">.</span><span class="n">port</span> <span class="o">=</span> <span class="s">"80"</span><span class="p">;</span>
+<span class="n">facebook</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">"www.google.com"</span><span class="p">;</span>
+<span class="n">facebook</span><span class="p">.</span><span class="n">resource</span> <span class="o">=</span> <span class="s">"/"</span><span class="p">;</span>
+    
+<span class="c1">// You can use static initialization in later versions of c</span>
+<span class="k">struct</span> <span class="n">hostname</span> <span class="n">google</span> <span class="o">=</span> <span class="p">{</span><span class="s">"80"</span><span class="p">,</span> <span class="s">"www.google.com"</span><span class="p">,</span> <span class="s">"/"</span><span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">switch case default</code> Switches are essentially glorified jump
+statements. Meaning that you take either a byte or an integer and
+the control flow of the program jumps to that location. Note that,
+the various cases of a switch statement fall through. It means that
+if execution starts in one case, the flow of control will continue
+to all subsequent cases, until a break statement.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="cm">/* char or int */</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="n">INT1</span><span class="p">:</span> <span class="n">puts</span><span class="p">(</span><span class="s">"1"</span><span class="p">);</span>
+  <span class="k">case</span> <span class="n">INT2</span><span class="p">:</span> <span class="n">puts</span><span class="p">(</span><span class="s">"2"</span><span class="p">);</span>
+  <span class="k">case</span> <span class="n">INT3</span><span class="p">:</span> <span class="n">puts</span><span class="p">(</span><span class="s">"3"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>If we give a value of 2 then</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">switch</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="n">puts</span><span class="p">(</span><span class="s">"1"</span><span class="p">);</span> <span class="cm">/* Doesn't run this */</span>
+  <span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="n">puts</span><span class="p">(</span><span class="s">"2"</span><span class="p">);</span> <span class="cm">/* Runs this */</span>
+  <span class="k">case</span> <span class="mi">3</span><span class="p">:</span> <span class="n">puts</span><span class="p">(</span><span class="s">"3"</span><span class="p">);</span> <span class="cm">/* Also runs this */</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>One of the more famous examples of this is Duff’s device which
+allows for loop unrolling. You don’t need to understand this code
+for the purposes of this class, but it is fun to look at (Duff,
+<a href="#ref-duff" class="fancy-link wiki-link">#ref-duff</a>).</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="n">send</span><span class="p">(</span><span class="n">to</span><span class="p">,</span> <span class="n">from</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+<span class="k">register</span> <span class="kt">short</span> <span class="o">*</span><span class="n">to</span><span class="p">,</span> <span class="o">*</span><span class="n">from</span><span class="p">;</span>
+<span class="k">register</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">{</span>
+  <span class="k">register</span> <span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="n">count</span><span class="o">+</span><span class="mi">7</span><span class="p">)</span><span class="o">/</span><span class="mi">8</span><span class="p">;</span>
+  <span class="k">switch</span><span class="p">(</span><span class="n">count</span><span class="o">%</span><span class="mi">8</span><span class="p">){</span>
+  <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>	<span class="k">do</span><span class="p">{</span>	<span class="o">*</span><span class="n">to</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">7</span><span class="p">:</span>		<span class="o">*</span><span class="n">to</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">6</span><span class="p">:</span>		<span class="o">*</span><span class="n">to</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">5</span><span class="p">:</span>		<span class="o">*</span><span class="n">to</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">4</span><span class="p">:</span>		<span class="o">*</span><span class="n">to</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">3</span><span class="p">:</span>		<span class="o">*</span><span class="n">to</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>		<span class="o">*</span><span class="n">to</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+  <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>		<span class="o">*</span><span class="n">to</span> <span class="o">=</span> <span class="o">*</span><span class="n">from</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="o">--</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>This piece of code highlights that switch statements are goto
+statements, and you can put any code on the other end of a switch
+case. Most of the time it doesn’t make sense, some of the time it
+just makes too much sense.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">typedef</code> declares an alias for a type. Often used with structs to
+reduce the visual clutter of having to write ‘struct’ as part of the
+type.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="kt">float</span> <span class="n">real</span><span class="p">;</span>
+<span class="n">real</span> <span class="n">gravity</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="c1">// Also typedef gives us an abstraction over the underlying type used.</span>
+<span class="c1">// In the future, we only need to change this typedef if we</span>
+<span class="c1">// wanted our physics library to use doubles instead of floats.</span>
+    
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">link</span> <span class="n">link_t</span><span class="p">;</span>
+<span class="c1">//With structs, include the keyword 'struct' as part of the original types</span>
+</code></pre></div>    </div>
+
+    <p>In this class, we regularly typedef functions. A typedef for a
+function can be this for example</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="o">*</span><span class="n">comparator</span><span class="p">)(</span><span class="kt">void</span><span class="o">*</span><span class="p">,</span><span class="kt">void</span><span class="o">*</span><span class="p">);</span>
+    
+<span class="kt">int</span> <span class="nf">greater_than</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="kt">void</span><span class="o">*</span> <span class="n">b</span><span class="p">){</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">comparator</span> <span class="n">gt</span> <span class="o">=</span> <span class="n">greater_than</span><span class="p">;</span>
+</code></pre></div>    </div>
+
+    <p>This declares a function type comparator that accepts two <code class="language-plaintext highlighter-rouge">void*</code>
+params and returns an integer.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">union</code> is a new type specifier. A union is one piece of memory that
+many variables occupy. It is used to maintain consistency while
+having the flexibility to switch between types without maintaining
+functions to keep track of the bits. Consider an example where we
+have different pixel values.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">union</span> <span class="n">pixel</span> <span class="p">{</span>
+  <span class="k">struct</span> <span class="n">values</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">red</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">blue</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">green</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">alpha</span><span class="p">;</span>
+  <span class="p">}</span> <span class="n">values</span><span class="p">;</span>
+  <span class="kt">uint32_t</span> <span class="n">encoded</span><span class="p">;</span>
+<span class="p">};</span> <span class="c1">// Ending semicolon needed</span>
+<span class="k">union</span> <span class="n">pixel</span> <span class="n">a</span><span class="p">;</span>
+<span class="c1">// When modifying or reading</span>
+<span class="n">a</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">red</span><span class="p">;</span>
+<span class="n">a</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">blue</span> <span class="o">=</span> <span class="mh">0x0</span><span class="p">;</span>
+    
+<span class="c1">// When writing to a file</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="n">a</span><span class="p">.</span><span class="n">encoded</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">unsigned</code> is a type modifier that forces <code class="language-plaintext highlighter-rouge">unsigned</code> behavior in the
+variables they modify. Unsigned can only be used with primitive int
+types (like <code class="language-plaintext highlighter-rouge">int</code> and <code class="language-plaintext highlighter-rouge">long</code>). There is a lot of behavior associated
+with unsigned arithmetic. For the most part, unless your code
+involves bit shifting, it isn’t essential to know the difference in
+behavior with regards to unsigned and signed arithmetic.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/void.3type.html" class="fancy-link">void</a></code> is a double meaning keyword. When used in terms of function
+or parameter definition, it means that the function explicitly
+returns no value or accepts no parameter, respectively. The
+following declares a function that accepts no parameters and returns
+nothing.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">foo</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+</code></pre></div>    </div>
+
+    <p>The other use of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/void.3type.html" class="fancy-link">void</a></code> is when you are defining an <code class="language-plaintext highlighter-rouge">lvalue</code>. A
+<code class="language-plaintext highlighter-rouge">void *</code> pointer is just a memory address. It is specified as an
+incomplete type meaning that you cannot dereference it but it can be
+promoted to any time to any other type. Pointer arithmetic with this
+pointer is undefined behavior.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">array</span> <span class="o">=</span> <span class="n">void_ptr</span><span class="p">;</span> <span class="c1">// No cast needed</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">volatile</code> is a compiler keyword. This means that the compiler
+should not optimize its value out. Consider the following simple
+function.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">pass_flag</span><span class="p">(</span><span class="o">&amp;</span><span class="n">flag</span><span class="p">);</span>
+<span class="k">while</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do things unrelated to flag</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>The compiler may, since the internals of the while loop have nothing
+to do with the flag, optimize it to the following even though a
+function may alter the data.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Do things unrelated to flag</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>If you use the volatile keyword, the compiler is forced to keep the
+variable in and perform that check. This is useful for cases where
+you are doing multi-process or multi-threaded programs so that we
+can affect the running of one sequence of execution with another.</p>
+  </li>
+  <li>
+    <p>` while  ` represents the traditional <code class="language-plaintext highlighter-rouge">while</code> loop. There is a
+condition at the top of the loop, which is checked before every
+execution of the loop body. If the condition evaluates to a non-zero
+value, the loop body will be run.</p>
+  </li>
+</ol>
+<h3 id="c-data-types" class="title-text">C data types</h3>
+<p>There are many data types in C. As you may realize, all of them are
+either integers or floating point numbers and other types are variations
+of these.</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">char</code> Represents exactly one byte of data. The number of bits in a
+byte might vary. <code class="language-plaintext highlighter-rouge">unsigned char</code> and <code class="language-plaintext highlighter-rouge">signed char</code> are always the
+same size, which is true for the <code class="language-plaintext highlighter-rouge">unsigned</code> and <code class="language-plaintext highlighter-rouge">signed</code> versions of
+all data types. This must be aligned on a boundary (meaning you
+cannot use bits in between two addresses). The rest of the types
+will assume 8 bits in a byte.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">short (short int)</code> must be at least two bytes. This is aligned on a
+two byte boundary, meaning that the address must be divisible by
+two.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">int</code> must be at least two bytes. Again aligned to a two byte
+boundary (“ISO C Standard” <a href="#ref-ISON1124" class="fancy-link wiki-link">#ref-ISON1124</a>
+P. 34). On most machines this will be 4 bytes.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">long (long int)</code> must be at least four bytes, which are aligned to
+a four byte boundary. On some machines this can be 8 bytes.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">long long</code> must be at least eight bytes, aligned to an eight byte
+boundary.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">float</code> represents an IEEE-754 single precision floating point
+number tightly specified by IEEE (“IEEE Standard for Floating-Point
+Arithmetic” <a href="#ref-4610935" class="fancy-link wiki-link">#ref-4610935</a>). This will be
+four bytes aligned to a four byte boundary on most machines.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">double</code> represents an IEEE-754 double precision floating point
+number specified by the same standard, which is aligned to the
+nearest eight byte boundary.</p>
+  </li>
+</ol>
+<p>If you want a fixed width integer type, for more portable code, you may
+use the types defined in stdint.h, which are of the form
+[u]int<em>width</em>_t, where u (which is optional) represents the
+signedness, and width is any of 8, 16, 32, and 64.</p>
+<h3 id="operators" class="title-text">Operators</h3>
+<p>Operators are language constructs in C that are defined as part of the
+grammar of the language. These operators are listed in order of
+precedence.</p>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">[]</code> is the subscript operator. <code class="language-plaintext highlighter-rouge">a[n] == *(a + n)</code> where <code class="language-plaintext highlighter-rouge">n</code> is a
+number type and <code class="language-plaintext highlighter-rouge">a</code> is a pointer type.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">-&gt;</code> is the structure dereference (or arrow) operator. If you have a
+pointer to a struct <code class="language-plaintext highlighter-rouge">*p</code>, you can use this to access one of its
+elements. <code class="language-plaintext highlighter-rouge">p-&gt;element</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">.</code> is the structure reference operator. If you have an object <code class="language-plaintext highlighter-rouge">a</code>
+then you can access an element <code class="language-plaintext highlighter-rouge">a.element</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">+/-a</code> is the unary plus and minus operator. They either keep or
+negate the sign, respectively, of the integer or float type
+underneath.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">*a</code> is the dereference operator. If you have a pointer <code class="language-plaintext highlighter-rouge">*p</code>, you
+can use this to access the element located at this memory address.
+If you are reading, the return value will be the size of the
+underlying type. If you are writing, the value will be written with
+an offset.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&amp;a</code> is the address-of operator. This takes an element and returns
+its address.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">++</code> is the increment operator. You can use it as a prefix or
+postfix, meaning that the variable that is being incremented can
+either be before or after the operator. <code class="language-plaintext highlighter-rouge">a = 0; ++a == 1</code> and <code class="language-plaintext highlighter-rouge">a
+= 1; a++ == 0</code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">--</code> is the decrement operator. This has the same semantics as the
+increment operator except that it decreases the value of the
+variable by one.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">sizeof</code> is the sizeof operator, that is evaluated at the time of
+compilation. This is also mentioned in the keywords section.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">a &lt;mop&gt; b</code> where <code class="language-plaintext highlighter-rouge">&lt;mop&gt; in {+, -, *, %, /}</code> are the arithmetic
+binary operators. If the operands are both number types, then the
+operations are plus, minus, times, modulo, and division
+respectively. If the left operand is a pointer and the right operand
+is an integer type, then only plus or minus may be used and the
+rules for pointer arithmetic are invoked.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&gt;&gt;/&lt;&lt;</code> are the bit shift operators. The operand on the right has to
+be an integer type whose signedness is ignored unless it is signed
+negative in which case the behavior is undefined. The operator on
+the left decides a lot of semantics. If we are left shifting, there
+will always be zeros introduced on the right. If we are right
+shifting there are a few different cases</p>
+
+    <ul>
+      <li>
+        <p>If the operand on the left is signed, then the integer is
+sign-extended. This means that if the number has the sign bit
+set, then any shift right will introduce ones on the left. If
+the number does not have the sign bit set, any shift right will
+introduce zeros on the left.</p>
+      </li>
+      <li>
+        <p>If the operand is unsigned, zeros will be introduced on the left
+either way.</p>
+      </li>
+    </ul>
+
+    <!-- end list -->
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">unsigned</span> <span class="kt">short</span> <span class="n">uns</span> <span class="o">=</span> <span class="o">-</span><span class="mi">127</span><span class="p">;</span> <span class="c1">// 1111111110000001</span>
+<span class="kt">short</span> <span class="n">sig</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 0000000000000001</span>
+<span class="n">uns</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 1111111000000100</span>
+<span class="n">sig</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 0000000000000100</span>
+<span class="n">uns</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 0011111111100000</span>
+<span class="n">sig</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 0000000000000000</span>
+</code></pre></div>    </div>
+
+    <p>Note that shifting by the word size (e.g. by 64 in a 64-bit
+architecture) results in undefined behavior.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&lt;=/&gt;=</code> are the greater than equal to/less than equal to, relational
+operators. They work as their name implies.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&lt;/&gt;</code> are the greater than/less than relational operators. They
+again do as the name implies.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">==/=</code> are the equal/not equal to relational operators. They once
+again do as the name implies.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&amp;&amp;</code> is the logical AND operator. If the first operand is zero, the
+second won’t be evaluated and the expression will evaluate to 0.
+Otherwise, it yields a 1-0 value of the second operand.</p>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">||</code> is the logical OR operator. If the first operand is not zero,
+then second won’t be evaluated and the expression will evaluate to
+    <ol>
+      <li>Otherwise, it yields a 1-0 value of the second operand.</li>
+    </ol>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">!</code> is the logical NOT operator. If the operand is zero, then this
+will return 1. Otherwise, it will return 0.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">&amp;</code> is the bitwise AND operator. If a bit is set in both operands,
+it is set in the output. Otherwise, it is not.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">|</code> is the bitwise OR operator. If a bit is set in either operand,
+it is set in the output. Otherwise, it is not.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">  </code> is the bitwise NOT operator. If a bit is set in the input, it
+will not be set in the output and vice versa.</p>
+  </li>
+  <li>
+    <dl>
+      <dt>
+<code class="language-plaintext highlighter-rouge">?:</code> is the ternary / conditional operator. You put a boolean</dt>
+      <dt>condition before the and if it evaluates to non-zero the element</dt>
+      <dt>before the colon is returned otherwise the element after is. `1 ? a</dt>
+      <dd>b == a<code class="language-plaintext highlighter-rouge"> and </code>0 ? a : b == b`.</dd>
+    </dl>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">a, b</code> is the comma operator. <code class="language-plaintext highlighter-rouge">a</code> is evaluated and then <code class="language-plaintext highlighter-rouge">b</code> is
+evaluated and <code class="language-plaintext highlighter-rouge">b</code> is returned. In a sequence of multiple statements
+delimited by commas, all statements are evaluated from left to
+right, and the right-most expression is returned.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-c-and-linux" class="title-text">The C and Linux<a class="anchor title-text" href="#the-c-and-linux"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Up until this point, we’ve covered C’s language fundamentals. We’ll now
+be focusing our attention to C and the POSIX variety of functions
+available to us to interact with the operating systems. We will talk
+about portable functions, for example <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fwrite.3p.html" class="fancy-link">fwrite</a></code> <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code>. We will be
+evaluating the internals and scrutinizing them under the POSIX models
+and more specifically GNU/Linux. There are several things to that
+philosophy that makes the rest of this easier to know, so we’ll put
+those things here.</p>
+<h3 id="everything-is-a-file" class="title-text">Everything is a file</h3>
+<p>One POSIX mantra is that everything is a file. Although that has become
+recently outdated, and moreover wrong, it is the convention we still use
+today. What this statement means is that everything is a file
+descriptor, which is an integer. For example, here is a file object, a
+network socket, and a kernel object. These are all references to records
+in the kernel’s file descriptor table.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">file_fd</span> <span class="o">=</span> <span class="n">open</span><span class="p">(...);</span>
+<span class="kt">int</span> <span class="n">network_fd</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(...);</span>
+<span class="kt">int</span> <span class="n">kernel_fd</span> <span class="o">=</span> <span class="n">epoll_create1</span><span class="p">(...);</span>
+</code></pre></div></div>
+<p>And operations on those objects are done through system calls. One last
+thing to note before we move on is that the file descriptors are merely
+<em>pointers</em>. Imagine that each of the file descriptors in the example
+actually refers to an entry in a table of objects that the operating
+system picks and chooses from (that is, the file descriptor table).
+Objects can be allocated and deallocated, closed and opened, etc. The
+program interacts with these objects by using the API specified through
+system calls, and library functions.</p>
+<h3 id="system-calls" class="title-text">System Calls</h3>
+<p>Before we dive into common C functions, we need to know what a system
+call is. If you are a student and have completed HW0, feel free to gloss
+over this section.</p>
+<p>A system call is an operation that the kernel carries out. First, the
+operating system prepares a system call. Next, the kernel executes the
+system call to the best of its ability in kernel space and is a
+privileged operation. In the previous example, we got access to a file
+descriptor object. We can now also write some bytes to the file
+descriptor object that represents a file, and the operating system will
+do its best to get the bytes written to the disk.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">write</span><span class="p">(</span><span class="n">file_fd</span><span class="p">,</span> <span class="s">"Hello!"</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</code></pre></div></div>
+<p>When we say the kernel tries its best, this includes the possibility
+that the operation could fail for several reasons. Some of them are: the
+file is no longer valid, the hard drive failed, the system was
+interrupted etc. The way that a programmer communicates with the outside
+system is with system calls. An important thing to note is that system
+calls are expensive. Their cost in terms of time and CPU cycles has
+recently been decreased, but try to use them as sparingly as possible.</p>
+<h3 id="c-system-calls" class="title-text">C System Calls</h3>
+<p>Many C functions that will be discussed in the next sections are
+abstractions that call the correct underlying system call, based on the
+current platform. Their Windows implementation, for example, may be
+entirely different from that of other operating systems. Nevertheless,
+we will be studying these in the context of their Linux implementation.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="common-c-functions" class="title-text">Common C Functions<a class="anchor title-text" href="#common-c-functions"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>To find more information about any functions, please use the man pages.
+Note the man pages are organized into sections. Section 2 are System
+calls. Section 3 are C libraries. On the web, Google <code class="language-plaintext highlighter-rouge">man 7 open</code>. In
+the shell, <code class="language-plaintext highlighter-rouge">man -S2 open</code> or <code class="language-plaintext highlighter-rouge">man -S3 printf</code></p>
+<h3 id="handling-errors" class="title-text">Handling Errors</h3>
+<p>Before we get into the nitty gritty of all the functions, know that most
+functions in C handle errors return oriented. This is at odds with
+programming languages like C++ or Java where the errors are handled with
+exceptions. There are a number of arguments against exceptions.</p>
+<ol>
+  <li>
+    <p>Exceptions make control flow harder to understand.</p>
+  </li>
+  <li>
+    <p>Exception oriented languages need to keep stack traces and maintain
+jump tables.</p>
+  </li>
+  <li>
+    <p>Exceptions may be complex objects.</p>
+  </li>
+</ol>
+<p>There are a few arguments for exceptions as well</p>
+<ol>
+  <li>
+    <p>Exceptions can come from several layers deep.</p>
+  </li>
+  <li>
+    <p>Exceptions help reduce global state.</p>
+  </li>
+  <li>
+    <p>Exceptions differentiate business logic and normal flow.</p>
+  </li>
+</ol>
+<p>Whatever the pros/cons are, we use the former because of backwards
+compatibility with languages like FORTRAN (“FORTRAN IV PROGRAMMER’S
+REFERENCE MANUAL” <a href="#ref-fortran72" class="fancy-link wiki-link">#ref-fortran72</a> P. 84).
+Each thread will get a copy of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/errno.3p.html" class="fancy-link">errno</a></code> because it is stored at the top
+of each thread’s stack – more on threads later. One makes a call to a
+function that could return an error and if that function returns an
+error according to the man pages, it is up to the programmer to check
+errno.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;errno.h&gt;</span><span class="cp">
+</span>
+<span class="kt">FILE</span> <span class="o">*</span><span class="n">f</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"/does/not/exist.txt"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">NULL</span> <span class="o">==</span> <span class="n">f</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Errno is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">errno</span><span class="p">);</span>
+    <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Description is %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">strerror</span><span class="p">(</span><span class="n">errno</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>There is a shortcut function <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/perror.3p.html" class="fancy-link">perror</a></code> that prints the english
+description of errno. Also, a function may return the error code in the
+return value itself.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="n">getnameinfo</span><span class="p">(...);</span>
+<span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">!=</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"getnameinfo: %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">gai_strerror</span><span class="p">(</span><span class="n">s</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Be sure to check the man page for return code characteristics.</p>
+<h3 id="input--output" class="title-text">Input / Output</h3>
+<p>In this section we will cover all the basic input and output functions
+in the standard library with references to system calls. Every process
+has three streams of data when it starts execution: standard input (for
+program input), standard output (for program output), and standard error
+(for error and debug messages). Usually, standard input is sourced from
+the terminal in which the program is being run in, and standard out is
+the same terminal. However, a programmer can use redirection such that
+their program can send output and/or receive input, to and from a file,
+or other programs.</p>
+<p>They are designated by the file descriptors 0 and 1 respectively. 2 is
+reserved for standard error which by library convention is unbuffered
+(i.e. IO operations are performed immediately).</p>
+<div class="pad"><div class="card">
+<h4 id="stdout-oriented-streams">stdout oriented streams</h4>
+
+<p>Standard output or stdout oriented streams are streams whose only
+options are to write to stdout. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> is the function with which most
+people are familiar in this category. The first parameter is a format
+string that includes placeholders for the data to be printed. Common
+format specifiers are the following</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">%s</code> treat the argument as a c string pointer, keep printing all
+characters until the NULL-character is reached</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">%d</code> prints the argument as an integer</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">%p</code> print the argument as a memory address.</p>
+  </li>
+</ol>
+
+<p>For performance, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> buffers data until its cache is full or a
+newline is printed. Here is an example of printing things out.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="p">...</span> <span class="p">;</span> <span class="kt">int</span> <span class="n">score</span> <span class="o">=</span> <span class="p">...;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"Hello %s, your result is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"Debug: The string and int are stored at: %p and %p</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">score</span> <span class="p">);</span>
+<span class="c1">// name already is a char pointer and points to the start of the array.</span>
+<span class="c1">// We need "&amp;" to get the address of the int variable</span>
+</code></pre></div></div>
+
+<p>From the previous section, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> calls the system call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code>.
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code> is a C library function, while <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/write.3p.html" class="fancy-link">write</a></code> is a system call system.</p>
+
+<p>The buffering semantics of printf is a little complicated. ISO defines
+three types of streams (“ISO C Standard”
+<a href="#ref-ISON1124" class="fancy-link wiki-link">#ref-ISON1124</a> P. 278)</p>
+
+<ul>
+  <li>
+    <p>Unbuffered, where the contents of the stream reach their destination
+as soon as possible.</p>
+  </li>
+  <li>
+    <p>Line Buffered, where the contents of the stream reach their
+destination as soon as a newline is provided.</p>
+  </li>
+  <li>
+    <p>Fully Buffered, where the contents of the stream reach their
+destination as soon as the buffer is full.</p>
+  </li>
+</ul>
+
+<p>Standard Error is defined as “not fully buffered” (“ISO C Standard”
+<a href="#ref-ISON1124" class="fancy-link wiki-link">#ref-ISON1124</a> P. 279). Standard Output and
+Input are merely defined to be fully buffered if and only if the stream
+destination is not an interactive device. Usually, standard error will
+be unbuffered, standard input and output will be line buffered if the
+output is a terminal otherwise fully buffered. This relates to printf
+because printf merely uses the abstraction provided by the FILE
+interface and uses the above semantics to determine when to write. One
+can force a write by calling fflush() on the stream.</p>
+
+<p>To print strings and single characters, use <code class="language-plaintext highlighter-rouge">puts(char name )</code> and
+<code class="language-plaintext highlighter-rouge">putchar(char c )</code></p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">puts</span><span class="p">(</span><span class="s">"Current selection: "</span><span class="p">);</span>
+<span class="n">putchar</span><span class="p">(</span><span class="sc">'1'</span><span class="p">);</span>
+</code></pre></div></div>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="other-streams">Other streams</h4>
+
+<p>To print to other file streams, use
+<code class="language-plaintext highlighter-rouge">fprintf( _file_ , "Hello %s, score: %d", name, score);</code> Where
+_file_ is either predefined (‘stdout’ or ‘stderr’) or a FILE pointer
+that was returned by <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fopen.3p.html" class="fancy-link">fopen</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fdopen.3p.html" class="fancy-link">fdopen</a></code>. There is a printf equivalent
+that works with file descriptors, called dprintf. Just use
+<code class="language-plaintext highlighter-rouge">dprintf(int fd, char* format_string, ...);</code>.</p>
+
+<p>To print data into a C string, use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sprintf.3p.html" class="fancy-link">sprintf</a></code> or better <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/snprintf.3p.html" class="fancy-link">snprintf</a></code>.
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/snprintf.3p.html" class="fancy-link">snprintf</a></code> returns the number of characters written excluding the
+terminating byte. We would use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sprintf.3p.html" class="fancy-link">sprintf</a></code> the size of the printed string
+is less than the provided buffer – think about printing an integer, it
+will never be more than 11 characters with the NUL byte. If printf is
+dealing with variadic input, it is safer to use the former function as
+shown in the following snippet.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Fixed</span>
+<span class="kt">char</span> <span class="n">int_string</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<span class="n">sprintf</span><span class="p">(</span><span class="n">int_string</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="n">integer</span><span class="p">);</span>
+
+<span class="c1">// Variable length</span>
+<span class="kt">char</span> <span class="n">result</span><span class="p">[</span><span class="mi">200</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">snprintf</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="s">"%s:%d"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">score</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="stdin-oriented-functions" class="title-text">stdin oriented functions</h3>
+
+<p>Standard input or stdin oriented functions read from stdin directly.
+Most of these functions have been deprecated due to them being poorly
+designed. These functions treat stdin as a file from which we can read
+bytes. One of the most notorious offenders is <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/gets.3p.html" class="fancy-link">gets</a></code>. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/gets.3p.html" class="fancy-link">gets</a></code> is
+deprecated in C99 standard and has been removed from the latest C
+standard (C11). The reason that it was deprecated was that there is no
+way to control the length being read, therefore buffers could get
+overrun easily. When this is done maliciously to hijack program control
+flow, this is known as a buffer overflow.</p>
+
+<p>Programs should use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fgets.3p.html" class="fancy-link">fgets</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getline.3p.html" class="fancy-link">getline</a></code> instead. Here is a quick
+example of reading at most 10 characters from standard input.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="nf">fgets</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">stream</span><span class="p">);</span>
+
+<span class="kt">ssize_t</span> <span class="nf">getline</span><span class="p">(</span><span class="kt">char</span> <span class="o">**</span><span class="n">lineptr</span><span class="p">,</span> <span class="kt">size_t</span> <span class="o">*</span><span class="n">n</span><span class="p">,</span> <span class="kt">FILE</span> <span class="o">*</span><span class="n">stream</span><span class="p">);</span>
+
+<span class="c1">// Example, the following will not read more than 9 chars</span>
+<span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">fgets</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buffer</span><span class="p">),</span> <span class="n">stdin</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Note that, unlike <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/gets.3p.html" class="fancy-link">gets</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fgets.3p.html" class="fancy-link">fgets</a></code> copies the newline into the buffer. On
+the other hand, one of the advantages of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/getline.3p.html" class="fancy-link">getline</a></code> is that will
+automatically allocate and reallocate a buffer on the heap of sufficient
+size.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ssize_t getline(char **lineptr, size_t *n, FILE *stream);</span>
+
+<span class="cm">/* set buffer and size to 0; they will be changed by getline */</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">buffer</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="kt">size_t</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="kt">ssize_t</span> <span class="n">chars</span> <span class="o">=</span> <span class="n">getline</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+
+<span class="c1">// Discard newline character if it is present,</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">chars</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">buffer</span><span class="p">[</span><span class="n">chars</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">'\n'</span><span class="p">)</span>
+<span class="n">buffer</span><span class="p">[</span><span class="n">chars</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>
+
+<span class="c1">// Read another line.</span>
+<span class="c1">// The existing buffer will be re-used, or, if necessary,</span>
+<span class="c1">// It will be `free`'d and a new larger buffer will `malloc`'d</span>
+<span class="n">chars</span> <span class="o">=</span> <span class="n">getline</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buffer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">size</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+
+<span class="c1">// Later... don't forget to free the buffer!</span>
+<span class="n">free</span><span class="p">(</span><span class="n">buffer</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>In addition to those functions, we have <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/perror.3p.html" class="fancy-link">perror</a></code> that has a two-fold
+meaning. Let’s say that a function call failed using the errno
+convention. <code class="language-plaintext highlighter-rouge">perror(const char* message)</code> will print the English version
+of the error to stderr.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+  <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">open</span><span class="p">(</span><span class="s">"IDoNotExist.txt"</span><span class="p">,</span> <span class="n">O_RDONLY</span><span class="p">);</span>
+  <span class="k">if</span><span class="p">(</span><span class="n">ret</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">){</span>
+    <span class="n">perror</span><span class="p">(</span><span class="s">"Opening IDoNotExist:"</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="c1">//...</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>To have a library function parse input in addition to reading it, use
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/scanf.3p.html" class="fancy-link">scanf</a></code> (or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fscanf.3p.html" class="fancy-link">fscanf</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sscanf.3p.html" class="fancy-link">sscanf</a></code>) to get input from the default input
+stream, an arbitrary file stream or a C string, respectively. All of
+those functions will return how many items were parsed. It is a good
+idea to check if the number is equal to the amount expected. Also
+naturally like <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/scanf.3p.html" class="fancy-link">scanf</a></code> functions require valid pointers.
+Instead of pointing to valid memory, they need to also be writable. It’s
+a common source of error to pass in an incorrect pointer value. For
+example,</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">data</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">line</span> <span class="o">=</span> <span class="s">"v 10"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">type</span><span class="p">;</span>
+<span class="c1">// Good practice: Check scanf parsed the line and read two values:</span>
+<span class="kt">int</span> <span class="n">ok</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">==</span> <span class="n">sscanf</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="s">"%c %d"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">type</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">);</span> <span class="c1">// pointer error</span>
+</code></pre></div></div>
+
+<p>We wanted to write the character value into c and the integer value into
+the malloc’d memory. However, we passed the address of the data pointer,
+not what the pointer is pointing to! So <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sscanf.3p.html" class="fancy-link">sscanf</a></code> will change the
+pointer itself. The pointer will now point to address 10 so this code
+will later fail when free(data) is called.</p>
+
+<p>Now, scanf will keep reading characters until the string ends. To stop
+scanf from causing a buffer overflow, use a format specifier. Make sure
+to pass one less than the size of the buffer.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="n">scanf</span><span class="p">(</span><span class="s">"%9s"</span><span class="p">,</span> <span class="n">buffer</span><span class="p">);</span> <span class="c1">// reads up to 9 characters from input (leave room for the 10th byte to be the terminating byte)</span>
+</code></pre></div></div>
+
+<p>One last thing to note is if system calls are expensive, the <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/scanf.3p.html" class="fancy-link">scanf</a></code>
+family is much more expensive due to compatibility reasons. Since it
+needs to be able to process all of the printf specifiers correctly, the
+code isn’t efficient TODO: <strong>citation needed</strong>. For highly performant
+programs, one should write the parsing themselves. If it is a one-off
+program or script, feel free to use scanf.</p>
+
+<h3 id="stringh" class="title-text">string.h</h3>
+
+<p>String.h functions are a series of functions that deal with how to
+manipulate and check pieces of memory. Most of them deal with C-strings.
+A C-string is a series of bytes delimited by a NUL character which is
+equal to the byte 0x00.
+<a href="https://linux.die.net/man/3/string" class="fancy-link wiki-link">https://linux.die.net/man/3/string</a>.
+Any behavior missing from the documentation, such as the result of
+<code class="language-plaintext highlighter-rouge">strlen(NULL)</code> is considered undefined behavior.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">int strlen(const char *s)</code> returns the length of the string.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">int strcmp(const char *s1, const char *s2)</code> returns an integer
+determining the lexicographic order of the strings. If s1 where to
+come before s2 in a dictionary, then a -1 is returned. If the two
+strings are equal, then 0. Else, 1.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">char *strcpy(char *dest, const char *src)</code> Copies the string at
+<code class="language-plaintext highlighter-rouge">src</code> to <code class="language-plaintext highlighter-rouge">dest</code>. <strong>This function assumes dest has enough space for
+src otherwise undefined behavior</strong></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">char *strcat(char *dest, const char *src)</code> Concatenates the string
+at <code class="language-plaintext highlighter-rouge">src</code> to the end of destination. <strong>This function assumes that
+there is enough space for <code class="language-plaintext highlighter-rouge">src</code> at the end of destination including
+the NUL byte</strong></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">char *strdup(const char *dest)</code> Returns a <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>’d copy of the
+string.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">char *strchr(const char *haystack, int needle)</code> Returns a pointer
+to the first occurrence of <code class="language-plaintext highlighter-rouge">needle</code> in the <code class="language-plaintext highlighter-rouge">haystack</code>. If none
+found, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/NULL.3const.html" class="fancy-link">NULL</a></code> is returned.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">char *strstr(const char *haystack, const char *needle)</code> Same as
+above but this time a string!</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">char *strtok(const char *str, const char *delims)</code></p>
+
+    <p>A dangerous but useful function strtok takes a string and tokenizes
+it. Meaning that it will transform the strings into separate
+strings. This function has a lot of specs so please read the man
+pages a contrived example is below.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>        <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>        <span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp">
+</span>    
+        <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+          <span class="kt">char</span><span class="o">*</span> <span class="n">upped</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">"strtok,is,tricky,!!"</span><span class="p">);</span>
+          <span class="kt">char</span><span class="o">*</span> <span class="n">start</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">upped</span><span class="p">,</span> <span class="s">","</span><span class="p">);</span>
+          <span class="k">do</span><span class="p">{</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">start</span><span class="p">);</span>
+          <span class="p">}</span><span class="k">while</span><span class="p">((</span><span class="n">start</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="s">","</span><span class="p">)));</span>
+          <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p><strong>Output</strong></p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>strtok
+is
+tricky
+!!
+</code></pre></div>    </div>
+
+    <p>Why is it tricky? Well what happens when upped is changed to the
+following?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>        <span class="kt">char</span><span class="o">*</span> <span class="n">upped</span> <span class="o">=</span> <span class="n">strdup</span><span class="p">(</span><span class="s">"strtok,is,tricky,,,!!"</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>For integer parsing use <code class="language-plaintext highlighter-rouge">long int strtol(const char *nptr, char
+**endptr, int base);</code> or <code class="language-plaintext highlighter-rouge">long long int strtoll(const char *nptr,
+char **endptr, int base);</code>.</p>
+
+    <p>What these functions do is take the pointer to your string <code class="language-plaintext highlighter-rouge">*nptr</code>
+and a <code class="language-plaintext highlighter-rouge">base</code> (i.e. binary, octal, decimal, hexadecimal etc) and an
+optional pointer <code class="language-plaintext highlighter-rouge">endptr</code> and returns a parsed value.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>        <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+          <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">nptr</span> <span class="o">=</span> <span class="s">"1A2436"</span><span class="p">;</span>
+          <span class="kt">char</span><span class="o">*</span> <span class="n">endptr</span><span class="p">;</span>
+          <span class="kt">long</span> <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">strtol</span><span class="p">(</span><span class="n">nptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">endptr</span><span class="p">,</span> <span class="mi">16</span><span class="p">);</span>
+          <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>Be careful though! Error handling is tricky because the function
+won’t return an error code. If passed an invalid number string, it
+will return 0. The caller has to be careful from a valid 0 and an
+error. This often involves an errno trampoline as shown below.</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>        <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+          <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">input</span> <span class="o">=</span> <span class="s">"0"</span><span class="p">;</span> <span class="c1">// or "!##@" or ""</span>
+          <span class="kt">char</span><span class="o">*</span> <span class="n">endptr</span><span class="p">;</span>
+          <span class="kt">int</span> <span class="n">saved_errno</span> <span class="o">=</span> <span class="n">errno</span><span class="p">;</span>
+          <span class="n">errno</span> <span class="o">=</span> <span class="mi">0</span>
+          <span class="kt">long</span> <span class="kt">int</span> <span class="n">parsed</span> <span class="o">=</span> <span class="n">strtol</span><span class="p">(</span><span class="n">input</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">endptr</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+          <span class="k">if</span><span class="p">(</span><span class="n">parsed</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">errno</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">){</span>
+            <span class="c1">// Definitely an error</span>
+          <span class="p">}</span>
+          <span class="n">errno</span> <span class="o">=</span> <span class="n">saved_errno</span><span class="p">;</span>
+          <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">void *memcpy(void *dest, const void *src, size_t n)</code> moves <code class="language-plaintext highlighter-rouge">n</code>
+bytes starting at <code class="language-plaintext highlighter-rouge">src</code> to <code class="language-plaintext highlighter-rouge">dest</code>. <strong>Be careful</strong>, there is
+undefined behavior when the memory regions overlap. This is one of
+the classic “This works on my machine!” examples because many times
+Valgrind won’t be able to pick it up because it will look like it
+works on your machine. Consider the safer version <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/memmove.3p.html" class="fancy-link">memmove</a></code>.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">void *memmove(void *dest, const void *src, size_t n)</code> does the same
+thing as above, but if the memory regions overlap then it is
+guaranteed that all the bytes will get copied over correctly.
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/memcpy.3p.html" class="fancy-link">memcpy</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/memmove.3p.html" class="fancy-link">memmove</a></code> both in <code class="language-plaintext highlighter-rouge">string.h</code>?</p>
+  </li>
+</ul>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="c-memory-model" class="title-text">C Memory Model<a class="anchor title-text" href="#c-memory-model"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The C memory model is probably unlike most that you’ve seen before.
+Instead of allocating an object with type safety, we either use an
+automatic variable or request a sequence of bytes with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> or
+another family member and later we <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/free.3p.html" class="fancy-link">free</a></code> it.</p>
+<h3 id="structs" class="title-text">Structs</h3>
+<p>In low-level terms, a struct is a piece of contiguous memory, nothing
+more. Just like an array, a struct has enough space to keep all of its
+members. But unlike an array, it can store different types. Consider the
+contact struct declared above.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">contact</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">firstname</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+  <span class="kt">char</span> <span class="n">lastname</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">phone</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">contact</span> <span class="n">person</span><span class="p">;</span>
+</code></pre></div></div>
+<p>We will often use the following typedef, so we can write use the struct
+name as the full type.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">contact</span> <span class="n">contact</span><span class="p">;</span>
+<span class="n">contact</span> <span class="n">person</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">optional_name</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span> <span class="n">contact</span><span class="p">;</span>
+</code></pre></div></div>
+<p>If you compile the code without any optimizations and reordering, you
+can expect the addresses of each of the variables to look like this.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&amp;</span><span class="n">person</span>           <span class="c1">// 0x100</span>
+<span class="o">&amp;</span><span class="n">person</span><span class="p">.</span><span class="n">firstname</span> <span class="c1">// 0x100 = 0x100+0x00</span>
+<span class="o">&amp;</span><span class="n">person</span><span class="p">.</span><span class="n">lastname</span>  <span class="c1">// 0x114 = 0x100+0x14</span>
+<span class="o">&amp;</span><span class="n">person</span><span class="p">.</span><span class="n">phone</span>     <span class="c1">// 0x128 = 0x100+0x28</span>
+</code></pre></div></div>
+<p>All your compiler does is say “reserve this much space”. Whenever a read
+or write occurs in the code, the compiler will calculate the offsets of
+the variable. The offsets are where the variable starts at. The phone
+variables starts at the <code class="language-plaintext highlighter-rouge">0x128</code>th bytes and continues for sizeof(int)
+bytes with this compiler. <strong>Offsets don’t determine where the variable
+ends though</strong>. Consider the following hack seen in a lot of kernel code.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">length</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">c_str</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="p">}</span> <span class="n">string</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">to_convert</span> <span class="o">=</span> <span class="s">"person"</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">to_convert</span><span class="p">);</span>
+
+<span class="c1">// Let's convert to a c string</span>
+<span class="n">string</span><span class="o">*</span> <span class="n">person</span><span class="p">;</span>
+<span class="n">person</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">string</span><span class="p">)</span> <span class="o">+</span> <span class="n">length</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Currently, our memory looks like the following image. There is nothing
+in those boxes</p>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/introc/drawings/memory_model_empty.png" alt="Struct pointing to 11 empty
+boxes"></p>
+<p>So what happens when we assign length? The first four boxes are filled
+with the value of the variable at length. The rest of the space is left
+untouched. We will assume that our machine is big endian. This means
+that the least significant byte is last.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">person</span><span class="o">-&gt;</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span><span class="p">;</span>
+</code></pre></div></div>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/introc/drawings/memory_model_length.png" alt="Struct pointing to 11 boxes, 4 filled with 0006, 7
+junk"></p>
+<p>Now, we can write a string to the end of our struct with the following
+call.</p>
+<pre><code class="language-C">strcpy(person-&gt;c_str, to_convert);
+</code></pre>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/introc/drawings/memory_model_full.png" alt="Struct pointing to 11 boxes, 4 filled with 0006, 7 the stirng
+“person”"></p>
+<p>We can even do a sanity check to make sure that the strings are equal.</p>
+<pre><code class="language-C">strcmp(person-&gt;c_str, "person") == 0 //The strings are equal!
+</code></pre>
+<p>What that zero length array does is point to the <strong>end of the struct</strong>
+this means that the compiler will leave room for all of the elements
+calculated with respect to their size on the operating system (ints,
+chars, etc). The zero length array will take up no bytes of space. Since
+structs are continuous pieces of memory, we can allocate <strong>more</strong> space
+than required and use the extra space as a place to store extra bytes.
+Although this seems like a parlor trick, it is an important optimization
+because to have a variable length string any other way, one would need
+to have two different memory allocation calls. This is highly
+inefficient for doing something as common in programming as is string
+manipulation.</p>
+<h3 id="strings-in-c" class="title-text">Strings in C</h3>
+<p>In C, we have
+<a href="https://en.wikipedia.org/wiki/Null-terminated_string" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/Null-terminated_string</a>
+strings rather than
+<a href="https://en.wikipedia.org/wiki/String_(computer_science)#Length-prefixed" class="fancy-link wiki-link">https://en.wikipedia.org/wiki/String_(computer_science)#Length-prefixed</a>
+for historical reasons. For everyday programmers, remember to NUL
+terminate your string! A string in C is defined as a bunch of bytes
+ended by ‘’ or the NUL Byte.</p>
+<h3 id="places-for-strings" class="title-text">Places for strings</h3>
+<p>Whenever you define a string literal - one in the form
+<code class="language-plaintext highlighter-rouge">char* str = "constant"</code> – that string is stored in the <em>data</em>
+section. Depending on your architecture, it is <strong>read-only</strong>, meaning
+that any attempt to modify the string will cause a SEGFAULT. One can
+also declare strings to be either in the writable data segment or the
+stack. To do so, specify a length for the string or put brackets instead
+of a pointer <code class="language-plaintext highlighter-rouge">char str[] = "mutable"</code> and put in the global scope or the
+function scope for the data segment or the stack respectively. If one,
+however, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>’s space, one can change that string to be whatever
+they want. Forgetting to NUL terminate a string has a big effect on the
+strings! Bounds checking is important. The heartbleed bug mentioned
+earlier in the book is partially because of this.</p>
+<p>Strings in C are represented as characters in memory. The end of the
+string includes a NUL (0) byte. So “ABC” requires four(4) bytes. The
+only way to find out the length of a C string is to keep reading memory
+until you find the NUL byte. C characters are always exactly one byte
+each.</p>
+<div class="pad"><div class="card">
+<h4 id="string-literals-are-constant">String literals are constant</h4>
+
+<p>A string literal is naturally constant. Any write will cause the
+operating system to produce a SEGFAULT.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">array</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hi!"</span><span class="p">;</span> <span class="c1">// array contains a mutable copy</span>
+<span class="n">strcpy</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="s">"OK"</span><span class="p">);</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">"Can't change me"</span><span class="p">;</span> <span class="c1">// ptr points to some immutable memory</span>
+<span class="n">strcpy</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="s">"Will not work"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>String literals are character arrays stored in the read-only data
+segment of the program, which is immutable. Two string literals may
+share the same space in memory. An example follows.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="n">str1</span> <span class="o">=</span> <span class="s">"Mark Twain likes books"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str2</span> <span class="o">=</span> <span class="s">"Mark Twain likes books"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>The strings pointed to by <code class="language-plaintext highlighter-rouge">str1</code> and <code class="language-plaintext highlighter-rouge">str2</code> may actually reside in the
+same location in memory.</p>
+
+<p>Char arrays, however, contain the literal value which has been copied
+from the code segment into either the stack or static memory. These
+following char arrays reside in different memory locations.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">arr1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Mark Twain also likes to write"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">arr2</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Mark Twain also likes to write"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Here are some common ways to initialize a string include. Where do they
+reside in memory?</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="s">"ABC"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">str</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"ABC"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">str</span><span class="p">[]</span><span class="o">=</span><span class="p">{</span><span class="sc">'A'</span><span class="p">,</span><span class="sc">'B'</span><span class="p">,</span><span class="sc">'C'</span><span class="p">,</span><span class="sc">'\0'</span><span class="p">};</span>
+</code></pre></div></div>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">ary</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>We can also print out the pointer and the contents of a C-string easily.
+Here is some boilerplate code to illustrate this.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">ary</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span>
+<span class="c1">// Print out address and contents</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%p : %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ary</span><span class="p">,</span> <span class="n">ary</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%p : %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>As mentioned before, the char array is mutable, so we can change its
+contents. Be careful to write within the bounds of the array. C does
+<em>not</em> do bounds checking at compile-time, but invalid reads/writes can
+get your program to crash.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">strcpy</span><span class="p">(</span><span class="n">ary</span><span class="p">,</span> <span class="s">"World"</span><span class="p">);</span> <span class="c1">// OK</span>
+<span class="n">strcpy</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="s">"World"</span><span class="p">);</span> <span class="c1">// NOT OK - Segmentation fault (crashes by default; unless SIGSEGV is blocked)</span>
+</code></pre></div></div>
+
+<p>Unlike the array, however, we can change <code class="language-plaintext highlighter-rouge">ptr</code> to point to another piece
+of memory,</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ptr</span> <span class="o">=</span> <span class="s">"World"</span><span class="p">;</span> <span class="c1">// OK!</span>
+<span class="n">ptr</span> <span class="o">=</span> <span class="n">ary</span><span class="p">;</span> <span class="c1">// OK!</span>
+<span class="n">ary</span> <span class="o">=</span> <span class="s">"World"</span><span class="p">;</span> <span class="c1">// NO won't compile</span>
+<span class="c1">// ary is doomed to always refer to the original array.</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%p : %s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ptr</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+<span class="n">strcpy</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="s">"World"</span><span class="p">);</span> <span class="c1">// OK because now ptr is pointing to mutable memory (the array)</span>
+</code></pre></div></div>
+
+<p>Unlike pointers, that hold addresses to variables on the heap, or stack,
+char arrays (string literals) point to read-only memory located in the
+data section of the program. This means that pointers are more flexible
+than arrays, even though the name of an array is a pointer to its
+starting address.</p>
+
+<p>In a more common case, pointers will point to heap memory in which case
+the memory referred to by the pointer <strong>can</strong> be modified.</p>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="pointers" class="title-text">Pointers<a class="anchor title-text" href="#pointers"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Pointers are variables that hold addresses. These addresses have a
+numeric value, but usually, programmers are interested in the value of
+the contents at that memory address. In this section, we will try to
+take you through a basic introduction to pointers.</p>
+<h3 id="pointer-basics" class="title-text">Pointer Basics</h3>
+<div class="pad"><div class="card">
+<h4 id="declaring-a-pointer">Declaring a Pointer</h4>
+
+<p>A pointer refers to a memory address. The type of the pointer is useful
+– it tells the compiler how many bytes need to be read/written and
+delineates the semantics for pointer arithmetic (addition and
+subtraction).</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">ptr1</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">ptr2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Due to C’s syntax, an <code class="language-plaintext highlighter-rouge">int*</code> or any pointer is not actually its own
+type. You have to precede each pointer variable with an asterisk. As a
+common gotcha, the following</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span><span class="o">*</span> <span class="n">ptr3</span><span class="p">,</span> <span class="n">ptr4</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Will only declare <code class="language-plaintext highlighter-rouge">*ptr3</code> as a pointer. <code class="language-plaintext highlighter-rouge">ptr4</code> will actually be a
+regular int variable. To fix this declaration, ensure the <code class="language-plaintext highlighter-rouge">*</code> precedes
+the pointer.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">ptr3</span><span class="p">,</span> <span class="o">*</span><span class="n">ptr4</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Keep this in mind for structs as well. If one declares without a
+typedef, then the pointer goes after the type.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">person</span> <span class="o">*</span><span class="n">ptr3</span><span class="p">;</span>
+</code></pre></div></div>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="reading--writing-with-pointers">Reading / Writing with pointers</h4>
+
+<p>Let’s say that <code class="language-plaintext highlighter-rouge">int ptr</code> was declared. For the sake of discussion, let
+us assume that <code class="language-plaintext highlighter-rouge">ptr</code> contains the memory address <code class="language-plaintext highlighter-rouge">0x1000</code>. To write to
+the pointer, it must be dereferenced and assigned a value.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// Writes some memory.</span>
+</code></pre></div></div>
+
+<p>What C does is take the type of the pointer which is an <code class="language-plaintext highlighter-rouge">int</code> and write
+<code class="language-plaintext highlighter-rouge">sizeof(int)</code> bytes from the start of the pointer, meaning that bytes
+<code class="language-plaintext highlighter-rouge">0x1000</code>, <code class="language-plaintext highlighter-rouge">0x1001</code>, <code class="language-plaintext highlighter-rouge">0x1002</code>, <code class="language-plaintext highlighter-rouge">0x1003</code> will all be zero. The number of
+bytes written depends on the pointer type. It is the same for all
+primitive types but structs are a little different.</p>
+
+<p>Reading works roughly the same way, except you put the variable in the
+spot that it needs the value.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">doubled</span> <span class="o">=</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>Reading and writing to non-primitive types gets tricky. The compilation
+unit - usually the file or a header - needs to have the size of the data
+structure readily available. This means that opaque data structures
+can’t be copied. Here is an example of assigning a struct pointer:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">a1</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">a2</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">pair</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">pair</span> <span class="n">obj</span><span class="p">;</span>
+  <span class="n">pair</span> <span class="n">zeros</span><span class="p">;</span>
+  <span class="n">zeros</span><span class="p">.</span><span class="n">a1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">zeros</span><span class="p">.</span><span class="n">a2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">pair</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">obj</span><span class="p">;</span>
+  <span class="n">obj</span><span class="p">.</span><span class="n">a1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="n">obj</span><span class="p">.</span><span class="n">a2</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">;</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"a1: %d, a2: %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">a1</span><span class="p">,</span> <span class="n">ptr</span><span class="o">-&gt;</span><span class="n">a2</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>As for reading structure pointers, don’t do it directly. Instead,
+programmers create abstractions for creating, copying, and destroying
+structs. If this sounds familiar, it is what C++ originally intended to
+do before the standards committee went off the deep end.</p>
+
+<h3 id="pointer-arithmetic" class="title-text">Pointer Arithmetic</h3>
+
+<p>In addition to adding to an integer, pointers can be added to. However,
+the pointer type is used to determine how much to increment the pointer.
+A pointer is moved over by the value added times the size of the
+underlying type. For char pointers, this is trivial because characters
+are always one byte.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">"Hello"</span><span class="p">;</span> <span class="c1">// ptr holds the memory location of 'H'</span>
+<span class="n">ptr</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// ptr now points to the first 'l''</span>
+</code></pre></div></div>
+
+<p>If an int is 4 bytes then ptr+1 points to 4 bytes after whatever ptr is
+pointing at.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="s">"ABCDEFGH"</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">bna</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="p">)</span> <span class="n">ptr</span><span class="p">;</span>
+<span class="n">bna</span> <span class="o">+=</span><span class="mi">1</span><span class="p">;</span> <span class="c1">// Would cause iterate by one integer space (i.e 4 bytes on some systems)</span>
+<span class="n">ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">bna</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">"%s"</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Notice how only ’EFGH’ is printed. Why is that? Well as mentioned above,
+when performing ’bna+=1’ we are increasing the **integer** pointer
+by 1, (translates to 4 bytes on most systems) which is equivalent to 4
+characters (each character is only 1 byte) Because pointer arithmetic in
+C is always automatically scaled by the size of the type that is pointed
+to, POSIX standards forbid arithmetic on void pointers. Having said
+that, compilers will often treat the underlying type as <code class="language-plaintext highlighter-rouge">char</code>. Here is
+a machine translation. The following two pointer arithmetic operations
+are equal</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">ptr1</span> <span class="o">=</span> <span class="p">...;</span>
+
+<span class="c1">// 1</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">offset</span> <span class="o">=</span> <span class="n">ptr1</span> <span class="o">+</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="c1">// 2</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">temp_ptr1</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="n">ptr1</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">offset</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)(</span><span class="n">temp_ptr1</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Every time you do pointer arithmetic, take a deep breath and make sure
+that you are shifting over the number of bytes you think you are
+shifting over.</strong></p>
+
+<h3 id="so-what-is-a-void-pointer" class="title-text">So what is a void pointer?</h3>
+
+<p>A void pointer is a pointer without a type. Void pointers are used when
+either the datatype is unknown or when interfacing C code with other
+programming languages without APIs. You can think of this as a raw
+pointer, or a memory address. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> by default returns a void pointer
+that can be safely promoted to any other type.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="o">*</span><span class="n">give_me_space</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">string</span> <span class="o">=</span> <span class="n">give_me_space</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>C automatically promotes <code class="language-plaintext highlighter-rouge">void*</code> to its appropriate type. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/gcc.1.html" class="fancy-link">gcc</a></code> and
+<code class="language-plaintext highlighter-rouge">clang</code> are not totally ISO C compliant, meaning that they will permit
+arithmetic on a void pointer. They will treat it as a <code class="language-plaintext highlighter-rouge">char</code> pointer. Do
+not do this because it is not portable - it is not guaranteed to work
+with all compilers!</p>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="common-bugs" class="title-text">Common Bugs<a class="anchor title-text" href="#common-bugs"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="nul-bytes" class="title-text">Nul Bytes</h3>
+<p>What’s wrong with this code?</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">mystrcpy</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="n">dest</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">src</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// void means no return value</span>
+  <span class="k">while</span><span class="p">(</span> <span class="o">*</span><span class="n">src</span> <span class="p">)</span> <span class="p">{</span> <span class="n">dest</span> <span class="o">=</span> <span class="n">src</span><span class="p">;</span> <span class="n">src</span> <span class="o">++</span><span class="p">;</span> <span class="n">dest</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>In the above code it simply changes the dest pointer to point to source
+string. Also the NUL bytes are not copied. Here is a better version -</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span> <span class="o">*</span><span class="n">src</span> <span class="p">)</span> <span class="p">{</span> <span class="o">*</span><span class="n">dest</span> <span class="o">=</span> <span class="o">*</span><span class="n">src</span><span class="p">;</span> <span class="n">src</span> <span class="o">++</span><span class="p">;</span> <span class="n">dest</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+<span class="o">*</span><span class="n">dest</span> <span class="o">=</span> <span class="o">*</span><span class="n">src</span><span class="p">;</span>
+</code></pre></div></div>
+<p>Note that it is also common to see the following kind of implementation,
+which does everything inside the expression test, including copying the
+NUL byte. However, this is bad style, as a result of doing multiple
+operations in the same line.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span> <span class="p">(</span><span class="o">*</span><span class="n">dest</span><span class="o">++</span> <span class="o">=</span> <span class="o">*</span><span class="n">src</span><span class="o">++</span> <span class="p">))</span> <span class="p">{};</span>
+</code></pre></div></div>
+<h3 id="double-frees" class="title-text">Double Frees</h3>
+<p>A double free error is when a program accidentally attempt to free the
+same allocation twice.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+<span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+
+<span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="c1">// Oops! - Dangling pointer! Writing to memory we don't own anymore</span>
+
+<span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="c1">// Oops! - Double free!</span>
+</code></pre></div></div>
+<p>The fix is first to write correct programs! Secondly, it is a good
+habit to set pointers to NULL, once the memory has been freed. This
+ensures that the pointer cannot be used incorrectly without the program
+crashing.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">p</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// No dangling pointers</span>
+</code></pre></div></div>
+<h3 id="returning-pointers-to-automatic-variables" class="title-text">Returning pointers to automatic variables</h3>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="nf">f</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+  <span class="k">static</span> <span class="kt">int</span> <span class="n">imok</span><span class="p">;</span>
+  <span class="k">return</span> <span class="o">&amp;</span><span class="n">imok</span><span class="p">;</span> <span class="c1">// OK - static variables are not on the stack</span>
+  <span class="k">return</span> <span class="o">&amp;</span><span class="n">result</span><span class="p">;</span> <span class="c1">// Not OK</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Automatic variables are bound to stack memory only for the lifetime of
+the function. After the function returns, it is an error to continue to
+use the memory.</p>
+<h3 id="insufficient-memory-allocation" class="title-text">Insufficient memory allocation</h3>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">User</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="p">};</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">User</span> <span class="n">user_t</span><span class="p">;</span>
+
+<span class="n">user_t</span> <span class="o">*</span><span class="n">user</span> <span class="o">=</span> <span class="p">(</span><span class="n">user_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">user</span><span class="p">));</span>
+</code></pre></div></div>
+<p>In the above example, we needed to allocate enough bytes for the struct.
+Instead, we allocated enough bytes to hold a pointer. Once we start
+using the user pointer we will corrupt memory. The correct code is shown
+below.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">User</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="p">};</span>
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">User</span> <span class="n">user_t</span><span class="p">;</span>
+
+<span class="n">user_t</span> <span class="o">*</span> <span class="n">user</span> <span class="o">=</span> <span class="p">(</span><span class="n">user_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">user_t</span><span class="p">));</span>
+</code></pre></div></div>
+<h3 id="buffer-overflow-underflow" class="title-text">Buffer overflow/ underflow</h3>
+<p>A famous example: Heart Bleed performed a memcpy into a buffer that was
+of insufficient size. A simple example: implement a strcpy and forget to
+add one to strlen, when determining the size of the memory required.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define N (10)
+</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">N</span><span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+<span class="k">for</span><span class="p">(</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</code></pre></div></div>
+<p>C fails to check if pointers are valid. The above example writes into
+<code class="language-plaintext highlighter-rouge">array[10]</code> which is outside the array bounds. This can cause memory
+corruption because that memory location is probably being used for
+something else. In practice, this can be harder to spot because the
+overflow/underflow may occur in a library call. Here is our old friend
+gets.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gets</span><span class="p">(</span><span class="n">array</span><span class="p">);</span> <span class="c1">// Let's hope the input is shorter than my array!</span>
+</code></pre></div></div>
+<h3 id="strings-require-strlens1-bytes" class="title-text">Strings require strlen(s)+1 bytes</h3>
+<p>Every string must have a NUL byte after the last characters. To store
+the string “Hi” it takes 3 bytes: [H] [i] [\0].</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="nf">strdup</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">input</span><span class="p">)</span> <span class="p">{</span>  <span class="cm">/* return a copy of 'input' */</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">copy</span><span class="p">;</span>
+  <span class="n">copy</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">));</span>     <span class="cm">/* nope! this allocates space for a pointer, not a string */</span>
+  <span class="n">copy</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">input</span><span class="p">));</span>     <span class="cm">/* Almost...but what about the null terminator? */</span>
+  <span class="n">copy</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">strlen</span><span class="p">(</span><span class="n">input</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="cm">/* That's right. */</span>
+  <span class="n">strcpy</span><span class="p">(</span><span class="n">copy</span><span class="p">,</span> <span class="n">input</span><span class="p">);</span>   <span class="cm">/* strcpy will provide the null terminator */</span>
+  <span class="k">return</span> <span class="n">copy</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h3 id="using-uninitialized-variables" class="title-text">Using uninitialized variables</h3>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">myfunction</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">...</span>
+</code></pre></div></div>
+<p>Automatic variables hold garbage or bit pattern that happened to be in
+memory or register. It is an error to assume that it will always be
+initialized to zero.</p>
+<h3 id="assuming-uninitialized-memory-will-be-zeroed" class="title-text">Assuming Uninitialized memory will be zeroed</h3>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">myfunct</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">array</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Automatic (temporary variables) and heap allocations may contain random
+bytes or garbage.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="logic-and-program-flow-mistakes" class="title-text">Logic and Program flow mistakes<a class="anchor title-text" href="#logic-and-program-flow-mistakes"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>These are a set of mistakes that may let the program compile but perform
+unintended functionality.</p>
+<h3 id="equal-vs-equality" class="title-text">Equal vs. Equality</h3>
+<p>Confusingly in C, the assignment operator also returns the assigned
+value. Most of the time it is ignored. We can use it to initialize
+multiple things on the same line.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">;</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">p2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></pre></div></div>
+<p>More confusingly, if we forget an equals sign in the equality operator
+we will end up assigning that variable. Most of the time this isn’t what
+we want to do.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// Will print out the answer.</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"The answer is %d"</span><span class="p">,</span> <span class="n">answer</span><span class="p">);}</span>
+</code></pre></div></div>
+<p>The quick way to fix that is to get in the habit of putting constants
+first. This mistake is common enough in while loop conditions. Most
+modern compilers disallows assigning variables a condition without
+parenthesis.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">if</span> <span class="p">(</span><span class="mi">42</span> <span class="o">=</span> <span class="n">answer</span><span class="p">)</span> <span class="p">{</span> <span class="n">printf</span><span class="p">(</span><span class="s">"The answer is %d"</span><span class="p">,</span> <span class="n">answer</span><span class="p">);}</span>
+</code></pre></div></div>
+<p>There are cases where we want to do it. A common example is getline.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="p">((</span><span class="n">nread</span> <span class="o">=</span> <span class="n">getline</span><span class="p">(</span><span class="o">&amp;</span><span class="n">line</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">len</span><span class="p">,</span> <span class="n">stream</span><span class="p">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+<p>This piece of code calls getline, and assigns the return value or the
+number of bytes read to nread. It also in the same line checks if that
+value is -1 and if so terminates the loop. It is always good practice to
+put parentheses around any assignment condition.</p>
+<h3 id="undeclared-or-incorrectly-prototyped-functions" class="title-text">Undeclared or incorrectly prototyped functions</h3>
+<p>Some snippets of code may do the following.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">time_t</span> <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">();</span>
+</code></pre></div></div>
+<p>The system function ‘time’ actually takes a parameter a pointer to some
+memory that can receive the time_t structure or NULL. The compiler
+fails to catch this error because the programmer omitted the valid
+function prototype by including <code class="language-plaintext highlighter-rouge">time.h</code>.</p>
+<p>More confusingly this could compile, work for decades and then crash.
+The reason for that is that time would be found at link time, not
+compile-time in the C standard library which almost surely is already in
+memory. Since a parameter isn’t being passed, we are hoping the
+arguments on the stack (any garbage) is zeroed out because if it isn’t,
+time will try to write the result of the function to that garbage which
+will cause the program to SEGFAULT.</p>
+<h3 id="extra-semicolons" class="title-text">Extra Semicolons</h3>
+<p>This is a pretty simple one, don’t put semicolons when unneeded.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">;</span> <span class="n">printf</span><span class="p">(</span><span class="s">"Printed once"</span><span class="p">);</span>
+<span class="k">while</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">);</span> <span class="n">x</span><span class="o">++</span> <span class="p">;</span> <span class="c1">// X is never incremented</span>
+</code></pre></div></div>
+<p>However, the following code is perfectly OK.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">i</span><span class="p">);;;;;;;;;;;;;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>It is OK to have this kind of code because the C language uses
+semicolons (;) to separate statements. If there is no statement in
+between semicolons, then there is nothing to do and the compiler moves
+on to the next statement To save a lot of confusion, <strong>always use
+braces.</strong> It increases the number of lines of code, which is a great
+productivity metric.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="topics" class="title-text">Topics<a class="anchor title-text" href="#topics"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>
+    <p>C-strings representation</p>
+  </li>
+  <li>
+    <p>C-strings as pointers</p>
+  </li>
+  <li>
+    <p>char p<span>[</span><span>]</span>vs char* p</p>
+  </li>
+  <li>
+    <p>Simple C string functions (strcmp, strcat, strcpy)</p>
+  </li>
+  <li>
+    <p>sizeof char</p>
+  </li>
+  <li>
+    <p>sizeof x vs x*</p>
+  </li>
+  <li>
+    <p>Heap memory lifetime</p>
+  </li>
+  <li>
+    <p>Calls to heap allocation</p>
+  </li>
+  <li>
+    <p>Dereferencing pointers</p>
+  </li>
+  <li>
+    <p>Address-of operator</p>
+  </li>
+  <li>
+    <p>Pointer arithmetic</p>
+  </li>
+  <li>
+    <p>String duplication</p>
+  </li>
+  <li>
+    <p>String truncation</p>
+  </li>
+  <li>
+    <p>double-free error</p>
+  </li>
+  <li>
+    <p>String literals</p>
+  </li>
+  <li>
+    <p>Print formatting.</p>
+  </li>
+  <li>
+    <p>memory out of bounds errors</p>
+  </li>
+  <li>
+    <p>static memory</p>
+  </li>
+  <li>
+    <p>file input / output. POSIX vs. C library</p>
+  </li>
+  <li>
+    <p>C input output: fprintf and printf</p>
+  </li>
+  <li>
+    <p>POSIX file IO (read, write, open)</p>
+  </li>
+  <li>
+    <p>Buffering of stdout</p>
+  </li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="questionsexercises" class="title-text">Questions/Exercises<a class="anchor title-text" href="#questionsexercises"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>
+    <p>What does the following print out?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"Hello "</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"It's a small "</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"World</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="n">fprintf</span><span class="p">(</span><span class="n">stdout</span><span class="p">,</span> <span class="s">"place</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What are the differences between the following two declarations?
+What does <code class="language-plaintext highlighter-rouge">sizeof</code> return for one of them?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"first one"</span><span class="p">;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">str2</span> <span class="o">=</span> <span class="s">"another one"</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What is a string in C?</p>
+  </li>
+  <li>
+    <p>Code up a simple <code class="language-plaintext highlighter-rouge">my_strcmp</code>. How about <code class="language-plaintext highlighter-rouge">my_strcat</code>, <code class="language-plaintext highlighter-rouge">my_strcpy</code>, or
+<code class="language-plaintext highlighter-rouge">my_strdup</code>? Bonus: Code the functions while only going through the
+strings <em>once</em>.</p>
+  </li>
+  <li>
+    <p>What should each of the following lines usually return?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="o">*</span><span class="n">ptr</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What is <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>? How is it different from <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/calloc.3p.html" class="fancy-link">calloc</a></code>. Once memory is
+allocated how can we use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/realloc.3p.html" class="fancy-link">realloc</a></code>?</p>
+  </li>
+  <li>
+    <p>What is the <code class="language-plaintext highlighter-rouge">&amp;</code> operator? How about <code class="language-plaintext highlighter-rouge">*</code>?</p>
+  </li>
+  <li>
+    <p>Pointer Arithmetic. Assume the following addresses. What are the
+following shifts?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span><span class="o">**</span> <span class="n">ptr</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span> <span class="c1">//0x100</span>
+<span class="n">ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span> <span class="c1">//0x200</span>
+<span class="n">ptr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span> <span class="c1">//0x300</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">ptr + 2</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">ptr + 4</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">ptr[0] + 4</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">ptr[1] + 2000</code></p>
+      </li>
+      <li>
+        <p><code class="language-plaintext highlighter-rouge">*((int)(ptr + 1)) + 3</code></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>How do we prevent double free errors?</p>
+  </li>
+  <li>
+    <p>What is the printf specifier to print a string, <code class="language-plaintext highlighter-rouge">int</code>, or <code class="language-plaintext highlighter-rouge">char</code>?</p>
+  </li>
+  <li>
+    <p>Is the following code valid? Why? Where is <code class="language-plaintext highlighter-rouge">output</code> located?</p>
+
+    <div class="language-c highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="nf">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">var</span><span class="p">){</span>
+<span class="k">static</span> <span class="kt">char</span> <span class="n">output</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+<span class="n">snprintf</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s">"%d"</span><span class="p">,</span> <span class="n">var</span><span class="p">);</span>
+<span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Write a function that accepts a path as a string, and opens that
+file, prints the file contents 40 bytes at a time but, every other
+print reverses the string (try using the POSIX API for this).</p>
+  </li>
+  <li>
+    <p>What are some differences between the POSIX file descriptor model
+and C’s <code class="language-plaintext highlighter-rouge">FILE*</code> (i.e. what function calls are used and which is
+buffered)? Does POSIX use C’s <code class="language-plaintext highlighter-rouge">FILE*</code> internally or vice versa?</p>
+  </li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="rapid-fire-pointer-arithmetic" class="title-text">Rapid Fire: Pointer Arithmetic<a class="anchor title-text" href="#rapid-fire-pointer-arithmetic"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Pointer arithmetic is important! Take a deep breath and figure out how
+many bytes each operation moves a pointer. The following is a rapid fire
+section. We’ll use the following definitions:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="o">*</span><span class="n">int_</span><span class="p">;</span> <span class="c1">// sizeof(int) == 4;</span>
+<span class="kt">long</span> <span class="o">*</span><span class="n">long_</span><span class="p">;</span> <span class="c1">// sizeof(long) == 8;</span>
+<span class="kt">char</span> <span class="o">*</span><span class="n">char_</span><span class="p">;</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">short_</span><span class="p">;</span> <span class="c1">//sizeof(short) == 2;</span>
+<span class="kt">int</span> <span class="o">**</span><span class="n">int_ptr</span><span class="p">;</span> <span class="c1">// sizeof(int*) == 8;</span>
+</code></pre></div></div>
+<p>How many bytes are moved over from the following additions?</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">int_ + 1</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">long_ + 7</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">short_ - 6</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">short_ - sizeof(long)</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">long_ - sizeof(long) + sizeof(int_)</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">long_ - sizeof(long) / sizeof(int)</code></p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">(char*)(int_ptr + sizeof(long)) + sizeof(int_)</code></p>
+  </li>
+</ol>
+<h3 id="rapid-fire-solutions" class="title-text">Rapid Fire Solutions</h3>
+<ol>
+  <li>
+    <p>4</p>
+  </li>
+  <li>
+    <p>56</p>
+  </li>
+  <li>
+    <p>-12</p>
+  </li>
+  <li>
+    <p>-16</p>
+  </li>
+  <li>
+    <p>0</p>
+  </li>
+  <li>
+    <p>-16</p>
+  </li>
+  <li>
+    <p>72</p>
+  </li>
+</ol>
+<div id="refs" class="references">
+
+<div id="ref-duff">
+
+Duff, Tom. n.d. “Tom Duff on Duff’s Device.” *Tom Duff on Duff’s
+Device*.
+<a href="https://www.lysator.liu.se/c/duffs-device.html" class="fancy-link wiki-link">https://www.lysator.liu.se/c/duffs-device.html</a>.
+
+</div>
+
+<div id="ref-fortran72">
+
+“FORTRAN IV PROGRAMMER’S REFERENCE MANUAL.” 1972. Manual. Maynard,
+MASSACHUSETTS: DIGITAL EQUIPMENT CORPORATION.
+<a href="http://www.bitsavers.org/www.computer.museum.uq.edu.au/pdf/DEC-10-AFDO-D%20decsystem10%20FORTRAN%20IV%20Programmer%27s%20Reference%20Manual.pdf" class="fancy-link wiki-link">http://www.bitsavers.org/www.computer.museum.uq.edu.au/pdf/DEC-10-AFDO-D%20decsystem10%20FORTRAN%20IV%20Programmer%27s%20Reference%20Manual.pdf</a>.
+
+</div>
+
+<div id="ref-4610935">
+
+“IEEE Standard for Floating-Point Arithmetic.” 2008. *IEEE Std
+754-2008*, August, 1–70.
+<a href="https://doi.org/10.1109/IEEESTD.2008.4610935" class="fancy-link wiki-link">https://doi.org/10.1109/IEEESTD.2008.4610935</a>.
+
+</div>
+
+<div id="ref-xnukernel">
+
+Inc., Apple. 2017. “XNU Kernel.” *GitHub Repository*.
+<a href="https://github.com/apple/darwin-xnu" class="fancy-link wiki-link">https://github.com/apple/darwin-xnu</a>;
+GitHub.
+
+</div>
+
+<div id="ref-ISON1124">
+
+“ISO C Standard.” 2005. Standard. Geneva, CH: International Organization
+for Standardization.
+<a href="http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf" class="fancy-link wiki-link">http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1124.pdf</a>.
+
+</div>
+
+<div id="ref-kernighan1988c">
+
+Kernighan, B.W., and D.M. Ritchie. 1988. *The c Programming Language*.
+Prentice-Hall Computer software Series. Prentice Hall.
+<a href="https://books.google.com/books?id=161QAAAAMAAJ" class="fancy-link wiki-link">https://books.google.com/books?id=161QAAAAMAAJ</a>.
+
+</div>
+
+<div id="ref-Love">
+
+Love, Robert. 2010. *Linux Kernel Development*. 3rd ed. Addison-Wesley
+Professional.
+
+</div>
+
+<div id="ref-Ritchie:1993:DCL:155360.155580">
+
+Ritchie, Dennis M. 1993. “The Development of the c Language.” *SIGPLAN
+Not.* 28 (3): 201–8.
+<a href="https://doi.org/10.1145/155360.155580" class="fancy-link wiki-link">https://doi.org/10.1145/155360.155580</a>.
+
+</div>
+
+</div>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Introc.md";
+  </script>
+</body>
+
+</html>

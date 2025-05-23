@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Critical Concurrency</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Critical Concurrency" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Critical Concurrency
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-03-05 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>barrier.c</li>
+                
+                <li>queue.c</li>
+                
+                <li>semamore.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_overview" href="#overview" class="fancy-link">Overview</a></li>
+<li><a id="toc_rendezvous-ungraded" href="#rendezvous-ungraded" class="fancy-link">Rendezvous (UNGRADED)</a></li>
+<li><a id="toc_semamorec" href="#semamorec" class="fancy-link">semamore.c</a></li>
+<li><a id="toc_barrierc" href="#barrierc" class="fancy-link">barrier.c</a></li>
+<li><a id="toc_queuec" href="#queuec" class="fancy-link">queue.c</a></li>
+<li><a id="toc_testing" href="#testing" class="fancy-link">Testing</a></li>
+<li><a id="toc_helpful-hints-and-notes" href="#helpful-hints-and-notes" class="fancy-link">Helpful Hints and Notes</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Critical Concurrency are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Synchronization Primitives</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Common Patterns in Multi-Threaded Programs</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Thread-Safe Datastructures and Their Design</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="overview" class="title-text">Overview<a class="anchor title-text" href="#overview"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>There are four main components to this lab, three of which are graded. These are Rendezvous (not graded), Semamore, Barrier, and Thread-safe Queue. Each of these represent very common synchronization problem (or slight twists on them) that will do you well to become familiar with.</p>
+<p>Good luck!</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="rendezvous-ungraded" class="title-text">Rendezvous (UNGRADED)<a class="anchor title-text" href="#rendezvous-ungraded"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This is a problem for you to think about. We have provided a worked solution to this problem but PLEASE try to solve this problem before looking at the solution!</p>
+<p>Problem description:</p>
+<p>Given two threads, <code class="language-plaintext highlighter-rouge">a</code> and <code class="language-plaintext highlighter-rouge">b</code>, and the fact that both have to run two tasks (<code class="language-plaintext highlighter-rouge">a1</code>, <code class="language-plaintext highlighter-rouge">a2</code>, <code class="language-plaintext highlighter-rouge">b1</code>, <code class="language-plaintext highlighter-rouge">b2</code>), how do you get both <code class="language-plaintext highlighter-rouge">a1</code> and b1 to run before either <code class="language-plaintext highlighter-rouge">a2</code> and <code class="language-plaintext highlighter-rouge">b2</code>? In <code class="language-plaintext highlighter-rouge">rendezvous.c</code>, you need to modify the two functions (<code class="language-plaintext highlighter-rouge">modifyB_printA</code> &amp; <code class="language-plaintext highlighter-rouge">modifyA_printB</code>) using semaphores so that both quotes <code class="language-plaintext highlighter-rouge">A</code> and <code class="language-plaintext highlighter-rouge">B</code> are modified before being printed.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="semamorec" class="title-text">semamore.c<a class="anchor title-text" href="#semamorec"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>NOTE: A semamore is <strong>NOT</strong> a real thing! It is simply a made up clever name! This means you can’t use them in future assignments (unless you re-implement it).</p>
+<p>A normal semaphore blocks when the value within the semaphore reaches 0. A semamore blocks when it reaches 0, but also blocks when it reaches some maximum value. You can think of a semamore as a top-bounded semaphore. In semamore.c, you are given four functions to work on, <code class="language-plaintext highlighter-rouge">semm_init</code>, <code class="language-plaintext highlighter-rouge">semm_wait</code>, <code class="language-plaintext highlighter-rouge">semm_post</code>, <code class="language-plaintext highlighter-rouge">semm_destroy</code>. <code class="language-plaintext highlighter-rouge">semm_post</code> is the important difference. When <code class="language-plaintext highlighter-rouge">semm_post</code> reaches <code class="language-plaintext highlighter-rouge">max_val</code> (as defined in the semamore struct in semamore.h), it blocks.</p>
+<p>There are four functions in total you will be writing:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">void semm_init(Semamore *s, int value, int max_val);</code></li>
+  <li><code class="language-plaintext highlighter-rouge">void semm_wait(Semamore *s);</code></li>
+  <li><code class="language-plaintext highlighter-rouge">void semm_post(Semamore *s);</code></li>
+  <li><code class="language-plaintext highlighter-rouge">void semm_destroy(Semamore *s);</code></li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="barrierc" class="title-text">barrier.c<a class="anchor title-text" href="#barrierc"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In rendezvous you saw an example of an one-time-use barrier.  Now, you get to build code to support a reusable barrier.  At the cost of being redundant, a reusable barrier is one that can get used more than once.  Say you have threads executing code in a for loop and you want them to stay in sync.  That is, each thread should be on the i’th iteration of the loop when every other thread is on the i’th iteration.  With a reusable barrier, you can stop threads from going to the i+1’th iteration until all of them have finished the i’th.</p>
+<p>Note that most barrier implementations (including the pthread library barrier) are “reusable”, but never say so.  This is because it simply does not make sense to have a “not-reusable” barrier.  Thus, we are only iterating to you that the barrier your build should be reusable so that you understand what  it means.</p>
+<p>You can find more info in the <a href="http://cs341.cs.illinois.edu/coursebook/Synchronization#barriers" class="fancy-link wiki-link">barriers coursebook entry</a></p>
+<p>Your goal is to implement the functions</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">int barrier_destroy(barrier_t *barrier);</code></li>
+  <li><code class="language-plaintext highlighter-rouge">int barrier_init(barrier_t *barrier, unsigned num_threads);</code></li>
+  <li><code class="language-plaintext highlighter-rouge">int barrier_wait(barrier_t *barrier);</code></li>
+</ul>
+<p>so that a <code class="language-plaintext highlighter-rouge">barrier_t</code> using these functions is a working reusable barrier.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="queuec" class="title-text">queue.c<a class="anchor title-text" href="#queuec"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><strong>NOTE: Do not use semaphores or your semamore here.</strong></p>
+<p>Your task is to build a thread safe queue, that also may or may not be bounded, by implementing the functions in queue.c. The maxSize of the queue can be set to either a positive number or a non-positive number. If positive, your queue will block if the user tries to push when the queue is full. If not positive, your queue should never block upon a push (the queue does not have a max size). If your queue is empty then you should block on a pull. You should make use of the node struct to store and retrieve information. In the end, your queue implementation should be able to handle concurrent calls from multiple threads. <code class="language-plaintext highlighter-rouge">queue_create</code> and <code class="language-plaintext highlighter-rouge">queue_destroy</code> will not be called by multiple threads.</p>
+<p>Your goal is to implement the functions</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">queue* queue_create (ssize_t max_size);</code></li>
+  <li><code class="language-plaintext highlighter-rouge">void queue_destroy (queue* this);</code></li>
+  <li><code class="language-plaintext highlighter-rouge">void queue_push (queue* this, void* element);</code></li>
+  <li><code class="language-plaintext highlighter-rouge">void* queue_pull (queue* this);</code></li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing" class="title-text">Testing<a class="anchor title-text" href="#testing"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><strong>Testing is ungraded, but highly recommended</strong></p>
+<p>Since the implementation of your semamore is quite close to an actual semaphore, please test this on your own in a variety of ways. Be careful of race conditions! They can be hard to find!  We’ve given you a <code class="language-plaintext highlighter-rouge">semamore_tests.c</code> file to write tests in.</p>
+<p>For <code class="language-plaintext highlighter-rouge">barrier_test.c</code> we have provided you with a simple test case.  Feel free to expand on it, as it is not exhaustive/perfect.  Learning how to use the barrier is just as important as writing it, since you will be using barriers on the Password Cracker MP :)</p>
+<p>For <code class="language-plaintext highlighter-rouge">queue_test.c</code> we would like you to write tests yourself.  Learning to write tests for multi-threaded code is very important.  You will also be using this queue in the Password Cracker MP :)  (we will give you a working version; you will not be penalized on the MP for not successfully completing the lab)</p>
+<h3 id="thread-sanitizer" class="title-text">Thread Sanitizer</h3>
+<p>We have another target executed by typing <code class="language-plaintext highlighter-rouge">make tsan</code>. This compiles your code with Thread Sanitizer.</p>
+<p>ThreadSantizer is a race condition detection tool. See <a href="http://cs341.cs.illinois.edu/coursebook/Background#tsan" class="fancy-link wiki-link">this page</a> for more information.</p>
+<p><strong>We will be using ThreadSanitizer to grade your code! If the autograder detects a data race, you won’t automatically get 0 points, but a few points will be deducted.</strong></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="helpful-hints-and-notes" class="title-text">Helpful Hints and Notes<a class="anchor title-text" href="#helpful-hints-and-notes"> #</a>
+</h2></div>
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>Make sure you thoroughly test your code! Race conditions can be hard to spot!</li>
+  <li>Attempting to visualize your code or diagram it in certain cases can sometimes be a huge aid and is highly recommended!</li>
+</ul>
+<p>** In any of <code class="language-plaintext highlighter-rouge">semamore.c</code>, <code class="language-plaintext highlighter-rouge">barrier.c</code>, or <code class="language-plaintext highlighter-rouge">queue.c</code> you may not use semaphores or pthread_barriers **</p>
+<p><strong>ANYTHING not specified in these docs is considered undefined behavior and we will not test it</strong>
+For example, calling queue_push(NULL, NULL) can do whatever you want it to. We will not test it.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/critical_concurrency.md";
+  </script>
+</body>
+
+</html>

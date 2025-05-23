@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Netfilter Kernel Module</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Netfilter Kernel Module" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Netfilter Kernel Module
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_part-1---making-a-kernel-module-optional" href="#part-1---making-a-kernel-module-optional" class="fancy-link">Part 1 - Making a kernel module (optional)</a></li>
+<li><a id="toc_part-2---making-a-netfilter-module" href="#part-2---making-a-netfilter-module" class="fancy-link">Part 2 - Making a netfilter module</a></li>
+<li><a id="toc_part-3---using-proc-for-output" href="#part-3---using-proc-for-output" class="fancy-link">Part 3 - Using proc for output</a></li>
+<li><a id="toc_implementing-proc_fs-endpoint" href="#implementing-proc_fs-endpoint" class="fancy-link">Implementing proc_fs endpoint</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Netfilter Kernel Module are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Learn about kernel modules</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Understand how packets are filtered</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Understand how networking concepts are applied at a low level</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<p>Requirements:</p>
+<ul>
+  <li>Understand how netfilter could be used to block packets</li>
+  <li>Understand how the concepts you leared in CS 341 apply to the kernel</li>
+  <li>Log incoming packets from google</li>
+  <li>Have a proc endpoint to display how many times each of google’s IP ranges sent a packet</li>
+  <li>Optional: Implement something extra (more statistics or some actual filtering)</li>
+</ul>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="part-1---making-a-kernel-module-optional" class="title-text">Part 1 - Making a kernel module (optional)<a class="anchor title-text" href="#part-1---making-a-kernel-module-optional"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>There’s two main components to making a kernel module, an initializer and an
+exit handler. The initializer will run when the module is loaded and the exit
+handler will run when the module is unloaded.</p>
+<p>To accomplish this, either create two functions named <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/init_module.2.html" class="fancy-link">init_module</a></code> and
+<code class="language-plaintext highlighter-rouge">cleanup_module</code> or create two functions with any names (<code class="language-plaintext highlighter-rouge">foo</code> and <code class="language-plaintext highlighter-rouge">bar</code>) and
+call <code class="language-plaintext highlighter-rouge">module_init</code> and <code class="language-plaintext highlighter-rouge">module_exit</code> on the initializer and exit handler
+respectively (<code class="language-plaintext highlighter-rouge">module_init(foo)</code>, <code class="language-plaintext highlighter-rouge">module_init(bar)</code>).</p>
+<p>Additionally, we will need to specify a module license (you don’t have to, but
+the compiler will warn you if you don’t). We’ll stick to GPL, so include the
+line:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MODULE_LICENSE("GPL");
+</code></pre></div></div>
+<p>in your code.</p>
+<p>Since it is cumbersome to use debuggers with kernel modules (there are kernel
+debuggers, but we won’t use them today), we will rely on logging for outputing
+debug info. Unlike with a normal program, you do not have a stdout/stdin channel
+so there is no way to have a “default” output stream for non-logging purposes.
+To log information you will use <code class="language-plaintext highlighter-rouge">printk</code> (It works almost exactly like
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code>). To view the log either view the contents of files in <code class="language-plaintext highlighter-rouge">/var/log</code> or
+use the program <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dmesg.1.html" class="fancy-link">dmesg</a></code>. I prefer to use <code class="language-plaintext highlighter-rouge">dmesg -wH</code> since that shows a stream
+of output with human readable timestamps.</p>
+<p>To complete part 1, write a kernel module in <code class="language-plaintext highlighter-rouge">filter.c</code> and using <code class="language-plaintext highlighter-rouge">printk</code> write
+“hello world” to the log.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="part-2---making-a-netfilter-module" class="title-text">Part 2 - Making a netfilter module<a class="anchor title-text" href="#part-2---making-a-netfilter-module"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In this part we will experiment with <code class="language-plaintext highlighter-rouge">netfilter</code> - a way of filtering packets at
+the kernel level. To accomplish this, we’ll need to setup a few things.</p>
+<p>We’ll need a global variable to keep track of our netfilter options, we’ll need
+to initialize those options in our <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/init.1.html" class="fancy-link">init</a></code> callback, and finally, we’ll need to
+register/unregister our netfilter hook at <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/init.1.html" class="fancy-link">init</a></code>/<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exit.3p.html" class="fancy-link">exit</a></code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// global:
+static struct nf_hook_ops netfilter_ops;
+
+// in init
+  netfilter_ops.hook = main_hook; // What is main_hook?
+  netfilter_ops.pf = PF_INET;
+  netfilter_ops.hooknum = 0; // We want to run the hook before routing packets
+  // We want this hook to run before other currently installed hooks
+  netfilter_ops.priority = NF_IP_PRI_FIRST;
+  //                    v init_net is a variable exported by the netfilter header
+  nf_register_net_hook(&amp;init_net, &amp;netfilter_ops); // register the hook
+
+// in exit
+nf_unregister_net_hook(&amp;init_net, &amp;netfilter_ops); // unregister the hook
+</code></pre></div></div>
+<p>These options will create a netfilter that will filter incoming packets. You can
+find details online about how to filter outbound packets.</p>
+<p>In this example <code class="language-plaintext highlighter-rouge">main_hook</code> is the function that actually implements the
+functionality of the module. More generally, it needs to be a function with the
+following signature:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static unsigned int main_hook(void *priv, struct sk_buff *skb,
+                              const struct nf_hook_state *state);
+</code></pre></div></div>
+<p>The static isn’t strictly necessary, but it’s good practice to declare
+everything in your module as static besides your init and cleanup.</p>
+<p>The only parameter we’ll be using is <code class="language-plaintext highlighter-rouge">skb</code>. We want to extract the source ip of
+packets we are recieving. You can do that with the following lines of code:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  struct iphdr *ip_header = (struct iphdr *)skb_network_header(skb);
+  unsigned int src_ip = (unsigned int)ip_header-&gt;saddr;
+</code></pre></div></div>
+<p>Using the google ranges provided in <code class="language-plaintext highlighter-rouge">filter.h</code> find the index of the range the
+incoming packet belongs to and log it. If you’d like to also view the human
+readable ip in your log, use the format specifier <code class="language-plaintext highlighter-rouge">%pI4</code> in <code class="language-plaintext highlighter-rouge">printk</code> and pass in
+a pointer to the ip address.</p>
+<p>Finally you’ll want to return <code class="language-plaintext highlighter-rouge">NF_ACCEPT</code> to allow the packet to continue on
+it’s journey through the network stack. If you wanted to block the packet
+instead, use <code class="language-plaintext highlighter-rouge">NF_DROP</code>. Try playing around with those options to block specific
+google ranges. Warning: dropping all packets will result in the kernel module
+also dropping your ssh connection to your vm! If this happens, let one of us
+know so that we can reset your vm.</p>
+<p>To test this, run <code class="language-plaintext highlighter-rouge">dmesg -wH</code> in one terminal and in other terminals, try
+commands like:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ping www.google.com
+wget google.com &amp;&amp; rm index.html
+ping [ something that isn't owned by google ]
+</code></pre></div></div>
+<p>and check your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/dmesg.1.html" class="fancy-link">dmesg</a></code> log for updates.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="part-3---using-proc-for-output" class="title-text">Part 3 - Using proc for output<a class="anchor title-text" href="#part-3---using-proc-for-output"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Now, we’re going to create an endpoint in <code class="language-plaintext highlighter-rouge">/proc</code> that will allow you to view
+statistics about the packets you’ve intercepted. To accomplish this, create a
+global array that will store in the <code class="language-plaintext highlighter-rouge">i</code>th index, the number of times the <code class="language-plaintext highlighter-rouge">i</code>th
+range sent a packet.</p>
+<p>In order to prevent race conditions, we’ll need to lock access to this array.
+While there are spinlocks in the kernel, we’ll be using a mutex today for
+learning purposes.</p>
+<p>You’ll need to create a mutex with <code class="language-plaintext highlighter-rouge">mutex_init</code> and destroy it with
+<code class="language-plaintext highlighter-rouge">mutex_destroy</code>. Locking and unlocking are provided by <code class="language-plaintext highlighter-rouge">mutex_(un)lock</code>.</p>
+<p>Revise the lecture slides for more info about how to use a mutex in the kernel
+and how that is different from a spinlock.</p>
+<p>To create your proc endpoint, you can use the following code:</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="implementing-proc_fs-endpoint" class="title-text">Implementing proc_fs endpoint<a class="anchor title-text" href="#implementing-proc_fs-endpoint"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Here is some sample code for implementing read. In this code, <code class="language-plaintext highlighter-rouge">range_count</code> is
+an array of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/size_t.3type.html" class="fancy-link">size_t</a></code>s such that the <code class="language-plaintext highlighter-rouge">i</code>th element of the array contains the
+number of packets recieved from range <code class="language-plaintext highlighter-rouge">i</code>.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static char message[1024];
+ssize_t filter_read(struct file *f, char __user *u, size_t req, loff_t *off) {
+  int message_offset;
+  int i;
+
+  message_offset = 0;
+  mutex_lock(&amp;range_count_mutex);
+  for (i = 0; i &lt; google_range_count; i++) {
+    message_offset +=
+        snprintf(message + message_offset, sizeof(message) - message_offset,
+                 "range %d (%pI4 - %pI4): %zu\n", i, google_ranges[i].start,
+                 google_ranges[i].end, range_count[i]);
+    if(message_offset &gt;= 1024)
+      break;
+  }
+  mutex_unlock(&amp;range_count_mutex);
+
+  if (*off &gt; message_offset)
+    return 0;
+  if(req &gt; message_offset - *off)
+    req = message_offset - *off;
+
+  copy_to_user(u, message+*off, req);
+  *off += req;
+  return req;
+}
+struct file_operations fops = {
+    .read = filter_read,
+};
+
+struct proc_dir_entry *filterdir;
+
+// in init
+  filterdir = proc_mkdir(filter", NULL); // Creates  /proc/filter/
+  proc_create("status", 0666, filterdir, &amp;fops); // creates /proc/filter/status
+// in exit
+  remove_proc_entry("status", filterdir);
+  remove_proc_entry("filter", NULL);
+
+</code></pre></div></div>
+<p>Try experimenting with write. Maybe enable or disable the filter with a write to
+a proc endpoint or try allowing a user to add in new ranges.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="submission-instructions" class="title-text">Submission Instructions<a class="anchor title-text" href="#submission-instructions"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Please read details on <a href="/#academic-integrity" class="fancy-link wiki-link">Academic Integrity</a> fully. These are shared by all assignments in CS 341.</p>
+<p>We will be using GitHub as our hand-in system this semester. Our grading system will checkout your most recent (pre-deadline) commit for grading. Therefore, to hand in your code, all you have to do is commit and push to your Github repository.</p>
+<p>To check out the provided code for <code class="highlighter-rouge">assignments-notorious_netfilter</code> from the class repository, go to your cs341 directory (the one you checked out for “know your tools”) and run:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull release master
+</code></pre></div></div>
+<p>If you run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ls.1p.html" class="fancy-link">ls</a></code> you will now see a <code class="language-plaintext highlighter-rouge">assignments-notorious_netfilter</code> folder, where you can find this assignment! To commit your changes (send them to us), type:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add assignments-notorious_netfilter
+git commit -m "assignments-notorious_netfilter submission"
+git push origin master
+</code></pre></div></div>
+<p>Your repository directory can be viewed from a web browser from the following URL: 
+<a href="https://github-dev.cs.illinois.edu/cs341-sp25/NETID/tree/master/assignments-notorious_netfilter" class="fancy-link wiki-link">https://github-dev.cs.illinois.edu/cs341-sp25/NETID/tree/master/assignments-notorious_netfilter</a> where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your remote git copy.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="assignment-feedback" class="title-text">Assignment Feedback<a class="anchor title-text" href="#assignment-feedback"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We strive to provide the best assignments that we can for this course, and we would like your feedback on them!</p>
+<p>This is the form we will use to evaluate our assignments. We appreciate the time you take to give us your honest feedback and we promise to keep improving the course to make your experience in CS 341 the best it can be.</p>
+<p><a href="https://goo.gl/forms/hREf0ojFWumYfQF12" class="fancy-link wiki-link">https://goo.gl/forms/hREf0ojFWumYfQF12</a></p>
+</div></div></div>
+</div></div>
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/notorious_netfilter.md";
+  </script>
+</body>
+
+</html>

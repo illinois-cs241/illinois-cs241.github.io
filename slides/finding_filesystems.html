@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        File Systems | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/finding_filesystems">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">File Systems</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="what-do-filesystems-look-like">What do filesystems look like?</h2>
+
+<ul>
+  <li>inodes, they store metadata about the node</li>
+  <li>data blocks/nodes, they store the actual data</li>
+  <li>double indirect blocks (data)</li>
+</ul>
+
+</section><section><h2 id="what-our-file-system-looks-like">What our file system looks like</h2>
+
+<p><img src="/images/slides/filesystem/map.png" alt="File System"></p>
+
+</section><section><h2 id="traditional-ntfs-file-systems">Traditional NTFS file systems</h2>
+
+<p><img src="/images/slides/filesystem/ntfs.png" alt="NTFS File System"></p>
+
+</section><section><h2 id="typical-file-systems-nowadays">Typical file systems nowadays</h2>
+
+<p><img src="/images/slides/filesystem/inode_with_signatures.jpg" alt="Now Files"></p>
+
+</section><section><h2 id="inode">Inode</h2>
+
+<pre><code class="language-C"><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+	<span class="kt">uint8_t</span> 	<span class="n">owner</span><span class="p">;</span>				<span class="cm">/* Owner ID */</span>
+	<span class="kt">uint8_t</span> 	<span class="n">group</span><span class="p">;</span>				<span class="cm">/* Group ID */</span>
+	<span class="kt">uint16_t</span> 	<span class="n">permissions</span><span class="p">;</span>		<span class="cm">/* &lt;d,f,c,p&gt;rwxrwxrwx */</span>
+	<span class="kt">uint32_t</span> 	<span class="n">hard_link_count</span><span class="p">;</span>	<span class="cm">/* reference count, when hit 0 */</span>
+	<span class="kt">time_t</span> 		<span class="n">last_access</span><span class="p">;</span>		<span class="cm">/* read(2) change */</span>
+	<span class="kt">time_t</span> 		<span class="n">last_modification</span><span class="p">;</span>	<span class="cm">/* write(2) change */</span>
+	<span class="kt">time_t</span> 		<span class="n">last_change</span><span class="p">;</span>		<span class="cm">/* any time metadata changes */</span>
+	<span class="kt">uint64_t</span> 	<span class="n">size</span><span class="p">;</span>				<span class="cm">/* size of the file in bytes */</span>
+	<span class="n">data_block_number</span> <span class="n">direct_nodes</span><span class="p">[</span><span class="n">NUM_DIRECT_INODES</span><span class="p">];</span> <span class="cm">/* data_blocks */</span>
+	<span class="n">data_block_number</span> <span class="n">single_indirect</span><span class="p">;</span> <span class="cm">/* points to a singly indirect block */</span>
+<span class="p">}</span> <span class="n">inode</span><span class="p">;</span>
+</code></pre>
+
+</section><section><h2 id="indirect-blocks">Indirect Blocks</h2>
+
+<p><img src="/images/slides/filesystem/IndirectBlocks1.png" alt="Indirect Blocks"></p>
+
+</section><section><h2 id="read-the-docs">Read the docs!</h2>
+
+<p>There are a few intricacies with dealing with the inodes.</p>
+
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

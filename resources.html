@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Resources</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Resources" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Resources
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_late-add-instructions" href="#late-add-instructions" class="fancy-link">Late Add Instructions</a></li>
+<li><a id="toc_textbook-references" href="#textbook-references" class="fancy-link">Textbook References</a></li>
+<li><a id="toc_tutorials" href="#tutorials" class="fancy-link">Tutorials</a></li>
+<li><a id="toc_how-to-succeed" href="#how-to-succeed" class="fancy-link">How to Succeed</a></li>
+<li><a id="toc_forum-q-and-a-search-first-dont-post" href="#forum-q-and-a-search-first-dont-post" class="fancy-link">Forum Q-and-A: Search First. Don’t Post.</a></li>
+<li><a id="toc_cs-341-admin" href="#cs-341-admin" class="fancy-link">CS 341 Admin</a></li>
+<li><a id="toc_lawrence-angrave" href="#lawrence-angrave" class="fancy-link">Lawrence Angrave</a></li>
+<li><a id="toc_graham-carl-evans" href="#graham-carl-evans" class="fancy-link">Graham Carl Evans</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="late-add-instructions" class="title-text">Late Add Instructions<a class="anchor title-text" href="#late-add-instructions"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>If you added late, check <a href="/late_add" class="fancy-link wiki-link">this page</a> to get caught up.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="textbook-references" class="title-text">Textbook References<a class="anchor title-text" href="#textbook-references"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>An gentle and short introduction to system programming is Angrave’s <a href="https://github.com/angrave/SystemProgramming/wiki" class="fancy-link wiki-link">CS 341 Crowd-Sourced Wikibook</a>.
+We also have the second iteration the <a href="https://github.com/illinois-cs241/coursebook/wiki" class="fancy-link wiki-link">Coursebook</a> That provides html, pdf, and wiki versions. 
+Angrave’s mini searchable video-introduction and playful <em>system programming-in-the-browser</em> environment is at:
+<a href="http://cs-education.github.io/sys/" class="fancy-link wiki-link">mini lectures</a> (Firefox and Chrome recommended).</p>
+<p>No formal textbook is required, but if you really want to buy a physical book, we recommend the following custom book Angrave put together in 2007:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Introduction to Systems Concepts and Systems Programming
+University of Illinois Custom Edition
+Copyright 2007 by Pearson Custom Publishing
+ISBN 0-536-48928-9
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="tutorials" class="title-text">Tutorials<a class="anchor title-text" href="#tutorials"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li><a href="/coursebook/Background#debugging-and-environments" class="fancy-link wiki-link">Debugging Tutorial</a></li>
+  <li><a href="/tutorials/development" class="fancy-link wiki-link">Development Tutorial</a></li>
+  <li><a href="/tutorials/emacs" class="fancy-link wiki-link">Emacs Tutorial</a></li>
+  <li><a href="/tutorials/sshfs" class="fancy-link wiki-link">SSHFS Workflow Tutorial</a></li>
+  <li><a href="/coursebook/Appendix#shell" class="fancy-link wiki-link">Shell Tutorial</a></li>
+  <li><a href="/tutorials/vscode" class="fancy-link wiki-link">VS Code Tutorial</a></li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="how-to-succeed" class="title-text">How to Succeed<a class="anchor title-text" href="#how-to-succeed"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Is this course hard? Yes, but you are bright. You’re taking computer science at UIUC. Schedule the time to do it. The two big changes from CS 225:</p>
+<ol>
+  <li>Your code is now much smaller than the complexity of the system around it.</li>
+  <li>No, we will not debug your code for you.</li>
+</ol>
+<p>With lecture content, one lab, one MP, and one Quiz/Midterm every week or two, it can get easy to fall behind.</p>
+<p>How to fail: some students do not take the time to learn how to debug and reason about system code and then end up complaining that office hours is too busy before deadlines. If you can’t write correct solutions, you need to learn <em>exactly</em> how C works, the <em>details</em> of the system calls you are using, learn <em>better debugging</em> skills and <em>reason</em> behind synchronization. Only then can you spot and fix mistakes. Hard? Yes. Impossible? No.</p>
+<p>There are no shortcuts to mastery, but we can help you get there. We recommend the <a href="https://www.youtube.com/watch?v=tkm0TNFzIeg" class="fancy-link wiki-link">Feynman technique</a> to learning. Remember, simply recognizing some text in a past exam or in the coursebook is not mastery of those concepts! Find ways to deeply engage your brain with the ideas by working actively with those ideas. Yes, this requires effort. Start the assignments early; expect to get stuck. Write code <em>slowly</em>; reason about every line of code you write. Experiment with your own mind hacks so that you have fun spending “time on task” with these materials.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="forum-q-and-a-search-first-dont-post" class="title-text">Forum Q-and-A: Search First. Don’t Post.<a class="anchor title-text" href="#forum-q-and-a-search-first-dont-post"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We’re using <a href="https://edstem.org/" class="fancy-link wiki-link">Ed</a> for our Question and Answer forum - check your email for the invite link. Before posting please search the forum to see if someone has already asked your question. Some questions where you need to include your netid (e.g. regrade requests) should be private posts.</p>
+<div class="pad"><div class="card">
+<h4 id="low-effort-questions">Low-Effort Questions</h4>
+
+<p>We <em>will not</em> accept “low effort questions”:</p>
+
+<ul>
+  <li>“My code doesn’t work, can someone look at my github?”</li>
+  <li>Questions that are already answered in a pinned post</li>
+  <li>Questions that are already answered in the docs</li>
+  <li>Questions that have already been answered many times before and can easily be found by searching</li>
+  <li>Questions that provide basically no information to go off of (Debugging? Tests? Valgrind? Anything?)</li>
+</ul>
+
+<p>If we find you asking too many of these low-effort questions, then we reserve the right to remove your forum posting privileges. Hopefully these steps will lead you to the answer you’re looking for, or at the very least help you find the answer yourself. Asking on our forum should not be the first thing you do when you have a problem. You’re here to learn; we’re not going to give you the answer every time you ask.</p>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="debugging">Debugging</h4>
+
+<p>Have you run it in Valgrind? Are you testing simpler cases that might show where the problem is? How about adding print statements or using breakpoints in gdb to figure out if you’re actually getting to the code you think is running? Are you using the VM we provide to test the code? If you’re getting erratic behavior, make sure you’ve fixed everything Valgrind complains about, as what you do wrong in one place can affect a completely unrelated piece of code. If you ask a question, make sure that you’ve made some effort to find the problem. Be prepared to provide some Valgrind log.</p>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="documentation">Documentation</h4>
+
+<p>A lot of questions can be answered simply by looking at the MP spec, pinned errata posts, or looking through a man page. Don’t know where your specific question is answered? Use Ctrl+F with some keywords to search the page. Don’t know how to use a function? Read the man page. It provides detailed info on how to use a function, and can even list some examples. Also note man page section 7. It’s all explanations of different parts of the C library. There you can find how signal, epoll, and more work in practice.</p>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="google-is-your-friend">Google Is Your Friend</h4>
+
+<p>Most questions can simply be answered by searching Edstem, or Googling your question. The chances are that someone has had your exact problem, and someone has answered it (especially near a due date when most people have already finished). Even if you don’t find your exact answer, the questions you find can be close enough to what you’re looking for. Here are some tips on Googling: <a href="http://imgur.com/gallery/rNlQJuT" class="fancy-link wiki-link">How to be a Google Power User</a> and <a href="http://imgur.com/gallery/hkmIT" class="fancy-link wiki-link">How to get more out of Google</a>.</p>
+
+</div></div>
+<div class="pad"><div class="card">
+<h4 id="i-found-nothing-what-now">I Found Nothing. What Now?</h4>
+
+<p>If you are truly lost, can’t find an answer in the docs, or in other questions, or the wide expanse of the internet, ask your question!</p>
+
+<ul>
+  <li>What’s the problem you’re having? (And give an example)</li>
+  <li>What have you tried? Have you tested your code?</li>
+  <li>What does Valgrind say? How about a gdb backtrace?</li>
+  <li>If you need to show code, don’t take a screenshot. Copy it into a pre tag (“code” on the rich editor bar)</li>
+  <li>If referencing your repo please include your netid or URL so we can easily look it up, and make the post private</li>
+  <li>You can post anonymously if you wish</li>
+</ul>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="cs-341-admin" class="title-text">CS 341 Admin<a class="anchor title-text" href="#cs-341-admin"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Please contact your section TA for most things.</p>
+<p>For unusual administrative items (e.g. exam sickness, DRES, 1% issues, problems with your TA) then please email <a href="mailto:cs341admin@cs.illinois.edu" class="fancy-link wiki-link">cs341admin@cs.illinois.edu</a> and explain your scenario.</p>
+<p>Note: We do not provide attendance misses for labs (this is not negotiable), especially for something that is 100% in your control like “I have an interview.”</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="lawrence-angrave" class="title-text">Lawrence Angrave<a class="anchor title-text" href="#lawrence-angrave"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Lawrence Angrave can often be found on the second floor of Siebel in or near SC2217. His office hours will be posted once the semester starts. He’s also able to answer quick questions before or after most lectures.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="graham-carl-evans" class="title-text">Graham Carl Evans<a class="anchor title-text" href="#graham-carl-evans"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Graham Carl Evans has also taught this course. His office is on the third floor of Siebel 3209.</p></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_pages/resources.md";
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Signals</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Signals" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Signals
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<ul>
+  <li>
+<a href="#signals" class="fancy-link wiki-link">Signals</a>
+    <ul>
+      <li><a href="#the-deep-dive-of-signals" class="fancy-link wiki-link">The Deep Dive of Signals</a></li>
+      <li><a href="#sending-signals" class="fancy-link wiki-link">Sending Signals</a></li>
+      <li>
+<a href="#handling-signals" class="fancy-link wiki-link">Handling Signals</a>
+        <ul>
+          <li><a href="#sigaction" class="fancy-link wiki-link">Sigaction</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#blocking-signals" class="fancy-link wiki-link">Blocking Signals</a>
+        <ul>
+          <li><a href="#sigwait" class="fancy-link wiki-link">Sigwait</a></li>
+        </ul>
+      </li>
+      <li><a href="#signals-in-child-processes-and-threads" class="fancy-link wiki-link">Signals in Child Processes and
+Threads</a></li>
+      <li><a href="#topics" class="fancy-link wiki-link">Topics</a></li>
+      <li><a href="#questions" class="fancy-link wiki-link">Questions</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p><span> </span></p>
+
+
+
+<p><strong>That’s a signal, Jerry, that’s a signal! [snaps his fingers again]
+Signal!</strong> - <strong>George Costanza (Seinfeld)</strong></p>
+
+<p>Signals are a convenient way to deliver low-priority information and for
+users to interact with their programs when other ways don’t work (for
+example standard input being frozen). They allow a program to clean up
+or perform an action in the case of an event. Sometimes, a program can
+choose to ignore events which is supported. Crafting a program that uses
+signals well is tricky due to how signals are handled. As such, signals
+are usually for termination and clean up. Rarely are they supposed to be
+used in programming logic.</p>
+
+<p>For those of you with an architecture background, the interrupts used
+here aren’t the interrupts generated by the hardware. Those interrupts
+are almost always handled by the kernel because they require higher
+levels of privileges. Instead, we are talking about software interrupts
+that are generated by the kernel – though they can be in response to a
+hardware event like SIGSEGV.</p>
+
+<p>This chapter will go over how to read information from a process that
+has either exited or been signaled. Then, it will deep dive into what
+are signals, how does the kernel deal with a signal, and the various
+ways processes can handle signals both with and without threads.</p>
+
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-deep-dive-of-signals" class="title-text">The Deep Dive of Signals<a class="anchor title-text" href="#the-deep-dive-of-signals"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>A signal allows one process to asynchronously send an event or message
+to another process. If that process wants to accept the signal, it can,
+and then, for most signals, decide what to do with that signal.</p>
+<p>First, a bit of terminology. A signal disposition is a per-process
+attribute that determines how a signal is handled after it is
+<strong>delivered</strong>. Think of it as a table of signal-action pairs. The full
+discussion is in the
+<a href="http://man7.org/linux/man-pages/man7/signal.7.html" class="fancy-link wiki-link">http://man7.org/linux/man-pages/man7/signal.7.html</a>.
+The actions are</p>
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">TERM</code>, terminates the process</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">IGN</code>, ignore</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CORE</code>, generate a core dump</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">STOP</code>, stops a process</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">CONT</code>, continues a process</p>
+  </li>
+  <li>
+    <p>Execute a custom function.</p>
+  </li>
+</ol>
+<p>A signal mask determines whether a particular signal is delivered or
+not. The overall process for how a kernel sends a signal are below.</p>
+<ol>
+  <li>
+    <p>If no signals have arrived, the process can install its own signal
+handlers. This tells the kernel that when the process gets signal X
+that it should jump to function Y.</p>
+  </li>
+  <li>
+    <p>A signal that is created is in a “generated” state.</p>
+  </li>
+  <li>
+    <p>The time between when a signal is generated and the kernel can apply
+the mask rules is called the pending state.</p>
+  </li>
+  <li>
+    <p>Then the kernel then checks the process’ signal mask. If the mask
+says all the threads in a process are blocking the signal, then the
+signal is currently blocked and nothing happens until a thread
+unblocks it.</p>
+  </li>
+  <li>
+    <p>If a single thread can accept the signal, then the kernel executes
+the action in the disposition table. If the action is a default
+action, then no threads need to be paused.</p>
+  </li>
+  <li>
+    <p>Otherwise, the kernel delivers the signal by stopping <em>whatever</em> a
+particular thread is doing currently, and jumps that thread to the
+signal handler. The signal is now in the delivered phase. More
+signals can be generated now, but they can’t be delivered until the
+signal handler is complete which is when the delivered phase is
+over.</p>
+  </li>
+  <li>
+    <p>Finally, we consider a signal caught if the process remains intact
+after the signal was delivered.</p>
+  </li>
+</ol>
+<p>As a flowchart</p>
+<p class="img-paragraph"><img src="https://raw.githubusercontent.com/illinois-cs241/coursebook/master/signals/drawings/signal_lifecycle.png" alt="Signal lifecycle
+diagram"></p>
+<p>Here are some common signals that you will see thrown around.</p>
+<p><span>|c|c|c|</span> Name &amp; Portable Number &amp; Default Action &amp; Usual
+Use<br>
+SIGINT &amp; 2 &amp; Terminate (Can be caught) &amp; Stop a process nicely<br>
+SIGQUIT &amp; 3 &amp; Terminate (Can be caught) &amp; Stop a process harshly<br>
+SIGTERM &amp; 15 &amp; Terminate Process &amp; Stop a process even more harshly<br>
+SIGSTOP &amp; N/A &amp; Stop Process (Cannot be caught) &amp; Suspends a process<br>
+SIGCONT &amp; N/A &amp; Continues a process &amp; Starts after a stop<br>
+SIGKILL &amp; 9 &amp; Terminate Process (Cannot be caught) &amp; You want the
+process gone</p>
+<p>One of our favorite anecdotes is to never use <code class="language-plaintext highlighter-rouge">kill -9</code> for a host of
+reasons. The following is an excerpt from
+<a href="http://porkmail.org/era/unix/award.html" class="fancy-link wiki-link">http://porkmail.org/era/unix/award.html</a></p>
+<blockquote>
+  <p>No no no. Don’t use kill -9.</p>
+
+  <p>It doesn’t give the process a chance to cleanly:</p>
+
+  <p>1) shut down socket connections</p>
+
+  <p>2) clean up temp files</p>
+
+  <p>3) inform its children that it is going away</p>
+
+  <p>4) reset its terminal characteristics</p>
+
+  <p>and so on and so on and so on.</p>
+
+  <p>Generally, send 15, and wait a second or two, and if that doesn’t
+work, send 2, and if that doesn’t work, send 1. If that doesn’t,
+REMOVE THE BINARY because the program is badly behaved!</p>
+
+  <p>Don’t use kill -9. Don’t bring out the combine harvester just to tidy
+up the flower pot.</p>
+</blockquote>
+<p>We still keep <code class="language-plaintext highlighter-rouge">kill -9</code> in there for extreme scenarios where the process
+needs to be gone.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="sending-signals" class="title-text">Sending Signals<a class="anchor title-text" href="#sending-signals"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Signals can be generated in multiple ways.</p>
+<ol>
+  <li>
+    <p>The user can send a signal. For example, you are at the terminal,
+and you press <code class="language-plaintext highlighter-rouge">CTRL-C</code>. One can also use the built-in <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/kill.3p.html" class="fancy-link">kill</a></code> to send
+any signal.</p>
+  </li>
+  <li>
+    <p>The system can send an event. For example, if a process accesses a
+page that it isn’t supposed to, the hardware generates an interrupt
+which gets intercepted by the kernel. The kernel finds the process
+that caused this and sends a software interrupt signal <code class="language-plaintext highlighter-rouge">SIGSEGV</code>.
+There are other kernel events like a child being created or a
+process needs to be resumed.</p>
+  </li>
+  <li>
+    <p>Finally, another process can send a message. This could be used in
+low-stakes communication of events between processes. If you are
+relying on signals to be the driver in your program, you should
+rethink your application design. There are many drawbacks to using
+POSIX/Real-Time signals for asynchronous communication. The best way
+to handle interprocess communication is to use, well, interprocess
+communication methods specifically designed for your task at hand.</p>
+  </li>
+</ol>
+<p>You or another process can temporarily pause a running process by
+sending it a <code class="language-plaintext highlighter-rouge">SIGSTOP</code> signal. If it succeeds, it will freeze a process.
+The process will not be allocated any more CPU time. To allow a process
+to resume execution, send it the SIGCONT signal. For example, the
+following is a program that slowly prints a dot every second, up to 59
+dots.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp">
+#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">"My pid is %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">getpid</span><span class="p">()</span> <span class="p">);</span>
+  <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+  <span class="k">while</span><span class="p">(</span><span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"."</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">write</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">"Done!"</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>We will first start the process in the background (notice the &amp; at the
+end). Then, send it a signal from the shell process by using the kill
+command.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./program &amp;
+My pid is 403
+...
+<span class="nv">$ </span><span class="nb">kill</span> <span class="nt">-SIGSTOP</span> 403
+<span class="nv">$ </span><span class="nb">kill</span> <span class="nt">-SIGCONT</span> 403
+...
+</code></pre></div></div>
+<p>In C, a program can send a signal to the child using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/kill.3p.html" class="fancy-link">kill</a></code> POSIX call,</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">kill</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">SIGUSR1</span><span class="p">);</span> <span class="c1">// Send a user-defined signal</span>
+<span class="n">kill</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">SIGSTOP</span><span class="p">);</span> <span class="c1">// Stop the child process (the child cannot prevent this)</span>
+<span class="n">kill</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">SIGTERM</span><span class="p">);</span> <span class="c1">// Terminate the child process (the child can prevent this)</span>
+<span class="n">kill</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">SIGINT</span><span class="p">);</span> <span class="c1">// The equivalent to CTRL-C (by default closes the process)</span>
+</code></pre></div></div>
+<p>As we saw above there is also a <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/kill.3p.html" class="fancy-link">kill</a></code> command available in the shell.
+Another command <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/killall.1.html" class="fancy-link">killall</a></code> works the exact same way but instead of
+looking up by PID, it tries to match the name of the process. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ps.1p.html" class="fancy-link">ps</a></code> is an
+important utility that can help you find the pid of a
+process.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># First let's use ps and grep to find the process we want to send a signal to</span>
+<span class="nv">$ </span>ps au | <span class="nb">grep </span>myprogram
+angrave  4409   0.0  0.0  2434892    512 s004  R+    2:42PM   0:00.00 myprogram 1 2 3
+
+<span class="c">#Send SIGINT signal to process 4409 (The equivalent of `CTRL-C`)</span>
+<span class="nv">$ </span><span class="nb">kill</span> <span class="nt">-SIGINT</span> 4409
+
+<span class="c"># Send SIGKILL (terminate the process)</span>
+<span class="nv">$ </span><span class="nb">kill</span> <span class="nt">-SIGKILL</span> 4409
+<span class="nv">$ </span><span class="nb">kill</span> <span class="nt">-9</span> 4409
+<span class="c"># Use kill all instead to kill a process by executable name</span>
+<span class="nv">$ </span>killall <span class="nt">-l</span> firefox
+</code></pre></div></div>
+<p>To send a signal to the running process, use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/raise.3p.html" class="fancy-link">raise</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/kill.3p.html" class="fancy-link">kill</a></code> with
+<code class="language-plaintext highlighter-rouge">getpid()</code>.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">raise</span><span class="p">(</span><span class="kt">int</span> <span class="n">sig</span><span class="p">);</span> <span class="c1">// Send a signal to myself!</span>
+<span class="n">kill</span><span class="p">(</span><span class="n">getpid</span><span class="p">(),</span> <span class="kt">int</span> <span class="n">sig</span><span class="p">);</span> <span class="c1">// Same as above</span>
+</code></pre></div></div>
+<p>For non-root processes, signals can only be sent to processes of the
+same user. You can’t SIGKILL any process! <code class="language-plaintext highlighter-rouge">man -s2 kill</code> for more
+details.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="handling-signals" class="title-text">Handling Signals<a class="anchor title-text" href="#handling-signals"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>There are strict limitations on the executable code inside a signal
+handler. Most library and system calls are <code class="language-plaintext highlighter-rouge">async-signal-unsafe</code>,
+meaning they may not be used inside a signal handler because they are
+not re-entrant. Re-entrant safety means that your function can be frozen
+at any point and executed again, can you guarantee that your function
+wouldn’t fail? Let’s take the following</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">func</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">static</span> <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">200</span><span class="p">];</span>
+  <span class="n">strncpy</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">str</span><span class="p">,</span> <span class="mi">199</span><span class="p">);</span>
+  <span class="cp"># Here is where we get paused
+</span>  <span class="n">printf</span><span class="p">(</span><span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<ol>
+  <li>
+    <p>We execute <code class="language-plaintext highlighter-rouge">(</code>func(“Hello”))</p>
+  </li>
+  <li>
+    <p>The string gets copied over to the buffer completely (strcmp(buffer,
+“Hello”) == 0)</p>
+  </li>
+  <li>
+    <p>A signal is delivered and the function state freezes, we also stop
+accepting any new signals until after the handler (we do this for
+convenience)</p>
+  </li>
+  <li>
+    <p>We execute <code class="language-plaintext highlighter-rouge">func("World")</code></p>
+  </li>
+  <li>
+    <p>Now (strcmp(buffer, “World”) == 0) and the buffer is printed out
+“World”.</p>
+  </li>
+  <li>
+    <p>We resume the interrupted function and now print out the buffer once
+again “World” instead of what the function call originally intended
+“Hello”</p>
+  </li>
+</ol>
+<p>Guaranteeing that your functions are signal handler safe can’t be solved
+by removing shared buffers. You must also think about multithreading and
+synchronization – what happens when I double lock a mutex? You also have
+to make sure that each function call is reentrant safe. Suppose your
+original program was interrupted while executing the library code of
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>. The memory structures used by malloc will be inconsistent.
+Calling <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/printf.h.3head.html" class="fancy-link">printf</a></code>, which uses <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> as part of the signal handler, is
+unsafe and will result in <strong>undefined behavior</strong>. A safe way to avoid
+this behavior is to set a variable and let the program resume operating.
+The design pattern also helps us in designing programs that can receive
+signals twice and operate correctly.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">pleaseStop</span> <span class="p">;</span> <span class="c1">// See notes on why "volatile sig_atomic_t" is better</span>
+
+<span class="kt">void</span> <span class="nf">handle_sigint</span><span class="p">(</span><span class="kt">int</span> <span class="n">signal</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">pleaseStop</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">signal</span><span class="p">(</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">handle_sigint</span><span class="p">);</span>
+  <span class="n">pleaseStop</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">pleaseStop</span><span class="p">)</span> <span class="p">{</span>
+    <span class="cm">/* application logic here */</span>
+  <span class="p">}</span>
+  <span class="cm">/* clean up code here */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>The above code might appear to be correct on paper. However, we need to
+provide a hint to the compiler and the CPU core that will execute the
+<code class="language-plaintext highlighter-rouge">main()</code> loop. We need to prevent compiler optimization. The expression
+<code class="language-plaintext highlighter-rouge">pleaseStop</code> doesn’t get changed in the body of the loop, so some
+compilers will optimize it to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/true.1p.html" class="fancy-link">true</a></code> TODO: <strong>citation needed</strong>.
+Secondly, we need to ensure that the value of <code class="language-plaintext highlighter-rouge">pleaseStop</code> is uncached
+using a CPU register and instead always read from and written to main
+memory. The <code class="language-plaintext highlighter-rouge">sig_atomic_t</code> type implies that all the bits of the
+variable can be read or modified as an <code class="language-plaintext highlighter-rouge">atomic operation</code> - a single
+uninterruptible operation. It is impossible to read a value that is
+composed of some new bit values and old bit values.</p>
+<p>By specifying <code class="language-plaintext highlighter-rouge">pleaseStop</code> with the correct type
+<code class="language-plaintext highlighter-rouge">volatile sig_atomic_t</code>, we can write portable code where the main loop
+will be exited after the signal handler returns. The <code class="language-plaintext highlighter-rouge">sig_atomic_t</code> type
+can be as large as an <code class="language-plaintext highlighter-rouge">int</code> on most modern platforms but on embedded
+systems can be as small as a <code class="language-plaintext highlighter-rouge">char</code> and only able to represent (-127 to
+127) values.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">volatile</span> <span class="kt">sig_atomic_t</span> <span class="n">pleaseStop</span><span class="p">;</span>
+</code></pre></div></div>
+<p>Two examples of this pattern can be found in <code class="language-plaintext highlighter-rouge">COMP</code> a terminal based 1Hz
+4bit computer (Šorn <a href="#ref-Sorn_2015" class="fancy-link wiki-link">#ref-Sorn_2015</a>). Two
+boolean flags are used. One to mark the delivery of <code class="language-plaintext highlighter-rouge">SIGINT</code> (CTRL-C),
+and gracefully shutdown the program, and the other to mark <code class="language-plaintext highlighter-rouge">SIGWINCH</code>
+signal to detect terminal resize and redraw the entire display.</p>
+<p>You can also choose a handle pending signals asynchronously or
+synchronously. To install a signal handler to asynchronously handle
+signals, use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigaction.3p.html" class="fancy-link">sigaction</a></code>. To synchronously catch a pending signal use
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigwait.3p.html" class="fancy-link">sigwait</a></code> which blocks until a signal is delivered or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/signalfd.2.html" class="fancy-link">signalfd</a></code> which
+also blocks and provides a file descriptor that can be <code class="language-plaintext highlighter-rouge">read()</code> to
+retrieve pending signals.</p>
+<h3 id="sigaction" class="title-text">Sigaction</h3>
+<p>You should use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigaction.3p.html" class="fancy-link">sigaction</a></code> instead of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/signal.3p.html" class="fancy-link">signal</a></code> because it has better
+defined semantics. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/signal.3p.html" class="fancy-link">signal</a></code> on different operating system does different
+things which is <strong>bad</strong>. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigaction.3p.html" class="fancy-link">sigaction</a></code> is more portable and is better
+defined for threads. You can use system call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigaction.3p.html" class="fancy-link">sigaction</a></code> to set the
+current handler and disposition for a signal or read the current signal
+handler for a particular
+signal.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">sigaction</span><span class="p">(</span><span class="kt">int</span> <span class="n">signum</span><span class="p">,</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">sigaction</span> <span class="o">*</span><span class="n">act</span><span class="p">,</span> <span class="k">struct</span> <span class="n">sigaction</span> <span class="o">*</span><span class="n">oldact</span><span class="p">);</span>
+</code></pre></div></div>
+<p>The sigaction struct includes two callback functions (we will only look
+at the ‘handler’ version), a signal mask and a flags field -</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">sigaction</span> <span class="p">{</span>
+  <span class="kt">void</span>     <span class="p">(</span><span class="o">*</span><span class="n">sa_handler</span><span class="p">)(</span><span class="kt">int</span><span class="p">);</span>
+  <span class="kt">void</span>     <span class="p">(</span><span class="o">*</span><span class="n">sa_sigaction</span><span class="p">)(</span><span class="kt">int</span><span class="p">,</span> <span class="n">siginfo_t</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
+  <span class="n">sigset_t</span>   <span class="n">sa_mask</span><span class="p">;</span>
+  <span class="kt">int</span>        <span class="n">sa_flags</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+<p>Suppose you stumble upon legacy code that uses <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/signal.3p.html" class="fancy-link">signal</a></code>. The following
+snippet installs <code class="language-plaintext highlighter-rouge">myhandler</code> as the SIGALRM handler.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">signal</span><span class="p">(</span><span class="n">SIGALRM</span><span class="p">,</span> <span class="n">myhandler</span><span class="p">);</span>
+</code></pre></div></div>
+<p>The equivalent <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigaction.3p.html" class="fancy-link">sigaction</a></code> code is:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">sigaction</span> <span class="n">sa</span><span class="p">;</span>
+<span class="n">sa</span><span class="p">.</span><span class="n">sa_handler</span> <span class="o">=</span> <span class="n">myhandler</span><span class="p">;</span>
+<span class="n">sigemptyset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sa</span><span class="p">.</span><span class="n">sa_mask</span><span class="p">);</span>
+<span class="n">sa</span><span class="p">.</span><span class="n">sa_flags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">sigaction</span><span class="p">(</span><span class="n">SIGALRM</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sa</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span>
+</code></pre></div></div>
+<p>However, we typically may also set the mask and the flags field. The
+mask is a temporary signal mask used during the signal handler
+execution. If the thread serving the signal is interrupted in the middle
+of a system call, the <code class="language-plaintext highlighter-rouge">SA_RESTART</code> flag will automatically restart some
+system calls that otherwise would have returned early with EINTR error.
+The latter means we can simplify the rest of code somewhat because a
+restart loop may no longer be required.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sigfillset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sa</span><span class="p">.</span><span class="n">sa_mask</span><span class="p">);</span>
+<span class="n">sa</span><span class="p">.</span><span class="n">sa_flags</span> <span class="o">=</span> <span class="n">SA_RESTART</span><span class="p">;</span> <span class="cm">/* Restart functions if interrupted by handler */</span>
+</code></pre></div></div>
+<p>It is often better to have your code check for the error and restart
+itself due to the selective nature of the flag.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="blocking-signals" class="title-text">Blocking Signals<a class="anchor title-text" href="#blocking-signals"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>To block signals use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigprocmask.3p.html" class="fancy-link">sigprocmask</a></code>! With sigprocmask you can set the
+new mask, add new signals to be blocked to the process mask, and unblock
+currently blocked signals. You can also determine the existing mask (and
+use it for later) by passing in a non-null value for oldset.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">sigprocmask</span><span class="p">(</span><span class="kt">int</span> <span class="n">how</span><span class="p">,</span> <span class="k">const</span> <span class="n">sigset_t</span> <span class="o">*</span><span class="n">set</span><span class="p">,</span> <span class="n">sigset_t</span> <span class="o">*</span><span class="n">oldset</span><span class="p">);</span>
+</code></pre></div></div>
+<p>From the Linux man page of sigprocmask, here are the possible values for
+<code class="language-plaintext highlighter-rouge">how</code> TODO: <strong>cite</strong>.</p>
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SIG_BLOCK</code>. The set of blocked signals is the union of the current
+set and the set argument.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SIG_UNBLOCK</code>. The signals in set are removed from the current set
+of blocked signals. It is permissible to attempt to unblock a signal
+which is not blocked.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">SIG_SETMASK</code>. The set of blocked signals is set to the argument
+set.</p>
+  </li>
+</ul>
+<p>The sigset type behaves as a set. It is a common error to forget to
+initialize the signal set before adding to the set.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sigset_t</span> <span class="n">set</span><span class="p">,</span> <span class="n">oldset</span><span class="p">;</span>
+<span class="n">sigaddset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="n">SIGINT</span><span class="p">);</span> <span class="c1">// Ooops!</span>
+<span class="n">sigprocmask</span><span class="p">(</span><span class="n">SIG_SETMASK</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">oldset</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Correct code initializes the set to be all on or all off. For example,</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sigfillset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">set</span><span class="p">);</span> <span class="c1">// all signals</span>
+<span class="n">sigprocmask</span><span class="p">(</span><span class="n">SIG_SETMASK</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">// Block all the signals which can be blocked</span>
+
+<span class="n">sigemptyset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">set</span><span class="p">);</span> <span class="c1">// no signals</span>
+<span class="n">sigprocmask</span><span class="p">(</span><span class="n">SIG_SETMASK</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">// set the mask to be empty again</span>
+</code></pre></div></div>
+<p>If you block a signal with either <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigprocmask.3p.html" class="fancy-link">sigprocmask</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_sigmask.3p.html" class="fancy-link">pthread_sigmask</a></code>,
+then the handler registered with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigaction.3p.html" class="fancy-link">sigaction</a></code> is not delivered unless
+explicitly <code class="language-plaintext highlighter-rouge">sigwait’ed</code> on TODO: <strong>cite</strong>.</p>
+<h3 id="sigwait" class="title-text">Sigwait</h3>
+<p>Sigwait can be used to read one pending signal at a time. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigwait.3p.html" class="fancy-link">sigwait</a></code> is
+used to synchronously wait for signals, rather than handle them in a
+callback. A typical use of sigwait in a multi-threaded program is shown
+below. Notice that the thread signal mask is set first (and will be
+inherited by new threads). The mask prevents signals from being
+<em>delivered</em> so they will remain in a pending state until sigwait is
+called. Also notice the same set <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigset_t.3type.html" class="fancy-link">sigset_t</a></code> variable is used by sigwait</p>
+<ul>
+  <li>except rather than setting the set of blocked signals it is used as
+the set of signals that sigwait can catch and return.</li>
+</ul>
+<p>One advantage of writing a custom signal handling thread (such as the
+example below) rather than a callback function is that you can now use
+many more C library and system functions safely.</p>
+<p>Based on sigmask code
+(<a href="#ref-pthread_sigmask" class="fancy-link wiki-link">#ref-pthread_sigmask</a>)</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">static</span> <span class="n">sigset_t</span> <span class="n">signal_mask</span><span class="p">;</span> <span class="cm">/* signals to block */</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+  <span class="n">pthread_t</span> <span class="n">sig_thr_id</span><span class="p">;</span> <span class="cm">/* signal handler thread ID */</span>
+  <span class="n">sigemptyset</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">signal_mask</span><span class="p">);</span>
+  <span class="n">sigaddset</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">signal_mask</span><span class="p">,</span> <span class="n">SIGINT</span><span class="p">);</span>
+  <span class="n">sigaddset</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">signal_mask</span><span class="p">,</span> <span class="n">SIGTERM</span><span class="p">);</span>
+  <span class="n">pthread_sigmask</span> <span class="p">(</span><span class="n">SIG_BLOCK</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">signal_mask</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+  <span class="cm">/* New threads will inherit this thread's mask */</span>
+  <span class="n">pthread_create</span> <span class="p">(</span><span class="o">&amp;</span><span class="n">sig_thr_id</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">signal_thread</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+  <span class="cm">/* APPLICATION CODE */</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="o">*</span><span class="nf">signal_thread</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">sig_caught</span><span class="p">;</span>
+
+  <span class="cm">/* Use the same mask as the set of signals that we'd like to know about! */</span>
+  <span class="n">sigwait</span><span class="p">(</span><span class="o">&amp;</span><span class="n">signal_mask</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sig_caught</span><span class="p">);</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">sig_caught</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">SIGINT</span><span class="p">:</span>
+    <span class="p">...</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">SIGTERM</span><span class="p">:</span>
+    <span class="p">...</span>
+    <span class="k">break</span><span class="p">;</span>
+    <span class="nl">default:</span>
+    <span class="n">fprintf</span> <span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"</span><span class="se">\n</span><span class="s">Unexpected signal %d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">sig_caught</span><span class="p">);</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="signals-in-child-processes-and-threads" class="title-text">Signals in Child Processes and Threads<a class="anchor title-text" href="#signals-in-child-processes-and-threads"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>This is a recap of the processes chapter. After forking, the child
+process inherits a copy of the parent’s signal dispositions and a copy
+of the parent’s signal mask. If you have installed a SIGINT handler
+before forking, then the child process will also call the handler if a
+SIGINT is delivered to the child. If <code class="language-plaintext highlighter-rouge">SIGINT</code> is blocked in the parent,
+it will be blocked in the child as well. Note that pending signals for
+the child are <em>not</em> inherited during forking. After <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/exec.3p.html" class="fancy-link">exec</a></code> though, only
+the signal mask and pending signals are carried over (“Executing a
+File,” <a href="#ref-execute" class="fancy-link wiki-link">#ref-execute</a>). Signal handlers are
+reset to their original action, because the original handler code may
+have disappeared along with the old process.</p>
+<p>Each thread has its own mask. A new thread inherits a copy of the
+calling thread’s mask. On initialization, the calling thread’s mask is
+the exact same as the processes mask. After a new thread is created
+though, the processes signal mask turns into a gray area. Instead, the
+kernel likes to treat the process as a collection of threads, each of
+which can institute a signal mask and receive signals. To start setting
+your mask, you can use,</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pthread_sigmask</span><span class="p">(...);</span> <span class="c1">// set my mask to block delivery of some signals</span>
+<span class="n">pthread_create</span><span class="p">(...);</span> <span class="c1">// new thread will start with a copy of the same mask</span>
+</code></pre></div></div>
+<p>Blocking signals is similar in multi-threaded programs to
+single-threaded programs with the following translation.</p>
+<ol>
+  <li>
+    <p>Use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_sigmask.3p.html" class="fancy-link">pthread_sigmask</a></code> instead of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigprocmask.3p.html" class="fancy-link">sigprocmask</a></code></p>
+  </li>
+  <li>
+    <p>Block a signal in all threads to prevent its asynchronous delivery</p>
+  </li>
+</ol>
+<p>The easiest method to ensure a signal is blocked in all threads is to
+set the signal mask in the main thread before new threads are created.</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sigemptyset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">set</span><span class="p">);</span>
+<span class="n">sigaddset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="n">SIGQUIT</span><span class="p">);</span>
+<span class="n">sigaddset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="n">SIGINT</span><span class="p">);</span>
+<span class="n">pthread_sigmask</span><span class="p">(</span><span class="n">SIG_BLOCK</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+
+<span class="c1">// this thread and the new thread will block SIGQUIT and SIGINT</span>
+<span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">thread_id</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">myfunc</span><span class="p">,</span> <span class="n">funcparam</span><span class="p">);</span>
+</code></pre></div></div>
+<p>Just as we saw with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigprocmask.3p.html" class="fancy-link">sigprocmask</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/pthread_sigmask.3p.html" class="fancy-link">pthread_sigmask</a></code> includes a ‘how’
+parameter that defines how the signal set is to be
+used:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pthread_sigmask</span><span class="p">(</span><span class="n">SIG_SETMASK</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">-</span> <span class="n">replace</span> <span class="n">the</span> <span class="kr">thread</span><span class="err">'</span><span class="n">s</span> <span class="n">mask</span> <span class="n">with</span> <span class="n">given</span> <span class="n">signal</span> <span class="n">set</span>
+<span class="n">pthread_sigmask</span><span class="p">(</span><span class="n">SIG_BLOCK</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">-</span> <span class="n">add</span> <span class="n">the</span> <span class="n">signal</span> <span class="n">set</span> <span class="n">to</span> <span class="n">the</span> <span class="kr">thread</span><span class="err">'</span><span class="n">s</span> <span class="n">mask</span>
+<span class="n">pthread_sigmask</span><span class="p">(</span><span class="n">SIG_UNBLOCK</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">set</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">)</span> <span class="o">-</span> <span class="n">remove</span> <span class="n">the</span> <span class="n">signal</span> <span class="n">set</span> <span class="n">from</span> <span class="n">the</span> <span class="kr">thread</span><span class="err">'</span><span class="n">s</span> <span class="n">mask</span>
+</code></pre></div></div>
+<p>A signal then can be delivered to any signal thread that is willing to
+accept that signal. If the two or more threads can receive the signal
+then which thread will be interrupted is arbitrary! A common practice
+is to have one thread that can receive all signals or if there is a
+certain signal that requires special logic, have multiple threads for
+multiple signals. Even though programs from the outside can’t send
+signals to specific threads, you can do that internally with
+<code class="language-plaintext highlighter-rouge">pthread_kill(pthread_t thread, int sig)</code>. In the example below, the
+newly created thread executing <code class="language-plaintext highlighter-rouge">func</code> will be interrupted by <code class="language-plaintext highlighter-rouge">SIGINT</code></p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pthread_create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">tid</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+<span class="n">pthread_kill</span><span class="p">(</span><span class="n">tid</span><span class="p">,</span> <span class="n">SIGINT</span><span class="p">);</span>
+<span class="n">pthread_kill</span><span class="p">(</span><span class="n">pthread_self</span><span class="p">(),</span> <span class="n">SIGKILL</span><span class="p">);</span> <span class="c1">// send SIGKILL to myself</span>
+</code></pre></div></div>
+<p>As a word of warning <code class="language-plaintext highlighter-rouge">pthread_kill(threadid, SIGKILL)</code> will kill the
+entire process. Though individual threads can set a signal mask, the
+signal disposition is <em>per-proces</em>s not <em>per-thread</em>. This means
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/sigaction.3p.html" class="fancy-link">sigaction</a></code> can be called from any thread because you will be setting a
+signal handler for all threads in the process.</p>
+<p>The Linux man pages discuss signal system calls in section 2. There is
+also a longer article in section 7 (though not in OSX/BSD):</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">man</span> <span class="o">-</span><span class="n">s7</span> <span class="n">signal</span>
+</code></pre></div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="topics" class="title-text">Topics<a class="anchor title-text" href="#topics"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>
+    <p>Signals</p>
+  </li>
+  <li>
+    <p>Signal Handler Safety</p>
+  </li>
+  <li>
+    <p>Signal Disposition</p>
+  </li>
+  <li>
+    <p>Signal States</p>
+  </li>
+  <li>
+    <p>Pending Signals when Forking/Exec</p>
+  </li>
+  <li>
+    <p>Signal Disposition when Forking/Exec</p>
+  </li>
+  <li>
+    <p>Raising Signals in C</p>
+  </li>
+  <li>
+    <p>Raising Signals in a multithreaded program</p>
+  </li>
+</ul></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="questions" class="title-text">Questions<a class="anchor title-text" href="#questions"> #</a>
+</h2></div>
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>
+    <p>What is a signal?</p>
+  </li>
+  <li>
+    <p>How are signals served under UNIX? (Bonus: How about Windows?)</p>
+  </li>
+  <li>
+    <p>What does it mean that a function is signal handler safe? How about
+reentrant?</p>
+  </li>
+  <li>
+    <p>What is a process signal disposition? How does it differ from a
+mask?</p>
+  </li>
+  <li>
+    <p>What function changes the signal disposition in a single threaded
+program? How about a multithreaded program?</p>
+  </li>
+  <li>
+    <p>What are some drawbacks to using signals?</p>
+  </li>
+  <li>
+    <p>What are the ways of asynchronously and synchronously catching a
+signal?</p>
+  </li>
+  <li>
+    <p>What happens to pending signals after a fork? exec? How about my
+signal mask? How about signal disposition?</p>
+  </li>
+  <li>
+    <p>What is the process the kernel goes through from creation to
+delivery/block?</p>
+  </li>
+</ul>
+<div id="refs" class="references">
+
+<div id="ref-execute">
+
+“Executing a File.” n.d. *Executing a File (the GNU C Library)*. GNU
+Project.
+<a href="https://www.gnu.org/software/libc/manual/html_node/Executing-a-File.html#Executing-a-File" class="fancy-link wiki-link">https://www.gnu.org/software/libc/manual/html_node/Executing-a-File.html#Executing-a-File</a>.
+
+</div>
+
+<div id="ref-Sorn_2015">
+
+Šorn, Jure. 2015. “Gto76/Comp-Cpp.” *GitHub*.
+<a href="https://github.com/gto76/comp-cpp/blob/1bf9a77eaf8f57f7358a316e5bbada97f2dc8987/src/output.c" class="fancy-link wiki-link">https://github.com/gto76/comp-cpp/blob/1bf9a77eaf8f57f7358a316e5bbada97f2dc8987/src/output.c</a>.
+
+</div>
+
+<div id="ref-pthread_sigmask">
+
+n.d. IEEE.
+<a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/pthread_sigmask.html" class="fancy-link wiki-link">http://pubs.opengroup.org/onlinepubs/009695399/functions/pthread_sigmask.html</a>.
+
+</div>
+
+</div>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_coursebook/Signals.md";
+  </script>
+</body>
+
+</html>

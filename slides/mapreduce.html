@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        MapReduce | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/mapreduce">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">MapReduce</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="inter-process-communication">Inter Process Communication</h2>
+
+<p>The goal of IPC is to communicate between different <em>processes</em>. Common ways to do IPC include:</p>
+<ul>
+  <li>Pipes</li>
+  <li>Sockets</li>
+  <li>Shared Memory</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="pipes">Pipes</h2>
+
+<ul>
+  <li>Takes in a stream of bytes from an input file descriptor</li>
+  <li>Spits out the data through an output file descriptor</li>
+</ul>
+
+</section><section><h2 id="pipes-in-the-shell">Pipes in the shell</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; ls -1 | cut -d'.' -f1 | sort | uniq | tee dirents
+</code></pre></div></div>
+
+<p><img src="/images/assignment-docs/lab/slides/mapreduce/shell_pipes.png" width="60%"></p>
+
+</section><section><h2 id="pipes-in-code">Pipes in code</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int pipe(int pipefd[2]);
+</code></pre></div></div>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">pipe()</code> takes a single argument - an array of size 2.</li>
+  <li>It sets <code class="language-plaintext highlighter-rouge">pipefd[0]</code> to the reading end fd.</li>
+  <li>It sets <code class="language-plaintext highlighter-rouge">pipefd[1]</code> to the writing end fd.</li>
+</ul>
+
+</section><section><h2 id="pipe-capacity">Pipe capacity</h2>
+<p>How much data can a pipe hold?</p>
+
+<p class="fragment" data-fragment-index="1">
+Pipes' capacity depends on system configuration, but usually it ranges from 4 KiB to 128 KiB.
+</p>
+<p class="fragment" data-fragment-index="1">
+Check <code>/proc/sys/fs/pipe-max-size</code>!
+</p>
+
+</section><section><h2 id="reading-from-a-pipe">Reading from a pipe</h2>
+<ul>
+  <li>Returns 0 if all writing ends are closed.</li>
+  <li>Blocks if pipe is empty and active writing ends exist.</li>
+  <li>Unblocks when data is written so pipe becomes nonempty.</li>
+</ul>
+
+</section><section><h2 id="writing-to-a-pipe">Writing to a pipe</h2>
+<ul>
+  <li>Generates a <code class="language-plaintext highlighter-rouge">SIGPIPE</code> if all reading ends are closed.</li>
+  <li>Blocks if pipe is full and active reading ends exist.</li>
+  <li>Unblocks when data is read so pipe becomes nonfull.</li>
+</ul>
+
+<p>Note: <code class="language-plaintext highlighter-rouge">SIGPIPE</code> kills your program by default. Catch or ignore it to see <code class="language-plaintext highlighter-rouge">write()</code> returning -1 and setting <code class="language-plaintext highlighter-rouge">errno</code> to <code class="language-plaintext highlighter-rouge">EPIPE</code>.</p>
+
+</section><section><h2></h2>
+
+<p><code class="language-plaintext highlighter-rouge">pipe()</code> vs <code class="language-plaintext highlighter-rouge">pipe2()</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">pipe2()</code> has an additional argument (<code class="language-plaintext highlighter-rouge">flags</code>).</p>
+
+<p><code class="language-plaintext highlighter-rouge">O_CLOEXEC</code> closes both pipe fds on a successful <code class="language-plaintext highlighter-rouge">exec</code>.</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="mapreduce">Mapreduce</h2>
+
+</section><section><h2 id="what-is-mapreduce">What is MapReduce?</h2>
+
+<ul>
+  <li>A programming model: Map, then Reduce</li>
+  <li>Originally developed at Google to process large datasets with distributed systems</li>
+  <li>Map: transform raw data into processed data</li>
+  <li>Reduce: aggregate processed data into statistics</li>
+  <li>The 341 MapReduce is vastly oversimplified</li>
+</ul>
+
+</section><section><h2 id="mapreduce-example">MapReduce Example</h2>
+
+<p><img src="https://miro.medium.com/v2/resize:fit:1314/format:webp/1*OVea8gXNO3lP5-z4bqOhLA.png" alt="MapReduce"></p>
+
+</section><section><h2 id="parallelism">Parallelism</h2>
+
+<ul>
+  <li>Mapping is parallelizable: The mapper function is independent per input element</li>
+  <li>Assign different chunks across mappers</li>
+  <li>Reducing is parallelizable: The reducer function is associative - <code class="language-plaintext highlighter-rouge">reduce(A[1...n]) = reduce(reduce(A[1...n/2]) + reduce(A[n/2...n]))</code>
+</li>
+  <li>Run multiple reducers together, then reduce the output from reducers</li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="lab-assignment">Lab Assignment</h2>
+
+<p>Implement the MapReduce orchestrator:</p>
+<ul>
+  <li>Split up the inputs</li>
+  <li>Send them off to mappers</li>
+  <li>Agglomerate the mapped outputs into a final result via a reducer</li>
+</ul>
+
+<p>No need to implement mappers or reducers yourself, and a splitter tool is already provided.</p>
+
+</section><section><h2 id="implementation">Implementation</h2>
+
+<p><code class="language-plaintext highlighter-rouge">./mapreduce &lt;input_file&gt; &lt;output_file&gt; &lt;mapper_executable&gt; &lt;reducer_executable&gt; &lt;mapper_count&gt;</code>.</p>
+
+<ol>
+  <li>Split the input file into <code class="language-plaintext highlighter-rouge">&lt;mapper_count&gt;</code> chunks using the given <code class="language-plaintext highlighter-rouge">splitter</code> tool.</li>
+  <li>Start a mapper process for each  chunk, and pipe the output of each mapper process into the input of the singular reducer process.</li>
+  <li>Pipe the output of the reducer process to the output file.</li>
+</ol>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

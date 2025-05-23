@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Malloc</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Malloc" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Malloc
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Part 1</b> due <b>2025-03-03 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>alloc.c</li>
+                
+              </ul>
+              
+              
+              <b>Part 2</b> due <b>2025-03-10 23:59</b><br>
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>alloc.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_backstory" href="#backstory" class="fancy-link">Backstory</a></li>
+<li><a id="toc_overview" href="#overview" class="fancy-link">Overview</a></li>
+<li><a id="toc_malloc-and-c--chicago-blues-style" href="#malloc-and-c--chicago-blues-style" class="fancy-link">Malloc and C ; Chicago Blues Style</a></li>
+<li><a id="toc_a-bad-example" href="#a-bad-example" class="fancy-link">A Bad Example</a></li>
+<li><a id="toc_debugging-tips" href="#debugging-tips" class="fancy-link">Debugging Tips</a></li>
+<li><a id="toc_testing-your-code" href="#testing-your-code" class="fancy-link">Testing Your Code</a></li>
+<li><a id="toc_grading" href="#grading" class="fancy-link">Grading</a></li>
+<li><a id="toc_contest" href="#contest" class="fancy-link">Contest</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Malloc are: <br>
+    </p>
+<ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Memory Allocation and Management</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Performance Optimization</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Developing in a Restricted Environment</span>
+        </li>
+      
+    </ul>
+  
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="backstory" class="title-text">Backstory<a class="anchor title-text" href="#backstory"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Well, color me impressed! Your shell was so fancy that you actually received that pay raise! However, you <em>may</em> have gone too far with your shell. Your boss is now so impressed at your skills that they sent you to the \(n\)th Inter-Company Turbo Malloc Contest - even though you’re just a new hire! But hey, a business trip doesn’t sound that bad, right?</p>
+<p>Upon arriving at the competition venue, you realize that all your peers from CS 341 are in the contest! Apparently, all of them went too far with their shells as well, and ended up in the same scenario as you. Just as you were reminiscing about your time in CS 341, you received an email from your senpai in the company about the contest, and your face turns pale immediately.</p>
+<p>Turns out, the Inter-Company Turbo Malloc Contest is the official<img class="emoji" title=":tm:" alt=":tm:" src="https://github.githubassets.com/images/icons/emoji/unicode/2122.png" height="20" width="20"> way tech companies compete with each other these days - winning the competition guarantees fame and glory for the company, and the losing companies will suffer shame and embarassment. What’s more, any company that cannot beat the baseline will incur severe stock drops! Needless to say, losing the competition will ruin all your efforts in the past weeks to impress your boss, and if you fail to beat the baseline, you will probably lose your job, again (and this time, everyone will know your failures, since this contest is heavily publicized).</p>
+<p>The competition lasts for two weeks, and you get total freedom on your implementation. This time, you’ve decided not to procrastinate, since your entire livelihood hinges on how well you perform in this competition. Can you out-think every other contestant’s implementations and secure that epic victory royale?</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="overview" class="title-text">Overview<a class="anchor title-text" href="#overview"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You should write your implementations of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/calloc.3p.html" class="fancy-link">calloc</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/realloc.3p.html" class="fancy-link">realloc</a></code>, and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/free.3p.html" class="fancy-link">free</a></code> in <code class="language-plaintext highlighter-rouge">alloc.c</code>. <code class="language-plaintext highlighter-rouge">alloc.c</code> will be the only file we test.</p>
+<p>Don’t modify <code class="language-plaintext highlighter-rouge">mcontest.c</code>, <code class="language-plaintext highlighter-rouge">contest.h</code>, or <code class="language-plaintext highlighter-rouge">contest-alloc.so</code>. Those files create the environment that replaces the standard glibc malloc with your malloc. These files will be used for testing.</p>
+<p>Your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> must allocate heap memory using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/sbrk.2.html" class="fancy-link">sbrk</a></code>. You may not use files, pipes, system shared memory, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/mmap.3p.html" class="fancy-link">mmap</a></code>, a chunk of pre-defined stack memory, other external memory libraries found on the Internet, or any of the various other external sources of memory that exist on modern operating systems. You can find more information in the <a href="http://cs341.cs.illinois.edu/coursebook/Malloc" class="fancy-link wiki-link">Memory Allocators</a> coursebook entry.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="malloc-and-c--chicago-blues-style" class="title-text">Malloc and C ; Chicago Blues Style<a class="anchor title-text" href="#malloc-and-c--chicago-blues-style"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>Implementing a heap allocator is a challenging assignment that has been known to rewire students’ brains. For inspiration, please listen to this <a href="../media/malloc-blues.mp3" class="fancy-link wiki-link">Chicago Blues song</a> (<a href="../media/malloc-blues.txt" class="fancy-link wiki-link">lyrics and description</a>).</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="a-bad-example" class="title-text">A Bad Example<a class="anchor title-text" href="#a-bad-example"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Memory allocation seems like a mystery, but in actuality, we are making a wrapper around the system call <a href="http://linux.die.net/man/2/sbrk" class="fancy-link wiki-link"><code class="language-plaintext highlighter-rouge">sbrk</code></a>. Here’s a really simple implementation of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="o">*</span><span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">sbrk</span><span class="p">(</span><span class="n">size</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>As you can see, when we request <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/size.1.html" class="fancy-link">size</a></code> bytes of memory, we call <code class="language-plaintext highlighter-rouge">sbrk(size)</code> to increase the heap by <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/size.1.html" class="fancy-link">size</a></code> bytes. Then, we return a pointer to this memory, and we’re done. Simple!</p>
+<p>Here is our implementation of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/free.3p.html" class="fancy-link">free</a></code>:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">free</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>This is a “correct” way to implement <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/free.3p.html" class="fancy-link">free</a></code>. However, the obvious drawback with our implementation is that we can’t reuse memory after we are done with it. Also, we have not checked for errors when we call <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man2/sbrk.2.html" class="fancy-link">sbrk</a></code>, and we have not implemented <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/realloc.3p.html" class="fancy-link">realloc</a></code> or <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/calloc.3p.html" class="fancy-link">calloc</a></code>.</p>
+<p>Despite all of this, this is still a “working” implementation of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>. So, the job of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> is not really to allocate memory, but to keep track of the memory we’ve allocated so that we can reuse it. You will use methods that you’ve learned in class and practiced in the <code class="language-plaintext highlighter-rouge">mini_memcheck</code> lab to do this.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="debugging-tips" class="title-text">Debugging Tips<a class="anchor title-text" href="#debugging-tips"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="magic-tags" class="title-text">Magic Tags</h3>
+<p>Adding a magic tag is a great way to quickly diagnose issues you find when stepping through your code in GDB. if you add a “magic” tag to your metadata:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">metadata</span> <span class="p">{</span>
+    <span class="c1">// metadata items</span>
+    <span class="kt">int</span> <span class="n">magic</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Then in every function that modifies your block, you can update magic to a unique value. For example, in <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>, you can set magic to <code class="language-plaintext highlighter-rouge">0x1111</code> if you’re allocating new memory, or <code class="language-plaintext highlighter-rouge">0x2222</code> if you are assigning to an existing free block. In your <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/split.1p.html" class="fancy-link">split</a></code> and <code class="language-plaintext highlighter-rouge">coalesce</code>, you can choose different magic values as well. Now, when debugging through GDB, if you notice a block is invalid, you can quickly determine what last changed it and narrow down your search. You can also get more creative with the magic tag if you want to, keeping track of any information you’d like.
+If you’re worried about performance, you can wrap the magic tag in preprocessor definitions like this:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define MAGIC_DEBUG 0
+</span>
+<span class="cp">#define set_magic(block, x) 
+#if MAGIC_DEBUG
+#undef set_magic
+#define set_magic(block, x) do {block-&gt;magic = x;} while(0)
+#endif
+</span>
+<span class="k">struct</span> <span class="n">metadata</span> <span class="p">{</span>
+    <span class="c1">// metadata items</span>
+<span class="cp">#if MAGIC_DEBUG
+</span>    <span class="kt">int</span> <span class="n">magic</span><span class="p">;</span>
+<span class="cp">#endif
+</span><span class="p">}</span>
+</code></pre></div></div>
+<p>Then, changing the define line to <code class="language-plaintext highlighter-rouge">#define MAGIC_DEBUG 1</code> will enable the magic tag, but otherwise it will be disabled</p>
+<h3 id="heap-checker-required-for-oh" class="title-text">Heap Checker (REQUIRED FOR OH)</h3>
+<p>New this semester, to aid in your debugging, we are asking you to write a heap checker. <strong>To receive help at office hours, course staff will ask to see if anything in your heap checker is failing before debugging specific bugs.</strong></p>
+<p>The heap checker is a way to ensure consistency between the actual heap, and any of the internal data structures that you maintain. As such, the heap checker should check and maintain some set of invariants, suggestions are listed below. The invariants and design of your heap checker will depend on the specifics of your malloc implementation.</p>
+<p>Suggested invariants:</p>
+<ul>
+  <li>Heap Invariants:
+    <ul>
+      <li>Confirm that header and footers store consistent data</li>
+      <li>If coalescing is implemented, confirm that there are no two consecutive free blocks in the heap</li>
+    </ul>
+  </li>
+  <li>List Invariants:
+    <ul>
+      <li>Check that list pointers are consistent (if <code class="language-plaintext highlighter-rouge">A-&gt;next == B</code>, then <code class="language-plaintext highlighter-rouge">B-&gt;prev == A</code>)</li>
+      <li>Check that all list elements are within heap bounds</li>
+      <li>Confirm that number of free blocks match up with number of free blocks in the heap</li>
+      <li>If using a free list, confirm that every block in the list is actually free</li>
+      <li>If using a segregated list, confirm that all elements in the list are of appropriate size</li>
+    </ul>
+  </li>
+</ul>
+<p>There are many other things you can check to confirm that your malloc implementation is staying consistent, but these are a good starting point and should help you catch the majority of bugs.</p>
+<p>You do not need to implement and check every invariant, but doing so will save significant time in avoiding heap corruption whenever you make a change to your malloc implementation. Course staff will ask to see your heap checker, and may suggest adding invariants if you are running into a bug and have not covered everything. The following section outlines an example heap checker to aid you in writing your own:</p>
+<div class="pad"><div class="card">
+<h4 id="example-heap-checker">Example Heap Checker</h4>
+
+<p>This heap checker will assume that you have store a list of every allocated block. First, near the top of your <code class="language-plaintext highlighter-rouge">alloc.c</code>, we define some preprocessor macros so that we can enable and disable heap checking:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#define HEAP_CHECKER 1
+</span>
+<span class="cp">#define heap_check()
+#if HEAP_CHECKER
+#undef heap_check
+#define heap_check() do { if(!heap_checker(__LINE__)) exit(1); } while(0)
+#endif
+</span></code></pre></div></div>
+
+<p>When <code class="language-plaintext highlighter-rouge">HEAP_CHECKER</code> is defined to be 1, calling <code class="language-plaintext highlighter-rouge">heap_check()</code> will call a function <code class="language-plaintext highlighter-rouge">heap_checker</code> with the current line number, if the function returns 0, it will terminate early. For testcases that do a lot of allocations, this will be slow, so you can disable the <code class="language-plaintext highlighter-rouge">heap_check</code> by changing the line to <code class="language-plaintext highlighter-rouge">#define HEAP_CHECKER 0</code>; this will make any calls to <code class="language-plaintext highlighter-rouge">heap_check()</code> do nothing.</p>
+
+<p>Now, we can define the <code class="language-plaintext highlighter-rouge">heap_checker</code> function:</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span> <span class="n">metadata</span> <span class="p">{</span>
+  <span class="kt">int</span> <span class="n">free</span><span class="p">;</span>
+  <span class="n">metadata_t</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+  <span class="c1">// ... anything else you need to store </span>
+<span class="p">}</span> <span class="n">metadata_t</span><span class="p">;</span>
+
+<span class="k">static</span> <span class="n">metadata_t</span><span class="o">*</span> <span class="n">lst_head</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<span class="k">static</span> <span class="kt">void</span><span class="o">*</span> <span class="n">start_of_heap</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">heap_checker</span><span class="p">(</span><span class="kt">int</span> <span class="n">lineno</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">top_of_heap</span> <span class="o">=</span> <span class="n">sbrk</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="kt">void</span><span class="o">*</span> <span class="n">heap_curr</span> <span class="o">=</span> <span class="n">start_of_heap</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">num_free_blocks</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">heap_curr</span> <span class="o">&lt;</span> <span class="n">top_of_heap</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">metadata_t</span><span class="o">*</span> <span class="n">block</span> <span class="o">=</span> <span class="p">(</span><span class="n">metadata_t</span><span class="o">*</span><span class="p">)</span> <span class="n">heap_curr</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">block</span><span class="o">-&gt;</span><span class="n">free</span><span class="p">)</span> <span class="n">num_free_blocks</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">heap_curr</span> <span class="o">=</span> <span class="n">get_next_mem</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">metadata_t</span><span class="o">*</span> <span class="n">list_curr</span> <span class="o">=</span> <span class="n">lst_head</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">num_free_nodes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">list_curr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">list_curr</span><span class="o">-&gt;</span><span class="n">free</span><span class="p">)</span> <span class="n">num_free_nodes</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">list_curr</span> <span class="o">=</span> <span class="n">list_curr</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">num_free_blocks</span> <span class="o">!=</span> <span class="n">num_free_nodes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"HEAP CHECK: number of free nodes in list does not match heap at alloc.c:%d</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">lineno</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This example iterates from the start of the heap, which we must initialize elsewhere, until <code class="language-plaintext highlighter-rouge">sbrk(0)</code>, and at every step along the way, it counts the number of free blocks. This relies on the implementation of a <code class="language-plaintext highlighter-rouge">get_next_mem</code> function, which moves from the current metadata block the next one in physical memory. The implementation of <code class="language-plaintext highlighter-rouge">get_next_mem</code> will depend on how you structure your blocks in memory, consult the course book for examples! Then, the heap checker loops over our list of blocks, and counts how many nodes are marked free. If these numbers do not align, the <code class="language-plaintext highlighter-rouge">heap_checker</code> prints an error message with the line number, and returns 0, or false.</p>
+
+<p>To initialize <code class="language-plaintext highlighter-rouge">start_of_heap</code>, we can call <code class="language-plaintext highlighter-rouge">sbrk(0)</code> at the first malloc call as such:</p>
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="o">*</span><span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">start_of_heap</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="n">start_of_heap</span> <span class="o">=</span> <span class="n">sbrk</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">heap_check</span><span class="p">();</span>
+
+    <span class="p">...</span>
+    <span class="n">heap_check</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, you can place calls to heap_check at the beginning and end of every function you’d like to analyze, and this will ensure that invariants are held throughout your function calls.</p>
+
+<p>To reiterate, <strong>course staff will ask you to demonstrate your heap checker if you are asking for help in office hours!</strong></p>
+
+<p><strong>!! Important Note</strong>: In the above heap checker example, the <code class="language-plaintext highlighter-rouge">metadata</code> struct was implemented with its <code class="language-plaintext highlighter-rouge">next</code> pointer pointing to the next <em>physically adjacent</em> block. This does NOT mean that you must implement your <code class="language-plaintext highlighter-rouge">metdata</code> struct or <code class="language-plaintext highlighter-rouge">next</code> pointer in this way - this was a simple example we created to demonstrate how you may use a heap checker. You are allowed (and encouraged) to design and implement a different implementation of the <code class="language-plaintext highlighter-rouge">metadata</code> struct to improve performance.</p>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing-your-code" class="title-text">Testing Your Code<a class="anchor title-text" href="#testing-your-code"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>In order to run your solution on the testers, run <code class="language-plaintext highlighter-rouge">./mcontest</code> with the tester you want. You <strong>must</strong> do this, or your code will be run with the glibc implementation!</p>
+<p>Example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./mcontest testers_exe/tester-1
+Memory failed to allocate!
+[mcontest]: STATUS: FAILED=(256)
+[mcontest]: MAX: 0
+[mcontest]: AVG: 0.000000
+[mcontest]: TIME: 0.000000
+</code></pre></div></div>
+<p>We’ve also distributed a bash script <code class="language-plaintext highlighter-rouge">run_all_mcontest.sh</code> to run all testers. We design the script so that you can
+easily test your malloc implementation. Here is how you use the script:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./run_all_mcontest.sh
+</code></pre></div></div>
+<p>It will automatically make clean and make again, and then run each test case in the <em>testers</em> folder. If you want to skip
+some test cases, you can do:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./run_all_mcontest.sh -s 1 2 3
+</code></pre></div></div>
+<p>where 1, 2, and 3 are the tests you want to skip. You can skip as many as you like.</p>
+<p>Here is what some of our error codes mean:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>11: (SIGSEGV) Segmentation fault
+15: (SIGTERM) Timed out
+65, 66: Dynamic linking error
+67: Failed to collect memory info
+68: Exceeded memory limit
+91: Data allocated outside of heap
+92: Data allocated exceeds heap limit
+</code></pre></div></div>
+<h3 id="good-practices" class="title-text">Good Practices</h3>
+<p>Since you can implement your malloc in whatever way you want, you may end up with a huge chunk of messy code that’s hard to debug. Here are some suggestions for organizing and maintaining your code better:</p>
+<ul>
+  <li>Build simple functions before you add advanced features. In other words, make sure your program does what you want it to do before moving on to optimize it.</li>
+  <li>Separate the functionality of your program into smaller chunks of independent code. For example, if you find that you’re frequently splitting a block of memory into two blocks, you probably want to write a split function instead of copy-pasting the splitting code every time you need to split.</li>
+  <li>Keep your code readable. This can be naming your variables appropriately or commenting your code well. This will really help you understand what your code is doing when you look back at them three days later!</li>
+</ul>
+<h3 id="debugging-with-gdb" class="title-text">Debugging with GDB</h3>
+<p><code class="language-plaintext highlighter-rouge">./mcontest</code> runs an optimized version of your code, so you won’t be able to debug with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/gdb.1.html" class="fancy-link">gdb</a></code>. To solve this, we have provided another version called <code class="language-plaintext highlighter-rouge">./mreplace</code> which uses a version of your malloc compiled without optimization, so you can debug with <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/gdb.1.html" class="fancy-link">gdb</a></code>. Here’s an example, running tester 2 with gdb:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gdb --args ./mreplace testers_exe/tester-2
+</code></pre></div></div>
+<p>Since <code class="language-plaintext highlighter-rouge">./mreplace</code> calls <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/fork.3p.html" class="fancy-link">fork</a></code>, you need to change the <code class="language-plaintext highlighter-rouge">follow-fork-mode</code> in <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/gdb.1.html" class="fancy-link">gdb</a></code> to be able to set a breakpoint in your <code class="language-plaintext highlighter-rouge">alloc.c</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(gdb) set follow-fork-mode child
+(gdb) break alloc.c:322
+No source file named alloc.c.
+Make breakpoint pending on future shared library load? (y or [n]) y
+Breakpoint 1 (alloc.c:322) pending.
+(gdb) run
+</code></pre></div></div>
+<p><em>Note:</em> if you terminate your running program and run it again, i.e. if you do this:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(gdb) run
+Thread 2.1 "tester-2" hit Breakpoint 1, malloc (size=1) at alloc.c:323
+323    return ptr;
+(gdb) kill
+Kill the program being debugged? (y or n) y
+[mcontest]: STATUS: FAILED. SIGNAL=(9)
+[mcontest]: MAX: 0
+[mcontest]: AVG: 0.000000
+[mcontest]: TIME: 0.012000
+(gdb) run
+Starting program: malloc/testers_exe/tester-2
+Memory was allocated, used, and freed!
+</code></pre></div></div>
+<p>it will no longer use your own implementation, and therefore will not stop at the breakpoints you set, and will use the glibc implementations of malloc/calloc/etc. This is because of the way <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/gdb.1.html" class="fancy-link">gdb</a></code> handles dynamically loaded libraries.</p>
+<h3 id="real-programs" class="title-text">Real Programs</h3>
+<p>Both <code class="language-plaintext highlighter-rouge">mcontest</code> and <code class="language-plaintext highlighter-rouge">mreplace</code> can be used to launch “real” programs (not just the testers). For example:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># ignore the warning about an invalid terminal, if you get it
+./mreplace /usr/bin/less alloc.c
+</code></pre></div></div>
+<p>or</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./mcontest /bin/ls
+</code></pre></div></div>
+<p>There are some programs that might not work correctly under your malloc, for a variety of reasons. You might be able to avoid this problem if you make all your
+global variables static. If you encounter a program for which this fix doesn’t work, post on Ed!</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="grading" class="title-text">Grading<a class="anchor title-text" href="#grading"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Here is the grading breakdown:</p>
+<ul>
+  <li>Correctness (75%)
+    <ul>
+      <li>Part 1 (25%): tests 1-6 complete successfully.</li>
+      <li>Part 2 (50%): tests 1-12 complete successfully.</li>
+    </ul>
+  </li>
+  <li>Performance (25%): Points only awarded if all part 2 testers complete
+successfully - due with part2</li>
+</ul>
+<p>There are 12 testcases in total. For part 1, you will be graded using tests 1
+through 6. For part 2, you will be graded using tests 1 to 12 (tests 1 through 6
+get graded twice). Tester 13 is not graded.</p>
+<p>There are also performance points, which you are only eligible for if you pass
+all the testcases. Your malloc will be compared against the <code class="language-plaintext highlighter-rouge">glibc</code> version of
+malloc, and given a base performance score as a percentage (accounting for
+runtime, maximum memory usage, and average memory usage). The base score is
+calculated using the formula from the contest section below; higher percentages
+are better. Performance points are then awarded in buckets:</p>
+<ul>
+  <li>Better than or equal to 85% of glibc: Full 25% awarded.</li>
+  <li>75-85% (include 75%, exclude 85%): 20% awarded.</li>
+  <li>60-75%: 15% awarded.</li>
+  <li>40-60%: 10% awarded.</li>
+  <li>40% and worse: 0% awarded.</li>
+</ul>
+<p>So, let’s work out some scenarios:</p>
+<ul>
+  <li>Scenario 1: A student gets tests 1 through 6 working for part1 and misses 2
+tests on part2. Then they get all of the correctness points for part1, 10/12
+of the correctness points for part2 and none of the performance points. Thus
+this student will receive a <code class="language-plaintext highlighter-rouge">(6 / 6) * 25 + (10 / 12) * 50 + 0 = 66.67%</code>.</li>
+  <li>Scenario 2: A student gets none of the tests working for part1 and gets
+everything working for part2 and beats <code class="language-plaintext highlighter-rouge">glibc</code>. Then they get none of the
+correctness points for part1, 12/12 of the correctness points for part2, and
+the performance points. This student will receive a
+<code class="language-plaintext highlighter-rouge">(0 / 6) * 25 + (12 / 12) * 50 + 25 = 75.00%</code>.</li>
+  <li>Scenario 3: A student gets tests 1 through 6 working for part1, then they get
+all the tests except test 4 working for part2. Then they get all of the
+correctness points for part1, 11/12 of the correctness points for part2, but
+they will not receive any of the performance points. This student will
+receive a <code class="language-plaintext highlighter-rouge">(6 / 6) * 25 + (11 / 12) * 50 + 0 = 70.83%</code>.</li>
+  <li>
+    <p>Scenario 4: A student gets tests 1 through 6 working for part1, then they get
+all of the tests working for part2, but they can only get to <code class="language-plaintext highlighter-rouge">65%</code> of
+<code class="language-plaintext highlighter-rouge">glibc</code>. In this case, they get all of the correctness points for part 1, all
+of the correctness points for part 2, but only 15% performance points. So,
+they get <code class="language-plaintext highlighter-rouge">(6 / 6) * 25 + (12 / 12) * 50 + 15 = 90.00%</code></p>
+  </li>
+  <li>We modify the allocation numbers slightly when we actually grade.</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="contest" class="title-text">Contest<a class="anchor title-text" href="#contest"> #</a>
+</h2></div>
+
+
+
+<!--- **Contest link coming up soon!** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><strong>View the malloc contest <a href="https://grd-cs341.cs.illinois.edu/malloc" class="fancy-link wiki-link">here</a>!</strong></p>
+<p>The malloc contest pits your memory allocator implementation against your fellow students. There are a few things to know:</p>
+<ul>
+  <li>The test cases used for grading will be randomized with a different seed every day.</li>
+  <li>There may be additional, more advanced tests added which won’t count for anything but the contest.</li>
+  <li>The memory limit is 2.500GB.</li>
+  <li>To submit your program to the contest, you simply commit, push your code and run the distributed autograder. The contest page will be updated to reflect the results. You will have a number of runs per day, so that you can update your score as desired.</li>
+  <li>We will assign a score to each of the three categories (max heap, average heap, and total time) based on how well your program performs memory management relative to a standard solution.</li>
+  <li>You can pick a nickname in <code class="language-plaintext highlighter-rouge">nickname.txt</code>. You will show up as this name on the contest webpage.</li>
+  <li>On the webpage, each test will either be green, which signifies that you passed the test, or red, which signifies that you failed the test.</li>
+</ul>
+<h3 id="scores-and-ranking" class="title-text">Scores and ranking</h3>
+<p>Your score will be computed by the following formula:</p>
+<p><br>
+\(100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{reference}, i}}{time_{\textit{student}, i}} + 1\Big) + \log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{\textit{student}, i}} + 1\Big) + \log_2\Big(\frac{max_{\textit{reference}, i}}{max_{\textit{student}, i}} + 1\Big)\bigg)\)
+<br></p>
+<p>Where:</p>
+<ul>
+  <li>\(n\) is the number of tests</li>
+  <li>\(\textit{reference}\) in the subscript means reference implementation, and \(\textit{student}\) means student’s implementation</li>
+  <li>\(time_{\textit{reference}, i}\) is the time reference implementation spends on test \(i\)</li>
+  <li>\(time_{\textit{student}, i}\) is the time student spends on test \(i\)</li>
+  <li>\(avg_{\textit{reference}, i}\) is the average memory used by reference implementation on test \(i\)</li>
+  <li>\(avg_{\textit{student}, i}\) is the average memory used by student implementation on test \(i\)</li>
+  <li>\(max_{\textit{reference}, i}\) is the max memory used by the reference implementation on test \(i\)</li>
+  <li>\(max_{\textit{student}, i}\) is the max memory used by the student implementation on test \(i\)</li>
+</ul>
+<p>Higher scores are better.</p>
+<p><strong>Note:</strong> We reserve the right to slightly modify constants inside the formula to ensure fair grading and prevent gaming the system. However, the basic idea will not be changing, and whatever we use will be the same for everyone.</p>
+<p><strong>Example 1.</strong></p>
+<p>If a student implementation \(x\) performs like the reference implementation, which means it spends the same time and memory as the reference, then \(x\)’s score will be: \(\begin{aligned}
+score_x
+&amp;=
+100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{reference}, i}}{time_{x, i}} + 1\Big) + \log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{x, i}} + 1\Big) + \log_2\Big(\frac{max_{\textit{reference}, i}}{max_{x, i}} + 1\Big)\bigg) \\
+&amp;=
+100\% \times \frac{1}{3n} \sum_{i=1}^n \big(\log_2(2) + \log_2(2) + \log_2(2)\big) \\
+&amp;= 100\%\times \frac{1}{3n} \sum_{i=1}^n 3\\
+&amp;= 100\%
+\end{aligned}\)</p>
+<p><strong>Example 2.</strong></p>
+<p>If a student implementation \(y\) performs the same as the reference implementation on memory usage, but is twice as slow (meaning \(time_{y, i} = 2 \times time_{\textit{reference}, i}\)), then \(y\)’s score will be: \(\begin{aligned} 
+score_y 
+&amp;= 100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{reference}, i}}{time_{y, i}} + 1\Big) + \log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{y, i}} + 1\Big) + \log_2\Big(\frac{max_{\textit{reference}, i}}{max_{y, i}} + 1\Big)\bigg) \\ 
+&amp;= 100\% \times \frac{1}{3n} \sum_{i=1}^n \big(\log_2(\tfrac{1}{2} + 1) + \log_2(2) + \log_2(2)\big) \\ 
+&amp;= 100\%\times \frac{1}{3n} \sum_{i=1}^n 2.585\\ 
+&amp;= 86.2\% 
+\end{aligned}\)</p>
+<p><strong>Example 3.</strong></p>
+<p>If a student implementation \(z\) performs three times better than the reference implementation, which means \(time_{z, i} = \frac{time_{\textit{reference}, i}}{3}\), \(avg_{z, i} = \frac{avg_{\textit{reference}, i}}{3}\), and \(max_{z, i} = \frac{max_{\textit{reference}, i}}{3}\), then \(z\)’s score will be: \(\begin{aligned}
+score_z
+&amp;=
+100\% \times \frac{1}{3n} \sum_{i=1}^n \bigg(\log_2\Big(\frac{time_{\textit{reference}, i}}{time_{z, i}} + 1\Big) + \log_2\Big(\frac{avg_{\textit{reference}, i}}{avg_{z, i}} + 1\Big) + \log_2\Big(\frac{max_{\textit{reference}, i}}{max_{z, i}} + 1\Big)\bigg) \\
+&amp;=
+100\% \times \frac{1}{3n} \sum_{i=1}^n \big(\log_2(4) + \log_2(4) + \log_2(4)\big) \\
+&amp;= 100\%\times \frac{1}{3n} \sum_{i=1}^n 6 \\
+&amp;= 200\%
+\end{aligned}\)</p>
+<p><strong>WARNING:</strong> As the deadline approaches, the contest page will refresh more slowly. There are 400 students, 12 test cases, and up to a minute or so. It will only retest a student’s code if it has been updated, but many more students will be updating their code causing longer waits. Start early, and don’t become reliant on the contest page by testing locally!</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/malloc.md";
+  </script>
+</body>
+
+</html>

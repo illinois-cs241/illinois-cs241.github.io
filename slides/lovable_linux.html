@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>
+        
+        Review | CS 341: System Programming
+        
+    </title>
+
+    <meta name="author" content="" />
+
+    <!-- Description -->
+    
+    <meta name="description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+">
+    
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/reveal.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/css/theme/black.css" id="theme"/>
+
+    <!-- Font awesome is required for the chalkboard plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom controls plugin is used to for opening and closing annotation modes. -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/customcontrols/style.css">
+    <!-- Chalkboard plugin -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/css/code-style.css"/>
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> -->
+
+    <link rel="canonical" href="http://cs341.cs.illinois.edu/slides/lovable_linux">
+
+    <style>
+     .reveal pre {
+         box-shadow: none;
+     }
+     .reveal pre.highlight {
+         margin: 0px 0px 0px 0px;
+         width: 100%;
+         height: 100%;
+         font-size: 20px;
+     }
+     #toggle-chalkboard {
+	       left: 60px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-chalkboard :hover {
+         color: #8dcffc !important;
+     }
+     #toggle-notes {
+	       left: 93px !important;
+	       bottom: 32px !important;
+         color: #42affa !important;
+     }
+     #toggle-notes :hover {
+         color: #8dcffc !important;
+     }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="reveal">
+        <div class="slides">
+<section>
+      <h1 class="title">Review</h1>
+      <h2 class="author"></h2>
+</section><section><h1></h1>
+<section><h2 id="c">C</h2>
+
+</section><section><h2></h2>
+
+<p><em>How are C strings represented in memory?</em></p>
+
+<p><em>What is wrong with malloc(strlen(s)) when copying strings?</em></p>
+
+</section><section><h2></h2>
+
+<p><code class="language-plaintext highlighter-rouge">"hello" = [h][e][l][l][o][</code><strong>\0</strong><code class="language-plaintext highlighter-rouge">]</code></p>
+
+<p>A C string is just an array of characters with a null terminator (\0) at the end.</p>
+
+</section><section><h2></h2>
+
+<p><code class="language-plaintext highlighter-rouge">strlen("hello") == 5</code></p>
+
+<p><code class="language-plaintext highlighter-rouge">strlen()</code> <strong>does not</strong> count the null terminator.</p>
+
+<p>If used with malloc, there won’t be enough memory allocated for the null terminator!</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="virtual-memory">Virtual Memory</h2>
+
+</section><section><h2></h2>
+
+<p><em>Explain how a virtual address is converted into a physical address using a multi-level page table. You may use a concrete example e.g. a 64bit machine with 4KB pages.</em></p>
+
+</section><section><h2></h2>
+
+<h3 id="how-long-is-the-offset">How long is the offset?</h3>
+
+<ul>
+  <li>How many addresses do you need? One per Byte in the page</li>
+</ul>
+
+<p>Page size: <code class="language-plaintext highlighter-rouge">4 KB = 2^12 B</code></p>
+
+<ul>
+  <li>How many bits do you need to define 2^12 addresses?</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">log2⁡ (2^12⁡)</code>  = 12 bits</p>
+
+<ul>
+  <li>You take the rest of the bits and split it up evenly among the level of page tables.</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p><code class="language-plaintext highlighter-rouge">|-VPN1-|-VPN2-|-VPN3-|-Offset-|</code></p>
+
+<blockquote>
+  <p>level_1 = page_table_base_register[VPN1]</p>
+</blockquote>
+
+<blockquote>
+  <p>level_2 = level_1[VPN2]</p>
+</blockquote>
+
+<blockquote>
+  <p>level_3 = level_2[VPN3]</p>
+</blockquote>
+
+<blockquote>
+  <p>physical_address = level_3 + Offset</p>
+</blockquote>
+
+</section><section><h2></h2>
+
+<p><em>What is a page fault? When is it an error? When is it not an error?</em></p>
+
+</section><section><h2></h2>
+
+<p>Page fault – program attempts access to virtual memory that is not mapped to up-to-date physical memory.</p>
+
+</section><section><h2></h2>
+
+<p>There are three types</p>
+
+<ul>
+  <li>Major - The page is on disk and needs to be loaded into memory (disk I/O)</li>
+  <li>Minor – No mapping for the page, but valid address (no disk I/O)</li>
+  <li>Invalid - Memory being accessed is not part of the virtual address space. There cannot be a page corresponding to it.</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>When it’s an Error - Invalid (The operating system usually segfaults)</p>
+
+<p>When it’s not an Error - Major or Minor</p>
+
+</section><section><h2></h2>
+
+<p><em>What is Spatial and Temporal Locality? Swapping? Swap file? Demand Paging?</em></p>
+
+</section><section><h2></h2>
+
+<p>Spatial Locality - Objects in adjacent memory addresses get used (think arrays). That is why a page table is a certain size.</p>
+
+<p>Temporal Locality - Objects used more recently get used. The TLB takes advantage of that</p>
+
+</section><section><h2></h2>
+
+<p>Swapping - Taking a page in memory and writing to disk.</p>
+
+<p>Swap File - specific file on disk that the pages get written to. Another solution is a swap space partition.</p>
+
+<p>Demand Paging - Only allocate pages as the process requests them</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="processes-and-threads">Processes and Threads</h2>
+
+</section><section><h2></h2>
+
+<p><em>Explain the operating system actions required to perform a process context switch.</em></p>
+
+</section><section><h2></h2>
+
+<p>Step 1: Save state in process control block(pcb)</p>
+
+<p>This includes:</p>
+<ul>
+  <li>Program Counter</li>
+  <li>Registers</li>
+  <li>Priority</li>
+  <li>Stack Pointer / Address Space</li>
+  <li>Open Files</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>Step 2: Flush Translation Lookaside Buffer (TLB)</p>
+
+<p><strong>BUT</strong> with ASID or PCID (intel) may not be necessary</p>
+<ul>
+  <li>Used to identify which process an entry is from</li>
+  <li>Address space identifiers (ASID) assigned dynamically</li>
+  <li>Interactive processes don’t get ASIDs</li>
+  <li>ASID’s are short, too short to identify all processes</li>
+  <li>Stored in a data structure and optimized for cache usage</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>Step 3: Choose next process (scheduler’s job)</p>
+
+<p>Step 4: Load process state from control block</p>
+
+<p>Step 5: Pop program counter, resume task</p>
+
+</section><section><h2></h2>
+
+<p><em>Explain the actions required to perform a thread context switch (to a thread in the same process)</em></p>
+
+</section><section><h2></h2>
+
+<p>Same as above <strong>EXCEPT</strong></p>
+<ul>
+  <li>Only need to save Thread Control Block (TCB) instead of PCB</li>
+</ul>
+
+<p>(i.e. not whole address space, just the stack)</p>
+
+<ul>
+  <li>Don’t need to flush TLB</li>
+  <li>Different Scheduler:
+    <ul>
+      <li>kernel threads: OS handles it (so just like process scheduling)</li>
+      <li>user-level threads: CPU handles it (so a library handles it)</li>
+    </ul>
+  </li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="scheduling">Scheduling</h2>
+
+</section><section><h2></h2>
+
+<p><em>Which scheduling algorithm results the smallest average wait time?</em></p>
+
+</section><section><h2></h2>
+
+<p>Round Robin (<strong>IF</strong> new processes sent to the back of the queue)</p>
+<ul>
+  <li>wait time ≤ (x number of processes on queue)</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>Why not any other scheduler?</p>
+
+<p>FCFS: wait time ≤ sum of runtime of all processes on queue</p>
+
+<p>SJF/PSJF: wait time ≤ ∞ if shorter jobs keep arriving</p>
+
+<p>Priority: waittime ≤ ∞ if higher priority jobs keep arriving</p>
+
+</section><section><h2></h2>
+
+<p><em>What scheduling algorithm has the longest average response time?</em></p>
+
+</section><section><h2></h2>
+
+<p>Priority</p>
+<ul>
+  <li>process can always be pushed lower on the queue by higher priority processes</li>
+  <li>priority doesn’t correspond to runtime</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>Why not any other scheduler?</p>
+
+<p>FCFS: response ≤ runtime of processes ahead of it on the queue</p>
+
+<p>SJF/PSJF: ∞, but at least all jobs ahead of a process on the queue have shorter runtimes. Priority doesn’t guarantee this.</p>
+
+<p>RR: response ≤ time quantum x number of processes ahead on the queue.</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="synchronization-and-deadlock">Synchronization and Deadlock</h2>
+
+</section><section><h2></h2>
+
+<p><em>Define circular wait, mutual exclusion, hold and wait, and no-preemption. How are these related to deadlock?</em></p>
+
+</section><section><h2></h2>
+
+<h3 id="coffman-conditions">Coffman Conditions</h3>
+
+<p>Circular wait: There exists a cycle in the Resource Allocation graph</p>
+
+<ul>
+  <li>P1 is waiting for resources from P2</li>
+  <li>P2 is waiting for resources from P3</li>
+  <li>ect…</li>
+  <li>PN is waiting for resources from P1</li>
+</ul>
+
+</section><section><h2></h2>
+
+<h3 id="coffman-conditions-cont">Coffman Conditions Cont.</h3>
+
+<p>Mutual Exclusion: no two processes can hold the same resource at the same time</p>
+
+<p>Hold and Wait: Once a resource is obtained, process holds it until finished</p>
+
+<p>No pre-emption: Nothing can make a process give up a resource</p>
+
+</section><section><h2></h2>
+
+<p><em>What is the difference between Deadlock Prevention, Deadlock Detection and Deadlock Avoidance?</em></p>
+
+</section><section><h2></h2>
+
+<p><strong>Deadlock Prevention</strong>: Eliminate a Coffman conditions. Deadlocks become impossible.</p>
+
+</section><section><h2></h2>
+
+<p><strong>Deadlock Avoidance</strong>: Avoid by allocating resources in a safe manner. The OS implements concurrency control.</p>
+
+</section><section><h2></h2>
+
+<p><strong>Deadlock Detection</strong>: When deadlock occurs, OS can detect and resolve it.</p>
+
+<p>(i.e. use a Resource Allocation Graph to detect deadlocks. kill processes or preempt resources to resolve)</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="ipc-and-signals">IPC and signals</h2>
+
+</section><section><h2></h2>
+
+<p><em>Give an example of kernel generated signal. List 2 calls that can a process can use to generate a <code class="language-plaintext highlighter-rouge">SIGUSR1</code>.</em></p>
+
+</section><section><h2></h2>
+
+<p>Kernel generated signals:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">SIGSEGV</code></li>
+  <li><code class="language-plaintext highlighter-rouge">SIGILL</code></li>
+  <li><code class="language-plaintext highlighter-rouge">SIGXCPU</code></li>
+</ul>
+
+<p>Try running <code class="language-plaintext highlighter-rouge">kill -l</code> to see all signals</p>
+
+</section><section><h2></h2>
+
+<p><code class="language-plaintext highlighter-rouge">raise(int signal)</code> signals yourself</p>
+
+<p><code class="language-plaintext highlighter-rouge">kill(pid_t pid, int signal)</code> signal other processes</p>
+
+</section><section><h2></h2>
+
+<p><em>What signals can be caught and ignored? What signals cannot be caught?</em></p>
+
+</section><section><h2></h2>
+
+<p>You can catch anything except <code class="language-plaintext highlighter-rouge">SIGKILL</code> and <code class="language-plaintext highlighter-rouge">SIGSTOP</code></p>
+
+<p>See man page for <code class="language-plaintext highlighter-rouge">signal(2)</code> on how to set signal disposition.</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="networking">Networking</h2>
+
+</section><section><h2></h2>
+
+<p><em>Describe the services provided by TCP but not UDP. What applications use TCP? What applications use UDP?</em></p>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>TCP performs flow control, UDP does not</li>
+  <li>TCP guarantees delivery, UDP is “best effort”</li>
+  <li>TCP has a notion of a connection, UDP is connectionless</li>
+  <li>TCP has 3-way (SYN - SYN/ACK - ACK) handshake</li>
+</ul>
+
+</section><section><h2></h2>
+
+<p>TCP is used for web browsing, email, file transfers, etc.</p>
+
+<p>UDP is used when data becomes stale quickly (e.g. audio/video streaming and DNS).</p>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="files">Files</h2>
+
+</section><section><h2></h2>
+
+<p><em>Briefly explain permission bits (including sticky and setuid bits) for files and directories.</em></p>
+
+</section><section><h2></h2>
+
+<p><code class="language-plaintext highlighter-rouge">drwxrwxr-x</code></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">d</code> or <code class="language-plaintext highlighter-rouge">-</code> : directory or file</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">rwx</code> : What the owner of the file is allowed to do (read, write, execute)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">rwx</code>: What users in the owner’s group are allowed to do (read, write, execute)</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">r-x</code>: What everyone else is allowed to od (read and execute, but not write)</p>
+  </li>
+</ul>
+
+</section></section><section><h1></h1>
+
+<section><h2 id="file-system">File System</h2>
+
+</section><section><h2></h2>
+
+<p><em>What information is stored in an inode? What file system information is not?</em></p>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">uid</code>: user ID of the inode owner.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">gid</code>: the ID of the inode group (does not have to include the owner).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">mode</code>: a bitmask. Bottom 9 bits are read-write-execute for owner-group-others. Bits 11-10 are the type of the file.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">nlink</code>: hard link count. The number of directories that the file is linked to from (directories can’t be hard linked).</li>
+</ul>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">atim</code>: access time. Time of last access or the last time a file was read(2).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">mtim</code>: last modification time. Last time the file was changed with write(2).</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">ctim</code>: last change time. Last time the file’s metadata was changed.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">size</code>: size of the file in bytes</li>
+</ul>
+
+</section><section><h2></h2>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">direct</code>: an array. <code class="language-plaintext highlighter-rouge">direct[i]</code> is the ith data block’s offset (<code class="language-plaintext highlighter-rouge">data_block_number</code>) from the data_root.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">indirect</code>: the offset number (<code class="language-plaintext highlighter-rouge">data_block_number</code>) of a data block, which contains <code class="language-plaintext highlighter-rouge">NUM_INDIRECT_BLOCKS</code> number of <code class="language-plaintext highlighter-rouge">data_block_number</code>’s.</li>
+</ul>
+</section></section>
+</div>
+    </div>
+
+    <script src=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.js"></script>
+    <script>
+     // Full list of configuration options available at:
+     // https://github.com/hakimel/reveal.js#configuration
+     Reveal.initialize({
+         controls: true,
+         progress: true,
+         history: true,
+         center: true,
+         // Optional reveal.js plugins
+         dependencies: [
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/zoom/zoom.js', async: true },
+             { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/notes/notes.js', async: true },
+             { src: '/js/reveal.js/menu/menu.js', async: true},
+         ],
+         customcontrols: {
+           controls: [
+              { icon: '<i id="toggle-chalkboard" class="fa fa-pen-square"></i>',
+                title: 'Toggle chalkboard (B)',
+                action: 'RevealChalkboard.toggleChalkboard();'
+              },
+              { icon: '<i id="toggle-notes" class="fa fa-pen"></i>',
+                title: 'Toggle notes canvas (C)',
+                action: 'RevealChalkboard.toggleNotesCanvas();'
+              }
+            ]
+          },
+         chalkboard: {
+           // add configuration here
+         },
+         plugins: [ RevealChalkboard, RevealCustomControls ]
+     });
+
+    </script>
+  </body>
+</html>

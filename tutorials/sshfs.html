@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · SSHFS Workflow Tutorial</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="SSHFS Workflow Tutorial" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              SSHFS Workflow Tutorial
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_sshfs" href="#sshfs" class="fancy-link">SSHFS?</a></li>
+<li><a id="toc_installation" href="#installation" class="fancy-link">Installation</a></li>
+<li><a id="toc_using-sshfs" href="#using-sshfs" class="fancy-link">Using SSHFS</a></li>
+<li><a id="toc_other-useful-links" href="#other-useful-links" class="fancy-link">Other Useful Links</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="sshfs" class="title-text">SSHFS?<a class="anchor title-text" href="#sshfs"> #</a>
+</h2></div>
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>SSHFS is a tool that allows you to mount any directory from a remote machine on your local machine, and consequently use your favorite text editor/IDE/code editing environment and still be able to compile and run your code on the remote machine.</p>
+<p>Using SSHFS means that you don’t have to include a <code class="language-plaintext highlighter-rouge">git commit -A -m "asdf"</code> and <code class="language-plaintext highlighter-rouge">git pull origin master</code> in between every small change, ad your machine can cache the files so you don’t have to deal with network lag. Essentially, SSHFS will allow you to directly edit any files that exist on a remote machine.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="installation" class="title-text">Installation<a class="anchor title-text" href="#installation"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>You need to install SSHFS on your own machine (Windows, Linux, or MacOS).</p>
+<h3 id="ubuntudebian" class="title-text">Ubuntu/Debian</h3>
+<p>You can easily install SSHFS using apt-get as follows:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install sshfs
+</code></pre></div></div>
+<h3 id="macos" class="title-text">MacOS</h3>
+<p>On MacOS, you can install SSHFS via FUSE and SSHFS from the <a href="https://osxfuse.github.io" class="fancy-link wiki-link">osxfuse site.</a>. You will want to download both packages.</p>
+<p>Alternativey, if you have <a href="http://brew.sh" class="fancy-link wiki-link">Homebrew</a> installed, you can also install it using these two commands:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask install osxfuse           # installs osxfuse
+brew install sshfs                  # installs sshfs
+</code></pre></div></div>
+<h3 id="windows" class="title-text">Windows</h3>
+<p>For Windows, you can either install it in the Ubuntu subsystem using apt-get, or download the win-sshfs package.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="using-sshfs" class="title-text">Using SSHFS<a class="anchor title-text" href="#using-sshfs"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>If you are trying to mount your CS341 virtual machine, you <strong>do</strong> need to be on the campus network or VPN to be able to connect. These instructions apply to Linux and MacOS. Windows will be later.</p>
+<h3 id="mounting-the-remote-filesystem" class="title-text">Mounting the Remote Filesystem</h3>
+<p>You’ll want to make a directory to mount the remote file system on. Basically, sshfs will make it a “portal” from your machine to the remote machine. The directory you make will be used in the next step.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir ~/remote
+</code></pre></div></div>
+<p>Then, you can use sshfs to mount the file system locally. You can also specify what the entry point is on the remote machine, rather than just starting at the root of the drive (/), you can have it start in your home folder (~) or any folder, really. replace <mount_point> with the entry point you would like, or leave it empty to mount the root of the drive.</mount_point></p>
+<p>Mount point? The mount point is the directory that sshfs will give you access to. You can use the whole machine as that directory, or just your CS241 directory that contains all of your code.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo sshfs NETID@sp25--???.cs.illinois.edu:/&lt;MOUNT_POINT&gt; ~/remote
+</code></pre></div></div>
+<p>After running this command, you will be asked for your password, and then the filesystem will be mounted locally. You can test this by doing <code class="language-plaintext highlighter-rouge">ls ~/remote</code> to see the contents of the remote filesystem.</p>
+<p>Now, you can open any file that exists on the remote machine with any program you have installed on your own machine (Atom/Sublime Text/etc). Enjoy!</p>
+<h3 id="unmounting-the-filesystem" class="title-text">Unmounting the Filesystem</h3>
+<p>Once you’re done, you can unmount it with</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo umount ~/remote
+</code></pre></div></div>
+<p>(Note: depending on where you made the mount point, you may not need sudo to unmount the remote filesystem.)</p>
+<p><strong>WARNING</strong>: When you unmount, your changes will no longer be saved, so make sure you have closed any remote files <em>before</em> unmounting the remote machine. In fact, if you have a file open in Sublime Text, and then unmount, the open file will become red, because Sublime will notice that it no longer has access to that file. You also do need to unmount before logging out or shutting down your machine, or potentially disconnecting from the Internet.</p>
+<h3 id="windows-1" class="title-text">Windows</h3>
+<p>On Windows, after sucessful installation of win-sshfs, you can open it to configure the remote filesystem. You will need to be on the campus network or VPN for this to work as well.</p>
+<p>You’ll want to add a new remote, and you can name it whatever you would like. Then, you enter the IP of the remote (for the VM’s, it is <code class="language-plaintext highlighter-rouge">sp25-cs241-???.cs.illinois.edu</code>). Then, enter your NETID and password in their respective boxes, and fill out the mount point you would like. You can specify / to mount at the root of the drive, and you can specify any other directory you would like. Select the drive letter, and click mount to finish the process of mounting the remote filesystem.</p>
+<p>To unmount, you can right-click the drive letter you chose earlier in My Computer and click eject.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="other-useful-links" class="title-text">Other Useful Links<a class="anchor title-text" href="#other-useful-links"> #</a>
+</h2></div>
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>I recommend that you set up SSH keys so that you don’t have to type in your password everytime you want to mount the remote filesystem or simply ssh into the remote machine. Read more <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2" class="fancy-link wiki-link">setting up SSH keys</a>. DigitalOcean also has a lot more community tutorials that cover a wide range of useful topics when using Linux-based machines.</p></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_tutorials/sshfs.md";
+  </script>
+</body>
+
+</html>

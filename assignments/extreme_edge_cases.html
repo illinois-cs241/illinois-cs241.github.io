@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Extreme Edge Cases</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Extreme Edge Cases" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Extreme Edge Cases
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-02-03 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>camelCaser.c</li>
+                
+                <li>camelCaser_tests.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_backstory" href="#backstory" class="fancy-link">Backstory</a></li>
+<li><a id="toc_unit-testing" href="#unit-testing" class="fancy-link">Unit Testing</a></li>
+<li><a id="toc_man-pages" href="#man-pages" class="fancy-link">Man pages</a></li>
+<li><a id="toc_camelcaser" href="#camelcaser" class="fancy-link">camelCaser</a></li>
+<li><a id="toc_writing-unit-tests" href="#writing-unit-tests" class="fancy-link">Writing Unit Tests</a></li>
+<li><a id="toc_reference-implementation" href="#reference-implementation" class="fancy-link">Reference Implementation</a></li>
+<li><a id="toc_grading" href="#grading" class="fancy-link">Grading</a></li>
+<li><a id="toc_tips-and-tricks-on-approaching-assignments" href="#tips-and-tricks-on-approaching-assignments" class="fancy-link">Tips and tricks on approaching assignments</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Extreme Edge Cases are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Test Driven Development</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Thinking of Edge Cases</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">String Manipulation</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">C Programming</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="backstory" class="title-text">Backstory<a class="anchor title-text" href="#backstory"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>What makes code good? Is it camelCased strings? Good comments? Descriptive variable names, perhaps?</p>
+<p>One thing we know is that good code is generally modular - it consists of discrete “units” of functionality that are only responsible for very specific and certain behavior. In our case, working with C, these “units” are functions.</p>
+<p>For example, the C string function <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strlen.3p.html" class="fancy-link">strlen</a></code> is solely responsible for determining the length of a string; it doesn’t do any I/O or networking, or anything else. A function that knows all and tries to do all would be bad design, and testing whether that kind of function adheres to expectations would be nontrivial.</p>
+<p>A programmer might ask, “do my units of work behave the way I expect?” or “if my function expects a string, how does it behave when given NULL?”. These are crucial questions, since ensuring that units of code work exactly the way one would expect makes it easy to build reliable and robust software. An unreliable unit in a large system can affect the entire system significantly. Imagine if <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strcpy.3p.html" class="fancy-link">strcpy</a></code>, for example, did not behave properly on all inputs; all of the higher-level units that use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strcpy.3p.html" class="fancy-link">strcpy</a></code>, and all of the units that interact with those units, would in-turn have unpredictable behavior, and so the unreliability would propagate through the whole system.</p>
+<p>Enter unit testing.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="unit-testing" class="title-text">Unit Testing<a class="anchor title-text" href="#unit-testing"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Unit testing is a ubiquitous and crucial software development method used heavily in industry. <a href="http://artofunittesting.com/definition-of-a-unit-test/" class="fancy-link wiki-link">According to artofunittesting.com</a>, “a unit test is an automated piece of code that invokes a <em>unit of work</em> in the system <em>and then checks a single assumption about the behavior of that unit of work</em>”. This sounds like testing - leave it to the QAs, right? Actually, developers, much to their chagrin, are expected to write their own unit tests.</p>
+<p>In order to write effective unit tests, all possible cases of input to a unit (mainly functions, in C), including edge cases, should be tested. Good unit tests test (extreme) edge cases, making sure that the discrete unit of functionality performs as specified with unexpected inputs.</p>
+<p>In this MP, your goal is to create and test the behavior of an arbitrary string manipulation function to determine if it is reliable, predictable, and correct. While writing your functions, try to write modular code, as this will make your life easier when you test it. You’ll learn how to write effective test cases - an incredibly helpful skill for the rest of the course. Finally, you’ll be able to take these skills to Facenovel for your next internship and impress your coworkers.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="man-pages" class="title-text">Man pages<a class="anchor title-text" href="#man-pages"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The man (manual) pages are the main system of documentation for C system calls, library functions, and other information related to Unix-based operating systems like Linux.</p>
+<p>Learning how to use documentation to unblock yourself when stuck is an integral part of software development, in CS 341 and beyond. For the purposes of this course, the man pages are an excellent resource to direct documentation-related questions to. For example, some good questions related to this MP to direct to the man pages:</p>
+<ul>
+  <li>What does <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strtok.3p.html" class="fancy-link">strtok</a></code> take as input, and what does it return?</li>
+  <li>What is the difference between <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strcpy.3p.html" class="fancy-link">strcpy</a></code> and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strncpy.3p.html" class="fancy-link">strncpy</a></code>?</li>
+  <li>Which characters are considered whitespace characters by <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/isspace.3p.html" class="fancy-link">isspace</a></code>?</li>
+</ul>
+<p>You can view the man pages through your terminal’s command-line interface by typing in <code class="language-plaintext highlighter-rouge">man &lt;command&gt;</code> or <code class="language-plaintext highlighter-rouge">man &lt;function&gt;</code>, like <code class="language-plaintext highlighter-rouge">man ls</code> or <code class="language-plaintext highlighter-rouge">man malloc</code>. The man pages are also accessible via several sites on the web, such as</p>
+<ul>
+  <li>https://man7.org/linux/man-pages/</li>
+  <li>https://linux.die.net/man/</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="camelcaser" class="title-text">camelCaser<a class="anchor title-text" href="#camelcaser"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We have chosen</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>char **camel_caser(const char* input)
+</code></pre></div></div>
+<p>as your arbitrary string manipulation function.</p>
+<p>Your manager at Facenovel, to celebrate Hump Day, has asked all of the interns to implement a brand new camelCaser to convert sentences into <a href="https://en.wikipedia.org/wiki/Camel_case" class="fancy-link wiki-link">camelCase</a>. To give you a chance to earn your return offer, he also assigned you to write test cases for all the other interns’ implementations of camelCaser, with the implementations hidden from you.</p>
+<p>Let’s say I want to get a sequence of sentences in camelCase. This is the string passed into your method:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"The Heisenbug is an incredible creature. Facenovel servers get their power from its indeterminism. Code smell can be ignored with INCREDIBLE use of air freshener. God objects are the new religion."
+</code></pre></div></div>
+<p>Your method should return the following:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>["theHeisenbugIsAnIncredibleCreature",
+"facenovelServersGetTheirPowerFromItsIndeterminism",
+"codeSmellCanBeIgnoredWithIncredibleUseOfAirFreshener",
+"godObjectsAreTheNewReligion",
+NULL]
+</code></pre></div></div>
+<p>The brackets denote that the above is an array of those strings.</p>
+<p>Here is a formal description of how your camelCaser should behave:</p>
+<ul>
+  <li>You can’t camelCase a NULL pointer, so if <code class="language-plaintext highlighter-rouge">input</code> is a NULL pointer, return a NULL pointer.</li>
+  <li>If <code class="language-plaintext highlighter-rouge">input</code> is NOT NULL, then it is a NUL-terminated array of characters (a standard C string).</li>
+  <li>A input sentence, <code class="language-plaintext highlighter-rouge">input_s</code>, is defined as any <em>MAXIMAL</em> substring of the input string that ends with a punctuation mark. This means that all strings in the camelCased output should not contain punctuation marks.
+    <ul>
+      <li>This means that “Hello.World.” gets split into 2 sentences “Hello” and “World” and NOT “Hello.World”.</li>
+    </ul>
+  </li>
+  <li>Let the camelCasing of <code class="language-plaintext highlighter-rouge">input_s</code> be called <code class="language-plaintext highlighter-rouge">output_s</code>.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">output_s</code> is the the concatenation of all words <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/w.1.html" class="fancy-link">w</a></code> in <code class="language-plaintext highlighter-rouge">input_s</code> after <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/w.1.html" class="fancy-link">w</a></code> has been camelCased.
+    <ul>
+      <li>The punctuation from <code class="language-plaintext highlighter-rouge">input_s</code> is <strong>not</strong> added to <code class="language-plaintext highlighter-rouge">output_s</code>.</li>
+    </ul>
+  </li>
+  <li>Words are nonempty substrings delimited by the MAXIMAL amount of whitespace.
+    <ul>
+      <li>This means that <code class="language-plaintext highlighter-rouge">"     hello   world   "</code> is split into <code class="language-plaintext highlighter-rouge">"hello"</code> and <code class="language-plaintext highlighter-rouge">"world"</code> and NOT <code class="language-plaintext highlighter-rouge">"hello "</code>, <code class="language-plaintext highlighter-rouge">" "</code>, <code class="language-plaintext highlighter-rouge">" world"</code> or any other combination of whitespaces.</li>
+    </ul>
+  </li>
+  <li>A word <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/w.1.html" class="fancy-link">w</a></code> is camelCased if and only if:
+    <ul>
+      <li>it is the first word and every letter is lowercased.</li>
+      <li>it is any word after the first word, its first letter is uppercased and every subsequent letter in the word is lowercased.</li>
+    </ul>
+  </li>
+  <li>Punctuation marks, whitespace, and letters are identified by <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/ispunct.3p.html" class="fancy-link">ispunct</a></code>, <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/isspace.3p.html" class="fancy-link">isspace</a></code>, and <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/isalpha.3p.html" class="fancy-link">isalpha</a></code> respectively.
+    <ul>
+      <li>These are functions in the C standard library, so you can <code class="language-plaintext highlighter-rouge">man ispunct</code> for more information.</li>
+      <li>If <code class="language-plaintext highlighter-rouge">input_s</code> has ANY non-{punctuation, letter, whitespace} characters, they go straight into <code class="language-plaintext highlighter-rouge">output_s</code> without any modifications. <strong>ALL</strong> ASCII characters are valid input. Your camelCaser does not need to handle all of Unicode.</li>
+    </ul>
+  </li>
+  <li>
+<code class="language-plaintext highlighter-rouge">camel_caser</code> returns an array of <code class="language-plaintext highlighter-rouge">output_s</code> for every <code class="language-plaintext highlighter-rouge">input_s</code> in the input string,  terminated by a NULL pointer.</li>
+</ul>
+<p><em>Hint:</em> <code class="language-plaintext highlighter-rouge">ctype.h</code> has a lot of useful functions for this.</p>
+<p>Your implementation goes in camelCaser.c, and you may not leak any memory.</p>
+<div class="pad"><div class="card">
+<h4 id="destroy">Destroy</h4>
+
+<p>You must also implement <code class="language-plaintext highlighter-rouge">destroy(char **result)</code>, a function that takes in the output of your <code class="language-plaintext highlighter-rouge">camel_caser()</code> and frees up any memory used by it. We will be calling this in our test cases and checking for memory leaks in your implementation, so remember to test this!</p>
+
+<h3 id="camelcaser-result-in-memory" class="title-text">camelCaser Result In Memory</h3>
+
+<p><code class="language-plaintext highlighter-rouge">camel_caser()</code> takes in a C string, which represents an arbitrary number of sentences, and returns a pointer to a NULL-terminated array of C strings where each sentence has been camelCased. It is up to you how the resulting structure is allocated, but it must be completely deallocated by your <code class="language-plaintext highlighter-rouge">destroy()</code> function.</p>
+
+<p>For those who like pictures, here is what the return value of camelCaser looks like in memory:</p>
+
+<p class="img-paragraph"><img src="/images/assignment-docs/mp/extreme_edge_cases/char_double_pointer.jpg" alt="Memory Map"></p>
+
+<p>In the above picture, you can see that we have a <code class="language-plaintext highlighter-rouge">char</code> double pointer called ‘array’. In this scenario, the <code class="language-plaintext highlighter-rouge">char</code> double pointer points to the beginning of a NULL-terminated array of character pointers. Each of the character pointers in the array points to the beginning of a NUL-terminated <code class="language-plaintext highlighter-rouge">char</code> array that can be anywhere in memory.</p>
+
+<p>These arrays are NULL-terminated because your user will need to know when these arrays end so they do not start reading garbage values. This means that <code class="language-plaintext highlighter-rouge">array[0]</code> will return a character pointer. Dereferencing that character pointer gets you an actual character. For demonstration purposes, here is how to grab the character “s” in “as”:</p>
+
+<pre><code class="language-C">// Take array and move it over by 3 times the size of a char pointer.
+char **ptr = array + 3;
+// Deference ptr to get back a character pointer pointing to the beginning of "as".
+char *as = *ptr;
+// Take that pointer and move it over by 1 times the size of a char.
+char *ptr2 = as + 1;
+// Now dereference that to get an actual char.
+char s = *ptr2;
+</code></pre>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="writing-unit-tests" class="title-text">Writing Unit Tests<a class="anchor title-text" href="#writing-unit-tests"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Your goal is to show that the other interns’ implementations of camelCaser - which, of course, you can’t see directly - fail on some extreme test cases, and, in the meantime, demonstrate to the head honcho at Facenovel exactly how robust your own function is.</p>
+<p>Facenovel promises to pass in C-strings. Likewise, you promise to return a dynamically allocated NULL-terminated array of C strings that can be deallocated with your <code class="language-plaintext highlighter-rouge">destroy()</code> function.</p>
+<p>What kinds of edge cases might come up?</p>
+<p>Run <code class="language-plaintext highlighter-rouge">make camelCaser</code> to test. You will have to fill in tests in <code class="language-plaintext highlighter-rouge">camelCaser_tests.c</code>.</p>
+<p>Because Facenovel values their testing server time, you may not try more than 16 different inputs, and each input must be less than 256 characters (only characters). This does NOT mean your implementation can assume input of 256 characters or less. Your implementation of <code class="language-plaintext highlighter-rouge">camel_caser()</code> should be able to handle <strong>any valid C string of any length with any combination of ASCII characters</strong>.</p>
+<p>Also, it is not in the spirit of unit testing to diff the output of your implementation with the one you are testing. Therefore, you may <strong>NOT</strong> call your own <code class="language-plaintext highlighter-rouge">camel_caser()</code> function when implementing your test cases.</p>
+<p>Other helpful resources: <a href="http://wiki.c2.com/?TestDrivenDevelopment" class="fancy-link wiki-link">Test-Driven Development</a></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="reference-implementation" class="title-text">Reference Implementation<a class="anchor title-text" href="#reference-implementation"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Your senior coworkers at Facenovel have taken a liking to you for your work ethic, and they decided to help you by providing you a <em>reference implementation</em>. You are given an interface <code class="language-plaintext highlighter-rouge">camelCaser_ref_tests.c</code> which allows you to access the black-box reference implementation. You are given two utility functions to help you understand what camelCase looks like.</p>
+<p>The first function provided is<code class="language-plaintext highlighter-rouge">print_camelCaser(char *input)</code>. It takes a string input and prints out the transformed camelCased output onto <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stdout.3p.html" class="fancy-link">stdout</a></code>. This function is meant to be used to help you answer questions like, “What should be the result of inputting <code class="language-plaintext highlighter-rouge">&lt;blah&gt;</code> into <code class="language-plaintext highlighter-rouge">camel_caser()</code>?” Note that this function might behave weirdly with non-printable ASCII characters.</p>
+<p>The second function that you can use is <code class="language-plaintext highlighter-rouge">check_output(char *input, char **output)</code>. This function takes the input string you provided and the expected output camelCased array of strings, and compares the expected output with the reference output. This function is to be used as a sanity check, to confirm your understanding of what the camelCased output is like. This will also help you to understand how to deal with non-printable ASCII characters.</p>
+<p>A few important things to be aware of when you use the reference implementation:</p>
+<ul>
+  <li>
+<strong>DO NOT use any functions</strong> provided in <code class="language-plaintext highlighter-rouge">camelCaser_ref_tests.c</code> and <code class="language-plaintext highlighter-rouge">camelCaser_ref_utils.h</code> in any part of your <code class="language-plaintext highlighter-rouge">camel_caser()</code> implementation as well as your unit tests (that is, don’t use it anywhere outside of <code class="language-plaintext highlighter-rouge">camelCaser_ref_tests.c</code>). Your code will definitely not compile during grading if you use any of those functions in any graded files.</li>
+  <li>The reference only serves as a starting guideline and a sanity check, to ensure that you understand how camelCase works. The reference implementation does not represent the only possible good implementation. <strong>Your implementation is restricted by the specifications provided above, and only the specifications above.</strong> An implementation is good if and only if it meets the requirements in the specifications.</li>
+  <li>The reference <strong>does not replace actual testing</strong> of your own implementation. You are responsible to rigorously test your own code to make sure it is robust and guards against all possible edge cases. You may not use the reference implementation to test your implementation of <code class="language-plaintext highlighter-rouge">camel_caser()</code>.</li>
+</ul>
+<p>To use the reference, modify the <code class="language-plaintext highlighter-rouge">camelCaser_ref_tests.c</code> file, run <code class="language-plaintext highlighter-rouge">make camelCaser_ref</code> and you should have a <code class="language-plaintext highlighter-rouge">camelCaser_ref</code> executable.</p>
+<p><em>Note</em>: The reference implementation is only available in release form. There is no debug version of the reference.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="grading" class="title-text">Grading<a class="anchor title-text" href="#grading"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Grading is split up into two parts.</p>
+<h3 id="your-implementation" class="title-text">Your Implementation</h3>
+<p>The first portion of the test cases test <em>your implementation</em> of <code class="language-plaintext highlighter-rouge">camel_caser()</code>. We pass in some input, and check that your output matches the expectations laid out in this document. Essentially, your code is put up against <strong>our</strong> unit tests, which means you can write as-good (or even better) unit tests to ensure that your <code class="language-plaintext highlighter-rouge">camel_caser()</code> passes ours.</p>
+<h3 id="your-unit-tests" class="title-text">Your Unit Tests</h3>
+<p>The second portion of the test cases test <em>your unit tests</em>. We have a handful of <code class="language-plaintext highlighter-rouge">camel_caser()</code> implementations, some that work, and some that don’t. To test your unit tests, we feed each of our <code class="language-plaintext highlighter-rouge">camel_caser()</code> implementations through your <code class="language-plaintext highlighter-rouge">test_camelCaser()</code> function (found in <code class="language-plaintext highlighter-rouge">camelCaser_tests.c</code>) and see if it correctly identifies its validity.</p>
+<p>For each of the <code class="language-plaintext highlighter-rouge">camel_caser()</code> implementations that you correctly identify - marking a good one as good, or a bad one as bad - you get a point. To prevent guessing, randomization, or marking them all the same, any incorrect identification <strong>loses</strong> you a point. However, after each autograde run, we <em>will</em> tell you how many good ones you correctly identified and how many bad ones you identified, so you know which unit tests may need improvement.</p>
+<p>If your unit test segfaults or otherwise crashes, our test will interpret that as evaluating that implementation as a bad one.</p>
+<p>You cannot assume <em>anything</em> about the input, other than the input string being NUL-terminated, just like all C strings.</p>
+<div class="pad"><div class="card">
+<h4 id="example">Example</h4>
+
+<p>Let’s say there are five good implementations and five bad implementations. If you correctly say all five good are good, then you’d get +5 points. If you correctly identify three of the bad ones as bad, then you would get +3 for those and -2 for incorrectly labeling the others. In this case, you’d get a 6/10.</p>
+
+</div></div>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="tips-and-tricks-on-approaching-assignments" class="title-text">Tips and tricks on approaching assignments<a class="anchor title-text" href="#tips-and-tricks-on-approaching-assignments"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<ul>
+  <li>Always read the documentation entirely, before beginning to approach the assignment. Note down what you need to do, and what you should not be doing. Keep a checklist of things to implement to prevent yourself from forgetting things.</li>
+  <li>Read the header files of the assignments first. These files will contain comments on the behavior of functions. Please report to staff if a function is not sufficiently documented.</li>
+  <li>Work incrementally. Add in a function or two, then test to make sure it works before moving on.</li>
+  <li>Test extensively. Be the most evil user you can be, and try various nasty (but valid) inputs to see if your code handles them or not.</li>
+  <li>Good function/variable naming and well placed comments save lives.</li>
+  <li>For every <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code> you call, make sure there is a corresponding <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/free.3p.html" class="fancy-link">free</a></code> somewhere.</li>
+  <li>Pay attention to the small details (such as function return values, side effects, etc). C is a language where every detail matters.</li>
+  <li>Make sure your code works in the <code class="language-plaintext highlighter-rouge">release</code> build, as we will run tests on that build (see Luscious Locks documentation for a detailed explanation of the different builds).</li>
+  <li>Always debug your code using the <code class="language-plaintext highlighter-rouge">debug</code> build, as the debug build is compiled with the <code class="language-plaintext highlighter-rouge">-O0</code> flag, which means no compiler optimizations. In addition, the debug build is compiled with the <code class="language-plaintext highlighter-rouge">-g</code> flag. This allows you to view source code in GDB, and shows the line numbers where things fail in Valgrind.</li>
+  <li>Ensure that the code you submitted is the version that you want to grade (before the deadline, or before running an autograder run).</li>
+  <li>Take note of graded files. Make sure any changes you want graded are placed in the graded files.</li>
+  <li>Do not declare your functions as just <code class="language-plaintext highlighter-rouge">inline</code>, as it is a keyword that may cause issues with linkage. Functions declared with <code class="language-plaintext highlighter-rouge">inline</code> will not have an external definition (unless overrided with keywords like <code class="language-plaintext highlighter-rouge">extern</code>), so it may be considered undefined unless an explicit external definition is provided. In addition, the auto-grader compiles the code in debug mode for valgrind checks, which <code class="language-plaintext highlighter-rouge">inline</code> can break. You can read more about this <a href="https://stackoverflow.com/questions/25000497/whats-the-difference-between-static-inline-extern-inline-and-a-normal-inline" class="fancy-link wiki-link">here</a> or <a href="https://en.cppreference.com/w/cpp/language/inline" class="fancy-link wiki-link">here in the docs</a>.</li>
+  <li>Pay attention to Ed for pitfalls and issues that you may have overlooked.</li>
+</ul>
+<h3 id="print-smart" class="title-text">Print smart</h3>
+<p>Many assignments in this course will read your output and grade them. This means that having stray prints may cause you to randomly fail tests. Furthermore, excessive logging prints can reduce the performance of your code, which can also cause you to fail tests. Therefore, you should always check your code to make sure you don’t have random prints in your code. Instead of writing print statements and removing them repeatedly, a recommended strategy is to use the following function below to perform logging:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//You may want to consider using the #define directive for this, especially if you're using this in multiple files
+void log(char *message) {
+    #ifdef DEBUG
+    fprintf(stderr, "%s\n", message);
+    #endif
+}
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">DEBUG</code> macro is enabled in the <code class="language-plaintext highlighter-rouge">debug</code> build by passing the flag <code class="language-plaintext highlighter-rouge">-DDEBUG</code> to the compiler when compiling the <code class="language-plaintext highlighter-rouge">debug</code> build of an assignment (please report to staff if an assignment’s <code class="language-plaintext highlighter-rouge">debug</code> build does not have the <code class="language-plaintext highlighter-rouge">-g</code> or <code class="language-plaintext highlighter-rouge">-DDEBUG</code> flags). The <code class="language-plaintext highlighter-rouge">#ifdef</code> statement is a preprocessor directive which includes a code snippet into the executable if the macro is enabled during compilation. Therefore, statements in <code class="language-plaintext highlighter-rouge">#ifdef DEBUG</code> blocks do not appear in <code class="language-plaintext highlighter-rouge">release</code> builds of assignments. This will prevent you from impacting the performance of <code class="language-plaintext highlighter-rouge">release</code> builds (if you need these logging prints in <code class="language-plaintext highlighter-rouge">release</code> builds, remove the <code class="language-plaintext highlighter-rouge">#ifdef</code> directive). Furthermore, this logging function prints to <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stderr.3p.html" class="fancy-link">stderr</a></code>. We typically do not check what’s in <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/stderr.3p.html" class="fancy-link">stderr</a></code>, so feel free to use that output stream to dump your logging messages.</p>
+<h3 id="errno-knows-whats-up" class="title-text">
+<code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/errno.3p.html" class="fancy-link">errno</a></code> knows what’s up</h3>
+<p>Often, you’ll see that system calls and library functions will return -1 and set <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/errno.3p.html" class="fancy-link">errno</a></code> upon execution failure. <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/errno.3p.html" class="fancy-link">errno</a></code> is a special global variable that stores the error codes for failures in function calls. Many system calls do not guarantee success and can fail at random, even <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/malloc.3p.html" class="fancy-link">malloc</a></code>! Therefore, whenever you encounter bizarre failures, one thing to keep in mind is to check if a function/system call failed, and if so, determine why it failed. Attached below is a sample code snippet of reading <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/errno.3p.html" class="fancy-link">errno</a></code> using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/perror.3p.html" class="fancy-link">perror</a></code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;errno.h&gt;  //You will need to include this if you want to access errno 
+
+ssize_t bytes = read(0, buf, 50);
+if (bytes == -1) {
+    perror("read failed");
+}
+</code></pre></div></div>
+<h3 id="a-note-on-strtok" class="title-text">A note on <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strtok.3p.html" class="fancy-link">strtok</a></code>
+</h3>
+<p>Using <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strtok.3p.html" class="fancy-link">strtok</a></code> (instead of <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strchr.3p.html" class="fancy-link">strchr</a></code>) for this MP can be confusing without an understanding of how it works, and often leads to pitfalls. An important fact about strtok to keep in mind for this MP is that it ignores multiple consecutive separators when parsing a string. If you still choose to use <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man3/strtok.3p.html" class="fancy-link">strtok</a></code>, read the first few paragraphs of the man page thoroughly.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>man strtok
+
+STRTOK<span class="o">(</span>3<span class="o">)</span>                                                     Linux Programmer<span class="s1">'s Manual                                                     STRTOK(3)
+
+NAME
+       strtok - extract tokens from strings
+
+SYNOPSIS
+       #include &lt;string.h&gt;
+
+       char *strtok(char *str, const char *delim);
+
+DESCRIPTION
+       The strtok() function breaks a string into a sequence of zero or more nonempty tokens.  On the first call to strtok(), the string to be parsed
+       should be specified in str.  In each subsequent call that should parse the same string, str must be NULL.
+
+       The delim argument specifies a set of bytes that delimit the tokens in the parsed string.  The caller may specify different strings  in  delim
+       in successive calls that parse the same string.
+
+       Each  call  to  strtok() returns a pointer to a null-terminated string containing the next token.  This string does not include the delimiting
+       byte.  If no more tokens are found, strtok() returns NULL.
+
+      ...
+
+</span></code></pre></div></div>
+<p>Good luck!</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/extreme_edge_cases.md";
+  </script>
+</body>
+
+</html>

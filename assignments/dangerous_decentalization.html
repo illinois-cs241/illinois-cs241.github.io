@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Decentralized Network</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Decentralized Network" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Decentralized Network
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2019-11-14 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>src/</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc"></ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Decentralized Network are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Understanding network topology</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Understanding high-level network protocols</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Exploring common algorithms in distributed systems</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+
+<p>This section of the doc will introduce you to some fundamental concepts in networking and distributed systems, such as network protocol and decentralization. If you already feel <em>very</em> comfortable with these ideas, feel free to skip it and jump directly to the “Requirements” section.</p>
+
+<h3 id="what-is-a-network" class="title-text">What is a network?</h3>
+
+<p>A network is a set of processes (usually running on multiple machines, but not always) that communicate with each other over some communication channel (LAN, WiFi, Bluetooth, etc). Networks are incredibly useful because they can leverage the power of resource-sharing.</p>
+
+<p>Here are some examples of networks: fax machines (<em>what’s a fax machine?</em>), a city’s traffic control system, an email system, a virtual private network, a website and its visitors, the iPhones of Uber drivers and riders, and–very generally–the internet.</p>
+
+<h3 id="what-is-a-network-protocol" class="title-text">What is a network protocol?</h3>
+
+<p>The definition of a network protocol, according to Wikipedia, is this: <em>“A system of rules that allow two or more entities of a communications system to transmit information via any kind of variation of a physical quantity.”</em></p>
+
+<p>In layman’s term, a network protocol is just an agreement made by all the nodes in a network on how to communicate with one another. It is like a blueprint: <em>You sent me a bunch of bytes over the network, how do I reconstruct your message and understand it?</em></p>
+
+<p>Here are some examples of network protocols:</p>
+
+<ul>
+  <li>TCP (Transmission Control Protocol)
+    <ul>
+      <li>TCP is a protocol at the <em>transport layer</em>, which delivers streams of bytes between hosts communicating via an IP network.</li>
+      <li>The main purpose of TCP as a protocol is to make sure that packages are delivered reliably in the correct order and without error.</li>
+    </ul>
+  </li>
+  <li>HTTP (Hypertext Transfer Protocol)
+    <ul>
+      <li>HTTP is a protocol at the <em>application layer</em>. It is built on top of TCP, which guarantees that packages are sent and received in the right orders, and is used by browsers. So HTTP does not concern itself with low-level implementations of the network layer, but focuses more on higher-level functionalities like sessions, request methods (GET, POST, etc.), and status code.</li>
+      <li>
+        <p>Here is an example of what a HTTP request looks like:</p>
+
+        <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>  GET / HTTP/1.1
+  Host: developer.mozilla.org
+  Accept-Language: fr
+</code></pre></div>        </div>
+      </li>
+      <li>Notice how HTTP includes headers that communicate informations such as what language is accepted. This is often the level of abstraction that most distributed systems deal with.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>In this assignment, you will learn to develop your own protocol. Your protocol does not need to be as complicated as HTTP, but it needs to contain enough information to satisfy what your network tries to achieve.</p>
+
+<p>For example, if I’m designing a protocol for a chat service, my protocol might look something like this:</p>
+
+<p><code class="language-plaintext highlighter-rouge">[sender ID (4 bytes)][timestamp (8 bytes)][message size (4 bytes)][text message]</code></p>
+
+<p>In this protocol, the <code class="language-plaintext highlighter-rouge">sender ID</code> informs other nodes who is sending the message, <code class="language-plaintext highlighter-rouge">timestamp</code> can be used to order messages, <code class="language-plaintext highlighter-rouge">message size</code> helps nodes to verify that they’ve received the whole uncorrupted message, and <code class="language-plaintext highlighter-rouge">message</code> will contain the actual string message.</p>
+
+<p>This is a minimalistic protocol that meets the requirement of the system. When designing your own protocol, think about:</p>
+
+<ul>
+  <li>What are the needs of your system?</li>
+  <li>What information need to be communicated between nodes?</li>
+</ul>
+
+<h3 id="what-is-a-network-topology" class="title-text">What is a network topology?</h3>
+
+<p>Network topology is the structure, either graphically or logically, of a network. It essentially describes how nodes in a network are connected.</p>
+
+<p>The simplest example of a network topology is the <strong>client-server model</strong>, where one computer (or <strong><em>node</em></strong> as often referred to in distributed systems) is a dedicated server, passively listening for incoming connections and serving requests. The rest of the network consists of clients, which actively make requests to the server and make requests.</p>
+
+<p class="img-paragraph"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Client-server-model.svg" alt="client-server" width="400"></p>
+
+<p>The underlying topology of a <strong>client-server model</strong> is the <strong>star topology</strong>, where every node is connected to a central hub. Note how none of the clients are directly communicating with each other, and every message needs to go through the server.</p>
+
+<ul>
+  <li><em>In distributed systems, however, the notion of client and server is often blurred. Since a node often needs to talk to multiple other nodes at the same time, both listening for new messages and sending out its own messages, it is often both a client and a server. In practice, this is very easy to implement: just create a long-running thread for server, and spawn as many client threads as needed on-demand.</em></li>
+</ul>
+
+<p>Another network topology you sometimes see in distributed systems is the <strong>fully-connected network</strong>, where every node is connected to each other:</p>
+
+<p class="img-paragraph"><img src="https://vignette.wikia.nocookie.net/itlaw/images/7/78/454px-True_Mesh_Diagram.svg.png" alt="fully-connected" width="300"></p>
+
+<p>A <strong>fully-connected network</strong> is extremely resilient, since:</p>
+
+<ul>
+  <li>The cost of routing a message to a node is O(1) (by just sending the message directly).</li>
+  <li>It can tolerates as many node failure as possible. In other word, if one node fails, all other nodes can still talk to each other.</li>
+</ul>
+
+<p>However, <strong>fully-connected networks</strong> do not scale very well. The number of connections in the system grows quadratically (O(n^2)) with the number of nodes, which can easily over-flood a network. So in reality, this topology is only used for small networks with a relatively small number of nodes.</p>
+
+<p>The most common topology in distributed systems is the <strong>partially-connected network</strong>, which broadly covers all networks in which the nodes are partially connected. Here are some common examples of <strong>partially-connected</strong> topologies (ignore the top right one):</p>
+
+<p class="img-paragraph"><img src="https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopologies.svg" alt="partially-connected" width="500"></p>
+
+<p>Each topology has its own pros and cons. For example, a <strong>ring network</strong> performs really well under heavy network load; it can easily achieve mutual exclusion (by passing a token along the ring); and it is easy to configure. But a <strong>ring network</strong> is not fault-tolerant, and its communication delay is bottlenecked by the slowest connection between two nodes.</p>
+
+<p>In this MP, you will implement a decentralized network topology that looks like a hybrid between a <strong>star network</strong> and a <strong>fully-connected network</strong>. But first, let’s talk about what a decentralized network means.</p>
+
+<h3 id="decentralization" class="title-text">Decentralization</h3>
+
+<p>A decentralized system, described in one sentence, is a network in which no one node can control every other nodes.</p>
+
+<p>Formally, a decentralized system has two properties:</p>
+
+<ul>
+  <li>It uses local computation to achieve global goal.
+    <ul>
+      <li>For example, averaging all values across a network can be done locally by each node averaging with its neighbor’s averages, which eventually converges to a global average (sometimes called <em>average consensus</em>).</li>
+    </ul>
+  </li>
+  <li>It stores data locally.
+    <ul>
+      <li>In other word, no single node has all the information in a network.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Examples of decentralized systems include:</p>
+
+<ul>
+  <li>P2P applications like the original Skype, BitTorrent, and Napster.</li>
+  <li>Blockchain applications like BitCoin and friends.</li>
+  <li>Many techniques used in cloud applications are decentralized by nature.
+    <ul>
+      <li>For example, the distributed database <em>Apache Cassandra</em> uses a ring topology under the hood for fast querying.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="pad"><div class="card">
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h5 id="pros-of-decentralized-systems">Pros Of Decentralized Systems:</h5>
+<ul>
+  <li>Scalability:
+    <ul>
+      <li>Decentralized networks <strong><em>tend</em></strong>* to scale really well, since instead of global computation they favor local communications, which means that the system is not limited by the resource (bandwidth, CPU, disk, etc) of a single node.
+        <ul>
+          <li><em>*Note that, this is a generalization. In many cases, decentralization scales well, but there are very valid reasons why the majority of large scale systems (think Google or Facebook) are not truly decentralized. As you will read later, scalability is a very ambiguous metric.</em></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Fault-Tolerance:
+    <ul>
+      <li>Since there is no central node, there is no single point of failure. A well designed decentralized system can tolerate a portion of its nodes failing. In contrast, if a “super-node” fails in a centralized system, the whole system is at risk of failing.</li>
+    </ul>
+  </li>
+  <li>Trustless:
+    <ul>
+      <li>One of the main reasons why there has been so much hyper over decentralization is that a decentralized system doesn’t require trust in a central authority. Now, the motivation for wanting a trust-less system often ties into politics and business incentives. But regardless, from a purely technical standpoint, achieving consensus without a central authority is quite impressive by itself.</li>
+    </ul>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h5 id="cons-of-decentralized-systems">Cons of Decentralized Systems:</h5>
+<ul>
+  <li>Security:
+    <ul>
+      <li>In a decentralized network, <em>everyone</em> needs to maintain the network’s integrity and security, which is very hard to do. Usually, a decentralized system tries to make sure that as long as the majority of the nodes are not compromised, the system will still function properly.</li>
+    </ul>
+  </li>
+  <li>Scalability:
+    <ul>
+      <li>Wait, didn’t you just say that scalability is a pro for decentralized systems? Yes, but turns out, scalability does not grow in a single direction. As the network becomes larger and larger, it becomes harder and harder to <strong>synchronize</strong> the system. Sometimes, the cost to synchronize data and coordinate nodes can out-weight the benefit of decentralization.
+        <ul>
+          <li>So, in reality, scalability in decentralized system often becomes a trade-off between global computation cost and synchronization cost.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+<p>For this MP, your goal is to design a network protocol for a decentralized network, and implement it using any language you want.</p>
+<h3 id="topology" class="title-text">Topology</h3>
+<p>The network topology you will implement is a hybrid between a star network and a fully-connected network:</p>
+<p class="img-paragraph"><img src="graph.png" alt="topology" width="300"></p>
+<p>In this network, the nodes in the middle (labeled <strong>0</strong>, <strong>1</strong>, and <strong>2</strong>) are fully-connected. They function as routers. Each router is at the center of a sub-graph that is star-shaped; there are 3 such sub-graphs: (<strong>0</strong>, <strong>A</strong>, <strong>B</strong>), (<strong>1</strong>, <strong>C</strong>, <strong>D</strong>), and (<strong>2</strong>, <strong>E</strong>, <strong>F</strong>).</p>
+<p>Notice that in order for the peripheral nodes (A, B, C, D, E, F) to talk to each other, they must send their message to a router node (0, 1, 2) first, then the router node will forward the message until it reaches the destination.</p>
+<p>You will implement such a network consisting of 9 nodes. Node A, B, C, D, E, and F are peripheral nodes that can send message to each other through routers. Node 0, 1, 2 are router nodes that only forward messages but do not create any new message.</p>
+<h3 id="implementation" class="title-text">Implementation</h3>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h5 id="features">Features:</h5>
+<ol>
+  <li>Design a simple network protocol for this MP and describe it in words.</li>
+  <li>Implement a program that can be run on multiple nodes and have the following features:
+    <ul>
+      <li>On a router:
+        <ul>
+          <li>Listen for incoming messages, and deliver the message to the correct destination node.</li>
+          <li>Print out all messages it receives for easy visualization.</li>
+        </ul>
+      </li>
+      <li>On a peripheral node:
+        <ul>
+          <li>Get inputs from user that include: a message and a destination node ID. (You can use any format you want.)</li>
+          <li>Send the message to a router using your network protocol.</li>
+          <li>Listen for any incoming messages and print them out.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h5 id="network-configuration-files">Network Configuration Files:</h5>
+<p><em>You can test your code on localhost by using different ports. You can have the following setups:</em></p>
+<ul>
+  <li>Node A run on 107.0.0.1, port 4000.</li>
+  <li>Node B run on 107.0.0.1, port 4001.</li>
+  <li>Node 0 run on 107.0.0.1, port 4002.</li>
+  <li>… and so on …</li>
+</ul>
+<p>To make sure that the correct nodes are connected to each other according to the topology, you can hardcode the IP addresses and ports of all the connections a node has in a set of configuration files.</p>
+<p>For example, node A will have the following configuration file:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A 107.0.0.1:[port number for node A]
+0 107.0.0.1:[port number for node 0]
+</code></pre></div></div>
+<p>where the first line is the address and port node A itself will listen on, and the lines following are the connections to other nodes it will make.</p>
+<p>Using the same example, node 0 will have the following configuration file:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0 107.0.0.1:[port number for node 0]
+A 107.0.0.1:[port number for node A]
+B 107.0.0.1:[port number for node B]
+1 107.0.0.1:[port number for node 1]
+2 107.0.0.1:[port number for node 2]
+</code></pre></div></div>
+<p>where node 0 will listen on the address and port specified on the first line, and the other 4 lines specify connections to node A, B, 1, and 2.</p>
+<p>This way, to run your code, you can simply open up 9 terminals and run the same program with 9 different configuration files to achieve the desired network topology!</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h5 id="suggested-implementations">Suggested Implementations:</h5>
+<ul>
+  <li>Router node:
+    <ol>
+      <li>Load the network configuration file for the node into a lookup table.</li>
+      <li>If it receives a message, try to find the destination node in the lookup table.
+        <ul>
+          <li>If the node is in the lookup table, which means the router is connected to it, simply send the message to the corresponding address and port.</li>
+          <li>If the node is not in the lookup table, forward the message to another router.
+            <ul>
+              <li><strong>You must find a way to avoid having the same message forwarded back to yourself, creating an infinite forwarding loop. (hint: what information do you need to put into your network protocol to achieve this?)</strong></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+  <li>Peripheral node:
+    <ol>
+      <li>Load the network configuration file.</li>
+      <li>Spawn a thread to listen for any incoming message.
+        <ul>
+          <li>If it receives any incoming message, print it out to the screen.</li>
+        </ul>
+      </li>
+      <li>Have the main thread read in user input in a while loop.
+        <ul>
+          <li>Parse the user input into a message and a destination node ID (which should be A, B, C, D, E, or F).</li>
+          <li>Send the message to the router that the node is connected to.</li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+<ul>
+  <li>The MP will be hand-graded.
+    <ul>
+      <li>Different from CS 341 MPs, in this MP, you do not need to worry about design details. If there is something unclear about the requirement, feel free to use your own interpretation. We will not knock off points for small inconsistencies.</li>
+      <li>That being said, you must demonstrate a good understanding of the concepts. Your network protocol and your code must reflect what you learned from this doc.</li>
+    </ul>
+  </li>
+  <li>
+<strong>In your repository, you must update the file <code class="language-plaintext highlighter-rouge">README.md</code> to include the following:</strong>
+    <ul>
+      <li>Text description of the network protocol you designed.</li>
+      <li>Instructions on how to run your program.</li>
+    </ul>
+  </li>
+  <li>If you do not have a fully functioning program, don’t worry–you will still get partial credits.
+    <ul>
+      <li>We don’t expect you be become network-programming masters in three weeks! The points you get will largely reflect your understanding and effort.</li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>Can I use any language I want?
+    <ul>
+      <li>Yes.</li>
+    </ul>
+  </li>
+  <li>I don’t know how to write networking code, how do I learn?
+    <ul>
+      <li>There are many great resources online:
+        <ul>
+          <li>For Python: https://realpython.com/python-sockets/</li>
+          <li>For C: https://beej.us/guide/bgnet/</li>
+          <li>CS341 WikiBook:
+            <ul>
+              <li>C client: http://cs341.cs.illinois.edu/wikibook/networking-part-3-building-a-simple-tcp-client.html</li>
+              <li>C server: http://cs341.cs.illinois.edu/wikibook/networking-part-4-building-a-simple-tcp-server.html</li>
+            </ul>
+          </li>
+          <li>When in doubt, Google!</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>I don’t understand a concept, what do I do?
+    <ul>
+      <li>Post a question on Piazza! We will try to answer them as fast as possible.</li>
+      <li>Email me at <code class="language-plaintext highlighter-rouge">shang9@illinois.edu</code> to set up an office hour.</li>
+    </ul>
+  </li>
+  <li>I’m worried that I can’t finish this MP even though I have put in the effort.
+    <ul>
+      <li>We understand that this MP may be hard for someone who doesn’t have any experience writing network code. Simply do your best, and document your ideas. We will grade fairly!</li>
+    </ul>
+  </li>
+</ul>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/dangerous_decentalization.md";
+  </script>
+</body>
+
+</html>

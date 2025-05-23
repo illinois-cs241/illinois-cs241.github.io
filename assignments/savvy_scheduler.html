@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Savvy Scheduler</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Savvy Scheduler" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Savvy Scheduler
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+            <div class="submission-wrapper">
+              
+              <b>Entire Assignment</b> due <b>2025-04-30 23:59</b><br />
+              
+              <b>Graded files:</b>
+              <ul>
+                
+                <li>libscheduler.c</li>
+                
+              </ul>
+              
+              
+            </div>
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_introduction" href="#introduction" class="fancy-link">Introduction</a></li>
+<li><a id="toc_before-you-start" href="#before-you-start" class="fancy-link">Before you start</a></li>
+<li><a id="toc_mission" href="#mission" class="fancy-link">Mission</a></li>
+<li><a id="toc_directions" href="#directions" class="fancy-link">Directions</a></li>
+<li><a id="toc_job-struct" href="#job-struct" class="fancy-link">Job Struct</a></li>
+<li><a id="toc_functions-you-need-to-implement" href="#functions-you-need-to-implement" class="fancy-link">Functions you need to implement</a></li>
+<li><a id="toc_testing" href="#testing" class="fancy-link">Testing</a></li>
+<li><a id="toc_spooky-bugs" href="#spooky-bugs" class="fancy-link">Spooky bugs</a></li>
+<li><a id="toc_the-threading-model---gthreads-optional-reading" href="#the-threading-model---gthreads-optional-reading" class="fancy-link">The threading model - gthreads (optional reading)</a></li>
+<li><a id="toc_constants" href="#constants" class="fancy-link">Constants</a></li>
+<li><a id="toc_gthread-functions" href="#gthread-functions" class="fancy-link">Gthread Functions</a></li>
+<li><a id="toc_okay-so-how-does-this-work" href="#okay-so-how-does-this-work" class="fancy-link">Okay, so how does this work?</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Savvy Scheduler are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">scheduling algorithms</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">preemptive vs non-preemptive</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Relating the different algorithms with a priority queue</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="introduction" class="title-text">Introduction<a class="anchor title-text" href="#introduction"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>In this lab you’ll be writing a scheduler. Rather than interacting directly with the operating system, we’ve whipped up a userspace threading library!</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="before-you-start" class="title-text">Before you start<a class="anchor title-text" href="#before-you-start"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p><strong>Think about how to implement a scheduler!</strong></p>
+<p>Try to answer these questions…</p>
+<ol>
+  <li>What do you do for incoming jobs?</li>
+  <li>How do you sort your job so that you can find the next job according to different scheme?</li>
+  <li>What kind of data structures do you need?</li>
+</ol>
+<p>What a scheduler does is to put all the jobs it gets in a queue and then sort them in some order (related to scheme). Scheduler gives them to CPU one by one. The key in scheduler is the scheme it use, and the choice of scheduling algorithm depends on many factors. For example, First Come First Serve (FCFS) is really easy to implement but might keep a short job waiting really long for a long process at the front.</p>
+<p>So now we know that a scheduler puts jobs in a queue, sort them, and give them to CPU in some order. Then what will be the best data structure to store these jobs? Priority queue can do this job really well! A priority queue is a queue with a really nice feature. It puts every incoming node in correct position so that the queue is always ordered. Therefore, you don’t need to call <code class="language-plaintext highlighter-rouge">sort()</code> every time you get a new node (job). And you can simply give them out by pulling out the first element of the queue.</p>
+<p>An important question now is: “What do you mean by <strong>ordered</strong>?” Let’s take FCFS scheduling for example. Ideally, scheduler should be able to:</p>
+<ul>
+  <li>Receive a job.</li>
+  <li>Put it in a queue with some priority.</li>
+  <li>Pull the job with highest priority and give to the CPU.</li>
+</ul>
+<p>And since we are doing FCFS, we want the element that comes first to be at the front of the queue. So you should give jobs arriving earlier higher priority and jobs arriving afterwards lower priority.</p>
+<p>Take Shortest Job First (SJF) for another example. You can give those jobs that can be finished faster higher priority. As you can see here, the key to implement a scheduler is to decide <strong>PRIORITY</strong>. And the way to decide priority in a priority queue is by giving a comparator function. By defining a job A is better than a job B in a priority queue, we mean that A has higher priority than B.</p>
+<p>So basically, half of your job in this lab is simply writing a comparator function that helps you decide which job has higher priority.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="mission" class="title-text">Mission<a class="anchor title-text" href="#mission"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="background-priority-queue" class="title-text">Background: Priority Queue</h3>
+<p>To build a scheduler, a fundamental data structure is a priority queue. You do not need to implement one, but should read and understand <code class="language-plaintext highlighter-rouge">libpriqueue</code>, our priority queue library. You will be using this library in your scheduler.</p>
+<h3 id="scheduler" class="title-text">Scheduler</h3>
+<p>You will need to implement scheduling callbacks for a userspace threading library.</p>
+<p>The scheduling algorithms you are going to implement are:</p>
+<ul>
+  <li>First Come First Served (FCFS)</li>
+  <li>Preemptive Priority (PPRI)</li>
+  <li>Priority (PRI)</li>
+  <li>Preemptive Shortest Remaining Time First (PSRTF)</li>
+  <li>Round Robin (RR)</li>
+  <li>Shortest Job First (SJF)</li>
+</ul>
+<p>You can read up on scheduling in <a href="http://cs341.cs.illinois.edu/coursebook/Scheduling" class="fancy-link wiki-link">the scheduling chapter</a></p>
+<p><strong>You should use the priority queue that we provided to help you complete this part of the lab.</strong></p>
+<p>To complete this lab, you must implement the six comparator functions and eight scheduler functions (and one optional one) defined in <code class="language-plaintext highlighter-rouge">libscheduler.c</code>. These functions are self-descriptive, but a full function outline for each function is provided for you in the file. These functions will be utilized by the green threading library (Check out the section on Gthreads below).</p>
+<p>You might want to understand how scheduler works. So we put a detailed explanation in the bottom of this webpage.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="directions" class="title-text">Directions<a class="anchor title-text" href="#directions"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>To help you finish this lab efficiently, we recommend you to follow these steps:</p>
+<ol>
+  <li>Understand when your function will be called.</li>
+  <li>Try to write pseudocode for each comparator first and see what kind of information you will need. For example, you probably need the arrival time of each job so you can implement FCFS by setting priority according to time.</li>
+  <li>Create data members in <code class="language-plaintext highlighter-rouge">job_info</code> you need for step 2.</li>
+  <li>Go back and complete your comparator functions.</li>
+</ol>
+<p>The second part of the lab is to set up scheduler itself and manage incoming jobs and completed jobs. Now you should implement those functions related to the CPU (like <code class="language-plaintext highlighter-rouge">scheduler_new_job()</code>, <code class="language-plaintext highlighter-rouge">scheduler_job_finished()</code>, <code class="language-plaintext highlighter-rouge">scheduler_quantum_expired()</code>).</p>
+<ol>
+  <li>Take a look at all these functions, write some pseudocode to realize your thoughts.</li>
+  <li>You might need to implement some helper functions to help you write these functions.</li>
+  <li>Finish these functions.</li>
+</ol>
+<p>The last part of your job is computing stats and clean-up, which is fairly trivial. You may need some extra variables to help you keep track of these stats.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="job-struct" class="title-text">Job Struct<a class="anchor title-text" href="#job-struct"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>We have provided a job struct defined in libscheduler.h. You do not need to modify the <strong>state</strong>, <strong>ctx</strong>, or <strong>stack_start</strong> fields. The only field you will be using or modifying is <strong>metadata</strong>, where you must insert your <strong>job_info</strong> struct that you will define in <strong>libscheduler.c</strong>.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="functions-you-need-to-implement" class="title-text">Functions you need to implement<a class="anchor title-text" href="#functions-you-need-to-implement"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The only graded file is <strong>libscheduler.c</strong>. You will need to augment the <code class="language-plaintext highlighter-rouge">job_info</code> struct and implement the following functions:</p>
+<h3 id="void-scheduler_start_upscheme_t-s" class="title-text">void scheduler_start_up(scheme_t s)</h3>
+<p>This function is implemented for you, but you can add some code to it if you need to initialize any global variables.</p>
+<h3 id="int-comparer_fcfsconst-void-a-const-void-b" class="title-text">int comparer_fcfs(const void *a, const void *b)</h3>
+<p>Comparer function for fcfs scheme</p>
+<h3 id="int-comparer_ppriconst-void-a-const-void-b" class="title-text">int comparer_ppri(const void *a, const void *b)</h3>
+<p>Comparer function for ppri scheme</p>
+<h3 id="int-comparer_priconst-void-a-const-void-b" class="title-text">int comparer_pri(const void *a, const void *b)</h3>
+<p>Comparer function for pri sscheme</p>
+<h3 id="int-comparer_psrtfconst-void-a-const-void-b" class="title-text">int comparer_psrtf(const void *a, const void *b)</h3>
+<p>Comparer function for psrtf scheme</p>
+<h3 id="int-comparer_rrconst-void-a-const-void-b" class="title-text">int comparer_rr(const void *a, const void *b)</h3>
+<p>Comparer function for rr scheme</p>
+<h3 id="int-comparer_sjfconst-void-a-const-void-b" class="title-text">int comparer_sjf(const void *a, const void *b)</h3>
+<p>Comparer function for sjf scheme</p>
+<h3 id="void-scheduler_new_jobjob-newjob-int-job_number-double-time-scheduler_info-sched_data" class="title-text">void scheduler_new_job(job *newjob, int job_number, double time, scheduler_info *sched_data)</h3>
+<p>This function is responsible for setting up a new job. You must populate <code class="language-plaintext highlighter-rouge">newjob-&gt;metadata</code> with the information found in <code class="language-plaintext highlighter-rouge">scheduler_info</code>. The contents of <code class="language-plaintext highlighter-rouge">newjob-&gt;metadata</code> cannot be a pointer to <code class="language-plaintext highlighter-rouge">sched_data</code> since this variable may be on the stack of the calling function. Once you’ve set up <code class="language-plaintext highlighter-rouge">newjob</code> offer it to the queue.</p>
+<h3 id="job-scheduler_quantum_expiredjob-job_evicted-double-time" class="title-text">job *scheduler_quantum_expired(job *job_evicted, double time)</h3>
+<p>This function is called at the end of every time quantum. If there is no job currently running, <code class="language-plaintext highlighter-rouge">job_evicted</code> will be NULL. If the current scheme is not preemptive and <code class="language-plaintext highlighter-rouge">job_evicted</code> is not NULL, return <code class="language-plaintext highlighter-rouge">job_evicted</code>. In all other cases, if <code class="language-plaintext highlighter-rouge">job_evicted</code> is not NULL, place it back on the queue and return a pointer to the next job that should run. (Note, it is possible for the next job to be the same as <code class="language-plaintext highlighter-rouge">job_evicted</code>)</p>
+<h3 id="void-scheduler_job_finishedjob-job_done-double-time" class="title-text">void scheduler_job_finished(job *job_done, double time)</h3>
+<p>This function will be called when a job is finished. You should update any statistics you are collecting and free any buffers you may have allocated for this job’s metadata.</p>
+<h3 id="double-scheduler_average_waiting_time" class="title-text">double scheduler_average_waiting_time()</h3>
+<p>This function returns the average waiting time across all jobs so far.</p>
+<h3 id="double-scheduler_average_turnaround_time" class="title-text">double scheduler_average_turnaround_time()</h3>
+<p>This function returns the average turnaround time across all jobs so far.</p>
+<h3 id="double-scheduler_average_response_time" class="title-text">double scheduler_average_response_time()</h3>
+<p>This function returns the average response time across all jobs so far.</p>
+<h3 id="void-scheduler_show_queue" class="title-text">void scheduler_show_queue()</h3>
+<p>This is an optional function that you can implement for debugging purposes.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="testing" class="title-text">Testing<a class="anchor title-text" href="#testing"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We have provided three interfaces to testing this lab. The first testing interface is <strong>scheduler_test.c</strong>. This file allows you to directly test the functions you’ve implemented in libscheduler.c. We recommend using this one, and have already populated it with a few test cases of our own! This is how the autograder will be testing your code. There are 10 tests that we have provided you. You can run each test with the following:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./scheduler_test <span class="o">[</span>test_no]
+</code></pre></div></div>
+<p>On success the test will return zero (you can check the return code with <code class="language-plaintext highlighter-rouge">echo $?</code>). On failure one of the asserts will cause an error.</p>
+<p>The second testing interface is write your own tests similar to the ones in <strong>main.c</strong> in <strong>gtest.c</strong>. You can then run <code class="language-plaintext highlighter-rouge">./gtest</code> and inspect gthreads.log or any printouts to check if your implementation works.</p>
+<p>The final testing interface should be thought of as more of a way to gain intuition behind the concepts rather than a way to test your code for correctness. This method is to run your scheduler with the green threading library. You can see example code in <strong>main.c</strong> which you will not be able to edit. The expected outputs for the various scheduling algorithms are stored in <strong>examples/</strong> and you will be able to diff your output to see if your scheduler produces the correct output. There is an example below.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./main fcfs <span class="o">&gt;</span> test.txt
+diff test.txt examples/expected_fcfs.txt
+
+</code></pre></div></div>
+<p>For your convenience, we’ve wrapped this with the bash script <strong>testall.sh</strong>. Running <code class="language-plaintext highlighter-rouge">./testall.sh</code> will run all the schemes and diff them with the expected output to check if your implementation is correct. If you’d like to test specific schemes, you can pass those in as arguments, for example <code class="language-plaintext highlighter-rouge">./testall.sh rr fcfs pri</code> will only test round robin, first-come-first-serve and priority.</p>
+<p>However, since this method of testing relies on outputs generated every second, it may not accurately reflect the schedulers behavior, and may falsely report your solution as correctly working. To get around this, you can also take a look at the generated log in <strong>gthread.log</strong>. This contains information about each thread’s context switches and you can manually inspect it to see if it does what you expect.</p>
+<p>Using the log file, we have built a visualizer for this data that will display which thread ran in approximately 500ms intervals. Note that the visualizer doesn’t perfectly display all the context switches, and performs especially badly with round robin output. However, it works well for schemes such as sjf and will display the following if <strong>gthread.log</strong> contains the log of running <code class="language-plaintext highlighter-rouge">./main sjf</code>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>['d10', 'd40', 'd70', 'da0', 'dd0']
+d10: ++                       
+d40:   +++                    
+d70:      +++++               
+da0:           +++++++        
+dd0:                  ++++++++
+</code></pre></div></div>
+<p>There are couple things to note about this output. The first is that each ‘+’ represents something slightly more than half a second so we interpret every two ‘+’s as something close to 1s. The second thing is to note that the thread names are replaced by a uid in the log file. You can which ones corresponding to which by looking through the log for registration messages and the code to check which order the threads were created.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="spooky-bugs" class="title-text">Spooky bugs<a class="anchor title-text" href="#spooky-bugs"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>This lab has some strange gotchas when testing with the gthread library. For this reason, we recommend using (and augmenting) the tests in <code class="language-plaintext highlighter-rouge">scheduler_test.c</code>. If you notice any random segfaults or freezes in the program that occur non-deterministically (maybe only once or twice every 10 runs) please report this to us so we can get that patched! (This will not affect grading since the grader will directly test the functions in <strong>libscheduler.c</strong> as opposed to the actual context switches generated by the green threading library.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="the-threading-model---gthreads-optional-reading" class="title-text">The threading model - gthreads (optional reading)<a class="anchor title-text" href="#the-threading-model---gthreads-optional-reading"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Initial idea and code from <a href="https://c9x.me/articles/gthreads/code0.html" class="fancy-link wiki-link">here</a>.</p>
+<p>Gthreads is an implementation of green threads in c! It uses libscheduler to schedule the threads.</p>
+<p>NOTE: The green thread scheduler uses alarms and a SIGALRM handler, it is an error to use some other handler for SIGALRM with gthreads.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="constants" class="title-text">Constants<a class="anchor title-text" href="#constants"> #</a>
+</h2></div>
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>There are two constants defined as enums in gthread.h, MaxGThreads (not used, remove) and StackSize. Stack size determines the size of the stack for each green thread spawned.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="gthread-functions" class="title-text">Gthread Functions<a class="anchor title-text" href="#gthread-functions"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<h3 id="gtinit" class="title-text">gtinit</h3>
+<p><em>This function should be called before anything else</em></p>
+<p>This function sets up the scheduler and a signal handler for SIGALRM. It is undefined behavior to call any other function in gthread before this one.</p>
+<p>Takes in a scheme_t detailing what scheduling algorithm to be used.</p>
+<h3 id="gtgo" class="title-text">gtgo</h3>
+<p>This is like pthread_create. It spawns a new green thread (won’t start until it’s actually scheduled).</p>
+<p>It takes in the function to execute and a scheduler_info* to get it’s scheduler attributes.</p>
+<h3 id="gtstart" class="title-text">gtstart</h3>
+<p>This function starts off the scheduling process with a call to ualarm.</p>
+<h3 id="gtret" class="title-text">gtret</h3>
+<p>This function should be called from a thread to clean up and exit. If called from main it will wait for all other threads to finish before exiting with the status as the argument to gtret. If any other thread calls this function, it is equivalent to calling return.</p>
+<h3 id="gtsleep" class="title-text">gtsleep</h3>
+<p>This function will sleep for at least the number of seconds specified by the argument. Unlike sleep(2), this function will also call yield and allow another thread to run (if there is one on the queue).</p>
+<h3 id="gtdoyield" class="title-text">gtdoyield</h3>
+<p>This function is a wrapper around the internal function gtyield and might perform a context switch to another thread. The return value will be true if a context switch occurred and false otherwise. The argument is not important, so long as it is not -1 or SIGALRM.</p>
+<h3 id="gtcurrjob" class="title-text">gtcurrjob</h3>
+<p>Returns a job* indicating the current running job</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="okay-so-how-does-this-work" class="title-text">Okay, so how does this work?<a class="anchor title-text" href="#okay-so-how-does-this-work"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The idea of green threads is essentially to have a user-space thread that is lighter than a pthread, but at the cost of not executing in parallel. Instead a green thread will switch between many “threads of execution” giving the illusion of parallel processing. As you might have guessed, this switch involves what we call a “context switch” that allows us to save the current state of the thread before moving to a different one.</p>
+<p>To learn more about the concept, read this <a href="https://c9x.me/articles/gthreads/code0.html" class="fancy-link wiki-link">green threading intro</a> article that we used as a starting point.</p>
+<p>Now, let’s talk about what we’ve added on top of that very simple implmentation. We need a way to preempt threads. For our purposes, a signal is an acceptable solution to this problem. We have used the function ualarm(3) to schedule alarms on regular intervals. The handler then calls gtyield which will call scheduler_quantum_expired to select the next job to run.</p>
+<p>Note that almost all the scheduling magic is implemented in libscheduler! The only exception is that the main thread will never be sent to any of the functions in libscheduler. Instead, every other quanta, gtyield will store the current job do a context switch to main, and the next time gtyield is called from main, the process will switch back to the stored job.</p>
+</div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/savvy_scheduler.md";
+  </script>
+</body>
+
+</html>

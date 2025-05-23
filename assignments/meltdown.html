@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- If for some reason you are using IE, use edge -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- So bootstrap isn't horrible, set the width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="mask-icon" href="/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#ffffff">
+
+  <title>CS 341 · Melt Kings Secret</title>
+
+  <!-- Reference a CDN so this is properly cached in the browser forever. Unless they clean out the
+       Cache this will incur no load time. Ideally we should put a security checksum but that breaks
+       Firefox development sometimes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- For table of content  -->
+
+  <link rel="stylesheet" href="/css/code-style.css"/>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/bootstrap-toc.css"/>
+
+  <meta property="og:locale" content="en_US">
+
+  
+  <meta property="og:title" content="Melt Kings Secret" />
+  
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://cs341.cs.illinois.edu" />
+
+  
+  <meta property="og:description" content=""Webpage for CS 341: System Programming at the University of Illinois Urbana-Champaign. All documentation and information about the course can be found here."
+" />
+  
+
+</head>
+
+
+<body data-spy="scroll" data-target="#overview" data-offset="50">
+  <div class="container-fluid">
+    <div class="row" style="display: flex; justify-content: stretch;">
+      <!-- Always shows a header, even in smaller screens. -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <!-- Navigation button as html so we don't have to resize images -->
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-expanded="false"
+        aria-controls="navbar"
+      >
+        <!-- Hamburger Navigation bar on small -->
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Full title on laptop -->
+      <a class="navbar-brand navbar-item normal" href="/">
+             <span>CS 341: System Programming</span> 
+      </a>
+
+      <!-- Smaller on mobile-->
+      <a class="navbar-brand navbar-item small" href="/">
+          <span>CS 341</span>
+      </a>
+    </div>
+
+    <!-- Finally generate what is in the navbar -->
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+        <li class="navbar-item">
+          <a href="/assignments.html">Assignments</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/quiz_topics.html">Quizzes</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/grades.html">Grades</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/schedule.html">Lectures</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/syllabus.html">Syllabus</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/staff.html">Staff</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/resources.html">Resources</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+            <li class="navbar-subitem">
+              <a href="/peer_tutoring.html">Peer Tutoring</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/coursebook/index.html">Coursebook</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="">Lecture Materials</a>
+            </li>
+            
+            <li class="navbar-subitem">
+              <a href="/tutorials/development">Linux Virtual Machine</a>
+            </li>
+            
+          </ul>
+        </li>
+        
+        <li class="navbar-item">
+          <a href="/honors.html">Honors</a>
+          <!-- Generate sublinks-->
+          <ul class="nav navbar-nav subitem-container">
+            
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto"
+    rel="stylesheet"
+  />
+</nav>
+
+      <div class="row">
+        <div class="col-sm-3 col-xs-12 hidden-xs" style="min-height: 100%">
+          <nav id="overview" data-toggle="toc" class="sticky-top"></nav>
+        </div>
+        <div class="col-sm-9 col-xs-12">
+          <div class="title">
+            
+            
+            
+            <h1>
+              Melt Kings Secret
+            </h1>
+          </div>
+          <div class="content col-sm-11 .col-sm-offset-1">
+            
+          </div>
+          <div class="hidden-sm hidden-md hidden-lg">
+            
+            <div class="toc-wrapper">
+<h4>Content</h4>
+<ul class="toc">
+<li><a id="toc_melt-kings-secret" href="#melt-kings-secret" class="fancy-link">Melt King’s Secret</a></li>
+<li><a id="toc_royal-system" href="#royal-system" class="fancy-link">Royal System</a></li>
+<li><a id="toc_requirement" href="#requirement" class="fancy-link">Requirement</a></li>
+<li><a id="toc_meltdown" href="#meltdown" class="fancy-link">Meltdown</a></li>
+<li><a id="toc_hack" href="#hack" class="fancy-link">Hack</a></li>
+<li><a id="toc_more" href="#more" class="fancy-link">More</a></li>
+</ul>
+</div>
+            
+          </div>
+          <div id="content">
+            
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <p>
+    The learning objectives for Melt Kings Secret are: <br/>
+    <ul class="mdl-list">
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Learn about the underlying vulnerabilities involved in spectre & meltdown</span>
+        </li>
+      
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">Start questioning assumptions when developing a program</span>
+        </li>
+      
+    </ul>
+  </p>
+
+
+
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="melt-kings-secret" class="title-text">Melt King’s Secret<a class="anchor title-text" href="#melt-kings-secret"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>The king of <em>Systems Programming</em> is about to retire and impressed by your talent as the Duke of <em>P=NP</em> wanted you to 
+take over the iron throne. However, the hand of the king convinced him that you lack security white-hat / black-hat 
+skills and has thus created a fail proof system for you to crack. If you fail to uncover the kings secret, 
+the hand of the king becomes the de-facto ruler and will sentence you to the nights watch.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="royal-system" class="title-text">Royal System<a class="anchor title-text" href="#royal-system"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The architecture of the system is based on CISC (Complex Instruction Set Computing) and takes a command and its type as 
+input on each line. The commands are static while the types can change The following are the list of commands available:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOAD VALUE[*]
+    Loads the key associated with the value inside the main memory. 
+    The VALUE is either "duke" or "kingsSecret". 
+    [*] is an optional number used to load only a specific character from the key.   
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE CACHE[*] / CACHE[MEM]
+    Update the cache with the key loaded inside the main memory. 
+    [*] is an optional number used to load the first character from key inside the specfic location / address. 
+    [MEM] is another optional which takes the first character loaded from key and acts as a location.
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRINT CACHE[*] / CACHE-TIME[*]
+    Print all the cache locations and its values. You can substitute CACHE with CACHE-TIME to see the time taken to load 
+    a particular location inside the cache. 
+    [*] is optional number which is used to print the specific location of the cache.   
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CLEAR ALL
+    Clear the main memory and the cache. 
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EXIT SYSTEM 
+    Shut down the system. 
+</code></pre></div></div>
+<ul>
+  <li>Possible values for key: a-z</li>
+  <li>Size of the cache: 26</li>
+  <li>You have access to the key for value: duke.</li>
+</ul>
+<p>Lets try to retrieve the key for value duke:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LOAD duke
+UPDATE CACHE
+PRINT CACHE
+PRINT CACHE[1]
+CLEAR ALL
+
+</code></pre></div></div>
+<p>Make sure you get familiar with all the commands and how to use them.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="requirement" class="title-text">Requirement<a class="anchor title-text" href="#requirement"> #</a>
+</h2></div>
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><p>You need to find the key associated with the value <em>kingsSecret</em>. This requires privileged access as being equivalent to 
+be stored inside kernel memory. Create a file secret.txt and add the kingsSecret to it. Also, add the final list of 
+commands that you used to hack the system.</p></div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="meltdown" class="title-text">Meltdown<a class="anchor title-text" href="#meltdown"> #</a>
+</h2></div>
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>The hand being happy with king’s decision decided to impress him further. He did so by adding out-of-order execution or 
+branch prediction to the processor underneath the system. Essentially what that means is given an instruction, why wait 
+for it to fully pass through the processor pipeline while the other instruction can start simultaneously. The same idea
+does not just apply to the next instruction but applies jumping to any instruction inside the code. 
+If there is an error, the state of the code and memory will go back to where the issue happened thus preserving the 
+integrity. The following will enable this functionality inside the royal system:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EXECUTE START / END
+    You can execute commands within start and end block asynchronously. The commands 
+    will only start executing after the EXECUTE END.
+</code></pre></div></div>
+<p><em>Note: All modern processors by default use out of order execution for optimization and is not dependant on user 
+code for it.</em></p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="hack" class="title-text">Hack<a class="anchor title-text" href="#hack"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>As the state of the memory is reverted, you cannot read values from privileged locations but in combination with 
+cache-timing, you can exploit this. This vulnerability in most modern processors allows user programs to read 
+kernal memory (Meltdown) and also read memory of other user programs (Spectre).</p>
+<p>Can you frame a similar exploit for the royal system and read the kingsSecret?</p>
+<p><strong>Hints</strong></p>
+<ul>
+  <li>Understand what each command does and observe what happens when you access the kingsSecret</li>
+  <li>Try the EXECUTE block of commands with the duke and see how it functions</li>
+  <li>Is the output always going to be deterministic when you devise your hack?</li>
+</ul>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="more" class="title-text">More<a class="anchor title-text" href="#more"> #</a>
+</h2></div>
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1"><ul>
+  <li>https://medium.com/@mattklein123/meltdown-spectre-explained-6bc8634cc0c2</li>
+  <li>https://googleprojectzero.blogspot.com/2018/01/reading-privileged-memory-with-side.html</li>
+  <li>https://meltdownattack.com/</li>
+</ul></div></div></div>
+</div></div>
+</div>
+            
+            <div class="wrapper">
+<div class="pad"><div class="card">
+<div class="title"><h2 id="submission-instructions" class="title-text">Submission Instructions<a class="anchor title-text" href="#submission-instructions"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>Please read details on <a href="/#academic-integrity" class="fancy-link wiki-link">Academic Integrity</a> fully. These are shared by all assignments in CS 341.</p>
+<p>We will be using GitHub as our hand-in system this semester. Our grading system will checkout your most recent (pre-deadline) commit for grading. Therefore, to hand in your code, all you have to do is commit and push to your Github repository.</p>
+<p>To check out the provided code for <code class="highlighter-rouge">assignments-meltdown</code> from the class repository, go to your cs341 directory (the one you checked out for “know your tools”) and run:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git pull release master
+</code></pre></div></div>
+<p>If you run <code class="language-plaintext highlighter-rouge"><a href="https://man7.org/linux/man-pages/./man1/ls.1p.html" class="fancy-link">ls</a></code> you will now see a <code class="language-plaintext highlighter-rouge">assignments-meltdown</code> folder, where you can find this assignment! To commit your changes (send them to us), type:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add assignments-meltdown
+git commit -m "assignments-meltdown submission"
+git push origin master
+</code></pre></div></div>
+<p>Your repository directory can be viewed from a web browser from the following URL: 
+<a href="https://github-dev.cs.illinois.edu/cs341-sp25/NETID/tree/master/assignments-meltdown" class="fancy-link wiki-link">https://github-dev.cs.illinois.edu/cs341-sp25/NETID/tree/master/assignments-meltdown</a> where NETID is your University NetID. It is important to check that the files you expect to be graded are present and up to date in your remote git copy.</p>
+</div></div></div>
+</div></div>
+<div class="pad"><div class="card">
+<div class="title"><h2 id="assignment-feedback" class="title-text">Assignment Feedback<a class="anchor title-text" href="#assignment-feedback"> #</a>
+</h2></div>
+
+
+
+
+
+
+
+<div class="container-fluid"><div class="row"><div class="content col-sm-11 .col-sm-offset-1">
+<p>We strive to provide the best assignments that we can for this course, and we would like your feedback on them!</p>
+<p>This is the form we will use to evaluate our assignments. We appreciate the time you take to give us your honest feedback and we promise to keep improving the course to make your experience in CS 341 the best it can be.</p>
+<p><a href="https://goo.gl/forms/hREf0ojFWumYfQF12" class="fancy-link wiki-link">https://goo.gl/forms/hREf0ojFWumYfQF12</a></p>
+</div></div></div>
+</div></div>
+</div>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-0"></div>
+        </div>
+        <!-- Mathjax takes a while to load so do a lazy load to so we can get accessibility -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML" crossorigin="anonymous"></script>
+
+<!-- Bring in JQuery and Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- For table of content -->
+<script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script>
+<script src="/js/scroll.js"></script>
+<footer class="">
+
+<!-- Add another container at the bottom so there is some space there -->
+<div class="container-fluid">
+<div class="shadow"></div>
+
+</div>
+
+</footer>
+
+      </div>
+    </div>
+  </div>
+  <script type="application/javascript">
+    var github_repo = "illinois-cs241/illinois-cs241.github.io";
+    var github_path = "_docs/meltdown.md";
+  </script>
+</body>
+
+</html>
