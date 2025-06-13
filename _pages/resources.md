@@ -6,12 +6,13 @@ title: Resources
 # Resources
 
 ## Late Add Instructions
+
 If you added late, check [this page]({% link _pages/late_add.md %}) to get caught up.
 
 ## Textbook References
 
 An gentle and short introduction to system programming is Angrave's [CS 341 Crowd-Sourced Wikibook](https://github.com/angrave/SystemProgramming/wiki).
-We also have the second iteration the [Coursebook](https://github.com/illinois-cs241/coursebook/wiki) That provides html, pdf, and wiki versions. 
+We also have the second iteration the [Coursebook](https://github.com/cs341-illinois/coursebook/wiki) That provides html, pdf, and wiki versions.
 Angrave's mini searchable video-introduction and playful _system programming-in-the-browser_ environment is at:
 [mini lectures](http://cs-education.github.io/sys/) (Firefox and Chrome recommended).
 
@@ -26,13 +27,12 @@ ISBN 0-536-48928-9
 
 ## Tutorials
 
-* [Debugging Tutorial]({% link _coursebook/Background.md %}#debugging-and-environments)
-* [Development Tutorial]({% link _tutorials/development.md %})
-* [Emacs Tutorial]({% link _tutorials/emacs.md %})
-* [SSHFS Workflow Tutorial]({% link _tutorials/sshfs.md %})
-* [Shell Tutorial]({% link _coursebook/Appendix.md %}#shell)
-* [VS Code Tutorial]({% link _tutorials/vscode.md %})
-
+- [Debugging Tutorial]({% link _coursebook/Background.md %}#debugging-and-environments)
+- [Development Tutorial]({% link _tutorials/development.md %})
+- [Emacs Tutorial]({% link _tutorials/emacs.md %})
+- [SSHFS Workflow Tutorial]({% link _tutorials/sshfs.md %})
+- [Shell Tutorial]({% link _coursebook/Appendix.md %}#shell)
+- [VS Code Tutorial]({% link _tutorials/vscode.md %})
 
 ## How to Succeed
 
@@ -55,11 +55,11 @@ We're using [Ed](https://edstem.org/) for our Question and Answer forum - check 
 
 We _will not_ accept "low effort questions":
 
-*   "My code doesn't work, can someone look at my github?"
-*   Questions that are already answered in a pinned post
-*   Questions that are already answered in the docs
-*   Questions that have already been answered many times before and can easily be found by searching
-*   Questions that provide basically no information to go off of (Debugging? Tests? Valgrind? Anything?)
+- "My code doesn't work, can someone look at my github?"
+- Questions that are already answered in a pinned post
+- Questions that are already answered in the docs
+- Questions that have already been answered many times before and can easily be found by searching
+- Questions that provide basically no information to go off of (Debugging? Tests? Valgrind? Anything?)
 
 If we find you asking too many of these low-effort questions, then we reserve the right to remove your forum posting privileges. Hopefully these steps will lead you to the answer you're looking for, or at the very least help you find the answer yourself. Asking on our forum should not be the first thing you do when you have a problem. You're here to learn; we're not going to give you the answer every time you ask.
 
@@ -79,12 +79,12 @@ Most questions can simply be answered by searching Edstem, or Googling your ques
 
 If you are truly lost, can't find an answer in the docs, or in other questions, or the wide expanse of the internet, ask your question!
 
-*   What's the problem you're having? (And give an example)
-*   What have you tried? Have you tested your code?
-*   What does Valgrind say? How about a gdb backtrace?
-*   If you need to show code, don't take a screenshot. Copy it into a pre tag ("code" on the rich editor bar)
-*   If referencing your repo please include your netid or URL so we can easily look it up, and make the post private
-*   You can post anonymously if you wish
+- What's the problem you're having? (And give an example)
+- What have you tried? Have you tested your code?
+- What does Valgrind say? How about a gdb backtrace?
+- If you need to show code, don't take a screenshot. Copy it into a pre tag ("code" on the rich editor bar)
+- If referencing your repo please include your netid or URL so we can easily look it up, and make the post private
+- You can post anonymously if you wish
 
 ## CS 341 Admin
 

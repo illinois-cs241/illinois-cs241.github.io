@@ -1,6 +1,6 @@
 # Webpage for CS 341
 
-[![Website Deploy](https://github.com/cs341-illinois/cs341-illinois.github.io/actions/workflows/deploy.yaml/badge.svg?branch=develop)](https://github.com/illinois-cs241/illinois-cs241.github.io/actions/workflows/deploy.yaml)
+[![Website Deploy](https://github.com/cs341-illinois/cs341-illinois.github.io/actions/workflows/deploy.yaml/badge.svg?branch=develop)](https://github.com/cs341-illinois/cs341-illinois.github.io/actions/workflows/deploy.yaml)
 
 ## Option 1: Build from a Docker container
 
@@ -37,7 +37,7 @@ Build an image from the dockerfile and run it as a container:
 
 ```
 docker build -t course_site .
-docker run -v /home/<NETID>/illinois-cs241.github.io/:/workspace -p 4000:4000 -it course_site
+docker run -v /home/<NETID>/cs341-illinois.github.io/:/workspace -p 4000:4000 -it course_site
 ```
 
 In a web browser go to the ip address listed from the `ip a` command and port number 4000 (i.e. localhost/4000). The website will be running there.

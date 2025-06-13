@@ -21,7 +21,7 @@ require 'openssl'
 is_travis = ENV['TRAVIS'] == 'true'
 main_json_file = '_data/man.json'
 coursebook_dir = '_coursebook'
-coursebook_url = 'https://github.com/illinois-cs241/coursebook.wiki.git'
+coursebook_url = 'https://github.com/cs341-illinois/coursebook.wiki.git'
 DEST_DIR = './_site'
 SEARCH_FILE = 'search_data.json'
 
