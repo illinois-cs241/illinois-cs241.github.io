@@ -13,7 +13,7 @@ gem 'erb'
 
 group :jekyll_plugins do
   gem 'jemoji'
-  gem 'sassc', '~> 2.1.0'
+  gem 'sassc', '~> 2.4.0'
   gem "jekyll-feed"
   gem 'jekyll-sitemap'
   gem 'sprockets', '=4.0.0'
