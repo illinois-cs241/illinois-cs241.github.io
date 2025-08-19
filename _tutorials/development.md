@@ -141,44 +141,41 @@ _Your VM should already be provisioned with the required tools. This section is 
 Here is the script used to provision the VMs this semester:
 
 ```sh
+#!/bin/bash
+set -e
 # update sources and install basic tools
-sudo apt-get update && \
-    apt-get install -y \
-      software-properties-common \
-      wget \
-      bzip2 && \
-    add-apt-repository ppa:deadsnakes/ppa && \
-    apt-get update
-
-# install python3.6
-sudo apt-get install -y python3.10 python3-pip python2-dev python3.10-dev cmake iproute2 && \
-    rm /usr/bin/python3 && \
-    ln -s python3.10 /usr/bin/python3 && \
-    ln -s -f /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/liblibc.a
-
-# install bulid-related tools
+sudo apt-get update
 sudo apt-get install -y \
-        clang=1:14.0-55~exp2 \
-        libncurses5-dev=6.3-2ubuntu0.1 \
-        rpcbind=1.2.6-2build1 \
-        git=1:2.34.1-1ubuntu1.10 \
-        strace=5.16-0ubuntu3 && \
-    rm -rf /var/lib/apt/lists/*
+    software-properties-common \
+    wget \
+    bzip2
 
-# install the latest version of valgrind
-wget https://sourceware.org/pub/valgrind/valgrind-3.21.0.tar.bz2 && \
-  echo "b8b89b327732c12191306c3d31cfd4b1 *./valgrind-3.21.0.tar.bz2" | md5sum -c - && \
-  bunzip2 valgrind-3.21.0.tar.bz2 && \
-  tar xf valgrind-3.21.0.tar
-cd ./valgrind-3.21.0
-./configure && \
-  make && \
-  make install
-cd ..
-rm -rf valgrind-3.21.0
+# install python3.12
+sudo apt-get install -y \
+    python3.12 \
+    python3-pip \
+    python3.12-dev \
+    cmake \
+    iproute2
 
-# valgrind fix: install debug symbols for libc
-sudo apt-get install -y libc6-dbg
+if [ -L /usr/bin/python3 ]; then
+    sudo rm /usr/bin/python3
+fi
+sudo ln -s python3.12 /usr/bin/python3
+sudo ln -s -f /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/liblibc.a
+
+# install compilation tools
+sudo apt-get install -y \
+    clang-18=1:18.1.3-1ubuntu1 \
+    libncurses-dev=6.4+20240113-1ubuntu2 \
+    libncurses6=6.4+20240113-1ubuntu2 \
+    rpcbind=1.2.6-7ubuntu2 \
+    git \
+    strace=6.8-0ubuntu2 \
+    valgrind=1:3.22.0-0ubuntu2 \
+    libc6-dbg=2.39-0ubuntu8.5
+sudo ln -s /usr/bin/clang-18 /usr/bin/clang || true
+
 ```
 
 ## Installing Other Stuff
