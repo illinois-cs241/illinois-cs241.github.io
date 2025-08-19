@@ -6,7 +6,7 @@ on:
       - develop
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
@@ -32,15 +32,24 @@ jobs:
         bundle exec rake
         bundle exec rake spell_check
 
-    - name: Deploy site
-      run: |
-        # Needed to add the --no-tty --batch --yes flags to get gpg to work in Github Actions
-        # Based on this: https://discuss.circleci.com/t/error-sending-to-agent-inappropriate-ioctl-for-device/17465/3
-        gpg --no-tty --batch --yes --passphrase ${{ secrets.GPG_PASSPHRASE }} --output /tmp/dual_deploy_key --decrypt dual_deploy_key.enc
-        eval "$(ssh-agent -s)"
-        chmod 600 /tmp/dual_deploy_key
+    - name: Upload static files as artifact
+      id: deployment
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: _site/
 
-        # Email from: # https://github.community/t/github-actions-bot-email-address/17204/6
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git config --global user.name "Github Actions Bot"
-        bash _scripts/deploy.sh
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
