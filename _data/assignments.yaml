@@ -12,7 +12,7 @@ labs:
           - submission.txt
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Perilous Pointers"
       releaseDate: "Week 2"
@@ -26,7 +26,7 @@ labs:
           - part2-main.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Utilities Unleashed"
       releaseDate: "Week 3"
@@ -40,7 +40,7 @@ labs:
           - time.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Mini Memcheck"
       releaseDate: "Week 4"
@@ -53,7 +53,7 @@ labs:
           - mini_memcheck.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Teaching Threads"
       releaseDate: "Week 5"
@@ -66,7 +66,7 @@ labs:
           - par_reduce.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
       slides: https://docs.google.com/presentation/d/1zdh2QgI40KssmoIhcJqZJoxfVB8euOXyx8-H1lV0NhA/edit?usp=sharing
   -
       name: "Critical Concurrency"
@@ -82,7 +82,7 @@ labs:
           - semamore.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
   -
       name: "Deadlock Demolition"
       releaseDate: "Week 7"
@@ -95,7 +95,7 @@ labs:
           - libdrm.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
       slides: https://docs.google.com/presentation/d/1hxcaWj8jig9_74TVsI6Cq2_KdLDI2tlCwg93XxDGCAc/edit?usp=sharing
   -
       name: "Ideal Indirection"
@@ -109,7 +109,7 @@ labs:
           - mmu.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
       slides: https://docs.google.com/presentation/d/1E2OAfTItyZvXnKFBsU8qkpNWooVMXaTjjPK_OqHfzoU/edit?usp=sharing
   -
       name: "MapReduce"
@@ -123,7 +123,7 @@ labs:
           - mapreduce.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
       slides: https://docs.google.com/presentation/d/1zb24HSvrZ3NZEVVos1962yYlsy9jTnSxJqlNaBETqzs/edit?usp=sharing
   -
       name: "Charming Chatroom"
@@ -139,7 +139,7 @@ labs:
           - utils.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
       slides: https://docs.google.com/presentation/d/1-2kbnuQOnKD8IWarpQlo2MprO2L7-UBu15vtOa2s9Wo/edit?usp=sharing
   -
       name: "Deepfried dd"
@@ -153,7 +153,7 @@ labs:
           - dd.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
       slides: https://docs.google.com/presentation/d/1S2DPaHoINCwUnk-nPVYcC5qKJ2AnN8ELhpl8OyIciSU/edit?usp=sharing
   -
       name: "Mad Mad Access Patterns"
@@ -169,7 +169,7 @@ labs:
       resources: true
       worksheet: true
       slides: https://docs.google.com/presentation/d/1dobdY-hm-13hL6PqUlpXo3E4tBKRDBNFvwiL4dTFvG8/edit?usp=sharing
-      visible: true
+      visible: false
   -
       name: "Savvy Scheduler"
       releaseDate: "Week 13"
@@ -183,7 +183,7 @@ labs:
       resources: true
       worksheet: true
       slides: https://docs.google.com/presentation/d/1zoYlWc7AKAjZpsDLEq2SH8oTujfhThsUXX0rXu2kg4U/edit?usp=sharing
-      visible: true
+      visible: false
   -
       name: "Lovable Linux"
       releaseDate: "Week 14"
@@ -196,7 +196,7 @@ labs:
           - kernel.c
       resources: true
       worksheet: true
-      visible: true
+      visible: false
       slides: https://docs.google.com/presentation/d/1PZC1Msxdv2r0vDHcZo-M6I5-gfhjSn2_I_shQzdrjjs/edit?usp=sharing
 mps:
   -
@@ -212,7 +212,7 @@ mps:
           - camelCaser_tests.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Vector"
       releaseDate: "Week 3"
@@ -226,7 +226,7 @@ mps:
           - sstring.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Shell"
       releaseDate: "Week 4"
@@ -243,7 +243,7 @@ mps:
           - shell.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Malloc"
       releaseDate: "Week 6"
@@ -260,7 +260,7 @@ mps:
           - alloc.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Password Cracker"
       releaseDate: "Week 8"
@@ -274,7 +274,7 @@ mps:
           - cracker2.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Parallel Make"
       releaseDate: "Week 9"
@@ -291,7 +291,7 @@ mps:
           - parmake.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
       slides: https://docs.google.com/presentation/d/1vOdlHMjhpBXmLosPW2wVIe5dhBCIeC3E0esYxdw3GvE/edit?usp=sharing
   -
       name: "Finding Filesystems"
@@ -305,7 +305,7 @@ mps:
           - minixfs.c
       resources: true
       worksheet: false
-      visible: true
+      visible: false
   -
       name: "Nonstop Networking"
       releaseDate: "Week 12"
@@ -334,7 +334,7 @@ mps:
           - common.h
       resources: true
       worksheet: false
-      visible: true
+      visible: false
 honors:
   -
       name: "Advanced C"
