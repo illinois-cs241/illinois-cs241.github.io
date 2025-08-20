@@ -147,10 +147,10 @@ set -e
 sudo apt-get update
 sudo apt-get install -y \
     software-properties-common \
-    wget \
+    wget curl \
     bzip2
 
-# install python3.12
+<!-- # install python3.12
 sudo apt-get install -y \
     python3.12 \
     python3-pip \
@@ -162,10 +162,10 @@ if [ -L /usr/bin/python3 ]; then
     sudo rm /usr/bin/python3
 fi
 sudo ln -s python3.12 /usr/bin/python3
-sudo ln -s -f /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/liblibc.a
+sudo ln -s -f /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/liblibc.a -->
 
 # install compilation tools
-sudo apt-get install -y \
+<!-- sudo apt-get install -y \
     clang-18=1:18.1.3-1ubuntu1 \
     libncurses-dev=6.4+20240113-1ubuntu2 \
     libncurses6=6.4+20240113-1ubuntu2 \
@@ -174,7 +174,10 @@ sudo apt-get install -y \
     strace=6.8-0ubuntu2 \
     valgrind=1:3.22.0-0ubuntu2 \
     libc6-dbg=2.39-0ubuntu8.5
-sudo ln -s /usr/bin/clang-18 /usr/bin/clang || true
+sudo ln -s /usr/bin/clang-18 /usr/bin/clang || true -->
+
+sudo apt update
+sudo apt-get install -y build-essential clang git gh strace valgrind gdb manpages-posix-dev manpages-posix
 
 ```
 
