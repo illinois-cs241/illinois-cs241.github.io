@@ -32,7 +32,7 @@ fi
 SCRIPT
 
 Vagrant.configure("2") do |config|
-	config.vm.box = "bento/ubuntu-22.04"
+	config.vm.box = "bento/ubuntu-24.04"
 	config.vm.hostname = "cs341"
 	config.vm.provider "virtualbox" do |v|
 		v.name = "CS 341"
