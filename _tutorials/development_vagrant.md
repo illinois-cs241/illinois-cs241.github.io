@@ -6,7 +6,7 @@ learning_objectives:
 ---
 
 ## Setup Instructions
-We are [Vagrant](https://www.vagrantup.com/) to provision VMs. Vagrant allows us to provide a consistent VM environment, similar to your EngrIT-provisioned VM and the environment in which assignments will be graded.
+We can use [Vagrant](https://www.vagrantup.com/) to provision VMs locally. Vagrant allows us to provide a consistent VM environment, similar to your EngrIT-provisioned VM and the environment in which assignments will be graded.
 
 Here are the steps to provision a VM on your own laptop using Vagrant:
 
