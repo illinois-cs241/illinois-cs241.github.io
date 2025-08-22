@@ -144,40 +144,22 @@ Here is the script used to provision the VMs this semester:
 #!/bin/bash
 set -e
 # update sources and install basic tools
+
+curl https://cs341.cs.illinois.edu/resources/development/build_tools_pins --output /etc/apt/preferences.d/build_tools_pins
+
+
 sudo apt-get update
 sudo apt-get install -y \
     software-properties-common \
-    wget curl \
-    bzip2
-
-<!-- # install python3.12
-sudo apt-get install -y \
-    python3.12 \
-    python3-pip \
-    python3.12-dev \
-    cmake \
-    iproute2
-
-if [ -L /usr/bin/python3 ]; then
-    sudo rm /usr/bin/python3
-fi
-sudo ln -s python3.12 /usr/bin/python3
-sudo ln -s -f /usr/lib/x86_64-linux-gnu/libc.a /usr/lib/x86_64-linux-gnu/liblibc.a -->
+    wget curl bzip2
 
 # install compilation tools
-<!-- sudo apt-get install -y \
-    clang-18=1:18.1.3-1ubuntu1 \
-    libncurses-dev=6.4+20240113-1ubuntu2 \
-    libncurses6=6.4+20240113-1ubuntu2 \
-    rpcbind=1.2.6-7ubuntu2 \
-    git \
-    strace=6.8-0ubuntu2 \
-    valgrind=1:3.22.0-0ubuntu2 \
-    libc6-dbg=2.39-0ubuntu8.5
-sudo ln -s /usr/bin/clang-18 /usr/bin/clang || true -->
+
+# Use the same versions as the autograder 
+sudo curl https://cs341.cs.illinois.edu/resources/development/build_tools_pins --output /etc/apt/preferences.d/build_tools_pins
 
 sudo apt update
-sudo apt-get install -y build-essential clang git gh strace valgrind gdb manpages-posix-dev manpages-posix
+sudo apt-get install -y build-essential clang-18 git gh strace valgrind gdb manpages-posix-dev manpages-posix
 
 ```
 

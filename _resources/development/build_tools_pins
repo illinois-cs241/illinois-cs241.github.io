@@ -1,14 +1,17 @@
 # Note: when updating this file, you must also provide this file to EngrIT so they can update their scripts
 # So that student VMs use the same pins.
-# https://github.com/cs341-illinois/docker-tools/blob/master/grader/apt_pins
-# /etc/apt/preferences.d/build_tools_pins
 
-# Example (as root),
-# curl https://github.com/cs341-illinois/docker-tools/blob/master/grader/apt_pins > /etc/apt/preferences.d/build_tools_pins
-# A copy is published on the cs341 course website,
+# This file should be copied into /etc/apt/preferences.d/build_tools_pins
+
+# The non-public version of this is maintained at
+# https://github.com/cs341-illinois/docker-tools/blob/master/grader/apt_pins
+
+
+# A public version is available on the cs341 website. Example use,
+# curl https://cs341.cs.illinois.edu/resources/development/build_tools_pins --output /etc/apt/preferences.d/build_tools_pins
+
 
 # Allows any version of git from v2
-
 Package: git
 Pin: version 1:2.*
 Pin-Priority: 1001
