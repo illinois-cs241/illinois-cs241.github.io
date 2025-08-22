@@ -145,7 +145,7 @@ Here is the script used to provision the VMs this semester:
 set -e
 # update sources and install basic tools
 
-curl https://cs341.cs.illinois.edu/resources/development/build_tools_pins --output /etc/apt/preferences.d/build_tools_pins
+sudo curl https://cs341.cs.illinois.edu/resources/development/build_tools_pins --output /etc/apt/preferences.d/build_tools_pins
 
 
 sudo apt-get update
