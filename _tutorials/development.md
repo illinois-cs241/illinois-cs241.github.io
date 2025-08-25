@@ -154,12 +154,13 @@ sudo apt-get install -y \
 # install compilation tools
 
 # Use the same versions as the autograder 
-sudo curl https://cs341.cs.illinois.edu/resources/development/build_tools_pins --output /etc/apt/preferences.d/build_tools_pins
+sudo curl https://raw.githubusercontent.com/cs341-illinois/docker-base/refs/heads/main/apt_pins --output /etc/apt/preferences.d/build_tools_pins
 
 sudo apt update
 sudo apt-get install -y build-essential clang-18 git gh strace valgrind gdb manpages-posix-dev manpages-posix
-
 ```
+
+We also publish a Docker container [here](https://github.com/cs341-illinois/docker-base/pkgs/container/base) for your use. This container is configured in the same way as our graders.
 
 ## Installing Other Stuff
 
